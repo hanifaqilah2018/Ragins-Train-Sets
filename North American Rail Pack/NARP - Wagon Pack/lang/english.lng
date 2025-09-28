@@ -1,0 +1,100 @@
+##grflangid 0x0
+
+STR_GRF_NAME:North American Rail Pack - Wagons v1
+STR_GRF_DESCRIPTION:Diesel and electric locomotives from the US, Canada, and Mexico, all in 2cc. Drawn and Coded by Zachary Moore (Ragin1_)
+
+STR_PARAM_PURCHASE_COST             :Purchase cost multiplier
+STR_PARAM_PURCHASE_COST_DESC        :You can use this setting to increase or decrease the purchase costs of the vehicles in this set.
+STR_PARAM_RUNNING_COST              :Running cost multiplier
+STR_PARAM_RUNNING_COST_DESC         :You can use this setting to increase or decrease the running costs of the vehicles in this set.
+
+STR_PARAM_DIVIDE_16                 :1/16
+STR_PARAM_DIVIDE_8                  :1/8
+STR_PARAM_DIVIDE_4                  :1/4
+STR_PARAM_DIVIDE_2                  :1/2
+STR_PARAM_NORMAL                    :1 (default)
+STR_PARAM_TIMES_2                   :2
+STR_PARAM_TIMES_4                   :4
+STR_PARAM_TIMES_8                   :8
+STR_PARAM_TIMES_16                  :16
+
+STR_PARAM_NAME_CAPACITY:Passenger Car Capacity
+STR_PARAM_NAME_FREIGHT_CAPACITY:Freight Car Capacity
+STR_PARAM_DESC_CAPACITY:You can use this setting to adjust the capacity of trains. Useful for balancing it against sets like NARS or UKRS
+STR_PARAM_REAL_CAPACITY:Realistic Capacity
+STR_PARAM_NORMAL_REDUCED:Reduced Capacity
+
+STR_PARAM_NAME_REALDISABLE:Disable Real Trains
+STR_PARAM_DESC_REALDISABLE:Enable/disable Real trains (Trains that were physically built, and put in service).
+
+STR_PARAM_NAME_PROTOTYPEDISABLE:Disable Prototype Trains
+STR_PARAM_DESC_PROTOTYPEDISABLE:Enable/disable Prototype trains (trains that were built, but were mostly used for testing, and potentially put in limited service).
+
+STR_PARAM_NAME_PROPOSALDISABLE:Disable Proposed Trains
+STR_PARAM_DESC_PROPOSALDISABLE:Enable/disable Proposed trains (trains that were designed, or seriously proposed, but not actually built).
+
+STR_PARAM_NAME_FICTIONALDISABLE:Disable Fictional Trains
+STR_PARAM_DESC_FICTIONALDISABLE:Enable/disable Fictional trains (trains that are entirely fictional, and are only included for gameplay balance).
+
+STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR:{STRING}{}{STRING}
+STR_POWER_BY_POWER_SOURCE_TWO_SOURCES:{BLACK}Power on {STRING}: {GOLD}{POWER} {}{BLACK}Power on {STRING}: {GOLD}{POWER}
+STR_POWER_SOURCE_DIESEL:Diesel
+STR_POWER_SOURCE_ELRL:Overhead Line
+STR_POWER_SOURCE_3RAIL:3rd Rail
+
+STR_NAME_1830GENERICCAR:Passenger Car
+STR_INFO_1830GENERICCAR:{GOLD}It's a passenger car, you gotta wait for the cooler stuff ;)
+STR_NAME_MAIL_1830GENERICCAR:Mail Car
+STR_INFO_MAIL_1830GENERICCAR:{GOLD}It's a mail car, you gotta wait for the cooler stuff ;)
+
+STR_NAME_ARCHROOFCAR:Arch Roof Suburban Car
+STR_INFO_ARCHROOFCAR:{BLACK}Role:{GOLD}Commuter
+
+STR_NAME_DUCKBILLCAR:Duckbill Suburban Car
+STR_INFO_DUCKBILLCAR:{BLACK}Role:{GOLD}Commuter
+
+STR_NAME_ENDPLATFORMSUBURBANCAR:End Platform Suburban Car
+STR_INFO_ENDPLATFORMSUBURBANCAR:{BLACK}Role:{GOLD}Commuter
+
+STR_NAME_SIDELOADINGSUBURBANCAR:Side Loading Suburban Car
+STR_INFO_SIDELOADINGSUBURBANCAR:{BLACK}Role:{GOLD}Commuter
+
+STR_NAME_PRR_P54:PRR P54
+STR_INFO_PRR_P54:{BLACK}Role:{GOLD}Commuter
+
+
+
+STR_NAME_PULLMAN_GALLERYCAR:Pullmam Gallery Car
+STR_INFO_PULLMAN_GALLERYCAR:{BLACK}Role:{GOLD}Commuter
+STR_NAME_PULLMAN_GALLERYCAR_CAB:Pullman Gallery Cab Car
+STR_INFO_PULLMAN_GALLERYCAR_CAB:{BLACK}Role:{GOLD}Commuter
+
+
+
+STR_NAME_GEN2_BOXCAR:30' Boxcar
+STR_INFO_GEN2_BOXCAR:
+
+STR_NAME_GEN3_BOXCAR:40' Boxcar
+STR_INFO_GEN3_BOXCAR:
+
+STR_NAME_GEN4_BOXCAR:50' Boxcar
+STR_INFO_GEN4_BOXCAR:
+
+STR_NAME_GEN5_BOXCAR:60' Boxcar
+STR_INFO_GEN5_BOXCAR:
+
+STR_NAME_GEN6_HICUBE_BOXCAR:60' Hi-Cube Boxcar
+STR_INFO_GEN6_HICUBE_BOXCAR:
+
+
+STR_NAME_GEN3_REEFER:40' Reefer
+STR_INFO_GEN3_REEFER:
+
+STR_NAME_GEN2_HOPPER:30' Hopper
+STR_INFO_GEN2_HOPPER:
+
+STR_NAME_GEN3_HOPPER:40' Hopper
+STR_INFO_GEN3_HOPPER:
+
+STR_NAME_GEN4_HOPPER:ARA Hopper
+STR_INFO_GEN4_HOPPER:
