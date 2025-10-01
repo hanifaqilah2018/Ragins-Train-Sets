@@ -2470,54 +2470,54 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv3_Cab, 8553) {
 }
 }
 
-spriteset(spriteset_PRR_P70_EOTD,   "gfx/PRR_P70_EOTD.png") {template_8(7, 39)}
-spriteset(spriteset_PRR_P70_EOTD_r,   "gfx/PRR_P70_EOTD.png") {template_8_r(7, 39)}
-spriteset(spriteset_PRR_P70_EOTD_Alt,   "gfx/PRR_P70_EOTD.png") {template_8(187, 39)}
-spriteset(spriteset_PRR_P70_EOTD_Mail,   "gfx/PRR_P70_EOTD.png") {template_7(367, 39)}
-spriteset(spriteset_PRR_P70_EOTD_Mail_r,   "gfx/PRR_P70_EOTD.png") {template_7_r(367, 39)}
+spriteset(spriteset_CompositeHeavyweight_EOTD,   "gfx/CompositeHeavyweight_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_CompositeHeavyweight_EOTD_r,   "gfx/CompositeHeavyweight_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_CompositeHeavyweight_EOTD_Alt,   "gfx/CompositeHeavyweight_EOTD.png") {template_8(187, 39)}
+spriteset(spriteset_CompositeHeavyweight_EOTD_Mail,   "gfx/CompositeHeavyweight_EOTD.png") {template_7(367, 39)}
+spriteset(spriteset_CompositeHeavyweight_EOTD_Mail_r,   "gfx/CompositeHeavyweight_EOTD.png") {template_7_r(367, 39)}
 
-//PRR_P70_Liv0
-spriteset(spriteset_PRR_P70_Liv0_Purchase,   "gfx/PRR_P70_Liv0.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_PRR_P70_Liv0,   "gfx/PRR_P70_Liv0.png") {template_8_repeat(7, 39)}
-spriteset(spriteset_PRR_P70_Liv0_Diner,   "gfx/PRR_P70_Liv0.png") {template_8(7, 69)}
+//CompositeHeavyweight_Liv0
+spriteset(spriteset_CompositeHeavyweight_Liv0_Purchase,   "gfx/CompositeHeavyweight_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_CompositeHeavyweight_Liv0,   "gfx/CompositeHeavyweight_Liv0.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_CompositeHeavyweight_Liv0_Diner,   "gfx/CompositeHeavyweight_Liv0.png") {template_8(7, 69)}
 
-switch(FEAT_TRAINS, SELF, switch_PRR_P70_Liv0_dinerposition, position_in_consist - position_in_consist_from_end) {
- 0..1: spriteset_PRR_P70_Liv0_Diner;
-  spriteset_PRR_P70_Liv0;
+switch(FEAT_TRAINS, SELF, switch_CompositeHeavyweight_Liv0_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_CompositeHeavyweight_Liv0_Diner;
+  spriteset_CompositeHeavyweight_Liv0;
 }
 
-switch (FEAT_TRAINS, SELF, switch_PRR_P70_Liv0_SpriteStack1, [
+switch (FEAT_TRAINS, SELF, switch_CompositeHeavyweight_Liv0_SpriteStack1, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: switch_PRR_P70_Liv0_dinerposition;
-    1: spriteset_PRR_P70_EOTD;
+    0: switch_CompositeHeavyweight_Liv0_dinerposition;
+    1: spriteset_CompositeHeavyweight_EOTD;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_P70_Liv0_rearcheck1, position_in_consist_from_end){
-    0 : switch_PRR_P70_Liv0_SpriteStack1;
-    return switch_PRR_P70_Liv0_dinerposition;
+switch(FEAT_TRAINS, SELF, switch_CompositeHeavyweight_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_CompositeHeavyweight_Liv0_SpriteStack1;
+    return switch_CompositeHeavyweight_Liv0_dinerposition;
 }
 
-switch (FEAT_TRAINS, SELF, switch_PRR_P70_Liv0_SpriteStack2, [
+switch (FEAT_TRAINS, SELF, switch_CompositeHeavyweight_Liv0_SpriteStack2, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: switch_PRR_P70_Liv0_dinerposition;
-    1: spriteset_PRR_P70_EOTD_r;
+    0: switch_CompositeHeavyweight_Liv0_dinerposition;
+    1: spriteset_CompositeHeavyweight_EOTD_r;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_P70_Liv0_rearcheck2, position_in_consist_from_end){
-    0 : switch_PRR_P70_Liv0_SpriteStack2;
-    return switch_PRR_P70_Liv0_dinerposition;
+switch(FEAT_TRAINS, SELF, switch_CompositeHeavyweight_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_CompositeHeavyweight_Liv0_SpriteStack2;
+    return switch_CompositeHeavyweight_Liv0_dinerposition;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_P70_Liv0_position, vehicle_is_flipped) {
- 0: switch_PRR_P70_Liv0_rearcheck1;
- 1: switch_PRR_P70_Liv0_rearcheck2;
+switch(FEAT_TRAINS, SELF, switch_CompositeHeavyweight_Liv0_position, vehicle_is_flipped) {
+ 0: switch_CompositeHeavyweight_Liv0_rearcheck1;
+ 1: switch_CompositeHeavyweight_Liv0_rearcheck2;
 }
 
-item (FEAT_TRAINS, Item_PRR_P70_Liv0, 11000) {
+item (FEAT_TRAINS, Item_CompositeHeavyweight_Liv0, 11000) {
     property {
         climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:        CC_PASSENGERS;
@@ -2542,10 +2542,10 @@ item (FEAT_TRAINS, Item_PRR_P70_Liv0, 11000) {
         running_cost_factor:            2;
         loading_speed:                    10;
 
-//        variant_group: Item_PRR_P70_Liv0;
+//        variant_group: Item_CompositeHeavyweight_Liv0;
 //        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 
-        name:                             string(STR_NAME_PRR_P70);
+        name:                             string(STR_NAME_COMPOSITEHEAVYWEIGHT);
         introduction_date:                date(1907, 1, 1);
 
         speed:                            110 mph;
@@ -2553,48 +2553,48 @@ item (FEAT_TRAINS, Item_PRR_P70_Liv0, 11000) {
         cargo_capacity:                    96/param_capacity_mod;
     }
     graphics {
-    default:                             switch_PRR_P70_Liv0_position;
-    purchase:                            spriteset_PRR_P70_Liv0_Purchase;
-    additional_text: string(STR_INFO_PRR_P70);
+    default:                             switch_CompositeHeavyweight_Liv0_position;
+    purchase:                            spriteset_CompositeHeavyweight_Liv0_Purchase;
+    additional_text: string(STR_INFO_COMPOSITEHEAVYWEIGHT);
 }
 }
 
-//Observation_PRR_P70_Liv0
-spriteset(spriteset_Observation_PRR_P70_Liv0_Purchase,   "gfx/PRR_P70_Liv0.png") {template_purchase_8(187, 21)}
-spriteset(spriteset_Observation_PRR_P70_Liv0,   "gfx/PRR_P70_Liv0.png") {template_8(187, 39)}
+//Observation_CompositeHeavyweight_Liv0
+spriteset(spriteset_Observation_CompositeHeavyweight_Liv0_Purchase,   "gfx/CompositeHeavyweight_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Observation_CompositeHeavyweight_Liv0,   "gfx/CompositeHeavyweight_Liv0.png") {template_8(187, 39)}
 
-switch (FEAT_TRAINS, SELF, switch_Observation_PRR_P70_Liv0_SpriteStack1, [
+switch (FEAT_TRAINS, SELF, switch_Observation_CompositeHeavyweight_Liv0_SpriteStack1, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Observation_PRR_P70_Liv0;
-    1: spriteset_PRR_P70_EOTD_Alt;
+    0: spriteset_Observation_CompositeHeavyweight_Liv0;
+    1: spriteset_CompositeHeavyweight_EOTD_Alt;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Observation_PRR_P70_Liv0_rearcheck1, position_in_consist_from_end){
-    0 : switch_Observation_PRR_P70_Liv0_SpriteStack1;
-    return spriteset_Observation_PRR_P70_Liv0;
+switch(FEAT_TRAINS, SELF, switch_Observation_CompositeHeavyweight_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Observation_CompositeHeavyweight_Liv0_SpriteStack1;
+    return spriteset_Observation_CompositeHeavyweight_Liv0;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Observation_PRR_P70_Liv0_SpriteStack2, [
+switch (FEAT_TRAINS, SELF, switch_Observation_CompositeHeavyweight_Liv0_SpriteStack2, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Observation_PRR_P70_Liv0;
-    1: spriteset_PRR_P70_EOTD_r;
+    0: spriteset_Observation_CompositeHeavyweight_Liv0;
+    1: spriteset_CompositeHeavyweight_EOTD_r;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Observation_PRR_P70_Liv0_rearcheck2, position_in_consist_from_end){
-    0 : switch_Observation_PRR_P70_Liv0_SpriteStack2;
-    return spriteset_Observation_PRR_P70_Liv0;
+switch(FEAT_TRAINS, SELF, switch_Observation_CompositeHeavyweight_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Observation_CompositeHeavyweight_Liv0_SpriteStack2;
+    return spriteset_Observation_CompositeHeavyweight_Liv0;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Observation_PRR_P70_Liv0_position, vehicle_is_flipped) {
- 0: switch_Observation_PRR_P70_Liv0_rearcheck1;
- 1: switch_Observation_PRR_P70_Liv0_rearcheck2;
+switch(FEAT_TRAINS, SELF, switch_Observation_CompositeHeavyweight_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Observation_CompositeHeavyweight_Liv0_rearcheck1;
+ 1: switch_Observation_CompositeHeavyweight_Liv0_rearcheck2;
 }
 
-item (FEAT_TRAINS, Item_Observation_PRR_P70_Liv0, 11010) {
+item (FEAT_TRAINS, Item_Observation_CompositeHeavyweight_Liv0, 11010) {
     property {
         climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:        CC_PASSENGERS;
@@ -2619,10 +2619,10 @@ item (FEAT_TRAINS, Item_Observation_PRR_P70_Liv0, 11010) {
         running_cost_factor:            2;
         loading_speed:                    10;
 
-//        variant_group: Item_Observation_PRR_P70_Liv0;
+//        variant_group: Item_Observation_CompositeHeavyweight_Liv0;
 //        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 
-        name:                             string(STR_NAME_OBSERVATION_PRR_P70);
+        name:                             string(STR_NAME_OBSERVATION_COMPOSITEHEAVYWEIGHT);
         introduction_date:                date(1907, 1, 1);
 
         speed:                            110 mph;
@@ -2630,49 +2630,49 @@ item (FEAT_TRAINS, Item_Observation_PRR_P70_Liv0, 11010) {
         cargo_capacity:                    96/param_capacity_mod;
     }
     graphics {
-    default:                             switch_Observation_PRR_P70_Liv0_position;
-    purchase:                            spriteset_Observation_PRR_P70_Liv0_Purchase;
-    additional_text: string(STR_INFO_PRR_P70);
+    default:                             switch_Observation_CompositeHeavyweight_Liv0_position;
+    purchase:                            spriteset_Observation_CompositeHeavyweight_Liv0_Purchase;
+    additional_text: string(STR_INFO_COMPOSITEHEAVYWEIGHT);
 }
 }
 
-//Mail_PRR_P70_Liv0
-spriteset(spriteset_Mail_PRR_P70_Liv0_Purchase,   "gfx/PRR_P70_Liv0.png") {template_purchase_7(367, 21)}
-spriteset(spriteset_Mail_PRR_P70_Liv0,   "gfx/PRR_P70_Liv0.png") {template_7_repeat(367, 39)}
+//Mail_CompositeHeavyweight_Liv0
+spriteset(spriteset_Mail_CompositeHeavyweight_Liv0_Purchase,   "gfx/CompositeHeavyweight_Liv0.png") {template_purchase_7(367, 21)}
+spriteset(spriteset_Mail_CompositeHeavyweight_Liv0,   "gfx/CompositeHeavyweight_Liv0.png") {template_7_repeat(367, 39)}
 
 
-switch (FEAT_TRAINS, SELF, switch_Mail_PRR_P70_Liv0_SpriteStack1, [
+switch (FEAT_TRAINS, SELF, switch_Mail_CompositeHeavyweight_Liv0_SpriteStack1, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Mail_PRR_P70_Liv0;
-    1: spriteset_PRR_P70_EOTD_Mail;
+    0: spriteset_Mail_CompositeHeavyweight_Liv0;
+    1: spriteset_CompositeHeavyweight_EOTD_Mail;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Mail_PRR_P70_Liv0_rearcheck1, position_in_consist_from_end){
-    0 : switch_Mail_PRR_P70_Liv0_SpriteStack1;
-    return spriteset_Mail_PRR_P70_Liv0;
+switch(FEAT_TRAINS, SELF, switch_Mail_CompositeHeavyweight_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_CompositeHeavyweight_Liv0_SpriteStack1;
+    return spriteset_Mail_CompositeHeavyweight_Liv0;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Mail_PRR_P70_Liv0_SpriteStack2, [
+switch (FEAT_TRAINS, SELF, switch_Mail_CompositeHeavyweight_Liv0_SpriteStack2, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Mail_PRR_P70_Liv0;
-    1: spriteset_PRR_P70_EOTD_Mail_r;
+    0: spriteset_Mail_CompositeHeavyweight_Liv0;
+    1: spriteset_CompositeHeavyweight_EOTD_Mail_r;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Mail_PRR_P70_Liv0_rearcheck2, position_in_consist_from_end){
-    0 : switch_Mail_PRR_P70_Liv0_SpriteStack2;
-    return spriteset_Mail_PRR_P70_Liv0;
+switch(FEAT_TRAINS, SELF, switch_Mail_CompositeHeavyweight_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_CompositeHeavyweight_Liv0_SpriteStack2;
+    return spriteset_Mail_CompositeHeavyweight_Liv0;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Mail_PRR_P70_Liv0_position, vehicle_is_flipped) {
- 0: switch_Mail_PRR_P70_Liv0_rearcheck1;
- 1: switch_Mail_PRR_P70_Liv0_rearcheck2;
+switch(FEAT_TRAINS, SELF, switch_Mail_CompositeHeavyweight_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_CompositeHeavyweight_Liv0_rearcheck1;
+ 1: switch_Mail_CompositeHeavyweight_Liv0_rearcheck2;
 }
 
-item (FEAT_TRAINS, Item_Mail_PRR_P70_Liv0, 11020) {
+item (FEAT_TRAINS, Item_Mail_CompositeHeavyweight_Liv0, 11020) {
     property {
         climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:        bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_ARMOURED);
@@ -2698,20 +2698,20 @@ item (FEAT_TRAINS, Item_Mail_PRR_P70_Liv0, 11020) {
         running_cost_factor:            1;
         loading_speed:                    10;
 
-//        variant_group: Item_Mail_PRR_P70_Liv0;
+//        variant_group: Item_Mail_CompositeHeavyweight_Liv0;
 //        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 
-        name:                             string(STR_NAME_MAIL_PRR_P70);
-        introduction_date:                date(1906, 1, 1);
+        name:                             string(STR_NAME_MAIL_COMPOSITEHEAVYWEIGHT);
+        introduction_date:                date(1907, 1, 1);
 
         speed:                            110 mph;
         weight:                            24 ton;
-        cargo_capacity:                    60/param_capacity_mod;
+        cargo_capacity:                    45/param_capacity_mod;
     }
     graphics {
-    default:                             switch_Mail_PRR_P70_Liv0_position;
-    purchase:                            spriteset_Mail_PRR_P70_Liv0_Purchase;
-    additional_text: string(STR_INFO_MAIL_PRR_P70);
+    default:                             switch_Mail_CompositeHeavyweight_Liv0_position;
+    purchase:                            spriteset_Mail_CompositeHeavyweight_Liv0_Purchase;
+    additional_text: string(STR_INFO_MAIL_COMPOSITEHEAVYWEIGHT);
 }
 }
 
