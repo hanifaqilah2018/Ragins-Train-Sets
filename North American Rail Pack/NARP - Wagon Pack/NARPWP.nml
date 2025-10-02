@@ -1242,6 +1242,8 @@ switch(FEAT_TRAINS, SELF, switch_generic_recolour, cargo_classes) {
 	
 }
 
+sort(FEAT_TRAINS, [Item_EndPlatformSuburbanCar_Liv0, Item_Mail_1830GenericCar_Liv0, Item_Mail_EndPlatformSuburbanCar_Liv0]);
+
 //1830GenericCar_Liv0
 spriteset(spriteset_1830GenericCar_EOTD,   "gfx/1830GenericCar_EOTD.png") {template_6(7, 39)}
 spriteset(spriteset_1830GenericCar_EOTD_r,   "gfx/1830GenericCar_EOTD.png") {template_6_r(7, 39)}
@@ -1280,7 +1282,7 @@ switch(FEAT_TRAINS, SELF, switch_1830GenericCar_Liv0_position, vehicle_is_flippe
  1: switch_1830GenericCar_Liv0_rearcheck2;
 }
 
-item (FEAT_TRAINS, Item_1830GenericCar_Liv0, 5400) {
+item (FEAT_TRAINS, Item_1830GenericCar_Liv0, 3300) {
     property {
         climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
@@ -1357,7 +1359,7 @@ switch(FEAT_TRAINS, SELF, switch_Mail_1830GenericCar_Liv0_position, vehicle_is_f
  1: switch_Mail_1830GenericCar_Liv0_rearcheck2;
 }
 
-item (FEAT_TRAINS, Item_Mail_1830GenericCar_Liv0, 5410) {
+item (FEAT_TRAINS, Item_Mail_1830GenericCar_Liv0, 3310) {
     property {
         climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_ARMOURED);
@@ -1391,7 +1393,7 @@ item (FEAT_TRAINS, Item_Mail_1830GenericCar_Liv0, 5410) {
 
         speed:                            50 mph;
         weight:                            22 ton;
-        cargo_capacity:                    40/param_capacity_mod;
+        cargo_capacity:                    30/param_capacity_mod;
     }
     graphics {
     default:                             switch_Mail_1830GenericCar_Liv0_position;
@@ -1438,7 +1440,7 @@ switch(FEAT_TRAINS, SELF, switch_ArchRoofCar_Liv0_position, vehicle_is_flipped) 
  1: switch_ArchRoofCar_Liv0_rearcheck2;
 }
 
-item (FEAT_TRAINS, Item_ArchRoofCar_Liv0, 5600) {
+item (FEAT_TRAINS, Item_ArchRoofCar_Liv0, 3500) {
     property {
         climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
@@ -1471,12 +1473,92 @@ item (FEAT_TRAINS, Item_ArchRoofCar_Liv0, 5600) {
 
         speed:                            55 mph;
         weight:                            24 ton;
-        cargo_capacity:                    68/param_capacity_mod;
+        cargo_capacity:                    60/param_capacity_mod;
     }
     graphics {
     default:                             switch_ArchRoofCar_Liv0_position;
     purchase:                            spriteset_ArchRoofCar_Liv0_Purchase;
     additional_text: string(STR_INFO_ARCHROOFCAR);
+}
+}
+
+spriteset(spriteset_12WheelCar_EOTD,   "gfx/12WheelCar_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_12WheelCar_EOTD_r,   "gfx/12WheelCar_EOTD.png") {template_8_r(7, 39)}
+
+//12WheelCar_Liv0
+spriteset(spriteset_12WheelCar_Liv0_Purchase,   "gfx/12WheelCar_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_12WheelCar_Liv0,   "gfx/12WheelCar_Liv0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_12WheelCar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_12WheelCar_Liv0;
+    1: spriteset_12WheelCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_12WheelCar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_12WheelCar_Liv0_SpriteStack1;
+    return spriteset_12WheelCar_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_12WheelCar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_12WheelCar_Liv0;
+    1: spriteset_12WheelCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_12WheelCar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_12WheelCar_Liv0_SpriteStack2;
+    return spriteset_12WheelCar_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_12WheelCar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_12WheelCar_Liv0_rearcheck1;
+ 1: switch_12WheelCar_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_12WheelCar_Liv0, 3600) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    118;
+        running_cost_factor:            3;
+        loading_speed:                    10;
+
+//        variant_group: Item_12WheelCar;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_12WHEELCAR);
+        introduction_date:                date(1860, 1, 1);
+
+        speed:                            60 mph;
+        weight:                            28 ton;
+        cargo_capacity:                    70/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_12WheelCar_Liv0_position;
+    purchase:                            spriteset_12WheelCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_12WHEELCAR);
 }
 }
 
@@ -1515,7 +1597,7 @@ switch(FEAT_TRAINS, SELF, switch_DuckbillCar_Liv0_position, vehicle_is_flipped) 
  1: switch_DuckbillCar_Liv0_rearcheck2;
 }
 
-item (FEAT_TRAINS, Item_DuckbillCar_Liv0, 5620) {
+item (FEAT_TRAINS, Item_DuckbillCar_Liv0, 3640) {
     property {
         climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
@@ -1548,7 +1630,7 @@ item (FEAT_TRAINS, Item_DuckbillCar_Liv0, 5620) {
 
         speed:                            55 mph;
         weight:                            25 ton;
-        cargo_capacity:                    74/param_capacity_mod;
+        cargo_capacity:                    60/param_capacity_mod;
     }
     graphics {
     default:                             switch_DuckbillCar_Liv0_position;
@@ -1595,7 +1677,7 @@ switch(FEAT_TRAINS, SELF, switch_EndPlatformSuburbanCar_Liv0_position, vehicle_i
  1: switch_EndPlatformSuburbanCar_Liv0_rearcheck2;
 }
 
-item (FEAT_TRAINS, Item_EndPlatformSuburbanCar_Liv0, 5800) {
+item (FEAT_TRAINS, Item_EndPlatformSuburbanCar_Liv0, 3700) {
     property {
         climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
@@ -1624,16 +1706,94 @@ item (FEAT_TRAINS, Item_EndPlatformSuburbanCar_Liv0, 5800) {
 //        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 
         name:                             string(STR_NAME_ENDPLATFORMSUBURBANCAR);
-        introduction_date:                date(1880, 1, 1);
+        introduction_date:                date(1870, 1, 1);
 
         speed:                            60 mph;
         weight:                            27 ton;
-        cargo_capacity:                    80/param_capacity_mod;
+        cargo_capacity:                    66/param_capacity_mod;
     }
     graphics {
     default:                             switch_EndPlatformSuburbanCar_Liv0_position;
     purchase:                            spriteset_EndPlatformSuburbanCar_Liv0_Purchase;
     additional_text: string(STR_INFO_ENDPLATFORMSUBURBANCAR);
+}
+}
+
+//Mail_EndPlatformSuburbanCar_Liv0
+spriteset(spriteset_Mail_EndPlatformSuburbanCar_Liv0_Purchase,   "gfx/EndPlatformSuburbanCar_Liv0.png") {template_purchase_7(187, 21)}
+spriteset(spriteset_Mail_EndPlatformSuburbanCar_Liv0,   "gfx/EndPlatformSuburbanCar_Liv0.png") {template_7_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_EndPlatformSuburbanCar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_EndPlatformSuburbanCar_Liv0;
+    1: spriteset_EndPlatformSuburbanCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_EndPlatformSuburbanCar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_EndPlatformSuburbanCar_Liv0_SpriteStack1;
+    return spriteset_Mail_EndPlatformSuburbanCar_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_EndPlatformSuburbanCar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_EndPlatformSuburbanCar_Liv0;
+    1: spriteset_EndPlatformSuburbanCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_EndPlatformSuburbanCar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_EndPlatformSuburbanCar_Liv0_SpriteStack2;
+    return spriteset_Mail_EndPlatformSuburbanCar_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_EndPlatformSuburbanCar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_EndPlatformSuburbanCar_Liv0_rearcheck1;
+ 1: switch_Mail_EndPlatformSuburbanCar_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Mail_EndPlatformSuburbanCar_Liv0, 3710) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_ARMOURED);
+        cargo_allow_refit:               [ MAIL, GOOD, FOOD, BEER, FRUT, FISH, VALU, GOLD, DIAM, DYES, ENSP, FERT, MILK, MNSP, FMSP];
+		cargo_disallow_refit: [PASS, TOUR, COAL, OIL_, LVST, GRAI, WOOD, IORE, STEL, PAPR, WHEA, RUBR, MAIZ, CORE, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, AORE, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, FICR, GLAS, GRVL, JAVA, LIME, OLSD, PETR, PLAS, POTA, RCYC, RFPR, SAND, SCMT, SGBT, SGCN, SULP, VEHI, VPTS, WDPR, WOOL, URAN, YETI, YETY];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            7;
+        cost_factor:                    75;
+        running_cost_factor:            1;
+        loading_speed:                    10;
+
+//        variant_group: Item_Mail_EndPlatformSuburbanCar_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_MAIL_ENDPLATFORMSUBURBANCAR);
+        introduction_date:                date(1870, 1, 1);
+
+        speed:                            60 mph;
+        weight:                            27 ton;
+        cargo_capacity:                    45/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Mail_EndPlatformSuburbanCar_Liv0_position;
+    purchase:                            spriteset_Mail_EndPlatformSuburbanCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_MAIL_ENDPLATFORMSUBURBANCAR);
 }
 }
 
@@ -1649,7 +1809,7 @@ switch (FEAT_TRAINS, SELF, switch_SideLoadingSuburbanCar_Liv0_SpriteStack1, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_SideLoadingSuburbanCar_Liv0;
-    1: spriteset_ArchRoofCar_EOTD;
+    1: spriteset_SideLoadingSuburbanCar_EOTD;
 }
 
 switch(FEAT_TRAINS, SELF, switch_SideLoadingSuburbanCar_Liv0_rearcheck1, position_in_consist_from_end){
@@ -1662,7 +1822,7 @@ switch (FEAT_TRAINS, SELF, switch_SideLoadingSuburbanCar_Liv0_SpriteStack2, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_SideLoadingSuburbanCar_Liv0;
-    1: spriteset_ArchRoofCar_EOTD_r;
+    1: spriteset_SideLoadingSuburbanCar_EOTD_r;
 }
 
 switch(FEAT_TRAINS, SELF, switch_SideLoadingSuburbanCar_Liv0_rearcheck2, position_in_consist_from_end){
@@ -2469,6 +2629,8 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv3_Cab, 8553) {
     additional_text: string(STR_INFO_PULLMAN_GALLERYCAR_CAB);
 }
 }
+
+
 
 spriteset(spriteset_CompositeHeavyweight_EOTD,   "gfx/CompositeHeavyweight_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_CompositeHeavyweight_EOTD_r,   "gfx/CompositeHeavyweight_EOTD.png") {template_8_r(7, 39)}
