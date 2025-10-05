@@ -2194,14 +2194,202 @@ item (FEAT_TRAINS, Item_LightweightCommuterCar_Liv0, 6240) {
 }
 }
 
+
+
+spriteset(spriteset_Budd_GalleryCar_EOTD,   "gfx/Budd_GalleryCar_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_Budd_GalleryCar_EOTD_r,   "gfx/Budd_GalleryCar_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_Budd_GalleryCar_EOTD_CabFw,   "gfx/Budd_GalleryCar_EOTD.png") {template_8(187, 39)}
+spriteset(spriteset_Budd_GalleryCar_EOTD_CabR,   "gfx/Budd_GalleryCar_EOTD.png") {template_8_r(187, 69)}
+
+//Budd_GalleryCar_Liv0
+spriteset(spriteset_Budd_GalleryCar_Liv0_Purchase,   "gfx/Budd_GalleryCar_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Budd_GalleryCar_Liv0,   "gfx/Budd_GalleryCar_Liv0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Budd_GalleryCar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_GalleryCar_Liv0;
+    1: spriteset_Budd_GalleryCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_GalleryCar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Budd_GalleryCar_Liv0_SpriteStack1;
+    return spriteset_Budd_GalleryCar_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Budd_GalleryCar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_GalleryCar_Liv0;
+    1: spriteset_Budd_GalleryCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_GalleryCar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Budd_GalleryCar_Liv0_SpriteStack2;
+    return spriteset_Budd_GalleryCar_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_GalleryCar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Budd_GalleryCar_Liv0_rearcheck1;
+ 1: switch_Budd_GalleryCar_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Budd_GalleryCar_Liv0, 8500) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    120;
+        running_cost_factor:            5;
+        loading_speed:                    15;
+
+//        variant_group: Item_Budd_GalleryCar_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_BUDD_GALLERYCAR);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            100 mph;
+        weight:                            48 ton;
+        cargo_capacity:                    160/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Budd_GalleryCar_Liv0_position;
+    purchase:                            spriteset_Budd_GalleryCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_BUDD_GALLERYCAR);
+}
+}
+
+//Cab_Budd_GalleryCar_Liv0
+spriteset(spriteset_Cab_Budd_GalleryCar_Liv0_Purchase,   "gfx/Budd_GalleryCar_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_Budd_GalleryCar_Liv0_Fw,   "gfx/Budd_GalleryCar_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_Budd_GalleryCar_Liv0_Rw,   "gfx/Budd_GalleryCar_Liv0.png") {template_8_r(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Budd_GalleryCar_Liv0_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Budd_GalleryCar_Liv0_Fw;
+    1: spriteset_Budd_GalleryCar_EOTD_CabFw;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Budd_GalleryCar_Liv0_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Budd_GalleryCar_Liv0_Rw;
+    1: spriteset_Budd_GalleryCar_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_Budd_GalleryCar_Liv0_rearcheck, position_in_consist_from_end){
+    0 : switch_Budd_GalleryCar_Liv0_SpriteStackRw;
+    return switch_Budd_GalleryCar_Liv0_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_Budd_GalleryCar_Liv0, 8510) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    4;
+        running_cost_factor:            5;
+        loading_speed:                    15;
+
+//        variant_group: Item_Cab_Budd_GalleryCar_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_CAB_BUDD_GALLERYCAR);
+        introduction_date:                date(1950, 1, 1);
+        vehicle_life:                     50;
+        model_life:                        30;
+
+        speed:                            100 mph;
+        power:                            1 hp;
+        weight:                            48 ton;
+        cargo_capacity:                    160/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_Cab_Budd_GalleryCar_Liv0_rearcheck;
+    purchase:                            spriteset_Cab_Budd_GalleryCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_CAB_BUDD_GALLERYCAR);
+}
+}
+
+spriteset(spriteset_Pullman_GalleryCar_EOTD,   "gfx/Pullman_GalleryCar_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_Pullman_GalleryCar_EOTD_r,   "gfx/Pullman_GalleryCar_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_Pullman_GalleryCar_EOTD_CabFw,   "gfx/Pullman_GalleryCar_EOTD.png") {template_8(187, 39)}
+spriteset(spriteset_Pullman_GalleryCar_EOTD_CabR,   "gfx/Pullman_GalleryCar_EOTD.png") {template_8_r(187, 69)}
+
 //Pullman_GalleryCar_Liv0
 spriteset(spriteset_Pullman_GalleryCar_Liv0_Purchase,   "gfx/Pullman_GalleryCar_Liv0.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_Pullman_GalleryCar_Liv0,   "gfx/Pullman_GalleryCar_Liv0.png") {template_8(7, 39)}
-spriteset(spriteset_Pullman_GalleryCar_Liv0_Rear,   "gfx/Pullman_GalleryCar_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_Pullman_GalleryCar_Liv0,   "gfx/Pullman_GalleryCar_Liv0.png") {template_8_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, sw_Pullman_GalleryCar_Liv0_rearcheck, position_in_consist_from_end){
-    0 : spriteset_Pullman_GalleryCar_Liv0_Rear;
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Pullman_GalleryCar_Liv0;
+    1: spriteset_Pullman_GalleryCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Pullman_GalleryCar_Liv0_SpriteStack1;
     return spriteset_Pullman_GalleryCar_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Pullman_GalleryCar_Liv0;
+    1: spriteset_Pullman_GalleryCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Pullman_GalleryCar_Liv0_SpriteStack2;
+    return spriteset_Pullman_GalleryCar_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Pullman_GalleryCar_Liv0_rearcheck1;
+ 1: switch_Pullman_GalleryCar_Liv0_rearcheck2;
 }
 
 item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv0, 8540) {
@@ -2240,22 +2428,39 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv0, 8540) {
         cargo_capacity:                    160/param_capacity_mod;
     }
     graphics {
-    default:                             sw_Pullman_GalleryCar_Liv0_rearcheck;
+    default:                             switch_Pullman_GalleryCar_Liv0_position;
     purchase:                            spriteset_Pullman_GalleryCar_Liv0_Purchase;
     additional_text: string(STR_INFO_PULLMAN_GALLERYCAR);
 }
 }
 
-spriteset(spriteset_Pullman_GalleryCar_Liv0_Cab_Purchase,   "gfx/Pullman_GalleryCar_Liv0.png") {template_purchase_8(187, 21)}
-spriteset(spriteset_Pullman_GalleryCar_Liv0_Cab,   "gfx/Pullman_GalleryCar_Liv0.png") {template_8(187, 39)}
-spriteset(spriteset_Pullman_GalleryCar_Liv0_Cab_Rear,   "gfx/Pullman_GalleryCar_Liv0.png") {template_8(187, 69)}
+//Cab_Pullman_GalleryCar_Liv0
+spriteset(spriteset_Cab_Pullman_GalleryCar_Liv0_Purchase,   "gfx/Pullman_GalleryCar_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_Pullman_GalleryCar_Liv0_Fw,   "gfx/Pullman_GalleryCar_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_Pullman_GalleryCar_Liv0_Rw,   "gfx/Pullman_GalleryCar_Liv0.png") {template_8_r(187, 39)}
 
-switch(FEAT_TRAINS, SELF, sw_Pullman_GalleryCar_Liv0_Cab_rearcheck, position_in_consist_from_end){
-    0 : spriteset_Pullman_GalleryCar_Liv0_Cab_Rear;
-    return spriteset_Pullman_GalleryCar_Liv0_Cab;
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv0_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Pullman_GalleryCar_Liv0_Fw;
+    1: spriteset_Pullman_GalleryCar_EOTD_CabFw;
 }
 
-item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv0_Cab, 8550) {
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv0_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Pullman_GalleryCar_Liv0_Rw;
+    1: spriteset_Pullman_GalleryCar_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_Pullman_GalleryCar_Liv0_rearcheck, position_in_consist_from_end){
+    0 : switch_Pullman_GalleryCar_Liv0_SpriteStackRw;
+    return switch_Pullman_GalleryCar_Liv0_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv0, 8550) {
     property {
         climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:        CC_PASSENGERS;
@@ -2283,10 +2488,10 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv0_Cab, 8550) {
         running_cost_factor:            5;
         loading_speed:                    15;
 
-//        variant_group: Item_Pullman_GalleryCar_Liv0_Cab;
+//        variant_group: Item_Cab_Pullman_GalleryCar_Liv0;
 //        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 
-        name:                             string(STR_NAME_PULLMAN_GALLERYCAR_CAB);
+        name:                             string(STR_NAME_CAB_PULLMAN_GALLERYCAR);
         introduction_date:                date(1956, 1, 1);
         vehicle_life:                     50;
         model_life:                        30;
@@ -2297,20 +2502,45 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv0_Cab, 8550) {
         cargo_capacity:                    160/param_capacity_mod;
     }
     graphics {
-    default:                             sw_Pullman_GalleryCar_Liv0_Cab_rearcheck;
-    purchase:                            spriteset_Pullman_GalleryCar_Liv0_Cab_Purchase;
-    additional_text: string(STR_INFO_PULLMAN_GALLERYCAR_CAB);
+    default:                             sw_Cab_Pullman_GalleryCar_Liv0_rearcheck;
+    purchase:                            spriteset_Cab_Pullman_GalleryCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_CAB_PULLMAN_GALLERYCAR);
 }
 }
 
 //Pullman_GalleryCar_Liv1
 spriteset(spriteset_Pullman_GalleryCar_Liv1_Purchase,   "gfx/Pullman_GalleryCar_Liv1.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_Pullman_GalleryCar_Liv1,   "gfx/Pullman_GalleryCar_Liv1.png") {template_8(7, 39)}
-spriteset(spriteset_Pullman_GalleryCar_Liv1_Rear,   "gfx/Pullman_GalleryCar_Liv1.png") {template_8(7, 69)}
+spriteset(spriteset_Pullman_GalleryCar_Liv1,   "gfx/Pullman_GalleryCar_Liv1.png") {template_8_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, sw_Pullman_GalleryCar_Liv1_rearcheck, position_in_consist_from_end){
-    0 : spriteset_Pullman_GalleryCar_Liv1_Rear;
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv1_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Pullman_GalleryCar_Liv1;
+    1: spriteset_Pullman_GalleryCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_Pullman_GalleryCar_Liv1_SpriteStack1;
     return spriteset_Pullman_GalleryCar_Liv1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv1_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Pullman_GalleryCar_Liv1;
+    1: spriteset_Pullman_GalleryCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_Pullman_GalleryCar_Liv1_SpriteStack2;
+    return spriteset_Pullman_GalleryCar_Liv1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Pullman_GalleryCar_Liv1_rearcheck1;
+ 1: switch_Pullman_GalleryCar_Liv1_rearcheck2;
 }
 
 item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv1, 8541) {
@@ -2349,22 +2579,39 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv1, 8541) {
         cargo_capacity:                    160/param_capacity_mod;
     }
     graphics {
-    default:                             sw_Pullman_GalleryCar_Liv1_rearcheck;
+    default:                             switch_Pullman_GalleryCar_Liv1_position;
     purchase:                            spriteset_Pullman_GalleryCar_Liv1_Purchase;
     additional_text: string(STR_INFO_PULLMAN_GALLERYCAR);
 }
 }
 
-spriteset(spriteset_Pullman_GalleryCar_Liv1_Cab_Purchase,   "gfx/Pullman_GalleryCar_Liv1.png") {template_purchase_8(187, 21)}
-spriteset(spriteset_Pullman_GalleryCar_Liv1_Cab,   "gfx/Pullman_GalleryCar_Liv1.png") {template_8(187, 39)}
-spriteset(spriteset_Pullman_GalleryCar_Liv1_Cab_Rear,   "gfx/Pullman_GalleryCar_Liv1.png") {template_8(187, 69)}
+//Cab_Pullman_GalleryCar_Liv1
+spriteset(spriteset_Cab_Pullman_GalleryCar_Liv1_Purchase,   "gfx/Pullman_GalleryCar_Liv1.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_Pullman_GalleryCar_Liv1_Fw,   "gfx/Pullman_GalleryCar_Liv1.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_Pullman_GalleryCar_Liv1_Rw,   "gfx/Pullman_GalleryCar_Liv1.png") {template_8_r(187, 39)}
 
-switch(FEAT_TRAINS, SELF, sw_Pullman_GalleryCar_Liv1_Cab_rearcheck, position_in_consist_from_end){
-    0 : spriteset_Pullman_GalleryCar_Liv1_Cab_Rear;
-    return spriteset_Pullman_GalleryCar_Liv1_Cab;
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv1_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Pullman_GalleryCar_Liv1_Fw;
+    1: spriteset_Pullman_GalleryCar_EOTD_CabFw;
 }
 
-item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv1_Cab, 8551) {
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv1_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Pullman_GalleryCar_Liv1_Rw;
+    1: spriteset_Pullman_GalleryCar_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_Pullman_GalleryCar_Liv1_rearcheck, position_in_consist_from_end){
+    0 : switch_Pullman_GalleryCar_Liv1_SpriteStackRw;
+    return switch_Pullman_GalleryCar_Liv1_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv1, 8551) {
     property {
         climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:        CC_PASSENGERS;
@@ -2392,10 +2639,10 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv1_Cab, 8551) {
         running_cost_factor:            5;
         loading_speed:                    15;
 
-        variant_group: Item_Pullman_GalleryCar_Liv0_Cab;
+        variant_group: Item_Cab_Pullman_GalleryCar_Liv0;
         extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 
-        name:                             string(STR_NAME_PULLMAN_GALLERYCAR_CAB);
+        name:                             string(STR_NAME_CAB_PULLMAN_GALLERYCAR);
         introduction_date:                date(1956, 1, 1);
         vehicle_life:                     50;
         model_life:                        30;
@@ -2406,20 +2653,45 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv1_Cab, 8551) {
         cargo_capacity:                    160/param_capacity_mod;
     }
     graphics {
-    default:                             sw_Pullman_GalleryCar_Liv1_Cab_rearcheck;
-    purchase:                            spriteset_Pullman_GalleryCar_Liv1_Cab_Purchase;
-    additional_text: string(STR_INFO_PULLMAN_GALLERYCAR_CAB);
+    default:                             sw_Cab_Pullman_GalleryCar_Liv1_rearcheck;
+    purchase:                            spriteset_Cab_Pullman_GalleryCar_Liv1_Purchase;
+    additional_text: string(STR_INFO_CAB_PULLMAN_GALLERYCAR);
 }
 }
 
 //Pullman_GalleryCar_Liv2
 spriteset(spriteset_Pullman_GalleryCar_Liv2_Purchase,   "gfx/Pullman_GalleryCar_Liv2.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_Pullman_GalleryCar_Liv2,   "gfx/Pullman_GalleryCar_Liv2.png") {template_8(7, 39)}
-spriteset(spriteset_Pullman_GalleryCar_Liv2_Rear,   "gfx/Pullman_GalleryCar_Liv2.png") {template_8(7, 69)}
+spriteset(spriteset_Pullman_GalleryCar_Liv2,   "gfx/Pullman_GalleryCar_Liv2.png") {template_8_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, sw_Pullman_GalleryCar_Liv2_rearcheck, position_in_consist_from_end){
-    0 : spriteset_Pullman_GalleryCar_Liv2_Rear;
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv2_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Pullman_GalleryCar_Liv2;
+    1: spriteset_Pullman_GalleryCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv2_rearcheck1, position_in_consist_from_end){
+    0 : switch_Pullman_GalleryCar_Liv2_SpriteStack1;
     return spriteset_Pullman_GalleryCar_Liv2;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv2_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Pullman_GalleryCar_Liv2;
+    1: spriteset_Pullman_GalleryCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv2_rearcheck2, position_in_consist_from_end){
+    0 : switch_Pullman_GalleryCar_Liv2_SpriteStack2;
+    return spriteset_Pullman_GalleryCar_Liv2;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv2_position, vehicle_is_flipped) {
+ 0: switch_Pullman_GalleryCar_Liv2_rearcheck1;
+ 1: switch_Pullman_GalleryCar_Liv2_rearcheck2;
 }
 
 item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv2, 8542) {
@@ -2458,22 +2730,39 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv2, 8542) {
         cargo_capacity:                    160/param_capacity_mod;
     }
     graphics {
-    default:                             sw_Pullman_GalleryCar_Liv2_rearcheck;
+    default:                             switch_Pullman_GalleryCar_Liv2_position;
     purchase:                            spriteset_Pullman_GalleryCar_Liv2_Purchase;
     additional_text: string(STR_INFO_PULLMAN_GALLERYCAR);
 }
 }
 
-spriteset(spriteset_Pullman_GalleryCar_Liv2_Cab_Purchase,   "gfx/Pullman_GalleryCar_Liv2.png") {template_purchase_8(187, 21)}
-spriteset(spriteset_Pullman_GalleryCar_Liv2_Cab,   "gfx/Pullman_GalleryCar_Liv2.png") {template_8(187, 39)}
-spriteset(spriteset_Pullman_GalleryCar_Liv2_Cab_Rear,   "gfx/Pullman_GalleryCar_Liv2.png") {template_8(187, 69)}
+//Cab_Pullman_GalleryCar_Liv2
+spriteset(spriteset_Cab_Pullman_GalleryCar_Liv2_Purchase,   "gfx/Pullman_GalleryCar_Liv2.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_Pullman_GalleryCar_Liv2_Fw,   "gfx/Pullman_GalleryCar_Liv2.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_Pullman_GalleryCar_Liv2_Rw,   "gfx/Pullman_GalleryCar_Liv2.png") {template_8_r(187, 39)}
 
-switch(FEAT_TRAINS, SELF, sw_Pullman_GalleryCar_Liv2_Cab_rearcheck, position_in_consist_from_end){
-    0 : spriteset_Pullman_GalleryCar_Liv2_Cab_Rear;
-    return spriteset_Pullman_GalleryCar_Liv2_Cab;
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv2_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Pullman_GalleryCar_Liv2_Fw;
+    1: spriteset_Pullman_GalleryCar_EOTD_CabFw;
 }
 
-item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv2_Cab, 8552) {
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv2_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Pullman_GalleryCar_Liv2_Rw;
+    1: spriteset_Pullman_GalleryCar_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_Pullman_GalleryCar_Liv2_rearcheck, position_in_consist_from_end){
+    0 : switch_Pullman_GalleryCar_Liv2_SpriteStackRw;
+    return switch_Pullman_GalleryCar_Liv2_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv2, 8552) {
     property {
         climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:        CC_PASSENGERS;
@@ -2501,10 +2790,10 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv2_Cab, 8552) {
         running_cost_factor:            5;
         loading_speed:                    15;
 
-        variant_group: Item_Pullman_GalleryCar_Liv0_Cab;
+        variant_group: Item_Cab_Pullman_GalleryCar_Liv0;
         extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 
-        name:                             string(STR_NAME_PULLMAN_GALLERYCAR_CAB);
+        name:                             string(STR_NAME_CAB_PULLMAN_GALLERYCAR);
         introduction_date:                date(1956, 1, 1);
         vehicle_life:                     50;
         model_life:                        30;
@@ -2515,20 +2804,45 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv2_Cab, 8552) {
         cargo_capacity:                    160/param_capacity_mod;
     }
     graphics {
-    default:                             sw_Pullman_GalleryCar_Liv2_Cab_rearcheck;
-    purchase:                            spriteset_Pullman_GalleryCar_Liv2_Cab_Purchase;
-    additional_text: string(STR_INFO_PULLMAN_GALLERYCAR_CAB);
+    default:                             sw_Cab_Pullman_GalleryCar_Liv2_rearcheck;
+    purchase:                            spriteset_Cab_Pullman_GalleryCar_Liv2_Purchase;
+    additional_text: string(STR_INFO_CAB_PULLMAN_GALLERYCAR);
 }
 }
 
 //Pullman_GalleryCar_Liv3
 spriteset(spriteset_Pullman_GalleryCar_Liv3_Purchase,   "gfx/Pullman_GalleryCar_Liv3.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_Pullman_GalleryCar_Liv3,   "gfx/Pullman_GalleryCar_Liv3.png") {template_8(7, 39)}
-spriteset(spriteset_Pullman_GalleryCar_Liv3_Rear,   "gfx/Pullman_GalleryCar_Liv3.png") {template_8(7, 69)}
+spriteset(spriteset_Pullman_GalleryCar_Liv3,   "gfx/Pullman_GalleryCar_Liv3.png") {template_8_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, sw_Pullman_GalleryCar_Liv3_rearcheck, position_in_consist_from_end){
-    0 : spriteset_Pullman_GalleryCar_Liv3_Rear;
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv3_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Pullman_GalleryCar_Liv3;
+    1: spriteset_Pullman_GalleryCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv3_rearcheck1, position_in_consist_from_end){
+    0 : switch_Pullman_GalleryCar_Liv3_SpriteStack1;
     return spriteset_Pullman_GalleryCar_Liv3;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv3_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Pullman_GalleryCar_Liv3;
+    1: spriteset_Pullman_GalleryCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv3_rearcheck2, position_in_consist_from_end){
+    0 : switch_Pullman_GalleryCar_Liv3_SpriteStack2;
+    return spriteset_Pullman_GalleryCar_Liv3;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv3_position, vehicle_is_flipped) {
+ 0: switch_Pullman_GalleryCar_Liv3_rearcheck1;
+ 1: switch_Pullman_GalleryCar_Liv3_rearcheck2;
 }
 
 item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv3, 8543) {
@@ -2567,22 +2881,39 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv3, 8543) {
         cargo_capacity:                    160/param_capacity_mod;
     }
     graphics {
-    default:                             sw_Pullman_GalleryCar_Liv3_rearcheck;
+    default:                             switch_Pullman_GalleryCar_Liv3_position;
     purchase:                            spriteset_Pullman_GalleryCar_Liv3_Purchase;
     additional_text: string(STR_INFO_PULLMAN_GALLERYCAR);
 }
 }
 
-spriteset(spriteset_Pullman_GalleryCar_Liv3_Cab_Purchase,   "gfx/Pullman_GalleryCar_Liv3.png") {template_purchase_8(187, 21)}
-spriteset(spriteset_Pullman_GalleryCar_Liv3_Cab,   "gfx/Pullman_GalleryCar_Liv3.png") {template_8(187, 39)}
-spriteset(spriteset_Pullman_GalleryCar_Liv3_Cab_Rear,   "gfx/Pullman_GalleryCar_Liv3.png") {template_8(187, 69)}
+//Cab_Pullman_GalleryCar_Liv3
+spriteset(spriteset_Cab_Pullman_GalleryCar_Liv3_Purchase,   "gfx/Pullman_GalleryCar_Liv3.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_Pullman_GalleryCar_Liv3_Fw,   "gfx/Pullman_GalleryCar_Liv3.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_Pullman_GalleryCar_Liv3_Rw,   "gfx/Pullman_GalleryCar_Liv3.png") {template_8_r(187, 39)}
 
-switch(FEAT_TRAINS, SELF, sw_Pullman_GalleryCar_Liv3_Cab_rearcheck, position_in_consist_from_end){
-    0 : spriteset_Pullman_GalleryCar_Liv3_Cab_Rear;
-    return spriteset_Pullman_GalleryCar_Liv3_Cab;
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv3_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Pullman_GalleryCar_Liv3_Fw;
+    1: spriteset_Pullman_GalleryCar_EOTD_CabFw;
 }
 
-item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv3_Cab, 8553) {
+switch (FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv3_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Pullman_GalleryCar_Liv3_Rw;
+    1: spriteset_Pullman_GalleryCar_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_Pullman_GalleryCar_Liv3_rearcheck, position_in_consist_from_end){
+    0 : switch_Pullman_GalleryCar_Liv3_SpriteStackRw;
+    return switch_Pullman_GalleryCar_Liv3_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv3, 8553) {
     property {
         climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:        CC_PASSENGERS;
@@ -2610,10 +2941,10 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv3_Cab, 8553) {
         running_cost_factor:            5;
         loading_speed:                    15;
 
-        variant_group: Item_Pullman_GalleryCar_Liv0_Cab;
+        variant_group: Item_Cab_Pullman_GalleryCar_Liv0;
         extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 
-        name:                             string(STR_NAME_PULLMAN_GALLERYCAR_CAB);
+        name:                             string(STR_NAME_CAB_PULLMAN_GALLERYCAR);
         introduction_date:                date(1956, 1, 1);
         vehicle_life:                     50;
         model_life:                        30;
@@ -2624,9 +2955,774 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv3_Cab, 8553) {
         cargo_capacity:                    160/param_capacity_mod;
     }
     graphics {
-    default:                             sw_Pullman_GalleryCar_Liv3_Cab_rearcheck;
-    purchase:                            spriteset_Pullman_GalleryCar_Liv3_Cab_Purchase;
-    additional_text: string(STR_INFO_PULLMAN_GALLERYCAR_CAB);
+    default:                             sw_Cab_Pullman_GalleryCar_Liv3_rearcheck;
+    purchase:                            spriteset_Cab_Pullman_GalleryCar_Liv3_Purchase;
+    additional_text: string(STR_INFO_CAB_PULLMAN_GALLERYCAR);
+}
+}
+
+spriteset(spriteset_HSC_BiLevel_EOTD,   "gfx/HSC_BiLevel_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_HSC_BiLevel_EOTD_r,   "gfx/HSC_BiLevel_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_HSC_BiLevel_EOTD_CabFw,   "gfx/HSC_BiLevel_EOTD.png") {template_8(187, 39)}
+spriteset(spriteset_HSC_BiLevel_EOTD_CabR,   "gfx/HSC_BiLevel_EOTD.png") {template_8_r(187, 69)}
+
+//HSC_BiLevel_Liv0
+spriteset(spriteset_HSC_BiLevel_Liv0_Purchase,   "gfx/HSC_BiLevel_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_HSC_BiLevel_Liv0,   "gfx/HSC_BiLevel_Liv0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_HSC_BiLevel_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_HSC_BiLevel_Liv0;
+    1: spriteset_HSC_BiLevel_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_HSC_BiLevel_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_HSC_BiLevel_Liv0_SpriteStack1;
+    return spriteset_HSC_BiLevel_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_HSC_BiLevel_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_HSC_BiLevel_Liv0;
+    1: spriteset_HSC_BiLevel_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_HSC_BiLevel_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_HSC_BiLevel_Liv0_SpriteStack2;
+    return spriteset_HSC_BiLevel_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_HSC_BiLevel_Liv0_position, vehicle_is_flipped) {
+ 0: switch_HSC_BiLevel_Liv0_rearcheck1;
+ 1: switch_HSC_BiLevel_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_HSC_BiLevel_Liv0, 8700) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    120;
+        running_cost_factor:            5;
+        loading_speed:                    15;
+
+//        variant_group: Item_HSC_BiLevel_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_HSC_BILEVEL);
+        introduction_date:                date(1976, 1, 1);
+
+        speed:                            100 mph;
+        weight:                            61 ton;
+        cargo_capacity:                    166/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_HSC_BiLevel_Liv0_position;
+    purchase:                            spriteset_HSC_BiLevel_Liv0_Purchase;
+    additional_text: string(STR_INFO_HSC_BILEVEL);
+}
+}
+
+//Cab_HSC_BiLevel_Liv0
+spriteset(spriteset_Cab_HSC_BiLevel_Liv0_Purchase,   "gfx/HSC_BiLevel_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_HSC_BiLevel_Liv0_Fw,   "gfx/HSC_BiLevel_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_HSC_BiLevel_Liv0_Rw,   "gfx/HSC_BiLevel_Liv0.png") {template_8_r(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_HSC_BiLevel_Liv0_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_HSC_BiLevel_Liv0_Fw;
+    1: spriteset_HSC_BiLevel_EOTD_CabFw;
+}
+
+switch (FEAT_TRAINS, SELF, switch_HSC_BiLevel_Liv0_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_HSC_BiLevel_Liv0_Rw;
+    1: spriteset_HSC_BiLevel_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_HSC_BiLevel_Liv0_rearcheck, position_in_consist_from_end){
+    0 : switch_HSC_BiLevel_Liv0_SpriteStackRw;
+    return switch_HSC_BiLevel_Liv0_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_HSC_BiLevel_Liv0, 8710) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    4;
+        running_cost_factor:            5;
+        loading_speed:                    15;
+
+//        variant_group: Item_Cab_HSC_BiLevel_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_CAB_HSC_BILEVEL);
+        introduction_date:                date(1976, 1, 1);
+        vehicle_life:                     50;
+        model_life:                        30;
+
+        speed:                            100 mph;
+        power:                            1 hp;
+        weight:                            61 ton;
+        cargo_capacity:                    166/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_Cab_HSC_BiLevel_Liv0_rearcheck;
+    purchase:                            spriteset_Cab_HSC_BiLevel_Liv0_Purchase;
+    additional_text: string(STR_INFO_CAB_HSC_BILEVEL);
+}
+}
+
+spriteset(spriteset_Bombardier_Multilevel_EOTD,   "gfx/Bombardier_Multilevel_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_Bombardier_Multilevel_EOTD_r,   "gfx/Bombardier_Multilevel_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_Bombardier_Multilevel_EOTD_CabFw,   "gfx/Bombardier_Multilevel_EOTD.png") {template_8(187, 39)}
+spriteset(spriteset_Bombardier_Multilevel_EOTD_CabR,   "gfx/Bombardier_Multilevel_EOTD.png") {template_8_r(187, 69)}
+
+//Bombardier_Multilevel_Liv0
+spriteset(spriteset_Bombardier_Multilevel_Liv0_Purchase,   "gfx/Bombardier_Multilevel_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Bombardier_Multilevel_Liv0,   "gfx/Bombardier_Multilevel_Liv0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Bombardier_Multilevel_Liv0;
+    1: spriteset_Bombardier_Multilevel_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Bombardier_Multilevel_Liv0_SpriteStack1;
+    return spriteset_Bombardier_Multilevel_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Bombardier_Multilevel_Liv0;
+    1: spriteset_Bombardier_Multilevel_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Bombardier_Multilevel_Liv0_SpriteStack2;
+    return spriteset_Bombardier_Multilevel_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Bombardier_Multilevel_Liv0_rearcheck1;
+ 1: switch_Bombardier_Multilevel_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Bombardier_Multilevel_Liv0, 9000) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    110;
+        running_cost_factor:            5;
+        loading_speed:                    20;
+
+//        variant_group: Item_Bombardier_Multilevel_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_BOMBARDIER_MULTILEVEL);
+        introduction_date:                date(2006, 1, 1);
+
+        speed:                            110 mph;
+        weight:                            61 ton;
+        cargo_capacity:                    155/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Bombardier_Multilevel_Liv0_position;
+    purchase:                            spriteset_Bombardier_Multilevel_Liv0_Purchase;
+    additional_text: string(STR_INFO_BOMBARDIER_MULTILEVEL);
+}
+}
+
+//Cab_Bombardier_Multilevel_Liv0
+spriteset(spriteset_Cab_Bombardier_Multilevel_Liv0_Purchase,   "gfx/Bombardier_Multilevel_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_Bombardier_Multilevel_Liv0_Fw,   "gfx/Bombardier_Multilevel_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_Bombardier_Multilevel_Liv0_Rw,   "gfx/Bombardier_Multilevel_Liv0.png") {template_8_r(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv0_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Bombardier_Multilevel_Liv0_Fw;
+    1: spriteset_Bombardier_Multilevel_EOTD_CabFw;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv0_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Bombardier_Multilevel_Liv0_Rw;
+    1: spriteset_Bombardier_Multilevel_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_Bombardier_Multilevel_Liv0_rearcheck, position_in_consist_from_end){
+    0 : switch_Bombardier_Multilevel_Liv0_SpriteStackRw;
+    return switch_Bombardier_Multilevel_Liv0_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv0, 9010) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    4;
+        running_cost_factor:            5;
+        loading_speed:                    20;
+
+//        variant_group: Item_Cab_Bombardier_Multilevel_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_CAB_BOMBARDIER_MULTILEVEL);
+        introduction_date:                date(2006, 1, 1);
+        vehicle_life:                     50;
+        model_life:                        30;
+
+        speed:                            110 mph;
+        power:                            1 hp;
+        weight:                            63 ton;
+        cargo_capacity:                    155/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_Cab_Bombardier_Multilevel_Liv0_rearcheck;
+    purchase:                            spriteset_Cab_Bombardier_Multilevel_Liv0_Purchase;
+    additional_text: string(STR_INFO_CAB_BOMBARDIER_MULTILEVEL);
+}
+}
+
+//Bombardier_Multilevel_Liv1
+spriteset(spriteset_Bombardier_Multilevel_Liv1_Purchase,   "gfx/Bombardier_Multilevel_Liv1.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Bombardier_Multilevel_Liv1,   "gfx/Bombardier_Multilevel_Liv1.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv1_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Bombardier_Multilevel_Liv1;
+    1: spriteset_Bombardier_Multilevel_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_Bombardier_Multilevel_Liv1_SpriteStack1;
+    return spriteset_Bombardier_Multilevel_Liv1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv1_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Bombardier_Multilevel_Liv1;
+    1: spriteset_Bombardier_Multilevel_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_Bombardier_Multilevel_Liv1_SpriteStack2;
+    return spriteset_Bombardier_Multilevel_Liv1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Bombardier_Multilevel_Liv1_rearcheck1;
+ 1: switch_Bombardier_Multilevel_Liv1_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Bombardier_Multilevel_Liv1, 9001) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    110;
+        running_cost_factor:            5;
+        loading_speed:                    20;
+
+        variant_group: Item_Bombardier_Multilevel_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_BOMBARDIER_MULTILEVEL);
+        introduction_date:                date(2006, 1, 1);
+
+        speed:                            110 mph;
+        weight:                            61 ton;
+        cargo_capacity:                    155/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Bombardier_Multilevel_Liv1_position;
+    purchase:                            spriteset_Bombardier_Multilevel_Liv1_Purchase;
+    additional_text: string(STR_INFO_BOMBARDIER_MULTILEVEL);
+}
+}
+
+//Cab_Bombardier_Multilevel_Liv1
+spriteset(spriteset_Cab_Bombardier_Multilevel_Liv1_Purchase,   "gfx/Bombardier_Multilevel_Liv1.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_Bombardier_Multilevel_Liv1_Fw,   "gfx/Bombardier_Multilevel_Liv1.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_Bombardier_Multilevel_Liv1_Rw,   "gfx/Bombardier_Multilevel_Liv1.png") {template_8_r(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv1_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Bombardier_Multilevel_Liv1_Fw;
+    1: spriteset_Bombardier_Multilevel_EOTD_CabFw;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv1_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Bombardier_Multilevel_Liv1_Rw;
+    1: spriteset_Bombardier_Multilevel_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_Bombardier_Multilevel_Liv1_rearcheck, position_in_consist_from_end){
+    0 : switch_Bombardier_Multilevel_Liv1_SpriteStackRw;
+    return switch_Bombardier_Multilevel_Liv1_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv1, 9011) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    4;
+        running_cost_factor:            5;
+        loading_speed:                    20;
+
+        variant_group: Item_Cab_Bombardier_Multilevel_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_CAB_BOMBARDIER_MULTILEVEL);
+        introduction_date:                date(2006, 1, 1);
+        vehicle_life:                     50;
+        model_life:                        30;
+
+        speed:                            110 mph;
+        power:                            1 hp;
+        weight:                            63 ton;
+        cargo_capacity:                    155/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_Cab_Bombardier_Multilevel_Liv1_rearcheck;
+    purchase:                            spriteset_Cab_Bombardier_Multilevel_Liv1_Purchase;
+    additional_text: string(STR_INFO_CAB_BOMBARDIER_MULTILEVEL);
+}
+}
+
+//Bombardier_Multilevel_Liv2
+spriteset(spriteset_Bombardier_Multilevel_Liv2_Purchase,   "gfx/Bombardier_Multilevel_Liv2.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Bombardier_Multilevel_Liv2,   "gfx/Bombardier_Multilevel_Liv2.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv2_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Bombardier_Multilevel_Liv2;
+    1: spriteset_Bombardier_Multilevel_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv2_rearcheck1, position_in_consist_from_end){
+    0 : switch_Bombardier_Multilevel_Liv2_SpriteStack1;
+    return spriteset_Bombardier_Multilevel_Liv2;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv2_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Bombardier_Multilevel_Liv2;
+    1: spriteset_Bombardier_Multilevel_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv2_rearcheck2, position_in_consist_from_end){
+    0 : switch_Bombardier_Multilevel_Liv2_SpriteStack2;
+    return spriteset_Bombardier_Multilevel_Liv2;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv2_position, vehicle_is_flipped) {
+ 0: switch_Bombardier_Multilevel_Liv2_rearcheck1;
+ 1: switch_Bombardier_Multilevel_Liv2_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Bombardier_Multilevel_Liv2, 9002) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    110;
+        running_cost_factor:            5;
+        loading_speed:                    20;
+
+        variant_group: Item_Bombardier_Multilevel_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_BOMBARDIER_MULTILEVEL);
+        introduction_date:                date(2006, 1, 1);
+
+        speed:                            110 mph;
+        weight:                            61 ton;
+        cargo_capacity:                    155/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Bombardier_Multilevel_Liv2_position;
+    purchase:                            spriteset_Bombardier_Multilevel_Liv2_Purchase;
+    additional_text: string(STR_INFO_BOMBARDIER_MULTILEVEL);
+}
+}
+
+//Cab_Bombardier_Multilevel_Liv2
+spriteset(spriteset_Cab_Bombardier_Multilevel_Liv2_Purchase,   "gfx/Bombardier_Multilevel_Liv2.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_Bombardier_Multilevel_Liv2_Fw,   "gfx/Bombardier_Multilevel_Liv2.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_Bombardier_Multilevel_Liv2_Rw,   "gfx/Bombardier_Multilevel_Liv2.png") {template_8_r(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv2_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Bombardier_Multilevel_Liv2_Fw;
+    1: spriteset_Bombardier_Multilevel_EOTD_CabFw;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv2_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Bombardier_Multilevel_Liv2_Rw;
+    1: spriteset_Bombardier_Multilevel_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_Bombardier_Multilevel_Liv2_rearcheck, position_in_consist_from_end){
+    0 : switch_Bombardier_Multilevel_Liv2_SpriteStackRw;
+    return switch_Bombardier_Multilevel_Liv2_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv2, 9012) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    4;
+        running_cost_factor:            5;
+        loading_speed:                    20;
+
+        variant_group: Item_Cab_Bombardier_Multilevel_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_CAB_BOMBARDIER_MULTILEVEL);
+        introduction_date:                date(2006, 1, 1);
+        vehicle_life:                     50;
+        model_life:                        30;
+
+        speed:                            110 mph;
+        power:                            1 hp;
+        weight:                            63 ton;
+        cargo_capacity:                    155/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_Cab_Bombardier_Multilevel_Liv2_rearcheck;
+    purchase:                            spriteset_Cab_Bombardier_Multilevel_Liv2_Purchase;
+    additional_text: string(STR_INFO_CAB_BOMBARDIER_MULTILEVEL);
+}
+}
+
+//Bombardier_Multilevel_Liv3
+spriteset(spriteset_Bombardier_Multilevel_Liv3_Purchase,   "gfx/Bombardier_Multilevel_Liv3.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Bombardier_Multilevel_Liv3,   "gfx/Bombardier_Multilevel_Liv3.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv3_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Bombardier_Multilevel_Liv3;
+    1: spriteset_Bombardier_Multilevel_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv3_rearcheck1, position_in_consist_from_end){
+    0 : switch_Bombardier_Multilevel_Liv3_SpriteStack1;
+    return spriteset_Bombardier_Multilevel_Liv3;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv3_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Bombardier_Multilevel_Liv3;
+    1: spriteset_Bombardier_Multilevel_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv3_rearcheck2, position_in_consist_from_end){
+    0 : switch_Bombardier_Multilevel_Liv3_SpriteStack2;
+    return spriteset_Bombardier_Multilevel_Liv3;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv3_position, vehicle_is_flipped) {
+ 0: switch_Bombardier_Multilevel_Liv3_rearcheck1;
+ 1: switch_Bombardier_Multilevel_Liv3_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Bombardier_Multilevel_Liv3, 9003) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    110;
+        running_cost_factor:            5;
+        loading_speed:                    20;
+
+        variant_group: Item_Bombardier_Multilevel_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_BOMBARDIER_MULTILEVEL);
+        introduction_date:                date(2006, 1, 1);
+
+        speed:                            110 mph;
+        weight:                            61 ton;
+        cargo_capacity:                    155/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Bombardier_Multilevel_Liv3_position;
+    purchase:                            spriteset_Bombardier_Multilevel_Liv3_Purchase;
+    additional_text: string(STR_INFO_BOMBARDIER_MULTILEVEL);
+}
+}
+
+//Cab_Bombardier_Multilevel_Liv3
+spriteset(spriteset_Cab_Bombardier_Multilevel_Liv3_Purchase,   "gfx/Bombardier_Multilevel_Liv3.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_Bombardier_Multilevel_Liv3_Fw,   "gfx/Bombardier_Multilevel_Liv3.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_Bombardier_Multilevel_Liv3_Rw,   "gfx/Bombardier_Multilevel_Liv3.png") {template_8_r(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv3_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Bombardier_Multilevel_Liv3_Fw;
+    1: spriteset_Bombardier_Multilevel_EOTD_CabFw;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv3_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Bombardier_Multilevel_Liv3_Rw;
+    1: spriteset_Bombardier_Multilevel_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_Bombardier_Multilevel_Liv3_rearcheck, position_in_consist_from_end){
+    0 : switch_Bombardier_Multilevel_Liv3_SpriteStackRw;
+    return switch_Bombardier_Multilevel_Liv3_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv3, 9013) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    4;
+        running_cost_factor:            5;
+        loading_speed:                    20;
+
+        variant_group: Item_Cab_Bombardier_Multilevel_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_CAB_BOMBARDIER_MULTILEVEL);
+        introduction_date:                date(2006, 1, 1);
+        vehicle_life:                     50;
+        model_life:                        30;
+
+        speed:                            110 mph;
+        power:                            1 hp;
+        weight:                            63 ton;
+        cargo_capacity:                    155/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_Cab_Bombardier_Multilevel_Liv3_rearcheck;
+    purchase:                            spriteset_Cab_Bombardier_Multilevel_Liv3_Purchase;
+    additional_text: string(STR_INFO_CAB_BOMBARDIER_MULTILEVEL);
 }
 }
 
@@ -3287,6 +4383,7 @@ item (FEAT_TRAINS, Item_Mail_Budd_Amfleet_Liv0, 11710) {
 }
 }
 
+//Cab_Budd_Amfleet_Liv0
 spriteset(spriteset_Cab_Budd_Amfleet_Liv0_Purchase,   "gfx/Budd_Amfleet_Liv0.png") {template_purchase_8(367, 21)}
 spriteset(spriteset_Cab_Budd_Amfleet_Liv0_Fw,   "gfx/Budd_Amfleet_Liv0.png") {template_8(367, 39)}
 spriteset(spriteset_Cab_Budd_Amfleet_Liv0_Rw,   "gfx/Budd_Amfleet_Liv0.png") {template_8_r(367, 39)}
