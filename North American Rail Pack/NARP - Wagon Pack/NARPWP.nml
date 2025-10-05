@@ -2238,7 +2238,7 @@ switch(FEAT_TRAINS, SELF, switch_Budd_GalleryCar_Liv0_position, vehicle_is_flipp
 
 item (FEAT_TRAINS, Item_Budd_GalleryCar_Liv0, 8500) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -2306,7 +2306,7 @@ switch(FEAT_TRAINS, SELF, sw_Cab_Budd_GalleryCar_Liv0_rearcheck, position_in_con
 
 item (FEAT_TRAINS, Item_Cab_Budd_GalleryCar_Liv0, 8510) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -2394,7 +2394,7 @@ switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv0_position, vehicle_is_fl
 
 item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv0, 8540) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -2462,7 +2462,7 @@ switch(FEAT_TRAINS, SELF, sw_Cab_Pullman_GalleryCar_Liv0_rearcheck, position_in_
 
 item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv0, 8550) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -2545,7 +2545,7 @@ switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv1_position, vehicle_is_fl
 
 item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv1, 8541) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -2613,7 +2613,7 @@ switch(FEAT_TRAINS, SELF, sw_Cab_Pullman_GalleryCar_Liv1_rearcheck, position_in_
 
 item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv1, 8551) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -2696,7 +2696,7 @@ switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv2_position, vehicle_is_fl
 
 item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv2, 8542) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -2764,7 +2764,7 @@ switch(FEAT_TRAINS, SELF, sw_Cab_Pullman_GalleryCar_Liv2_rearcheck, position_in_
 
 item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv2, 8552) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -2847,7 +2847,7 @@ switch(FEAT_TRAINS, SELF, switch_Pullman_GalleryCar_Liv3_position, vehicle_is_fl
 
 item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv3, 8543) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -2915,7 +2915,7 @@ switch(FEAT_TRAINS, SELF, sw_Cab_Pullman_GalleryCar_Liv3_rearcheck, position_in_
 
 item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv3, 8553) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3003,7 +3003,7 @@ switch(FEAT_TRAINS, SELF, switch_HSC_BiLevel_Liv0_position, vehicle_is_flipped) 
 
 item (FEAT_TRAINS, Item_HSC_BiLevel_Liv0, 8700) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3071,7 +3071,7 @@ switch(FEAT_TRAINS, SELF, sw_Cab_HSC_BiLevel_Liv0_rearcheck, position_in_consist
 
 item (FEAT_TRAINS, Item_Cab_HSC_BiLevel_Liv0, 8710) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3159,7 +3159,7 @@ switch(FEAT_TRAINS, SELF, switch_BuddComeng_DoubleDecker_Liv0_position, vehicle_
 
 item (FEAT_TRAINS, Item_BuddComeng_DoubleDecker_Liv0, 8740) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3227,7 +3227,7 @@ switch(FEAT_TRAINS, SELF, sw_Cab_BuddComeng_DoubleDecker_Liv0_rearcheck, positio
 
 item (FEAT_TRAINS, Item_Cab_BuddComeng_DoubleDecker_Liv0, 8750) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3273,6 +3273,86 @@ item (FEAT_TRAINS, Item_Cab_BuddComeng_DoubleDecker_Liv0, 8750) {
 }
 }
 
+spriteset(spriteset_Comeng_C1_EOTD,   "gfx/Comeng_C1_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_Comeng_C1_EOTD_r,   "gfx/Comeng_C1_EOTD.png") {template_8_r(7, 39)}
+
+//Comeng_C1_Liv0
+spriteset(spriteset_Comeng_C1_Liv0_Purchase,   "gfx/Comeng_C1_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Comeng_C1_Liv0,   "gfx/Comeng_C1_Liv0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_C1_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_C1_Liv0;
+    1: spriteset_Comeng_C1_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_C1_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Comeng_C1_Liv0_SpriteStack1;
+    return spriteset_Comeng_C1_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_C1_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_C1_Liv0;
+    1: spriteset_Comeng_C1_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_C1_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Comeng_C1_Liv0_SpriteStack2;
+    return spriteset_Comeng_C1_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_C1_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Comeng_C1_Liv0_rearcheck1;
+ 1: switch_Comeng_C1_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Comeng_C1_Liv0, 8920) {
+    property {
+        climates_available:                (param_PrototypeDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    110;
+        running_cost_factor:            5;
+        loading_speed:                    20;
+
+//        variant_group: Item_Comeng_C1_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_COMENG_C1);
+        introduction_date:                date(1991, 1, 1);
+
+        speed:                            110 mph;
+        weight:                            65 ton;
+        cargo_capacity:                    150/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Comeng_C1_Liv0_position;
+    purchase:                            spriteset_Comeng_C1_Liv0_Purchase;
+    additional_text: string(STR_INFO_COMENG_C1);
+}
+}
+
 spriteset(spriteset_Bombardier_Multilevel_EOTD,   "gfx/Bombardier_Multilevel_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_Bombardier_Multilevel_EOTD_r,   "gfx/Bombardier_Multilevel_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_Bombardier_Multilevel_EOTD_CabFw,   "gfx/Bombardier_Multilevel_EOTD.png") {template_8(187, 39)}
@@ -3315,7 +3395,7 @@ switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv0_position, vehicle_is
 
 item (FEAT_TRAINS, Item_Bombardier_Multilevel_Liv0, 9000) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3383,7 +3463,7 @@ switch(FEAT_TRAINS, SELF, sw_Cab_Bombardier_Multilevel_Liv0_rearcheck, position_
 
 item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv0, 9010) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3466,7 +3546,7 @@ switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv1_position, vehicle_is
 
 item (FEAT_TRAINS, Item_Bombardier_Multilevel_Liv1, 9001) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3534,7 +3614,7 @@ switch(FEAT_TRAINS, SELF, sw_Cab_Bombardier_Multilevel_Liv1_rearcheck, position_
 
 item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv1, 9011) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3617,7 +3697,7 @@ switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv2_position, vehicle_is
 
 item (FEAT_TRAINS, Item_Bombardier_Multilevel_Liv2, 9002) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3685,7 +3765,7 @@ switch(FEAT_TRAINS, SELF, sw_Cab_Bombardier_Multilevel_Liv2_rearcheck, position_
 
 item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv2, 9012) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3768,7 +3848,7 @@ switch(FEAT_TRAINS, SELF, switch_Bombardier_Multilevel_Liv3_position, vehicle_is
 
 item (FEAT_TRAINS, Item_Bombardier_Multilevel_Liv3, 9003) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3836,7 +3916,7 @@ switch(FEAT_TRAINS, SELF, sw_Cab_Bombardier_Multilevel_Liv3_rearcheck, position_
 
 item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv3, 9013) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -3931,7 +4011,7 @@ switch(FEAT_TRAINS, SELF, switch_HeavyweightCar_Liv0_position, vehicle_is_flippe
 
 item (FEAT_TRAINS, Item_HeavyweightCar_Liv0, 10920) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -4008,7 +4088,7 @@ switch(FEAT_TRAINS, SELF, switch_Observation_HeavyweightCar_Liv0_position, vehic
 
 item (FEAT_TRAINS, Item_Observation_HeavyweightCar_Liv0, 10930) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -4086,7 +4166,7 @@ switch(FEAT_TRAINS, SELF, switch_Mail_HeavyweightCar_Liv0_position, vehicle_is_f
 
 item (FEAT_TRAINS, Item_Mail_HeavyweightCar_Liv0, 10940) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_ARMOURED);
         cargo_allow_refit:               [ MAIL, GOOD, FOOD, BEER, FRUT, FISH, VALU, GOLD, DIAM, DYES, ENSP, FERT, MILK, MNSP, FMSP];
 		cargo_disallow_refit: [PASS, TOUR, COAL, OIL_, LVST, GRAI, WOOD, IORE, STEL, PAPR, WHEA, RUBR, MAIZ, CORE, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, AORE, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, FICR, GLAS, GRVL, JAVA, LIME, OLSD, PETR, PLAS, POTA, RCYC, RFPR, SAND, SCMT, SGBT, SGCN, SULP, VEHI, VPTS, WDPR, WOOL, URAN, YETI, YETY];
@@ -4176,7 +4256,7 @@ switch(FEAT_TRAINS, SELF, switch_CompositeHeavyweight_Liv0_position, vehicle_is_
 
 item (FEAT_TRAINS, Item_CompositeHeavyweight_Liv0, 11000) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -4253,7 +4333,7 @@ switch(FEAT_TRAINS, SELF, switch_Observation_CompositeHeavyweight_Liv0_position,
 
 item (FEAT_TRAINS, Item_Observation_CompositeHeavyweight_Liv0, 11010) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -4331,7 +4411,7 @@ switch(FEAT_TRAINS, SELF, switch_Mail_CompositeHeavyweight_Liv0_position, vehicl
 
 item (FEAT_TRAINS, Item_Mail_CompositeHeavyweight_Liv0, 11020) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_ARMOURED);
         cargo_allow_refit:               [ MAIL, GOOD, FOOD, BEER, FRUT, FISH, VALU, GOLD, DIAM, DYES, ENSP, FERT, MILK, MNSP, FMSP];
 		cargo_disallow_refit: [PASS, TOUR, COAL, OIL_, LVST, GRAI, WOOD, IORE, STEL, PAPR, WHEA, RUBR, MAIZ, CORE, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, AORE, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, FICR, GLAS, GRVL, JAVA, LIME, OLSD, PETR, PLAS, POTA, RCYC, RFPR, SAND, SCMT, SGBT, SGCN, SULP, VEHI, VPTS, WDPR, WOOL, URAN, YETI, YETY];
@@ -4420,7 +4500,7 @@ switch(FEAT_TRAINS, SELF, switch_Budd_Amfleet_Liv0_position, vehicle_is_flipped)
 
 item (FEAT_TRAINS, Item_Budd_Amfleet_Liv0, 11700) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -4498,7 +4578,7 @@ switch(FEAT_TRAINS, SELF, switch_Mail_Budd_Amfleet_Liv0_position, vehicle_is_fli
 
 item (FEAT_TRAINS, Item_Mail_Budd_Amfleet_Liv0, 11710) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_ARMOURED);
         cargo_allow_refit:               [ MAIL, GOOD, FOOD, BEER, FRUT, FISH, VALU, GOLD, DIAM, DYES, ENSP, FERT, MILK, MNSP, FMSP];
 		cargo_disallow_refit: [PASS, TOUR, COAL, OIL_, LVST, GRAI, WOOD, IORE, STEL, PAPR, WHEA, RUBR, MAIZ, CORE, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, AORE, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, FICR, GLAS, GRVL, JAVA, LIME, OLSD, PETR, PLAS, POTA, RCYC, RFPR, SAND, SCMT, SGBT, SGCN, SULP, VEHI, VPTS, WDPR, WOOL, URAN, YETI, YETY];
@@ -4567,7 +4647,7 @@ switch(FEAT_TRAINS, SELF, sw_Cab_Budd_Amfleet_Liv0_rearcheck, position_in_consis
 
 item (FEAT_TRAINS, Item_Cab_Budd_Amfleet_Liv0, 11720) {
     property {
-        climates_available:             ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
