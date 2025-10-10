@@ -595,9 +595,14 @@ spriteset(spriteset_EMC_E1_Liv0_Purchase,   "gfx/EMC_E1_Liv0.png") {template_pur
 spriteset(spriteset_EMC_E1_Liv0_A,   "gfx/EMC_E1_Liv0.png") {template_8(7, 39)}
 spriteset(spriteset_EMC_E1_Liv0_B,   "gfx/EMC_E1_Liv0.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv0_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMC_E1_Liv0_A; // <- not flipped
+  spriteset_EMC_E1_Liv0_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv0_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMC_E1_Liv0_A; // <- not flipped
- 1: spriteset_EMC_E1_Liv0_B; // <- flipped
+ 1: switch_EMC_E1_Liv0_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv0_rear_flipcheck, vehicle_is_flipped) {
@@ -664,9 +669,14 @@ spriteset(spriteset_EMC_E1_Liv6_Purchase,   "gfx/EMC_E1_Liv6.png") {template_pur
 spriteset(spriteset_EMC_E1_Liv6_A,   "gfx/EMC_E1_Liv6.png") {template_8(7, 39)}
 spriteset(spriteset_EMC_E1_Liv6_B,   "gfx/EMC_E1_Liv6.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv6_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMC_E1_Liv6_A; // <- not flipped
+  spriteset_EMC_E1_Liv6_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv6_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMC_E1_Liv6_A; // <- not flipped
- 1: spriteset_EMC_E1_Liv6_B; // <- flipped
+ 1: switch_EMC_E1_Liv6_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv6_rear_flipcheck, vehicle_is_flipped) {
@@ -731,9 +741,14 @@ spriteset(spriteset_EMC_E1_Liv7_Purchase,   "gfx/EMC_E1_Liv7.png") {template_pur
 spriteset(spriteset_EMC_E1_Liv7_A,   "gfx/EMC_E1_Liv7.png") {template_8(7, 39)}
 spriteset(spriteset_EMC_E1_Liv7_B,   "gfx/EMC_E1_Liv7.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv7_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMC_E1_Liv7_A; // <- not flipped
+  spriteset_EMC_E1_Liv7_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv7_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMC_E1_Liv7_A; // <- not flipped
- 1: spriteset_EMC_E1_Liv7_B; // <- flipped
+ 1: switch_EMC_E1_Liv7_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv7_rear_flipcheck, vehicle_is_flipped) {
@@ -798,9 +813,14 @@ spriteset(spriteset_EMC_E1_Liv8_Purchase,   "gfx/EMC_E1_Liv8.png") {template_pur
 spriteset(spriteset_EMC_E1_Liv8_A,   "gfx/EMC_E1_Liv8.png") {template_8(7, 39)}
 spriteset(spriteset_EMC_E1_Liv8_B,   "gfx/EMC_E1_Liv8.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv8_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMC_E1_Liv8_A; // <- not flipped
+  spriteset_EMC_E1_Liv8_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv8_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMC_E1_Liv8_A; // <- not flipped
- 1: spriteset_EMC_E1_Liv8_B; // <- flipped
+ 1: switch_EMC_E1_Liv8_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv8_rear_flipcheck, vehicle_is_flipped) {
@@ -865,9 +885,14 @@ spriteset(spriteset_EMC_E1_Liv9_Purchase,   "gfx/EMC_E1_Liv9.png") {template_pur
 spriteset(spriteset_EMC_E1_Liv9_A,   "gfx/EMC_E1_Liv9.png") {template_8(7, 39)}
 spriteset(spriteset_EMC_E1_Liv9_B,   "gfx/EMC_E1_Liv9.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv9_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMC_E1_Liv9_A; // <- not flipped
+  spriteset_EMC_E1_Liv9_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv9_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMC_E1_Liv9_A; // <- not flipped
- 1: spriteset_EMC_E1_Liv9_B; // <- flipped
+ 1: switch_EMC_E1_Liv9_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv9_rear_flipcheck, vehicle_is_flipped) {
@@ -932,9 +957,14 @@ spriteset(spriteset_EMC_E1_Liv10_Purchase,   "gfx/EMC_E1_Liv10.png") {template_p
 spriteset(spriteset_EMC_E1_Liv10_A,   "gfx/EMC_E1_Liv10.png") {template_8(7, 39)}
 spriteset(spriteset_EMC_E1_Liv10_B,   "gfx/EMC_E1_Liv10.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv10_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMC_E1_Liv10_A; // <- not flipped
+  spriteset_EMC_E1_Liv10_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv10_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMC_E1_Liv10_A; // <- not flipped
- 1: spriteset_EMC_E1_Liv10_B; // <- flipped
+ 1: switch_EMC_E1_Liv10_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv10_rear_flipcheck, vehicle_is_flipped) {
@@ -999,9 +1029,14 @@ spriteset(spriteset_EMC_E1_Liv11_Purchase,   "gfx/EMC_E1_Liv11.png") {template_p
 spriteset(spriteset_EMC_E1_Liv11_A,   "gfx/EMC_E1_Liv11.png") {template_8(7, 39)}
 spriteset(spriteset_EMC_E1_Liv11_B,   "gfx/EMC_E1_Liv11.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv11_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMC_E1_Liv11_A; // <- not flipped
+  spriteset_EMC_E1_Liv11_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv11_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMC_E1_Liv11_A; // <- not flipped
- 1: spriteset_EMC_E1_Liv11_B; // <- flipped
+ 1: switch_EMC_E1_Liv11_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv11_rear_flipcheck, vehicle_is_flipped) {
@@ -1066,9 +1101,14 @@ spriteset(spriteset_EMC_E1_Liv12_Purchase,   "gfx/EMC_E1_Liv12.png") {template_p
 spriteset(spriteset_EMC_E1_Liv12_A,   "gfx/EMC_E1_Liv12.png") {template_8(7, 39)}
 spriteset(spriteset_EMC_E1_Liv12_B,   "gfx/EMC_E1_Liv12.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv12_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMC_E1_Liv12_A; // <- not flipped
+  spriteset_EMC_E1_Liv12_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv12_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMC_E1_Liv12_A; // <- not flipped
- 1: spriteset_EMC_E1_Liv12_B; // <- flipped
+ 1: switch_EMC_E1_Liv12_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv12_rear_flipcheck, vehicle_is_flipped) {
@@ -1133,9 +1173,14 @@ spriteset(spriteset_EMC_E1_Liv13_Purchase,   "gfx/EMC_E1_Liv13.png") {template_p
 spriteset(spriteset_EMC_E1_Liv13_A,   "gfx/EMC_E1_Liv13.png") {template_8(7, 39)}
 spriteset(spriteset_EMC_E1_Liv13_B,   "gfx/EMC_E1_Liv13.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv13_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMC_E1_Liv13_A; // <- not flipped
+  spriteset_EMC_E1_Liv13_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv13_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMC_E1_Liv13_A; // <- not flipped
- 1: spriteset_EMC_E1_Liv13_B; // <- flipped
+ 1: switch_EMC_E1_Liv13_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv13_rear_flipcheck, vehicle_is_flipped) {
@@ -1200,9 +1245,14 @@ spriteset(spriteset_EMC_E1_Liv31_Purchase,   "gfx/EMC_E1_Liv31.png") {template_p
 spriteset(spriteset_EMC_E1_Liv31_A,   "gfx/EMC_E1_Liv31.png") {template_8(7, 39)}
 spriteset(spriteset_EMC_E1_Liv31_B,   "gfx/EMC_E1_Liv31.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv31_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMC_E1_Liv31_A; // <- not flipped
+  spriteset_EMC_E1_Liv31_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv31_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMC_E1_Liv31_A; // <- not flipped
- 1: spriteset_EMC_E1_Liv31_B; // <- flipped
+ 1: switch_EMC_E1_Liv31_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMC_E1_Liv31_rear_flipcheck, vehicle_is_flipped) {
@@ -1267,9 +1317,14 @@ spriteset(spriteset_EMC_E3_Liv0_Purchase,   "gfx/EMC_E3_Liv0.png") {template_pur
 spriteset(spriteset_EMC_E3_Liv0_A,   "gfx/EMC_E3_Liv0.png") {template_8(7, 39)}
 spriteset(spriteset_EMC_E3_Liv0_B,   "gfx/EMC_E3_Liv0.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMC_E3_Liv0_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMC_E3_Liv0_A; // <- not flipped
+  spriteset_EMC_E3_Liv0_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMC_E3_Liv0_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMC_E3_Liv0_A; // <- not flipped
- 1: spriteset_EMC_E3_Liv0_B; // <- flipped
+ 1: switch_EMC_E3_Liv0_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMC_E3_Liv0_rear_flipcheck, vehicle_is_flipped) {
@@ -1334,9 +1389,14 @@ spriteset(spriteset_EMD_E7_Liv0_Purchase,   "gfx/EMD_E7_Liv0.png") {template_pur
 spriteset(spriteset_EMD_E7_Liv0_A,   "gfx/EMD_E7_Liv0.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_E7_Liv0_B,   "gfx/EMD_E7_Liv0.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMD_E7_Liv0_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMD_E7_Liv0_A; // <- not flipped
+  spriteset_EMD_E7_Liv0_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMD_E7_Liv0_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMD_E7_Liv0_A; // <- not flipped
- 1: spriteset_EMD_E7_Liv0_B; // <- flipped
+ 1: switch_EMD_E7_Liv0_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_E7_Liv0_rear_flipcheck, vehicle_is_flipped) {
@@ -1401,9 +1461,14 @@ spriteset(spriteset_ALCO_PA_Liv0_Purchase,   "gfx/ALCO_PA_Liv0.png") {template_p
 spriteset(spriteset_ALCO_PA_Liv0_A,   "gfx/ALCO_PA_Liv0.png") {template_8(7, 39)}
 spriteset(spriteset_ALCO_PA_Liv0_B,   "gfx/ALCO_PA_Liv0.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_ALCO_PA_Liv0_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_ALCO_PA_Liv0_A; // <- not flipped
+  spriteset_ALCO_PA_Liv0_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_ALCO_PA_Liv0_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_ALCO_PA_Liv0_A; // <- not flipped
- 1: spriteset_ALCO_PA_Liv0_B; // <- flipped
+ 1: switch_ALCO_PA_Liv0_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_ALCO_PA_Liv0_rear_flipcheck, vehicle_is_flipped) {
@@ -1468,9 +1533,14 @@ spriteset(spriteset_EMD_E9_Liv0_Purchase,   "gfx/EMD_E9_Liv0.png") {template_pur
 spriteset(spriteset_EMD_E9_Liv0_A,   "gfx/EMD_E9_Liv0.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_E9_Liv0_B,   "gfx/EMD_E9_Liv0.png") {template_8(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMD_E9_Liv0_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMD_E9_Liv0_A; // <- not flipped
+  spriteset_EMD_E9_Liv0_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMD_E9_Liv0_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMD_E9_Liv0_A; // <- not flipped
- 1: spriteset_EMD_E9_Liv0_B; // <- flipped
+ 1: switch_EMD_E9_Liv0_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_E9_Liv0_rear_flipcheck, vehicle_is_flipped) {
@@ -4688,7 +4758,7 @@ item(FEAT_TRAINS, Item_GE_P42DC_Liv0, 6750) {
 		cargo_capacity:                  0;
 
 //        variant_group: Item_GE_P42DC_Liv0;
-        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
         default: switch_GE_P42DC_Liv0_position;
@@ -4765,9 +4835,14 @@ spriteset(spriteset_EMD_FT_Liv0_Purchase,   "gfx/EMD_FT_Liv0.png") {template_pur
 spriteset(spriteset_EMD_FT_Liv0_A,   "gfx/EMD_FT_Liv0.png") {template_7(7, 39)}
 spriteset(spriteset_EMD_FT_Liv0_B,   "gfx/EMD_FT_Liv0.png") {template_7(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMD_FT_Liv0_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMD_FT_Liv0_A; // <- not flipped
+  spriteset_EMD_FT_Liv0_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMD_FT_Liv0_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMD_FT_Liv0_A; // <- not flipped
- 1: spriteset_EMD_FT_Liv0_B; // <- flipped
+ 1: switch_EMD_FT_Liv0_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_FT_Liv0_rear_flipcheck, vehicle_is_flipped) {
@@ -4785,7 +4860,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_FT_Liv0_graphics, position_in_vehid_chain) 
   switch_EMD_FT_Liv0_rear_position;
 }
 
-item(FEAT_TRAINS, Item_EMD_FT_Liv0, 27000) {
+item(FEAT_TRAINS, Item_EMD_FT_Liv0, 29000) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4832,9 +4907,14 @@ spriteset(spriteset_ALCO_FA_Liv0_Purchase,   "gfx/ALCO_FA_Liv0.png") {template_p
 spriteset(spriteset_ALCO_FA_Liv0_A,   "gfx/ALCO_FA_Liv0.png") {template_7(7, 39)}
 spriteset(spriteset_ALCO_FA_Liv0_B,   "gfx/ALCO_FA_Liv0.png") {template_7(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_ALCO_FA_Liv0_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_ALCO_FA_Liv0_A; // <- not flipped
+  spriteset_ALCO_FA_Liv0_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_ALCO_FA_Liv0_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_ALCO_FA_Liv0_A; // <- not flipped
- 1: spriteset_ALCO_FA_Liv0_B; // <- flipped
+ 1: switch_ALCO_FA_Liv0_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_ALCO_FA_Liv0_rear_flipcheck, vehicle_is_flipped) {
@@ -4852,7 +4932,7 @@ switch(FEAT_TRAINS, SELF, switch_ALCO_FA_Liv0_graphics, position_in_vehid_chain)
   switch_ALCO_FA_Liv0_rear_position;
 }
 
-item(FEAT_TRAINS, Item_ALCO_FA_Liv0, 27200) {
+item(FEAT_TRAINS, Item_ALCO_FA_Liv0, 29200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4899,9 +4979,14 @@ spriteset(spriteset_EMD_F3_Liv0_Purchase,   "gfx/EMD_F3_Liv0.png") {template_pur
 spriteset(spriteset_EMD_F3_Liv0_A,   "gfx/EMD_F3_Liv0.png") {template_7(7, 39)}
 spriteset(spriteset_EMD_F3_Liv0_B,   "gfx/EMD_F3_Liv0.png") {template_7(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMD_F3_Liv0_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMD_F3_Liv0_A; // <- not flipped
+  spriteset_EMD_F3_Liv0_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMD_F3_Liv0_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMD_F3_Liv0_A; // <- not flipped
- 1: spriteset_EMD_F3_Liv0_B; // <- flipped
+ 1: switch_EMD_F3_Liv0_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_F3_Liv0_rear_flipcheck, vehicle_is_flipped) {
@@ -4919,7 +5004,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F3_Liv0_graphics, position_in_vehid_chain) 
   switch_EMD_F3_Liv0_rear_position;
 }
 
-item(FEAT_TRAINS, Item_EMD_F3_Liv0, 27100) {
+item(FEAT_TRAINS, Item_EMD_F3_Liv0, 29100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4966,9 +5051,14 @@ spriteset(spriteset_EMD_F7_Liv0_Purchase,   "gfx/EMD_F7_Liv0.png") {template_pur
 spriteset(spriteset_EMD_F7_Liv0_A,   "gfx/EMD_F7_Liv0.png") {template_7(7, 39)}
 spriteset(spriteset_EMD_F7_Liv0_B,   "gfx/EMD_F7_Liv0.png") {template_7(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMD_F7_Liv0_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMD_F7_Liv0_A; // <- not flipped
+  spriteset_EMD_F7_Liv0_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMD_F7_Liv0_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMD_F7_Liv0_A; // <- not flipped
- 1: spriteset_EMD_F7_Liv0_B; // <- flipped
+ 1: switch_EMD_F7_Liv0_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_F7_Liv0_rear_flipcheck, vehicle_is_flipped) {
@@ -4986,7 +5076,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F7_Liv0_graphics, position_in_vehid_chain) 
   switch_EMD_F7_Liv0_rear_position;
 }
 
-item(FEAT_TRAINS, Item_EMD_F7_Liv0, 27300) {
+item(FEAT_TRAINS, Item_EMD_F7_Liv0, 29300) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5033,9 +5123,14 @@ spriteset(spriteset_EMD_F9_Liv0_Purchase,   "gfx/EMD_F9_Liv0.png") {template_pur
 spriteset(spriteset_EMD_F9_Liv0_A,   "gfx/EMD_F9_Liv0.png") {template_7(7, 39)}
 spriteset(spriteset_EMD_F9_Liv0_B,   "gfx/EMD_F9_Liv0.png") {template_7(7, 69)}
 
+switch(FEAT_TRAINS, SELF, switch_EMD_F9_Liv0_lead_Altcheck, position_in_consist_from_end) {
+ 0: spriteset_EMD_F9_Liv0_A; // <- not flipped
+  spriteset_EMD_F9_Liv0_B; // <- flipped
+}
+ 
 switch(FEAT_TRAINS, SELF, switch_EMD_F9_Liv0_lead_flipcheck, vehicle_is_flipped) {
  0: spriteset_EMD_F9_Liv0_A; // <- not flipped
- 1: spriteset_EMD_F9_Liv0_B; // <- flipped
+ 1: switch_EMD_F9_Liv0_lead_Altcheck; // <- flipped
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_F9_Liv0_rear_flipcheck, vehicle_is_flipped) {
@@ -5053,7 +5148,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F9_Liv0_graphics, position_in_vehid_chain) 
   switch_EMD_F9_Liv0_rear_position;
 }
 
-item(FEAT_TRAINS, Item_EMD_F9_Liv0, 27350) {
+item(FEAT_TRAINS, Item_EMD_F9_Liv0, 29350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5133,7 +5228,7 @@ switch(FEAT_TRAINS, SELF, switch_NYC_P1AMotor_Liv0_position, vehicle_is_flipped)
  1: switch_NYC_P1AMotor_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_NYC_P1AMotor_Liv0, 29000) {
+item(FEAT_TRAINS, Item_NYC_P1AMotor_Liv0, 31100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5214,7 +5309,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_R1_Liv0_position, vehicle_is_flipped) {
  1: switch_PRR_R1_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_PRR_R1_Liv0, 29100) {
+item(FEAT_TRAINS, Item_PRR_R1_Liv0, 31200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5295,7 +5390,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0_position, vehicle_is_flipped) {
  1: switch_PRR_GG1_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_PRR_GG1_Liv0, 29150) {
+item(FEAT_TRAINS, Item_PRR_GG1_Liv0, 32250) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5376,7 +5471,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv0_position, vehicle_is_flipped) {
  1: switch_GE_EP4_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_GE_EP4_Liv0, 29200) {
+item(FEAT_TRAINS, Item_GE_EP4_Liv0, 32300) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5453,7 +5548,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv35_position, vehicle_is_flipped) {
  1: switch_GE_EP4_Liv35_r;
 }
 
-item(FEAT_TRAINS, Item_GE_EP4_Liv35, 29235) {
+item(FEAT_TRAINS, Item_GE_EP4_Liv35, 32335) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5534,7 +5629,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_EP5_Liv0_position, vehicle_is_flipped) {
  1: switch_GE_EP5_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_GE_EP5_Liv0, 29350) {
+item(FEAT_TRAINS, Item_GE_EP5_Liv0, 32400) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5615,7 +5710,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_E60CH_Liv0_position, vehicle_is_flipped) {
  1: switch_GE_E60CH_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_GE_E60CH_Liv0, 29450) {
+item(FEAT_TRAINS, Item_GE_E60CH_Liv0, 32500) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5696,7 +5791,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_AEM7_Liv0_position, vehicle_is_flipped) {
  1: switch_EMD_AEM7_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_EMD_AEM7_Liv0, 29600) {
+item(FEAT_TRAINS, Item_EMD_AEM7_Liv0, 32600) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5777,7 +5872,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_AGE8_Liv0_position, vehicle_is_flipped) {
  1: switch_GE_AGE8_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_GE_AGE8_Liv0, 29650) {
+item(FEAT_TRAINS, Item_GE_AGE8_Liv0, 32650) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5908,7 +6003,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv0_position, position_in_consist) {
   switch_EMD_GF6CH_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv0, 29700) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv0, 32700) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6031,7 +6126,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv6_position, position_in_consist) {
   switch_EMD_GF6CH_Liv6_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv6, 29706) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv6, 32706) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6154,7 +6249,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv7_position, position_in_consist) {
   switch_EMD_GF6CH_Liv7_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv7, 29707) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv7, 32707) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6277,7 +6372,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv8_position, position_in_consist) {
   switch_EMD_GF6CH_Liv8_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv8, 29708) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv8, 32708) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6400,7 +6495,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv9_position, position_in_consist) {
   switch_EMD_GF6CH_Liv9_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv9, 29709) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv9, 32709) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6523,7 +6618,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv10_position, position_in_consist) 
   switch_EMD_GF6CH_Liv10_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv10, 29710) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv10, 32710) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6646,7 +6741,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv11_position, position_in_consist) 
   switch_EMD_GF6CH_Liv11_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv11, 29711) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv11, 32711) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6769,7 +6864,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv12_position, position_in_consist) 
   switch_EMD_GF6CH_Liv12_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv12, 29712) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv12, 32712) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6892,7 +6987,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv13_position, position_in_consist) 
   switch_EMD_GF6CH_Liv13_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv13, 29713) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv13, 32713) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -7015,7 +7110,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv14_position, position_in_consist) 
   switch_EMD_GF6CH_Liv14_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv14, 29714) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv14, 32714) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -7138,7 +7233,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv15_position, position_in_consist) 
   switch_EMD_GF6CH_Liv15_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv15, 29715) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv15, 32715) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -7261,7 +7356,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv16_position, position_in_consist) 
   switch_EMD_GF6CH_Liv16_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv16, 29716) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv16, 32716) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -7384,7 +7479,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv17_position, position_in_consist) 
   switch_EMD_GF6CH_Liv17_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv17, 29717) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv17, 32717) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -7507,7 +7602,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv18_position, position_in_consist) 
   switch_EMD_GF6CH_Liv18_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv18, 29718) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv18, 32718) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -7630,7 +7725,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv19_position, position_in_consist) 
   switch_EMD_GF6CH_Liv19_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv19, 29719) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv19, 32719) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -7753,7 +7848,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv26_position, position_in_consist) 
   switch_EMD_GF6CH_Liv26_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv26, 29726) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv26, 32726) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -7876,7 +7971,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv27_position, position_in_consist) 
   switch_EMD_GF6CH_Liv27_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv27, 29727) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv27, 32727) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -7999,7 +8094,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv28_position, position_in_consist) 
   switch_EMD_GF6CH_Liv28_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv28, 29728) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv28, 32728) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -8122,7 +8217,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv35_position, position_in_consist) 
   switch_EMD_GF6CH_Liv35_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv35, 29735) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv35, 32735) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -8245,7 +8340,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv37_position, position_in_consist) 
   switch_EMD_GF6CH_Liv37_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv37, 29737) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv37, 32737) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -8368,7 +8463,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv39_position, position_in_consist) 
   switch_EMD_GF6CH_Liv39_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv39, 29739) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv39, 32739) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -8491,7 +8586,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv40_position, position_in_consist) 
   switch_EMD_GF6CH_Liv40_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv40, 29740) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv40, 32740) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -8614,7 +8709,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv41_position, position_in_consist) 
   switch_EMD_GF6CH_Liv41_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv41, 29741) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv41, 32741) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -8737,7 +8832,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv46_position, position_in_consist) 
   switch_EMD_GF6CH_Liv46_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GF6CH_Liv46, 29746) {
+item(FEAT_TRAINS, Item_EMD_GF6CH_Liv46, 32746) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -8817,7 +8912,7 @@ switch(FEAT_TRAINS, SELF, switch_ABB_ALP44_Liv0_position, vehicle_is_flipped) {
  1: switch_ABB_ALP44_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_ABB_ALP44_Liv0, 29750) {
+item(FEAT_TRAINS, Item_ABB_ALP44_Liv0, 32750) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -8898,7 +8993,7 @@ switch(FEAT_TRAINS, SELF, switch_Bombardier_HHP8_Liv0_position, vehicle_is_flipp
  1: switch_Bombardier_HHP8_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_Bombardier_HHP8_Liv0, 29850) {
+item(FEAT_TRAINS, Item_Bombardier_HHP8_Liv0, 32850) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -8979,7 +9074,7 @@ switch(FEAT_TRAINS, SELF, switch_Bombardier_ALP46_Liv0_position, vehicle_is_flip
  1: switch_Bombardier_ALP46_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_Bombardier_ALP46_Liv0, 29900) {
+item(FEAT_TRAINS, Item_Bombardier_ALP46_Liv0, 32900) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -9060,7 +9155,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_L6_Liv0_position, vehicle_is_flipped) {
  1: switch_PRR_L6_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_PRR_L6_Liv0, 32150) {
+item(FEAT_TRAINS, Item_PRR_L6_Liv0, 35150) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -9191,7 +9286,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv0_position, position_in_consist) {
   switch_GMD_GF6C_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_GMD_GF6C_Liv0, 32850) {
+item(FEAT_TRAINS, Item_GMD_GF6C_Liv0, 35850) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -9314,7 +9409,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv6_position, position_in_consist) {
   switch_GMD_GF6C_Liv6_rear;
 }
 
-item(FEAT_TRAINS, Item_GMD_GF6C_Liv6, 32856) {
+item(FEAT_TRAINS, Item_GMD_GF6C_Liv6, 35856) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -9437,7 +9532,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv7_position, position_in_consist) {
   switch_GMD_GF6C_Liv7_rear;
 }
 
-item(FEAT_TRAINS, Item_GMD_GF6C_Liv7, 32857) {
+item(FEAT_TRAINS, Item_GMD_GF6C_Liv7, 35857) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -9560,7 +9655,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv8_position, position_in_consist) {
   switch_GMD_GF6C_Liv8_rear;
 }
 
-item(FEAT_TRAINS, Item_GMD_GF6C_Liv8, 32858) {
+item(FEAT_TRAINS, Item_GMD_GF6C_Liv8, 35858) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -9683,7 +9778,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv9_position, position_in_consist) {
   switch_GMD_GF6C_Liv9_rear;
 }
 
-item(FEAT_TRAINS, Item_GMD_GF6C_Liv9, 32859) {
+item(FEAT_TRAINS, Item_GMD_GF6C_Liv9, 35859) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -9806,7 +9901,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv10_position, position_in_consist) {
   switch_GMD_GF6C_Liv10_rear;
 }
 
-item(FEAT_TRAINS, Item_GMD_GF6C_Liv10, 32860) {
+item(FEAT_TRAINS, Item_GMD_GF6C_Liv10, 35860) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -9929,7 +10024,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv11_position, position_in_consist) {
   switch_GMD_GF6C_Liv11_rear;
 }
 
-item(FEAT_TRAINS, Item_GMD_GF6C_Liv11, 32861) {
+item(FEAT_TRAINS, Item_GMD_GF6C_Liv11, 35861) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -10052,7 +10147,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv12_position, position_in_consist) {
   switch_GMD_GF6C_Liv12_rear;
 }
 
-item(FEAT_TRAINS, Item_GMD_GF6C_Liv12, 32862) {
+item(FEAT_TRAINS, Item_GMD_GF6C_Liv12, 35862) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -10175,7 +10270,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv13_position, position_in_consist) {
   switch_GMD_GF6C_Liv13_rear;
 }
 
-item(FEAT_TRAINS, Item_GMD_GF6C_Liv13, 32863) {
+item(FEAT_TRAINS, Item_GMD_GF6C_Liv13, 35863) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -10298,7 +10393,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv14_position, position_in_consist) {
   switch_GMD_GF6C_Liv14_rear;
 }
 
-item(FEAT_TRAINS, Item_GMD_GF6C_Liv14, 32864) {
+item(FEAT_TRAINS, Item_GMD_GF6C_Liv14, 35864) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -10378,7 +10473,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_CascadeBoxcab_Liv0_position, vehicle_is_flip
  1: switch_GE_CascadeBoxcab_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_GE_CascadeBoxcab_Liv0, 34900) {
+item(FEAT_TRAINS, Item_GE_CascadeBoxcab_Liv0, 38050) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -10546,7 +10641,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_Z1A_Liv0_position, vehicle_is_flipped) {
  1: switch_GE_Z1A_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_GE_Z1A_Liv0, 35000) {
+item(FEAT_TRAINS, Item_GE_Z1A_Liv0, 38050) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -10654,7 +10749,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Lownose_position, vehicle_is_flippe
  1: switch_PRR_L5_Liv0_Lownose_R;
 }
 
-item(FEAT_TRAINS, Item_PRR_L5_Liv0_Lownose, 35050) {
+item(FEAT_TRAINS, Item_PRR_L5_Liv0_Lownose, 38150) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -10749,7 +10844,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Highnose_position, vehicle_is_flipp
  1: switch_PRR_L5_Liv0_Highnose_R;
 }
 
-item(FEAT_TRAINS, Item_PRR_L5_Liv0_Highnose, 35100) {
+item(FEAT_TRAINS, Item_PRR_L5_Liv0_Highnose, 38200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -10830,7 +10925,7 @@ switch(FEAT_TRAINS, SELF, switch_Baldwin_Z1_Liv0_position, vehicle_is_flipped) {
  1: switch_Baldwin_Z1_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_Baldwin_Z1_Liv0, 35200) {
+item(FEAT_TRAINS, Item_Baldwin_Z1_Liv0, 38300) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -10911,7 +11006,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_Y1_Liv0_position, vehicle_is_flipped) {
  1: switch_GE_Y1_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_GE_Y1_Liv0, 35250) {
+item(FEAT_TRAINS, Item_GE_Y1_Liv0, 38350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -10992,7 +11087,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_O1_Liv0_position, vehicle_is_flipped) {
  1: switch_PRR_O1_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_PRR_O1_Liv0, 35300) {
+item(FEAT_TRAINS, Item_PRR_O1_Liv0, 35400) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -11272,7 +11367,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_P5A_Liv0_position, vehicle_is_flipped) {
  1: switch_PRR_P5A_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_PRR_P5A_Liv0, 35400) {
+item(FEAT_TRAINS, Item_PRR_P5A_Liv0, 38450) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -11353,7 +11448,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_DD2_Liv0_position, vehicle_is_flipped) {
  1: switch_PRR_DD2_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_PRR_DD2_Liv0, 35500) {
+item(FEAT_TRAINS, Item_PRR_DD2_Liv0, 38550) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -11399,7 +11494,7 @@ item(FEAT_TRAINS, Item_PRR_DD2_Liv0, 35500) {
 spriteset(spriteset_NYC_SMotor_Liv0_Purchase,   "gfx/NYC_SMotor_Liv0.png") {template_purchase_6(7, 21)}
 spriteset(spriteset_NYC_SMotor_Liv0,   "gfx/NYC_SMotor_Liv0.png") {template_6(7, 39)}
 
-item(FEAT_TRAINS, Item_NYC_SMotor_Liv0, 40000) {
+item(FEAT_TRAINS, Item_NYC_SMotor_Liv0, 44000) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -11437,52 +11532,6 @@ item(FEAT_TRAINS, Item_NYC_SMotor_Liv0, 40000) {
 		sound_effect: switch_Early_Electric_Whistle;
         purchase: spriteset_NYC_SMotor_Liv0_Purchase;
         additional_text: string(STR_INFO_NYC_SMOTOR);
-		reverse_build_probability: return 50;
-}
-}
-
-//NYC_TMotor_Liv0
-spriteset(spriteset_NYC_TMotor_Liv0_Purchase,   "gfx/NYC_TMotor_Liv0.png") {template_purchase_7(7, 21)}
-spriteset(spriteset_NYC_TMotor_Liv0,   "gfx/NYC_TMotor_Liv0.png") {template_7(7, 39)}
-
-item(FEAT_TRAINS, Item_NYC_TMotor_Liv0, 40100) {
-    property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        refit_cost:                        0;
-        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
-        bitmask_vehicle_info:            0;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
-
-        track_type:                        SAA3;
-        running_cost_base:                RUNNING_COST_DIESEL;
-        engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
-        dual_headed:                    0; // <- Double Headed, so cab on each end
-
-        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
-
-        name:                            string(STR_NAME_NYC_TMOTOR);
-        introduction_date:                date(1913,1,1);
-        vehicle_life:                     50;
-        model_life:                        30;
-        length:                            7;
-
-        weight:                        120 ton;
-        speed:                            70 mph;
-        power:                            3040 hp;
-        tractive_effort_coefficient:     0.7;
-        cost_factor:                     15;
-        running_cost_factor:             99;
-        cargo_capacity:                  0;
-
-//        variant_group: Item_NYC_TMotor_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-    }
-    graphics {
-        default: spriteset_NYC_TMotor_Liv0;
-		sound_effect: switch_Early_Electric_Whistle;
-        purchase: spriteset_NYC_TMotor_Liv0_Purchase;
-        additional_text: string(STR_INFO_NYC_TMOTOR);
 		reverse_build_probability: return 50;
 }
 }
@@ -11564,7 +11613,7 @@ item(FEAT_TRAINS, Item_PRR_DD1_Liv0, 2000) {
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
 
         name:                            string(STR_NAME_PRR_DD1);
-        introduction_date:                date(1914,1,1);
+        introduction_date:                date(1910,1,1);
         vehicle_life:                     50;
         model_life:                        30;
         length:                            5;
@@ -11586,6 +11635,52 @@ item(FEAT_TRAINS, Item_PRR_DD1_Liv0, 2000) {
         purchase: spriteset_PRR_DD1_Liv0_Purchase;
         additional_text: string(STR_INFO_PRR_DD1);
 		articulated_part: switch_PRR_DD1_Liv0_articulated_part;
+}
+}
+
+//NYC_TMotor_Liv0
+spriteset(spriteset_NYC_TMotor_Liv0_Purchase,   "gfx/NYC_TMotor_Liv0.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_NYC_TMotor_Liv0,   "gfx/NYC_TMotor_Liv0.png") {template_7(7, 39)}
+
+item(FEAT_TRAINS, Item_NYC_TMotor_Liv0, 44100) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        SAA3;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_NYC_TMOTOR);
+        introduction_date:                date(1913,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            7;
+
+        weight:                        120 ton;
+        speed:                            70 mph;
+        power:                            3040 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     15;
+        running_cost_factor:             99;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_NYC_TMotor_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: spriteset_NYC_TMotor_Liv0;
+		sound_effect: switch_Early_Electric_Whistle;
+        purchase: spriteset_NYC_TMotor_Liv0_Purchase;
+        additional_text: string(STR_INFO_NYC_TMOTOR);
+		reverse_build_probability: return 50;
 }
 }
 
@@ -11630,7 +11725,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_L5A_Liv0_Lownose_position, vehicle_is_flipp
  1: switch_PRR_L5A_Liv0_Lownose_R;
 }
 
-item(FEAT_TRAINS, Item_PRR_L5A_Liv0_Lownose, 40150) {
+item(FEAT_TRAINS, Item_PRR_L5A_Liv0_Lownose, 44150) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -11713,7 +11808,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_L5A_Liv0_Highnose_position, vehicle_is_flip
  1: switch_PRR_L5A_Liv0_Highnose_R;
 }
 
-item(FEAT_TRAINS, Item_PRR_L5A_Liv0_Highnose, 40200) {
+item(FEAT_TRAINS, Item_PRR_L5A_Liv0_Highnose, 44200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -11759,7 +11854,7 @@ item(FEAT_TRAINS, Item_PRR_L5A_Liv0_Highnose, 40200) {
 spriteset(spriteset_NYC_P2Motor_Liv0_Purchase,   "gfx/NYC_P2Motor_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_NYC_P2Motor_Liv0,   "gfx/NYC_P2Motor_Liv0.png") {template_8(7, 39)}
 
-item(FEAT_TRAINS, Item_NYC_P2Motor_Liv0, 40450) {
+item(FEAT_TRAINS, Item_NYC_P2Motor_Liv0, 44450) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
