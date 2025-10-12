@@ -18,7 +18,9 @@ if (!extended_feature_test("action3_signals_custom_signal_sprites")) {
 //}
 
 template template_signal_6tall(x,y){
-
+//left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
 	[ x, y, 5, 26, -1, -25,ANIM]
 	[ x+6, y, 6, 26, -1, -25,ANIM]
 	[ x+13, y, 6, 26, -1, -25,ANIM]
@@ -28,6 +30,21 @@ template template_signal_6tall(x,y){
 	[ x+38, y, 6, 26, -2, -25,ANIM]
 	[ x+45, y, 6, 26, -1, -25,ANIM]
 }
+
+template template_signal_tall(x,y){
+//left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+	[ x, y, 17, 26, -7, -25,ANIM]
+	[ x+18, y, 18, 26, -7, -25,ANIM]
+	[ x+37, y, 17, 26, -6, -25,ANIM]
+	[ x+55, y, 17, 26, -14, -25,ANIM]
+	[ x+73, y, 17, 26, -8, -25,ANIM]
+	[ x+91, y, 17, 26, -9, -23,ANIM]
+	[ x+109, y, 18, 26, -8, -25,ANIM]
+	[ x+128, y, 18, 26, -7, -25,ANIM]
+}
+
 
 //TwoAspect_Block
 spriteset(TwoAspect_Block_stop, "gfx/TwoAspect_Block.png"){template_signal_6tall(7,7)}
@@ -241,6 +258,598 @@ switch(FEAT_SIGNALS, SELF, Speed_Twin_Searchlight, getbits(extra_callback_info2,
 	07: Speed_Twin_Searchlight_NoEntry; //No Entry
 }
 
+//Speed_Trilight_Block
+spriteset(Speed_Trilight_Block_stop, "gfx/Speed_Trilight_Block.png"){template_signal_tall(7,7)}
+spriteset(Speed_Trilight_Block_clear, "gfx/Speed_Trilight_Block.png"){template_signal_tall(7,36)}
+spriteset(Speed_Trilight_Block_caution, "gfx/Speed_Trilight_Block.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Trilight_Block, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Trilight_Block_stop;
+	01:	Speed_Trilight_Block_clear;
+	02:	Speed_Trilight_Block_caution;
+	03:	Speed_Trilight_Block_clear;
+	04:	Speed_Trilight_Block_clear;
+	05:	Speed_Trilight_Block_clear;
+}
+
+//Speed_Trilight_PBS
+spriteset(Speed_Trilight_PBS_stop, "gfx/Speed_Trilight_PBS.png"){template_signal_tall(7,7)}
+spriteset(Speed_Trilight_PBS_clear, "gfx/Speed_Trilight_PBS.png"){template_signal_tall(7,36)}
+spriteset(Speed_Trilight_PBS_caution, "gfx/Speed_Trilight_PBS.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Trilight_PBS, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Trilight_PBS_stop;
+	01:	Speed_Trilight_PBS_clear;
+	02:	Speed_Trilight_PBS_caution;
+	03:	Speed_Trilight_PBS_clear;
+	04:	Speed_Trilight_PBS_clear;
+	05:	Speed_Trilight_PBS_clear;
+}
+
+//Speed_Trilight_PBSOneWay
+spriteset(Speed_Trilight_PBSOneWay_stop, "gfx/Speed_Trilight_PBSOneWay.png"){template_signal_tall(7,7)}
+spriteset(Speed_Trilight_PBSOneWay_clear, "gfx/Speed_Trilight_PBSOneWay.png"){template_signal_tall(7,36)}
+spriteset(Speed_Trilight_PBSOneWay_caution, "gfx/Speed_Trilight_PBSOneWay.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Trilight_PBSOneWay, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Trilight_PBSOneWay_stop;
+	01:	Speed_Trilight_PBSOneWay_clear;
+	02:	Speed_Trilight_PBSOneWay_caution;
+	03:	Speed_Trilight_PBSOneWay_clear;
+	04:	Speed_Trilight_PBSOneWay_clear;
+	05:	Speed_Trilight_PBSOneWay_clear;
+}
+
+//Speed_Trilight_NoEntry
+spriteset(Speed_Trilight_NoEntry_stop, "gfx/Speed_Trilight_NoEntry.png"){template_signal_tall(7,7)}
+spriteset(Speed_Trilight_NoEntry_clear, "gfx/Speed_Trilight_NoEntry.png"){template_signal_tall(7,36)}
+spriteset(Speed_Trilight_NoEntry_caution, "gfx/Speed_Trilight_NoEntry.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Trilight_NoEntry, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Trilight_NoEntry_stop;
+	01:	Speed_Trilight_NoEntry_clear;
+	02:	Speed_Trilight_NoEntry_caution;
+	03:	Speed_Trilight_NoEntry_clear;
+	04:	Speed_Trilight_NoEntry_clear;
+	05:	Speed_Trilight_NoEntry_clear;
+}
+
+//signals
+switch(FEAT_SIGNALS, SELF, Speed_Trilight, getbits(extra_callback_info2, 16, 8)){
+	00: Speed_Trilight_Block; //block signal
+	04: Speed_Trilight_PBS; //Path
+	05: Speed_Trilight_PBSOneWay; //Path one way
+	07: Speed_Trilight_NoEntry; //No Entry
+}
+
+//Speed_Twin_Trilight_Block
+spriteset(Speed_Twin_Trilight_Block_stop, "gfx/Speed_Twin_Trilight_Block.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_Trilight_Block_clear, "gfx/Speed_Twin_Trilight_Block.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_Trilight_Block_caution, "gfx/Speed_Twin_Trilight_Block.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_Trilight_Block_precaution, "gfx/Speed_Twin_Trilight_Block.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_Trilight_Block_precaution1, "gfx/Speed_Twin_Trilight_Block.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_Trilight_Block_precaution2, "gfx/Speed_Twin_Trilight_Block.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_Trilight_Block, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_Trilight_Block_stop;
+	01:	Speed_Twin_Trilight_Block_clear;
+	02:	Speed_Twin_Trilight_Block_caution;
+	03:	Speed_Twin_Trilight_Block_precaution;
+	04:	Speed_Twin_Trilight_Block_precaution1;
+	05:	Speed_Twin_Trilight_Block_precaution2;
+}
+
+//Speed_Twin_Trilight_PBS
+spriteset(Speed_Twin_Trilight_PBS_stop, "gfx/Speed_Twin_Trilight_PBS.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_Trilight_PBS_clear, "gfx/Speed_Twin_Trilight_PBS.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_Trilight_PBS_caution, "gfx/Speed_Twin_Trilight_PBS.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_Trilight_PBS_precaution, "gfx/Speed_Twin_Trilight_PBS.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_Trilight_PBS_precaution1, "gfx/Speed_Twin_Trilight_PBS.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_Trilight_PBS_precaution2, "gfx/Speed_Twin_Trilight_PBS.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_Trilight_PBS, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_Trilight_PBS_stop;
+	01:	Speed_Twin_Trilight_PBS_clear;
+	02:	Speed_Twin_Trilight_PBS_caution;
+	03:	Speed_Twin_Trilight_PBS_precaution;
+	04:	Speed_Twin_Trilight_PBS_precaution1;
+	05:	Speed_Twin_Trilight_PBS_precaution2;
+}
+
+//Speed_Twin_Trilight_PBSOneWay
+spriteset(Speed_Twin_Trilight_PBSOneWay_stop, "gfx/Speed_Twin_Trilight_PBSOneWay.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_Trilight_PBSOneWay_clear, "gfx/Speed_Twin_Trilight_PBSOneWay.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_Trilight_PBSOneWay_caution, "gfx/Speed_Twin_Trilight_PBSOneWay.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_Trilight_PBSOneWay_precaution, "gfx/Speed_Twin_Trilight_PBSOneWay.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_Trilight_PBSOneWay_precaution1, "gfx/Speed_Twin_Trilight_PBSOneWay.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_Trilight_PBSOneWay_precaution2, "gfx/Speed_Twin_Trilight_PBSOneWay.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_Trilight_PBSOneWay, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_Trilight_PBSOneWay_stop;
+	01:	Speed_Twin_Trilight_PBSOneWay_clear;
+	02:	Speed_Twin_Trilight_PBSOneWay_caution;
+	03:	Speed_Twin_Trilight_PBSOneWay_precaution;
+	04:	Speed_Twin_Trilight_PBSOneWay_precaution1;
+	05:	Speed_Twin_Trilight_PBSOneWay_precaution2;
+}
+
+//Speed_Twin_Trilight_NoEntry
+spriteset(Speed_Twin_Trilight_NoEntry_stop, "gfx/Speed_Twin_Trilight_NoEntry.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_Trilight_NoEntry_clear, "gfx/Speed_Twin_Trilight_NoEntry.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_Trilight_NoEntry_caution, "gfx/Speed_Twin_Trilight_NoEntry.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_Trilight_NoEntry_precaution, "gfx/Speed_Twin_Trilight_NoEntry.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_Trilight_NoEntry_precaution1, "gfx/Speed_Twin_Trilight_NoEntry.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_Trilight_NoEntry_precaution2, "gfx/Speed_Twin_Trilight_NoEntry.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_Trilight_NoEntry, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_Trilight_NoEntry_stop;
+	01:	Speed_Twin_Trilight_NoEntry_clear;
+	02:	Speed_Twin_Trilight_NoEntry_caution;
+	03:	Speed_Twin_Trilight_NoEntry_precaution;
+	04:	Speed_Twin_Trilight_NoEntry_precaution1;
+	05:	Speed_Twin_Trilight_NoEntry_precaution2;
+}
+
+//signals
+switch(FEAT_SIGNALS, SELF, Speed_Twin_Trilight, getbits(extra_callback_info2, 16, 8)){
+	00: Speed_Twin_Trilight_Block; //block signal
+	04: Speed_Twin_Trilight_PBS; //Path
+	05: Speed_Twin_Trilight_PBSOneWay; //Path one way
+	07: Speed_Twin_Trilight_NoEntry; //No Entry
+}
+
+//Speed_ColourLight_Block
+spriteset(Speed_ColourLight_Block_stop, "gfx/Speed_ColourLight_Block.png"){template_signal_tall(7,7)}
+spriteset(Speed_ColourLight_Block_clear, "gfx/Speed_ColourLight_Block.png"){template_signal_tall(7,36)}
+spriteset(Speed_ColourLight_Block_caution, "gfx/Speed_ColourLight_Block.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_ColourLight_Block, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_ColourLight_Block_stop;
+	01:	Speed_ColourLight_Block_clear;
+	02:	Speed_ColourLight_Block_caution;
+	03:	Speed_ColourLight_Block_clear;
+	04:	Speed_ColourLight_Block_clear;
+	05:	Speed_ColourLight_Block_clear;
+}
+
+//Speed_ColourLight_PBS
+spriteset(Speed_ColourLight_PBS_stop, "gfx/Speed_ColourLight_PBS.png"){template_signal_tall(7,7)}
+spriteset(Speed_ColourLight_PBS_clear, "gfx/Speed_ColourLight_PBS.png"){template_signal_tall(7,36)}
+spriteset(Speed_ColourLight_PBS_caution, "gfx/Speed_ColourLight_PBS.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_ColourLight_PBS, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_ColourLight_PBS_stop;
+	01:	Speed_ColourLight_PBS_clear;
+	02:	Speed_ColourLight_PBS_caution;
+	03:	Speed_ColourLight_PBS_clear;
+	04:	Speed_ColourLight_PBS_clear;
+	05:	Speed_ColourLight_PBS_clear;
+}
+
+//Speed_ColourLight_PBSOneWay
+spriteset(Speed_ColourLight_PBSOneWay_stop, "gfx/Speed_ColourLight_PBSOneWay.png"){template_signal_tall(7,7)}
+spriteset(Speed_ColourLight_PBSOneWay_clear, "gfx/Speed_ColourLight_PBSOneWay.png"){template_signal_tall(7,36)}
+spriteset(Speed_ColourLight_PBSOneWay_caution, "gfx/Speed_ColourLight_PBSOneWay.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_ColourLight_PBSOneWay, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_ColourLight_PBSOneWay_stop;
+	01:	Speed_ColourLight_PBSOneWay_clear;
+	02:	Speed_ColourLight_PBSOneWay_caution;
+	03:	Speed_ColourLight_PBSOneWay_clear;
+	04:	Speed_ColourLight_PBSOneWay_clear;
+	05:	Speed_ColourLight_PBSOneWay_clear;
+}
+
+//Speed_ColourLight_NoEntry
+spriteset(Speed_ColourLight_NoEntry_stop, "gfx/Speed_ColourLight_NoEntry.png"){template_signal_tall(7,7)}
+spriteset(Speed_ColourLight_NoEntry_clear, "gfx/Speed_ColourLight_NoEntry.png"){template_signal_tall(7,36)}
+spriteset(Speed_ColourLight_NoEntry_caution, "gfx/Speed_ColourLight_NoEntry.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_ColourLight_NoEntry, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_ColourLight_NoEntry_stop;
+	01:	Speed_ColourLight_NoEntry_clear;
+	02:	Speed_ColourLight_NoEntry_caution;
+	03:	Speed_ColourLight_NoEntry_clear;
+	04:	Speed_ColourLight_NoEntry_clear;
+	05:	Speed_ColourLight_NoEntry_clear;
+}
+
+//signals
+switch(FEAT_SIGNALS, SELF, Speed_ColourLight, getbits(extra_callback_info2, 16, 8)){
+	00: Speed_ColourLight_Block; //block signal
+	04: Speed_ColourLight_PBS; //Path
+	05: Speed_ColourLight_PBSOneWay; //Path one way
+	07: Speed_ColourLight_NoEntry; //No Entry
+}
+
+//Speed_Twin_ColourLight_Block
+spriteset(Speed_Twin_ColourLight_Block_stop, "gfx/Speed_Twin_ColourLight_Block.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_ColourLight_Block_clear, "gfx/Speed_Twin_ColourLight_Block.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_ColourLight_Block_caution, "gfx/Speed_Twin_ColourLight_Block.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_ColourLight_Block_precaution, "gfx/Speed_Twin_ColourLight_Block.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_ColourLight_Block_precaution1, "gfx/Speed_Twin_ColourLight_Block.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_ColourLight_Block_precaution2, "gfx/Speed_Twin_ColourLight_Block.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_ColourLight_Block, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_ColourLight_Block_stop;
+	01:	Speed_Twin_ColourLight_Block_clear;
+	02:	Speed_Twin_ColourLight_Block_caution;
+	03:	Speed_Twin_ColourLight_Block_precaution;
+	04:	Speed_Twin_ColourLight_Block_precaution1;
+	05:	Speed_Twin_ColourLight_Block_precaution2;
+}
+
+//Speed_Twin_ColourLight_PBS
+spriteset(Speed_Twin_ColourLight_PBS_stop, "gfx/Speed_Twin_ColourLight_PBS.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_ColourLight_PBS_clear, "gfx/Speed_Twin_ColourLight_PBS.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_ColourLight_PBS_caution, "gfx/Speed_Twin_ColourLight_PBS.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_ColourLight_PBS_precaution, "gfx/Speed_Twin_ColourLight_PBS.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_ColourLight_PBS_precaution1, "gfx/Speed_Twin_ColourLight_PBS.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_ColourLight_PBS_precaution2, "gfx/Speed_Twin_ColourLight_PBS.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_ColourLight_PBS, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_ColourLight_PBS_stop;
+	01:	Speed_Twin_ColourLight_PBS_clear;
+	02:	Speed_Twin_ColourLight_PBS_caution;
+	03:	Speed_Twin_ColourLight_PBS_precaution;
+	04:	Speed_Twin_ColourLight_PBS_precaution1;
+	05:	Speed_Twin_ColourLight_PBS_precaution2;
+}
+
+//Speed_Twin_ColourLight_PBSOneWay
+spriteset(Speed_Twin_ColourLight_PBSOneWay_stop, "gfx/Speed_Twin_ColourLight_PBSOneWay.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_ColourLight_PBSOneWay_clear, "gfx/Speed_Twin_ColourLight_PBSOneWay.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_ColourLight_PBSOneWay_caution, "gfx/Speed_Twin_ColourLight_PBSOneWay.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_ColourLight_PBSOneWay_precaution, "gfx/Speed_Twin_ColourLight_PBSOneWay.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_ColourLight_PBSOneWay_precaution1, "gfx/Speed_Twin_ColourLight_PBSOneWay.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_ColourLight_PBSOneWay_precaution2, "gfx/Speed_Twin_ColourLight_PBSOneWay.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_ColourLight_PBSOneWay, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_ColourLight_PBSOneWay_stop;
+	01:	Speed_Twin_ColourLight_PBSOneWay_clear;
+	02:	Speed_Twin_ColourLight_PBSOneWay_caution;
+	03:	Speed_Twin_ColourLight_PBSOneWay_precaution;
+	04:	Speed_Twin_ColourLight_PBSOneWay_precaution1;
+	05:	Speed_Twin_ColourLight_PBSOneWay_precaution2;
+}
+
+//Speed_Twin_ColourLight_NoEntry
+spriteset(Speed_Twin_ColourLight_NoEntry_stop, "gfx/Speed_Twin_ColourLight_NoEntry.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_ColourLight_NoEntry_clear, "gfx/Speed_Twin_ColourLight_NoEntry.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_ColourLight_NoEntry_caution, "gfx/Speed_Twin_ColourLight_NoEntry.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_ColourLight_NoEntry_precaution, "gfx/Speed_Twin_ColourLight_NoEntry.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_ColourLight_NoEntry_precaution1, "gfx/Speed_Twin_ColourLight_NoEntry.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_ColourLight_NoEntry_precaution2, "gfx/Speed_Twin_ColourLight_NoEntry.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_ColourLight_NoEntry, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_ColourLight_NoEntry_stop;
+	01:	Speed_Twin_ColourLight_NoEntry_clear;
+	02:	Speed_Twin_ColourLight_NoEntry_caution;
+	03:	Speed_Twin_ColourLight_NoEntry_precaution;
+	04:	Speed_Twin_ColourLight_NoEntry_precaution1;
+	05:	Speed_Twin_ColourLight_NoEntry_precaution2;
+}
+
+//signals
+switch(FEAT_SIGNALS, SELF, Speed_Twin_ColourLight, getbits(extra_callback_info2, 16, 8)){
+	00: Speed_Twin_ColourLight_Block; //block signal
+	04: Speed_Twin_ColourLight_PBS; //Path
+	05: Speed_Twin_ColourLight_PBSOneWay; //Path one way
+	07: Speed_Twin_ColourLight_NoEntry; //No Entry
+}
+
+//Speed_PositionLight_Block
+spriteset(Speed_PositionLight_Block_stop, "gfx/Speed_PositionLight_Block.png"){template_signal_tall(7,7)}
+spriteset(Speed_PositionLight_Block_clear, "gfx/Speed_PositionLight_Block.png"){template_signal_tall(7,36)}
+spriteset(Speed_PositionLight_Block_caution, "gfx/Speed_PositionLight_Block.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_PositionLight_Block, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_PositionLight_Block_stop;
+	01:	Speed_PositionLight_Block_clear;
+	02:	Speed_PositionLight_Block_caution;
+	03:	Speed_PositionLight_Block_clear;
+	04:	Speed_PositionLight_Block_clear;
+	05:	Speed_PositionLight_Block_clear;
+}
+
+//Speed_PositionLight_PBS
+spriteset(Speed_PositionLight_PBS_stop, "gfx/Speed_PositionLight_PBS.png"){template_signal_tall(7,7)}
+spriteset(Speed_PositionLight_PBS_clear, "gfx/Speed_PositionLight_PBS.png"){template_signal_tall(7,36)}
+spriteset(Speed_PositionLight_PBS_caution, "gfx/Speed_PositionLight_PBS.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_PositionLight_PBS, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_PositionLight_PBS_stop;
+	01:	Speed_PositionLight_PBS_clear;
+	02:	Speed_PositionLight_PBS_caution;
+	03:	Speed_PositionLight_PBS_clear;
+	04:	Speed_PositionLight_PBS_clear;
+	05:	Speed_PositionLight_PBS_clear;
+}
+
+//Speed_PositionLight_PBSOneWay
+spriteset(Speed_PositionLight_PBSOneWay_stop, "gfx/Speed_PositionLight_PBSOneWay.png"){template_signal_tall(7,7)}
+spriteset(Speed_PositionLight_PBSOneWay_clear, "gfx/Speed_PositionLight_PBSOneWay.png"){template_signal_tall(7,36)}
+spriteset(Speed_PositionLight_PBSOneWay_caution, "gfx/Speed_PositionLight_PBSOneWay.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_PositionLight_PBSOneWay, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_PositionLight_PBSOneWay_stop;
+	01:	Speed_PositionLight_PBSOneWay_clear;
+	02:	Speed_PositionLight_PBSOneWay_caution;
+	03:	Speed_PositionLight_PBSOneWay_clear;
+	04:	Speed_PositionLight_PBSOneWay_clear;
+	05:	Speed_PositionLight_PBSOneWay_clear;
+}
+
+//Speed_PositionLight_NoEntry
+spriteset(Speed_PositionLight_NoEntry_stop, "gfx/Speed_PositionLight_NoEntry.png"){template_signal_tall(7,7)}
+spriteset(Speed_PositionLight_NoEntry_clear, "gfx/Speed_PositionLight_NoEntry.png"){template_signal_tall(7,36)}
+spriteset(Speed_PositionLight_NoEntry_caution, "gfx/Speed_PositionLight_NoEntry.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_PositionLight_NoEntry, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_PositionLight_NoEntry_stop;
+	01:	Speed_PositionLight_NoEntry_clear;
+	02:	Speed_PositionLight_NoEntry_caution;
+	03:	Speed_PositionLight_NoEntry_clear;
+	04:	Speed_PositionLight_NoEntry_clear;
+	05:	Speed_PositionLight_NoEntry_clear;
+}
+
+//signals
+switch(FEAT_SIGNALS, SELF, Speed_PositionLight, getbits(extra_callback_info2, 16, 8)){
+	00: Speed_PositionLight_Block; //block signal
+	04: Speed_PositionLight_PBS; //Path
+	05: Speed_PositionLight_PBSOneWay; //Path one way
+	07: Speed_PositionLight_NoEntry; //No Entry
+}
+
+//Speed_Twin_PositionLight_Block
+spriteset(Speed_Twin_PositionLight_Block_stop, "gfx/Speed_Twin_PositionLight_Block.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_PositionLight_Block_clear, "gfx/Speed_Twin_PositionLight_Block.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_PositionLight_Block_caution, "gfx/Speed_Twin_PositionLight_Block.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_PositionLight_Block_precaution, "gfx/Speed_Twin_PositionLight_Block.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_PositionLight_Block_precaution1, "gfx/Speed_Twin_PositionLight_Block.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_PositionLight_Block_precaution2, "gfx/Speed_Twin_PositionLight_Block.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_PositionLight_Block, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_PositionLight_Block_stop;
+	01:	Speed_Twin_PositionLight_Block_clear;
+	02:	Speed_Twin_PositionLight_Block_caution;
+	03:	Speed_Twin_PositionLight_Block_precaution;
+	04:	Speed_Twin_PositionLight_Block_precaution1;
+	05:	Speed_Twin_PositionLight_Block_precaution2;
+}
+
+//Speed_Twin_PositionLight_PBS
+spriteset(Speed_Twin_PositionLight_PBS_stop, "gfx/Speed_Twin_PositionLight_PBS.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_PositionLight_PBS_clear, "gfx/Speed_Twin_PositionLight_PBS.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_PositionLight_PBS_caution, "gfx/Speed_Twin_PositionLight_PBS.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_PositionLight_PBS_precaution, "gfx/Speed_Twin_PositionLight_PBS.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_PositionLight_PBS_precaution1, "gfx/Speed_Twin_PositionLight_PBS.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_PositionLight_PBS_precaution2, "gfx/Speed_Twin_PositionLight_PBS.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_PositionLight_PBS, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_PositionLight_PBS_stop;
+	01:	Speed_Twin_PositionLight_PBS_clear;
+	02:	Speed_Twin_PositionLight_PBS_caution;
+	03:	Speed_Twin_PositionLight_PBS_precaution;
+	04:	Speed_Twin_PositionLight_PBS_precaution1;
+	05:	Speed_Twin_PositionLight_PBS_precaution2;
+}
+
+//Speed_Twin_PositionLight_PBSOneWay
+spriteset(Speed_Twin_PositionLight_PBSOneWay_stop, "gfx/Speed_Twin_PositionLight_PBSOneWay.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_PositionLight_PBSOneWay_clear, "gfx/Speed_Twin_PositionLight_PBSOneWay.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_PositionLight_PBSOneWay_caution, "gfx/Speed_Twin_PositionLight_PBSOneWay.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_PositionLight_PBSOneWay_precaution, "gfx/Speed_Twin_PositionLight_PBSOneWay.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_PositionLight_PBSOneWay_precaution1, "gfx/Speed_Twin_PositionLight_PBSOneWay.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_PositionLight_PBSOneWay_precaution2, "gfx/Speed_Twin_PositionLight_PBSOneWay.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_PositionLight_PBSOneWay, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_PositionLight_PBSOneWay_stop;
+	01:	Speed_Twin_PositionLight_PBSOneWay_clear;
+	02:	Speed_Twin_PositionLight_PBSOneWay_caution;
+	03:	Speed_Twin_PositionLight_PBSOneWay_precaution;
+	04:	Speed_Twin_PositionLight_PBSOneWay_precaution1;
+	05:	Speed_Twin_PositionLight_PBSOneWay_precaution2;
+}
+
+//Speed_Twin_PositionLight_NoEntry
+spriteset(Speed_Twin_PositionLight_NoEntry_stop, "gfx/Speed_Twin_PositionLight_NoEntry.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_PositionLight_NoEntry_clear, "gfx/Speed_Twin_PositionLight_NoEntry.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_PositionLight_NoEntry_caution, "gfx/Speed_Twin_PositionLight_NoEntry.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_PositionLight_NoEntry_precaution, "gfx/Speed_Twin_PositionLight_NoEntry.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_PositionLight_NoEntry_precaution1, "gfx/Speed_Twin_PositionLight_NoEntry.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_PositionLight_NoEntry_precaution2, "gfx/Speed_Twin_PositionLight_NoEntry.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_PositionLight_NoEntry, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_PositionLight_NoEntry_stop;
+	01:	Speed_Twin_PositionLight_NoEntry_clear;
+	02:	Speed_Twin_PositionLight_NoEntry_caution;
+	03:	Speed_Twin_PositionLight_NoEntry_precaution;
+	04:	Speed_Twin_PositionLight_NoEntry_precaution1;
+	05:	Speed_Twin_PositionLight_NoEntry_precaution2;
+}
+
+//signals
+switch(FEAT_SIGNALS, SELF, Speed_Twin_PositionLight, getbits(extra_callback_info2, 16, 8)){
+	00: Speed_Twin_PositionLight_Block; //block signal
+	04: Speed_Twin_PositionLight_PBS; //Path
+	05: Speed_Twin_PositionLight_PBSOneWay; //Path one way
+	07: Speed_Twin_PositionLight_NoEntry; //No Entry
+}
+
+//Speed_PositionColourLight_Block
+spriteset(Speed_PositionColourLight_Block_stop, "gfx/Speed_PositionColourLight_Block.png"){template_signal_tall(7,7)}
+spriteset(Speed_PositionColourLight_Block_clear, "gfx/Speed_PositionColourLight_Block.png"){template_signal_tall(7,36)}
+spriteset(Speed_PositionColourLight_Block_caution, "gfx/Speed_PositionColourLight_Block.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_PositionColourLight_Block, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_PositionColourLight_Block_stop;
+	01:	Speed_PositionColourLight_Block_clear;
+	02:	Speed_PositionColourLight_Block_caution;
+	03:	Speed_PositionColourLight_Block_clear;
+	04:	Speed_PositionColourLight_Block_clear;
+	05:	Speed_PositionColourLight_Block_clear;
+}
+
+//Speed_PositionColourLight_PBS
+spriteset(Speed_PositionColourLight_PBS_stop, "gfx/Speed_PositionColourLight_PBS.png"){template_signal_tall(7,7)}
+spriteset(Speed_PositionColourLight_PBS_clear, "gfx/Speed_PositionColourLight_PBS.png"){template_signal_tall(7,36)}
+spriteset(Speed_PositionColourLight_PBS_caution, "gfx/Speed_PositionColourLight_PBS.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_PositionColourLight_PBS, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_PositionColourLight_PBS_stop;
+	01:	Speed_PositionColourLight_PBS_clear;
+	02:	Speed_PositionColourLight_PBS_caution;
+	03:	Speed_PositionColourLight_PBS_clear;
+	04:	Speed_PositionColourLight_PBS_clear;
+	05:	Speed_PositionColourLight_PBS_clear;
+}
+
+//Speed_PositionColourLight_PBSOneWay
+spriteset(Speed_PositionColourLight_PBSOneWay_stop, "gfx/Speed_PositionColourLight_PBSOneWay.png"){template_signal_tall(7,7)}
+spriteset(Speed_PositionColourLight_PBSOneWay_clear, "gfx/Speed_PositionColourLight_PBSOneWay.png"){template_signal_tall(7,36)}
+spriteset(Speed_PositionColourLight_PBSOneWay_caution, "gfx/Speed_PositionColourLight_PBSOneWay.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_PositionColourLight_PBSOneWay, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_PositionColourLight_PBSOneWay_stop;
+	01:	Speed_PositionColourLight_PBSOneWay_clear;
+	02:	Speed_PositionColourLight_PBSOneWay_caution;
+	03:	Speed_PositionColourLight_PBSOneWay_clear;
+	04:	Speed_PositionColourLight_PBSOneWay_clear;
+	05:	Speed_PositionColourLight_PBSOneWay_clear;
+}
+
+//Speed_PositionColourLight_NoEntry
+spriteset(Speed_PositionColourLight_NoEntry_stop, "gfx/Speed_PositionColourLight_NoEntry.png"){template_signal_tall(7,7)}
+spriteset(Speed_PositionColourLight_NoEntry_clear, "gfx/Speed_PositionColourLight_NoEntry.png"){template_signal_tall(7,36)}
+spriteset(Speed_PositionColourLight_NoEntry_caution, "gfx/Speed_PositionColourLight_NoEntry.png"){template_signal_tall(7,65)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_PositionColourLight_NoEntry, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_PositionColourLight_NoEntry_stop;
+	01:	Speed_PositionColourLight_NoEntry_clear;
+	02:	Speed_PositionColourLight_NoEntry_caution;
+	03:	Speed_PositionColourLight_NoEntry_clear;
+	04:	Speed_PositionColourLight_NoEntry_clear;
+	05:	Speed_PositionColourLight_NoEntry_clear;
+}
+
+//signals
+switch(FEAT_SIGNALS, SELF, Speed_PositionColourLight, getbits(extra_callback_info2, 16, 8)){
+	00: Speed_PositionColourLight_Block; //block signal
+	04: Speed_PositionColourLight_PBS; //Path
+	05: Speed_PositionColourLight_PBSOneWay; //Path one way
+	07: Speed_PositionColourLight_NoEntry; //No Entry
+}
+
+//Speed_Twin_PositionColourLight_Block
+spriteset(Speed_Twin_PositionColourLight_Block_stop, "gfx/Speed_Twin_PositionColourLight_Block.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_PositionColourLight_Block_clear, "gfx/Speed_Twin_PositionColourLight_Block.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_PositionColourLight_Block_caution, "gfx/Speed_Twin_PositionColourLight_Block.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_PositionColourLight_Block_precaution, "gfx/Speed_Twin_PositionColourLight_Block.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_PositionColourLight_Block_precaution1, "gfx/Speed_Twin_PositionColourLight_Block.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_PositionColourLight_Block_precaution2, "gfx/Speed_Twin_PositionColourLight_Block.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_PositionColourLight_Block, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_PositionColourLight_Block_stop;
+	01:	Speed_Twin_PositionColourLight_Block_clear;
+	02:	Speed_Twin_PositionColourLight_Block_caution;
+	03:	Speed_Twin_PositionColourLight_Block_precaution;
+	04:	Speed_Twin_PositionColourLight_Block_precaution1;
+	05:	Speed_Twin_PositionColourLight_Block_precaution2;
+}
+
+//Speed_Twin_PositionColourLight_PBS
+spriteset(Speed_Twin_PositionColourLight_PBS_stop, "gfx/Speed_Twin_PositionColourLight_PBS.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_PositionColourLight_PBS_clear, "gfx/Speed_Twin_PositionColourLight_PBS.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_PositionColourLight_PBS_caution, "gfx/Speed_Twin_PositionColourLight_PBS.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_PositionColourLight_PBS_precaution, "gfx/Speed_Twin_PositionColourLight_PBS.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_PositionColourLight_PBS_precaution1, "gfx/Speed_Twin_PositionColourLight_PBS.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_PositionColourLight_PBS_precaution2, "gfx/Speed_Twin_PositionColourLight_PBS.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_PositionColourLight_PBS, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_PositionColourLight_PBS_stop;
+	01:	Speed_Twin_PositionColourLight_PBS_clear;
+	02:	Speed_Twin_PositionColourLight_PBS_caution;
+	03:	Speed_Twin_PositionColourLight_PBS_precaution;
+	04:	Speed_Twin_PositionColourLight_PBS_precaution1;
+	05:	Speed_Twin_PositionColourLight_PBS_precaution2;
+}
+
+//Speed_Twin_PositionColourLight_PBSOneWay
+spriteset(Speed_Twin_PositionColourLight_PBSOneWay_stop, "gfx/Speed_Twin_PositionColourLight_PBSOneWay.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_PositionColourLight_PBSOneWay_clear, "gfx/Speed_Twin_PositionColourLight_PBSOneWay.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_PositionColourLight_PBSOneWay_caution, "gfx/Speed_Twin_PositionColourLight_PBSOneWay.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_PositionColourLight_PBSOneWay_precaution, "gfx/Speed_Twin_PositionColourLight_PBSOneWay.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_PositionColourLight_PBSOneWay_precaution1, "gfx/Speed_Twin_PositionColourLight_PBSOneWay.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_PositionColourLight_PBSOneWay_precaution2, "gfx/Speed_Twin_PositionColourLight_PBSOneWay.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_PositionColourLight_PBSOneWay, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_PositionColourLight_PBSOneWay_stop;
+	01:	Speed_Twin_PositionColourLight_PBSOneWay_clear;
+	02:	Speed_Twin_PositionColourLight_PBSOneWay_caution;
+	03:	Speed_Twin_PositionColourLight_PBSOneWay_precaution;
+	04:	Speed_Twin_PositionColourLight_PBSOneWay_precaution1;
+	05:	Speed_Twin_PositionColourLight_PBSOneWay_precaution2;
+}
+
+//Speed_Twin_PositionColourLight_NoEntry
+spriteset(Speed_Twin_PositionColourLight_NoEntry_stop, "gfx/Speed_Twin_PositionColourLight_NoEntry.png"){template_signal_tall(7,7)}
+spriteset(Speed_Twin_PositionColourLight_NoEntry_clear, "gfx/Speed_Twin_PositionColourLight_NoEntry.png"){template_signal_tall(7,36)}
+spriteset(Speed_Twin_PositionColourLight_NoEntry_caution, "gfx/Speed_Twin_PositionColourLight_NoEntry.png"){template_signal_tall(7,65)}
+spriteset(Speed_Twin_PositionColourLight_NoEntry_precaution, "gfx/Speed_Twin_PositionColourLight_NoEntry.png"){template_signal_tall(7,94)}
+spriteset(Speed_Twin_PositionColourLight_NoEntry_precaution1, "gfx/Speed_Twin_PositionColourLight_NoEntry.png"){template_signal_tall(7,123)}
+spriteset(Speed_Twin_PositionColourLight_NoEntry_precaution2, "gfx/Speed_Twin_PositionColourLight_NoEntry.png"){template_signal_tall(7,152)}
+
+//This switch decides which spriteset to use for each signal aspect for one signal type (this will be used for block electric, style one)
+switch(FEAT_SIGNALS, SELF, Speed_Twin_PositionColourLight_NoEntry, getbits(extra_callback_info2, 0, 8)){
+	00: Speed_Twin_PositionColourLight_NoEntry_stop;
+	01:	Speed_Twin_PositionColourLight_NoEntry_clear;
+	02:	Speed_Twin_PositionColourLight_NoEntry_caution;
+	03:	Speed_Twin_PositionColourLight_NoEntry_precaution;
+	04:	Speed_Twin_PositionColourLight_NoEntry_precaution1;
+	05:	Speed_Twin_PositionColourLight_NoEntry_precaution2;
+}
+
+//signals
+switch(FEAT_SIGNALS, SELF, Speed_Twin_PositionColourLight, getbits(extra_callback_info2, 16, 8)){
+	00: Speed_Twin_PositionColourLight_Block; //block signal
+	04: Speed_Twin_PositionColourLight_PBS; //Path
+	05: Speed_Twin_PositionColourLight_PBSOneWay; //Path one way
+	07: Speed_Twin_PositionColourLight_NoEntry; //No Entry
+}
+
 //Underground_Block
 spriteset(Underground_Block_stop, "gfx/Underground_Block.png"){template_signal_6tall(7,7)}
 spriteset(Underground_Block_clear, "gfx/Underground_Block.png"){template_signal_6tall(7,36)}
@@ -309,10 +918,18 @@ switch(FEAT_SIGNALS, SELF, Underground, getbits(extra_callback_info2, 16, 8)){
 	07: Underground_NoEntry; //No Entry
 }
 
-switch(FEAT_SIGNALS, SELF, sw_ORPSignals, signal_style){
+switch(FEAT_SIGNALS, SELF, sw_NARPSignals, signal_style){
 	01: TwoAspect;
 	02: Speed_Searchlight;
 	03: Speed_Twin_Searchlight;
+	04: Speed_Trilight;
+	05: Speed_Twin_Trilight;
+	06: Speed_ColourLight;
+	07: Speed_Twin_ColourLight;
+	08: Speed_PositionLight;
+	09: Speed_Twin_PositionLight;
+	10: Speed_PositionColourLight;
+	11: Speed_Twin_PositionColourLight;
 	14: Underground;
 }
 
@@ -332,6 +949,38 @@ item (FEAT_SIGNALS, custom_signals, 0) {
 		style_name:			string(STR_SPEED_TWIN_SEARCHLIGHT);
 		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY, SIGNAL_TYPE_NO_ENTRY);
 		
+		define_style:		4;
+		style_name:			string(STR_SPEED_TRILIGHT);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY, SIGNAL_TYPE_NO_ENTRY);
+		
+		define_style:		5;
+		style_name:			string(STR_SPEED_TWIN_TRILIGHT);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY, SIGNAL_TYPE_NO_ENTRY);
+		
+		define_style:		6;
+		style_name:			string(STR_SPEED_COLOURLIGHT);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY, SIGNAL_TYPE_NO_ENTRY);
+		
+		define_style:		7;
+		style_name:			string(STR_SPEED_TWIN_COLOURLIGHT);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY, SIGNAL_TYPE_NO_ENTRY);
+		
+		define_style:		8;
+		style_name:			string(STR_SPEED_POSITIONLIGHT);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY, SIGNAL_TYPE_NO_ENTRY);
+		
+		define_style:		9;
+		style_name:			string(STR_SPEED_TWIN_POSITIONLIGHT);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY, SIGNAL_TYPE_NO_ENTRY);
+		
+		define_style:		10;
+		style_name:			string(STR_SPEED_POSITIONCOLOURLIGHT);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY, SIGNAL_TYPE_NO_ENTRY);
+		
+		define_style:		11;
+		style_name:			string(STR_SPEED_TWIN_POSITIONCOLOURLIGHT);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY, SIGNAL_TYPE_NO_ENTRY);
+		
 		define_style:		14;
 		style_name:			string(STR_UNDERGROUND);
 		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY, SIGNAL_TYPE_NO_ENTRY);
@@ -339,6 +988,6 @@ item (FEAT_SIGNALS, custom_signals, 0) {
 	}
 
     graphics {
-        sw_ORPSignals;
+        sw_NARPSignals;
     }
 }

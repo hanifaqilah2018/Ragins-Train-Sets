@@ -5,15 +5,20 @@ STR_GRF_DESC :Signals from the United States, Canada and Mexico, based on JP+ Si
 
 STR_TWOASPECT:Two Aspect
 
-STR_ROUTE_BRITISH:Route - British
-STR_ROUTE_SINGLELIGHT:Route - Single Light
-STR_ROUTE_DOUBLELIGHT:Route - Double Light
+STR_SPEED_SEARCHLIGHT:Search-Light (Single)
+STR_SPEED_TWIN_SEARCHLIGHT:Search-Light (Twin)
 
-STR_SPEED_SEARCHLIGHT:Speed - Searchlight
-STR_SPEED_SEARCHLIGHT_WHITE:Speed - Searchlight (White)
-STR_SPEED_TWIN_SEARCHLIGHT:Speed - Twin Searchlight
-STR_SPEED_TWIN_SEARCHLIGHT_WHITE:Speed - Twin Searchlight (White)
-STR_SPEED_DOUBLELIGHT:Speed - Double Light
+STR_SPEED_TRILIGHT:Tri-Light (Single)
+STR_SPEED_TWIN_TRILIGHT:Tri-Light (Twin)
+
+STR_SPEED_COLOURLIGHT:Color-Light (Single)
+STR_SPEED_TWIN_COLOURLIGHT:Color-Light (Twin)
+
+STR_SPEED_POSITIONLIGHT:Position-Light (Single)
+STR_SPEED_TWIN_POSITIONLIGHT:Position-Light (Twin)
+
+STR_SPEED_POSITIONCOLOURLIGHT:Position-Colour-Light (Single)
+STR_SPEED_TWIN_POSITIONCOLOURLIGHT:Position-Color-Light (Twin)
 
 STR_UNDERGROUND:Underground
 

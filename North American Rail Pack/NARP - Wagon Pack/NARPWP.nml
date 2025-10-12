@@ -2336,7 +2336,6 @@ item (FEAT_TRAINS, Item_Cab_Pullman_Comet_Liv0, 6710) {
         name:                             string(STR_NAME_CAB_PULLMAN_COMET);
         introduction_date:                date(1970, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            120 mph;
         power:                            1 hp;
@@ -2347,6 +2346,471 @@ item (FEAT_TRAINS, Item_Cab_Pullman_Comet_Liv0, 6710) {
     default:                             sw_Cab_Pullman_Comet_Liv0_rearcheck;
     purchase:                            spriteset_Cab_Pullman_Comet_Liv0_Purchase;
     additional_text: string(STR_INFO_CAB_PULLMAN_COMET);
+}
+}
+
+spriteset(spriteset_Bombardier_CometIII_EOTD,   "gfx/Bombardier_CometIII_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_Bombardier_CometIII_EOTD_r,   "gfx/Bombardier_CometIII_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_Bombardier_CometIII_EOTD_CabFw,   "gfx/Bombardier_CometIII_EOTD.png") {template_8(187, 39)}
+spriteset(spriteset_Bombardier_CometIII_EOTD_CabR,   "gfx/Bombardier_CometIII_EOTD.png") {template_8_r(187, 69)}
+
+//Bombardier_CometIII_Liv0
+spriteset(spriteset_Bombardier_CometIII_Liv0_Purchase,   "gfx/Bombardier_CometIII_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Bombardier_CometIII_Liv0,   "gfx/Bombardier_CometIII_Liv0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_CometIII_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Bombardier_CometIII_Liv0;
+    1: spriteset_Bombardier_CometIII_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_CometIII_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Bombardier_CometIII_Liv0_SpriteStack1;
+    return spriteset_Bombardier_CometIII_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_CometIII_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Bombardier_CometIII_Liv0;
+    1: spriteset_Bombardier_CometIII_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_CometIII_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Bombardier_CometIII_Liv0_SpriteStack2;
+    return spriteset_Bombardier_CometIII_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_CometIII_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Bombardier_CometIII_Liv0_rearcheck1;
+ 1: switch_Bombardier_CometIII_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Bombardier_CometIII_Liv0, 6900) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    105;
+        running_cost_factor:            4;
+        loading_speed:                    35;
+
+//        variant_group: Item_Bombardier_CometIII_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_BOMBARDIER_COMETIII);
+        introduction_date:                date(1990, 1, 1);
+
+        speed:                            120 mph;
+        weight:                            28 ton;
+        cargo_capacity:                    120/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Bombardier_CometIII_Liv0_position;
+    purchase:                            spriteset_Bombardier_CometIII_Liv0_Purchase;
+    additional_text: string(STR_INFO_BOMBARDIER_COMETIII);
+}
+}
+
+//Cab_Bombardier_CometIII_Liv0
+spriteset(spriteset_Cab_Bombardier_CometIII_Liv0_Purchase,   "gfx/Bombardier_CometIII_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_Bombardier_CometIII_Liv0_Fw,   "gfx/Bombardier_CometIII_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_Bombardier_CometIII_Liv0_Rw,   "gfx/Bombardier_CometIII_Liv0.png") {template_8_r(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_CometIII_Liv0_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Bombardier_CometIII_Liv0_Fw;
+    1: spriteset_Bombardier_CometIII_EOTD_CabFw;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_CometIII_Liv0_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Bombardier_CometIII_Liv0_Rw;
+    1: spriteset_Bombardier_CometIII_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_Bombardier_CometIII_Liv0_rearcheck, position_in_consist_from_end){
+    0 : switch_Bombardier_CometIII_Liv0_SpriteStackRw;
+    return switch_Bombardier_CometIII_Liv0_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_Bombardier_CometIII_Liv0, 6910) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    3;
+        running_cost_factor:            4;
+        loading_speed:                    20;
+
+//        variant_group: Item_Cab_Bombardier_CometIII_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_CAB_BOMBARDIER_COMETIII);
+        introduction_date:                date(1990, 1, 1);
+        vehicle_life:                     50;
+
+        speed:                            120 mph;
+        power:                            1 hp;
+        weight:                            28 ton;
+        cargo_capacity:                    120/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_Cab_Bombardier_CometIII_Liv0_rearcheck;
+    purchase:                            spriteset_Cab_Bombardier_CometIII_Liv0_Purchase;
+    additional_text: string(STR_INFO_CAB_BOMBARDIER_COMETIII);
+}
+}
+
+spriteset(spriteset_Bombardier_CometIV_EOTD,   "gfx/Bombardier_CometIV_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_Bombardier_CometIV_EOTD_r,   "gfx/Bombardier_CometIV_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_Bombardier_CometIV_EOTD_CabFw,   "gfx/Bombardier_CometIV_EOTD.png") {template_8(187, 39)}
+spriteset(spriteset_Bombardier_CometIV_EOTD_CabR,   "gfx/Bombardier_CometIV_EOTD.png") {template_8_r(187, 69)}
+
+//Bombardier_CometIV_Liv0
+spriteset(spriteset_Bombardier_CometIV_Liv0_Purchase,   "gfx/Bombardier_CometIV_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Bombardier_CometIV_Liv0,   "gfx/Bombardier_CometIV_Liv0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_CometIV_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Bombardier_CometIV_Liv0;
+    1: spriteset_Bombardier_CometIV_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_CometIV_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Bombardier_CometIV_Liv0_SpriteStack1;
+    return spriteset_Bombardier_CometIV_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_CometIV_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Bombardier_CometIV_Liv0;
+    1: spriteset_Bombardier_CometIV_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_CometIV_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Bombardier_CometIV_Liv0_SpriteStack2;
+    return spriteset_Bombardier_CometIV_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Bombardier_CometIV_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Bombardier_CometIV_Liv0_rearcheck1;
+ 1: switch_Bombardier_CometIV_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Bombardier_CometIV_Liv0, 6940) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    105;
+        running_cost_factor:            4;
+        loading_speed:                    35;
+
+//        variant_group: Item_Bombardier_CometIV_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_BOMBARDIER_COMETIV);
+        introduction_date:                date(1996, 1, 1);
+
+        speed:                            120 mph;
+        weight:                            35 ton;
+        cargo_capacity:                    120/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Bombardier_CometIV_Liv0_position;
+    purchase:                            spriteset_Bombardier_CometIV_Liv0_Purchase;
+    additional_text: string(STR_INFO_BOMBARDIER_COMETIV);
+}
+}
+
+//Cab_Bombardier_CometIV_Liv0
+spriteset(spriteset_Cab_Bombardier_CometIV_Liv0_Purchase,   "gfx/Bombardier_CometIV_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_Bombardier_CometIV_Liv0_Fw,   "gfx/Bombardier_CometIV_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_Bombardier_CometIV_Liv0_Rw,   "gfx/Bombardier_CometIV_Liv0.png") {template_8_r(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_CometIV_Liv0_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Bombardier_CometIV_Liv0_Fw;
+    1: spriteset_Bombardier_CometIV_EOTD_CabFw;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Bombardier_CometIV_Liv0_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Bombardier_CometIV_Liv0_Rw;
+    1: spriteset_Bombardier_CometIV_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_Bombardier_CometIV_Liv0_rearcheck, position_in_consist_from_end){
+    0 : switch_Bombardier_CometIV_Liv0_SpriteStackRw;
+    return switch_Bombardier_CometIV_Liv0_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_Bombardier_CometIV_Liv0, 6950) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    3;
+        running_cost_factor:            4;
+        loading_speed:                    20;
+
+//        variant_group: Item_Cab_Bombardier_CometIV_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_CAB_BOMBARDIER_COMETIV);
+        introduction_date:                date(1996, 1, 1);
+        vehicle_life:                     50;
+
+        speed:                            120 mph;
+        power:                            1 hp;
+        weight:                            35 ton;
+        cargo_capacity:                    120/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_Cab_Bombardier_CometIV_Liv0_rearcheck;
+    purchase:                            spriteset_Cab_Bombardier_CometIV_Liv0_Purchase;
+    additional_text: string(STR_INFO_CAB_BOMBARDIER_COMETIV);
+}
+}
+
+spriteset(spriteset_Alstom_CometV_EOTD,   "gfx/Alstom_CometV_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_Alstom_CometV_EOTD_r,   "gfx/Alstom_CometV_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_Alstom_CometV_EOTD_CabFw,   "gfx/Alstom_CometV_EOTD.png") {template_8(187, 39)}
+spriteset(spriteset_Alstom_CometV_EOTD_CabR,   "gfx/Alstom_CometV_EOTD.png") {template_8_r(187, 69)}
+
+//Alstom_CometV_Liv0
+spriteset(spriteset_Alstom_CometV_Liv0_Purchase,   "gfx/Alstom_CometV_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Alstom_CometV_Liv0,   "gfx/Alstom_CometV_Liv0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Alstom_CometV_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Alstom_CometV_Liv0;
+    1: spriteset_Alstom_CometV_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Alstom_CometV_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Alstom_CometV_Liv0_SpriteStack1;
+    return spriteset_Alstom_CometV_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Alstom_CometV_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Alstom_CometV_Liv0;
+    1: spriteset_Alstom_CometV_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Alstom_CometV_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Alstom_CometV_Liv0_SpriteStack2;
+    return spriteset_Alstom_CometV_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Alstom_CometV_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Alstom_CometV_Liv0_rearcheck1;
+ 1: switch_Alstom_CometV_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Alstom_CometV_Liv0, 6960) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    105;
+        running_cost_factor:            4;
+        loading_speed:                    35;
+
+//        variant_group: Item_Alstom_CometV_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_ALSTOM_COMETV);
+        introduction_date:                date(1999, 1, 1);
+
+        speed:                            120 mph;
+        weight:                            45 ton;
+        cargo_capacity:                    130/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Alstom_CometV_Liv0_position;
+    purchase:                            spriteset_Alstom_CometV_Liv0_Purchase;
+    additional_text: string(STR_INFO_ALSTOM_COMETV);
+}
+}
+
+//Cab_Alstom_CometV_Liv0
+spriteset(spriteset_Cab_Alstom_CometV_Liv0_Purchase,   "gfx/Alstom_CometV_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_Alstom_CometV_Liv0_Fw,   "gfx/Alstom_CometV_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_Alstom_CometV_Liv0_Rw,   "gfx/Alstom_CometV_Liv0.png") {template_8_r(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Alstom_CometV_Liv0_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Alstom_CometV_Liv0_Fw;
+    1: spriteset_Alstom_CometV_EOTD_CabFw;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Alstom_CometV_Liv0_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_Alstom_CometV_Liv0_Rw;
+    1: spriteset_Alstom_CometV_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_Alstom_CometV_Liv0_rearcheck, position_in_consist_from_end){
+    0 : switch_Alstom_CometV_Liv0_SpriteStackRw;
+    return switch_Alstom_CometV_Liv0_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_Alstom_CometV_Liv0, 6970) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    3;
+        running_cost_factor:            4;
+        loading_speed:                    20;
+
+//        variant_group: Item_Cab_Alstom_CometV_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_CAB_ALSTOM_COMETV);
+        introduction_date:                date(1999, 1, 1);
+        vehicle_life:                     50;
+
+        speed:                            120 mph;
+        power:                            1 hp;
+        weight:                            45 ton;
+        cargo_capacity:                    130/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_Cab_Alstom_CometV_Liv0_rearcheck;
+    purchase:                            spriteset_Cab_Alstom_CometV_Liv0_Purchase;
+    additional_text: string(STR_INFO_CAB_ALSTOM_COMETV);
 }
 }
 
@@ -2494,7 +2958,6 @@ item (FEAT_TRAINS, Item_Cab_Budd_GalleryCar_Liv0, 8510) {
         name:                             string(STR_NAME_CAB_BUDD_GALLERYCAR);
         introduction_date:                date(1950, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            100 mph;
         power:                            1 hp;
@@ -2650,7 +3113,6 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv0, 8550) {
         name:                             string(STR_NAME_CAB_PULLMAN_GALLERYCAR);
         introduction_date:                date(1956, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            100 mph;
         power:                            1 hp;
@@ -2801,7 +3263,6 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv1, 8551) {
         name:                             string(STR_NAME_CAB_PULLMAN_GALLERYCAR);
         introduction_date:                date(1956, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            100 mph;
         power:                            1 hp;
@@ -2952,7 +3413,6 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv2, 8552) {
         name:                             string(STR_NAME_CAB_PULLMAN_GALLERYCAR);
         introduction_date:                date(1956, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            100 mph;
         power:                            1 hp;
@@ -3103,7 +3563,6 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv3, 8553) {
         name:                             string(STR_NAME_CAB_PULLMAN_GALLERYCAR);
         introduction_date:                date(1956, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            100 mph;
         power:                            1 hp;
@@ -3259,7 +3718,6 @@ item (FEAT_TRAINS, Item_Cab_HSC_BiLevel_Liv0, 8710) {
         name:                             string(STR_NAME_CAB_HSC_BILEVEL);
         introduction_date:                date(1976, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            100 mph;
         power:                            1 hp;
@@ -3415,7 +3873,6 @@ item (FEAT_TRAINS, Item_Cab_BuddComeng_DoubleDecker_Liv0, 8750) {
         name:                             string(STR_NAME_CAB_BUDDCOMENG_DOUBLEDECKER);
         introduction_date:                date(1978, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            100 mph;
         power:                            1 hp;
@@ -3651,7 +4108,6 @@ item (FEAT_TRAINS, Item_Cab_Kawasaki_C3_Liv0, 8950) {
         name:                             string(STR_NAME_CAB_KAWASAKI_C3);
         introduction_date:                date(1998, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            110 mph;
         power:                            1 hp;
@@ -3807,7 +4263,6 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv0, 9010) {
         name:                             string(STR_NAME_CAB_BOMBARDIER_MULTILEVEL);
         introduction_date:                date(2006, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            110 mph;
         power:                            1 hp;
@@ -3958,7 +4413,6 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv1, 9011) {
         name:                             string(STR_NAME_CAB_BOMBARDIER_MULTILEVEL);
         introduction_date:                date(2006, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            110 mph;
         power:                            1 hp;
@@ -4109,7 +4563,6 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv2, 9012) {
         name:                             string(STR_NAME_CAB_BOMBARDIER_MULTILEVEL);
         introduction_date:                date(2006, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            110 mph;
         power:                            1 hp;
@@ -4260,7 +4713,6 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv3, 9013) {
         name:                             string(STR_NAME_CAB_BOMBARDIER_MULTILEVEL);
         introduction_date:                date(2006, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            110 mph;
         power:                            1 hp;
@@ -4764,6 +5216,166 @@ item (FEAT_TRAINS, Item_Mail_CompositeHeavyweight_Liv0, 11020) {
 }
 }
 
+spriteset(spriteset_Budd_Lightweight_EOTD,   "gfx/Budd_Lightweight_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_Budd_Lightweight_EOTD_r,   "gfx/Budd_Lightweight_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_Budd_Lightweight_EOTD_Alt,   "gfx/Budd_Lightweight_EOTD.png") {template_8(187, 39)}
+
+//Budd_Lightweight_Liv0
+spriteset(spriteset_Budd_Lightweight_Liv0_Purchase,   "gfx/Budd_Lightweight_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Budd_Lightweight_Liv0,   "gfx/Budd_Lightweight_Liv0.png") {template_8(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Budd_Lightweight_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Lightweight_Liv0;
+    1: spriteset_Budd_Lightweight_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_Lightweight_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Budd_Lightweight_Liv0_SpriteStack1;
+    return spriteset_Budd_Lightweight_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Budd_Lightweight_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Lightweight_Liv0;
+    1: spriteset_Budd_Lightweight_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_Lightweight_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Budd_Lightweight_Liv0_SpriteStack2;
+    return spriteset_Budd_Lightweight_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_Lightweight_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Budd_Lightweight_Liv0_rearcheck1;
+ 1: switch_Budd_Lightweight_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Budd_Lightweight_Liv0, 11320) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    115;
+        running_cost_factor:            2;
+        loading_speed:                    5;
+
+//        variant_group: Item_Budd_Lightweight_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_BUDD_LIGHTWEIGHT);
+        introduction_date:                date(1936, 1, 1);
+
+        speed:                            110 mph;
+        weight:                            36 ton;
+        cargo_capacity:                    90/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Budd_Lightweight_Liv0_position;
+    purchase:                            spriteset_Budd_Lightweight_Liv0_Purchase;
+    additional_text: string(STR_INFO_BUDD_LIGHTWEIGHT);
+}
+}
+
+//Mail_Budd_Lightweight_Liv0
+spriteset(spriteset_Mail_Budd_Lightweight_Liv0_Purchase,   "gfx/Budd_Lightweight_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_Budd_Lightweight_Liv0,   "gfx/Budd_Lightweight_Liv0.png") {template_8_repeat(187, 39)}
+
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Budd_Lightweight_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Budd_Lightweight_Liv0;
+    1: spriteset_Budd_Lightweight_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Budd_Lightweight_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_Budd_Lightweight_Liv0_SpriteStack1;
+    return spriteset_Mail_Budd_Lightweight_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Budd_Lightweight_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Budd_Lightweight_Liv0;
+    1: spriteset_Budd_Lightweight_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Budd_Lightweight_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_Budd_Lightweight_Liv0_SpriteStack2;
+    return spriteset_Mail_Budd_Lightweight_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Budd_Lightweight_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_Budd_Lightweight_Liv0_rearcheck1;
+ 1: switch_Mail_Budd_Lightweight_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Mail_Budd_Lightweight_Liv0, 11330) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_ARMOURED);
+        cargo_allow_refit:               [ MAIL, GOOD, FOOD, BEER, FRUT, FISH, VALU, GOLD, DIAM, DYES, ENSP, FERT, MILK, MNSP, FMSP];
+		cargo_disallow_refit: [PASS, TOUR, COAL, OIL_, LVST, GRAI, WOOD, IORE, STEL, PAPR, WHEA, RUBR, MAIZ, CORE, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, AORE, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, FICR, GLAS, GRVL, JAVA, LIME, OLSD, PETR, PLAS, POTA, RCYC, RFPR, SAND, SCMT, SGBT, SGCN, SULP, VEHI, VPTS, WDPR, WOOL, URAN, YETI, YETY];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    105;
+        running_cost_factor:            1;
+        loading_speed:                    10;
+
+//        variant_group: Item_Mail_Budd_Lightweight_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_MAIL_BUDD_LIGHTWEIGHT);
+        introduction_date:                date(1936, 1, 1);
+
+        speed:                            110 mph;
+        weight:                            36 ton;
+        cargo_capacity:                    50/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Mail_Budd_Lightweight_Liv0_position;
+    purchase:                            spriteset_Mail_Budd_Lightweight_Liv0_Purchase;
+    additional_text: string(STR_INFO_MAIL_BUDD_LIGHTWEIGHT);
+}
+}
+
 spriteset(spriteset_Budd_Amfleet_EOTD,   "gfx/Budd_Amfleet_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_Budd_Amfleet_EOTD_r,   "gfx/Budd_Amfleet_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_Budd_Amfleet_EOTD_CabFw,   "gfx/Budd_Amfleet_EOTD.png") {template_8(367, 39)}
@@ -4991,7 +5603,6 @@ item (FEAT_TRAINS, Item_Cab_Budd_Amfleet_Liv0, 11720) {
         name:                             string(STR_NAME_CAB_BUDD_AMFLEET);
         introduction_date:                date(1975, 1, 1);
         vehicle_life:                     50;
-        model_life:                        30;
 
         speed:                            125 mph;
         power:                            1 hp;
