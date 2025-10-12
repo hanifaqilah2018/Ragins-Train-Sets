@@ -11053,8 +11053,8 @@ spriteset(spriteset_PRR_O1_PantoUp_r,   "gfx/PRR_O1_PantoUp.png") {template_7(7,
 spriteset(spriteset_PRR_O1_PantoDown,   "gfx/PRR_O1_PantoDown.png") {template_7(7, 39)}
 
 //PRR_O1_Liv0
-spriteset(spriteset_PRR_O1_Liv0_Purchase,   "gfx/PRR_O1_Liv0.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_PRR_O1_Liv0,   "gfx/PRR_O1_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_PRR_O1_Liv0_Purchase,   "gfx/PRR_O1_Liv0.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_PRR_O1_Liv0,   "gfx/PRR_O1_Liv0.png") {template_7(7, 39)}
 
 switch(FEAT_TRAINS, SELF, switch_PRR_O1_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
  0: spriteset_PRR_O1_PantoDown;

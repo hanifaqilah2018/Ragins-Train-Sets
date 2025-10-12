@@ -5287,8 +5287,8 @@ item (FEAT_TRAINS, Item_Budd_Lightweight_Liv0, 11320) {
         introduction_date:                date(1936, 1, 1);
 
         speed:                            110 mph;
-        weight:                            36 ton;
-        cargo_capacity:                    90/param_capacity_mod;
+        weight:                            28 ton;
+        cargo_capacity:                    78/param_capacity_mod;
     }
     graphics {
     default:                             switch_Budd_Lightweight_Liv0_position;
@@ -5366,13 +5366,333 @@ item (FEAT_TRAINS, Item_Mail_Budd_Lightweight_Liv0, 11330) {
         introduction_date:                date(1936, 1, 1);
 
         speed:                            110 mph;
-        weight:                            36 ton;
-        cargo_capacity:                    50/param_capacity_mod;
+        weight:                            28 ton;
+        cargo_capacity:                    48/param_capacity_mod;
     }
     graphics {
     default:                             switch_Mail_Budd_Lightweight_Liv0_position;
     purchase:                            spriteset_Mail_Budd_Lightweight_Liv0_Purchase;
     additional_text: string(STR_INFO_MAIL_BUDD_LIGHTWEIGHT);
+}
+}
+
+spriteset(spriteset_Budd_StreamlinerCar_EOTD,   "gfx/Budd_StreamlinerCar_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_Budd_StreamlinerCar_EOTD_r,   "gfx/Budd_StreamlinerCar_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_Budd_StreamlinerCar_EOTD_Alt,   "gfx/Budd_StreamlinerCar_EOTD.png") {template_8(187, 39)}
+
+//Budd_StreamlinerCar_Liv0
+spriteset(spriteset_Budd_StreamlinerCar_Liv0_Purchase,   "gfx/Budd_StreamlinerCar_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Budd_StreamlinerCar_Liv0,   "gfx/Budd_StreamlinerCar_Liv0.png") {template_8(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Budd_StreamlinerCar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_StreamlinerCar_Liv0;
+    1: spriteset_Budd_StreamlinerCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_StreamlinerCar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Budd_StreamlinerCar_Liv0_SpriteStack1;
+    return spriteset_Budd_StreamlinerCar_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Budd_StreamlinerCar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_StreamlinerCar_Liv0;
+    1: spriteset_Budd_StreamlinerCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_StreamlinerCar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Budd_StreamlinerCar_Liv0_SpriteStack2;
+    return spriteset_Budd_StreamlinerCar_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_StreamlinerCar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Budd_StreamlinerCar_Liv0_rearcheck1;
+ 1: switch_Budd_StreamlinerCar_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Budd_StreamlinerCar_Liv0, 11340) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    115;
+        running_cost_factor:            2;
+        loading_speed:                    5;
+
+//        variant_group: Item_Budd_StreamlinerCar_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_BUDD_STREAMLINERCAR);
+        introduction_date:                date(1936, 1, 1);
+
+        speed:                            115 mph;
+        weight:                            36 ton;
+        cargo_capacity:                    90/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Budd_StreamlinerCar_Liv0_position;
+    purchase:                            spriteset_Budd_StreamlinerCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_BUDD_STREAMLINERCAR);
+}
+}
+
+//Mail_Budd_StreamlinerCar_Liv0
+spriteset(spriteset_Mail_Budd_StreamlinerCar_Liv0_Purchase,   "gfx/Budd_StreamlinerCar_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_Budd_StreamlinerCar_Liv0,   "gfx/Budd_StreamlinerCar_Liv0.png") {template_8_repeat(187, 39)}
+
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Budd_StreamlinerCar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Budd_StreamlinerCar_Liv0;
+    1: spriteset_Budd_StreamlinerCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Budd_StreamlinerCar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_Budd_StreamlinerCar_Liv0_SpriteStack1;
+    return spriteset_Mail_Budd_StreamlinerCar_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Budd_StreamlinerCar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Budd_StreamlinerCar_Liv0;
+    1: spriteset_Budd_StreamlinerCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Budd_StreamlinerCar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_Budd_StreamlinerCar_Liv0_SpriteStack2;
+    return spriteset_Mail_Budd_StreamlinerCar_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Budd_StreamlinerCar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_Budd_StreamlinerCar_Liv0_rearcheck1;
+ 1: switch_Mail_Budd_StreamlinerCar_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Mail_Budd_StreamlinerCar_Liv0, 11350) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_ARMOURED);
+        cargo_allow_refit:               [ MAIL, GOOD, FOOD, BEER, FRUT, FISH, VALU, GOLD, DIAM, DYES, ENSP, FERT, MILK, MNSP, FMSP];
+		cargo_disallow_refit: [PASS, TOUR, COAL, OIL_, LVST, GRAI, WOOD, IORE, STEL, PAPR, WHEA, RUBR, MAIZ, CORE, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, AORE, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, FICR, GLAS, GRVL, JAVA, LIME, OLSD, PETR, PLAS, POTA, RCYC, RFPR, SAND, SCMT, SGBT, SGCN, SULP, VEHI, VPTS, WDPR, WOOL, URAN, YETI, YETY];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    105;
+        running_cost_factor:            1;
+        loading_speed:                    10;
+
+//        variant_group: Item_Mail_Budd_StreamlinerCar_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_MAIL_BUDD_STREAMLINERCAR);
+        introduction_date:                date(1936, 1, 1);
+
+        speed:                            115 mph;
+        weight:                            36 ton;
+        cargo_capacity:                    50/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Mail_Budd_StreamlinerCar_Liv0_position;
+    purchase:                            spriteset_Mail_Budd_StreamlinerCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_MAIL_BUDD_STREAMLINERCAR);
+}
+}
+
+spriteset(spriteset_CorTen_LightweightCar_EOTD,   "gfx/CorTen_LightweightCar_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_CorTen_LightweightCar_EOTD_r,   "gfx/CorTen_LightweightCar_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_CorTen_LightweightCar_EOTD_Alt,   "gfx/CorTen_LightweightCar_EOTD.png") {template_8(187, 39)}
+
+//CorTen_LightweightCar_Liv0
+spriteset(spriteset_CorTen_LightweightCar_Liv0_Purchase,   "gfx/CorTen_LightweightCar_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_CorTen_LightweightCar_Liv0,   "gfx/CorTen_LightweightCar_Liv0.png") {template_8(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_CorTen_LightweightCar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_CorTen_LightweightCar_Liv0;
+    1: spriteset_CorTen_LightweightCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_CorTen_LightweightCar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_CorTen_LightweightCar_Liv0_SpriteStack1;
+    return spriteset_CorTen_LightweightCar_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_CorTen_LightweightCar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_CorTen_LightweightCar_Liv0;
+    1: spriteset_CorTen_LightweightCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_CorTen_LightweightCar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_CorTen_LightweightCar_Liv0_SpriteStack2;
+    return spriteset_CorTen_LightweightCar_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_CorTen_LightweightCar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_CorTen_LightweightCar_Liv0_rearcheck1;
+ 1: switch_CorTen_LightweightCar_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_CorTen_LightweightCar_Liv0, 11440) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    115;
+        running_cost_factor:            2;
+        loading_speed:                    5;
+
+//        variant_group: Item_CorTen_LightweightCar_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_CORTEN_LIGHTWEIGHTCAR);
+        introduction_date:                date(1946, 1, 1);
+
+        speed:                            110 mph;
+        weight:                            42 ton;
+        cargo_capacity:                    90/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_CorTen_LightweightCar_Liv0_position;
+    purchase:                            spriteset_CorTen_LightweightCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_CORTEN_LIGHTWEIGHTCAR);
+}
+}
+
+//Mail_CorTen_LightweightCar_Liv0
+spriteset(spriteset_Mail_CorTen_LightweightCar_Liv0_Purchase,   "gfx/CorTen_LightweightCar_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_CorTen_LightweightCar_Liv0,   "gfx/CorTen_LightweightCar_Liv0.png") {template_8_repeat(187, 39)}
+
+
+switch (FEAT_TRAINS, SELF, switch_Mail_CorTen_LightweightCar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_CorTen_LightweightCar_Liv0;
+    1: spriteset_CorTen_LightweightCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_CorTen_LightweightCar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_CorTen_LightweightCar_Liv0_SpriteStack1;
+    return spriteset_Mail_CorTen_LightweightCar_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_CorTen_LightweightCar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_CorTen_LightweightCar_Liv0;
+    1: spriteset_CorTen_LightweightCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_CorTen_LightweightCar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_CorTen_LightweightCar_Liv0_SpriteStack2;
+    return spriteset_Mail_CorTen_LightweightCar_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_CorTen_LightweightCar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_CorTen_LightweightCar_Liv0_rearcheck1;
+ 1: switch_Mail_CorTen_LightweightCar_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Mail_CorTen_LightweightCar_Liv0, 11450) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_ARMOURED);
+        cargo_allow_refit:               [ MAIL, GOOD, FOOD, BEER, FRUT, FISH, VALU, GOLD, DIAM, DYES, ENSP, FERT, MILK, MNSP, FMSP];
+		cargo_disallow_refit: [PASS, TOUR, COAL, OIL_, LVST, GRAI, WOOD, IORE, STEL, PAPR, WHEA, RUBR, MAIZ, CORE, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, AORE, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, FICR, GLAS, GRVL, JAVA, LIME, OLSD, PETR, PLAS, POTA, RCYC, RFPR, SAND, SCMT, SGBT, SGCN, SULP, VEHI, VPTS, WDPR, WOOL, URAN, YETI, YETY];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    105;
+        running_cost_factor:            1;
+        loading_speed:                    10;
+
+//        variant_group: Item_Mail_CorTen_LightweightCar_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_MAIL_CORTEN_LIGHTWEIGHTCAR);
+        introduction_date:                date(1946, 1, 1);
+
+        speed:                            110 mph;
+        weight:                            42 ton;
+        cargo_capacity:                    50/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Mail_CorTen_LightweightCar_Liv0_position;
+    purchase:                            spriteset_Mail_CorTen_LightweightCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_MAIL_CORTEN_LIGHTWEIGHTCAR);
 }
 }
 
