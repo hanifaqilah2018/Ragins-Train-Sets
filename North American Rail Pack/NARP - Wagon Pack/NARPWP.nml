@@ -5903,7 +5903,7 @@ switch(FEAT_TRAINS, SELF, switch_Budd_Keystone_Liv0_position, vehicle_is_flipped
 
 item (FEAT_TRAINS, Item_Budd_Keystone_Liv0, 11540) {
     property {
-        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_PrototypeDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         refittable_cargo_classes:        CC_PASSENGERS;
         cargo_allow_refit:                [PASS, TOUR];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -5940,6 +5940,254 @@ item (FEAT_TRAINS, Item_Budd_Keystone_Liv0, 11540) {
     default:                             switch_Budd_Keystone_Liv0_position;
     purchase:                            spriteset_Budd_Keystone_Liv0_Purchase;
     additional_text: string(STR_INFO_BUDD_KEYSTONE);
+}
+}
+
+spriteset(spriteset_PioneerIII_Intercity_EOTD,   "gfx/PioneerIII_Intercity_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_PioneerIII_Intercity_EOTD_r,   "gfx/PioneerIII_Intercity_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_PioneerIII_Intercity_EOTD_Alt,   "gfx/PioneerIII_Intercity_EOTD.png") {template_8(187, 39)}
+
+//PioneerIII_Intercity_Liv0
+spriteset(spriteset_PioneerIII_Intercity_Liv0_Purchase,   "gfx/PioneerIII_Intercity_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_PioneerIII_Intercity_Liv0,   "gfx/PioneerIII_Intercity_Liv0.png") {template_8(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_PioneerIII_Intercity_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_PioneerIII_Intercity_Liv0;
+    1: spriteset_PioneerIII_Intercity_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_PioneerIII_Intercity_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_PioneerIII_Intercity_Liv0_SpriteStack1;
+    return spriteset_PioneerIII_Intercity_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_PioneerIII_Intercity_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_PioneerIII_Intercity_Liv0;
+    1: spriteset_PioneerIII_Intercity_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_PioneerIII_Intercity_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_PioneerIII_Intercity_Liv0_SpriteStack2;
+    return spriteset_PioneerIII_Intercity_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_PioneerIII_Intercity_Liv0_position, vehicle_is_flipped) {
+ 0: switch_PioneerIII_Intercity_Liv0_rearcheck1;
+ 1: switch_PioneerIII_Intercity_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_PioneerIII_Intercity_Liv0, 11560) {
+    property {
+        climates_available:                (param_PrototypeDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    125;
+        running_cost_factor:            3;
+        loading_speed:                    5;
+
+//        variant_group: Item_PioneerIII_Intercity_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_PIONEERIII_INTERCITY);
+        introduction_date:                date(1957, 1, 1);
+
+        speed:                            100 mph;
+        weight:                            24 ton;
+        cargo_capacity:                    88/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_PioneerIII_Intercity_Liv0_position;
+    purchase:                            spriteset_PioneerIII_Intercity_Liv0_Purchase;
+    additional_text: string(STR_INFO_PIONEERIII_INTERCITY);
+}
+}
+
+spriteset(spriteset_RapidoCar_EOTD,   "gfx/RapidoCar_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_RapidoCar_EOTD_r,   "gfx/RapidoCar_EOTD.png") {template_8_r(7, 39)}
+
+//RapidoCar_Liv0
+spriteset(spriteset_RapidoCar_Liv0_Purchase,   "gfx/RapidoCar_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_RapidoCar_Liv0,   "gfx/RapidoCar_Liv0.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_RapidoCar_Liv0_Lounge,   "gfx/RapidoCar_Liv0.png") {template_8_repeat(7, 69)}
+spriteset(spriteset_RapidoCar_Liv0_Diner,   "gfx/RapidoCar_Liv0.png") {template_8_repeat(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_RapidoCar_Liv0_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_RapidoCar_Liv0_Lounge;
+ 2..3: spriteset_RapidoCar_Liv0_Diner;
+  spriteset_RapidoCar_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_RapidoCar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_RapidoCar_Liv0_dinerposition;
+    1: spriteset_RapidoCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_RapidoCar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_RapidoCar_Liv0_SpriteStack1;
+    return switch_RapidoCar_Liv0_dinerposition;
+}
+
+switch (FEAT_TRAINS, SELF, switch_RapidoCar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_RapidoCar_Liv0_dinerposition;
+    1: spriteset_RapidoCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_RapidoCar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_RapidoCar_Liv0_SpriteStack2;
+    return switch_RapidoCar_Liv0_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_RapidoCar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_RapidoCar_Liv0_rearcheck1;
+ 1: switch_RapidoCar_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_RapidoCar_Liv0, 11600) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    100;
+        running_cost_factor:            3;
+        loading_speed:                    5;
+
+//        variant_group: Item_RapidoCar_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_RAPIDOCAR);
+        introduction_date:                date(1965, 1, 1);
+
+        speed:                            100 mph;
+        weight:                            50 ton;
+        cargo_capacity:                    80/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_RapidoCar_Liv0_position;
+    purchase:                            spriteset_RapidoCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_RAPIDOCAR);
+}
+}
+
+//Mail_RapidoCar_Liv0
+spriteset(spriteset_Mail_RapidoCar_Liv0_Purchase,   "gfx/RapidoCar_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_RapidoCar_Liv0,   "gfx/RapidoCar_Liv0.png") {template_8_repeat(187, 39)}
+
+
+switch (FEAT_TRAINS, SELF, switch_Mail_RapidoCar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_RapidoCar_Liv0;
+    1: spriteset_RapidoCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_RapidoCar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_RapidoCar_Liv0_SpriteStack1;
+    return spriteset_Mail_RapidoCar_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_RapidoCar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_RapidoCar_Liv0;
+    1: spriteset_RapidoCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_RapidoCar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_RapidoCar_Liv0_SpriteStack2;
+    return spriteset_Mail_RapidoCar_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_RapidoCar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_RapidoCar_Liv0_rearcheck1;
+ 1: switch_Mail_RapidoCar_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Mail_RapidoCar_Liv0, 11610) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_ARMOURED);
+        cargo_allow_refit:               [ MAIL, GOOD, FOOD, BEER, FRUT, FISH, VALU, GOLD, DIAM, DYES, ENSP, FERT, MILK, MNSP, FMSP];
+		cargo_disallow_refit: [PASS, TOUR, COAL, OIL_, LVST, GRAI, WOOD, IORE, STEL, PAPR, WHEA, RUBR, MAIZ, CORE, WATR, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, AORE, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, FICR, GLAS, GRVL, JAVA, LIME, OLSD, PETR, PLAS, POTA, RCYC, RFPR, SAND, SCMT, SGBT, SGCN, SULP, VEHI, VPTS, WDPR, WOOL, URAN, YETI, YETY];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    100;
+        running_cost_factor:            3;
+        loading_speed:                    20;
+
+//        variant_group: Item_Mail_RapidoCar_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_MAIL_RAPIDOCAR);
+        introduction_date:                date(1965, 1, 1);
+
+        speed:                            100 mph;
+        weight:                            50 ton;
+        cargo_capacity:                    50/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Mail_RapidoCar_Liv0_position;
+    purchase:                            spriteset_Mail_RapidoCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_MAIL_RAPIDOCAR);
 }
 }
 
