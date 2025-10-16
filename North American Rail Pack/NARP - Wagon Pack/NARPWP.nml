@@ -7010,6 +7010,249 @@ item (FEAT_TRAINS, Item_Budd_SkyView_Liv0, 13600) {
 }
 }
 
+spriteset(spriteset_Pullman_SuperLiner_EOTD,   "gfx/Pullman_SuperLiner_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_Pullman_SuperLiner_EOTD_r,   "gfx/Pullman_SuperLiner_EOTD.png") {template_8_r(7, 39)}
+
+//Pullman_SuperLiner_Liv0
+spriteset(spriteset_Pullman_SuperLiner_Liv0_Purchase,   "gfx/Pullman_SuperLiner_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Pullman_SuperLiner_Liv0,   "gfx/Pullman_SuperLiner_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_Pullman_SuperLiner_Liv0_Diner,   "gfx/Pullman_SuperLiner_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_Pullman_SuperLiner_Liv0_Lounge,   "gfx/Pullman_SuperLiner_Liv0.png") {template_8(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_SuperLiner_Liv0_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_Pullman_SuperLiner_Liv0_Diner;
+ 2..3: spriteset_Pullman_SuperLiner_Liv0_Lounge;
+  spriteset_Pullman_SuperLiner_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Pullman_SuperLiner_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_Pullman_SuperLiner_Liv0_dinerposition;
+    1: spriteset_Pullman_SuperLiner_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_SuperLiner_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Pullman_SuperLiner_Liv0_SpriteStack1;
+    return switch_Pullman_SuperLiner_Liv0_dinerposition;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Pullman_SuperLiner_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_Pullman_SuperLiner_Liv0_dinerposition;
+    1: spriteset_Pullman_SuperLiner_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_SuperLiner_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Pullman_SuperLiner_Liv0_SpriteStack2;
+    return switch_Pullman_SuperLiner_Liv0_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Pullman_SuperLiner_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Pullman_SuperLiner_Liv0_rearcheck1;
+ 1: switch_Pullman_SuperLiner_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Pullman_SuperLiner_Liv0, 13700) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    120;
+        running_cost_factor:            5;
+        loading_speed:                    20;
+
+//        variant_group: Item_Pullman_SuperLiner_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_PULLMAN_SUPERLINER);
+        introduction_date:                date(1975, 1, 1);
+
+        speed:                            100 mph;
+        weight:                            68 ton;
+        cargo_capacity:                   110/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Pullman_SuperLiner_Liv0_position;
+    purchase:                            spriteset_Pullman_SuperLiner_Liv0_Purchase;
+    additional_text: string(STR_INFO_PULLMAN_SUPERLINER);
+}
+}
+
+spriteset(spriteset_MK_CaliforniaCar_EOTD,   "gfx/MK_CaliforniaCar_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_MK_CaliforniaCar_EOTD_r,   "gfx/MK_CaliforniaCar_EOTD.png") {template_8_r(7, 39)}
+spriteset(spriteset_MK_CaliforniaCar_EOTD_CabFw,   "gfx/MK_CaliforniaCar_EOTD.png") {template_8(187, 39)}
+spriteset(spriteset_MK_CaliforniaCar_EOTD_CabR,   "gfx/MK_CaliforniaCar_EOTD.png") {template_8_r(187, 69)}
+
+//MK_CaliforniaCar_Liv0
+spriteset(spriteset_MK_CaliforniaCar_Liv0_Purchase,   "gfx/MK_CaliforniaCar_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_MK_CaliforniaCar_Liv0,   "gfx/MK_CaliforniaCar_Liv0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_MK_CaliforniaCar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_MK_CaliforniaCar_Liv0;
+    1: spriteset_MK_CaliforniaCar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_MK_CaliforniaCar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_MK_CaliforniaCar_Liv0_SpriteStack1;
+    return spriteset_MK_CaliforniaCar_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_MK_CaliforniaCar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_MK_CaliforniaCar_Liv0;
+    1: spriteset_MK_CaliforniaCar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_MK_CaliforniaCar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_MK_CaliforniaCar_Liv0_SpriteStack2;
+    return spriteset_MK_CaliforniaCar_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_MK_CaliforniaCar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_MK_CaliforniaCar_Liv0_rearcheck1;
+ 1: switch_MK_CaliforniaCar_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_MK_CaliforniaCar_Liv0, 13900) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    110;
+        running_cost_factor:            5;
+        loading_speed:                    30;
+
+//        variant_group: Item_MK_CaliforniaCar_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_MK_CALIFORNIACAR);
+        introduction_date:                date(1994, 1, 1);
+
+        speed:                            125 mph;
+        weight:                            70 ton;
+        cargo_capacity:                    120/param_capacity_mod;
+    }
+    graphics {
+    default:                             switch_MK_CaliforniaCar_Liv0_position;
+    purchase:                            spriteset_MK_CaliforniaCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_MK_CALIFORNIACAR);
+}
+}
+
+//Cab_MK_CaliforniaCar_Liv0
+spriteset(spriteset_Cab_MK_CaliforniaCar_Liv0_Purchase,   "gfx/MK_CaliforniaCar_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Cab_MK_CaliforniaCar_Liv0_Fw,   "gfx/MK_CaliforniaCar_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_Cab_MK_CaliforniaCar_Liv0_Rw,   "gfx/MK_CaliforniaCar_Liv0.png") {template_8_r(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_MK_CaliforniaCar_Liv0_SpriteStackFw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_MK_CaliforniaCar_Liv0_Fw;
+    1: spriteset_MK_CaliforniaCar_EOTD_CabFw;
+}
+
+switch (FEAT_TRAINS, SELF, switch_MK_CaliforniaCar_Liv0_SpriteStackRw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Cab_MK_CaliforniaCar_Liv0_Rw;
+    1: spriteset_MK_CaliforniaCar_EOTD_CabR;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Cab_MK_CaliforniaCar_Liv0_rearcheck, position_in_consist_from_end){
+    0 : switch_MK_CaliforniaCar_Liv0_SpriteStackRw;
+    return switch_MK_CaliforniaCar_Liv0_SpriteStackFw;
+}
+
+item (FEAT_TRAINS, Item_Cab_MK_CaliforniaCar_Liv0, 13910) {
+    property {
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    4;
+        running_cost_factor:            5;
+        loading_speed:                    30;
+
+//        variant_group: Item_Cab_MK_CaliforniaCar_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_CAB_MK_CALIFORNIACAR);
+        introduction_date:                date(1994, 1, 1);
+        vehicle_life:                     50;
+
+        speed:                            125 mph;
+        power:                            1 hp;
+        weight:                            70 ton;
+        cargo_capacity:                    120/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_Cab_MK_CaliforniaCar_Liv0_rearcheck;
+    purchase:                            spriteset_Cab_MK_CaliforniaCar_Liv0_Purchase;
+    additional_text: string(STR_INFO_CAB_MK_CALIFORNIACAR);
+}
+}
+
 spriteset(spriteset_5_Old_EOTD,   "gfx/5_Old_EOTD.png") {template_5(7, 39)}
 spriteset(spriteset_5_Old_EOTD_r,   "gfx/5_Old_EOTD.png") {template_5(7, 69)}
 
