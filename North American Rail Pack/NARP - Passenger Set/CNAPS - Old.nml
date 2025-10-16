@@ -22486,7 +22486,7 @@ item (FEAT_TRAINS, Item_Budd_HiLevel_Production, 52501) {
 
         speed:                            100 mph;
         weight:                            85 ton;
-        cargo_capacity:                    72/param_capacity_mod;
+        cargo_capacity:                    90/param_capacity_mod;
     }
     graphics {
     default:                             sw_Budd_HiLevel_Production_rearcheck;

@@ -4423,7 +4423,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv19_position, position_in_consist) 
   switch_EMD_F40PH_Liv19_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv19, 6168) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv19, 6169) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
