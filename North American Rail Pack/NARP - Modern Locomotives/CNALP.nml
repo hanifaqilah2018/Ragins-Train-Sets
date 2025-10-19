@@ -4829,6 +4829,128 @@ item(FEAT_TRAINS, Item_Alstom_PL42AC_Liv0, 6850) {
 }
 }
 
+//EMD_SD7_Liv0
+spriteset(spriteset_EMD_SD7_Liv0_Purchase,   "gfx/EMD_SD7_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_EMD_SD7_Liv0,   "gfx/EMD_SD7_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_SD7_Liv0_r,   "gfx/EMD_SD7_Liv0.png") {template_8_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD7_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_SD7_Liv0_r;
+  spriteset_EMD_SD7_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD7_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_SD7_Liv0_r;
+  switch_EMD_SD7_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD7_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_SD7_Liv0;
+  switch_EMD_SD7_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_SD7_Liv0, 16850) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_SD7);
+        introduction_date:                date(1951,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        140 ton;
+        speed:                            65 mph;
+        power:                            1500 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     10;
+        running_cost_factor:             86;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_SD7_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_SD7_Liv0_position;
+		sound_effect: switch_EMD_16_567;
+        purchase: spriteset_EMD_SD7_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_SD7);
+}
+}
+
+//EMD_SD7_Low_Liv0
+spriteset(spriteset_EMD_SD7_Low_Liv0_Purchase,   "gfx/EMD_SD7_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_EMD_SD7_Low_Liv0,   "gfx/EMD_SD7_Liv0.png") {template_8(187, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_SD7_Low_Liv0_r,   "gfx/EMD_SD7_Liv0.png") {template_8_r(187, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD7_Low_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_SD7_Low_Liv0_r;
+  spriteset_EMD_SD7_Low_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD7_Low_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_SD7_Low_Liv0_r;
+  switch_EMD_SD7_Low_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD7_Low_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_SD7_Low_Liv0;
+  switch_EMD_SD7_Low_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_SD7_Low_Liv0, 16900) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_SD7_LOW);
+        introduction_date:                date(1951,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        140 ton;
+        speed:                            65 mph;
+        power:                            1500 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     10;
+        running_cost_factor:             86;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_SD7_Low_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_SD7_Low_Liv0_position;
+		sound_effect: switch_EMD_16_567;
+        purchase: spriteset_EMD_SD7_Low_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_SD7_LOW);
+}
+}
+
 //EMD_SD9_Liv0
 spriteset(spriteset_EMD_SD9_Liv0_Purchase,   "gfx/EMD_SD9_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_EMD_SD9_Liv0,   "gfx/EMD_SD9_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
@@ -4948,6 +5070,372 @@ item(FEAT_TRAINS, Item_EMD_SD9_Low_Liv0, 17050) {
 		sound_effect: switch_EMD_16_567;
         purchase: spriteset_EMD_SD9_Low_Liv0_Purchase;
         additional_text: string(STR_INFO_EMD_SD9_LOW);
+}
+}
+
+//EMD_SD35_Liv0
+spriteset(spriteset_EMD_SD35_Liv0_Purchase,   "gfx/EMD_SD35_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_EMD_SD35_Liv0,   "gfx/EMD_SD35_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_SD35_Liv0_r,   "gfx/EMD_SD35_Liv0.png") {template_8_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD35_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_SD35_Liv0_r;
+  spriteset_EMD_SD35_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD35_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_SD35_Liv0_r;
+  switch_EMD_SD35_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD35_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_SD35_Liv0;
+  switch_EMD_SD35_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_SD35_Liv0, 18950) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_SD35);
+        introduction_date:                date(1964,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        163 ton;
+        speed:                            70 mph;
+        power:                            2500 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     15;
+        running_cost_factor:             126;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_SD35_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_SD35_Liv0_position;
+		sound_effect: switch_EMD_16_567;
+        purchase: spriteset_EMD_SD35_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_SD35);
+}
+}
+
+//EMD_SD35_Low_Liv0
+spriteset(spriteset_EMD_SD35_Low_Liv0_Purchase,   "gfx/EMD_SD35_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_EMD_SD35_Low_Liv0,   "gfx/EMD_SD35_Liv0.png") {template_8(187, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_SD35_Low_Liv0_r,   "gfx/EMD_SD35_Liv0.png") {template_8_r(187, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD35_Low_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_SD35_Low_Liv0_r;
+  spriteset_EMD_SD35_Low_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD35_Low_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_SD35_Low_Liv0_r;
+  switch_EMD_SD35_Low_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD35_Low_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_SD35_Low_Liv0;
+  switch_EMD_SD35_Low_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_SD35_Low_Liv0, 19000) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_SD35_LOW);
+        introduction_date:                date(1964,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        163 ton;
+        speed:                            70 mph;
+        power:                            2500 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     15;
+        running_cost_factor:             126;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_SD35_Low_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_SD35_Low_Liv0_position;
+		sound_effect: switch_EMD_16_567;
+        purchase: spriteset_EMD_SD35_Low_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_SD35_LOW);
+}
+}
+
+//EMD_SD40_Liv0
+spriteset(spriteset_EMD_SD40_Liv0_Purchase,   "gfx/EMD_SD40_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_EMD_SD40_Liv0,   "gfx/EMD_SD40_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_SD40_Liv0_r,   "gfx/EMD_SD40_Liv0.png") {template_8_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_SD40_Liv0_r;
+  spriteset_EMD_SD40_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_SD40_Liv0_r;
+  switch_EMD_SD40_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_SD40_Liv0;
+  switch_EMD_SD40_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_SD40_Liv0, 19750) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_SD40);
+        introduction_date:                date(1966,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        167 ton;
+        speed:                            65 mph;
+        power:                            3000 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     17;
+        running_cost_factor:             133;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_SD40_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_SD40_Liv0_position;
+		sound_effect: switch_EMD_16_645;
+        purchase: spriteset_EMD_SD40_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_SD40);
+}
+}
+
+//EMD_SD40_High_Liv0
+spriteset(spriteset_EMD_SD40_High_Liv0_Purchase,   "gfx/EMD_SD40_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_EMD_SD40_High_Liv0,   "gfx/EMD_SD40_Liv0.png") {template_8(187, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_SD40_High_Liv0_r,   "gfx/EMD_SD40_Liv0.png") {template_8_r(187, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_High_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_SD40_High_Liv0_r;
+  spriteset_EMD_SD40_High_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_High_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_SD40_High_Liv0_r;
+  switch_EMD_SD40_High_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_High_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_SD40_High_Liv0;
+  switch_EMD_SD40_High_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_SD40_High_Liv0, 19800) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_SD40_HIGH);
+        introduction_date:                date(1966,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        167 ton;
+        speed:                            65 mph;
+        power:                            3000 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     17;
+        running_cost_factor:             133;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_SD40_High_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_SD40_High_Liv0_position;
+		sound_effect: switch_EMD_16_645;
+        purchase: spriteset_EMD_SD40_High_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_SD40_HIGH);
+}
+}
+
+//EMD_SD40_Tunnel_Liv0
+spriteset(spriteset_EMD_SD40_Tunnel_Liv0_Purchase,   "gfx/EMD_SD40_Liv0.png") {template_purchase_8(367, 21)}
+spriteset(spriteset_EMD_SD40_Tunnel_Liv0,   "gfx/EMD_SD40_Liv0.png") {template_8(367, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_SD40_Tunnel_Liv0_r,   "gfx/EMD_SD40_Liv0.png") {template_8_r(367, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Tunnel_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_SD40_Tunnel_Liv0_r;
+  spriteset_EMD_SD40_Tunnel_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Tunnel_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_SD40_Tunnel_Liv0_r;
+  switch_EMD_SD40_Tunnel_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Tunnel_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_SD40_Tunnel_Liv0;
+  switch_EMD_SD40_Tunnel_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_SD40_Tunnel_Liv0, 19850) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_SD40_TUNNEL);
+        introduction_date:                date(1966,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        167 ton;
+        speed:                            65 mph;
+        power:                            3000 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     17;
+        running_cost_factor:             133;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_SD40_Tunnel_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_SD40_Tunnel_Liv0_position;
+		sound_effect: switch_EMD_16_645;
+        purchase: spriteset_EMD_SD40_Tunnel_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_SD40_TUNNEL);
+}
+}
+
+//EMD_SD40_Wide_Liv0
+spriteset(spriteset_EMD_SD40_Wide_Liv0_Purchase,   "gfx/EMD_SD40_Liv0.png") {template_purchase_8(547, 21)}
+spriteset(spriteset_EMD_SD40_Wide_Liv0,   "gfx/EMD_SD40_Liv0.png") {template_8(547, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_SD40_Wide_Liv0_r,   "gfx/EMD_SD40_Liv0.png") {template_8_r(547, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Wide_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_SD40_Wide_Liv0_r;
+  spriteset_EMD_SD40_Wide_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Wide_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_SD40_Wide_Liv0_r;
+  switch_EMD_SD40_Wide_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Wide_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_SD40_Wide_Liv0;
+  switch_EMD_SD40_Wide_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_SD40_Wide_Liv0, 19900) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_SD40_WIDE);
+        introduction_date:                date(1966,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        167 ton;
+        speed:                            65 mph;
+        power:                            3000 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     17;
+        running_cost_factor:             133;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_SD40_Wide_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_SD40_Wide_Liv0_position;
+		sound_effect: switch_EMD_16_645;
+        purchase: spriteset_EMD_SD40_Wide_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_SD40_WIDE);
 }
 }
 
@@ -11609,6 +12097,171 @@ item(FEAT_TRAINS, Item_PRR_DD2_Liv0, 38550) {
         purchase: spriteset_PRR_DD2_Liv0_Purchase;
         additional_text: string(STR_INFO_PRR_DD2);
 		reverse_build_probability: return 50;
+}
+}
+
+spriteset(spriteset_EMD_SD40_Purchase_Pantograph,   "gfx/EMD_SD40_PantoDown.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_EMD_SD40_PantoUp,   "gfx/EMD_SD40_PantoUp.png") {template_8(7, 39)}
+spriteset(spriteset_EMD_SD40_PantoUp_r,   "gfx/EMD_SD40_PantoUp.png") {template_8_r(7, 39)}
+spriteset(spriteset_EMD_SD40_PantoDown,   "gfx/EMD_SD40_PantoDown.png") {template_8(7, 39)}
+spriteset(spriteset_EMD_SD40_PantoDown_r,   "gfx/EMD_SD40_PantoDown.png") {template_8_r(7, 39)}
+
+//EMD_SD40_Liv0_DM
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_SD40_Liv0_DM_power_1, tile_powers_railtype("RAIL")) {
+            1: return 3000;
+        }
+        switch (FEAT_TRAINS, SELF, switch_SD40_Liv0_DM_power_0, tile_powers_railtype("ELRL")) {
+            1: return 3600;
+                return switch_SD40_Liv0_DM_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_SD40_Liv0_DM_effect_spawn_model_and_powered, [tile_powers_railtype("ELRL")]) {
+            1: return VISUAL_EFFECT_ELECTRIC;
+            return VISUAL_EFFECT_DIESEL;
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_SD40_Liv0_DM_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_DIESEL)
+                    | (3000 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE)
+                    | (3600 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_EMD_SD40_DM));
+        }
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_purchase_stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_SD40_Liv0_Purchase;    // Return the NEW FLIP CHECK
+    1: spriteset_EMD_SD40_Purchase_Pantograph;    // Return the overlay
+}
+
+//Forward Pantograph Raised
+switch (FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_Panto, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_SD40_Liv0;
+    1: spriteset_EMD_SD40_PantoUp;
+}
+
+//Reversed Pantograph Raised
+switch (FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_Panto_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_SD40_Liv0_r;
+    1: spriteset_EMD_SD40_PantoUp_r;    // Return the overlay
+}
+
+//Forward Pantograph Lowered
+switch (FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_PantoLowered, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_SD40_Liv0;
+    1: spriteset_EMD_SD40_PantoDown;
+}
+
+//Reversed Pantograph Lowered
+switch (FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_PantoLowered_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_SD40_Liv0_r;
+    1: spriteset_EMD_SD40_PantoDown_r;    // Return the overlay
+}
+
+
+//Panto Up Grouping
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_pair, position_in_vehid_chain % 2) {
+ 1: switch_EMD_SD40_Liv0_DM_Panto_r;
+  switch_EMD_SD40_Liv0_DM_Panto;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_rear, position_in_vehid_chain_from_end) {
+ 0: switch_EMD_SD40_Liv0_DM_Panto_r;
+  switch_EMD_SD40_Liv0_DM_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_position, position_in_consist) {
+ 0: switch_EMD_SD40_Liv0_DM_Panto;
+  switch_EMD_SD40_Liv0_DM_rear;
+}
+
+//Panto Down Grouping
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_PantoLowered_pair, position_in_vehid_chain % 2) {
+ 1: switch_EMD_SD40_Liv0_DM_PantoLowered_r;
+  switch_EMD_SD40_Liv0_DM_PantoLowered;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_PantoLowered_rear, position_in_vehid_chain_from_end) {
+ 0: switch_EMD_SD40_Liv0_DM_PantoLowered_r;
+  switch_EMD_SD40_Liv0_DM_PantoLowered_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_PantoLowered_position, position_in_consist) {
+ 0: switch_EMD_SD40_Liv0_DM_PantoLowered;
+  switch_EMD_SD40_Liv0_DM_PantoLowered_rear;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_DualMode, tile_powers_railtype("ELRL")) {
+ 0: switch_EMD_SD40_Liv0_DM_PantoLowered_position;
+ 1: switch_EMD_SD40_Liv0_DM_position;
+}
+
+item(FEAT_TRAINS, Item_EMD_SD40_Liv0_DM, 42100) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
+
+        name:                            string(STR_NAME_EMD_SD40_DM);
+        introduction_date:                date(1972,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        169 ton;
+        speed:                            65 mph;
+        power:                            3000 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     17;
+        running_cost_factor:             132;
+        cargo_capacity:                  0;
+
+     //   variant_group: Item_EMD_SD40_Liv0_DM;
+     //   extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_SD40_Liv0_DM_DualMode;
+        purchase: switch_EMD_SD40_Liv0_DM_purchase_stack;
+        power: switch_SD40_Liv0_DM_power_0;
+        visual_effect_and_powered: switch_SD40_Liv0_DM_effect_spawn_model_and_powered;
+        additional_text: switch_SD40_Liv0_DM_buy_menu_additional_text;
 }
 }
 
