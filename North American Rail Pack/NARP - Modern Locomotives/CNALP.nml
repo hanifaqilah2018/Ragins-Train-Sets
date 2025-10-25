@@ -4768,6 +4768,67 @@ item(FEAT_TRAINS, Item_GE_P42DC_Liv0, 6750) {
 }
 }
 
+//EMD_DE30AC_Liv0
+spriteset(spriteset_EMD_DE30AC_Liv0_Purchase,   "gfx/EMD_DE30AC_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_EMD_DE30AC_Liv0,   "gfx/EMD_DE30AC_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_DE30AC_Liv0_r,   "gfx/EMD_DE30AC_Liv0.png") {template_8_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DE30AC_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_DE30AC_Liv0_r;
+  spriteset_EMD_DE30AC_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DE30AC_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_DE30AC_Liv0_r;
+  switch_EMD_DE30AC_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DE30AC_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_DE30AC_Liv0;
+  switch_EMD_DE30AC_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_DE30AC_Liv0, 6800) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_DE30AC);
+        introduction_date:                date(1997,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        134 ton;
+        speed:                            100 mph;
+        power:                            3000 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     19;
+        running_cost_factor:             137;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_DE30AC_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_DE30AC_Liv0_position;
+		sound_effect: switch_EMD_12_710;
+        purchase: spriteset_EMD_DE30AC_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_DE30AC);
+}
+}
+
 //Alstom_PL42AC_Liv0
 spriteset(spriteset_Alstom_PL42AC_Liv0_Purchase,   "gfx/Alstom_PL42AC_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_Alstom_PL42AC_Liv0,   "gfx/Alstom_PL42AC_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
@@ -7229,7 +7290,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv0, 32700) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -7352,7 +7413,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv6, 32706) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -7475,7 +7536,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv7, 32707) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -7598,7 +7659,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv8, 32708) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -7721,7 +7782,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv9, 32709) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -7844,7 +7905,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv10, 32710) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -7967,7 +8028,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv11, 32711) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8090,7 +8151,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv12, 32712) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8213,7 +8274,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv13, 32713) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8336,7 +8397,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv14, 32714) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8459,7 +8520,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv15, 32715) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8582,7 +8643,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv16, 32716) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8705,7 +8766,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv17, 32717) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8828,7 +8889,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv18, 32718) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8951,7 +9012,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv19, 32719) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9074,7 +9135,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv26, 32726) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9197,7 +9258,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv27, 32727) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9320,7 +9381,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv28, 32728) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9443,7 +9504,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv35, 32735) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9566,7 +9627,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv37, 32737) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9689,7 +9750,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv39, 32739) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9812,7 +9873,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv40, 32740) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9935,7 +9996,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv41, 32741) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10058,7 +10119,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv46, 32746) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES; //remember to update!
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12712,6 +12773,171 @@ item(FEAT_TRAINS, Item_PRR_DD2_Liv0, 38550) {
 }
 }
 
+spriteset(spriteset_EMD_DP32AC_PantoUp,   "gfx/EMD_DP32AC_PantoUp.png") {template_8(7, 39)}
+spriteset(spriteset_EMD_DP32AC_PantoUp_Fwr,   "gfx/EMD_DP32AC_PantoUp.png") {template_8_r(7, 39)}
+spriteset(spriteset_EMD_DP32AC_PantoUp_r,   "gfx/EMD_DP32AC_PantoUp.png") {template_8(7, 69)}
+
+spriteset(spriteset_EMD_DP32AC_PantoDown,   "gfx/EMD_DP32AC_PantoDown.png") {template_8(7, 39)}
+spriteset(spriteset_EMD_DP32AC_PantoDown_r,   "gfx/EMD_DP32AC_PantoDown.png") {template_8_r(7, 39)}
+
+//EMD_DP32AC_Liv0
+spriteset(spriteset_EMD_DP32AC_Liv0_Purchase,   "gfx/EMD_DP32AC_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_EMD_DP32AC_Liv0,   "gfx/EMD_DP32AC_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_EMD_DP32AC_Liv0_r,   "gfx/EMD_DP32AC_Liv0.png") {template_8_r(7, 39)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_power_1, tile_powers_railtype("RAIL")) {
+            1: return 3200;
+        }
+        switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_power_0, tile_powers_railtype("ELRL")) {
+            1: return 3600;
+                return switch_EMD_DP32AC_Liv0_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("ELRL")]) {
+            1: return VISUAL_EFFECT_ELECTRIC;
+            return VISUAL_EFFECT_DIESEL;
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_DIESEL)
+                    | (3200 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE)
+                    | (3600 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_EMD_SD40_DM));
+        }
+
+
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_EMD_DP32AC_PantoDown;
+ 1: spriteset_EMD_DP32AC_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_DP32AC_Liv0;
+    1: switch_EMD_DP32AC_Liv0_Fw_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_Fwr_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_EMD_DP32AC_PantoDown;
+ 1: spriteset_EMD_DP32AC_PantoUp_Fwr;
+}
+
+switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_Fwr, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_DP32AC_Liv0;
+    1: switch_EMD_DP32AC_Liv0_Fwr_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_Fwflipcheck, vehicle_is_flipped) {
+ 0: switch_EMD_DP32AC_Liv0_Fw;
+ 1: switch_EMD_DP32AC_Liv0_Fwr;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_EMD_DP32AC_PantoDown_r;
+ 1: spriteset_EMD_DP32AC_PantoUp_r;
+}
+
+switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_DP32AC_Liv0_r;
+    1: switch_EMD_DP32AC_Liv0_r_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_altr_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_EMD_DP32AC_PantoDown_r;
+ 1: spriteset_EMD_DP32AC_PantoUp_Fwr;
+}
+
+switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_altr, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_DP32AC_Liv0_r;
+    1: switch_EMD_DP32AC_Liv0_altr_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_rflipcheck, vehicle_is_flipped) {
+ 0: switch_EMD_DP32AC_Liv0_r;
+ 1: switch_EMD_DP32AC_Liv0_altr;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: switch_EMD_DP32AC_Liv0_rflipcheck;
+  switch_EMD_DP32AC_Liv0_Fwflipcheck;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: switch_EMD_DP32AC_Liv0_rflipcheck;
+  switch_EMD_DP32AC_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_position, position_in_consist) {
+ 0: switch_EMD_DP32AC_Liv0_Fwflipcheck;
+  switch_EMD_DP32AC_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_DP32AC_Liv0, 32700) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_EMD_DP32AC);
+        introduction_date:                date(2003,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        135 ton;
+        speed:                            100 mph;
+        power:                            3200 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     20;
+        running_cost_factor:             140;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_DP32AC_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_DP32AC_Liv0_position;
+		sound_effect: switch_EMD_12_710;
+        purchase: spriteset_EMD_DP32AC_Liv0_Purchase;
+		power: switch_EMD_DP32AC_Liv0_power_0;
+		visual_effect_and_powered: switch_EMD_DP32AC_Liv0_effect_spawn_model_and_powered;
+        additional_text: switch_EMD_DP32AC_Liv0_buy_menu_additional_text;
+}
+}
+
 spriteset(spriteset_EMD_SD40_Purchase_Pantograph,   "gfx/EMD_SD40_PantoDown.png") {template_purchase_8(7, 21)}
 
 spriteset(spriteset_EMD_SD40_PantoUp,   "gfx/EMD_SD40_PantoUp.png") {template_8(7, 39)}
@@ -15089,5 +15315,100 @@ item(FEAT_TRAINS, Item_GE_P32AC_Liv0, 52300) {
         power: switch_GE_P32AC_Liv0_power_0;
         visual_effect_and_powered: switch_GE_P32AC_Liv0_effect_spawn_model_and_powered;
         additional_text: switch_GE_P32AC_Liv0_buy_menu_additional_text;
+}
+}
+
+//EMD_DM30AC_Liv0
+spriteset(spriteset_EMD_DM30AC_Liv0_Purchase,   "gfx/EMD_DM30AC_Liv0.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_EMD_DM30AC_Liv0,   "gfx/EMD_DM30AC_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_DM30AC_Liv0_r,   "gfx/EMD_DM30AC_Liv0.png") {template_8_r(7, 39)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_EMD_DM30AC_Liv0_power_1, tile_powers_railtype("RAIL")) {
+            1: return 3000;
+        }
+        switch (FEAT_TRAINS, SELF, switch_EMD_DM30AC_Liv0_power_0, tile_powers_railtype("SAA3")) {
+            1: return 3100;
+                return switch_EMD_DM30AC_Liv0_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_EMD_DM30AC_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("SAA3")]) {
+            1: return VISUAL_EFFECT_DISABLE;
+            return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_EMD_DM30AC_Liv0_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_DIESEL)
+                    | (3000 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_3RAIL)
+                    | (3100 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_EMD_DM30AC));
+        }
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DM30AC_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_DM30AC_Liv0_r;
+  spriteset_EMD_DM30AC_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DM30AC_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_DM30AC_Liv0_r;
+  switch_EMD_DM30AC_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DM30AC_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_DM30AC_Liv0;
+  switch_EMD_DM30AC_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_DM30AC_Liv0, 52350) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
+
+        name:                            string(STR_NAME_EMD_DM30AC);
+        introduction_date:                date(1997,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        134 ton;
+        speed:                            100 mph;
+        power:                            3000 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     19;
+        running_cost_factor:             137;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_DM30AC_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_DM30AC_Liv0_position;
+		sound_effect: switch_EMD_12_710;
+        purchase: spriteset_EMD_DM30AC_Liv0_Purchase;
+        power: switch_EMD_DM30AC_Liv0_power_0;
+        visual_effect_and_powered: switch_EMD_DM30AC_Liv0_effect_spawn_model_and_powered;
+        additional_text: switch_EMD_DM30AC_Liv0_buy_menu_additional_text;
 }
 }
