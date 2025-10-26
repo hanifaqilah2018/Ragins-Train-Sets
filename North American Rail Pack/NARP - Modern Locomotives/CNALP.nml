@@ -454,7 +454,7 @@ switch(FEAT_TRAINS, SELF, switch_Generic_Modern_Diesel, getbits(extra_callback_i
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/modern_diesel_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/modern_diesel_idle.wav");
 }
 
 //ALCO Engines
@@ -463,7 +463,7 @@ switch(FEAT_TRAINS, SELF, switch_ALCO_12_244, getbits(extra_callback_info1, 0, 8
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
 }
 
 switch(FEAT_TRAINS, SELF, switch_ALCO_16_244, getbits(extra_callback_info1, 0, 8)){
@@ -471,7 +471,7 @@ switch(FEAT_TRAINS, SELF, switch_ALCO_16_244, getbits(extra_callback_info1, 0, 8
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
 }
 
 //EMD Engines
@@ -480,7 +480,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_12_567, getbits(extra_callback_info1, 0, 8)
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_16_567, getbits(extra_callback_info1, 0, 8)){
@@ -488,7 +488,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_16_567, getbits(extra_callback_info1, 0, 8)
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_12_645, getbits(extra_callback_info1, 0, 8)){
@@ -496,7 +496,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_12_645, getbits(extra_callback_info1, 0, 8)
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_16_645, getbits(extra_callback_info1, 0, 8)){
@@ -504,7 +504,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_16_645, getbits(extra_callback_info1, 0, 8)
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_20_645, getbits(extra_callback_info1, 0, 8)){
@@ -512,7 +512,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_20_645, getbits(extra_callback_info1, 0, 8)
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/EMD_16_567_idle.wav");
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_12_710, getbits(extra_callback_info1, 0, 8)){
@@ -520,7 +520,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_12_710, getbits(extra_callback_info1, 0, 8)
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/EMD_12_710_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/EMD_12_710_idle.wav");
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_16_710, getbits(extra_callback_info1, 0, 8)){
@@ -528,7 +528,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_16_710, getbits(extra_callback_info1, 0, 8)
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/EMD_12_710_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/EMD_12_710_idle.wav");
 }
 
 //GE Engines
@@ -537,7 +537,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_7FDL12, getbits(extra_callback_info1, 0, 8))
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/modern_diesel_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/modern_diesel_idle.wav");
 }
 
 switch(FEAT_TRAINS, SELF, switch_GE_7FDL16, getbits(extra_callback_info1, 0, 8)){
@@ -545,7 +545,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_7FDL16, getbits(extra_callback_info1, 0, 8))
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/modern_diesel_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/modern_diesel_idle.wav");
 }
 
 switch(FEAT_TRAINS, PARENT, switch_sfx_gec_run, current_speed){
@@ -561,7 +561,7 @@ switch(FEAT_TRAINS, SELF, switch_Early_Electric_Whistle, getbits(extra_callback_
 	SOUND_EVENT_START         : sound("sfx/gronk_whistle.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/gronk_whistle.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/86_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/86_idle.wav");
 }
 
 switch(FEAT_TRAINS, SELF, switch_Early_Electric_Leslie_A200, getbits(extra_callback_info1, 0, 8)){
@@ -569,7 +569,7 @@ switch(FEAT_TRAINS, SELF, switch_Early_Electric_Leslie_A200, getbits(extra_callb
 	SOUND_EVENT_START         : sound("sfx/Leslie_A200.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/Leslie_A200.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/86_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/86_idle.wav");
 }
 
 switch(FEAT_TRAINS, SELF, switch_Early_Electric_Wabco_E2, getbits(extra_callback_info1, 0, 8)){
@@ -577,7 +577,7 @@ switch(FEAT_TRAINS, SELF, switch_Early_Electric_Wabco_E2, getbits(extra_callback
 	SOUND_EVENT_START         : sound("sfx/WABCO_E2.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/WABCO_E2.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/86_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/86_idle.wav");
 }
 
 switch(FEAT_TRAINS, SELF, switch_Modern_Electric_Horn, getbits(extra_callback_info1, 0, 8)){
@@ -585,7 +585,7 @@ switch(FEAT_TRAINS, SELF, switch_Modern_Electric_Horn, getbits(extra_callback_in
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
-	SOUND_EVENT_STOPPED       : sound("sfx/86_idle.wav");
+//	SOUND_EVENT_STOPPED       : sound("sfx/86_idle.wav");
 }
 
 
@@ -631,7 +631,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv0, 5000) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -705,7 +705,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv6, 5006) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -777,7 +777,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv7, 5007) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -849,7 +849,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv8, 5008) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -921,7 +921,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv9, 5009) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -993,7 +993,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv10, 5010) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1065,7 +1065,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv11, 5011) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1137,7 +1137,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv12, 5012) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1209,7 +1209,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv13, 5013) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1281,7 +1281,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv31, 5031) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1353,7 +1353,7 @@ item(FEAT_TRAINS, Item_EMC_E3_Liv0, 5100) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1425,7 +1425,7 @@ item(FEAT_TRAINS, Item_EMD_E7_Liv0, 5250) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1497,7 +1497,7 @@ item(FEAT_TRAINS, Item_ALCO_PA_Liv0, 5300) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1569,7 +1569,7 @@ item(FEAT_TRAINS, Item_EMD_E9_Liv0, 5600) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1630,7 +1630,7 @@ item(FEAT_TRAINS, Item_EMD_FP45_Liv0, 5800) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1691,7 +1691,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv0, 6000) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1752,7 +1752,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv6, 6006) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1813,7 +1813,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv7, 6007) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1874,7 +1874,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv8, 6008) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1935,7 +1935,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv9, 6009) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -1996,7 +1996,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv10, 6010) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2057,7 +2057,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv11, 6011) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2117,7 +2117,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv12, 6012) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2178,7 +2178,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv13, 6013) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2239,7 +2239,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv14, 6014) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2300,7 +2300,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv15, 6015) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2361,7 +2361,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv16, 6016) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2421,7 +2421,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv17, 6017) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2482,7 +2482,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv18, 6018) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2543,7 +2543,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv19, 6019) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2604,7 +2604,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv0, 6050) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2665,7 +2665,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv1, 6051) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2726,7 +2726,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv6, 6056) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2787,7 +2787,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv7, 6057) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2848,7 +2848,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv8, 6058) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2909,7 +2909,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv9, 6059) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -2970,7 +2970,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv10, 6060) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3031,7 +3031,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv11, 6061) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3092,7 +3092,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv12, 6062) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3153,7 +3153,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv13, 6063) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3214,7 +3214,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv14, 6064) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3275,7 +3275,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv15, 6065) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3336,7 +3336,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv16, 6066) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3397,7 +3397,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv17, 6067) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3458,7 +3458,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv18, 6068) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3519,7 +3519,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv19, 6069) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3580,7 +3580,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv0, 6150) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3641,7 +3641,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv6, 6156) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3702,7 +3702,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv7, 6157) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3763,7 +3763,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv8, 6158) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3824,7 +3824,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv9, 6159) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3885,7 +3885,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv10, 6160) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -3946,7 +3946,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv11, 6161) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4007,7 +4007,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv12, 6162) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4068,7 +4068,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv13, 6163) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4129,7 +4129,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv14, 6164) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4190,7 +4190,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv15, 6165) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4251,7 +4251,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv16, 6166) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4312,7 +4312,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv17, 6167) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4373,7 +4373,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv18, 6168) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4434,7 +4434,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv19, 6169) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4495,7 +4495,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv26, 6176) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4556,7 +4556,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv27, 6177) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4616,7 +4616,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv28, 6178) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4677,7 +4677,7 @@ item(FEAT_TRAINS, Item_EMD_F59PH_Liv0, 6400) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4738,7 +4738,7 @@ item(FEAT_TRAINS, Item_GE_P40DC_Liv0, 6600) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4799,7 +4799,7 @@ item(FEAT_TRAINS, Item_GE_P42DC_Liv0, 6750) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4860,7 +4860,7 @@ item(FEAT_TRAINS, Item_EMD_DE30AC_Liv0, 6800) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4921,7 +4921,7 @@ item(FEAT_TRAINS, Item_Alstom_PL42AC_Liv0, 6850) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -4982,7 +4982,7 @@ item(FEAT_TRAINS, Item_EMD_SD7_Liv0, 16850) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5043,7 +5043,7 @@ item(FEAT_TRAINS, Item_EMD_SD7_Low_Liv0, 16900) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5104,7 +5104,7 @@ item(FEAT_TRAINS, Item_EMD_SD9_Liv0, 17000) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5165,7 +5165,7 @@ item(FEAT_TRAINS, Item_EMD_SD9_Low_Liv0, 17050) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5226,7 +5226,7 @@ item(FEAT_TRAINS, Item_EMD_SD35_Liv0, 18950) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5287,7 +5287,7 @@ item(FEAT_TRAINS, Item_EMD_SD35_Low_Liv0, 19000) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5348,7 +5348,7 @@ item(FEAT_TRAINS, Item_EMD_SD40_Liv0, 19750) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5409,7 +5409,7 @@ item(FEAT_TRAINS, Item_EMD_SD40_High_Liv0, 19800) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5470,7 +5470,7 @@ item(FEAT_TRAINS, Item_EMD_SD40_Tunnel_Liv0, 19850) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5531,7 +5531,7 @@ item(FEAT_TRAINS, Item_EMD_SD40_Wide_Liv0, 19900) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5592,7 +5592,7 @@ item(FEAT_TRAINS, Item_EMD_SD50_Liv0, 23000) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5653,7 +5653,7 @@ item(FEAT_TRAINS, Item_EMD_SD50_High_Liv0, 23050) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5714,7 +5714,7 @@ item(FEAT_TRAINS, Item_EMD_SD60_Liv0, 23450) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5775,7 +5775,7 @@ item(FEAT_TRAINS, Item_EMD_SD60_Wide_Liv0, 23500) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5836,7 +5836,7 @@ item(FEAT_TRAINS, Item_EMD_SD60MAC_Liv0, 24250) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5897,7 +5897,7 @@ item(FEAT_TRAINS, Item_EMD_SD70_Liv0, 24300) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -5958,7 +5958,7 @@ item(FEAT_TRAINS, Item_EMD_SD70_Wide_Liv0, 24350) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -6019,7 +6019,7 @@ item(FEAT_TRAINS, Item_EMD_SD70MAC_Liv0, 24500) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -6080,7 +6080,7 @@ item(FEAT_TRAINS, Item_EMD_SD89MAC_Liv0, 25000) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -6141,7 +6141,7 @@ item(FEAT_TRAINS, Item_EMD_SD70ACE_Liv0, 25050) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -6215,7 +6215,7 @@ item(FEAT_TRAINS, Item_EMD_FT_Liv0, 29000) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -6287,7 +6287,7 @@ item(FEAT_TRAINS, Item_ALCO_FA_Liv0, 29200) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -6359,7 +6359,7 @@ item(FEAT_TRAINS, Item_EMD_F3_Liv0, 29100) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -6431,7 +6431,7 @@ item(FEAT_TRAINS, Item_EMD_F7_Liv0, 29300) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -6503,7 +6503,7 @@ item(FEAT_TRAINS, Item_EMD_F9_Liv0, 29350) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
@@ -6583,7 +6583,7 @@ item(FEAT_TRAINS, Item_NYC_P1AMotor_Liv0, 31100) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -6664,7 +6664,7 @@ item(FEAT_TRAINS, Item_PRR_R1_Liv0, 31200) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -6745,7 +6745,7 @@ item(FEAT_TRAINS, Item_PRR_GG1_Liv0, 32250) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -6826,7 +6826,7 @@ item(FEAT_TRAINS, Item_GE_EP4_Liv0, 32300) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -6903,7 +6903,7 @@ item(FEAT_TRAINS, Item_GE_EP4_Liv35, 32335) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -6984,7 +6984,7 @@ item(FEAT_TRAINS, Item_GE_EP5_Liv0, 32400) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -7065,7 +7065,7 @@ item(FEAT_TRAINS, Item_GE_E60CH_Liv0, 32500) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -7146,7 +7146,7 @@ item(FEAT_TRAINS, Item_EMD_AEM7_Liv0, 32600) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -7227,7 +7227,7 @@ item(FEAT_TRAINS, Item_GE_AGE8_Liv0, 32650) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -7358,7 +7358,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv0, 32700) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -7481,7 +7481,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv6, 32706) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -7604,7 +7604,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv7, 32707) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -7727,7 +7727,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv8, 32708) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -7850,7 +7850,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv9, 32709) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -7973,7 +7973,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv10, 32710) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -8096,7 +8096,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv11, 32711) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -8219,7 +8219,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv12, 32712) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -8342,7 +8342,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv13, 32713) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -8465,7 +8465,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv14, 32714) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -8588,7 +8588,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv15, 32715) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -8711,7 +8711,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv16, 32716) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -8834,7 +8834,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv17, 32717) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -8957,7 +8957,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv18, 32718) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -9080,7 +9080,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv19, 32719) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -9203,7 +9203,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv26, 32726) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -9326,7 +9326,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv27, 32727) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -9449,7 +9449,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv28, 32728) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -9572,7 +9572,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv35, 32735) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -9695,7 +9695,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv37, 32737) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -9818,7 +9818,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv39, 32739) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -9941,7 +9941,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv40, 32740) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -10064,7 +10064,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv41, 32741) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -10187,7 +10187,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv46, 32746) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -10267,7 +10267,7 @@ item(FEAT_TRAINS, Item_ABB_ALP44_Liv0, 32750) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -10348,7 +10348,7 @@ item(FEAT_TRAINS, Item_Bombardier_HHP8_Liv0, 32850) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -10429,7 +10429,7 @@ item(FEAT_TRAINS, Item_Bombardier_ALP46_Liv0, 32900) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -10510,7 +10510,7 @@ item(FEAT_TRAINS, Item_PRR_L6_Liv0, 35150) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -10641,7 +10641,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv0, 35850) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -10764,7 +10764,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv6, 35856) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -10887,7 +10887,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv7, 35857) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -11010,7 +11010,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv8, 35858) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -11133,7 +11133,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv9, 35859) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -11256,7 +11256,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv10, 35860) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -11379,7 +11379,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv11, 35861) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -11502,7 +11502,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv12, 35862) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -11625,7 +11625,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv13, 35863) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -11748,7 +11748,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv14, 35864) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -11828,7 +11828,7 @@ item(FEAT_TRAINS, Item_GE_CascadeBoxcab_Liv0, 38050) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -11914,7 +11914,7 @@ item(FEAT_TRAINS, Item_GE_Twincab_Liv0, 1550) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -11985,7 +11985,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_Z1A_Liv0_position, vehicle_is_flipped) {
  1: switch_GE_Z1A_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_GE_Z1A_Liv0, 38050) {
+item(FEAT_TRAINS, Item_GE_Z1A_Liv0, 38100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -11996,7 +11996,7 @@ item(FEAT_TRAINS, Item_GE_Z1A_Liv0, 38050) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -12104,7 +12104,7 @@ item(FEAT_TRAINS, Item_PRR_L5_Liv0_Lownose, 38150) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -12199,7 +12199,7 @@ item(FEAT_TRAINS, Item_PRR_L5_Liv0_Highnose, 38200) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -12280,7 +12280,7 @@ item(FEAT_TRAINS, Item_Baldwin_Z1_Liv0, 38300) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -12361,7 +12361,7 @@ item(FEAT_TRAINS, Item_GE_Y1_Liv0, 38350) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -12442,7 +12442,7 @@ item(FEAT_TRAINS, Item_PRR_O1_Liv0, 35400) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -12542,7 +12542,7 @@ item(FEAT_TRAINS, Item_GE_Tricab_Liv0, 1600) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -12639,7 +12639,7 @@ item(FEAT_TRAINS, Item_GE_Quadcab_Liv0, 1650) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -12722,7 +12722,7 @@ item(FEAT_TRAINS, Item_PRR_P5A_Liv0, 38450) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -12803,7 +12803,7 @@ item(FEAT_TRAINS, Item_PRR_DD2_Liv0, 38550) {
         track_type:                        ELRL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -12966,8 +12966,8 @@ item(FEAT_TRAINS, Item_EMD_DP32AC_Liv0, 40350) {
 
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
-        engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -13131,8 +13131,8 @@ item(FEAT_TRAINS, Item_Alstom_PL52DP_Liv0, 40400) {
 
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
-        engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -13298,7 +13298,7 @@ item(FEAT_TRAINS, Item_EMD_SD40_Liv0_DM, 42100) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -13344,7 +13344,7 @@ item(FEAT_TRAINS, Item_NYC_SMotor_Liv0, 44000) {
         track_type:                        SAA3;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -13446,7 +13446,7 @@ item(FEAT_TRAINS, Item_PRR_DD1_Liv0, 2000) {
         track_type:                        SAA3;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -13492,7 +13492,7 @@ item(FEAT_TRAINS, Item_NYC_TMotor_Liv0, 44100) {
         track_type:                        SAA3;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -13575,7 +13575,7 @@ item(FEAT_TRAINS, Item_PRR_L5A_Liv0_Lownose, 44150) {
         track_type:                        SAA3;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -13658,7 +13658,7 @@ item(FEAT_TRAINS, Item_PRR_L5A_Liv0_Highnose, 44200) {
         track_type:                        SAA3;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -13704,7 +13704,7 @@ item(FEAT_TRAINS, Item_NYC_P2Motor_Liv0, 44450) {
         track_type:                        SAA3;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
@@ -13800,7 +13800,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv0, 52000) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -13895,7 +13895,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv1, 52001) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -13990,7 +13990,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv2, 52002) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -14085,7 +14085,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv6, 52006) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -14180,7 +14180,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv7, 52007) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -14275,7 +14275,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv8, 52008) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -14370,7 +14370,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv9, 52009) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -14465,7 +14465,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv10, 52010) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -14560,7 +14560,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv11, 52011) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -14655,7 +14655,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv12, 52012) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -14750,7 +14750,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv13, 52013) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -14845,7 +14845,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv14, 52014) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -14940,7 +14940,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv15, 52015) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -15035,7 +15035,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv16, 52016) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -15130,7 +15130,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv17, 52017) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -15225,7 +15225,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv18, 52018) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -15320,7 +15320,7 @@ item(FEAT_TRAINS, Item_EMD_FL9_Liv19, 52019) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -15417,7 +15417,7 @@ item(FEAT_TRAINS, Item_EMD_F39PHDM_Liv0, 52150) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -15512,7 +15512,7 @@ item(FEAT_TRAINS, Item_GE_P32AC_Liv0, 52300) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
@@ -15607,7 +15607,7 @@ item(FEAT_TRAINS, Item_EMD_DM30AC_Liv0, 52350) {
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
-        ai_special_flag:                AI_FLAG_CARGO;
+//        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
         visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
