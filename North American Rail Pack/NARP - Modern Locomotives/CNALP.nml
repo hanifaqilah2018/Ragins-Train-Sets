@@ -4646,6 +4646,67 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv28, 6178) {
 }
 }
 
+//EMD_F59PH_Liv0
+spriteset(spriteset_EMD_F59PH_Liv0_Purchase,   "gfx/EMD_F59PH_Liv0.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_EMD_F59PH_Liv0,   "gfx/EMD_F59PH_Liv0.png") {template_7(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_F59PH_Liv0_r,   "gfx/EMD_F59PH_Liv0.png") {template_7_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_F59PH_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_F59PH_Liv0_r;
+  spriteset_EMD_F59PH_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_F59PH_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_F59PH_Liv0_r;
+  switch_EMD_F59PH_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_F59PH_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_F59PH_Liv0;
+  switch_EMD_F59PH_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_F59PH_Liv0, 6400) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_F59PH);
+        introduction_date:                date(1988,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            7;
+
+        weight:                        120 ton;
+        speed:                            110 mph;
+        power:                            3000 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     18;
+        running_cost_factor:             146;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_F59PH_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_F59PH_Liv0_position;
+		sound_effect: switch_EMD_16_645;
+        purchase: spriteset_EMD_F59PH_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_F59PH);
+}
+}
+
 //GE_P40DC_Liv0
 spriteset(spriteset_GE_P40DC_Liv0_Purchase,   "gfx/GE_P40DC_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_GE_P40DC_Liv0,   "gfx/GE_P40DC_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
@@ -12813,7 +12874,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_buy_menu_additional_text, [
                     0x101
                 ),
         ]) {
-            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_EMD_SD40_DM));
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_EMD_DP32AC));
         }
 
 
@@ -12895,7 +12956,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_position, position_in_consist) 
   switch_EMD_DP32AC_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_DP32AC_Liv0, 32700) {
+item(FEAT_TRAINS, Item_EMD_DP32AC_Liv0, 40350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -12935,6 +12996,171 @@ item(FEAT_TRAINS, Item_EMD_DP32AC_Liv0, 32700) {
 		power: switch_EMD_DP32AC_Liv0_power_0;
 		visual_effect_and_powered: switch_EMD_DP32AC_Liv0_effect_spawn_model_and_powered;
         additional_text: switch_EMD_DP32AC_Liv0_buy_menu_additional_text;
+}
+}
+
+spriteset(spriteset_Alstom_PL52DP_PantoUp,   "gfx/Alstom_PL52DP_PantoUp.png") {template_8(7, 39)}
+spriteset(spriteset_Alstom_PL52DP_PantoUp_Fwr,   "gfx/Alstom_PL52DP_PantoUp.png") {template_8_r(7, 39)}
+spriteset(spriteset_Alstom_PL52DP_PantoUp_r,   "gfx/Alstom_PL52DP_PantoUp.png") {template_8(7, 69)}
+
+spriteset(spriteset_Alstom_PL52DP_PantoDown,   "gfx/Alstom_PL52DP_PantoDown.png") {template_8(7, 39)}
+spriteset(spriteset_Alstom_PL52DP_PantoDown_r,   "gfx/Alstom_PL52DP_PantoDown.png") {template_8_r(7, 39)}
+
+//Alstom_PL52DP_Liv0
+spriteset(spriteset_Alstom_PL52DP_Liv0_Purchase,   "gfx/Alstom_PL52DP_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Alstom_PL52DP_Liv0,   "gfx/Alstom_PL52DP_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_Alstom_PL52DP_Liv0_r,   "gfx/Alstom_PL52DP_Liv0.png") {template_8_r(7, 39)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_power_1, tile_powers_railtype("RAIL")) {
+            1: return 4200;
+        }
+        switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_power_0, tile_powers_railtype("ELRL")) {
+            1: return 5200;
+                return switch_Alstom_PL52DP_Liv0_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("ELRL")]) {
+            1: return VISUAL_EFFECT_ELECTRIC;
+            return VISUAL_EFFECT_DIESEL;
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_DIESEL)
+                    | (4200 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE)
+                    | (5200 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_ALSTOM_PL52DP));
+        }
+
+
+
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_Alstom_PL52DP_PantoDown;
+ 1: spriteset_Alstom_PL52DP_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Alstom_PL52DP_Liv0;
+    1: switch_Alstom_PL52DP_Liv0_Fw_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_Fwr_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_Alstom_PL52DP_PantoDown;
+ 1: spriteset_Alstom_PL52DP_PantoUp_Fwr;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_Fwr, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Alstom_PL52DP_Liv0;
+    1: switch_Alstom_PL52DP_Liv0_Fwr_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_Fwflipcheck, vehicle_is_flipped) {
+ 0: switch_Alstom_PL52DP_Liv0_Fw;
+ 1: switch_Alstom_PL52DP_Liv0_Fwr;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_Alstom_PL52DP_PantoDown_r;
+ 1: spriteset_Alstom_PL52DP_PantoUp_r;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Alstom_PL52DP_Liv0_r;
+    1: switch_Alstom_PL52DP_Liv0_r_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_altr_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_Alstom_PL52DP_PantoDown_r;
+ 1: spriteset_Alstom_PL52DP_PantoUp_Fwr;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_altr, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Alstom_PL52DP_Liv0_r;
+    1: switch_Alstom_PL52DP_Liv0_altr_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_rflipcheck, vehicle_is_flipped) {
+ 0: switch_Alstom_PL52DP_Liv0_r;
+ 1: switch_Alstom_PL52DP_Liv0_altr;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: switch_Alstom_PL52DP_Liv0_rflipcheck;
+  switch_Alstom_PL52DP_Liv0_Fwflipcheck;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: switch_Alstom_PL52DP_Liv0_rflipcheck;
+  switch_Alstom_PL52DP_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_position, position_in_consist) {
+ 0: switch_Alstom_PL52DP_Liv0_Fwflipcheck;
+  switch_Alstom_PL52DP_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_Alstom_PL52DP_Liv0, 40400) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_ALSTOM_PL52DP);
+        introduction_date:                date(2005,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        135 ton;
+        speed:                            100 mph;
+        power:                            4200 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     25;
+        running_cost_factor:             185;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_Alstom_PL52DP_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Alstom_PL52DP_Liv0_position;
+		sound_effect: switch_EMD_16_710;
+        purchase: spriteset_Alstom_PL52DP_Liv0_Purchase;
+		power: switch_Alstom_PL52DP_Liv0_power_0;
+		visual_effect_and_powered: switch_Alstom_PL52DP_Liv0_effect_spawn_model_and_powered;
+        additional_text: switch_Alstom_PL52DP_Liv0_buy_menu_additional_text;
 }
 }
 
