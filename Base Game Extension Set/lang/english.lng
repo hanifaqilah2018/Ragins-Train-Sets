@@ -1,0 +1,38 @@
+##grflangid 0x0
+
+STR_GRF_NAME:Base Game Extension Set v1
+STR_GRF_DESCRIPTION:Diesel and electric locomotives from the US, Canada, and Mexico, all in 2cc. Drawn and Coded by Zachary Moore (Ragin1_) Sounds effects sourced from UK Renewal Set, Representative UK Train Set & Wikimedia commons.
+
+STR_PARAM_PURCHASE_COST             :Purchase cost multiplier
+STR_PARAM_PURCHASE_COST_DESC        :You can use this setting to increase or decrease the purchase costs of the vehicles in this set.
+STR_PARAM_RUNNING_COST              :Running cost multiplier
+STR_PARAM_RUNNING_COST_DESC         :You can use this setting to increase or decrease the running costs of the vehicles in this set.
+
+STR_PARAM_DIVIDE_16                 :1/16
+STR_PARAM_DIVIDE_8                  :1/8
+STR_PARAM_DIVIDE_4                  :1/4
+STR_PARAM_DIVIDE_2                  :1/2
+STR_PARAM_NORMAL                    :1 (default)
+STR_PARAM_TIMES_2                   :2
+STR_PARAM_TIMES_4                   :4
+STR_PARAM_TIMES_8                   :8
+STR_PARAM_TIMES_16                  :16
+
+STR_PARAM_NAME_REALDISABLE:Disable Real Trains
+STR_PARAM_DESC_REALDISABLE:Enable/disable Real trains (Trains that were physically built, and put in service).
+
+STR_PARAM_NAME_PROTOTYPEDISABLE:Disable Prototype Trains
+STR_PARAM_DESC_PROTOTYPEDISABLE:Enable/disable Prototype trains (trains that were built, but were mostly used for testing, and potentially put in limited service).
+
+STR_PARAM_NAME_PROPOSALDISABLE:Disable Proposed Trains
+STR_PARAM_DESC_PROPOSALDISABLE:Enable/disable Proposed trains (trains that were designed, or seriously proposed, but not actually built).
+
+STR_PARAM_NAME_FICTIONALDISABLE:Disable Fictional Trains
+STR_PARAM_DESC_FICTIONALDISABLE:Enable/disable Fictional trains (trains that are entirely fictional, and are only included for gameplay balance).
+
+STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR:{STRING}{}{STRING}
+STR_POWER_BY_POWER_SOURCE_TWO_SOURCES:{BLACK}Power on {STRING}: {GOLD}{POWER} {}{BLACK}Power on {STRING}: {GOLD}{POWER}
+STR_POWER_SOURCE_DIESEL:Diesel
+STR_POWER_SOURCE_OHLE:Overhead Line
+STR_POWER_SOURCE_3RAIL:3rd Rail
+
