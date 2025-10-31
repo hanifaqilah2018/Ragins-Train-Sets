@@ -1660,6 +1660,67 @@ item(FEAT_TRAINS, Item_EMD_GP40TC_Liv0, 5750) {
 }
 }
 
+//EMD_GP40TC_Liv43
+spriteset(spriteset_EMD_GP40TC_Liv43_Purchase,   "gfx/EMD_GP40TC_Liv43.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_EMD_GP40TC_Liv43,   "gfx/EMD_GP40TC_Liv43.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_GP40TC_Liv43_r,   "gfx/EMD_GP40TC_Liv43.png") {template_8_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_GP40TC_Liv43_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_GP40TC_Liv43_r;
+  spriteset_EMD_GP40TC_Liv43;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_GP40TC_Liv43_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_GP40TC_Liv43_r;
+  switch_EMD_GP40TC_Liv43_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_GP40TC_Liv43_position, position_in_consist) {
+ 0: spriteset_EMD_GP40TC_Liv43;
+  switch_EMD_GP40TC_Liv43_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_GP40TC_Liv43, 5793) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_GP40TC);
+        introduction_date:                date(1966,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        119 ton;
+        speed:                            75 mph;
+        power:                            3000 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     18;
+        running_cost_factor:             140;
+		cargo_capacity:                  0;
+
+        variant_group: Item_EMD_GP40TC_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_GP40TC_Liv43_position;
+		sound_effect: switch_EMD_16_645;
+        purchase: spriteset_EMD_GP40TC_Liv43_Purchase;
+        additional_text: string(STR_INFO_EMD_GP40TC);
+}
+}
+
 //EMD_FP45_Liv0
 spriteset(spriteset_EMD_FP45_Liv0_Purchase,   "gfx/EMD_FP45_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_EMD_FP45_Liv0,   "gfx/EMD_FP45_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
@@ -1741,7 +1802,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv0_position, position_in_consist) 
   switch_EMD_SDP40F_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv0, 6000) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv0, 6050) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -1802,7 +1863,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv6_position, position_in_consist) 
   switch_EMD_SDP40F_Liv6_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv6, 6006) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv6, 6056) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -1863,7 +1924,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv7_position, position_in_consist) 
   switch_EMD_SDP40F_Liv7_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv7, 6007) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv7, 6057) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -1924,7 +1985,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv8_position, position_in_consist) 
   switch_EMD_SDP40F_Liv8_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv8, 6008) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv8, 6058) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -1985,7 +2046,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv9_position, position_in_consist) 
   switch_EMD_SDP40F_Liv9_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv9, 6009) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv9, 6059) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2046,7 +2107,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv10_position, position_in_consist)
   switch_EMD_SDP40F_Liv10_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv10, 6010) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv10, 6060) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2107,7 +2168,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv11_position, position_in_consist)
   switch_EMD_SDP40F_Liv11_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv11, 6011) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv11, 6061) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2167,7 +2228,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv12_position, position_in_consist)
   switch_EMD_SDP40F_Liv12_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv12, 6012) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv12, 6062) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2228,7 +2289,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv13_position, position_in_consist)
   switch_EMD_SDP40F_Liv13_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv13, 6013) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv13, 6063) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2289,7 +2350,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv14_position, position_in_consist)
   switch_EMD_SDP40F_Liv14_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv14, 6014) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv14, 6064) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2350,7 +2411,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv15_position, position_in_consist)
   switch_EMD_SDP40F_Liv15_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv15, 6015) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv15, 6065) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2411,7 +2472,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv16_position, position_in_consist)
   switch_EMD_SDP40F_Liv16_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv16, 6016) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv16, 6066) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2471,7 +2532,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv17_position, position_in_consist)
  0: spriteset_EMD_SDP40F_Liv17;
   switch_EMD_SDP40F_Liv17_rear;
 }
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv17, 6017) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv17, 6067) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2532,7 +2593,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv18_position, position_in_consist)
   switch_EMD_SDP40F_Liv18_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv18, 6018) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv18, 6068) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2593,7 +2654,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SDP40F_Liv19_position, position_in_consist)
   switch_EMD_SDP40F_Liv19_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SDP40F_Liv19, 6019) {
+item(FEAT_TRAINS, Item_EMD_SDP40F_Liv19, 6069) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2654,7 +2715,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv0_position, position_in_consist) {
   switch_EMD_F40C_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv0, 6050) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv0, 6100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2715,7 +2776,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv1_position, position_in_consist) {
   switch_EMD_F40C_Liv1_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv1, 6051) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv1, 6101) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2776,7 +2837,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv6_position, position_in_consist) {
   switch_EMD_F40C_Liv6_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv6, 6056) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv6, 6106) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2837,7 +2898,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv7_position, position_in_consist) {
   switch_EMD_F40C_Liv7_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv7, 6057) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv7, 6107) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2898,7 +2959,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv8_position, position_in_consist) {
   switch_EMD_F40C_Liv8_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv8, 6058) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv8, 6108) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2959,7 +3020,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv9_position, position_in_consist) {
   switch_EMD_F40C_Liv9_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv9, 6059) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv9, 6109) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3020,7 +3081,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv10_position, position_in_consist) {
   switch_EMD_F40C_Liv10_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv10, 6060) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv10, 6110) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3081,7 +3142,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv11_position, position_in_consist) {
   switch_EMD_F40C_Liv11_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv11, 6061) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv11, 6111) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3142,7 +3203,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv12_position, position_in_consist) {
   switch_EMD_F40C_Liv12_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv12, 6062) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv12, 6112) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3203,7 +3264,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv13_position, position_in_consist) {
   switch_EMD_F40C_Liv13_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv13, 6063) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv13, 6113) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3264,7 +3325,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv14_position, position_in_consist) {
   switch_EMD_F40C_Liv14_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv14, 6064) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv14, 6114) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3325,7 +3386,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv15_position, position_in_consist) {
   switch_EMD_F40C_Liv15_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv15, 6065) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv15, 6115) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3386,7 +3447,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv16_position, position_in_consist) {
   switch_EMD_F40C_Liv16_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv16, 6066) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv16, 6116) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3447,7 +3508,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv17_position, position_in_consist) {
   switch_EMD_F40C_Liv17_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv17, 6067) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv17, 6117) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3508,7 +3569,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv18_position, position_in_consist) {
   switch_EMD_F40C_Liv18_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv18, 6068) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv18, 6118) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3569,7 +3630,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40C_Liv19_position, position_in_consist) {
   switch_EMD_F40C_Liv19_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40C_Liv19, 6069) {
+item(FEAT_TRAINS, Item_EMD_F40C_Liv19, 6119) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3630,7 +3691,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv0_position, position_in_consist) {
   switch_EMD_F40PH_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv0, 6150) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv0, 6200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3691,7 +3752,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv6_position, position_in_consist) {
   switch_EMD_F40PH_Liv6_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv6, 6156) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv6, 6206) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3752,7 +3813,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv7_position, position_in_consist) {
   switch_EMD_F40PH_Liv7_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv7, 6157) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv7, 6207) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3813,7 +3874,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv8_position, position_in_consist) {
   switch_EMD_F40PH_Liv8_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv8, 6158) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv8, 6208) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3874,7 +3935,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv9_position, position_in_consist) {
   switch_EMD_F40PH_Liv9_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv9, 6159) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv9, 6209) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3935,7 +3996,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv10_position, position_in_consist) 
   switch_EMD_F40PH_Liv10_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv10, 6160) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv10, 6210) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3996,7 +4057,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv11_position, position_in_consist) 
   switch_EMD_F40PH_Liv11_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv11, 6161) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv11, 6211) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4057,7 +4118,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv12_position, position_in_consist) 
   switch_EMD_F40PH_Liv12_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv12, 6162) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv12, 6212) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4118,7 +4179,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv13_position, position_in_consist) 
   switch_EMD_F40PH_Liv13_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv13, 6163) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv13, 6213) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4179,7 +4240,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv14_position, position_in_consist) 
   switch_EMD_F40PH_Liv14_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv14, 6164) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv14, 6214) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4240,7 +4301,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv15_position, position_in_consist) 
   switch_EMD_F40PH_Liv15_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv15, 6165) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv15, 6215) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4301,7 +4362,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv16_position, position_in_consist) 
   switch_EMD_F40PH_Liv16_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv16, 6166) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv16, 6216) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4362,7 +4423,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv17_position, position_in_consist) 
   switch_EMD_F40PH_Liv17_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv17, 6167) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv17, 6217) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4423,7 +4484,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv18_position, position_in_consist) 
   switch_EMD_F40PH_Liv18_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv18, 6168) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv18, 6218) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4484,7 +4545,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv19_position, position_in_consist) 
   switch_EMD_F40PH_Liv19_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv19, 6169) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv19, 6219) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4545,7 +4606,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv26_position, position_in_consist) 
   switch_EMD_F40PH_Liv26_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv26, 6176) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv26, 6216) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4606,7 +4667,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv27_position, position_in_consist) 
   switch_EMD_F40PH_Liv27_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv27, 6177) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv27, 6217) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4666,7 +4727,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv28_position, position_in_consist) 
   switch_EMD_F40PH_Liv28_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv28, 6178) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv28, 6218) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4727,7 +4788,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F59PH_Liv0_position, position_in_consist) {
   switch_EMD_F59PH_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F59PH_Liv0, 6400) {
+item(FEAT_TRAINS, Item_EMD_F59PH_Liv0, 6450) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4788,7 +4849,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_P40DC_Liv0_position, position_in_consist) {
   switch_GE_P40DC_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_GE_P40DC_Liv0, 6600) {
+item(FEAT_TRAINS, Item_GE_P40DC_Liv0, 6650) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4849,7 +4910,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_P42DC_Liv0_position, position_in_consist) {
   switch_GE_P42DC_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_GE_P42DC_Liv0, 6750) {
+item(FEAT_TRAINS, Item_GE_P42DC_Liv0, 6800) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4910,7 +4971,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_DE30AC_Liv0_position, position_in_consist) 
   switch_EMD_DE30AC_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_DE30AC_Liv0, 6800) {
+item(FEAT_TRAINS, Item_EMD_DE30AC_Liv0, 6850) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4971,7 +5032,7 @@ switch(FEAT_TRAINS, SELF, switch_Alstom_PL42AC_Liv0_position, position_in_consis
   switch_Alstom_PL42AC_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_Alstom_PL42AC_Liv0, 6850) {
+item(FEAT_TRAINS, Item_Alstom_PL42AC_Liv0, 6950) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5009,6 +5070,67 @@ item(FEAT_TRAINS, Item_Alstom_PL42AC_Liv0, 6850) {
 		sound_effect: switch_EMD_16_710;
         purchase: spriteset_Alstom_PL42AC_Liv0_Purchase;
         additional_text: string(STR_INFO_ALSTOM_PL42AC);
+}
+}
+
+//ALCO_RS1_Liv0
+spriteset(spriteset_ALCO_RS1_Liv0_Purchase,   "gfx/ALCO_RS1_Liv0.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_ALCO_RS1_Liv0,   "gfx/ALCO_RS1_Liv0.png") {template_7(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_ALCO_RS1_Liv0_r,   "gfx/ALCO_RS1_Liv0.png") {template_7_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RS1_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_ALCO_RS1_Liv0_r;
+  spriteset_ALCO_RS1_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RS1_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_ALCO_RS1_Liv0_r;
+  switch_ALCO_RS1_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RS1_Liv0_position, position_in_consist) {
+ 0: spriteset_ALCO_RS1_Liv0;
+  switch_ALCO_RS1_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_ALCO_RS1_Liv0, 16000) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_ALCO_RS1);
+        introduction_date:                date(1941,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            7;
+
+        weight:                        112 ton;
+        speed:                            65 mph;
+        power:                            1500 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     8;
+        running_cost_factor:             66;
+		cargo_capacity:                  0;
+
+        variant_group: Item_ALCO_RS1_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_ALCO_RS1_Liv0_position;
+		sound_effect: switch_ALCO_12_244;
+        purchase: spriteset_ALCO_RS1_Liv0_Purchase;
+        additional_text: string(STR_INFO_ALCO_RS1);
 }
 }
 
@@ -12635,7 +12757,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_Twincab_Liv0_articulated_part, extra_callbac
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item(FEAT_TRAINS, Item_GE_Twincab_Liv0, 1550) {
+item(FEAT_TRAINS, Item_GE_Twincab_Liv0, 2050) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -13263,7 +13385,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_Tricab_Liv0_articulated_part, extra_callback
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item(FEAT_TRAINS, Item_GE_Tricab_Liv0, 1600) {
+item(FEAT_TRAINS, Item_GE_Tricab_Liv0, 2100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -13360,7 +13482,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_Quadcab_Liv0_articulated_part, extra_callbac
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item(FEAT_TRAINS, Item_GE_Quadcab_Liv0, 1650) {
+item(FEAT_TRAINS, Item_GE_Quadcab_Liv0, 2150) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -14167,7 +14289,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_DD1_Liv0_articulated_part, extra_callback_i
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item(FEAT_TRAINS, Item_PRR_DD1_Liv0, 2000) {
+item(FEAT_TRAINS, Item_PRR_DD1_Liv0, 2300) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
