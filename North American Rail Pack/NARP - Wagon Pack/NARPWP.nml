@@ -595,7 +595,7 @@ template template_8_repeat(x, y) {
 
 //BULK  Recolour sprites for cargo
 
-recolour_bulk = reserve_sprites(27);
+recolour_bulk = reserve_sprites(28);
 
 replace(recolour_bulk) {
 
@@ -934,6 +934,18 @@ replace(recolour_bulk) {
         0xED: 0x0E;
         0xEE: 0xA1;
     }
+	
+//Manganese 27
+    recolour_sprite {
+        0xE5: 0x01;
+        0xE8: 0x02;
+        0xE9: 0x11;
+        0xEA: 0x12;
+        0xEB: 0x13;
+        0xEC: 0x14;
+        0xED: 0x15;
+        0xEE: 0x16;
+    }
 }
 
 
@@ -1165,7 +1177,7 @@ switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
 	NKOR: return recolour_bulk +6;
 
     FERT: return recolour_bulk +7;
-	MNO2: return recolour_bulk +7;
+	MNO2: return recolour_bulk +27;
 	TOFF: return recolour_bulk +7;
 	
 	CLAY: return recolour_bulk +8;
