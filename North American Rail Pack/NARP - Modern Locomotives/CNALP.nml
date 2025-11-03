@@ -5520,7 +5520,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD9_Liv0_position, position_in_consist) {
   switch_EMD_SD9_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD9_Liv0, 17000) {
+item(FEAT_TRAINS, Item_EMD_SD9_Liv0, 17100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5581,7 +5581,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD9_Low_Liv0_position, position_in_consist)
   switch_EMD_SD9_Low_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD9_Low_Liv0, 17050) {
+item(FEAT_TRAINS, Item_EMD_SD9_Low_Liv0, 17150) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5622,6 +5622,128 @@ item(FEAT_TRAINS, Item_EMD_SD9_Low_Liv0, 17050) {
 }
 }
 
+//ALCO_RSD7_Liv0
+spriteset(spriteset_ALCO_RSD7_Liv0_Purchase,   "gfx/ALCO_RSD7_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_ALCO_RSD7_Liv0,   "gfx/ALCO_RSD7_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_ALCO_RSD7_Liv0_r,   "gfx/ALCO_RSD7_Liv0.png") {template_8_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RSD7_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_ALCO_RSD7_Liv0_r;
+  spriteset_ALCO_RSD7_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RSD7_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_ALCO_RSD7_Liv0_r;
+  switch_ALCO_RSD7_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RSD7_Liv0_position, position_in_consist) {
+ 0: spriteset_ALCO_RSD7_Liv0;
+  switch_ALCO_RSD7_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_ALCO_RSD7_Liv0, 17200) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_ALCO_RSD7);
+        introduction_date:                date(1954,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        163 ton;
+        speed:                            75 mph;
+        power:                            2400 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     11;
+        running_cost_factor:             107;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_ALCO_RSD7_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_ALCO_RSD7_Liv0_position;
+		sound_effect: switch_EMD_16_567;
+        purchase: spriteset_ALCO_RSD7_Liv0_Purchase;
+        additional_text: string(STR_INFO_ALCO_RSD7);
+}
+}
+
+//ALCO_RSD7_Low_Liv0
+spriteset(spriteset_ALCO_RSD7_Low_Liv0_Purchase,   "gfx/ALCO_RSD7_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_ALCO_RSD7_Low_Liv0,   "gfx/ALCO_RSD7_Liv0.png") {template_8(187, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_ALCO_RSD7_Low_Liv0_r,   "gfx/ALCO_RSD7_Liv0.png") {template_8_r(187, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RSD7_Low_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_ALCO_RSD7_Low_Liv0_r;
+  spriteset_ALCO_RSD7_Low_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RSD7_Low_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_ALCO_RSD7_Low_Liv0_r;
+  switch_ALCO_RSD7_Low_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RSD7_Low_Liv0_position, position_in_consist) {
+ 0: spriteset_ALCO_RSD7_Low_Liv0;
+  switch_ALCO_RSD7_Low_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_ALCO_RSD7_Low_Liv0, 17250) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_ALCO_RSD7_LOW);
+        introduction_date:                date(1954,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        163 ton;
+        speed:                            75 mph;
+        power:                            2400 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     11;
+        running_cost_factor:             107;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_ALCO_RSD7_Low_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_ALCO_RSD7_Low_Liv0_position;
+		sound_effect: switch_EMD_16_567;
+        purchase: spriteset_ALCO_RSD7_Low_Liv0_Purchase;
+        additional_text: string(STR_INFO_ALCO_RSD7_LOW);
+}
+}
+
 //EMD_GP9_Liv0
 spriteset(spriteset_EMD_GP9_Liv0_Purchase,   "gfx/EMD_GP9_Liv0.png") {template_purchase_7(7, 21)}
 spriteset(spriteset_EMD_GP9_Liv0,   "gfx/EMD_GP9_Liv0.png") {template_7(7, 39)} // <- Define a wagon, in this case the cab
@@ -5642,7 +5764,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GP9_Liv0_position, position_in_consist) {
   switch_EMD_GP9_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GP9_Liv0, 17200) {
+item(FEAT_TRAINS, Item_EMD_GP9_Liv0, 17400) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5703,7 +5825,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GP9_Low_Liv0_position, position_in_consist)
   switch_EMD_GP9_Low_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GP9_Low_Liv0, 17250) {
+item(FEAT_TRAINS, Item_EMD_GP9_Low_Liv0, 17450) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5764,7 +5886,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_U25B_Liv0_position, position_in_consist) {
   switch_GE_U25B_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_GE_U25B_Liv0, 17850) {
+item(FEAT_TRAINS, Item_GE_U25B_Liv0, 18250) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5825,7 +5947,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_U25B_Low_Liv0_position, position_in_consist)
   switch_GE_U25B_Low_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_GE_U25B_Low_Liv0, 17900) {
+item(FEAT_TRAINS, Item_GE_U25B_Low_Liv0, 18300) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5886,7 +6008,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD35_Liv0_position, position_in_consist) {
   switch_EMD_SD35_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD35_Liv0, 18950) {
+item(FEAT_TRAINS, Item_EMD_SD35_Liv0, 19750) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5947,7 +6069,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD35_Low_Liv0_position, position_in_consist
   switch_EMD_SD35_Low_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD35_Low_Liv0, 19000) {
+item(FEAT_TRAINS, Item_EMD_SD35_Low_Liv0, 19800) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6008,7 +6130,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GP40_Liv0_position, position_in_consist) {
   switch_EMD_GP40_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GP40_Liv0, 19350) {
+item(FEAT_TRAINS, Item_EMD_GP40_Liv0, 20150) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6069,7 +6191,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GP40_High_Liv0_position, position_in_consis
   switch_EMD_GP40_High_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GP40_High_Liv0, 19400) {
+item(FEAT_TRAINS, Item_EMD_GP40_High_Liv0, 20200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6130,7 +6252,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GP40_Wide_Liv0_position, position_in_consis
   switch_EMD_GP40_Wide_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_GP40_Wide_Liv0, 19450) {
+item(FEAT_TRAINS, Item_EMD_GP40_Wide_Liv0, 20250) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6191,7 +6313,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_position, position_in_consist) {
   switch_EMD_SD40_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD40_Liv0, 19750) {
+item(FEAT_TRAINS, Item_EMD_SD40_Liv0, 21550) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6252,7 +6374,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD40_High_Liv0_position, position_in_consis
   switch_EMD_SD40_High_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD40_High_Liv0, 19800) {
+item(FEAT_TRAINS, Item_EMD_SD40_High_Liv0, 21600) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6313,7 +6435,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Tunnel_Liv0_position, position_in_cons
   switch_EMD_SD40_Tunnel_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD40_Tunnel_Liv0, 19850) {
+item(FEAT_TRAINS, Item_EMD_SD40_Tunnel_Liv0, 21650) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6374,7 +6496,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Wide_Liv0_position, position_in_consis
   switch_EMD_SD40_Wide_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD40_Wide_Liv0, 19900) {
+item(FEAT_TRAINS, Item_EMD_SD40_Wide_Liv0, 21700) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6435,7 +6557,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_U28B_Liv0_position, position_in_consist) {
   switch_GE_U28B_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_GE_U28B_Liv0, 20000) {
+item(FEAT_TRAINS, Item_GE_U28B_Liv0, 21800) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6496,7 +6618,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_U28B_Low_Liv0_position, position_in_consist)
   switch_GE_U28B_Low_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_GE_U28B_Low_Liv0, 20050) {
+item(FEAT_TRAINS, Item_GE_U28B_Low_Liv0, 21850) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6537,6 +6659,128 @@ item(FEAT_TRAINS, Item_GE_U28B_Low_Liv0, 20050) {
 }
 }
 
+//ALCO_C636_Liv0
+spriteset(spriteset_ALCO_C636_Liv0_Purchase,   "gfx/ALCO_C636_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_ALCO_C636_Liv0,   "gfx/ALCO_C636_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_ALCO_C636_Liv0_r,   "gfx/ALCO_C636_Liv0.png") {template_8_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_C636_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_ALCO_C636_Liv0_r;
+  spriteset_ALCO_C636_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_C636_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_ALCO_C636_Liv0_r;
+  switch_ALCO_C636_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_C636_Liv0_position, position_in_consist) {
+ 0: spriteset_ALCO_C636_Liv0;
+  switch_ALCO_C636_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_ALCO_C636_Liv0, 22300) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_ALCO_C636);
+        introduction_date:                date(1967,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        190 ton;
+        speed:                            65 mph;
+        power:                            3600 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     21;
+        running_cost_factor:             154;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_ALCO_C636_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_ALCO_C636_Liv0_position;
+		sound_effect: switch_GE_7FDL16;
+        purchase: spriteset_ALCO_C636_Liv0_Purchase;
+        additional_text: string(STR_INFO_ALCO_C636);
+}
+}
+
+//ALCO_C636_High_Liv0
+spriteset(spriteset_ALCO_C636_High_Liv0_Purchase,   "gfx/ALCO_C636_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_ALCO_C636_High_Liv0,   "gfx/ALCO_C636_Liv0.png") {template_8(187, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_ALCO_C636_High_Liv0_r,   "gfx/ALCO_C636_Liv0.png") {template_8_r(187, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_C636_High_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_ALCO_C636_High_Liv0_r;
+  spriteset_ALCO_C636_High_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_C636_High_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_ALCO_C636_High_Liv0_r;
+  switch_ALCO_C636_High_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_C636_High_Liv0_position, position_in_consist) {
+ 0: spriteset_ALCO_C636_High_Liv0;
+  switch_ALCO_C636_High_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_ALCO_C636_High_Liv0, 22350) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_ALCO_C636_HIGH);
+        introduction_date:                date(1967,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        190 ton;
+        speed:                            65 mph;
+        power:                            3600 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     21;
+        running_cost_factor:             154;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_ALCO_C636_High_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_ALCO_C636_High_Liv0_position;
+		sound_effect: switch_GE_7FDL16;
+        purchase: spriteset_ALCO_C636_High_Liv0_Purchase;
+        additional_text: string(STR_INFO_ALCO_C636_HIGH);
+}
+}
+
 //EMD_SD50_Liv0
 spriteset(spriteset_EMD_SD50_Liv0_Purchase,   "gfx/EMD_SD50_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_EMD_SD50_Liv0,   "gfx/EMD_SD50_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
@@ -6557,7 +6801,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD50_Liv0_position, position_in_consist) {
   switch_EMD_SD50_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD50_Liv0, 23000) {
+item(FEAT_TRAINS, Item_EMD_SD50_Liv0, 23800) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6618,7 +6862,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD50_High_Liv0_position, position_in_consis
   switch_EMD_SD50_High_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD50_High_Liv0, 23050) {
+item(FEAT_TRAINS, Item_EMD_SD50_High_Liv0, 23850) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6679,7 +6923,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD60_Liv0_position, position_in_consist) {
   switch_EMD_SD60_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD60_Liv0, 23450) {
+item(FEAT_TRAINS, Item_EMD_SD60_Liv0, 24250) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6740,7 +6984,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD60_Wide_Liv0_position, position_in_consis
   switch_EMD_SD60_Wide_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD60_Wide_Liv0, 23500) {
+item(FEAT_TRAINS, Item_EMD_SD60_Wide_Liv0, 24300) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6801,7 +7045,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD60MAC_Liv0_position, position_in_consist)
   switch_EMD_SD60MAC_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD60MAC_Liv0, 24250) {
+item(FEAT_TRAINS, Item_EMD_SD60MAC_Liv0, 25150) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6862,7 +7106,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD70_Liv0_position, position_in_consist) {
   switch_EMD_SD70_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD70_Liv0, 24300) {
+item(FEAT_TRAINS, Item_EMD_SD70_Liv0, 25200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6923,7 +7167,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD70_Wide_Liv0_position, position_in_consis
   switch_EMD_SD70_Wide_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD70_Wide_Liv0, 24350) {
+item(FEAT_TRAINS, Item_EMD_SD70_Wide_Liv0, 25250) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6984,7 +7228,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD70MAC_Liv0_position, position_in_consist)
   switch_EMD_SD70MAC_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD70MAC_Liv0, 24500) {
+item(FEAT_TRAINS, Item_EMD_SD70MAC_Liv0, 25400) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -7045,7 +7289,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD89MAC_Liv0_position, position_in_consist)
   switch_EMD_SD89MAC_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD89MAC_Liv0, 25000) {
+item(FEAT_TRAINS, Item_EMD_SD89MAC_Liv0, 25800) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -7106,7 +7350,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD70ACE_Liv0_position, position_in_consist)
   switch_EMD_SD70ACE_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD70ACE_Liv0, 25050) {
+item(FEAT_TRAINS, Item_EMD_SD70ACE_Liv0, 25850) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
