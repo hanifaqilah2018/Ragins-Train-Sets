@@ -5666,7 +5666,7 @@ item(FEAT_TRAINS, Item_ALCO_RSD7_Liv0, 17200) {
 
         weight:                        163 ton;
         speed:                            75 mph;
-        power:                            2400 hp;
+        power:                            2250 hp;
         tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             107;
@@ -5727,7 +5727,7 @@ item(FEAT_TRAINS, Item_ALCO_RSD7_Low_Liv0, 17250) {
 
         weight:                        163 ton;
         speed:                            75 mph;
-        power:                            2400 hp;
+        power:                            2250 hp;
         tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             107;
@@ -5866,6 +5866,128 @@ item(FEAT_TRAINS, Item_EMD_GP9_Low_Liv0, 17450) {
 }
 }
 
+//ALCO_RSD15_Liv0
+spriteset(spriteset_ALCO_RSD15_Liv0_Purchase,   "gfx/ALCO_RSD15_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_ALCO_RSD15_Liv0,   "gfx/ALCO_RSD15_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_ALCO_RSD15_Liv0_r,   "gfx/ALCO_RSD15_Liv0.png") {template_8_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RSD15_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_ALCO_RSD15_Liv0_r;
+  spriteset_ALCO_RSD15_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RSD15_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_ALCO_RSD15_Liv0_r;
+  switch_ALCO_RSD15_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RSD15_Liv0_position, position_in_consist) {
+ 0: spriteset_ALCO_RSD15_Liv0;
+  switch_ALCO_RSD15_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_ALCO_RSD15_Liv0, 17800) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_ALCO_RSD15);
+        introduction_date:                date(1956,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        163 ton;
+        speed:                            75 mph;
+        power:                            2400 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     12;
+        running_cost_factor:             110;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_ALCO_RSD15_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_ALCO_RSD15_Liv0_position;
+		sound_effect: switch_EMD_16_567;
+        purchase: spriteset_ALCO_RSD15_Liv0_Purchase;
+        additional_text: string(STR_INFO_ALCO_RSD15);
+}
+}
+
+//ALCO_RSD15_Low_Liv0
+spriteset(spriteset_ALCO_RSD15_Low_Liv0_Purchase,   "gfx/ALCO_RSD15_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_ALCO_RSD15_Low_Liv0,   "gfx/ALCO_RSD15_Liv0.png") {template_8(187, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_ALCO_RSD15_Low_Liv0_r,   "gfx/ALCO_RSD15_Liv0.png") {template_8_r(187, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RSD15_Low_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_ALCO_RSD15_Low_Liv0_r;
+  spriteset_ALCO_RSD15_Low_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RSD15_Low_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_ALCO_RSD15_Low_Liv0_r;
+  switch_ALCO_RSD15_Low_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_RSD15_Low_Liv0_position, position_in_consist) {
+ 0: spriteset_ALCO_RSD15_Low_Liv0;
+  switch_ALCO_RSD15_Low_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_ALCO_RSD15_Low_Liv0, 17850) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_ALCO_RSD15_LOW);
+        introduction_date:                date(1956,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        163 ton;
+        speed:                            75 mph;
+        power:                            2400 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     12;
+        running_cost_factor:             110;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_ALCO_RSD15_Low_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_ALCO_RSD15_Low_Liv0_position;
+		sound_effect: switch_EMD_16_567;
+        purchase: spriteset_ALCO_RSD15_Low_Liv0_Purchase;
+        additional_text: string(STR_INFO_ALCO_RSD15_LOW);
+}
+}
+
 //GE_U25B_Liv0
 spriteset(spriteset_GE_U25B_Liv0_Purchase,   "gfx/GE_U25B_Liv0.png") {template_purchase_7(7, 21)}
 spriteset(spriteset_GE_U25B_Liv0,   "gfx/GE_U25B_Liv0.png") {template_7(7, 39)} // <- Define a wagon, in this case the cab
@@ -5988,6 +6110,128 @@ item(FEAT_TRAINS, Item_GE_U25B_Low_Liv0, 18300) {
 }
 }
 
+//ALCO_C420_Liv0
+spriteset(spriteset_ALCO_C420_Liv0_Purchase,   "gfx/ALCO_C420_Liv0.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_ALCO_C420_Liv0,   "gfx/ALCO_C420_Liv0.png") {template_7(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_ALCO_C420_Liv0_r,   "gfx/ALCO_C420_Liv0.png") {template_7_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_C420_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_ALCO_C420_Liv0_r;
+  spriteset_ALCO_C420_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_C420_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_ALCO_C420_Liv0_r;
+  switch_ALCO_C420_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_C420_Liv0_position, position_in_consist) {
+ 0: spriteset_ALCO_C420_Liv0;
+  switch_ALCO_C420_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_ALCO_C420_Liv0, 18950) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_ALCO_C420);
+        introduction_date:                date(1963,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            7;
+
+        weight:                        113 ton;
+        speed:                            65 mph;
+        power:                            2000 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     15;
+        running_cost_factor:             120;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_ALCO_C420_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_ALCO_C420_Liv0_position;
+		sound_effect: switch_EMD_16_567;
+        purchase: spriteset_ALCO_C420_Liv0_Purchase;
+        additional_text: string(STR_INFO_ALCO_C420);
+}
+}
+
+//ALCO_C420_Low_Liv0
+spriteset(spriteset_ALCO_C420_Low_Liv0_Purchase,   "gfx/ALCO_C420_Liv0.png") {template_purchase_7(187, 21)}
+spriteset(spriteset_ALCO_C420_Low_Liv0,   "gfx/ALCO_C420_Liv0.png") {template_7(187, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_ALCO_C420_Low_Liv0_r,   "gfx/ALCO_C420_Liv0.png") {template_7_r(187, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_C420_Low_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_ALCO_C420_Low_Liv0_r;
+  spriteset_ALCO_C420_Low_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_C420_Low_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_ALCO_C420_Low_Liv0_r;
+  switch_ALCO_C420_Low_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_C420_Low_Liv0_position, position_in_consist) {
+ 0: spriteset_ALCO_C420_Low_Liv0;
+  switch_ALCO_C420_Low_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_ALCO_C420_Low_Liv0, 19000) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_ALCO_C420_LOW);
+        introduction_date:                date(1963,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            7;
+
+        weight:                        113 ton;
+        speed:                            65 mph;
+        power:                            2000 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     15;
+        running_cost_factor:             120;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_ALCO_C420_Low_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_ALCO_C420_Low_Liv0_position;
+		sound_effect: switch_EMD_16_567;
+        purchase: spriteset_ALCO_C420_Low_Liv0_Purchase;
+        additional_text: string(STR_INFO_ALCO_C420_LOW);
+}
+}
+
 //EMD_SD35_Liv0
 spriteset(spriteset_EMD_SD35_Liv0_Purchase,   "gfx/EMD_SD35_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_EMD_SD35_Liv0,   "gfx/EMD_SD35_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
@@ -6008,7 +6252,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD35_Liv0_position, position_in_consist) {
   switch_EMD_SD35_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD35_Liv0, 19750) {
+item(FEAT_TRAINS, Item_EMD_SD35_Liv0, 19850) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6069,7 +6313,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD35_Low_Liv0_position, position_in_consist
   switch_EMD_SD35_Low_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD35_Low_Liv0, 19800) {
+item(FEAT_TRAINS, Item_EMD_SD35_Low_Liv0, 19900) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6130,7 +6374,7 @@ switch(FEAT_TRAINS, SELF, switch_ALCO_C630_Liv0_position, position_in_consist) {
   switch_ALCO_C630_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_ALCO_C630_Liv0, 19950) {
+item(FEAT_TRAINS, Item_ALCO_C630_Liv0, 20050) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
