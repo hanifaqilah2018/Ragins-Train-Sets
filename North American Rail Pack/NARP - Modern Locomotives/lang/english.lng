@@ -278,6 +278,12 @@ STR_INFO_PRR_L6:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
 STR_NAME_GE_E33:GE E33
 STR_INFO_GE_E33:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
 
+STR_NAME_GE_E44:GE E44
+STR_INFO_GE_E44:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+
+STR_NAME_GE_E50C:GE E50C
+STR_INFO_GE_E50C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+
 STR_NAME_GMD_GF6C:GMD GF6C
 STR_INFO_GMD_GF6C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
 

@@ -12756,6 +12756,261 @@ item(FEAT_TRAINS, Item_GE_E33_Liv0, 35450) {
 }
 }
 
+spriteset(spriteset_GE_E44_PantoUp,   "gfx/GE_E44_PantoUp.png") {template_8(7, 39)}
+spriteset(spriteset_GE_E44_PantoUp_Fwr,   "gfx/GE_E44_PantoUp.png") {template_8_r(7, 39)}
+spriteset(spriteset_GE_E44_PantoUp_r,   "gfx/GE_E44_PantoUp.png") {template_8(7, 69)}
+
+spriteset(spriteset_GE_E44_PantoDown,   "gfx/GE_E44_PantoDown.png") {template_8(7, 39)}
+spriteset(spriteset_GE_E44_PantoDown_r,   "gfx/GE_E44_PantoDown.png") {template_8_r(7, 39)}
+
+//GE_E44_Liv0
+spriteset(spriteset_GE_E44_Liv0_Purchase,   "gfx/GE_E44_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_GE_E44_Liv0,   "gfx/GE_E44_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_GE_E44_Liv0_r,   "gfx/GE_E44_Liv0.png") {template_8_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_E44_PantoDown;
+ 1: spriteset_GE_E44_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_E44_Liv0;
+    1: switch_GE_E44_Liv0_Fw_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fwr_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_E44_PantoDown;
+ 1: spriteset_GE_E44_PantoUp_Fwr;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fwr, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_E44_Liv0;
+    1: switch_GE_E44_Liv0_Fwr_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fwflipcheck, vehicle_is_flipped) {
+ 0: switch_GE_E44_Liv0_Fw;
+ 1: switch_GE_E44_Liv0_Fwr;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_E44_PantoDown_r;
+ 1: spriteset_GE_E44_PantoUp_r;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_E44_Liv0_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_E44_Liv0_r;
+    1: switch_GE_E44_Liv0_r_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_altr_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_E44_PantoDown_r;
+ 1: spriteset_GE_E44_PantoUp_Fwr;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_E44_Liv0_altr, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_E44_Liv0_r;
+    1: switch_GE_E44_Liv0_altr_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_rflipcheck, vehicle_is_flipped) {
+ 0: switch_GE_E44_Liv0_r;
+ 1: switch_GE_E44_Liv0_altr;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: switch_GE_E44_Liv0_rflipcheck;
+  switch_GE_E44_Liv0_Fwflipcheck;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: switch_GE_E44_Liv0_rflipcheck;
+  switch_GE_E44_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_position, position_in_consist) {
+ 0: switch_GE_E44_Liv0_Fwflipcheck;
+  switch_GE_E44_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_GE_E44_Liv0, 35550) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        ELRL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_GE_E44);
+        introduction_date:                date(1960,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        175 ton;
+        speed:                            70 mph;
+        power:                            4400 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     22;
+        running_cost_factor:             178;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_GE_E44_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_GE_E44_Liv0_position;
+		sound_effect: switch_Modern_Electric_Horn;
+        purchase: spriteset_GE_E44_Liv0_Purchase;
+        additional_text: string(STR_INFO_GE_E44);
+}
+}
+
+spriteset(spriteset_GE_E50C_PantoUp,   "gfx/GE_E50C_PantoUp.png") {template_8(7, 39)}
+spriteset(spriteset_GE_E50C_PantoUp_r,   "gfx/GE_E50C_PantoUp.png") {template_8_r(7, 39)}
+spriteset(spriteset_GE_E50C_PantoDown,   "gfx/GE_E50C_PantoDown.png") {template_8(7, 39)}
+spriteset(spriteset_GE_E50C_PantoDown_r,   "gfx/GE_E50C_PantoDown.png") {template_8_r(7, 39)}
+
+//GE_E50C_Liv0
+spriteset(spriteset_GE_E50C_Liv0_Purchase,   "gfx/GE_E50C_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_GE_E50C_Liv0,   "gfx/GE_E50C_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_GE_E50C_Liv0_r,   "gfx/GE_E50C_Liv0.png") {template_8_r(7, 39)}
+
+//Forward Pantograph Raised
+switch (FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_Panto, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_E50C_Liv0;
+    1: spriteset_GE_E50C_PantoUp;
+}
+
+//Reversed Pantograph Raised
+switch (FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_Panto_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_E50C_Liv0_r;
+    1: spriteset_GE_E50C_PantoUp_r;    // Return the overlay
+}
+
+//Forward Pantograph Lowered
+switch (FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_PantoLowered, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_E50C_Liv0;
+    1: spriteset_GE_E50C_PantoDown;
+}
+
+//Reversed Pantograph Lowered
+switch (FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_PantoLowered_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_E50C_Liv0_r;
+    1: spriteset_GE_E50C_PantoDown_r;    // Return the overlay
+}
+
+
+//Panto Up Grouping
+switch(FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: switch_GE_E50C_Liv0_Panto_r;
+  switch_GE_E50C_Liv0_Panto;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: switch_GE_E50C_Liv0_Panto_r;
+  switch_GE_E50C_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_position, position_in_consist) {
+ 0: switch_GE_E50C_Liv0_Panto;
+  switch_GE_E50C_Liv0_rear;
+}
+
+//Panto Down Grouping
+switch(FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_PantoLowered_pair, position_in_vehid_chain % 2) {
+ 1: switch_GE_E50C_Liv0_PantoLowered_r;
+  switch_GE_E50C_Liv0_PantoLowered;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_PantoLowered_rear, position_in_vehid_chain_from_end) {
+ 0: switch_GE_E50C_Liv0_PantoLowered_r;
+  switch_GE_E50C_Liv0_PantoLowered_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_PantoLowered_position, position_in_consist) {
+ 0: switch_GE_E50C_Liv0_PantoLowered;
+  switch_GE_E50C_Liv0_PantoLowered_rear;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_final, tile_powers_railtype("ELRL")) {
+ 0: switch_GE_E50C_Liv0_PantoLowered_position;
+ 1: switch_GE_E50C_Liv0_position;
+}
+
+item(FEAT_TRAINS, Item_GE_E50C_Liv0, 35600) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        ELRL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_GE_E50C);
+        introduction_date:                date(1969,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        175 ton;
+        speed:                            60 mph;
+        power:                            5000 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     23;
+        running_cost_factor:             185;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_GE_E50C_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_GE_E50C_Liv0_final;
+		sound_effect: switch_Modern_Electric_Horn;
+        purchase: spriteset_GE_E50C_Liv0_Purchase;
+        additional_text: string(STR_INFO_GE_E50C);
+}
+}
+
 spriteset(spriteset_GMD_GF6C_PantoUp,   "gfx/GMD_GF6C_PantoUp.png") {template_8(7, 39)}
 spriteset(spriteset_GMD_GF6C_PantoUp_Fwr,   "gfx/GMD_GF6C_PantoUp.png") {template_8_r(7, 39)}
 spriteset(spriteset_GMD_GF6C_PantoUp_r,   "gfx/GMD_GF6C_PantoUp.png") {template_8(7, 69)}
