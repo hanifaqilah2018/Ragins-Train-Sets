@@ -4925,7 +4925,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F59PH_Liv0_position, position_in_consist) {
   switch_EMD_F59PH_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F59PH_Liv0, 6450) {
+item(FEAT_TRAINS, Item_EMD_F59PH_Liv0, 6500) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4966,6 +4966,67 @@ item(FEAT_TRAINS, Item_EMD_F59PH_Liv0, 6450) {
 }
 }
 
+//GE_Dash8_32BWH_Liv0
+spriteset(spriteset_GE_Dash8_32BWH_Liv0_Purchase,   "gfx/GE_Dash8_32BWH_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_GE_Dash8_32BWH_Liv0,   "gfx/GE_Dash8_32BWH_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_GE_Dash8_32BWH_Liv0_r,   "gfx/GE_Dash8_32BWH_Liv0.png") {template_8_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_GE_Dash8_32BWH_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_GE_Dash8_32BWH_Liv0_r;
+  spriteset_GE_Dash8_32BWH_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_Dash8_32BWH_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_GE_Dash8_32BWH_Liv0_r;
+  switch_GE_Dash8_32BWH_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_Dash8_32BWH_Liv0_position, position_in_consist) {
+ 0: spriteset_GE_Dash8_32BWH_Liv0;
+  switch_GE_Dash8_32BWH_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_GE_Dash8_32BWH_Liv0, 6600) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_GE_DASH8_32BWH);
+        introduction_date:                date(1990,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        124 ton;
+        speed:                            100 mph;
+        power:                            3200 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     20;
+        running_cost_factor:             130;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_GE_Dash8_32BWH_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_GE_Dash8_32BWH_Liv0_position;
+		sound_effect: switch_GE_7FDL12;
+        purchase: spriteset_GE_Dash8_32BWH_Liv0_Purchase;
+        additional_text: string(STR_INFO_GE_DASH8_32BWH);
+}
+}
+
 //GE_P40DC_Liv0
 spriteset(spriteset_GE_P40DC_Liv0_Purchase,   "gfx/GE_P40DC_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_GE_P40DC_Liv0,   "gfx/GE_P40DC_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
@@ -4986,7 +5047,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_P40DC_Liv0_position, position_in_consist) {
   switch_GE_P40DC_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_GE_P40DC_Liv0, 6650) {
+item(FEAT_TRAINS, Item_GE_P40DC_Liv0, 6800) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5047,7 +5108,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_P42DC_Liv0_position, position_in_consist) {
   switch_GE_P42DC_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_GE_P42DC_Liv0, 6800) {
+item(FEAT_TRAINS, Item_GE_P42DC_Liv0, 6950) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5108,7 +5169,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_DE30AC_Liv0_position, position_in_consist) 
   switch_EMD_DE30AC_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_DE30AC_Liv0, 6850) {
+item(FEAT_TRAINS, Item_EMD_DE30AC_Liv0, 7000) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5169,7 +5230,7 @@ switch(FEAT_TRAINS, SELF, switch_Alstom_PL42AC_Liv0_position, position_in_consis
   switch_Alstom_PL42AC_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_Alstom_PL42AC_Liv0, 6950) {
+item(FEAT_TRAINS, Item_Alstom_PL42AC_Liv0, 7100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -5214,7 +5275,7 @@ item(FEAT_TRAINS, Item_Alstom_PL42AC_Liv0, 6950) {
 spriteset(spriteset_Lima_LT2500_Liv0_Purchase,   "gfx/Lima_LT2500_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_Lima_LT2500_Liv0,   "gfx/Lima_LT2500_Liv0.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_Lima_LT2500_Liv0, 11500) {
+item(FEAT_TRAINS, Item_Lima_LT2500_Liv0, 12700) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -8669,6 +8730,128 @@ item(FEAT_TRAINS, Item_EMD_SD70MAC_Liv0, 24450) {
 		sound_effect: switch_EMD_16_710;
         purchase: spriteset_EMD_SD70MAC_Liv0_Purchase;
         additional_text: string(STR_INFO_EMD_SD70MAC);
+}
+}
+
+//GE_Dash9_44C_Liv0
+spriteset(spriteset_GE_Dash9_44C_Liv0_Purchase,   "gfx/GE_Dash9_44C_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_GE_Dash9_44C_Liv0,   "gfx/GE_Dash9_44C_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_GE_Dash9_44C_Liv0_r,   "gfx/GE_Dash9_44C_Liv0.png") {template_8_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_GE_Dash9_44C_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_GE_Dash9_44C_Liv0_r;
+  spriteset_GE_Dash9_44C_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_Dash9_44C_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_GE_Dash9_44C_Liv0_r;
+  switch_GE_Dash9_44C_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_Dash9_44C_Liv0_position, position_in_consist) {
+ 0: spriteset_GE_Dash9_44C_Liv0;
+  switch_GE_Dash9_44C_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_GE_Dash9_44C_Liv0, 24550) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_GE_DASH9_44C);
+        introduction_date:                date(1993,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        193 ton;
+        speed:                            70 mph;
+        power:                            4400 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     21;
+        running_cost_factor:             155;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_GE_Dash9_44C_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_GE_Dash9_44C_Liv0_position;
+		sound_effect: switch_GE_7FDL16;
+        purchase: spriteset_GE_Dash9_44C_Liv0_Purchase;
+        additional_text: string(STR_INFO_GE_DASH9_44C);
+}
+}
+
+//GE_Dash9_44C_Standard_Liv0
+spriteset(spriteset_GE_Dash9_44C_Standard_Liv0_Purchase,   "gfx/GE_Dash9_44C_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_GE_Dash9_44C_Standard_Liv0,   "gfx/GE_Dash9_44C_Liv0.png") {template_8(187, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_GE_Dash9_44C_Standard_Liv0_r,   "gfx/GE_Dash9_44C_Liv0.png") {template_8_r(187, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_GE_Dash9_44C_Standard_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_GE_Dash9_44C_Standard_Liv0_r;
+  spriteset_GE_Dash9_44C_Standard_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_Dash9_44C_Standard_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_GE_Dash9_44C_Standard_Liv0_r;
+  switch_GE_Dash9_44C_Standard_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_Dash9_44C_Standard_Liv0_position, position_in_consist) {
+ 0: spriteset_GE_Dash9_44C_Standard_Liv0;
+  switch_GE_Dash9_44C_Standard_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_GE_Dash9_44C_Standard_Liv0, 24600) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_GE_DASH9_44C_STANDARD);
+        introduction_date:                date(1993,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        193 ton;
+        speed:                            70 mph;
+        power:                            4400 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     21;
+        running_cost_factor:             155;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_GE_Dash9_44C_Standard_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_GE_Dash9_44C_Standard_Liv0_position;
+		sound_effect: switch_GE_7FDL16;
+        purchase: spriteset_GE_Dash9_44C_Standard_Liv0_Purchase;
+        additional_text: string(STR_INFO_GE_DASH9_44C_STANDARD);
 }
 }
 
