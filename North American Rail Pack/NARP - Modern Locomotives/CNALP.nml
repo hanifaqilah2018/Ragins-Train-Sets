@@ -511,7 +511,7 @@ template template_8_repeat(x, y) {
 
 //Generic Diesel
 switch(FEAT_TRAINS, SELF, switch_Generic_Modern_Diesel, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/modern_diesel_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/modern_diesel_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -520,7 +520,7 @@ switch(FEAT_TRAINS, SELF, switch_Generic_Modern_Diesel, getbits(extra_callback_i
 
 //ALCO Engines
 switch(FEAT_TRAINS, SELF, switch_ALCO_12_244, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -528,7 +528,7 @@ switch(FEAT_TRAINS, SELF, switch_ALCO_12_244, getbits(extra_callback_info1, 0, 8
 }
 
 switch(FEAT_TRAINS, SELF, switch_ALCO_16_244, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -536,7 +536,7 @@ switch(FEAT_TRAINS, SELF, switch_ALCO_16_244, getbits(extra_callback_info1, 0, 8
 }
 
 switch(FEAT_TRAINS, SELF, switch_ALCO_12_251, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -544,7 +544,7 @@ switch(FEAT_TRAINS, SELF, switch_ALCO_12_251, getbits(extra_callback_info1, 0, 8
 }
 
 switch(FEAT_TRAINS, SELF, switch_ALCO_16_251, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -553,7 +553,7 @@ switch(FEAT_TRAINS, SELF, switch_ALCO_16_251, getbits(extra_callback_info1, 0, 8
 
 //EMD Engines
 switch(FEAT_TRAINS, SELF, switch_EMD_12_567, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -561,7 +561,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_12_567, getbits(extra_callback_info1, 0, 8)
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_16_567, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -569,7 +569,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_16_567, getbits(extra_callback_info1, 0, 8)
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_12_645, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -577,7 +577,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_12_645, getbits(extra_callback_info1, 0, 8)
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_16_645, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -585,7 +585,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_16_645, getbits(extra_callback_info1, 0, 8)
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_20_645, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_16_567_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -593,7 +593,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_20_645, getbits(extra_callback_info1, 0, 8)
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_12_710, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_12_710_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_12_710_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -601,7 +601,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_12_710, getbits(extra_callback_info1, 0, 8)
 }
 
 switch(FEAT_TRAINS, SELF, switch_EMD_16_710, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_12_710_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/EMD_12_710_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -610,7 +610,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_16_710, getbits(extra_callback_info1, 0, 8)
 
 //GE Engines
 switch(FEAT_TRAINS, SELF, switch_GE_7FDL12, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/modern_diesel_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/modern_diesel_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -618,7 +618,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_7FDL12, getbits(extra_callback_info1, 0, 8))
 }
 
 switch(FEAT_TRAINS, SELF, switch_GE_7FDL16, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : sound("sfx/modern_diesel_run.wav") ;	
+	//SOUND_EVENT_RUNNING_16    : sound("sfx/modern_diesel_run.wav") ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -634,7 +634,7 @@ switch(FEAT_TRAINS, PARENT, switch_sfx_gec_run, current_speed){
 
 //Electric Locomotives
 switch(FEAT_TRAINS, SELF, switch_Early_Electric_Whistle, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : switch_sfx_gec_run ;	
+	//SOUND_EVENT_RUNNING_16    : switch_sfx_gec_run ;	
 	SOUND_EVENT_START         : sound("sfx/gronk_whistle.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/gronk_whistle.wav") ;
@@ -642,7 +642,7 @@ switch(FEAT_TRAINS, SELF, switch_Early_Electric_Whistle, getbits(extra_callback_
 }
 
 switch(FEAT_TRAINS, SELF, switch_Early_Electric_Leslie_A200, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : switch_sfx_gec_run ;	
+	//SOUND_EVENT_RUNNING_16    : switch_sfx_gec_run ;	
 	SOUND_EVENT_START         : sound("sfx/Leslie_A200.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/Leslie_A200.wav") ;
@@ -650,7 +650,7 @@ switch(FEAT_TRAINS, SELF, switch_Early_Electric_Leslie_A200, getbits(extra_callb
 }
 
 switch(FEAT_TRAINS, SELF, switch_Early_Electric_Wabco_E2, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : switch_sfx_gec_run ;	
+	//SOUND_EVENT_RUNNING_16    : switch_sfx_gec_run ;	
 	SOUND_EVENT_START         : sound("sfx/WABCO_E2.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/WABCO_E2.wav") ;
@@ -658,7 +658,7 @@ switch(FEAT_TRAINS, SELF, switch_Early_Electric_Wabco_E2, getbits(extra_callback
 }
 
 switch(FEAT_TRAINS, SELF, switch_Modern_Electric_Horn, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_RUNNING_16    : switch_sfx_gec_run ;	
+	//SOUND_EVENT_RUNNING_16    : switch_sfx_gec_run ;	
 	SOUND_EVENT_START         : sound("sfx/US_Horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/US_Horn_1.wav") ;
@@ -8977,6 +8977,67 @@ item(FEAT_TRAINS, Item_EMD_SD70ACE_Liv0, 25000) {
 }
 }
 
+//GE_ES44AC_Liv0
+spriteset(spriteset_GE_ES44AC_Liv0_Purchase,   "gfx/GE_ES44AC_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_GE_ES44AC_Liv0,   "gfx/GE_ES44AC_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_GE_ES44AC_Liv0_r,   "gfx/GE_ES44AC_Liv0.png") {template_8_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_GE_ES44AC_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_GE_ES44AC_Liv0_r;
+  spriteset_GE_ES44AC_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_ES44AC_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_GE_ES44AC_Liv0_r;
+  switch_GE_ES44AC_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_ES44AC_Liv0_position, position_in_consist) {
+ 0: spriteset_GE_ES44AC_Liv0;
+  switch_GE_ES44AC_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_GE_ES44AC_Liv0, 26300) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_GE_ES44AC);
+        introduction_date:                date(2003,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        195 ton;
+        speed:                            70 mph;
+        power:                            4400 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     22;
+        running_cost_factor:             170;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_GE_ES44AC_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_GE_ES44AC_Liv0_position;
+		sound_effect: switch_GE_7FDL16;
+        purchase: spriteset_GE_ES44AC_Liv0_Purchase;
+        additional_text: string(STR_INFO_GE_ES44AC);
+}
+}
+
 
 
 //EMD_FT_Liv0
@@ -13473,7 +13534,6 @@ item(FEAT_TRAINS, Item_GE_E33_Liv0, 35450) {
 }
 
 spriteset(spriteset_GE_E44_PantoUp,   "gfx/GE_E44_PantoUp.png") {template_8(7, 39)}
-spriteset(spriteset_GE_E44_PantoUp_Fwr,   "gfx/GE_E44_PantoUp.png") {template_8_r(7, 39)}
 spriteset(spriteset_GE_E44_PantoUp_r,   "gfx/GE_E44_PantoUp.png") {template_8(7, 69)}
 
 spriteset(spriteset_GE_E44_PantoDown,   "gfx/GE_E44_PantoDown.png") {template_8(7, 39)}
@@ -13499,7 +13559,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fw, [
 
 switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fwr_railtype, tile_powers_railtype("ELRL")) {
  0: spriteset_GE_E44_PantoDown;
- 1: spriteset_GE_E44_PantoUp_Fwr;
+ 1: spriteset_GE_E44_PantoUp;
 }
 
 switch (FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fwr, [
@@ -13530,7 +13590,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_E44_Liv0_r, [
 
 switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_altr_railtype, tile_powers_railtype("ELRL")) {
  0: spriteset_GE_E44_PantoDown_r;
- 1: spriteset_GE_E44_PantoUp_Fwr;
+ 1: spriteset_GE_E44_PantoUp_r;
 }
 
 switch (FEAT_TRAINS, SELF, switch_GE_E44_Liv0_altr, [
@@ -16473,7 +16533,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_DualMode, tile_powers_railtype
  1: switch_EMD_SD40_Liv0_DM_position;
 }
 
-item(FEAT_TRAINS, Item_EMD_SD40_Liv0_DM, 42100) {
+item(FEAT_TRAINS, Item_EMD_SD40_Liv0_DM, 45350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -16512,6 +16572,170 @@ item(FEAT_TRAINS, Item_EMD_SD40_Liv0_DM, 42100) {
         power: switch_SD40_Liv0_DM_power_0;
         visual_effect_and_powered: switch_SD40_Liv0_DM_effect_spawn_model_and_powered;
         additional_text: switch_SD40_Liv0_DM_buy_menu_additional_text;
+}
+}
+
+spriteset(spriteset_GE_ES44ACE_PantoUp,   "gfx/GE_ES44ACE_PantoUp.png") {template_8(7, 39)}
+spriteset(spriteset_GE_ES44ACE_PantoUp_r,   "gfx/GE_ES44ACE_PantoUp.png") {template_8(7, 69)}
+
+spriteset(spriteset_GE_ES44ACE_PantoDown,   "gfx/GE_ES44ACE_PantoDown.png") {template_8(7, 39)}
+spriteset(spriteset_GE_ES44ACE_PantoDown_r,   "gfx/GE_ES44ACE_PantoDown.png") {template_8_r(7, 39)}
+
+//GE_ES44ACE_Liv0
+spriteset(spriteset_GE_ES44ACE_Liv0_Purchase,   "gfx/GE_ES44ACE_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_GE_ES44ACE_Liv0,   "gfx/GE_ES44ACE_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_GE_ES44ACE_Liv0_r,   "gfx/GE_ES44ACE_Liv0.png") {template_8_r(7, 39)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_power_1, tile_powers_railtype("RAIL")) {
+            1: return 4400;
+        }
+        switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_power_0, tile_powers_railtype("ELRL")) {
+            1: return 5400;
+                return switch_GE_ES44ACE_Liv0_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("ELRL")]) {
+            1: return VISUAL_EFFECT_ELECTRIC;
+            return VISUAL_EFFECT_DIESEL;
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_DIESEL)
+                    | (4400 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE)
+                    | (5400 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_GE_ES44ACE));
+        }
+
+
+//Change Sprite
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_ES44ACE_PantoDown;
+ 1: spriteset_GE_ES44ACE_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_ES44ACE_Liv0;
+    1: switch_GE_ES44ACE_Liv0_Fw_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_Fwr_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_ES44ACE_PantoDown;
+ 1: spriteset_GE_ES44ACE_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_Fwr, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_ES44ACE_Liv0;
+    1: switch_GE_ES44ACE_Liv0_Fwr_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_Fwflipcheck, vehicle_is_flipped) {
+ 0: switch_GE_ES44ACE_Liv0_Fw;
+ 1: switch_GE_ES44ACE_Liv0_Fwr;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_ES44ACE_PantoDown_r;
+ 1: spriteset_GE_ES44ACE_PantoUp_r;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_ES44ACE_Liv0_r;
+    1: switch_GE_ES44ACE_Liv0_r_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_altr_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_ES44ACE_PantoDown_r;
+ 1: spriteset_GE_ES44ACE_PantoUp_r;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_altr, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_ES44ACE_Liv0_r;
+    1: switch_GE_ES44ACE_Liv0_altr_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_rflipcheck, vehicle_is_flipped) {
+ 0: switch_GE_ES44ACE_Liv0_r;
+ 1: switch_GE_ES44ACE_Liv0_altr;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: switch_GE_ES44ACE_Liv0_rflipcheck;
+  switch_GE_ES44ACE_Liv0_Fwflipcheck;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: switch_GE_ES44ACE_Liv0_rflipcheck;
+  switch_GE_ES44ACE_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_position, position_in_consist) {
+ 0: switch_GE_ES44ACE_Liv0_Fwflipcheck;
+  switch_GE_ES44ACE_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_GE_ES44ACE_Liv0, 45600) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_GE_ES44ACE);
+        introduction_date:                date(2009,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        195 ton;
+        speed:                            70 mph;
+        power:                            4400 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     23;
+        running_cost_factor:             178;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_GE_ES44ACE_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_GE_ES44ACE_Liv0_position;
+		sound_effect: switch_GE_7FDL16;
+        purchase: spriteset_GE_ES44ACE_Liv0_Purchase;
+		power: switch_GE_ES44ACE_Liv0_power_0;
+		visual_effect_and_powered: switch_GE_ES44ACE_Liv0_effect_spawn_model_and_powered;
+        additional_text: switch_GE_ES44ACE_Liv0_buy_menu_additional_text;
 }
 }
 
