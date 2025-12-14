@@ -7640,6 +7640,390 @@ item (FEAT_TRAINS, Item_Gen5_Boxcar_Base, 20040) {
 }
 }
 
+
+// CHIKI loads, separate later
+spriteset(spriteset_Flatbed_8_blank, "gfx/blank.png") {template_8_repeat(7, 39)}
+
+//8A
+spriteset(spriteset_Flatbed_8_tarp_a, "gfx/Flatbed_8A.png") {template_8_repeat(7, 39)}
+
+spriteset(spriteset_Flatbed_8_tarp_b, "gfx/Flatbed_8A.png") {template_8_repeat(96, 39)}
+
+spriteset(spriteset_Flatbed_8_tarp_c, "gfx/Flatbed_8A.png") {template_8_repeat(7, 69)}
+
+spriteset(spriteset_Flatbed_8_planks_half, "gfx/Flatbed_8A.png") {template_8_repeat(7, 99)}
+
+spriteset(spriteset_Flatbed_8_planks_full, "gfx/Flatbed_8A.png") {template_8_repeat(96, 99)}
+
+spriteset(spriteset_Flatbed_8_rods_half, "gfx/Flatbed_8A.png") {template_8_repeat(7, 129)}
+
+spriteset(spriteset_Flatbed_8_rods_full, "gfx/Flatbed_8A.png") {template_8_repeat(96, 129)}
+
+spriteset(spriteset_Flatbed_8_beams_half, "gfx/Flatbed_8A.png") {template_8_repeat(187, 39)}
+
+spriteset(spriteset_Flatbed_8_beams_full, "gfx/Flatbed_8A.png") {template_8_repeat(276, 39)}
+
+spriteset(spriteset_Flatbed_8_pipes_half, "gfx/Flatbed_8A.png") {template_8_repeat(187, 69)}
+
+spriteset(spriteset_Flatbed_8_pipes_full, "gfx/Flatbed_8A.png") {template_8_repeat(276, 69)}
+
+spriteset(spriteset_Flatbed_8_slabs_half, "gfx/Flatbed_8A.png") {template_8_repeat(187, 99)}
+
+spriteset(spriteset_Flatbed_8_slabs_full, "gfx/Flatbed_8A.png") {template_8_repeat(276, 99)}
+
+spriteset(spriteset_Flatbed_8_coils_half, "gfx/Flatbed_8A.png") {template_8_repeat(187, 129)}
+
+spriteset(spriteset_Flatbed_8_coils_full, "gfx/Flatbed_8A.png") {template_8_repeat(276, 129)}
+
+spriteset(spriteset_Flatbed_8_fmsp, "gfx/Flatbed_8A.png") {template_8(367, 39)}
+
+spriteset(spriteset_Flatbed_8_ensp, "gfx/Flatbed_8A.png") {template_8(367, 69)}
+
+spriteset(spriteset_Flatbed_8_cars_a, "gfx/Flatbed_8A.png") {template_8(547, 39)}
+
+spriteset(spriteset_Flatbed_8_cars_b, "gfx/Flatbed_8A.png") {template_8(547, 69)}
+
+spriteset(spriteset_Flatbed_8_cars_c, "gfx/Flatbed_8A.png") {template_8(547, 99)}
+
+spriteset(spriteset_Flatbed_8_cars_d, "gfx/Flatbed_8A.png") {template_8(547, 129)}
+
+//8A
+spriteset(spriteset_Flatbed_8_logs_half, "gfx/Flatbed_8b.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Flatbed_8_logs_full, "gfx/Flatbed_8b.png") {template_8_repeat(96, 39)}
+
+spriteset(spriteset_Flatbed_8_wires_half, "gfx/Flatbed_8b.png") {template_8_repeat(7, 69)}
+spriteset(spriteset_Flatbed_8_wires_full, "gfx/Flatbed_8b.png") {template_8_repeat(96, 69)}
+
+spriteset(spriteset_Flatbed_8_pipes_alt_half, "gfx/Flatbed_8b.png") {template_8_repeat(7, 99)}
+spriteset(spriteset_Flatbed_8_pipes_alt_full, "gfx/Flatbed_8b.png") {template_8_repeat(96, 99)}
+
+
+//loads spritegroups
+
+spritegroup spritegroup_Flatbed_8_tarp_a {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_tarp_a];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_tarp_a];
+}
+
+spritegroup spritegroup_Flatbed_8_tarp_b {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_tarp_b];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_tarp_b];
+}
+
+spritegroup spritegroup_Flatbed_8_tarp_c {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_tarp_c];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_tarp_c];
+}
+
+spritegroup spritegroup_Flatbed_8_fmsp {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_fmsp];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_fmsp];
+}
+
+spritegroup spritegroup_Flatbed_8_ensp {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_ensp];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_ensp];
+}
+
+spritegroup spritegroup_Flatbed_8_cars_a {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_cars_a];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_cars_a];
+}
+
+spritegroup spritegroup_Flatbed_8_cars_b {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_cars_b];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_cars_b];
+}
+
+spritegroup spritegroup_Flatbed_8_cars_c {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_cars_c];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_cars_c];
+}
+
+spritegroup spritegroup_Flatbed_8_cars_d {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_cars_d];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_cars_d];
+}
+
+spritegroup spritegroup_Flatbed_8_planks {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_planks_half, spriteset_Flatbed_8_planks_full];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_planks_half, spriteset_Flatbed_8_planks_full];
+}
+
+spritegroup spritegroup_Flatbed_8_rods {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_rods_half, spriteset_Flatbed_8_rods_full];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_rods_half, spriteset_Flatbed_8_rods_full];
+}
+
+spritegroup spritegroup_Flatbed_8_beams {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_beams_half, spriteset_Flatbed_8_beams_full];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_beams_half, spriteset_Flatbed_8_beams_full];
+}
+
+spritegroup spritegroup_Flatbed_8_pipes {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_pipes_half, spriteset_Flatbed_8_pipes_full];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_pipes_half, spriteset_Flatbed_8_pipes_full];
+}
+
+spritegroup spritegroup_Flatbed_8_slabs {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_slabs_half, spriteset_Flatbed_8_slabs_full];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_slabs_half, spriteset_Flatbed_8_slabs_full];
+}
+
+spritegroup spritegroup_Flatbed_8_coils {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_coils_half, spriteset_Flatbed_8_coils_full];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_coils_half, spriteset_Flatbed_8_coils_full];
+}
+
+spritegroup spritegroup_Flatbed_8_logs {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_logs_half, spriteset_Flatbed_8_logs_full];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_logs_half, spriteset_Flatbed_8_logs_full];
+}
+
+spritegroup spritegroup_Flatbed_8_wires {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_wires_half, spriteset_Flatbed_8_wires_full];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_wires_half, spriteset_Flatbed_8_wires_full];
+}
+
+spritegroup spritegroup_Flatbed_8_pipes_alt {
+    loading: [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_pipes_alt_half, spriteset_Flatbed_8_pipes_alt_full];
+    loaded:  [spriteset_Flatbed_8_blank, spriteset_Flatbed_8_pipes_alt_half, spriteset_Flatbed_8_pipes_alt_full];
+}
+
+//Flated_8 Recolours
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_rods_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return spritegroup_Flatbed_8_rods;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_beams_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return spritegroup_Flatbed_8_beams;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_pipes_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return spritegroup_Flatbed_8_pipes;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_slabs_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return spritegroup_Flatbed_8_slabs;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_coils_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return spritegroup_Flatbed_8_coils;
+}
+
+//random cargos
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_tarp) {
+	1: spritegroup_Flatbed_8_tarp_a;
+	1: spritegroup_Flatbed_8_tarp_b;
+	1: spritegroup_Flatbed_8_tarp_c;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_metal) {
+	3: switch_Flatbed_8_coils_recolour_load;
+	1: switch_Flatbed_8_rods_recolour_load;
+	1: switch_Flatbed_8_slabs_recolour_load;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_metal_ferrous) {
+	3: switch_Flatbed_8_coils_recolour_load;
+	1: switch_Flatbed_8_rods_recolour_load;
+	1: switch_Flatbed_8_slabs_recolour_load;
+	1: spritegroup_Flatbed_8_pipes_alt;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_metal_prod) {
+	3: switch_Flatbed_8_rods_recolour_load;
+	1: switch_Flatbed_8_pipes_recolour_load; 
+	2: switch_Flatbed_8_slabs_recolour_load;
+	1: spritegroup_Flatbed_8_pipes_alt;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_bdmt) {
+	3: switch_Flatbed_8_beams_recolour_load;
+	1: switch_Flatbed_8_pipes_recolour_load;
+	1: switch_Flatbed_8_slabs_recolour_load;
+	2: random_Flatbed_8_tarp;
+	1: spritegroup_Flatbed_8_pipes_alt;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_pipe) {
+	1: switch_Flatbed_8_pipes_recolour_load;
+	1: spritegroup_Flatbed_8_pipes_alt;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_wdpr) {
+	3: switch_Flatbed_8_rods_recolour_load;
+	1: switch_Flatbed_8_beams_recolour_load;
+	1: switch_Flatbed_8_slabs_recolour_load;
+	2: random_Flatbed_8_tarp;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_ensp) {
+	2: spritegroup_Flatbed_8_ensp;
+	1: spritegroup_Flatbed_8_ensp;
+	2: random_Flatbed_8_tarp;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_fmsp) {
+	2: spritegroup_Flatbed_8_fmsp;
+	1: spritegroup_Flatbed_8_fmsp;
+	2: random_Flatbed_8_tarp;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_cars) {
+	1: spritegroup_Flatbed_8_cars_a;
+	1: spritegroup_Flatbed_8_cars_b;
+	1: spritegroup_Flatbed_8_cars_c;
+	1: spritegroup_Flatbed_8_cars_d;
+}
+
+//main cargo switch
+
+switch(FEAT_TRAINS, SELF, switch_Flatbed_8_cargo_type, cargo_type_in_veh) { //feed in
+	IRON: random_Flatbed_8_metal;
+	STEL: random_Flatbed_8_metal_ferrous;
+	METL: random_Flatbed_8_metal_ferrous;
+	ALUM: switch_Flatbed_8_coils_recolour_load;
+	ZINC: random_Flatbed_8_metal;
+	COPR: random_Flatbed_8_metal;
+	CSTI: switch_Flatbed_8_slabs_recolour_load;
+	STST: random_Flatbed_8_metal;
+	STSH: switch_Flatbed_8_slabs_recolour_load;
+	STAL: random_Flatbed_8_metal;
+	STCB: random_Flatbed_8_metal_ferrous;
+	STWR: spritegroup_Flatbed_8_wires;
+	STSE: random_Flatbed_8_metal_prod;
+	NICK: random_Flatbed_8_metal;
+	COBL: random_Flatbed_8_metal;
+	
+	ENSP: random_Flatbed_8_ensp;
+	FMSP: random_Flatbed_8_fmsp;
+	MNSP: random_Flatbed_8_tarp;
+	POWR: random_Flatbed_8_tarp;
+	VPTS: random_Flatbed_8_tarp;
+	MPTS: random_Flatbed_8_tarp;
+	GOOD: random_Flatbed_8_wdpr;
+	
+	BDMT: random_Flatbed_8_bdmt;
+	GLAS: random_Flatbed_8_wdpr;
+	BRCK: random_Flatbed_8_bdmt;
+	PIPE: random_Flatbed_8_pipe;
+	
+	PAPR: random_Flatbed_8_tarp;
+	TYRE: random_Flatbed_8_tarp;
+	WOOL: random_Flatbed_8_tarp;
+	TEXT: random_Flatbed_8_tarp;
+	
+	WOOD: spritegroup_Flatbed_8_logs;
+	TWOD: spritegroup_Flatbed_8_logs;
+	WDPR: spritegroup_Flatbed_8_planks;
+	
+	VEHI: random_Flatbed_8_cars;
+	
+	
+	random_Flatbed_8_tarp;
+}
+
+//Gen5_Flatcar_Liv0
+spriteset(spriteset_Gen5_Flatcar_Liv0_Purchase,   "gfx/Gen5_Flatcar_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Gen5_Flatcar_Liv0,   "gfx/Gen5_Flatcar_Liv0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Gen5_Flatcar_Liv0_CargoStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen5_Flatcar_Liv0;
+    1: switch_Flatbed_8_cargo_type;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen5_Flatcar_Liv0_RearStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen5_Flatcar_Liv0;
+	1: spriteset_8_Modern_EOTD;
+    2: switch_Flatbed_8_cargo_type;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen5_Flatcar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen5_Flatcar_Liv0_RearStack1;
+    return switch_Gen5_Flatcar_Liv0_CargoStack1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen5_Flatcar_Liv0_CargoStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen5_Flatcar_Liv0;
+    1: switch_Flatbed_8_cargo_type;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen5_Flatcar_Liv0_RearStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen5_Flatcar_Liv0;
+	1: spriteset_8_Modern_EOTD_r;
+    2: switch_Flatbed_8_cargo_type;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen5_Flatcar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen5_Flatcar_Liv0_RearStack2;
+    return switch_Gen5_Flatcar_Liv0_CargoStack2;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen5_Flatcar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen5_Flatcar_Liv0_rearcheck1;
+ 1: switch_Gen5_Flatcar_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Gen5_Flatcar_Liv0, 21040) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask( CC_MAIL, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
+		default_cargo_type: WOOD;
+		cargo_disallow_refit: [LVST, BEER, BOOM, FRUT, EOIL, RCYC, FERT, SCMT, CBLK, SOAP, COAT, PLAS, WSTE, SCPR, CIGR, TBCO, JAVA];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    160;
+        running_cost_factor:            1;
+        loading_speed:                    5;
+
+//        variant_group: Item_Gen5_Flatcar_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN5_FLATCAR);
+        introduction_date:                date(1955, 1, 1);
+
+        speed:                            80 mph;
+        weight:                            21 ton;
+        cargo_capacity:                    80/param_freight_capacity_mod; //Callback!!!
+    }
+    graphics {
+    default:                             switch_Gen5_Flatcar_Liv0_position;
+    purchase:                            spriteset_Gen5_Flatcar_Liv0_Purchase;
+    additional_text: string(STR_INFO_GEN5_FLATCAR);
+	cargo_capacity:                   return 45/param_freight_capacity_mod;
+}
+}
+
 //Gen6_HiCube_Boxcar_Base
 spriteset(spriteset_Gen6_HiCube_Boxcar_Purchase,   "gfx/Gen6_HiCube_Boxcar_Base0.png") {template_purchase_8(7, 21)}
 

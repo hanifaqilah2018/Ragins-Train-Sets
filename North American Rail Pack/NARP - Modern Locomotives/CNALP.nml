@@ -16724,7 +16724,7 @@ item(FEAT_TRAINS, Item_EMD_SD40_Liv0_DM, 47350) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        [RAIL, ELRL];
+        track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -16887,7 +16887,7 @@ item(FEAT_TRAINS, Item_GE_ES44ACE_Liv0, 47600) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        [RAIL, ELRL];
+        track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
 //        ai_special_flag:                AI_FLAG_CARGO;
