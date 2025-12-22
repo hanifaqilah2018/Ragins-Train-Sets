@@ -179,6 +179,30 @@ template template_purchase_8(x, y) {
     [x-2 , y,  1,  1,   0,  0, ANIM]
 }
 
+template template_purchase_9(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -41, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_purchase_10(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -43, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
 template template_purchase_44(x, y) {
     //[left_x, upper_y, width, height, offset_x, offset_y]
     [x-2 , y,  1,  1,   0,  0, ANIM]
@@ -509,6 +533,67 @@ template template_8_repeat(x, y) {
     [ x+66,     y,        22,        20,        -4,            -11, ANIM]
 }
 
+//Extra Long Templates
+template template_9_repeat(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        33,        -3,            -18, ANIM]
+    [ x+9,      y,        26,        22,        -18,        -12, ANIM]
+    [ x+36,     y,        41,        16,        -20,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -8,            -13, ANIM]
+
+    [ x,        y,        8,        33,        -3,            -20, ANIM]
+    [ x+9,      y,        26,        22,        -16,        -13, ANIM]
+    [ x+36,     y,        41,        16,        -16,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -6,            -12, ANIM]
+}
+
+template template_10(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        33,        -3,            -16, ANIM]
+    [ x+9,      y,        26,        22,        -20,        -11, ANIM]
+    [ x+36,     y,        41,        16,        -24,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -8,            -13, ANIM]
+
+    [ x+105,     y,        8,        33,        -3,            -16, ANIM]
+    [ x+114,     y,        26,        22,        -16,        -13, ANIM]
+    [ x+141,    y,        41,        16,        -16,        -12, ANIM]
+    [ x+183,    y,        26,        22,        -4,            -11, ANIM]
+}
+
+template template_10_r(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x+105,     y,        8,        33,        -3,            -16, ANIM]
+    [ x+114,     y,        26,        22,        -20,        -11, ANIM]
+    [ x+141,    y,        41,        16,        -24,        -12, ANIM]
+    [ x+183,    y,        26,        22,        -8,            -13, ANIM]
+
+    [ x,        y,        8,        33,        -3,            -16, ANIM]
+    [ x+9,      y,        26,        22,        -16,        -13, ANIM]
+    [ x+36,     y,        41,        16,        -16,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -4,            -11, ANIM]
+}
+
+template template_10_repeat(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        33,        -3,            -16, ANIM]
+    [ x+9,      y,        26,        22,        -20,        -11, ANIM]
+    [ x+36,     y,        41,        16,        -24,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -8,            -13, ANIM]
+
+    [ x,        y,        8,        33,        -3,            -16, ANIM]
+    [ x+9,      y,        26,        22,        -16,        -13, ANIM]
+    [ x+36,     y,        41,        16,        -16,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -4,            -11, ANIM]
+}
+
 //Generic Diesel
 switch(FEAT_TRAINS, SELF, switch_Generic_Modern_Diesel, getbits(extra_callback_info1, 0, 8)){
 	//SOUND_EVENT_RUNNING_16    : sound("sfx/modern_diesel_run.wav") ;	
@@ -665,6 +750,7 @@ switch(FEAT_TRAINS, SELF, switch_Modern_Electric_Horn, getbits(extra_callback_in
 //	SOUND_EVENT_STOPPED       : sound("sfx/86_idle.wav");
 }
 
+spriteset(spriteset_8_Blank, "gfx/Blank.png") {template_8_repeat(7, 39)} //ANGERY >:////
 
 //EMC_E1_Liv0
 spriteset(spriteset_EMC_E1_Liv0_Purchase,   "gfx/EMC_E1_Liv0.png") {template_purchase_88(7, 21)}
@@ -6781,6 +6867,128 @@ item(FEAT_TRAINS, Item_GE_U25C_Low_Liv0, 23950) {
 }
 }
 
+//EMD_GP35_Liv0
+spriteset(spriteset_EMD_GP35_Liv0_Purchase,   "gfx/EMD_GP35_Liv0.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_EMD_GP35_Liv0,   "gfx/EMD_GP35_Liv0.png") {template_7(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_GP35_Liv0_r,   "gfx/EMD_GP35_Liv0.png") {template_7_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_GP35_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_GP35_Liv0_r;
+  spriteset_EMD_GP35_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_GP35_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_GP35_Liv0_r;
+  switch_EMD_GP35_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_GP35_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_GP35_Liv0;
+  switch_EMD_GP35_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_GP35_Liv0, 24000) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_GP35);
+        introduction_date:                date(1963,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            7;
+
+        weight:                        117 ton;
+        speed:                            65 mph;
+        power:                            2500 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     14;
+        running_cost_factor:             119;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_GP35_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_GP35_Liv0_position;
+		sound_effect: switch_EMD_16_567;
+        purchase: spriteset_EMD_GP35_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_GP35);
+}
+}
+
+//EMD_GP35_Var1_Liv0
+spriteset(spriteset_EMD_GP35_Var1_Liv0_Purchase,   "gfx/EMD_GP35_Liv0.png") {template_purchase_7(187, 21)}
+spriteset(spriteset_EMD_GP35_Var1_Liv0,   "gfx/EMD_GP35_Liv0.png") {template_7(187, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_GP35_Var1_Liv0_r,   "gfx/EMD_GP35_Liv0.png") {template_7_r(187, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_GP35_Var1_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_GP35_Var1_Liv0_r;
+  spriteset_EMD_GP35_Var1_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_GP35_Var1_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_GP35_Var1_Liv0_r;
+  switch_EMD_GP35_Var1_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_GP35_Var1_Liv0_position, position_in_consist) {
+ 0: spriteset_EMD_GP35_Var1_Liv0;
+  switch_EMD_GP35_Var1_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_GP35_Var1_Liv0, 24050) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_GP35_VAR1);
+        introduction_date:                date(1963,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            7;
+
+        weight:                        117 ton;
+        speed:                            65 mph;
+        power:                            2500 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     14;
+        running_cost_factor:             119;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_GP35_Var1_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_GP35_Var1_Liv0_position;
+		sound_effect: switch_EMD_16_567;
+        purchase: spriteset_EMD_GP35_Var1_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_GP35_VAR1);
+}
+}
+
 //EMD_SD35_Liv0
 spriteset(spriteset_EMD_SD35_Liv0_Purchase,   "gfx/EMD_SD35_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_EMD_SD35_Liv0,   "gfx/EMD_SD35_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
@@ -9157,6 +9365,89 @@ item(FEAT_TRAINS, Item_GE_ES44AC_Liv0, 29350) {
 		sound_effect: switch_GE_7FDL16;
         purchase: spriteset_GE_ES44AC_Liv0_Purchase;
         additional_text: string(STR_INFO_GE_ES44AC);
+}
+}
+
+sort(FEAT_TRAINS, [Item_GE_ES44AC_Liv0, Item_EMD_DD35A_Liv0, Item_EMD_DD35B_Liv0]);
+
+//EMD_DD35A_Liv0
+spriteset(spriteset_EMD_DD35A_Liv0_Purchase,   "gfx/EMD_DD35_Liv0.png") {template_purchase_10(7, 21)}
+
+spriteset(spriteset_EMD_DD35A_Liv0,   "gfx/EMD_DD35_Liv0.png") {template_10(7, 39)}
+spriteset(spriteset_EMD_DD35A_Liv0_r,   "gfx/EMD_DD35_Liv0.png") {template_10_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DD35A_Liv0_pair, position_in_vehid_chain % 4) {
+ 0: spriteset_EMD_DD35A_Liv0;
+ 3: spriteset_EMD_DD35A_Liv0_r;
+  spriteset_EMD_DD35A_Liv0_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DD35A_Liv0_rear, position_in_vehid_chain_from_end) {
+ 1: spriteset_EMD_DD35A_Liv0_r;
+  switch_EMD_DD35A_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DD35A_Liv0_direction_position, position_in_consist) {
+ 0: spriteset_EMD_DD35A_Liv0;
+  switch_EMD_DD35A_Liv0_rear;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DD35A_Liv0_position, position_in_articulated_veh) {
+ 0: switch_EMD_DD35A_Liv0_direction_position;
+ 1: spriteset_8_Blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DD35A_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 5;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_EMD_DD35A_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_EMD_DD35A_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, Item_EMD_DD35A_Liv0, 1100) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_STEAM;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_DD35A);
+        introduction_date:                date(1965,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+//        length:                            8;
+
+        weight:                        236 ton;
+        speed:                            90 mph;
+        power:                            5000 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     25;
+        running_cost_factor:             79;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_DD35A_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_DD35A_Liv0_position;
+        sound_effect: switch_EMD_16_567;
+        purchase: spriteset_EMD_DD35A_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_DD35A);
+        length: switch_EMD_DD35A_Liv0_length;
+        articulated_part: switch_EMD_DD35A_Liv0_articulated_part;        
 }
 }
 
@@ -16324,6 +16615,88 @@ item(FEAT_TRAINS, Item_PRR_DD2_Liv0, 43750) {
 }
 }
 
+sort(FEAT_TRAINS, [Item_PRR_DD2_Liv0, Item_GE_LittleJoe_Liv0]);
+
+spriteset(spriteset_GE_LittleJoe_PantoUp,   "gfx/GE_LittleJoe_PantoUp.png") {template_10(7, 39)}
+spriteset(spriteset_GE_LittleJoe_PantoDown,   "gfx/GE_LittleJoe_PantoDown.png") {template_10(7, 39)}
+
+//GE_LittleJoe_Liv0
+spriteset(spriteset_GE_LittleJoe_Liv0_Purchase,   "gfx/GE_LittleJoe_Liv0.png") {template_purchase_10(7, 21)}
+
+spriteset(spriteset_GE_LittleJoe_Liv0,   "gfx/GE_LittleJoe_Liv0.png") {template_10_repeat(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_GE_LittleJoe_Liv0_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_LittleJoe_PantoDown;
+ 1: spriteset_GE_LittleJoe_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_LittleJoe_Liv0, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_LittleJoe_Liv0;
+    1: switch_GE_LittleJoe_Liv0_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_LittleJoe_Liv0_position, position_in_articulated_veh) {
+ 0: switch_GE_LittleJoe_Liv0;
+ 1: spriteset_8_Blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_LittleJoe_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 5;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_GE_LittleJoe_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_GE_LittleJoe_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, Item_GE_LittleJoe_Liv0, 2200) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        ELRL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_GE_LITTLEJOE);
+        introduction_date:                date(1948,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+//        length:                            8;
+
+        weight:                        247 ton;
+        speed:                            70 mph;
+        power:                            5110 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     31;
+        running_cost_factor:             225;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_GE_LittleJoe_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_GE_LittleJoe_Liv0_position;
+        sound_effect: switch_Early_Electric_Wabco_E2;
+        purchase: spriteset_GE_LittleJoe_Liv0_Purchase;
+        additional_text: string(STR_INFO_GE_LITTLEJOE);
+        length: switch_GE_LittleJoe_Liv0_length;
+        articulated_part: switch_GE_LittleJoe_Liv0_articulated_part;       
+}
+}
+
 spriteset(spriteset_EMD_DP32AC_PantoUp,   "gfx/EMD_DP32AC_PantoUp.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_DP32AC_PantoUp_Fwr,   "gfx/EMD_DP32AC_PantoUp.png") {template_8_r(7, 39)}
 spriteset(spriteset_EMD_DP32AC_PantoUp_r,   "gfx/EMD_DP32AC_PantoUp.png") {template_8(7, 69)}
@@ -19290,5 +19663,69 @@ item(FEAT_TRAINS, Item_EMD_DM30AC_Liv0, 53600) {
         power: switch_EMD_DM30AC_Liv0_power_0;
         visual_effect_and_powered: switch_EMD_DM30AC_Liv0_effect_spawn_model_and_powered;
         additional_text: switch_EMD_DM30AC_Liv0_buy_menu_additional_text;
+}
+}
+
+//EMD_DD35B_Liv0
+spriteset(spriteset_EMD_DD35B_Liv0_Purchase,   "gfx/EMD_DD35_Liv0.png") {template_purchase_9(219, 21)}
+
+spriteset(spriteset_EMD_DD35B_Liv0,   "gfx/EMD_DD35_Liv0.png") {template_9_repeat(219, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DD35B_Liv0_position, position_in_articulated_veh) {
+ 0: spriteset_EMD_DD35B_Liv0;
+ 1: spriteset_8_Blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DD35B_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 4;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_EMD_DD35B_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_EMD_DD35B_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, Item_EMD_DD35B_Liv0, 2350) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_STEAM;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_DD35B);
+        introduction_date:                date(1963,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+//        length:                            8;
+
+        weight:                        235 ton;
+        speed:                            90 mph;
+        power:                            5000 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     25;
+        running_cost_factor:             78;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_DD35B_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_DD35B_Liv0_position;
+        sound_effect: switch_EMD_16_567;
+        purchase: spriteset_EMD_DD35B_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_DD35B);
+        length: switch_EMD_DD35B_Liv0_length;
+        articulated_part: switch_EMD_DD35B_Liv0_articulated_part;        
 }
 }

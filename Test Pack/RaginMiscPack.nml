@@ -172,6 +172,30 @@ template template_purchase_8(x, y) {
     [x-2 , y,  1,  1,   0,  0, ANIM]
 }
 
+template template_purchase_9(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -41, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_purchase_10(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -43, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
 template template_purchase_44(x, y) {
     //[left_x, upper_y, width, height, offset_x, offset_y]
     [x-2 , y,  1,  1,   0,  0, ANIM]
@@ -500,6 +524,67 @@ template template_8_repeat(x, y) {
     [ x+9,      y,        22,        20,        -16,        -11, ANIM]
     [ x+32,     y,        33,        16,        -16,        -12, ANIM]
     [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+}
+
+//Extra Long Templates
+template template_9_repeat(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        33,        -3,            -18, ANIM]
+    [ x+9,      y,        26,        22,        -18,        -12, ANIM]
+    [ x+36,     y,        41,        16,        -20,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -8,            -13, ANIM]
+
+    [ x,        y,        8,        33,        -3,            -20, ANIM]
+    [ x+9,      y,        26,        22,        -16,        -13, ANIM]
+    [ x+36,     y,        41,        16,        -16,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -6,            -12, ANIM]
+}
+
+template template_10(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        33,        -3,            -16, ANIM]
+    [ x+9,      y,        26,        22,        -20,        -11, ANIM]
+    [ x+36,     y,        41,        16,        -24,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -8,            -13, ANIM]
+
+    [ x+105,     y,        8,        33,        -3,            -16, ANIM]
+    [ x+114,     y,        26,        22,        -16,        -13, ANIM]
+    [ x+141,    y,        41,        16,        -16,        -12, ANIM]
+    [ x+183,    y,        26,        22,        -4,            -11, ANIM]
+}
+
+template template_10_r(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x+105,     y,        8,        33,        -3,            -16, ANIM]
+    [ x+114,     y,        26,        22,        -20,        -11, ANIM]
+    [ x+141,    y,        41,        16,        -24,        -12, ANIM]
+    [ x+183,    y,        26,        22,        -8,            -13, ANIM]
+
+    [ x,        y,        8,        33,        -3,            -16, ANIM]
+    [ x+9,      y,        26,        22,        -16,        -13, ANIM]
+    [ x+36,     y,        41,        16,        -16,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -4,            -11, ANIM]
+}
+
+template template_10_repeat(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        33,        -3,            -16, ANIM]
+    [ x+9,      y,        26,        22,        -20,        -11, ANIM]
+    [ x+36,     y,        41,        16,        -24,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -8,            -13, ANIM]
+
+    [ x,        y,        8,        33,        -3,            -16, ANIM]
+    [ x+9,      y,        26,        22,        -16,        -13, ANIM]
+    [ x+36,     y,        41,        16,        -16,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -4,            -11, ANIM]
 }
 
 //4Train
