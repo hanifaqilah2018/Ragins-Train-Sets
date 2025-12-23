@@ -341,6 +341,9 @@ STR_INFO_BOMBARDIER_ALP46:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}O
 STR_NAME_PRR_L6:Altoona L6
 STR_INFO_PRR_L6:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
 
+STR_NAME_GE_EF3B:GE EF-3B
+STR_INFO_GE_EF3B:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+
 STR_NAME_GE_E33:GE E33
 STR_INFO_GE_E33:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
 
@@ -352,6 +355,11 @@ STR_INFO_GE_E50C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Lin
 
 STR_NAME_GMD_GF6C:GMD GF6C
 STR_INFO_GMD_GF6C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+
+
+
+STR_NAME_EMD_DDR6700:EMD DDR6700
+STR_INFO_EMD_DDR6700:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Power: {LTBLUE}Overhead Line
 
 
 

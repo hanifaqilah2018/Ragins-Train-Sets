@@ -534,6 +534,21 @@ template template_8_repeat(x, y) {
 }
 
 //Extra Long Templates
+template template_9(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        33,        -3,            -18, ANIM]
+    [ x+9,      y,        26,        22,        -18,        -12, ANIM]
+    [ x+36,     y,        41,        16,        -20,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -8,            -13, ANIM]
+
+    [ x+105,     y,        8,        33,        -3,            -16, ANIM]
+    [ x+114,     y,        26,        22,        -16,        -13, ANIM]
+    [ x+141,    y,        41,        16,        -16,        -12, ANIM]
+    [ x+183,    y,        26,        22,        -4,            -11, ANIM]
+}
+
 template template_9_repeat(x, y) {
     //left_x, upper_y, width, height, offset_x, offset_y
     //                            more negative to shift left
@@ -10280,46 +10295,46 @@ item(FEAT_TRAINS, Item_PRR_R1_Liv0, 35300) {
 }
 }
 
-spriteset(spriteset_PRR_GG1_PantoUp,   "gfx/PRR_GG1_PantoUp.png") {template_8(7, 39)}
-spriteset(spriteset_PRR_GG1_PantoUp_r,   "gfx/PRR_GG1_PantoUp.png") {template_8(7, 69)}
-spriteset(spriteset_PRR_GG1_PantoDown,   "gfx/PRR_GG1_PantoDown.png") {template_8(7, 39)}
+sort(FEAT_TRAINS, [Item_PRR_R1_Liv0, Item_PRR_GG1_Liv0]);
+
+spriteset(spriteset_PRR_GG1_PantoUp,   "gfx/PRR_GG1_PantoUp.png") {template_9(7, 39)}
+spriteset(spriteset_PRR_GG1_PantoDown,   "gfx/PRR_GG1_PantoDown.png") {template_9(7, 39)}
 
 //PRR_GG1_Liv0
-spriteset(spriteset_PRR_GG1_Liv0_Purchase,   "gfx/PRR_GG1_Liv0.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_PRR_GG1_Liv0,   "gfx/PRR_GG1_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_PRR_GG1_Liv0_Purchase,   "gfx/PRR_GG1_Liv0.png") {template_purchase_9(7, 21)}
 
-switch(FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+spriteset(spriteset_PRR_GG1_Liv0,   "gfx/PRR_GG1_Liv0.png") {template_9_repeat(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0_railtype, tile_powers_railtype("ELRL")) {
  0: spriteset_PRR_GG1_PantoDown;
  1: spriteset_PRR_GG1_PantoUp;
 }
 
-switch (FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0_Fw, [
+switch (FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_PRR_GG1_Liv0;
-    1: switch_PRR_GG1_Liv0_Fw_railtype;
+    1: switch_PRR_GG1_Liv0_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
- 0: spriteset_PRR_GG1_PantoDown;
- 1: spriteset_PRR_GG1_PantoUp_r;
+switch(FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0_position, position_in_articulated_veh) {
+ 0: switch_PRR_GG1_Liv0;
+ 1: spriteset_8_Blank;
 }
 
-switch (FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0_r, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0: spriteset_PRR_GG1_Liv0;
-    1: switch_PRR_GG1_Liv0_r_railtype;
+switch(FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 4;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_PRR_GG1_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0_position, vehicle_is_flipped) {
- 0: switch_PRR_GG1_Liv0_Fw;
- 1: switch_PRR_GG1_Liv0_r;
-}
-
-item(FEAT_TRAINS, Item_PRR_GG1_Liv0, 35350) {
+item(FEAT_TRAINS, Item_PRR_GG1_Liv0, 1550) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -10339,7 +10354,7 @@ item(FEAT_TRAINS, Item_PRR_GG1_Liv0, 35350) {
         introduction_date:                date(1934,1,1);
         vehicle_life:                     50;
         model_life:                        30;
-        length:                            8;
+//        length:                            8;
 
         weight:                        175 ton;
         speed:                            100 mph;
@@ -10354,10 +10369,11 @@ item(FEAT_TRAINS, Item_PRR_GG1_Liv0, 35350) {
     }
     graphics {
         default: switch_PRR_GG1_Liv0_position;
-		sound_effect: switch_Early_Electric_Wabco_E2;
+        sound_effect: switch_Early_Electric_Wabco_E2;
         purchase: spriteset_PRR_GG1_Liv0_Purchase;
         additional_text: string(STR_INFO_PRR_GG1);
-		reverse_build_probability: return 50;
+        length: switch_PRR_GG1_Liv0_length;
+        articulated_part: switch_PRR_GG1_Liv0_articulated_part;       
 }
 }
 
@@ -10367,7 +10383,7 @@ spriteset(spriteset_GE_EP4_PantoDown,   "gfx/GE_EP4_PantoDown.png") {template_8(
 
 //GE_EP4_Liv0
 spriteset(spriteset_GE_EP4_Liv0_Purchase,   "gfx/GE_EP4_Liv0.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_GE_EP4_Liv0,   "gfx/GE_EP4_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_GE_EP4_Liv0,   "gfx/GE_EP4_Liv0.png") {template_8_repeat(7, 39)}
 
 switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
  0: spriteset_GE_EP4_PantoDown;
@@ -10477,7 +10493,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv35_position, vehicle_is_flipped) {
  1: switch_GE_EP4_Liv35_r;
 }
 
-item(FEAT_TRAINS, Item_GE_EP4_Liv35, 35500) {
+item(FEAT_TRAINS, Item_GE_EP4_Liv35, 35435) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -14126,6 +14142,160 @@ item(FEAT_TRAINS, Item_PRR_L6_Liv0, 39250) {
 }
 }
 
+//GE_EF3B_Liv0
+spriteset(spriteset_GE_EF3B_Liv0_Purchase,   "gfx/GE_EP4_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_GE_EF3B_Liv0,   "gfx/GE_EP4_Liv0.png") {template_8_repeat(187, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_EP4_PantoDown;
+ 1: spriteset_GE_EP4_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_EF3B_Liv0_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_EF3B_Liv0;
+    1: switch_GE_EF3B_Liv0_Fw_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_EP4_PantoDown;
+ 1: spriteset_GE_EP4_PantoUp_r;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_EF3B_Liv0_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_EF3B_Liv0;
+    1: switch_GE_EF3B_Liv0_r_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv0_position, vehicle_is_flipped) {
+ 0: switch_GE_EF3B_Liv0_Fw;
+ 1: switch_GE_EF3B_Liv0_r;
+}
+
+item(FEAT_TRAINS, Item_GE_EF3B_Liv0, 39300) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        [ELRL, SAA3];
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_GE_EF3B);
+        introduction_date:                date(1938,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        165 ton;
+        speed:                            90 mph;
+        power:                            4000 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     20;
+        running_cost_factor:             130;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_GE_EF3B_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_GE_EF3B_Liv0_position;
+		sound_effect: switch_Early_Electric_Leslie_A200;
+        purchase: spriteset_GE_EF3B_Liv0_Purchase;
+        additional_text: string(STR_INFO_GE_EF3B);
+		reverse_build_probability: return 50;
+}
+}
+
+//GE_EF3B_Liv35
+spriteset(spriteset_GE_EF3B_Liv35_Purchase,   "gfx/GE_EP4_Liv35.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_GE_EF3B_Liv35,   "gfx/GE_EP4_Liv35.png") {template_8_repeat(187, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv35_Fw_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_EP4_PantoDown;
+ 1: spriteset_GE_EP4_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_EF3B_Liv35_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_EF3B_Liv35;
+    1: switch_GE_EF3B_Liv35_Fw_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv35_r_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_GE_EP4_PantoDown;
+ 1: spriteset_GE_EP4_PantoUp_r;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_EF3B_Liv35_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_EF3B_Liv35;
+    1: switch_GE_EF3B_Liv35_r_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv35_position, vehicle_is_flipped) {
+ 0: switch_GE_EF3B_Liv35_Fw;
+ 1: switch_GE_EF3B_Liv35_r;
+}
+
+item(FEAT_TRAINS, Item_GE_EF3B_Liv35, 39335) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        ELRL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_GE_EF3B);
+        introduction_date:                date(1938,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        165 ton;
+        speed:                            90 mph;
+        power:                            4000 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     20;
+        running_cost_factor:             130;
+        cargo_capacity:                  0;
+
+        variant_group: Item_GE_EF3B_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_GE_EF3B_Liv35_position;
+		sound_effect: switch_Early_Electric_Leslie_A200;
+        purchase: spriteset_GE_EF3B_Liv35_Purchase;
+        additional_text: string(STR_INFO_GE_EF3B);
+		reverse_build_probability: return 50;
+}
+}
+
 spriteset(spriteset_GE_E33_PantoUp,   "gfx/GE_E33_PantoUp.png") {template_8(7, 39)}
 spriteset(spriteset_GE_E33_PantoUp_r,   "gfx/GE_E33_PantoUp.png") {template_8_r(7, 39)}
 spriteset(spriteset_GE_E33_PantoDown,   "gfx/GE_E33_PantoDown.png") {template_8(7, 39)}
@@ -15742,6 +15912,88 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv14, 39914) {
 }
 }
 
+sort(FEAT_TRAINS, [Item_GMD_GF6C_Liv0, Item_EMD_DDR6700_Liv0]);
+
+spriteset(spriteset_EMD_DDR6700_PantoUp,   "gfx/EMD_DDR6700_PantoUp.png") {template_10(7, 39)}
+spriteset(spriteset_EMD_DDR6700_PantoDown,   "gfx/EMD_DDR6700_PantoDown.png") {template_10(7, 39)}
+
+//EMD_DDR6700_Liv0
+spriteset(spriteset_EMD_DDR6700_Liv0_Purchase,   "gfx/EMD_DDR6700_Liv0.png") {template_purchase_10(7, 21)}
+
+spriteset(spriteset_EMD_DDR6700_Liv0,   "gfx/EMD_DDR6700_Liv0.png") {template_10_repeat(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DDR6700_Liv0_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_EMD_DDR6700_PantoDown;
+ 1: spriteset_EMD_DDR6700_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_EMD_DDR6700_Liv0, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_DDR6700_Liv0;
+    1: switch_EMD_DDR6700_Liv0_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DDR6700_Liv0_position, position_in_articulated_veh) {
+ 0: switch_EMD_DDR6700_Liv0;
+ 1: spriteset_8_Blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DDR6700_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 5;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_EMD_DDR6700_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_EMD_DDR6700_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, Item_EMD_DDR6700_Liv0, 2100) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        ELRL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_EMD_DDR6700);
+        introduction_date:                date(1969,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+//        length:                            8;
+
+        weight:                        270 ton;
+        speed:                            70 mph;
+        power:                            6700 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     37;
+        running_cost_factor:             225;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_DDR6700_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_DDR6700_Liv0_position;
+        sound_effect: switch_Early_Electric_Wabco_E2;
+        purchase: spriteset_EMD_DDR6700_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_DDR6700);
+        length: switch_EMD_DDR6700_Liv0_length;
+        articulated_part: switch_EMD_DDR6700_Liv0_articulated_part;       
+}
+}
+
 spriteset(spriteset_GE_CascadeBoxcab_PantoUp,   "gfx/GE_CascadeBoxcab_PantoUp.png") {template_7(7, 39)}
 spriteset(spriteset_GE_CascadeBoxcab_PantoUp_r,   "gfx/GE_CascadeBoxcab_PantoUp.png") {template_7(7, 69)}
 spriteset(spriteset_GE_CascadeBoxcab_PantoDown,   "gfx/GE_CascadeBoxcab_PantoDown.png") {template_7(7, 39)}
@@ -15867,7 +16119,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_Twincab_Liv0_articulated_part, extra_callbac
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item(FEAT_TRAINS, Item_GE_Twincab_Liv0, 2050) {
+item(FEAT_TRAINS, Item_GE_Twincab_Liv0, 2150) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -16495,7 +16747,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_Tricab_Liv0_articulated_part, extra_callback
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item(FEAT_TRAINS, Item_GE_Tricab_Liv0, 2100) {
+item(FEAT_TRAINS, Item_GE_Tricab_Liv0, 2200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -16592,7 +16844,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_Quadcab_Liv0_articulated_part, extra_callbac
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item(FEAT_TRAINS, Item_GE_Quadcab_Liv0, 2150) {
+item(FEAT_TRAINS, Item_GE_Quadcab_Liv0, 2250) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -16837,7 +17089,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_LittleJoe_Liv0_articulated_part, extra_callb
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item(FEAT_TRAINS, Item_GE_LittleJoe_Liv0, 2200) {
+item(FEAT_TRAINS, Item_GE_LittleJoe_Liv0, 2350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
