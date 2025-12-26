@@ -10133,46 +10133,54 @@ item(FEAT_TRAINS, Item_EMD_F9_Liv0, 33500) {
 }
 }
 
-spriteset(spriteset_NYC_P1AMotor_PantoUp,   "gfx/NYC_P1AMotor_PantoUp.png") {template_8(7, 39)}
-spriteset(spriteset_NYC_P1AMotor_PantoUp_r,   "gfx/NYC_P1AMotor_PantoUp.png") {template_8(7, 69)}
-spriteset(spriteset_NYC_P1AMotor_PantoDown,   "gfx/NYC_P1AMotor_PantoDown.png") {template_8(7, 39)}
+sort(FEAT_TRAINS, [Item_EMD_F9_Liv0, Item_NYC_P1Motor_Liv0]);
 
-//NYC_P1AMotor_Liv0
-spriteset(spriteset_NYC_P1AMotor_Liv0_Purchase,   "gfx/NYC_P1AMotor_Liv0.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_NYC_P1AMotor_Liv0,   "gfx/NYC_P1AMotor_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_NYC_P1Motor_PantoUp,   "gfx/NYC_PMotor_PantoUp.png") {template_9(7, 39)}
+spriteset(spriteset_NYC_P1Motor_PantoDown,   "gfx/NYC_PMotor_PantoDown.png") {template_9(7, 39)}
+spriteset(spriteset_NYC_P1Motor_PantoBase,   "gfx/NYC_PMotor_PantoBase.png") {template_purchase_9(7, 21)}
 
-switch(FEAT_TRAINS, SELF, switch_NYC_P1AMotor_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
- 0: spriteset_NYC_P1AMotor_PantoDown;
- 1: spriteset_NYC_P1AMotor_PantoUp;
-}
+//NYC_P1Motor_Liv0
+spriteset(spriteset_NYC_P1Motor_Liv0_Purchase,   "gfx/NYC_PMotor_Liv0A.png") {template_purchase_9(7, 21)}
+spriteset(spriteset_NYC_P1Motor_Liv0,   "gfx/NYC_PMotor_Liv0A.png") {template_9_repeat(7, 39)}
 
-switch (FEAT_TRAINS, SELF, switch_NYC_P1AMotor_Liv0_Fw, [
+switch (FEAT_TRAINS, SELF, switch_NYC_P1Motor_PurchaseStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_NYC_P1AMotor_Liv0;
-    1: switch_NYC_P1AMotor_Liv0_Fw_railtype;
+    0: spriteset_NYC_P1Motor_Liv0_Purchase;
+    1: spriteset_NYC_P1Motor_PantoBase;
 }
 
-switch(FEAT_TRAINS, SELF, switch_NYC_P1AMotor_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
- 0: spriteset_NYC_P1AMotor_PantoDown;
- 1: spriteset_NYC_P1AMotor_PantoUp_r;
+switch(FEAT_TRAINS, SELF, switch_NYC_P1Motor_Liv0_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_NYC_P1Motor_PantoDown;
+ 1: spriteset_NYC_P1Motor_PantoUp;
 }
 
-switch (FEAT_TRAINS, SELF, switch_NYC_P1AMotor_Liv0_r, [
+switch (FEAT_TRAINS, SELF, switch_NYC_P1Motor_Liv0, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_NYC_P1AMotor_Liv0;
-    1: switch_NYC_P1AMotor_Liv0_r_railtype;
+    0: spriteset_NYC_P1Motor_Liv0;
+    1: switch_NYC_P1Motor_Liv0_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_NYC_P1AMotor_Liv0_position, vehicle_is_flipped) {
- 0: switch_NYC_P1AMotor_Liv0_Fw;
- 1: switch_NYC_P1AMotor_Liv0_r;
+switch(FEAT_TRAINS, SELF, switch_NYC_P1Motor_Liv0_position, position_in_articulated_veh) {
+ 0: switch_NYC_P1Motor_Liv0;
+ 1: spriteset_8_Blank;
 }
 
-item(FEAT_TRAINS, Item_NYC_P1AMotor_Liv0, 35200) {
+switch(FEAT_TRAINS, SELF, switch_NYC_P1Motor_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 4;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_NYC_P1Motor_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_NYC_P1Motor_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, Item_NYC_P1Motor_Liv0, 1600) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -10188,11 +10196,11 @@ item(FEAT_TRAINS, Item_NYC_P1AMotor_Liv0, 35200) {
 
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
 
-        name:                            string(STR_NAME_NYC_P1AMOTOR);
+        name:                            string(STR_NAME_NYC_P1MOTOR);
         introduction_date:                date(1929,1,1);
         vehicle_life:                     50;
         model_life:                        30;
-        length:                            8;
+//        length:                            8;
 
         weight:                        190 ton;
         speed:                            70 mph;
@@ -10202,15 +10210,173 @@ item(FEAT_TRAINS, Item_NYC_P1AMotor_Liv0, 35200) {
         running_cost_factor:             110;
         cargo_capacity:                  0;
 
-//        variant_group: Item_NYC_P1AMotor_Liv0;
+//        variant_group: Item_NYC_P1Motor_Liv0;
 //        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: switch_NYC_P1AMotor_Liv0_position;
-		sound_effect: switch_Early_Electric_Whistle;
-        purchase: spriteset_NYC_P1AMotor_Liv0_Purchase;
-        additional_text: string(STR_INFO_NYC_P1AMOTOR);
-		reverse_build_probability: return 50;
+        default: switch_NYC_P1Motor_Liv0_position;
+        sound_effect: switch_Early_Electric_Wabco_E2;
+        purchase: switch_NYC_P1Motor_PurchaseStack;
+        additional_text: string(STR_INFO_NYC_P1MOTOR);
+        length: switch_NYC_P1Motor_Liv0_length;
+        articulated_part: switch_NYC_P1Motor_Liv0_articulated_part;       
+}
+}
+
+sort(FEAT_TRAINS, [Item_NYC_P1Motor_Liv0, Item_NH_EP3_Liv0]);
+
+spriteset(spriteset_NH_EP3_PantoUp,   "gfx/NH_EP3_PantoUp.png") {template_9(7, 39)}
+spriteset(spriteset_NH_EP3_PantoDown,   "gfx/NH_EP3_PantoDown.png") {template_9(7, 39)}
+
+//NH_EP3_Liv0
+spriteset(spriteset_NH_EP3_Liv0_Purchase,   "gfx/NH_EP3_Liv0.png") {template_purchase_9(7, 21)}
+spriteset(spriteset_NH_EP3_Liv0,   "gfx/NH_EP3_Liv0.png") {template_9_repeat(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_NH_EP3_Liv0_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_NH_EP3_PantoDown;
+ 1: spriteset_NH_EP3_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NH_EP3_Liv0, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NH_EP3_Liv0;
+    1: switch_NH_EP3_Liv0_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NH_EP3_Liv0_position, position_in_articulated_veh) {
+ 0: switch_NH_EP3_Liv0;
+ 1: spriteset_8_Blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NH_EP3_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 4;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_NH_EP3_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_NH_EP3_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, Item_NH_EP3_Liv0, 1650) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        [ELRL, SAA3];
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_NH_EP3);
+        introduction_date:                date(1931,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+//        length:                            8;
+
+        weight:                        183 ton;
+        speed:                            80 mph;
+        power:                            3440 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     18;
+        running_cost_factor:             115;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_NH_EP3_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_NH_EP3_Liv0_position;
+        sound_effect: switch_Early_Electric_Wabco_E2;
+        purchase: spriteset_NH_EP3_Liv0_Purchase;
+        additional_text: string(STR_INFO_NH_EP3);
+        length: switch_NH_EP3_Liv0_length;
+        articulated_part: switch_NH_EP3_Liv0_articulated_part;       
+}
+}
+
+//NH_EP3_Liv35
+spriteset(spriteset_NH_EP3_Liv35_Purchase,   "gfx/NH_EP3_Liv35.png") {template_purchase_9(7, 21)}
+spriteset(spriteset_NH_EP3_Liv35,   "gfx/NH_EP3_Liv35.png") {template_9_repeat(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_NH_EP3_Liv35_railtype, tile_powers_railtype("ELRL")) {
+ 0: spriteset_NH_EP3_PantoDown;
+ 1: spriteset_NH_EP3_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NH_EP3_Liv35, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NH_EP3_Liv35;
+    1: switch_NH_EP3_Liv35_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NH_EP3_Liv35_position, position_in_articulated_veh) {
+ 0: switch_NH_EP3_Liv35;
+ 1: spriteset_8_Blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NH_EP3_Liv35_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 4;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_NH_EP3_Liv35_articulated_part, extra_callback_info1) {
+    0..1: return Item_NH_EP3_Liv35;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, Item_NH_EP3_Liv35, 1685) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        [ELRL, SAA3];
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_NH_EP3);
+        introduction_date:                date(1931,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+//        length:                            8;
+
+        weight:                        183 ton;
+        speed:                            80 mph;
+        power:                            3440 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     18;
+        running_cost_factor:             115;
+        cargo_capacity:                  0;
+
+        variant_group: Item_NH_EP3_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_NH_EP3_Liv35_position;
+        sound_effect: switch_Early_Electric_Wabco_E2;
+        purchase: spriteset_NH_EP3_Liv35_Purchase;
+        additional_text: string(STR_INFO_NH_EP3);
+        length: switch_NH_EP3_Liv35_length;
+        articulated_part: switch_NH_EP3_Liv35_articulated_part;       
 }
 }
 
@@ -18151,11 +18317,39 @@ item(FEAT_TRAINS, Item_PRR_L5A_Liv0_Highnose, 51250) {
 }
 }
 
-//NYC_P2Motor_Liv0
-spriteset(spriteset_NYC_P2Motor_Liv0_Purchase,   "gfx/NYC_P2Motor_Liv0.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_NYC_P2Motor_Liv0,   "gfx/NYC_P2Motor_Liv0.png") {template_8(7, 39)}
+sort(FEAT_TRAINS, [Item_PRR_L5A_Liv0_Highnose, Item_NYC_P2Motor_Liv0]);
 
-item(FEAT_TRAINS, Item_NYC_P2Motor_Liv0, 51550) {
+spriteset(spriteset_NYC_P2Motor_3RShoes,   "gfx/NYC_PMotor_3RShoes.png") {template_9_repeat(7, 39)}
+
+//NYC_P2Motor_Liv0
+spriteset(spriteset_NYC_P2Motor_Liv0_Purchase,   "gfx/NYC_PMotor_Liv0B.png") {template_purchase_9(7, 21)}
+spriteset(spriteset_NYC_P2Motor_Liv0,   "gfx/NYC_PMotor_Liv0B.png") {template_9_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_NYC_P2Motor_Liv0, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NYC_P2Motor_Liv0;
+    1: spriteset_NYC_P2Motor_3RShoes;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NYC_P2Motor_Liv0_position, position_in_articulated_veh) {
+ 0: switch_NYC_P2Motor_Liv0;
+ 1: spriteset_8_Blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NYC_P2Motor_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 4;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_NYC_P2Motor_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_NYC_P2Motor_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, Item_NYC_P2Motor_Liv0, 2500) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -18175,7 +18369,7 @@ item(FEAT_TRAINS, Item_NYC_P2Motor_Liv0, 51550) {
         introduction_date:                date(1951,1,1);
         vehicle_life:                     50;
         model_life:                        30;
-        length:                            8;
+//        length:                            8;
 
         weight:                        176 ton;
         speed:                            70 mph;
@@ -18189,11 +18383,12 @@ item(FEAT_TRAINS, Item_NYC_P2Motor_Liv0, 51550) {
 //        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: spriteset_NYC_P2Motor_Liv0;
-		sound_effect: switch_Early_Electric_Wabco_E2;
+        default: switch_NYC_P2Motor_Liv0_position;
+        sound_effect: switch_Early_Electric_Wabco_E2;
         purchase: spriteset_NYC_P2Motor_Liv0_Purchase;
         additional_text: string(STR_INFO_NYC_P2MOTOR);
-		reverse_build_probability: return 50;
+        length: switch_NYC_P2Motor_Liv0_length;
+        articulated_part: switch_NYC_P2Motor_Liv0_articulated_part;       
 }
 }
 

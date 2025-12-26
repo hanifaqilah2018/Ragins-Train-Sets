@@ -300,8 +300,11 @@ STR_INFO_EMD_F9:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel
 
 
 
-STR_NAME_NYC_P1AMOTOR:ALCO-GE P-1a Motor
-STR_INFO_NYC_P1AMOTOR:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_NAME_NYC_P1MOTOR:ALCO-GE P-1 Motor
+STR_INFO_NYC_P1MOTOR:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+
+STR_NAME_NH_EP3:GE EP-3 Motor
+STR_INFO_NH_EP3:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line {CREAM}3rd Rail
 
 STR_NAME_PRR_R1:Baldwin-Westinghouse R1
 STR_INFO_PRR_R1:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
@@ -310,7 +313,7 @@ STR_NAME_PRR_GG1:GE GG1
 STR_INFO_PRR_GG1:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
 
 STR_NAME_GE_EP4:GE EP4
-STR_INFO_GE_EP4:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_EP4:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line {CREAM}3rd Rail
 
 STR_NAME_GE_EP5:GE EP5
 STR_INFO_GE_EP5:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
@@ -342,7 +345,7 @@ STR_NAME_PRR_L6:Altoona L6
 STR_INFO_PRR_L6:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
 
 STR_NAME_GE_EF3B:GE EF-3B
-STR_INFO_GE_EF3B:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_EF3B:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line {CREAM}3rd Rail
 
 STR_NAME_GE_E33:GE E33
 STR_INFO_GE_E33:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
