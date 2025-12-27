@@ -300,6 +300,12 @@ STR_INFO_EMD_F9:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel
 
 
 
+STR_NAME_BALDWIN_EP2:Baldwin-Westinghouse EP-2
+STR_INFO_BALDWIN_EP2:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line {CREAM}3rd Rail
+
+STR_NAME_BALDWIN_EP3:Baldwin-Westinghouse EP-3 "Quill"
+STR_INFO_BALDWIN_EP3:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+
 STR_NAME_NYC_P1MOTOR:ALCO-GE P-1 Motor
 STR_INFO_NYC_P1MOTOR:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
 
