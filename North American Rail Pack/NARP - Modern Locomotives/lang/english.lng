@@ -276,6 +276,12 @@ STR_INFO_GE_ES44AC:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gau
 STR_NAME_EMD_DD35A:EMD DD35A
 STR_INFO_EMD_DD35A:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
+STR_NAME_EMD_DD40A:EMD DD40
+STR_INFO_EMD_DD40A:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
+
+STR_NAME_EMD_DDA40X:EMD DDA40X
+STR_INFO_EMD_DDA40X:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
+
 STR_NAME_EMD_SD90MACH:EMD SD90MAC-H
 STR_INFO_EMD_SD90MACH:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 

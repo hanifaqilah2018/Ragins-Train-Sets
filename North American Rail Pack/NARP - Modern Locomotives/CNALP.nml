@@ -9566,7 +9566,7 @@ item(FEAT_TRAINS, Item_GE_ES44AC_Liv0, 29350) {
 }
 }
 
-sort(FEAT_TRAINS, [Item_GE_ES44AC_Liv0, Item_EMD_DD35A_Liv0, Item_EMD_DD35B_Liv0]);
+sort(FEAT_TRAINS, [Item_GE_ES44AC_Liv0, Item_EMD_DD35A_Liv0, Item_EMD_DD35B_Liv0, Item_EMD_DD40A_Liv0, Item_EMD_DDA40X_Liv0]);
 
 //EMD_DD35A_Liv0
 spriteset(spriteset_EMD_DD35A_Liv0_Purchase,   "gfx/EMD_DD35_Liv0.png") {template_purchase_10(7, 21)}
@@ -9616,7 +9616,7 @@ item(FEAT_TRAINS, Item_EMD_DD35A_Liv0, 1200) {
 
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_STEAM;
-        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_DIESEL;
 //        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
@@ -9646,6 +9646,168 @@ item(FEAT_TRAINS, Item_EMD_DD35A_Liv0, 1200) {
         additional_text: string(STR_INFO_EMD_DD35A);
         length: switch_EMD_DD35A_Liv0_length;
         articulated_part: switch_EMD_DD35A_Liv0_articulated_part;        
+}
+}
+
+//EMD_DD40A_Liv0
+spriteset(spriteset_EMD_DD40A_Liv0_Purchase,   "gfx/EMD_DD40A_Liv0.png") {template_purchase_10(7, 21)}
+
+spriteset(spriteset_EMD_DD40A_Liv0,   "gfx/EMD_DD40A_Liv0.png") {template_10(7, 39)}
+spriteset(spriteset_EMD_DD40A_Liv0_r,   "gfx/EMD_DD40A_Liv0.png") {template_10_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DD40A_Liv0_pair, position_in_vehid_chain % 4) {
+ 0: spriteset_EMD_DD40A_Liv0;
+ 3: spriteset_EMD_DD40A_Liv0_r;
+  spriteset_EMD_DD40A_Liv0_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DD40A_Liv0_rear, position_in_vehid_chain_from_end) {
+ 1: spriteset_EMD_DD40A_Liv0_r;
+  switch_EMD_DD40A_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DD40A_Liv0_direction_position, position_in_consist) {
+ 0: spriteset_EMD_DD40A_Liv0;
+  switch_EMD_DD40A_Liv0_rear;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DD40A_Liv0_position, position_in_articulated_veh) {
+ 0: switch_EMD_DD40A_Liv0_direction_position;
+ 1: spriteset_8_Blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DD40A_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 5;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_EMD_DD40A_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_EMD_DD40A_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, Item_EMD_DD40A_Liv0, 1250) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_STEAM;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_DD40A);
+        introduction_date:                date(1967,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+//        length:                            8;
+
+        weight:                        235 ton;
+        speed:                            90 mph;
+        power:                            6000 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     27;
+        running_cost_factor:             88;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_DD40A_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_DD40A_Liv0_position;
+        sound_effect: switch_EMD_16_645;
+        purchase: spriteset_EMD_DD40A_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_DD40A);
+        length: switch_EMD_DD40A_Liv0_length;
+        articulated_part: switch_EMD_DD40A_Liv0_articulated_part;        
+}
+}
+
+//EMD_DDA40X_Liv0
+spriteset(spriteset_EMD_DDA40X_Liv0_Purchase,   "gfx/EMD_DD40A_Liv0.png") {template_purchase_10(219, 21)}
+
+spriteset(spriteset_EMD_DDA40X_Liv0,   "gfx/EMD_DD40A_Liv0.png") {template_10(219, 39)}
+spriteset(spriteset_EMD_DDA40X_Liv0_r,   "gfx/EMD_DD40A_Liv0.png") {template_10_r(219, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DDA40X_Liv0_pair, position_in_vehid_chain % 4) {
+ 0: spriteset_EMD_DDA40X_Liv0;
+ 3: spriteset_EMD_DDA40X_Liv0_r;
+  spriteset_EMD_DDA40X_Liv0_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DDA40X_Liv0_rear, position_in_vehid_chain_from_end) {
+ 1: spriteset_EMD_DDA40X_Liv0_r;
+  switch_EMD_DDA40X_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DDA40X_Liv0_direction_position, position_in_consist) {
+ 0: spriteset_EMD_DDA40X_Liv0;
+  switch_EMD_DDA40X_Liv0_rear;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DDA40X_Liv0_position, position_in_articulated_veh) {
+ 0: switch_EMD_DDA40X_Liv0_direction_position;
+ 1: spriteset_8_Blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_DDA40X_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 5;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_EMD_DDA40X_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_EMD_DDA40X_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, Item_EMD_DDA40X_Liv0, 1300) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_STEAM;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_EMD_DDA40X);
+        introduction_date:                date(1969,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+//        length:                            8;
+
+        weight:                        235 ton;
+        speed:                            90 mph;
+        power:                            6000 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     27;
+        running_cost_factor:             88;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_EMD_DDA40X_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_DDA40X_Liv0_position;
+        sound_effect: switch_EMD_16_645;
+        purchase: spriteset_EMD_DDA40X_Liv0_Purchase;
+        additional_text: string(STR_INFO_EMD_DDA40X);
+        length: switch_EMD_DDA40X_Liv0_length;
+        articulated_part: switch_EMD_DDA40X_Liv0_articulated_part;        
 }
 }
 
@@ -20576,7 +20738,7 @@ item(FEAT_TRAINS, Item_EMD_DD35B_Liv0, 2650) {
 
         track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_STEAM;
-        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_DIESEL;
 //        ai_special_flag:                AI_FLAG_CARGO;
         dual_headed:                    0; // <- Double Headed, so cab on each end
 
