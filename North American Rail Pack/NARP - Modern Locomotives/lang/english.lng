@@ -32,435 +32,436 @@ STR_PARAM_DESC_FICTIONALDISABLE:Enable/disable Fictional trains (trains that are
 
 STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR:{STRING}{}{STRING}
 STR_POWER_BY_POWER_SOURCE_TWO_SOURCES:{BLACK}Power on {STRING}: {GOLD}{POWER} {}{BLACK}Power on {STRING}: {GOLD}{POWER}
-STR_POWER_SOURCE_DIESEL:Diesel
-STR_POWER_SOURCE_OHLE:Overhead Line
-STR_POWER_SOURCE_3RAIL:3rd Rail
+STR_POWER_SOURCE_DIESEL: {BROWN}Diesel
+STR_POWER_SOURCE_OHLE_DC: {BLUE}DC Overhead Line
+STR_POWER_SOURCE_OHLE_AC: {RED}AC Overhead Line
+STR_POWER_SOURCE_3RAIL:{GREEN}Third Rail
 
 STR_NAME_EMC_E1:EMC E1
-STR_INFO_EMC_E1:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMC_E1:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMC_E3:EMC E3
-STR_INFO_EMC_E3:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMC_E3:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_E7:EMD E7
-STR_INFO_EMD_E7:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_E7:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_ALCO_PA:ALCO PA
-STR_INFO_ALCO_PA:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_PA:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_E9:EMD E9
-STR_INFO_EMD_E9:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_E9:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_GP40TC:EMD GP40TC
-STR_INFO_EMD_GP40TC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_GP40TC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_FP45:EMD FP45
-STR_INFO_EMD_FP45:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_FP45:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_U34CH:GE U34CH
-STR_INFO_GE_U34CH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_U34CH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SDP40F:EMD SDP40F
-STR_INFO_EMD_SDP40F:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SDP40F:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_F40C:EMD F40C
-STR_INFO_EMD_F40C:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_F40C:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_F40PH:EMD F40PH
-STR_INFO_EMD_F40PH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_F40PH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_F59PH:EMD F59PH
-STR_INFO_EMD_F59PH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_F59PH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_DASH8_32BWH:GE Dash 8-32BWH
-STR_INFO_GE_DASH8_32BWH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_DASH8_32BWH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_F70PHAC:EMD F70PHAC
-STR_INFO_EMD_F70PHAC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_F70PHAC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_P40DC:GE P40DC
-STR_INFO_GE_P40DC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_P40DC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_P42DC:GE P42DC
-STR_INFO_GE_P42DC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_P42DC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_DE30AC:EMD DE30AC
-STR_INFO_EMD_DE30AC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_DE30AC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_ALSTOM_PL42AC:Alstom PL42AC
-STR_INFO_ALSTOM_PL42AC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALSTOM_PL42AC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 
 
 STR_NAME_LIMA_LT2500:Lima LT-2500
-STR_INFO_LIMA_LT2500:{BLACK}Role: {GOLD}Transfer Switcher {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_LIMA_LT2500:{BLACK}Role: {GOLD}Transfer Switcher {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 
 
 STR_NAME_EMD_SDL39:EMD SDL39
-STR_INFO_EMD_SDL39:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SDL39:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 
 
 STR_NAME_ALCO_RS1:ALCO RS-1
-STR_INFO_ALCO_RS1:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_RS1:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_ALCO_RS2:ALCO RS-2
-STR_INFO_ALCO_RS2:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_RS2:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_GP7:EMD GP7 (High Nose)
-STR_INFO_EMD_GP7:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_GP7:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_GP7_LOW:EMD GP7M (Low Nose)
-STR_INFO_EMD_GP7_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_GP7_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_ALCO_RS3:ALCO RS-3
-STR_INFO_ALCO_RS3:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_RS3:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD7:EMD SD7 (High Nose)
-STR_INFO_EMD_SD7:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD7:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_SD7_LOW:EMD SD7M (Low Nose)
-STR_INFO_EMD_SD7_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD7_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD9:EMD SD9 (High Nose)
-STR_INFO_EMD_SD9:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD9:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_SD9_LOW:EMD SD9M (Low Nose)
-STR_INFO_EMD_SD9_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD9_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_ALCO_RSD7:ALCO RSD-7 (High Nose)
-STR_INFO_ALCO_RSD7:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_RSD7:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_ALCO_RSD7_LOW:ALCO RSD-7  (Low Nose)
-STR_INFO_ALCO_RSD7_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_RSD7_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_GP9:EMD GP9 (High Nose)
-STR_INFO_EMD_GP9:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_GP9:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_GP9_LOW:EMD GP9M (Low Nose)
-STR_INFO_EMD_GP9_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_GP9_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_ALCO_RSD15:ALCO RSD-15 (High Nose)
-STR_INFO_ALCO_RSD15:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_RSD15:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_ALCO_RSD15_LOW:ALCO RSD-15  (Low Nose)
-STR_INFO_ALCO_RSD15_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_RSD15_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_U25B:GE U25B (High Nose)
-STR_INFO_GE_U25B:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_U25B:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_GE_U25B_LOW:GE U25B (Low Nose)
-STR_INFO_GE_U25B_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_U25B_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_GP35:EMD GP35
-STR_INFO_EMD_GP35:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_GP35:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_GP35_VAR1:EMD GP35 (High Nose)
-STR_INFO_EMD_GP35_VAR1:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_GP35_VAR1:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_ALCO_C420:ALCO C420 (High Nose)
-STR_INFO_ALCO_C420:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_C420:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_ALCO_C420_LOW:ALCO C420 (Low Nose)
-STR_INFO_ALCO_C420_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_C420_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_ALCO_C628:ALCO C628
-STR_INFO_ALCO_C628:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_C628:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_ALCO_C628_HIGH:ALCO C628 (High Nose)
-STR_INFO_ALCO_C628_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_C628_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_U25C:GE U25C (High Nose)
-STR_INFO_GE_U25C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_U25C:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_GE_U25C_LOW:GE U25C (Low Nose)
-STR_INFO_GE_U25C_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_U25C_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD35:EMD SD35 (High Nose)
-STR_INFO_EMD_SD35:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD35:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_SD35_LOW:EMD SD35 (Low Nose)
-STR_INFO_EMD_SD35_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD35_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_ALCO_C630:ALCO C630
-STR_INFO_ALCO_C630:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_C630:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_ALCO_C630_HIGH:ALCO C630 (High Nose)
-STR_INFO_ALCO_C630_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_C630_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_GP40:EMD GP40
-STR_INFO_EMD_GP40:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_GP40:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_GP40_HIGH:EMD GP40 (High Nose)
-STR_INFO_EMD_GP40_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_GP40_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_GP40_WIDE:EMD GP40W (Wide Cab)
-STR_INFO_EMD_GP40_WIDE:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_GP40_WIDE:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_ALCO_C430:ALCO C430
-STR_INFO_ALCO_C430:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_C430:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_ALCO_C430_LOW:ALCO C430 (High Nose)
-STR_INFO_ALCO_C430_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_C430_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD40:EMD SD40
-STR_INFO_EMD_SD40:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD40:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_SD40_HIGH:EMD SD40 (High Nose)
-STR_INFO_EMD_SD40_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD40_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_SD40_TUNNEL:EMD SD40T (Tunnel Motor)
-STR_INFO_EMD_SD40_TUNNEL:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD40_TUNNEL:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_SD40_WIDE:EMD SD40W (Wide Cab)
-STR_INFO_EMD_SD40_WIDE:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD40_WIDE:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_U28B:GE U28B (High Nose)
-STR_INFO_GE_U28B:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_U28B:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_GE_U28B_LOW:GE U28B (Low Nose)
-STR_INFO_GE_U28B_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_U28B_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_U30C:GE U30C (High Nose)
-STR_INFO_GE_U30C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_U30C:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_GE_U30C_LOW:GE U30C (Low Nose)
-STR_INFO_GE_U30C_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_U30C_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_ALCO_C636:ALCO C636
-STR_INFO_ALCO_C636:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_C636:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_ALCO_C636_HIGH:ALCO C636 (High Nose)
-STR_INFO_ALCO_C636_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_C636_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_GP39:EMD GP39
-STR_INFO_EMD_GP39:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_GP39:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_GP39_VAR1:EMD GP39 (High Nose)
-STR_INFO_EMD_GP39_VAR1:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_GP39_VAR1:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_U36C:GE U36C (High Nose)
-STR_INFO_GE_U36C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_U36C:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_GE_U36C_LOW:GE U36C (Low Nose)
-STR_INFO_GE_U36C_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_U36C_LOW:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_C30_7:GE C30-7
-STR_INFO_GE_C30_7:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_C30_7:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_GE_C30_7_HIGH:GE C30-7 (High Nose)
-STR_INFO_GE_C30_7_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_C30_7_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD50:EMD SD50
-STR_INFO_EMD_SD50:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD50:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_SD50_HIGH:EMD SD50 (High Nose)
-STR_INFO_EMD_SD50_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD50_HIGH:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD60:EMD SD60
-STR_INFO_EMD_SD60:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD60:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_SD60_WIDE:EMD SD60M
-STR_INFO_EMD_SD60_WIDE:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD60_WIDE:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_DASH8_40C:GE Dash 8-40C
-STR_INFO_GE_DASH8_40C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_DASH8_40C:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_GE_DASH8_40C_WIDE:GE Dash 8-40CW
-STR_INFO_GE_DASH8_40C_WIDE:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_DASH8_40C_WIDE:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD60MAC:EMD SD60MAC
-STR_INFO_EMD_SD60MAC:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD60MAC:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD70:EMD SD70
-STR_INFO_EMD_SD70:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD70:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_EMD_SD70_WIDE:EMD SD70M
-STR_INFO_EMD_SD70_WIDE:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD70_WIDE:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD70MAC:EMD SD70MAC
-STR_INFO_EMD_SD70MAC:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD70MAC:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_DASH9_44C:GE Dash 9-44CW
-STR_INFO_GE_DASH9_44C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_DASH9_44C:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 STR_NAME_GE_DASH9_44C_STANDARD:GE Dash 9-44C
-STR_INFO_GE_DASH9_44C_STANDARD:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_DASH9_44C_STANDARD:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD9043MAC:EMD SD9043MAC
-STR_INFO_EMD_SD9043MAC:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD9043MAC:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD89MAC:EMD SD89MAC
-STR_INFO_EMD_SD89MAC:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD89MAC:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD70ACE:EMD SD70ACe
-STR_INFO_EMD_SD70ACE:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD70ACE:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_GE_ES44AC:GE ES44AC
-STR_INFO_GE_ES44AC:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_GE_ES44AC:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 
 
 STR_NAME_EMD_DD35A:EMD DD35A
-STR_INFO_EMD_DD35A:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_DD35A:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD90MACH:EMD SD90MAC-H
-STR_INFO_EMD_SD90MACH:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD90MACH:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_SD90MACH2:EMD SD90MAC-H2
-STR_INFO_EMD_SD90MACH2:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_SD90MACH2:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 
 
 STR_NAME_EMD_FT:EMD FT
-STR_INFO_EMD_FT:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_FT:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_F3:EMD F3
-STR_INFO_EMD_F3:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_F3:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_ALCO_FA:ALCO FA
-STR_INFO_ALCO_FA:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_ALCO_FA:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_F7:EMD F7
-STR_INFO_EMD_F7:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_F7:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 STR_NAME_EMD_F9:EMD F9
-STR_INFO_EMD_F9:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_F9:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 
 
 STR_NAME_BALDWIN_EP2:Baldwin-Westinghouse EP-2
-STR_INFO_BALDWIN_EP2:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line {CREAM}3rd Rail
+STR_INFO_BALDWIN_EP2:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
 
 STR_NAME_BALDWIN_EP3:Baldwin-Westinghouse EP-3 "Quill"
-STR_INFO_BALDWIN_EP3:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_BALDWIN_EP3:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
 STR_NAME_NYC_P1MOTOR:ALCO-GE P-1 Motor
-STR_INFO_NYC_P1MOTOR:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_NYC_P1MOTOR:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
 STR_NAME_NH_EP3:GE EP-3 Motor
-STR_INFO_NH_EP3:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line {CREAM}3rd Rail
+STR_INFO_NH_EP3:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
 
 STR_NAME_PRR_R1:Baldwin-Westinghouse R1
-STR_INFO_PRR_R1:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_PRR_R1:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_PRR_GG1:GE GG1
-STR_INFO_PRR_GG1:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_PRR_GG1:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GE_EP4:GE EP4
-STR_INFO_GE_EP4:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line {CREAM}3rd Rail
+STR_INFO_GE_EP4:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
 
 STR_NAME_GE_EP5:GE EP5
-STR_INFO_GE_EP5:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_EP5:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GE_E60CH:GE E60CH
-STR_INFO_GE_E60CH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_E60CH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_EMD_AEM7:ASEA-EMD AEM-7
-STR_INFO_EMD_AEM7:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_EMD_AEM7:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GE_AGE8:Alsthom-GE AGE-8
-STR_INFO_GE_AGE8:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_AGE8:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_EMD_GF6CH:EMD GF6CH
-STR_INFO_EMD_GF6CH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_EMD_GF6CH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_ABB_ALP44:ABB ALP-44
-STR_INFO_ABB_ALP44:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_ABB_ALP44:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_BOMBARDIER_HHP8:Bombardier HHP-8
-STR_INFO_BOMBARDIER_HHP8:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_BOMBARDIER_HHP8:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_BOMBARDIER_ALP46:Bombardier ALP-46
-STR_INFO_BOMBARDIER_ALP46:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_BOMBARDIER_ALP46:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 
 
 STR_NAME_PRR_L6:Altoona L6
-STR_INFO_PRR_L6:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_PRR_L6:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GE_EF3B:GE EF-3B
-STR_INFO_GE_EF3B:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line {CREAM}3rd Rail
+STR_INFO_GE_EF3B:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
 
 STR_NAME_GE_E33:GE E33
-STR_INFO_GE_E33:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_E33:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GE_E44:GE E44
-STR_INFO_GE_E44:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_E44:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GE_E50C:GE E50C
-STR_INFO_GE_E50C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_E50C:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GMD_GF6C:GMD GF6C
-STR_INFO_GMD_GF6C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GMD_GF6C:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 
 
 STR_NAME_EMD_DDR6700:EMD DDR6700
-STR_INFO_EMD_DDR6700:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_EMD_DDR6700:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 
 
 STR_NAME_GE_BOXCAB:ALCO-GE Boxcab
-STR_INFO_GE_BOXCAB:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_BOXCAB:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GE_TWINCAB:ALCO-GE Twincab
-STR_INFO_GE_TWINCAB:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_TWINCAB:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
 STR_NAME_GE_Z1A:GE Z-1-A
-STR_INFO_GE_Z1A:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_Z1A:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
 STR_NAME_PRR_L5_LOWNOSE:Altoona L5 (Prototype)
-STR_INFO_PRR_L5_LOWNOSE:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_PRR_L5_LOWNOSE:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 STR_NAME_PRR_L5_HIGHNOSE:Altoona L5
-STR_INFO_PRR_L5_HIGHNOSE:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_PRR_L5_HIGHNOSE:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_BALDWIN_Z1:Baldwin-Westinghouse Z-1
-STR_INFO_BALDWIN_Z1:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_BALDWIN_Z1:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GE_Y1:ALCO-GE Y-1
-STR_INFO_GE_Y1:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_Y1:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_PRR_O1:Altoona O1
-STR_INFO_PRR_O1:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_PRR_O1:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GE_TRICAB:ALCO-GE Tricab
-STR_INFO_GE_TRICAB:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_TRICAB:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
 STR_NAME_GE_QUADCAB:ALCO-GE Quadcab
-STR_INFO_GE_QUADCAB:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_QUADCAB:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
 STR_NAME_PRR_P5A:Altoona P5A
-STR_INFO_PRR_P5A:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_PRR_P5A:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_PRR_DD2:Juniata DD2
-STR_INFO_PRR_DD2:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_PRR_DD2:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GE_LITTLEJOE:GE Little Joe
-STR_INFO_GE_LITTLEJOE:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_GE_LITTLEJOE:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
 STR_NAME_EMD_JF6C:EMD JF6C
-STR_INFO_EMD_JF6C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_EMD_JF6C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 
 
 STR_NAME_EMD_DP32AC:EMD DP32AC
-STR_INFO_EMD_DP32AC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line Electro-Diesel
+STR_INFO_EMD_DP32AC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line Electro-Diesel
 
 STR_NAME_ALSTOM_PL52DP:Alstom PL52DP
-STR_INFO_ALSTOM_PL52DP:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line Electro-Diesel
+STR_INFO_ALSTOM_PL52DP:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line Electro-Diesel
 
 
 
 STR_NAME_EMD_SD40_DM:EMD SD40DM
-STR_INFO_EMD_SD40_DM:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line Electro-Diesel
+STR_INFO_EMD_SD40_DM:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line Electro-Diesel
 
 STR_NAME_GE_ES44ACE:GE ES44ACE
-STR_INFO_GE_ES44ACE:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Overhead Line Electro-Diesel
+STR_INFO_GE_ES44ACE:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Overhead Line Electro-Diesel
 
 
 
 STR_NAME_NYC_SMOTOR:ALCO-GE S-Motor
-STR_INFO_NYC_SMOTOR:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {CREAM}3rd Rail
+STR_INFO_NYC_SMOTOR:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {GREEN}Third Rail
 
 STR_NAME_NYC_TMOTOR:ALCO-GE T-Motor
-STR_INFO_NYC_TMOTOR:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {CREAM}3rd Rail
+STR_INFO_NYC_TMOTOR:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {GREEN}Third Rail
 
 STR_NAME_PRR_DD1:Altoona DD1
-STR_INFO_PRR_DD1:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {CREAM}3rd Rail
+STR_INFO_PRR_DD1:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {GREEN}Third Rail
 
 STR_NAME_PRR_L5A_LOWNOSE:Altoona L5A (Prototype)
-STR_INFO_PRR_L5A_LOWNOSE:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {CREAM}3rd Rail
+STR_INFO_PRR_L5A_LOWNOSE:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {GREEN}Third Rail
 STR_NAME_PRR_L5A_HIGHNOSE:Altoona L5A
-STR_INFO_PRR_L5A_HIGHNOSE:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {CREAM}3rd Rail
+STR_INFO_PRR_L5A_HIGHNOSE:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {GREEN}Third Rail
 
 STR_NAME_NYC_P2MOTOR:ALCO-GE P-2 Motor
-STR_INFO_NYC_P2MOTOR:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_NYC_P2MOTOR:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 
 
 STR_NAME_EMD_FL9:EMD FL9
-STR_INFO_EMD_FL9:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {CREAM}3rd Rail Electro-Diesel
+STR_INFO_EMD_FL9:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {GREEN}Third Rail Electro-Diesel
 
 STR_NAME_EMD_F39PHDM:EMD F39PH-DM
-STR_INFO_EMD_F39PHDM:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {CREAM}3rd Rail Electro-Diesel
+STR_INFO_EMD_F39PHDM:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {GREEN}Third Rail Electro-Diesel
 
 STR_NAME_GE_P32AC:GE P32AC-DM
-STR_INFO_GE_P32AC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {CREAM}3rd Rail Electro-Diesel
+STR_INFO_GE_P32AC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {GREEN}Third Rail Electro-Diesel
 
 STR_NAME_EMD_DM30AC:EMD DM30AC
-STR_INFO_EMD_DM30AC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {CREAM}3rd Rail Electro-Diesel
+STR_INFO_EMD_DM30AC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {GREEN}Third Rail Electro-Diesel
 
 STR_NAME_EMD_DD35B:EMD DD35B
-STR_INFO_EMD_DD35B:{BLACK}Role: {GOLD}Heavy Freight B-Unit {}{BLACK}Power: {BROWN}Diesel
+STR_INFO_EMD_DD35B:{BLACK}Role: {GOLD}Heavy Freight B-Unit {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BROWN}Diesel

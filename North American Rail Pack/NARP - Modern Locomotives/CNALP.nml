@@ -91,7 +91,7 @@ grf{
 	}
 
 railtypetable {
-    RAIL, SAA3: [ MTRO, SBA3, SCA3, SDA3, "3RDR", "3RDC", MTRO, ELRL], ELRL, IHBA: [SGAA, SGAE, ELRL], TR_UNIVERSAL: [_AAE, RAIL],
+    RAIL, SAA3: [ MTRO, SBA3, SCA3, SDA3, "3RDR", "3RDC", MTRO, ELRL], ELRL, IHBA: [SGAA, SGAE, ELRL], OHLE_DC: [SAAD, SAAE, ELRL], OHLE_AC: [SAAA, SAAE, ELRL], TR_UNIVERSAL: [_AAE, RAIL],
 }
 
 //Basecost Paramater Variables
@@ -10141,7 +10141,7 @@ spriteset(spriteset_Baldwin_EP2_PantoDown,   "gfx/Baldwin_EP2_PantoDown.png") {t
 spriteset(spriteset_Baldwin_EP2_Liv0_Purchase,   "gfx/Baldwin_EP2_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_Baldwin_EP2_Liv0,   "gfx/Baldwin_EP2_Liv0.png") {template_8_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_Baldwin_EP2_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Baldwin_EP2_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Baldwin_EP2_PantoDown;
  1: spriteset_Baldwin_EP2_PantoUp;
 }
@@ -10154,7 +10154,7 @@ switch (FEAT_TRAINS, SELF, switch_Baldwin_EP2_Liv0_Fw, [
     1: switch_Baldwin_EP2_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Baldwin_EP2_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Baldwin_EP2_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Baldwin_EP2_PantoDown;
  1: spriteset_Baldwin_EP2_PantoUp_r;
 }
@@ -10180,7 +10180,7 @@ item(FEAT_TRAINS, Item_Baldwin_EP2_Liv0, 35050) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        [ELRL, SAA3];
+        track_type:                        [OHLE_AC, SAA3];
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -10218,7 +10218,7 @@ item(FEAT_TRAINS, Item_Baldwin_EP2_Liv0, 35050) {
 spriteset(spriteset_Baldwin_EP2_Liv35_Purchase,   "gfx/Baldwin_EP2_Liv35.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_Baldwin_EP2_Liv35,   "gfx/Baldwin_EP2_Liv35.png") {template_8_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_Baldwin_EP2_Liv35_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Baldwin_EP2_Liv35_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Baldwin_EP2_PantoDown;
  1: spriteset_Baldwin_EP2_PantoUp;
 }
@@ -10231,7 +10231,7 @@ switch (FEAT_TRAINS, SELF, switch_Baldwin_EP2_Liv35_Fw, [
     1: switch_Baldwin_EP2_Liv35_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Baldwin_EP2_Liv35_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Baldwin_EP2_Liv35_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Baldwin_EP2_PantoDown;
  1: spriteset_Baldwin_EP2_PantoUp_r;
 }
@@ -10257,7 +10257,7 @@ item(FEAT_TRAINS, Item_Baldwin_EP2_Liv35, 35085) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        [ELRL, SAA3];
+        track_type:                        [OHLE_AC, SAA3];
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -10301,7 +10301,7 @@ spriteset(spriteset_Baldwin_EP3_Liv0_Purchase,   "gfx/Baldwin_EP3_Liv0.png") {te
 
 spriteset(spriteset_Baldwin_EP3_Liv0,   "gfx/Baldwin_EP3_Liv0.png") {template_10_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_Baldwin_EP3_Liv0_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Baldwin_EP3_Liv0_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_Baldwin_EP3_PantoDown;
  1: spriteset_Baldwin_EP3_PantoUp;
 }
@@ -10338,7 +10338,7 @@ item(FEAT_TRAINS, Item_Baldwin_EP3_Liv0, 1550) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_DC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -10391,7 +10391,7 @@ switch (FEAT_TRAINS, SELF, switch_NYC_P1Motor_PurchaseStack, [
     1: spriteset_NYC_P1Motor_PantoBase;
 }
 
-switch(FEAT_TRAINS, SELF, switch_NYC_P1Motor_Liv0_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_NYC_P1Motor_Liv0_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_NYC_P1Motor_PantoDown;
  1: spriteset_NYC_P1Motor_PantoUp;
 }
@@ -10428,7 +10428,7 @@ item(FEAT_TRAINS, Item_NYC_P1Motor_Liv0, 1650) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_DC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -10472,7 +10472,7 @@ spriteset(spriteset_NH_EP3_PantoDown,   "gfx/NH_EP3_PantoDown.png") {template_9(
 spriteset(spriteset_NH_EP3_Liv0_Purchase,   "gfx/NH_EP3_Liv0.png") {template_purchase_9(7, 21)}
 spriteset(spriteset_NH_EP3_Liv0,   "gfx/NH_EP3_Liv0.png") {template_9_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_NH_EP3_Liv0_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_NH_EP3_Liv0_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_NH_EP3_PantoDown;
  1: spriteset_NH_EP3_PantoUp;
 }
@@ -10509,7 +10509,7 @@ item(FEAT_TRAINS, Item_NH_EP3_Liv0, 1700) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        [ELRL, SAA3];
+        track_type:                        [OHLE_AC, SAA3];
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -10548,7 +10548,7 @@ item(FEAT_TRAINS, Item_NH_EP3_Liv0, 1700) {
 spriteset(spriteset_NH_EP3_Liv35_Purchase,   "gfx/NH_EP3_Liv35.png") {template_purchase_9(7, 21)}
 spriteset(spriteset_NH_EP3_Liv35,   "gfx/NH_EP3_Liv35.png") {template_9_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_NH_EP3_Liv35_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_NH_EP3_Liv35_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_NH_EP3_PantoDown;
  1: spriteset_NH_EP3_PantoUp;
 }
@@ -10585,7 +10585,7 @@ item(FEAT_TRAINS, Item_NH_EP3_Liv35, 1735) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        [ELRL, SAA3];
+        track_type:                        [OHLE_AC, SAA3];
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -10628,7 +10628,7 @@ spriteset(spriteset_PRR_R1_PantoDown,   "gfx/PRR_R1_PantoDown.png") {template_8(
 spriteset(spriteset_PRR_R1_Liv0_Purchase,   "gfx/PRR_R1_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_PRR_R1_Liv0,   "gfx/PRR_R1_Liv0.png") {template_8(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_PRR_R1_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_R1_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_R1_PantoDown;
  1: spriteset_PRR_R1_PantoUp;
 }
@@ -10641,7 +10641,7 @@ switch (FEAT_TRAINS, SELF, switch_PRR_R1_Liv0_Fw, [
     1: switch_PRR_R1_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_R1_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_R1_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_R1_PantoDown;
  1: spriteset_PRR_R1_PantoUp_r;
 }
@@ -10667,7 +10667,7 @@ item(FEAT_TRAINS, Item_PRR_R1_Liv0, 35300) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -10711,7 +10711,7 @@ spriteset(spriteset_PRR_GG1_Liv0_Purchase,   "gfx/PRR_GG1_Liv0.png") {template_p
 
 spriteset(spriteset_PRR_GG1_Liv0,   "gfx/PRR_GG1_Liv0.png") {template_9_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_GG1_Liv0_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_GG1_PantoDown;
  1: spriteset_PRR_GG1_PantoUp;
 }
@@ -10748,7 +10748,7 @@ item(FEAT_TRAINS, Item_PRR_GG1_Liv0, 1750) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -10791,7 +10791,7 @@ spriteset(spriteset_GE_EP4_PantoDown,   "gfx/GE_EP4_PantoDown.png") {template_8(
 spriteset(spriteset_GE_EP4_Liv0_Purchase,   "gfx/GE_EP4_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_GE_EP4_Liv0,   "gfx/GE_EP4_Liv0.png") {template_8_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_EP4_PantoDown;
  1: spriteset_GE_EP4_PantoUp;
 }
@@ -10804,7 +10804,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_EP4_Liv0_Fw, [
     1: switch_GE_EP4_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_EP4_PantoDown;
  1: spriteset_GE_EP4_PantoUp_r;
 }
@@ -10830,7 +10830,7 @@ item(FEAT_TRAINS, Item_GE_EP4_Liv0, 35400) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        [ELRL, SAA3];
+        track_type:                        [OHLE_AC, SAA3];
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -10868,7 +10868,7 @@ item(FEAT_TRAINS, Item_GE_EP4_Liv0, 35400) {
 spriteset(spriteset_GE_EP4_Liv35_Purchase,   "gfx/GE_EP4_Liv35.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_GE_EP4_Liv35,   "gfx/GE_EP4_Liv35.png") {template_8(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv35_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv35_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_EP4_PantoDown;
  1: spriteset_GE_EP4_PantoUp;
 }
@@ -10881,7 +10881,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_EP4_Liv35_Fw, [
     1: switch_GE_EP4_Liv35_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv35_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv35_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_EP4_PantoDown;
  1: spriteset_GE_EP4_PantoUp_r;
 }
@@ -10907,7 +10907,7 @@ item(FEAT_TRAINS, Item_GE_EP4_Liv35, 35435) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        [OHLE_AC, SAA3];
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -10949,7 +10949,7 @@ spriteset(spriteset_GE_EP5_PantoDown,   "gfx/GE_EP5_PantoDown.png") {template_8(
 spriteset(spriteset_GE_EP5_Liv0_Purchase,   "gfx/GE_EP5_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_GE_EP5_Liv0,   "gfx/GE_EP5_Liv0.png") {template_8(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_EP5_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_EP5_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_EP5_PantoDown;
  1: spriteset_GE_EP5_PantoUp;
 }
@@ -10962,7 +10962,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_EP5_Liv0_Fw, [
     1: switch_GE_EP5_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_EP5_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_EP5_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_EP5_PantoDown;
  1: spriteset_GE_EP5_PantoUp_r;
 }
@@ -10988,7 +10988,7 @@ item(FEAT_TRAINS, Item_GE_EP5_Liv0, 35550) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        [ELRL, SAA3];
+        track_type:                        [OHLE_AC, SAA3];
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -11030,7 +11030,7 @@ spriteset(spriteset_GE_E60CH_PantoDown,   "gfx/GE_E60CH_PantoDown.png") {templat
 spriteset(spriteset_GE_E60CH_Liv0_Purchase,   "gfx/GE_E60CH_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_GE_E60CH_Liv0,   "gfx/GE_E60CH_Liv0.png") {template_8(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_E60CH_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_E60CH_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_E60CH_PantoDown;
  1: spriteset_GE_E60CH_PantoUp;
 }
@@ -11043,7 +11043,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_E60CH_Liv0_Fw, [
     1: switch_GE_E60CH_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_E60CH_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_E60CH_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_E60CH_PantoDown;
  1: spriteset_GE_E60CH_PantoUp_r;
 }
@@ -11069,7 +11069,7 @@ item(FEAT_TRAINS, Item_GE_E60CH_Liv0, 35650) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -11111,7 +11111,7 @@ spriteset(spriteset_EMD_AEM7_PantoDown,   "gfx/EMD_AEM7_PantoDown.png") {templat
 spriteset(spriteset_EMD_AEM7_Liv0_Purchase,   "gfx/EMD_AEM7_Liv0.png") {template_purchase_7(7, 21)}
 spriteset(spriteset_EMD_AEM7_Liv0,   "gfx/EMD_AEM7_Liv0.png") {template_7(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_AEM7_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_AEM7_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_AEM7_PantoDown;
  1: spriteset_EMD_AEM7_PantoUp;
 }
@@ -11124,7 +11124,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_AEM7_Liv0_Fw, [
     1: switch_EMD_AEM7_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_AEM7_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_AEM7_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_AEM7_PantoDown;
  1: spriteset_EMD_AEM7_PantoUp_r;
 }
@@ -11150,7 +11150,7 @@ item(FEAT_TRAINS, Item_EMD_AEM7_Liv0, 35750) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -11192,7 +11192,7 @@ spriteset(spriteset_GE_AGE8_PantoDown,   "gfx/GE_AGE8_PantoDown.png") {template_
 spriteset(spriteset_GE_AGE8_Liv0_Purchase,   "gfx/GE_AGE8_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_GE_AGE8_Liv0,   "gfx/GE_AGE8_Liv0.png") {template_8(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_AGE8_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_AGE8_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_AGE8_PantoDown;
  1: spriteset_GE_AGE8_PantoUp;
 }
@@ -11205,7 +11205,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_AGE8_Liv0_Fw, [
     1: switch_GE_AGE8_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_AGE8_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_AGE8_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_AGE8_PantoDown;
  1: spriteset_GE_AGE8_PantoUp_r;
 }
@@ -11231,7 +11231,7 @@ item(FEAT_TRAINS, Item_GE_AGE8_Liv0, 35800) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -11277,7 +11277,7 @@ spriteset(spriteset_EMD_GF6CH_Liv0_Purchase,   "gfx/EMD_GF6CH_Liv0.png") {templa
 spriteset(spriteset_EMD_GF6CH_Liv0,   "gfx/EMD_GF6CH_Liv0.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv0_r,   "gfx/EMD_GF6CH_Liv0.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -11290,7 +11290,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv0_Fw, [
     1: switch_EMD_GF6CH_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv0_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv0_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -11308,7 +11308,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv0_Fwflipcheck, vehicle_is_flipped)
  1: switch_EMD_GF6CH_Liv0_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -11321,7 +11321,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv0_r, [
     1: switch_EMD_GF6CH_Liv0_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv0_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv0_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -11362,7 +11362,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv0, 35850) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -11400,7 +11400,7 @@ spriteset(spriteset_EMD_GF6CH_Liv6_Purchase,   "gfx/EMD_GF6CH_Liv6.png") {templa
 spriteset(spriteset_EMD_GF6CH_Liv6,   "gfx/EMD_GF6CH_Liv6.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv6_r,   "gfx/EMD_GF6CH_Liv6.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv6_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv6_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -11413,7 +11413,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv6_Fw, [
     1: switch_EMD_GF6CH_Liv6_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv6_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv6_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -11431,7 +11431,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv6_Fwflipcheck, vehicle_is_flipped)
  1: switch_EMD_GF6CH_Liv6_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv6_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv6_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -11444,7 +11444,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv6_r, [
     1: switch_EMD_GF6CH_Liv6_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv6_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv6_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -11485,7 +11485,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv6, 35856) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -11523,7 +11523,7 @@ spriteset(spriteset_EMD_GF6CH_Liv7_Purchase,   "gfx/EMD_GF6CH_Liv7.png") {templa
 spriteset(spriteset_EMD_GF6CH_Liv7,   "gfx/EMD_GF6CH_Liv7.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv7_r,   "gfx/EMD_GF6CH_Liv7.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv7_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv7_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -11536,7 +11536,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv7_Fw, [
     1: switch_EMD_GF6CH_Liv7_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv7_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv7_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -11554,7 +11554,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv7_Fwflipcheck, vehicle_is_flipped)
  1: switch_EMD_GF6CH_Liv7_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv7_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv7_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -11567,7 +11567,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv7_r, [
     1: switch_EMD_GF6CH_Liv7_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv7_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv7_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -11608,7 +11608,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv7, 35857) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -11646,7 +11646,7 @@ spriteset(spriteset_EMD_GF6CH_Liv8_Purchase,   "gfx/EMD_GF6CH_Liv8.png") {templa
 spriteset(spriteset_EMD_GF6CH_Liv8,   "gfx/EMD_GF6CH_Liv8.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv8_r,   "gfx/EMD_GF6CH_Liv8.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv8_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv8_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -11659,7 +11659,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv8_Fw, [
     1: switch_EMD_GF6CH_Liv8_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv8_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv8_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -11677,7 +11677,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv8_Fwflipcheck, vehicle_is_flipped)
  1: switch_EMD_GF6CH_Liv8_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv8_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv8_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -11690,7 +11690,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv8_r, [
     1: switch_EMD_GF6CH_Liv8_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv8_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv8_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -11731,7 +11731,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv8, 35858) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -11769,7 +11769,7 @@ spriteset(spriteset_EMD_GF6CH_Liv9_Purchase,   "gfx/EMD_GF6CH_Liv9.png") {templa
 spriteset(spriteset_EMD_GF6CH_Liv9,   "gfx/EMD_GF6CH_Liv9.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv9_r,   "gfx/EMD_GF6CH_Liv9.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv9_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv9_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -11782,7 +11782,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv9_Fw, [
     1: switch_EMD_GF6CH_Liv9_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv9_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv9_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -11800,7 +11800,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv9_Fwflipcheck, vehicle_is_flipped)
  1: switch_EMD_GF6CH_Liv9_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv9_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv9_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -11813,7 +11813,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv9_r, [
     1: switch_EMD_GF6CH_Liv9_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv9_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv9_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -11854,7 +11854,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv9, 35859) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -11892,7 +11892,7 @@ spriteset(spriteset_EMD_GF6CH_Liv10_Purchase,   "gfx/EMD_GF6CH_Liv10.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv10,   "gfx/EMD_GF6CH_Liv10.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv10_r,   "gfx/EMD_GF6CH_Liv10.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv10_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv10_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -11905,7 +11905,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv10_Fw, [
     1: switch_EMD_GF6CH_Liv10_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv10_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv10_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -11923,7 +11923,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv10_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv10_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv10_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv10_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -11936,7 +11936,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv10_r, [
     1: switch_EMD_GF6CH_Liv10_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv10_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv10_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -11977,7 +11977,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv10, 35860) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -12015,7 +12015,7 @@ spriteset(spriteset_EMD_GF6CH_Liv11_Purchase,   "gfx/EMD_GF6CH_Liv11.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv11,   "gfx/EMD_GF6CH_Liv11.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv11_r,   "gfx/EMD_GF6CH_Liv11.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv11_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv11_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -12028,7 +12028,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv11_Fw, [
     1: switch_EMD_GF6CH_Liv11_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv11_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv11_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12046,7 +12046,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv11_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv11_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv11_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv11_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -12059,7 +12059,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv11_r, [
     1: switch_EMD_GF6CH_Liv11_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv11_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv11_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12100,7 +12100,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv11, 35861) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -12138,7 +12138,7 @@ spriteset(spriteset_EMD_GF6CH_Liv12_Purchase,   "gfx/EMD_GF6CH_Liv12.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv12,   "gfx/EMD_GF6CH_Liv12.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv12_r,   "gfx/EMD_GF6CH_Liv12.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv12_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv12_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -12151,7 +12151,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv12_Fw, [
     1: switch_EMD_GF6CH_Liv12_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv12_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv12_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12169,7 +12169,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv12_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv12_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv12_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv12_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -12182,7 +12182,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv12_r, [
     1: switch_EMD_GF6CH_Liv12_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv12_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv12_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12223,7 +12223,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv12, 35862) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -12261,7 +12261,7 @@ spriteset(spriteset_EMD_GF6CH_Liv13_Purchase,   "gfx/EMD_GF6CH_Liv13.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv13,   "gfx/EMD_GF6CH_Liv13.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv13_r,   "gfx/EMD_GF6CH_Liv13.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv13_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv13_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -12274,7 +12274,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv13_Fw, [
     1: switch_EMD_GF6CH_Liv13_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv13_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv13_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12292,7 +12292,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv13_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv13_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv13_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv13_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -12305,7 +12305,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv13_r, [
     1: switch_EMD_GF6CH_Liv13_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv13_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv13_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12346,7 +12346,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv13, 35863) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -12384,7 +12384,7 @@ spriteset(spriteset_EMD_GF6CH_Liv14_Purchase,   "gfx/EMD_GF6CH_Liv14.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv14,   "gfx/EMD_GF6CH_Liv14.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv14_r,   "gfx/EMD_GF6CH_Liv14.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv14_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv14_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -12397,7 +12397,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv14_Fw, [
     1: switch_EMD_GF6CH_Liv14_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv14_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv14_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12415,7 +12415,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv14_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv14_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv14_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv14_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -12428,7 +12428,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv14_r, [
     1: switch_EMD_GF6CH_Liv14_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv14_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv14_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12469,7 +12469,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv14, 35864) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -12507,7 +12507,7 @@ spriteset(spriteset_EMD_GF6CH_Liv15_Purchase,   "gfx/EMD_GF6CH_Liv15.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv15,   "gfx/EMD_GF6CH_Liv15.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv15_r,   "gfx/EMD_GF6CH_Liv15.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv15_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv15_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -12520,7 +12520,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv15_Fw, [
     1: switch_EMD_GF6CH_Liv15_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv15_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv15_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12538,7 +12538,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv15_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv15_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv15_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv15_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -12551,7 +12551,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv15_r, [
     1: switch_EMD_GF6CH_Liv15_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv15_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv15_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12592,7 +12592,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv15, 35865) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -12630,7 +12630,7 @@ spriteset(spriteset_EMD_GF6CH_Liv16_Purchase,   "gfx/EMD_GF6CH_Liv16.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv16,   "gfx/EMD_GF6CH_Liv16.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv16_r,   "gfx/EMD_GF6CH_Liv16.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv16_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv16_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -12643,7 +12643,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv16_Fw, [
     1: switch_EMD_GF6CH_Liv16_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv16_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv16_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12661,7 +12661,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv16_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv16_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv16_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv16_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -12674,7 +12674,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv16_r, [
     1: switch_EMD_GF6CH_Liv16_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv16_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv16_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12715,7 +12715,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv16, 35866) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -12753,7 +12753,7 @@ spriteset(spriteset_EMD_GF6CH_Liv17_Purchase,   "gfx/EMD_GF6CH_Liv17.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv17,   "gfx/EMD_GF6CH_Liv17.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv17_r,   "gfx/EMD_GF6CH_Liv17.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv17_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv17_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -12766,7 +12766,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv17_Fw, [
     1: switch_EMD_GF6CH_Liv17_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv17_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv17_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12784,7 +12784,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv17_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv17_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv17_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv17_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -12797,7 +12797,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv17_r, [
     1: switch_EMD_GF6CH_Liv17_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv17_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv17_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12838,7 +12838,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv17, 35867) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -12876,7 +12876,7 @@ spriteset(spriteset_EMD_GF6CH_Liv18_Purchase,   "gfx/EMD_GF6CH_Liv18.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv18,   "gfx/EMD_GF6CH_Liv18.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv18_r,   "gfx/EMD_GF6CH_Liv18.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv18_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv18_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -12889,7 +12889,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv18_Fw, [
     1: switch_EMD_GF6CH_Liv18_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv18_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv18_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12907,7 +12907,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv18_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv18_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv18_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv18_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -12920,7 +12920,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv18_r, [
     1: switch_EMD_GF6CH_Liv18_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv18_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv18_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -12961,7 +12961,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv18, 35868) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -12999,7 +12999,7 @@ spriteset(spriteset_EMD_GF6CH_Liv19_Purchase,   "gfx/EMD_GF6CH_Liv19.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv19,   "gfx/EMD_GF6CH_Liv19.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv19_r,   "gfx/EMD_GF6CH_Liv19.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv19_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv19_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -13012,7 +13012,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv19_Fw, [
     1: switch_EMD_GF6CH_Liv19_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv19_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv19_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13030,7 +13030,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv19_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv19_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv19_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv19_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -13043,7 +13043,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv19_r, [
     1: switch_EMD_GF6CH_Liv19_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv19_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv19_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13084,7 +13084,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv19, 35869) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -13122,7 +13122,7 @@ spriteset(spriteset_EMD_GF6CH_Liv26_Purchase,   "gfx/EMD_GF6CH_Liv26.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv26,   "gfx/EMD_GF6CH_Liv26.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv26_r,   "gfx/EMD_GF6CH_Liv26.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv26_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv26_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -13135,7 +13135,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv26_Fw, [
     1: switch_EMD_GF6CH_Liv26_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv26_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv26_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13153,7 +13153,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv26_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv26_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv26_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv26_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -13166,7 +13166,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv26_r, [
     1: switch_EMD_GF6CH_Liv26_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv26_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv26_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13207,7 +13207,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv26, 35876) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -13245,7 +13245,7 @@ spriteset(spriteset_EMD_GF6CH_Liv27_Purchase,   "gfx/EMD_GF6CH_Liv27.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv27,   "gfx/EMD_GF6CH_Liv27.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv27_r,   "gfx/EMD_GF6CH_Liv27.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv27_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv27_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -13258,7 +13258,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv27_Fw, [
     1: switch_EMD_GF6CH_Liv27_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv27_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv27_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13276,7 +13276,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv27_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv27_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv27_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv27_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -13289,7 +13289,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv27_r, [
     1: switch_EMD_GF6CH_Liv27_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv27_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv27_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13330,7 +13330,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv27, 35877) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -13368,7 +13368,7 @@ spriteset(spriteset_EMD_GF6CH_Liv28_Purchase,   "gfx/EMD_GF6CH_Liv28.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv28,   "gfx/EMD_GF6CH_Liv28.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv28_r,   "gfx/EMD_GF6CH_Liv28.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv28_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv28_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -13381,7 +13381,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv28_Fw, [
     1: switch_EMD_GF6CH_Liv28_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv28_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv28_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13399,7 +13399,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv28_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv28_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv28_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv28_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -13412,7 +13412,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv28_r, [
     1: switch_EMD_GF6CH_Liv28_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv28_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv28_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13453,7 +13453,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv28, 35878) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -13491,7 +13491,7 @@ spriteset(spriteset_EMD_GF6CH_Liv35_Purchase,   "gfx/EMD_GF6CH_Liv35.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv35,   "gfx/EMD_GF6CH_Liv35.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv35_r,   "gfx/EMD_GF6CH_Liv35.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv35_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv35_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -13504,7 +13504,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv35_Fw, [
     1: switch_EMD_GF6CH_Liv35_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv35_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv35_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13522,7 +13522,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv35_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv35_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv35_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv35_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -13535,7 +13535,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv35_r, [
     1: switch_EMD_GF6CH_Liv35_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv35_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv35_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13576,7 +13576,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv35, 35885) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -13614,7 +13614,7 @@ spriteset(spriteset_EMD_GF6CH_Liv37_Purchase,   "gfx/EMD_GF6CH_Liv37.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv37,   "gfx/EMD_GF6CH_Liv37.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv37_r,   "gfx/EMD_GF6CH_Liv37.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv37_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv37_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -13627,7 +13627,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv37_Fw, [
     1: switch_EMD_GF6CH_Liv37_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv37_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv37_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13645,7 +13645,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv37_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv37_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv37_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv37_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -13658,7 +13658,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv37_r, [
     1: switch_EMD_GF6CH_Liv37_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv37_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv37_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13699,7 +13699,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv37, 35887) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -13737,7 +13737,7 @@ spriteset(spriteset_EMD_GF6CH_Liv39_Purchase,   "gfx/EMD_GF6CH_Liv39.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv39,   "gfx/EMD_GF6CH_Liv39.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv39_r,   "gfx/EMD_GF6CH_Liv39.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv39_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv39_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -13750,7 +13750,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv39_Fw, [
     1: switch_EMD_GF6CH_Liv39_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv39_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv39_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13768,7 +13768,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv39_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv39_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv39_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv39_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -13781,7 +13781,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv39_r, [
     1: switch_EMD_GF6CH_Liv39_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv39_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv39_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13822,7 +13822,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv39, 35889) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -13860,7 +13860,7 @@ spriteset(spriteset_EMD_GF6CH_Liv40_Purchase,   "gfx/EMD_GF6CH_Liv40.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv40,   "gfx/EMD_GF6CH_Liv40.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv40_r,   "gfx/EMD_GF6CH_Liv40.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv40_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv40_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -13873,7 +13873,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv40_Fw, [
     1: switch_EMD_GF6CH_Liv40_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv40_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv40_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13891,7 +13891,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv40_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv40_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv40_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv40_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -13904,7 +13904,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv40_r, [
     1: switch_EMD_GF6CH_Liv40_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv40_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv40_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -13945,7 +13945,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv40, 35890) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -13983,7 +13983,7 @@ spriteset(spriteset_EMD_GF6CH_Liv41_Purchase,   "gfx/EMD_GF6CH_Liv41.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv41,   "gfx/EMD_GF6CH_Liv41.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv41_r,   "gfx/EMD_GF6CH_Liv41.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv41_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv41_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -13996,7 +13996,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv41_Fw, [
     1: switch_EMD_GF6CH_Liv41_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv41_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv41_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -14014,7 +14014,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv41_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv41_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv41_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv41_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -14027,7 +14027,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv41_r, [
     1: switch_EMD_GF6CH_Liv41_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv41_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv41_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -14068,7 +14068,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv41, 35891) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -14106,7 +14106,7 @@ spriteset(spriteset_EMD_GF6CH_Liv46_Purchase,   "gfx/EMD_GF6CH_Liv46.png") {temp
 spriteset(spriteset_EMD_GF6CH_Liv46,   "gfx/EMD_GF6CH_Liv46.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_GF6CH_Liv46_r,   "gfx/EMD_GF6CH_Liv46.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv46_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv46_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp;
 }
@@ -14119,7 +14119,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv46_Fw, [
     1: switch_EMD_GF6CH_Liv46_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv46_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv46_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -14137,7 +14137,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv46_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_GF6CH_Liv46_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv46_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv46_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_r;
 }
@@ -14150,7 +14150,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv46_r, [
     1: switch_EMD_GF6CH_Liv46_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv46_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_GF6CH_Liv46_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_GF6CH_PantoDown_r;
  1: spriteset_EMD_GF6CH_PantoUp_Fwr;
 }
@@ -14191,7 +14191,7 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv46, 35896) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -14232,7 +14232,7 @@ spriteset(spriteset_ABB_ALP44_PantoDown,   "gfx/ABB_ALP44_PantoDown.png") {templ
 spriteset(spriteset_ABB_ALP44_Liv0_Purchase,   "gfx/ABB_ALP44_Liv0.png") {template_purchase_7(7, 21)}
 spriteset(spriteset_ABB_ALP44_Liv0,   "gfx/ABB_ALP44_Liv0.png") {template_7(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_ABB_ALP44_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_ABB_ALP44_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_ABB_ALP44_PantoDown;
  1: spriteset_ABB_ALP44_PantoUp;
 }
@@ -14245,7 +14245,7 @@ switch (FEAT_TRAINS, SELF, switch_ABB_ALP44_Liv0_Fw, [
     1: switch_ABB_ALP44_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_ABB_ALP44_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_ABB_ALP44_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_ABB_ALP44_PantoDown;
  1: spriteset_ABB_ALP44_PantoUp_r;
 }
@@ -14271,7 +14271,7 @@ item(FEAT_TRAINS, Item_ABB_ALP44_Liv0, 35900) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -14313,7 +14313,7 @@ spriteset(spriteset_Bombardier_HHP8_PantoDown,   "gfx/Bombardier_HHP8_PantoDown.
 spriteset(spriteset_Bombardier_HHP8_Liv0_Purchase,   "gfx/Bombardier_HHP8_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_Bombardier_HHP8_Liv0,   "gfx/Bombardier_HHP8_Liv0.png") {template_8(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_Bombardier_HHP8_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Bombardier_HHP8_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Bombardier_HHP8_PantoDown;
  1: spriteset_Bombardier_HHP8_PantoUp;
 }
@@ -14326,7 +14326,7 @@ switch (FEAT_TRAINS, SELF, switch_Bombardier_HHP8_Liv0_Fw, [
     1: switch_Bombardier_HHP8_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Bombardier_HHP8_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Bombardier_HHP8_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Bombardier_HHP8_PantoDown;
  1: spriteset_Bombardier_HHP8_PantoUp_r;
 }
@@ -14352,7 +14352,7 @@ item(FEAT_TRAINS, Item_Bombardier_HHP8_Liv0, 35950) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -14394,7 +14394,7 @@ spriteset(spriteset_Bombardier_ALP46_PantoDown,   "gfx/Bombardier_ALP46_PantoDow
 spriteset(spriteset_Bombardier_ALP46_Liv0_Purchase,   "gfx/Bombardier_ALP46_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_Bombardier_ALP46_Liv0,   "gfx/Bombardier_ALP46_Liv0.png") {template_8(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_Bombardier_ALP46_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Bombardier_ALP46_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Bombardier_ALP46_PantoDown;
  1: spriteset_Bombardier_ALP46_PantoUp;
 }
@@ -14407,7 +14407,7 @@ switch (FEAT_TRAINS, SELF, switch_Bombardier_ALP46_Liv0_Fw, [
     1: switch_Bombardier_ALP46_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Bombardier_ALP46_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Bombardier_ALP46_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Bombardier_ALP46_PantoDown;
  1: spriteset_Bombardier_ALP46_PantoUp_r;
 }
@@ -14433,7 +14433,7 @@ item(FEAT_TRAINS, Item_Bombardier_ALP46_Liv0, 36000) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -14475,7 +14475,7 @@ spriteset(spriteset_PRR_L6_PantoDown,   "gfx/PRR_L6_PantoDown.png") {template_7(
 spriteset(spriteset_PRR_L6_Liv0_Purchase,   "gfx/PRR_L6_Liv0.png") {template_purchase_7(7, 21)}
 spriteset(spriteset_PRR_L6_Liv0,   "gfx/PRR_L6_Liv0.png") {template_7(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_PRR_L6_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_L6_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_L6_PantoDown;
  1: spriteset_PRR_L6_PantoUp;
 }
@@ -14488,7 +14488,7 @@ switch (FEAT_TRAINS, SELF, switch_PRR_L6_Liv0_Fw, [
     1: switch_PRR_L6_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_L6_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_L6_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_L6_PantoDown;
  1: spriteset_PRR_L6_PantoUp_r;
 }
@@ -14514,7 +14514,7 @@ item(FEAT_TRAINS, Item_PRR_L6_Liv0, 39250) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -14552,7 +14552,7 @@ item(FEAT_TRAINS, Item_PRR_L6_Liv0, 39250) {
 spriteset(spriteset_GE_EF3B_Liv0_Purchase,   "gfx/GE_EP4_Liv0.png") {template_purchase_8(187, 21)}
 spriteset(spriteset_GE_EF3B_Liv0,   "gfx/GE_EP4_Liv0.png") {template_8_repeat(187, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_EP4_PantoDown;
  1: spriteset_GE_EP4_PantoUp;
 }
@@ -14565,7 +14565,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_EF3B_Liv0_Fw, [
     1: switch_GE_EF3B_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_EP4_PantoDown;
  1: spriteset_GE_EP4_PantoUp_r;
 }
@@ -14591,7 +14591,7 @@ item(FEAT_TRAINS, Item_GE_EF3B_Liv0, 39300) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        [ELRL, SAA3];
+        track_type:                        [OHLE_AC, SAA3];
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -14629,7 +14629,7 @@ item(FEAT_TRAINS, Item_GE_EF3B_Liv0, 39300) {
 spriteset(spriteset_GE_EF3B_Liv35_Purchase,   "gfx/GE_EP4_Liv35.png") {template_purchase_8(187, 21)}
 spriteset(spriteset_GE_EF3B_Liv35,   "gfx/GE_EP4_Liv35.png") {template_8_repeat(187, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv35_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv35_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_EP4_PantoDown;
  1: spriteset_GE_EP4_PantoUp;
 }
@@ -14642,7 +14642,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_EF3B_Liv35_Fw, [
     1: switch_GE_EF3B_Liv35_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv35_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_EF3B_Liv35_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_EP4_PantoDown;
  1: spriteset_GE_EP4_PantoUp_r;
 }
@@ -14668,7 +14668,7 @@ item(FEAT_TRAINS, Item_GE_EF3B_Liv35, 39335) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -14781,7 +14781,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_E33_Liv0_PantoLowered_position, position_in_
   switch_GE_E33_Liv0_PantoLowered_rear;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_E33_Liv0_DualMode, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_E33_Liv0_DualMode, tile_powers_railtype("OHLE_AC")) {
  0: switch_GE_E33_Liv0_PantoLowered_position;
  1: switch_GE_E33_Liv0_position;
 }
@@ -14794,7 +14794,7 @@ item(FEAT_TRAINS, Item_GE_E33_Liv0, 39550) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -14838,7 +14838,7 @@ spriteset(spriteset_GE_E44_Liv0_Purchase,   "gfx/GE_E44_Liv0.png") {template_pur
 spriteset(spriteset_GE_E44_Liv0,   "gfx/GE_E44_Liv0.png") {template_8(7, 39)}
 spriteset(spriteset_GE_E44_Liv0_r,   "gfx/GE_E44_Liv0.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_E44_PantoDown;
  1: spriteset_GE_E44_PantoUp;
 }
@@ -14851,7 +14851,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fw, [
     1: switch_GE_E44_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_E44_PantoDown;
  1: spriteset_GE_E44_PantoUp;
 }
@@ -14869,7 +14869,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_Fwflipcheck, vehicle_is_flipped) {
  1: switch_GE_E44_Liv0_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_E44_PantoDown_r;
  1: spriteset_GE_E44_PantoUp_r;
 }
@@ -14882,7 +14882,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_E44_Liv0_r, [
     1: switch_GE_E44_Liv0_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_E44_Liv0_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_E44_PantoDown_r;
  1: spriteset_GE_E44_PantoUp_r;
 }
@@ -14923,7 +14923,7 @@ item(FEAT_TRAINS, Item_GE_E44_Liv0, 39600) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -15035,7 +15035,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_PantoLowered_position, position_in
   switch_GE_E50C_Liv0_PantoLowered_rear;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_final, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_E50C_Liv0_final, tile_powers_railtype("OHLE_AC")) {
  0: switch_GE_E50C_Liv0_PantoLowered_position;
  1: switch_GE_E50C_Liv0_position;
 }
@@ -15048,7 +15048,7 @@ item(FEAT_TRAINS, Item_GE_E50C_Liv0, 39650) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -15093,7 +15093,7 @@ spriteset(spriteset_GMD_GF6C_Liv0_Purchase,   "gfx/GMD_GF6C_Liv0.png") {template
 spriteset(spriteset_GMD_GF6C_Liv0,   "gfx/GMD_GF6C_Liv0.png") {template_8(7, 39)}
 spriteset(spriteset_GMD_GF6C_Liv0_r,   "gfx/GMD_GF6C_Liv0.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp;
 }
@@ -15106,7 +15106,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv0_Fw, [
     1: switch_GMD_GF6C_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv0_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv0_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15124,7 +15124,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv0_Fwflipcheck, vehicle_is_flipped) 
  1: switch_GMD_GF6C_Liv0_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_r;
 }
@@ -15137,7 +15137,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv0_r, [
     1: switch_GMD_GF6C_Liv0_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv0_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv0_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15178,7 +15178,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv0, 39900) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -15216,7 +15216,7 @@ spriteset(spriteset_GMD_GF6C_Liv6_Purchase,   "gfx/GMD_GF6C_Liv6.png") {template
 spriteset(spriteset_GMD_GF6C_Liv6,   "gfx/GMD_GF6C_Liv6.png") {template_8(7, 39)}
 spriteset(spriteset_GMD_GF6C_Liv6_r,   "gfx/GMD_GF6C_Liv6.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv6_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv6_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp;
 }
@@ -15229,7 +15229,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv6_Fw, [
     1: switch_GMD_GF6C_Liv6_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv6_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv6_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15247,7 +15247,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv6_Fwflipcheck, vehicle_is_flipped) 
  1: switch_GMD_GF6C_Liv6_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv6_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv6_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_r;
 }
@@ -15260,7 +15260,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv6_r, [
     1: switch_GMD_GF6C_Liv6_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv6_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv6_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15301,7 +15301,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv6, 39906) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -15339,7 +15339,7 @@ spriteset(spriteset_GMD_GF6C_Liv7_Purchase,   "gfx/GMD_GF6C_Liv7.png") {template
 spriteset(spriteset_GMD_GF6C_Liv7,   "gfx/GMD_GF6C_Liv7.png") {template_8(7, 39)}
 spriteset(spriteset_GMD_GF6C_Liv7_r,   "gfx/GMD_GF6C_Liv7.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv7_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv7_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp;
 }
@@ -15352,7 +15352,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv7_Fw, [
     1: switch_GMD_GF6C_Liv7_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv7_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv7_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15370,7 +15370,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv7_Fwflipcheck, vehicle_is_flipped) 
  1: switch_GMD_GF6C_Liv7_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv7_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv7_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_r;
 }
@@ -15383,7 +15383,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv7_r, [
     1: switch_GMD_GF6C_Liv7_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv7_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv7_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15424,7 +15424,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv7, 39907) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -15462,7 +15462,7 @@ spriteset(spriteset_GMD_GF6C_Liv8_Purchase,   "gfx/GMD_GF6C_Liv8.png") {template
 spriteset(spriteset_GMD_GF6C_Liv8,   "gfx/GMD_GF6C_Liv8.png") {template_8(7, 39)}
 spriteset(spriteset_GMD_GF6C_Liv8_r,   "gfx/GMD_GF6C_Liv8.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv8_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv8_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp;
 }
@@ -15475,7 +15475,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv8_Fw, [
     1: switch_GMD_GF6C_Liv8_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv8_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv8_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15493,7 +15493,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv8_Fwflipcheck, vehicle_is_flipped) 
  1: switch_GMD_GF6C_Liv8_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv8_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv8_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_r;
 }
@@ -15506,7 +15506,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv8_r, [
     1: switch_GMD_GF6C_Liv8_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv8_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv8_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15547,7 +15547,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv8, 39908) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -15585,7 +15585,7 @@ spriteset(spriteset_GMD_GF6C_Liv9_Purchase,   "gfx/GMD_GF6C_Liv9.png") {template
 spriteset(spriteset_GMD_GF6C_Liv9,   "gfx/GMD_GF6C_Liv9.png") {template_8(7, 39)}
 spriteset(spriteset_GMD_GF6C_Liv9_r,   "gfx/GMD_GF6C_Liv9.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv9_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv9_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp;
 }
@@ -15598,7 +15598,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv9_Fw, [
     1: switch_GMD_GF6C_Liv9_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv9_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv9_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15616,7 +15616,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv9_Fwflipcheck, vehicle_is_flipped) 
  1: switch_GMD_GF6C_Liv9_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv9_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv9_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_r;
 }
@@ -15629,7 +15629,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv9_r, [
     1: switch_GMD_GF6C_Liv9_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv9_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv9_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15670,7 +15670,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv9, 39909) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -15708,7 +15708,7 @@ spriteset(spriteset_GMD_GF6C_Liv10_Purchase,   "gfx/GMD_GF6C_Liv10.png") {templa
 spriteset(spriteset_GMD_GF6C_Liv10,   "gfx/GMD_GF6C_Liv10.png") {template_8(7, 39)}
 spriteset(spriteset_GMD_GF6C_Liv10_r,   "gfx/GMD_GF6C_Liv10.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv10_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv10_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp;
 }
@@ -15721,7 +15721,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv10_Fw, [
     1: switch_GMD_GF6C_Liv10_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv10_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv10_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15739,7 +15739,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv10_Fwflipcheck, vehicle_is_flipped)
  1: switch_GMD_GF6C_Liv10_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv10_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv10_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_r;
 }
@@ -15752,7 +15752,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv10_r, [
     1: switch_GMD_GF6C_Liv10_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv10_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv10_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15793,7 +15793,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv10, 39910) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -15831,7 +15831,7 @@ spriteset(spriteset_GMD_GF6C_Liv11_Purchase,   "gfx/GMD_GF6C_Liv11.png") {templa
 spriteset(spriteset_GMD_GF6C_Liv11,   "gfx/GMD_GF6C_Liv11.png") {template_8(7, 39)}
 spriteset(spriteset_GMD_GF6C_Liv11_r,   "gfx/GMD_GF6C_Liv11.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv11_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv11_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp;
 }
@@ -15844,7 +15844,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv11_Fw, [
     1: switch_GMD_GF6C_Liv11_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv11_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv11_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15862,7 +15862,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv11_Fwflipcheck, vehicle_is_flipped)
  1: switch_GMD_GF6C_Liv11_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv11_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv11_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_r;
 }
@@ -15875,7 +15875,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv11_r, [
     1: switch_GMD_GF6C_Liv11_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv11_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv11_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15916,7 +15916,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv11, 39911) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -15954,7 +15954,7 @@ spriteset(spriteset_GMD_GF6C_Liv12_Purchase,   "gfx/GMD_GF6C_Liv12.png") {templa
 spriteset(spriteset_GMD_GF6C_Liv12,   "gfx/GMD_GF6C_Liv12.png") {template_8(7, 39)}
 spriteset(spriteset_GMD_GF6C_Liv12_r,   "gfx/GMD_GF6C_Liv12.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv12_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv12_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp;
 }
@@ -15967,7 +15967,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv12_Fw, [
     1: switch_GMD_GF6C_Liv12_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv12_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv12_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -15985,7 +15985,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv12_Fwflipcheck, vehicle_is_flipped)
  1: switch_GMD_GF6C_Liv12_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv12_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv12_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_r;
 }
@@ -15998,7 +15998,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv12_r, [
     1: switch_GMD_GF6C_Liv12_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv12_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv12_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -16039,7 +16039,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv12, 39912) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -16077,7 +16077,7 @@ spriteset(spriteset_GMD_GF6C_Liv13_Purchase,   "gfx/GMD_GF6C_Liv13.png") {templa
 spriteset(spriteset_GMD_GF6C_Liv13,   "gfx/GMD_GF6C_Liv13.png") {template_8(7, 39)}
 spriteset(spriteset_GMD_GF6C_Liv13_r,   "gfx/GMD_GF6C_Liv13.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv13_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv13_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp;
 }
@@ -16090,7 +16090,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv13_Fw, [
     1: switch_GMD_GF6C_Liv13_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv13_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv13_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -16108,7 +16108,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv13_Fwflipcheck, vehicle_is_flipped)
  1: switch_GMD_GF6C_Liv13_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv13_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv13_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_r;
 }
@@ -16121,7 +16121,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv13_r, [
     1: switch_GMD_GF6C_Liv13_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv13_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv13_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -16162,7 +16162,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv13, 39913) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -16200,7 +16200,7 @@ spriteset(spriteset_GMD_GF6C_Liv14_Purchase,   "gfx/GMD_GF6C_Liv14.png") {templa
 spriteset(spriteset_GMD_GF6C_Liv14,   "gfx/GMD_GF6C_Liv14.png") {template_8(7, 39)}
 spriteset(spriteset_GMD_GF6C_Liv14_r,   "gfx/GMD_GF6C_Liv14.png") {template_8_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv14_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv14_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp;
 }
@@ -16213,7 +16213,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv14_Fw, [
     1: switch_GMD_GF6C_Liv14_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv14_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv14_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -16231,7 +16231,7 @@ switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv14_Fwflipcheck, vehicle_is_flipped)
  1: switch_GMD_GF6C_Liv14_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv14_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv14_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_r;
 }
@@ -16244,7 +16244,7 @@ switch (FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv14_r, [
     1: switch_GMD_GF6C_Liv14_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv14_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GMD_GF6C_Liv14_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GMD_GF6C_PantoDown_r;
  1: spriteset_GMD_GF6C_PantoUp_Fwr;
 }
@@ -16285,7 +16285,7 @@ item(FEAT_TRAINS, Item_GMD_GF6C_Liv14, 39914) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -16328,7 +16328,7 @@ spriteset(spriteset_EMD_DDR6700_Liv0_Purchase,   "gfx/EMD_DDR6700_Liv0.png") {te
 
 spriteset(spriteset_EMD_DDR6700_Liv0,   "gfx/EMD_DDR6700_Liv0.png") {template_10_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_EMD_DDR6700_Liv0_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_DDR6700_Liv0_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_DDR6700_PantoDown;
  1: spriteset_EMD_DDR6700_PantoUp;
 }
@@ -16365,7 +16365,7 @@ item(FEAT_TRAINS, Item_EMD_DDR6700_Liv0, 2100) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -16408,7 +16408,7 @@ spriteset(spriteset_GE_CascadeBoxcab_PantoDown,   "gfx/GE_CascadeBoxcab_PantoDow
 spriteset(spriteset_GE_CascadeBoxcab_Liv0_Purchase,   "gfx/GE_CascadeBoxcab_Liv0.png") {template_purchase_7(7, 21)}
 spriteset(spriteset_GE_CascadeBoxcab_Liv0,   "gfx/GE_CascadeBoxcab_Liv0.png") {template_7(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_CascadeBoxcab_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_CascadeBoxcab_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_CascadeBoxcab_PantoDown;
  1: spriteset_GE_CascadeBoxcab_PantoUp;
 }
@@ -16421,7 +16421,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_CascadeBoxcab_Liv0_Fw, [
     1: switch_GE_CascadeBoxcab_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_CascadeBoxcab_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_CascadeBoxcab_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_CascadeBoxcab_PantoDown;
  1: spriteset_GE_CascadeBoxcab_PantoUp_r;
 }
@@ -16439,7 +16439,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_CascadeBoxcab_Liv0_position, vehicle_is_flip
  1: switch_GE_CascadeBoxcab_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_GE_CascadeBoxcab_Liv0, 43150) {
+item(FEAT_TRAINS, Item_GE_CascadeBoxcab_Liv0, 43050) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -16447,7 +16447,7 @@ item(FEAT_TRAINS, Item_GE_CascadeBoxcab_Liv0, 43150) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -16493,7 +16493,7 @@ spriteset(spriteset_GE_Twincab_Liv0_Purchase,   "gfx/GE_Boxcab_Liv0.png") {templ
 spriteset(spriteset_GE_Twincab_Liv0_A,   "gfx/GE_Boxcab_Liv0.png") {template_7(7, 39)}
 spriteset(spriteset_GE_Twincab_Liv0_C,   "gfx/GE_Boxcab_Liv0.png") {template_7_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_Twincab_Liv0_A_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_Twincab_Liv0_A_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_GE_Twincab_PantoDown;
  1: spriteset_GE_Twincab_PantoUp;
 }
@@ -16525,7 +16525,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_Twincab_Liv0_articulated_part, extra_callbac
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item(FEAT_TRAINS, Item_GE_Twincab_Liv0, 1800) {
+item(FEAT_TRAINS, Item_GE_Twincab_Liv0, 2200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -16533,7 +16533,7 @@ item(FEAT_TRAINS, Item_GE_Twincab_Liv0, 1800) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_DC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -16576,7 +16576,7 @@ spriteset(spriteset_GE_Z1A_PantoDown,   "gfx/GE_Z1A_PantoDown.png") {template_6(
 spriteset(spriteset_GE_Z1A_Liv0_Purchase,   "gfx/GE_Z1A_Liv0.png") {template_purchase_6(7, 21)}
 spriteset(spriteset_GE_Z1A_Liv0,   "gfx/GE_Z1A_Liv0.png") {template_6(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_Z1A_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_Z1A_Liv0_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_GE_Z1A_PantoDown;
  1: spriteset_GE_Z1A_PantoUp;
 }
@@ -16589,7 +16589,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_Z1A_Liv0_Fw, [
     1: switch_GE_Z1A_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_Z1A_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_Z1A_Liv0_r_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_GE_Z1A_PantoDown;
  1: spriteset_GE_Z1A_PantoUp_r;
 }
@@ -16615,7 +16615,7 @@ item(FEAT_TRAINS, Item_GE_Z1A_Liv0, 43200) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_DC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -16674,7 +16674,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Lownose_FWanimation, motion_counter
     spriteset_PRR_L5_Jackshaft1;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Lownose_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Lownose_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_L5_Lownose_PantoDown;
  1: spriteset_PRR_L5_Lownose_PantoUp;
 }
@@ -16696,7 +16696,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Lownose_Ranimation, motion_counter 
     spriteset_PRR_L5_Jackshaft4;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Lownose_R_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Lownose_R_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_L5_Lownose_PantoDown;
  1: spriteset_PRR_L5_Lownose_PantoUp_r;
 }
@@ -16723,7 +16723,7 @@ item(FEAT_TRAINS, Item_PRR_L5_Liv0_Lownose, 43250) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -16769,7 +16769,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Highnose_FWanimation, motion_counte
     spriteset_PRR_L5_Jackshaft1;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Highnose_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Highnose_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_L5_Highnose_PantoDown;
  1: spriteset_PRR_L5_Highnose_PantoUp;
 }
@@ -16791,7 +16791,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Highnose_Ranimation, motion_counter
     spriteset_PRR_L5_Jackshaft4;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Highnose_R_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_L5_Liv0_Highnose_R_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_L5_Highnose_PantoDown;
  1: spriteset_PRR_L5_Highnose_PantoUp_r;
 }
@@ -16818,7 +16818,7 @@ item(FEAT_TRAINS, Item_PRR_L5_Liv0_Highnose, 43300) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -16860,7 +16860,7 @@ spriteset(spriteset_Baldwin_Z1_PantoDown,   "gfx/Baldwin_Z1_PantoDown.png") {tem
 spriteset(spriteset_Baldwin_Z1_Liv0_Purchase,   "gfx/Baldwin_Z1_Liv0.png") {template_purchase_7(7, 21)}
 spriteset(spriteset_Baldwin_Z1_Liv0,   "gfx/Baldwin_Z1_Liv0.png") {template_7(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_Baldwin_Z1_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Baldwin_Z1_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Baldwin_Z1_PantoDown;
  1: spriteset_Baldwin_Z1_PantoUp;
 }
@@ -16873,7 +16873,7 @@ switch (FEAT_TRAINS, SELF, switch_Baldwin_Z1_Liv0_Fw, [
     1: switch_Baldwin_Z1_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Baldwin_Z1_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Baldwin_Z1_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Baldwin_Z1_PantoDown;
  1: spriteset_Baldwin_Z1_PantoUp_r;
 }
@@ -16899,7 +16899,7 @@ item(FEAT_TRAINS, Item_Baldwin_Z1_Liv0, 43400) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -16941,7 +16941,7 @@ spriteset(spriteset_GE_Y1_PantoDown,   "gfx/GE_Y1_PantoDown.png") {template_8(7,
 spriteset(spriteset_GE_Y1_Liv0_Purchase,   "gfx/GE_Y1_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_GE_Y1_Liv0,   "gfx/GE_Y1_Liv0.png") {template_8(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_Y1_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_Y1_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_Y1_PantoDown;
  1: spriteset_GE_Y1_PantoUp;
 }
@@ -16954,7 +16954,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_Y1_Liv0_Fw, [
     1: switch_GE_Y1_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_Y1_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_Y1_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_Y1_PantoDown;
  1: spriteset_GE_Y1_PantoUp_r;
 }
@@ -16980,7 +16980,7 @@ item(FEAT_TRAINS, Item_GE_Y1_Liv0, 43450) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -17022,7 +17022,7 @@ spriteset(spriteset_PRR_O1_PantoDown,   "gfx/PRR_O1_PantoDown.png") {template_7(
 spriteset(spriteset_PRR_O1_Liv0_Purchase,   "gfx/PRR_O1_Liv0.png") {template_purchase_7(7, 21)}
 spriteset(spriteset_PRR_O1_Liv0,   "gfx/PRR_O1_Liv0.png") {template_7(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_PRR_O1_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_O1_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_O1_PantoDown;
  1: spriteset_PRR_O1_PantoUp;
 }
@@ -17035,7 +17035,7 @@ switch (FEAT_TRAINS, SELF, switch_PRR_O1_Liv0_Fw, [
     1: switch_PRR_O1_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_O1_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_O1_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_O1_PantoDown;
  1: spriteset_PRR_O1_PantoUp_r;
 }
@@ -17061,7 +17061,7 @@ item(FEAT_TRAINS, Item_PRR_O1_Liv0, 43500) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -17109,7 +17109,7 @@ spriteset(spriteset_GE_Tricab_Liv0_B,   "gfx/GE_Boxcab_Liv0.png") {template_6(7,
 spriteset(spriteset_GE_Tricab_Liv0_B_r,   "gfx/GE_Boxcab_Liv0.png") {template_6_r(7, 69)}
 spriteset(spriteset_GE_Tricab_Liv0_C,   "gfx/GE_Boxcab_Liv0.png") {template_7_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_Tricab_Liv0_A_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_Tricab_Liv0_A_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_GE_Tricab_PantoDown;
  1: spriteset_GE_Tricab_PantoUp;
 }
@@ -17161,7 +17161,7 @@ item(FEAT_TRAINS, Item_GE_Tricab_Liv0, 2250) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_DC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -17209,7 +17209,7 @@ spriteset(spriteset_GE_Quadcab_Liv0_B,   "gfx/GE_Boxcab_Liv0.png") {template_6(7
 spriteset(spriteset_GE_Quadcab_Liv0_B_r,   "gfx/GE_Boxcab_Liv0.png") {template_6_r(7, 69)}
 spriteset(spriteset_GE_Quadcab_Liv0_C,   "gfx/GE_Boxcab_Liv0.png") {template_7_r(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_Quadcab_Liv0_A_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_Quadcab_Liv0_A_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_GE_Quadcab_PantoDown;
  1: spriteset_GE_Quadcab_PantoUp;
 }
@@ -17258,7 +17258,7 @@ item(FEAT_TRAINS, Item_GE_Quadcab_Liv0, 2300) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_DC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -17302,7 +17302,7 @@ spriteset(spriteset_PRR_P5A_PantoDown,   "gfx/PRR_P5A_PantoDown.png") {template_
 spriteset(spriteset_PRR_P5A_Liv0_Purchase,   "gfx/PRR_P5A_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_PRR_P5A_Liv0,   "gfx/PRR_P5A_Liv0.png") {template_8(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_PRR_P5A_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_P5A_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_P5A_PantoDown;
  1: spriteset_PRR_P5A_PantoUp;
 }
@@ -17315,7 +17315,7 @@ switch (FEAT_TRAINS, SELF, switch_PRR_P5A_Liv0_Fw, [
     1: switch_PRR_P5A_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_P5A_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_P5A_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_P5A_PantoDown;
  1: spriteset_PRR_P5A_PantoUp_r;
 }
@@ -17341,7 +17341,7 @@ item(FEAT_TRAINS, Item_PRR_P5A_Liv0, 43650) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -17383,7 +17383,7 @@ spriteset(spriteset_PRR_DD2_PantoDown,   "gfx/PRR_DD2_PantoDown.png") {template_
 spriteset(spriteset_PRR_DD2_Liv0_Purchase,   "gfx/PRR_DD2_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_PRR_DD2_Liv0,   "gfx/PRR_DD2_Liv0.png") {template_8(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_PRR_DD2_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_DD2_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_DD2_PantoDown;
  1: spriteset_PRR_DD2_PantoUp;
 }
@@ -17396,7 +17396,7 @@ switch (FEAT_TRAINS, SELF, switch_PRR_DD2_Liv0_Fw, [
     1: switch_PRR_DD2_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_PRR_DD2_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_PRR_DD2_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_PRR_DD2_PantoDown;
  1: spriteset_PRR_DD2_PantoUp_r;
 }
@@ -17422,7 +17422,7 @@ item(FEAT_TRAINS, Item_PRR_DD2_Liv0, 43750) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_AC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -17466,7 +17466,7 @@ spriteset(spriteset_GE_LittleJoe_Liv0_Purchase,   "gfx/GE_LittleJoe_Liv0.png") {
 
 spriteset(spriteset_GE_LittleJoe_Liv0,   "gfx/GE_LittleJoe_Liv0.png") {template_10_repeat(7, 39)}
 
-switch(FEAT_TRAINS, SELF, switch_GE_LittleJoe_Liv0_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_LittleJoe_Liv0_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_GE_LittleJoe_PantoDown;
  1: spriteset_GE_LittleJoe_PantoUp;
 }
@@ -17503,7 +17503,7 @@ item(FEAT_TRAINS, Item_GE_LittleJoe_Liv0, 2400) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        ELRL;
+        track_type:                        OHLE_DC;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_ELECTRIC;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -17551,16 +17551,16 @@ spriteset(spriteset_EMD_DP32AC_Liv0,   "gfx/EMD_DP32AC_Liv0.png") {template_8(7,
 spriteset(spriteset_EMD_DP32AC_Liv0_r,   "gfx/EMD_DP32AC_Liv0.png") {template_8_r(7, 39)}
 
 //Change power output based on rail type
-switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_power_1, tile_powers_railtype("RAIL")) {
+switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_power_1, tile_powers_railtype("OHLE_AC")) {
             1: return 3200;
         }
-        switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_power_0, tile_powers_railtype("ELRL")) {
+        switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_power_0, tile_powers_railtype("OHLE_AC")) {
             1: return 3600;
                 return switch_EMD_DP32AC_Liv0_power_1;
         }
 
 //Change effects based on railtype
-switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("ELRL")]) {
+switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("OHLE_AC")]) {
             1: return VISUAL_EFFECT_ELECTRIC;
             return VISUAL_EFFECT_DIESEL;
         }
@@ -17573,7 +17573,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_buy_menu_additional_text, [
                     0x100
                 ),
                 STORE_TEMP(
-                    string(STR_POWER_SOURCE_OHLE)
+                    string(STR_POWER_SOURCE_OHLE_AC)
                     | (3600 << 16),
                     0x101
                 ),
@@ -17583,7 +17583,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_buy_menu_additional_text, [
 
 
 
-switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_DP32AC_PantoDown;
  1: spriteset_EMD_DP32AC_PantoUp;
 }
@@ -17596,7 +17596,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_Fw, [
     1: switch_EMD_DP32AC_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_DP32AC_PantoDown;
  1: spriteset_EMD_DP32AC_PantoUp_Fwr;
 }
@@ -17614,7 +17614,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_Fwflipcheck, vehicle_is_flipped
  1: switch_EMD_DP32AC_Liv0_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_DP32AC_PantoDown_r;
  1: spriteset_EMD_DP32AC_PantoUp_r;
 }
@@ -17627,7 +17627,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_r, [
     1: switch_EMD_DP32AC_Liv0_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_EMD_DP32AC_PantoDown_r;
  1: spriteset_EMD_DP32AC_PantoUp_Fwr;
 }
@@ -17668,7 +17668,7 @@ item(FEAT_TRAINS, Item_EMD_DP32AC_Liv0, 45550) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        [RAIL, ELRL];
+        track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -17719,13 +17719,13 @@ spriteset(spriteset_Alstom_PL52DP_Liv0_r,   "gfx/Alstom_PL52DP_Liv0.png") {templ
 switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_power_1, tile_powers_railtype("RAIL")) {
             1: return 4200;
         }
-        switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_power_0, tile_powers_railtype("ELRL")) {
+        switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_power_0, tile_powers_railtype("OHLE_AC")) {
             1: return 5200;
                 return switch_Alstom_PL52DP_Liv0_power_1;
         }
 
 //Change effects based on railtype
-switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("ELRL")]) {
+switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("OHLE_AC")]) {
             1: return VISUAL_EFFECT_ELECTRIC;
             return VISUAL_EFFECT_DIESEL;
         }
@@ -17738,7 +17738,7 @@ switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_buy_menu_additional_text, [
                     0x100
                 ),
                 STORE_TEMP(
-                    string(STR_POWER_SOURCE_OHLE)
+                    string(STR_POWER_SOURCE_OHLE_AC)
                     | (5200 << 16),
                     0x101
                 ),
@@ -17748,7 +17748,7 @@ switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_buy_menu_additional_text, [
 
 
 
-switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Alstom_PL52DP_PantoDown;
  1: spriteset_Alstom_PL52DP_PantoUp;
 }
@@ -17761,7 +17761,7 @@ switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_Fw, [
     1: switch_Alstom_PL52DP_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Alstom_PL52DP_PantoDown;
  1: spriteset_Alstom_PL52DP_PantoUp_Fwr;
 }
@@ -17779,7 +17779,7 @@ switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_Fwflipcheck, vehicle_is_flip
  1: switch_Alstom_PL52DP_Liv0_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Alstom_PL52DP_PantoDown_r;
  1: spriteset_Alstom_PL52DP_PantoUp_r;
 }
@@ -17792,7 +17792,7 @@ switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_r, [
     1: switch_Alstom_PL52DP_Liv0_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_Alstom_PL52DP_PantoDown_r;
  1: spriteset_Alstom_PL52DP_PantoUp_Fwr;
 }
@@ -17833,7 +17833,7 @@ item(FEAT_TRAINS, Item_Alstom_PL52DP_Liv0, 45600) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        [RAIL, ELRL];
+        track_type:                        RAIL;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
 //        ai_special_flag:                AI_FLAG_CARGO;
@@ -17881,13 +17881,13 @@ spriteset(spriteset_EMD_SD40_PantoDown_r,   "gfx/EMD_SD40_PantoDown.png") {templ
 switch (FEAT_TRAINS, SELF, switch_SD40_Liv0_DM_power_1, tile_powers_railtype("RAIL")) {
             1: return 3000;
         }
-        switch (FEAT_TRAINS, SELF, switch_SD40_Liv0_DM_power_0, tile_powers_railtype("ELRL")) {
+        switch (FEAT_TRAINS, SELF, switch_SD40_Liv0_DM_power_0, tile_powers_railtype("OHLE_AC")) {
             1: return 3600;
                 return switch_SD40_Liv0_DM_power_1;
         }
 
 //Change effects based on railtype
-switch (FEAT_TRAINS, SELF, switch_SD40_Liv0_DM_effect_spawn_model_and_powered, [tile_powers_railtype("ELRL")]) {
+switch (FEAT_TRAINS, SELF, switch_SD40_Liv0_DM_effect_spawn_model_and_powered, [tile_powers_railtype("OHLE_AC")]) {
             1: return VISUAL_EFFECT_ELECTRIC;
             return VISUAL_EFFECT_DIESEL;
         }
@@ -17900,7 +17900,7 @@ switch (FEAT_TRAINS, SELF, switch_SD40_Liv0_DM_buy_menu_additional_text, [
                     0x100
                 ),
                 STORE_TEMP(
-                    string(STR_POWER_SOURCE_OHLE)
+                    string(STR_POWER_SOURCE_OHLE_AC)
                     | (3600 << 16),
                     0x101
                 ),
@@ -17986,7 +17986,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_PantoLowered_position, positio
   switch_EMD_SD40_Liv0_DM_PantoLowered_rear;
 }
 
-switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_DualMode, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_EMD_SD40_Liv0_DM_DualMode, tile_powers_railtype("OHLE_AC")) {
  0: switch_EMD_SD40_Liv0_DM_PantoLowered_position;
  1: switch_EMD_SD40_Liv0_DM_position;
 }
@@ -18048,13 +18048,13 @@ spriteset(spriteset_GE_ES44ACE_Liv0_r,   "gfx/GE_ES44ACE_Liv0.png") {template_8_
 switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_power_1, tile_powers_railtype("RAIL")) {
             1: return 4400;
         }
-        switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_power_0, tile_powers_railtype("ELRL")) {
+        switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_power_0, tile_powers_railtype("OHLE_AC")) {
             1: return 5400;
                 return switch_GE_ES44ACE_Liv0_power_1;
         }
 
 //Change effects based on railtype
-switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("ELRL")]) {
+switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("OHLE_AC")]) {
             1: return VISUAL_EFFECT_ELECTRIC;
             return VISUAL_EFFECT_DIESEL;
         }
@@ -18067,7 +18067,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_buy_menu_additional_text, [
                     0x100
                 ),
                 STORE_TEMP(
-                    string(STR_POWER_SOURCE_OHLE)
+                    string(STR_POWER_SOURCE_OHLE_AC)
                     | (5400 << 16),
                     0x101
                 ),
@@ -18077,7 +18077,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_buy_menu_additional_text, [
 
 
 //Change Sprite
-switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_Fw_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_ES44ACE_PantoDown;
  1: spriteset_GE_ES44ACE_PantoUp;
 }
@@ -18090,7 +18090,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_Fw, [
     1: switch_GE_ES44ACE_Liv0_Fw_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_Fwr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_Fwr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_ES44ACE_PantoDown;
  1: spriteset_GE_ES44ACE_PantoUp;
 }
@@ -18108,7 +18108,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_Fwflipcheck, vehicle_is_flipped
  1: switch_GE_ES44ACE_Liv0_Fwr;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_r_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_ES44ACE_PantoDown_r;
  1: spriteset_GE_ES44ACE_PantoUp_r;
 }
@@ -18121,7 +18121,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_r, [
     1: switch_GE_ES44ACE_Liv0_r_railtype;
 }
 
-switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_altr_railtype, tile_powers_railtype("ELRL")) {
+switch(FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_altr_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_ES44ACE_PantoDown_r;
  1: spriteset_GE_ES44ACE_PantoUp_r;
 }
