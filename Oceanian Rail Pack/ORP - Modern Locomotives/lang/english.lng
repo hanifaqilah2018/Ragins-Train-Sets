@@ -40,7 +40,8 @@ STR_POWER_SOURCE_3RAIL:{GREEN}Third Rail
 
 
 STR_NAME_CLYDE_ML1:Clyde-EMD ML1
-STR_INFO_CLYDE_ML1:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}CR GM Class
+STR_INFO_CLYDE_ML1:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}CR GM Class
+STR_INFO_CLYDE_ML1_BG:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}CR GM Class
 
 STR_NAME_EE_1200CLASS:English-Electric M129C
 STR_INFO_EE_1200CLASS:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}QR 1200 Class
