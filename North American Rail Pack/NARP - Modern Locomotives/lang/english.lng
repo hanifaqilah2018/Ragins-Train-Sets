@@ -326,7 +326,7 @@ STR_NAME_PRR_GG1:GE GG1
 STR_INFO_PRR_GG1:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GE_EP4:GE EP4
-STR_INFO_GE_EP4:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
+STR_INFO_GE_EP4:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
 
 STR_NAME_GE_EP5:GE EP5
 STR_INFO_GE_EP5:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line

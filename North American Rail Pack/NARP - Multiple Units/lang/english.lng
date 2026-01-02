@@ -88,7 +88,7 @@ STR_NAME_JERSEYARROW:SLCC Arrow
 STR_INFO_JERSEYARROW:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_BUDD_COSMOPOLITAN:Budd Cosmopolitan
-STR_INFO_BUDD_COSMOPOLITAN:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_BUDD_COSMOPOLITAN:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
 
 STR_NAME_SILVERLINERIV_RM:GE Silverliner IV (Single Car)
 STR_NAME_SILVERLINERIV_MU:GE Silverliner IV (Multiple Unit)
