@@ -698,7 +698,7 @@ item(FEAT_TRAINS, Item_Clyde_ML1_BG_Liv0, 5600) {
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
-        track_type:                        NG_RAIL_ONLY;
+        track_type:                        BG_RAIL_ONLY;
         running_cost_base:                RUNNING_COST_DIESEL;
         engine_class:                     ENGINE_CLASS_DIESEL;
 //        ai_special_flag:                AI_FLAG_CARGO;

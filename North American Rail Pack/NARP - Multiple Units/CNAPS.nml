@@ -573,7 +573,7 @@ item (FEAT_TRAINS, Item_MU_Trailer, 0) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_TILT); // <- Train Flag MU needed here
 
@@ -607,9 +607,156 @@ item (FEAT_TRAINS, Item_MU_Trailer, 0) {
 }
 }
 
+//Pantographs
+spriteset(spriteset_PRR_MP54_PantoUp,   "gfx/PRR_MP54_PantoUp.png") {template_8(7, 39)}
+spriteset(spriteset_PRR_MP54_PantoDown,   "gfx/PRR_MP54_PantoDown.png") {template_8(7, 39)}
+spriteset(spriteset_PRR_MP54_Panto_Purchase,   "gfx/PRR_MP54_PantoDown.png") {template_purchase_88mu(7, 21)}
+
+//PRR_MP54_OHLE_Liv0
+spriteset(spriteset_PRR_MP54_Liv0_Purchase,   "gfx/PRR_MP54_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_PRR_MP54_Liv0,   "gfx/PRR_MP54_Liv0.png") {template_8_repeat(7, 39)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_PRR_MP54_OHLE_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_PRR_MP54_Liv0_Purchase;
+    1: spriteset_PRR_MP54_Panto_Purchase;
+}
+
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_PRR_MP54_OHLE_Liv0_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_PRR_MP54_PantoDown;
+ 1: spriteset_PRR_MP54_PantoUp;
+}
+
+//Sprite Stack
+switch (FEAT_TRAINS, SELF, switch_PRR_MP54_OHLE_Liv0_stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_PRR_MP54_Liv0;
+	1: switch_PRR_MP54_OHLE_Liv0_railtype;
+}
+
+
+item(FEAT_TRAINS, Item_PRR_MP54_OHLE_Liv0, 13040) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        OHLE_AC;
+        running_cost_base:                RUNNING_COST_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_PRR_MP54_OHLE);
+        introduction_date:                date(1915,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        48 ton;
+        speed:                            65 mph;
+        power:                            600 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     9;
+        running_cost_factor:             110;
+        cargo_capacity:                  96/param_capacity_mod;
+        loading_speed: 20;
+
+//        variant_group: Item_PRR_MP54_OHLE_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_PRR_MP54_OHLE_Liv0_stack;
+        purchase: switch_PRR_MP54_OHLE_Liv0_PurchaseStack;
+        additional_text: string(STR_INFO_PRR_MP54_OHLE);
+		reverse_build_probability: return 50;
+}
+}
+
+//Pantographs
+spriteset(spriteset_Budd_PioneerIII_PantoUp,   "gfx/Budd_PioneerIII_PantoUp.png") {template_8(7, 39)}
+spriteset(spriteset_Budd_PioneerIII_PantoDown,   "gfx/Budd_PioneerIII_PantoDown.png") {template_8(7, 39)}
+
+//Budd_PioneerIII_Liv0
+spriteset(spriteset_Budd_PioneerIII_Liv0_Purchase,   "gfx/Budd_PioneerIII_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Budd_PioneerIII_Liv0,   "gfx/Budd_PioneerIII_Liv0.png") {template_8(7, 39)}
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_Budd_PioneerIII_Liv0_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_Budd_PioneerIII_PantoDown;
+ 1: spriteset_Budd_PioneerIII_PantoUp;
+}
+
+//Sprite Stack
+switch (FEAT_TRAINS, SELF, switch_Budd_PioneerIII_Liv0_stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_PioneerIII_Liv0;
+	1: switch_Budd_PioneerIII_Liv0_railtype;
+}
+
+
+item(FEAT_TRAINS, Item_Budd_PioneerIII_Liv0, 13180) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_PrototypeDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        OHLE_AC;
+        running_cost_base:                RUNNING_COST_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_BUDD_PIONEERIII);
+        introduction_date:                date(1958,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        41 ton;
+        speed:                            85 mph;
+        power:                            550 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     7;
+        running_cost_factor:             128;
+        cargo_capacity:                  105/param_capacity_mod;
+        loading_speed: 20;
+
+//        variant_group: Item_Budd_PioneerIII_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Budd_PioneerIII_Liv0_stack;
+        purchase: spriteset_Budd_PioneerIII_Liv0_Purchase;
+        additional_text: string(STR_INFO_BUDD_PIONEERIII);
+		reverse_build_probability: return 50;
+}
+}
+
 //3R Shoes
-spriteset(spriteset_Budd_Cosmopolitan_3RShoes_Purchase,   "gfx/Budd_Politan_3RShoes.png") {template_purchase_88mu(7, 21)}
-spriteset(spriteset_Budd_Cosmopolitan_3RShoes,   "gfx/Budd_Politan_3RShoes.png") {template_8(7, 39)}
+spriteset(spriteset_Budd_Politan_3RShoes_Purchase,   "gfx/Budd_Politan_3RShoes.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_Budd_Politan_3RShoes,   "gfx/Budd_Politan_3RShoes.png") {template_8(7, 39)}
 //Greebles
 spriteset(spriteset_Budd_Cosmopolitan_Greebles_Purchase,   "gfx/Budd_Politan_Greebles.png") {template_purchase_88mu(7, 21)}
 spriteset(spriteset_Budd_Cosmopolitan_Greebles,   "gfx/Budd_Politan_Greebles.png") {template_8_repeat(7, 39)}
@@ -620,25 +767,54 @@ spriteset(spriteset_Budd_Cosmopolitan_PantoUp_r,   "gfx/Budd_Politan_Pantographs
 spriteset(spriteset_Budd_Cosmopolitan_PantoDown,   "gfx/Budd_Politan_Pantographs.png") {template_8(7, 69)}
 spriteset(spriteset_Budd_Cosmopolitan_PantoDown_r,   "gfx/Budd_Politan_Pantographs.png") {template_8_r(7, 69)}
 //Lights
-spriteset(spriteset_Budd_Cosmopolitan_LightsFw,   "gfx/Budd_Politan_Lights.png") {template_8(7, 39)}
-spriteset(spriteset_Budd_Cosmopolitan_LightsFw_r,   "gfx/Budd_Politan_Lights.png") {template_8_r(7, 39)}
-spriteset(spriteset_Budd_Cosmopolitan_LightsRw,   "gfx/Budd_Politan_Lights.png") {template_8(7, 69)}
-spriteset(spriteset_Budd_Cosmopolitan_LightsRw_r,   "gfx/Budd_Politan_Lights.png") {template_8_r(7, 69)}
+spriteset(spriteset_Budd_Politan_LightsFw,   "gfx/Budd_Politan_Lights.png") {template_8(7, 39)}
 
 //Budd_Cosmopolitan_Liv0
-spriteset(spriteset_Budd_Cosmopolitan_Liv0_purchase,   "gfx/Budd_Politan_Liv0.png") {template_purchase_88mu(7, 21)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv0_lead,   "gfx/Budd_Politan_Liv0.png") {template_8(7, 39)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv0_lead_r,   "gfx/Budd_Politan_Liv0.png") {template_8_r(7, 39)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv0_Trailer,   "gfx/Budd_Politan_Liv0.png") {template_8_repeat(7, 69)}
+spriteset(spriteset_Budd_Politan_Liv0_purchase,   "gfx/Budd_Politan_Liv0.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_Budd_Politan_Liv0_lead,   "gfx/Budd_Politan_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_Budd_Politan_Liv0_lead_r,   "gfx/Budd_Politan_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_Budd_Politan_Liv0_Trailer,   "gfx/Budd_Politan_Liv0.png") {template_8_repeat(7, 69)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv0_power_1, tile_powers_railtype("OHLE_AC")) {
+            1: return 1280;
+        }
+        switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv0_power_0, tile_powers_railtype("SAA3")) {
+            1: return 1280;
+                return switch_Budd_Cosmopolitan_Liv0_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("SAA3")]) {
+            1: return VISUAL_EFFECT_DISABLE;
+            return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, ENABLE_WAGON_POWER);
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv0_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE_AC)
+                    | (1280 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_3RAIL)
+                    | (1280 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_BUDD_COSMOPOLITAN));
+        }
 
 //Purchase Stack
 switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv0_PurchaseStack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv0_purchase;
-    1: spriteset_Budd_Cosmopolitan_Greebles_Purchase;
-	2: spriteset_Budd_Cosmopolitan_Panto_Purchase;
+    0: spriteset_Budd_Politan_Liv0_purchase;
+	1: spriteset_Budd_Politan_3RShoes_Purchase;
+    2: spriteset_Budd_Cosmopolitan_Greebles_Purchase;
+	3: spriteset_Budd_Cosmopolitan_Panto_Purchase;
 }
 
 //Pantograph Controls
@@ -657,9 +833,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv0_MotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv0_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsFw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv0_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 	4: switch_Budd_Cosmopolitan_Liv0_Fw_railtype;
 }
@@ -668,9 +844,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv0_MotorStack_r, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv0_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsRw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv0_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 	4: switch_Budd_Cosmopolitan_Liv0_Fw_railtype;
 }
@@ -679,9 +855,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv0_DrivingTrailerStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv0_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsFw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv0_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 }
 //D Rear
@@ -689,9 +865,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv0_DrivingTrailerStack_r, 
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv0_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsRw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv0_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 }
 //N Lead
@@ -699,8 +875,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv0_NonControlMotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv0_Trailer;
-	1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv0_Trailer;
+	1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 	3: switch_Budd_Cosmopolitan_Liv0_Fw_railtype;
 }
@@ -709,8 +885,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv0_NonControlMotorStack_r,
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv0_Trailer;
-	1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv0_Trailer;
+	1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 	3: switch_Budd_Cosmopolitan_Liv0_Rw_railtype;
 }
@@ -719,8 +895,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv0_TrailerStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv0_Trailer;
-    1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv0_Trailer;
+    1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 }
 
@@ -867,7 +1043,7 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv0, 13240) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -903,7 +1079,9 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv0, 13240) {
     graphics {
         default: sw_Budd_Cosmopolitan_Liv0_directioncheck;
         purchase: switch_Budd_Cosmopolitan_Liv0_PurchaseStack;
-        additional_text: string(STR_INFO_BUDD_COSMOPOLITAN);
+        power: switch_Budd_Cosmopolitan_Liv0_power_0;
+        visual_effect_and_powered: switch_Budd_Cosmopolitan_Liv0_effect_spawn_model_and_powered;
+        additional_text: switch_Budd_Cosmopolitan_Liv0_buy_menu_additional_text;
     }
     livery_override (Item_MU_Trailer){
         default                     : sw_Budd_Cosmopolitan_Liv0_revcheck ;
@@ -916,19 +1094,51 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv0, 13240) {
 }
 
 //Budd_Cosmopolitan_Liv1
-spriteset(spriteset_Budd_Cosmopolitan_Liv1_purchase,   "gfx/Budd_Politan_Liv1.png") {template_purchase_88mu(7, 21)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv1_lead,   "gfx/Budd_Politan_Liv1.png") {template_8(7, 39)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv1_lead_r,   "gfx/Budd_Politan_Liv1.png") {template_8_r(7, 39)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv1_Trailer,   "gfx/Budd_Politan_Liv1.png") {template_8_repeat(7, 69)}
+spriteset(spriteset_Budd_Politan_Liv1_purchase,   "gfx/Budd_Politan_Liv1.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_Budd_Politan_Liv1_lead,   "gfx/Budd_Politan_Liv1.png") {template_8(7, 39)}
+spriteset(spriteset_Budd_Politan_Liv1_lead_r,   "gfx/Budd_Politan_Liv1.png") {template_8_r(7, 39)}
+spriteset(spriteset_Budd_Politan_Liv1_Trailer,   "gfx/Budd_Politan_Liv1.png") {template_8_repeat(7, 69)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv1_power_1, tile_powers_railtype("OHLE_AC")) {
+            1: return 1280;
+        }
+        switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv1_power_0, tile_powers_railtype("SAA3")) {
+            1: return 1280;
+                return switch_Budd_Cosmopolitan_Liv1_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv1_effect_spawn_model_and_powered, [tile_powers_railtype("SAA3")]) {
+            1: return VISUAL_EFFECT_DISABLE;
+            return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, ENABLE_WAGON_POWER);
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv1_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE_AC)
+                    | (1280 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_3RAIL)
+                    | (1280 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_BUDD_COSMOPOLITAN));
+        }
 
 //Purchase Stack
 switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv1_PurchaseStack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv1_purchase;
-    1: spriteset_Budd_Cosmopolitan_Greebles_Purchase;
-	2: spriteset_Budd_Cosmopolitan_Panto_Purchase;
+    0: spriteset_Budd_Politan_Liv1_purchase;
+	1: spriteset_Budd_Politan_3RShoes_Purchase;
+    2: spriteset_Budd_Cosmopolitan_Greebles_Purchase;
+	3: spriteset_Budd_Cosmopolitan_Panto_Purchase;
 }
 
 //Pantograph Controls
@@ -947,9 +1157,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv1_MotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv1_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsFw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv1_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 	4: switch_Budd_Cosmopolitan_Liv1_Fw_railtype;
 }
@@ -958,9 +1168,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv1_MotorStack_r, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv1_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsRw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv1_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 	4: switch_Budd_Cosmopolitan_Liv1_Fw_railtype;
 }
@@ -969,9 +1179,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv1_DrivingTrailerStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv1_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsFw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv1_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 }
 //D Rear
@@ -979,9 +1189,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv1_DrivingTrailerStack_r, 
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv1_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsRw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv1_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 }
 //N Lead
@@ -989,8 +1199,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv1_NonControlMotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv1_Trailer;
-	1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv1_Trailer;
+	1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 	3: switch_Budd_Cosmopolitan_Liv1_Fw_railtype;
 }
@@ -999,8 +1209,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv1_NonControlMotorStack_r,
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv1_Trailer;
-	1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv1_Trailer;
+	1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 	3: switch_Budd_Cosmopolitan_Liv1_Rw_railtype;
 }
@@ -1009,8 +1219,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv1_TrailerStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv1_Trailer;
-    1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv1_Trailer;
+    1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 }
 
@@ -1157,7 +1367,7 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv1, 13241) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -1193,7 +1403,9 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv1, 13241) {
     graphics {
         default: sw_Budd_Cosmopolitan_Liv1_directioncheck;
         purchase: switch_Budd_Cosmopolitan_Liv1_PurchaseStack;
-        additional_text: string(STR_INFO_BUDD_COSMOPOLITAN);
+        power: switch_Budd_Cosmopolitan_Liv1_power_0;
+        visual_effect_and_powered: switch_Budd_Cosmopolitan_Liv1_effect_spawn_model_and_powered;
+        additional_text: switch_Budd_Cosmopolitan_Liv1_buy_menu_additional_text;
     }
     livery_override (Item_MU_Trailer){
         default                     : sw_Budd_Cosmopolitan_Liv1_revcheck ;
@@ -1206,19 +1418,51 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv1, 13241) {
 }
 
 //Budd_Cosmopolitan_Liv2
-spriteset(spriteset_Budd_Cosmopolitan_Liv2_purchase,   "gfx/Budd_Politan_Liv2.png") {template_purchase_88mu(7, 21)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv2_lead,   "gfx/Budd_Politan_Liv2.png") {template_8(7, 39)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv2_lead_r,   "gfx/Budd_Politan_Liv2.png") {template_8_r(7, 39)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv2_Trailer,   "gfx/Budd_Politan_Liv2.png") {template_8_repeat(7, 69)}
+spriteset(spriteset_Budd_Politan_Liv2_purchase,   "gfx/Budd_Politan_Liv2.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_Budd_Politan_Liv2_lead,   "gfx/Budd_Politan_Liv2.png") {template_8(7, 39)}
+spriteset(spriteset_Budd_Politan_Liv2_lead_r,   "gfx/Budd_Politan_Liv2.png") {template_8_r(7, 39)}
+spriteset(spriteset_Budd_Politan_Liv2_Trailer,   "gfx/Budd_Politan_Liv2.png") {template_8_repeat(7, 69)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv2_power_1, tile_powers_railtype("OHLE_AC")) {
+            1: return 1280;
+        }
+        switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv2_power_0, tile_powers_railtype("SAA3")) {
+            1: return 1280;
+                return switch_Budd_Cosmopolitan_Liv2_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv2_effect_spawn_model_and_powered, [tile_powers_railtype("SAA3")]) {
+            1: return VISUAL_EFFECT_DISABLE;
+            return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, ENABLE_WAGON_POWER);
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv2_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE_AC)
+                    | (1280 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_3RAIL)
+                    | (1280 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_BUDD_COSMOPOLITAN));
+        }
 
 //Purchase Stack
 switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv2_PurchaseStack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv2_purchase;
-    1: spriteset_Budd_Cosmopolitan_Greebles_Purchase;
-	2: spriteset_Budd_Cosmopolitan_Panto_Purchase;
+    0: spriteset_Budd_Politan_Liv2_purchase;
+	1: spriteset_Budd_Politan_3RShoes_Purchase;
+    2: spriteset_Budd_Cosmopolitan_Greebles_Purchase;
+	3: spriteset_Budd_Cosmopolitan_Panto_Purchase;
 }
 
 //Pantograph Controls
@@ -1237,9 +1481,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv2_MotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv2_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsFw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv2_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 	4: switch_Budd_Cosmopolitan_Liv2_Fw_railtype;
 }
@@ -1248,9 +1492,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv2_MotorStack_r, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv2_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsRw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv2_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 	4: switch_Budd_Cosmopolitan_Liv2_Fw_railtype;
 }
@@ -1259,9 +1503,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv2_DrivingTrailerStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv2_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsFw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv2_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 }
 //D Rear
@@ -1269,9 +1513,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv2_DrivingTrailerStack_r, 
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv2_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsRw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv2_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 }
 //N Lead
@@ -1279,8 +1523,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv2_NonControlMotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv2_Trailer;
-	1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv2_Trailer;
+	1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 	3: switch_Budd_Cosmopolitan_Liv2_Fw_railtype;
 }
@@ -1289,8 +1533,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv2_NonControlMotorStack_r,
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv2_Trailer;
-	1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv2_Trailer;
+	1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 	3: switch_Budd_Cosmopolitan_Liv2_Rw_railtype;
 }
@@ -1299,8 +1543,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv2_TrailerStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv2_Trailer;
-    1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv2_Trailer;
+    1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 }
 
@@ -1447,7 +1691,7 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv2, 13242) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -1483,7 +1727,9 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv2, 13242) {
     graphics {
         default: sw_Budd_Cosmopolitan_Liv2_directioncheck;
         purchase: switch_Budd_Cosmopolitan_Liv2_PurchaseStack;
-        additional_text: string(STR_INFO_BUDD_COSMOPOLITAN);
+        power: switch_Budd_Cosmopolitan_Liv2_power_0;
+        visual_effect_and_powered: switch_Budd_Cosmopolitan_Liv2_effect_spawn_model_and_powered;
+        additional_text: switch_Budd_Cosmopolitan_Liv2_buy_menu_additional_text;
     }
     livery_override (Item_MU_Trailer){
         default                     : sw_Budd_Cosmopolitan_Liv2_revcheck ;
@@ -1496,19 +1742,51 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv2, 13242) {
 }
 
 //Budd_Cosmopolitan_Liv3
-spriteset(spriteset_Budd_Cosmopolitan_Liv3_purchase,   "gfx/Budd_Politan_Liv3.png") {template_purchase_88mu(7, 21)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv3_lead,   "gfx/Budd_Politan_Liv3.png") {template_8(7, 39)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv3_lead_r,   "gfx/Budd_Politan_Liv3.png") {template_8_r(7, 39)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv3_Trailer,   "gfx/Budd_Politan_Liv3.png") {template_8_repeat(7, 69)}
+spriteset(spriteset_Budd_Politan_Liv3_purchase,   "gfx/Budd_Politan_Liv3.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_Budd_Politan_Liv3_lead,   "gfx/Budd_Politan_Liv3.png") {template_8(7, 39)}
+spriteset(spriteset_Budd_Politan_Liv3_lead_r,   "gfx/Budd_Politan_Liv3.png") {template_8_r(7, 39)}
+spriteset(spriteset_Budd_Politan_Liv3_Trailer,   "gfx/Budd_Politan_Liv3.png") {template_8_repeat(7, 69)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv3_power_1, tile_powers_railtype("OHLE_AC")) {
+            1: return 1280;
+        }
+        switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv3_power_0, tile_powers_railtype("SAA3")) {
+            1: return 1280;
+                return switch_Budd_Cosmopolitan_Liv3_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv3_effect_spawn_model_and_powered, [tile_powers_railtype("SAA3")]) {
+            1: return VISUAL_EFFECT_DISABLE;
+            return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, ENABLE_WAGON_POWER);
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv3_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE_AC)
+                    | (1280 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_3RAIL)
+                    | (1280 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_BUDD_COSMOPOLITAN));
+        }
 
 //Purchase Stack
 switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv3_PurchaseStack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv3_purchase;
-    1: spriteset_Budd_Cosmopolitan_Greebles_Purchase;
-	2: spriteset_Budd_Cosmopolitan_Panto_Purchase;
+    0: spriteset_Budd_Politan_Liv3_purchase;
+	1: spriteset_Budd_Politan_3RShoes_Purchase;
+    2: spriteset_Budd_Cosmopolitan_Greebles_Purchase;
+	3: spriteset_Budd_Cosmopolitan_Panto_Purchase;
 }
 
 //Pantograph Controls
@@ -1527,9 +1805,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv3_MotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv3_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsFw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv3_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 	4: switch_Budd_Cosmopolitan_Liv3_Fw_railtype;
 }
@@ -1538,9 +1816,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv3_MotorStack_r, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv3_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsRw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv3_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 	4: switch_Budd_Cosmopolitan_Liv3_Fw_railtype;
 }
@@ -1549,9 +1827,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv3_DrivingTrailerStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv3_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsFw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv3_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 }
 //D Rear
@@ -1559,9 +1837,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv3_DrivingTrailerStack_r, 
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv3_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsRw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv3_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 }
 //N Lead
@@ -1569,8 +1847,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv3_NonControlMotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv3_Trailer;
-	1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv3_Trailer;
+	1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 	3: switch_Budd_Cosmopolitan_Liv3_Fw_railtype;
 }
@@ -1579,8 +1857,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv3_NonControlMotorStack_r,
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv3_Trailer;
-	1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv3_Trailer;
+	1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 	3: switch_Budd_Cosmopolitan_Liv3_Rw_railtype;
 }
@@ -1589,8 +1867,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv3_TrailerStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv3_Trailer;
-    1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv3_Trailer;
+    1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 }
 
@@ -1737,7 +2015,7 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv3, 13243) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -1773,7 +2051,9 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv3, 13243) {
     graphics {
         default: sw_Budd_Cosmopolitan_Liv3_directioncheck;
         purchase: switch_Budd_Cosmopolitan_Liv3_PurchaseStack;
-        additional_text: string(STR_INFO_BUDD_COSMOPOLITAN);
+        power: switch_Budd_Cosmopolitan_Liv3_power_0;
+        visual_effect_and_powered: switch_Budd_Cosmopolitan_Liv3_effect_spawn_model_and_powered;
+        additional_text: switch_Budd_Cosmopolitan_Liv3_buy_menu_additional_text;
     }
     livery_override (Item_MU_Trailer){
         default                     : sw_Budd_Cosmopolitan_Liv3_revcheck ;
@@ -1786,19 +2066,51 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv3, 13243) {
 }
 
 //Budd_Cosmopolitan_Liv4
-spriteset(spriteset_Budd_Cosmopolitan_Liv4_purchase,   "gfx/Budd_Politan_Liv4.png") {template_purchase_88mu(7, 21)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv4_lead,   "gfx/Budd_Politan_Liv4.png") {template_8(7, 39)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv4_lead_r,   "gfx/Budd_Politan_Liv4.png") {template_8_r(7, 39)}
-spriteset(spriteset_Budd_Cosmopolitan_Liv4_Trailer,   "gfx/Budd_Politan_Liv4.png") {template_8_repeat(7, 69)}
+spriteset(spriteset_Budd_Politan_Liv4_purchase,   "gfx/Budd_Politan_Liv4.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_Budd_Politan_Liv4_lead,   "gfx/Budd_Politan_Liv4.png") {template_8(7, 39)}
+spriteset(spriteset_Budd_Politan_Liv4_lead_r,   "gfx/Budd_Politan_Liv4.png") {template_8_r(7, 39)}
+spriteset(spriteset_Budd_Politan_Liv4_Trailer,   "gfx/Budd_Politan_Liv4.png") {template_8_repeat(7, 69)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv4_power_1, tile_powers_railtype("OHLE_AC")) {
+            1: return 1280;
+        }
+        switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv4_power_0, tile_powers_railtype("SAA3")) {
+            1: return 1280;
+                return switch_Budd_Cosmopolitan_Liv4_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv4_effect_spawn_model_and_powered, [tile_powers_railtype("SAA3")]) {
+            1: return VISUAL_EFFECT_DISABLE;
+            return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, ENABLE_WAGON_POWER);
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv4_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE_AC)
+                    | (1280 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_3RAIL)
+                    | (1280 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_BUDD_COSMOPOLITAN));
+        }
 
 //Purchase Stack
 switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv4_PurchaseStack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv4_purchase;
-    1: spriteset_Budd_Cosmopolitan_Greebles_Purchase;
-	2: spriteset_Budd_Cosmopolitan_Panto_Purchase;
+    0: spriteset_Budd_Politan_Liv4_purchase;
+	1: spriteset_Budd_Politan_3RShoes_Purchase;
+    2: spriteset_Budd_Cosmopolitan_Greebles_Purchase;
+	3: spriteset_Budd_Cosmopolitan_Panto_Purchase;
 }
 
 //Pantograph Controls
@@ -1817,9 +2129,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv4_MotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv4_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsFw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv4_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 	4: switch_Budd_Cosmopolitan_Liv4_Fw_railtype;
 }
@@ -1828,9 +2140,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv4_MotorStack_r, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv4_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsRw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv4_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 	4: switch_Budd_Cosmopolitan_Liv4_Fw_railtype;
 }
@@ -1839,9 +2151,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv4_DrivingTrailerStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv4_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsFw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv4_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 }
 //D Rear
@@ -1849,9 +2161,9 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv4_DrivingTrailerStack_r, 
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv4_lead;
-	1: spriteset_Budd_Cosmopolitan_LightsRw;
-	2: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv4_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
     3: spriteset_Budd_Cosmopolitan_Greebles;
 }
 //N Lead
@@ -1859,8 +2171,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv4_NonControlMotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv4_Trailer;
-	1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv4_Trailer;
+	1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 	3: switch_Budd_Cosmopolitan_Liv4_Fw_railtype;
 }
@@ -1869,8 +2181,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv4_NonControlMotorStack_r,
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv4_Trailer;
-	1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv4_Trailer;
+	1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 	3: switch_Budd_Cosmopolitan_Liv4_Rw_railtype;
 }
@@ -1879,8 +2191,8 @@ switch (FEAT_TRAINS, SELF, switch_Budd_Cosmopolitan_Liv4_TrailerStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Budd_Cosmopolitan_Liv4_Trailer;
-    1: spriteset_Budd_Cosmopolitan_3RShoes;
+    0: spriteset_Budd_Politan_Liv4_Trailer;
+    1: spriteset_Budd_Politan_3RShoes;
     2: spriteset_Budd_Cosmopolitan_Greebles;
 }
 
@@ -2027,7 +2339,7 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv4, 13244) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                ALL_CLIMATES;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -2063,7 +2375,9 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv4, 13244) {
     graphics {
         default: sw_Budd_Cosmopolitan_Liv4_directioncheck;
         purchase: switch_Budd_Cosmopolitan_Liv4_PurchaseStack;
-        additional_text: string(STR_INFO_BUDD_COSMOPOLITAN);
+        power: switch_Budd_Cosmopolitan_Liv4_power_0;
+        visual_effect_and_powered: switch_Budd_Cosmopolitan_Liv4_effect_spawn_model_and_powered;
+        additional_text: switch_Budd_Cosmopolitan_Liv4_buy_menu_additional_text;
     }
     livery_override (Item_MU_Trailer){
         default                     : sw_Budd_Cosmopolitan_Liv4_revcheck ;
@@ -2072,5 +2386,542 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv4, 13244) {
         power                       : 640 ;
 		running_cost_factor: 43;
 
+    }
+}
+
+//MP54 3R Shoes
+spriteset(spriteset_PRR_MP54_3RShoes_Purchase,   "gfx/PRR_MP54_3RShoes.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_PRR_MP54_3RShoes,   "gfx/PRR_MP54_3RShoes.png") {template_8_repeat(7, 39)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_PRR_MP54_3R_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_PRR_MP54_Liv0_Purchase;
+    1: spriteset_PRR_MP54_3RShoes_Purchase;
+}
+
+//Sprite Stack
+switch (FEAT_TRAINS, SELF, switch_PRR_MP54_3R_Liv0_stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_PRR_MP54_Liv0;
+	1: spriteset_PRR_MP54_3RShoes;
+}
+
+
+item(FEAT_TRAINS, Item_PRR_MP54_3R_Liv0, 27040) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        SAA3;
+        running_cost_base:                RUNNING_COST_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_PRR_MP54_3R);
+        introduction_date:                date(1908,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        48 ton;
+        speed:                            65 mph;
+        power:                            600 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     9;
+        running_cost_factor:             110;
+        cargo_capacity:                  96/param_capacity_mod;
+        loading_speed: 20;
+
+//        variant_group: Item_PRR_MP54_3R_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_PRR_MP54_3R_Liv0_stack;
+        purchase: switch_PRR_MP54_3R_Liv0_PurchaseStack;
+        additional_text: string(STR_INFO_PRR_MP54_3R);
+		reverse_build_probability: return 50;
+}
+}
+
+//Budd_Metropolitan_Liv0
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv0_purchase;
+	1: spriteset_Budd_Politan_3RShoes_Purchase;
+}
+//Lead
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv0_LeadStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv0_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
+}
+//Rear
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv0_RearStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv0_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
+}
+
+//T
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv0_TrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv0_Trailer;
+    1: spriteset_Budd_Politan_3RShoes;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv0_position, position_in_consist_from_end){ // <- This code tells the game whether to use the cab or flipped cab, based on if they're right at the end or not
+    0:    switch_Budd_Metropolitan_Liv0_RearStack;
+    switch_Budd_Metropolitan_Liv0_LeadStack;
+}
+
+
+item(FEAT_TRAINS, Item_Budd_Metropolitan_Liv0, 27240) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        SAA3;
+        running_cost_base:                RUNNING_COST_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        dual_headed:                    1; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_BUDD_METROPOLITAN);
+        introduction_date:                date(1968,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        48 ton;
+        speed:                            100 mph;
+        power:                            1184 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     13;
+        running_cost_factor:             170;
+        cargo_capacity:                  140/param_capacity_mod;
+        loading_speed: 30;
+
+//        variant_group: Item_Budd_Metropolitan_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Budd_Metropolitan_Liv0_position;
+        purchase: switch_Budd_Metropolitan_Liv0_PurchaseStack;
+        additional_text: string(STR_INFO_BUDD_METROPOLITAN);
+}
+        livery_override (Item_MU_Trailer) { // <- Override the appearance and stats of Item_FAI_WAGON_MU_COACH when attached, to make it fit the MU's appearance and stats
+        default:                        switch_Budd_Metropolitan_Liv0_TrailerStack; // <- This tells the game that when attached, the livery_override wagon needs to use this sprite
+        length:                            8;
+        cargo_capacity:                   (140/param_capacity_mod);
+        power:                            592;
+		running_cost_factor: 42;
+    }
+}
+
+//Budd_Metropolitan_Liv1
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv1_purchase;
+	1: spriteset_Budd_Politan_3RShoes_Purchase;
+}
+//Lead
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv1_LeadStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv1_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
+}
+//Rear
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv1_RearStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv1_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
+}
+
+//T
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv1_TrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv1_Trailer;
+    1: spriteset_Budd_Politan_3RShoes;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv1_position, position_in_consist_from_end){ // <- This code tells the game whether to use the cab or flipped cab, based on if they're right at the end or not
+    0:    switch_Budd_Metropolitan_Liv1_RearStack;
+    switch_Budd_Metropolitan_Liv1_LeadStack;
+}
+
+
+item(FEAT_TRAINS, Item_Budd_Metropolitan_Liv1, 27241) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        SAA3;
+        running_cost_base:                RUNNING_COST_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        dual_headed:                    1; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_BUDD_METROPOLITAN);
+        introduction_date:                date(1968,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        48 ton;
+        speed:                            100 mph;
+        power:                            1184 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     13;
+        running_cost_factor:             170;
+        cargo_capacity:                  140/param_capacity_mod;
+        loading_speed: 30;
+
+        variant_group: Item_Budd_Metropolitan_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Budd_Metropolitan_Liv1_position;
+        purchase: switch_Budd_Metropolitan_Liv1_PurchaseStack;
+        additional_text: string(STR_INFO_BUDD_METROPOLITAN);
+}
+        livery_override (Item_MU_Trailer) { // <- Override the appearance and stats of Item_FAI_WAGON_MU_COACH when attached, to make it fit the MU's appearance and stats
+        default:                        switch_Budd_Metropolitan_Liv1_TrailerStack; // <- This tells the game that when attached, the livery_override wagon needs to use this sprite
+        length:                            8;
+        cargo_capacity:                   (140/param_capacity_mod);
+        power:                            592;
+		running_cost_factor: 42;
+    }
+}
+
+//Budd_Metropolitan_Liv2
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv2_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv2_purchase;
+	1: spriteset_Budd_Politan_3RShoes_Purchase;
+}
+//Lead
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv2_LeadStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv2_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
+}
+//Rear
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv2_RearStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv2_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
+}
+
+//T
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv2_TrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv2_Trailer;
+    1: spriteset_Budd_Politan_3RShoes;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv2_position, position_in_consist_from_end){ // <- This code tells the game whether to use the cab or flipped cab, based on if they're right at the end or not
+    0:    switch_Budd_Metropolitan_Liv2_RearStack;
+    switch_Budd_Metropolitan_Liv2_LeadStack;
+}
+
+
+item(FEAT_TRAINS, Item_Budd_Metropolitan_Liv2, 27242) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        SAA3;
+        running_cost_base:                RUNNING_COST_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        dual_headed:                    1; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_BUDD_METROPOLITAN);
+        introduction_date:                date(1968,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        48 ton;
+        speed:                            100 mph;
+        power:                            1184 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     13;
+        running_cost_factor:             170;
+        cargo_capacity:                  140/param_capacity_mod;
+        loading_speed: 30;
+
+        variant_group: Item_Budd_Metropolitan_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Budd_Metropolitan_Liv2_position;
+        purchase: switch_Budd_Metropolitan_Liv2_PurchaseStack;
+        additional_text: string(STR_INFO_BUDD_METROPOLITAN);
+}
+        livery_override (Item_MU_Trailer) { // <- Override the appearance and stats of Item_FAI_WAGON_MU_COACH when attached, to make it fit the MU's appearance and stats
+        default:                        switch_Budd_Metropolitan_Liv2_TrailerStack; // <- This tells the game that when attached, the livery_override wagon needs to use this sprite
+        length:                            8;
+        cargo_capacity:                   (140/param_capacity_mod);
+        power:                            592;
+		running_cost_factor: 42;
+    }
+}
+
+//Budd_Metropolitan_Liv3
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv3_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv3_purchase;
+	1: spriteset_Budd_Politan_3RShoes_Purchase;
+}
+//Lead
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv3_LeadStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv3_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
+}
+//Rear
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv3_RearStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv3_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
+}
+
+//T
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv3_TrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv3_Trailer;
+    1: spriteset_Budd_Politan_3RShoes;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv3_position, position_in_consist_from_end){ // <- This code tells the game whether to use the cab or flipped cab, based on if they're right at the end or not
+    0:    switch_Budd_Metropolitan_Liv3_RearStack;
+    switch_Budd_Metropolitan_Liv3_LeadStack;
+}
+
+
+item(FEAT_TRAINS, Item_Budd_Metropolitan_Liv3, 27243) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        SAA3;
+        running_cost_base:                RUNNING_COST_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        dual_headed:                    1; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_BUDD_METROPOLITAN);
+        introduction_date:                date(1968,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        48 ton;
+        speed:                            100 mph;
+        power:                            1184 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     13;
+        running_cost_factor:             170;
+        cargo_capacity:                  140/param_capacity_mod;
+        loading_speed: 30;
+
+        variant_group: Item_Budd_Metropolitan_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Budd_Metropolitan_Liv3_position;
+        purchase: switch_Budd_Metropolitan_Liv3_PurchaseStack;
+        additional_text: string(STR_INFO_BUDD_METROPOLITAN);
+}
+        livery_override (Item_MU_Trailer) { // <- Override the appearance and stats of Item_FAI_WAGON_MU_COACH when attached, to make it fit the MU's appearance and stats
+        default:                        switch_Budd_Metropolitan_Liv3_TrailerStack; // <- This tells the game that when attached, the livery_override wagon needs to use this sprite
+        length:                            8;
+        cargo_capacity:                   (140/param_capacity_mod);
+        power:                            592;
+		running_cost_factor: 42;
+    }
+}
+
+//Budd_Metropolitan_Liv4
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv4_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv4_purchase;
+	1: spriteset_Budd_Politan_3RShoes_Purchase;
+}
+//Lead
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv4_LeadStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv4_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
+}
+//Rear
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv4_RearStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv4_lead;
+	1: spriteset_Budd_Politan_LightsFw;
+	2: spriteset_Budd_Politan_3RShoes;
+}
+
+//T
+switch (FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv4_TrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Budd_Politan_Liv4_Trailer;
+    1: spriteset_Budd_Politan_3RShoes;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Budd_Metropolitan_Liv4_position, position_in_consist_from_end){ // <- This code tells the game whether to use the cab or flipped cab, based on if they're right at the end or not
+    0:    switch_Budd_Metropolitan_Liv4_RearStack;
+    switch_Budd_Metropolitan_Liv4_LeadStack;
+}
+
+
+item(FEAT_TRAINS, Item_Budd_Metropolitan_Liv4, 27244) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        SAA3;
+        running_cost_base:                RUNNING_COST_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        dual_headed:                    1; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_BUDD_METROPOLITAN);
+        introduction_date:                date(1968,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        48 ton;
+        speed:                            100 mph;
+        power:                            1184 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     13;
+        running_cost_factor:             170;
+        cargo_capacity:                  140/param_capacity_mod;
+        loading_speed: 30;
+
+        variant_group: Item_Budd_Metropolitan_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Budd_Metropolitan_Liv4_position;
+        purchase: switch_Budd_Metropolitan_Liv4_PurchaseStack;
+        additional_text: string(STR_INFO_BUDD_METROPOLITAN);
+}
+        livery_override (Item_MU_Trailer) { // <- Override the appearance and stats of Item_FAI_WAGON_MU_COACH when attached, to make it fit the MU's appearance and stats
+        default:                        switch_Budd_Metropolitan_Liv4_TrailerStack; // <- This tells the game that when attached, the livery_override wagon needs to use this sprite
+        length:                            8;
+        cargo_capacity:                   (140/param_capacity_mod);
+        power:                            592;
+		running_cost_factor: 42;
     }
 }
