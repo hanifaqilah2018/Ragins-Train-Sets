@@ -88,9 +88,6 @@ STR_INFO_JERSEYARROW:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-U
 STR_NAME_BUDD_COSMOPOLITAN:Budd Cosmopolitan
 STR_INFO_BUDD_COSMOPOLITAN:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
 
-STR_NAME_KAWASAKI_M8:Kawasaki M8
-STR_INFO_KAWASAKI_M8:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
-
 STR_NAME_SILVERLINERIV_RM:GE Silverliner IV (Single Car)
 STR_NAME_SILVERLINERIV_MU:GE Silverliner IV (Multiple Unit)
 STR_INFO_SILVERLINERIV_RM:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
@@ -101,8 +98,11 @@ STR_NAME_JERSEYARROWII_MU:GE Arrow II (Multiple Unit)
 STR_INFO_JERSEYARROWII_RM:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
 STR_INFO_JERSEYARROWII_MU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
 
-STR_NAME_MR90:Bombardier MR-90
-STR_INFO_MR90:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
+STR_NAME_BOMBARDIER_MR90:Bombardier MR-90
+STR_INFO_BOMBARDIER_MR90:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
+
+STR_NAME_KAWASAKI_M8:Kawasaki M8
+STR_INFO_KAWASAKI_M8:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
 
 
 STR_NAME_GALLERY2000:Budd-Comeng Highliner 2000
@@ -123,7 +123,10 @@ STR_INFO_SUPERLINEREMU:{BLACK}Role:{GOLD}Intercity{}{BLACK}Formation:{GOLD}Multi
 
 
 STR_NAME_BUDD_METROLINERI:Budd Metroliner I
-STR_INFO_BUDD_METROLINERI:{BLACK}Role:{GOLD}Express{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_BUDD_METROLINERI:{BLACK}Role:{GOLD}Express{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
+
+STR_NAME_BUDD_METROLINERII:Budd Metroliner II
+STR_INFO_BUDD_METROLINERII:{BLACK}Role:{GOLD}Express{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_ADTRANZ_X2000:Adtranz X2000
 STR_INFO_ADTRANZ_X2000:{BLACK}Role:{GOLD}Express Service{}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{LTBLUE}Overhead Line{}{BLACK}Special:{GOLD}Tilt train (20% faster through curves)
@@ -131,6 +134,9 @@ STR_INFO_ADTRANZ_X2000:{BLACK}Role:{GOLD}Express Service{}{BLACK}Formation:{GOLD
 
 STR_NAME_PRR_MP54_3R:PRR MP54
 STR_INFO_PRR_MP54_3R:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {GREEN}Third Rail
+
+STR_NAME_ACMU:SLCC-Pullman ACMU
+STR_INFO_ACMU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {GREEN}Third Rail
 
 STR_NAME_BUDD_METROPOLITAN:Budd Metropolitan
 STR_INFO_BUDD_METROPOLITAN:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {GREEN}Third Rail
