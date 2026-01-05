@@ -422,6 +422,9 @@ STR_INFO_EMD_JF6C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standar
 
 
 
+STR_NAME_GE_EP6DP:GE EP6DP
+STR_INFO_GE_EP6DP:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line Electro-Diesel
+
 STR_NAME_EMD_DP32AC:EMD DP32AC
 STR_INFO_EMD_DP32AC:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line Electro-Diesel
 

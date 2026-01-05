@@ -4844,7 +4844,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv26_position, position_in_consist) 
   switch_EMD_F40PH_Liv26_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv26, 6566) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv26, 6576) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4905,7 +4905,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv27_position, position_in_consist) 
   switch_EMD_F40PH_Liv27_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv27, 6567) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv27, 6577) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4965,7 +4965,7 @@ switch(FEAT_TRAINS, SELF, switch_EMD_F40PH_Liv28_position, position_in_consist) 
   switch_EMD_F40PH_Liv28_rear;
 }
 
-item(FEAT_TRAINS, Item_EMD_F40PH_Liv28, 6568) {
+item(FEAT_TRAINS, Item_EMD_F40PH_Liv28, 6578) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -17699,6 +17699,121 @@ item(FEAT_TRAINS, Item_GE_LittleJoe_Liv0, 2400) {
         articulated_part: switch_GE_LittleJoe_Liv0_articulated_part;       
 }
 }
+
+sort(FEAT_TRAINS, [Item_GE_LittleJoe_Liv0, Item_GE_EP6DP_Liv0]);
+
+spriteset(spriteset_GE_EP6DP_PantoUp,   "gfx/GE_EP6DP_PantoUp.png") {template_10(7, 39)}
+spriteset(spriteset_GE_EP6DP_PantoDown,   "gfx/GE_EP6DP_PantoDown.png") {template_10(7, 39)}
+
+//GE_EP6DP_Liv0
+spriteset(spriteset_GE_EP6DP_Liv0_Purchase,   "gfx/GE_EP6DP_Liv0.png") {template_purchase_9(7, 21)}
+spriteset(spriteset_GE_EP6DP_Liv0,   "gfx/GE_EP6DP_Liv0.png") {template_9_repeat(7, 39)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_GE_EP6DP_Liv0_power_1, tile_powers_railtype("RAIL")) {
+            1: return 1200;
+        }
+        switch (FEAT_TRAINS, SELF, switch_GE_EP6DP_Liv0_power_0, tile_powers_railtype("OHLE_AC")) {
+            1: return 4500;
+                return switch_GE_EP6DP_Liv0_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_GE_EP6DP_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("OHLE_AC")]) {
+            1: return VISUAL_EFFECT_ELECTRIC;
+            return VISUAL_EFFECT_DIESEL;
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_GE_EP6DP_Liv0_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_DIESEL)
+                    | (1200 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE_AC)
+                    | (4500 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_GE_EP6DP));
+        }
+
+switch(FEAT_TRAINS, SELF, switch_GE_EP6DP_Liv0_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_GE_EP6DP_PantoDown;
+ 1: spriteset_GE_EP6DP_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_EP6DP_Liv0, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_EP6DP_Liv0;
+    1: switch_GE_EP6DP_Liv0_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_EP6DP_Liv0_position, position_in_articulated_veh) {
+ 0: switch_GE_EP6DP_Liv0;
+ 1: spriteset_8_Blank;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_EP6DP_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 4;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_GE_EP6DP_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_GE_EP6DP_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+item(FEAT_TRAINS, Item_GE_EP6DP_Liv0, 3000) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_GE_EP6DP);
+        introduction_date:                date(1957,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+//        length:                            8;
+
+        weight:                        247 ton;
+        speed:                            70 mph;
+        power:                            1000 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     41;
+        running_cost_factor:             255;
+        cargo_capacity:                  0;
+
+//        variant_group: Item_GE_EP6DP_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_GE_EP6DP_Liv0_position;
+//		sound_effect: switch_EMD_12_710;
+        purchase: spriteset_GE_EP6DP_Liv0_Purchase;
+		power: switch_GE_EP6DP_Liv0_power_0;
+		visual_effect_and_powered: switch_GE_EP6DP_Liv0_effect_spawn_model_and_powered;
+        additional_text: switch_GE_EP6DP_Liv0_buy_menu_additional_text;
+        length: switch_GE_EP6DP_Liv0_length;
+		articulated_part: switch_GE_EP6DP_Liv0_articulated_part;
+}
+}
+
 
 spriteset(spriteset_EMD_DP32AC_PantoUp,   "gfx/EMD_DP32AC_PantoUp.png") {template_8(7, 39)}
 spriteset(spriteset_EMD_DP32AC_PantoUp_Fwr,   "gfx/EMD_DP32AC_PantoUp.png") {template_8_r(7, 39)}
