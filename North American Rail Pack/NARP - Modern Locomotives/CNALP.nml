@@ -16769,7 +16769,7 @@ switch(FEAT_TRAINS, SELF, switch_GE_Z1A_Liv0_position, vehicle_is_flipped) {
  1: switch_GE_Z1A_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_GE_Z1A_Liv0, 43200) {
+item(FEAT_TRAINS, Item_GE_Z1A_Liv0, 43150) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;

@@ -607,6 +607,104 @@ item (FEAT_TRAINS, Item_MU_Trailer, 0) {
 }
 }
 
+//Budd _Budd_RDC
+spriteset(spriteset_Budd_RDC_Liv0_Purchase,   "gfx/Budd_RDC_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Budd_RDC_Liv0,   "gfx/Budd_RDC_Liv0.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
+
+item(FEAT_TRAINS, Item_Budd_RDC_Liv0, 5120) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                ALL_CLIMATES;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_DIESEL;
+
+        name:                            string(STR_NAME_BUDD_RDC);
+        introduction_date:                date(1949,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        52 ton;
+        speed:                            85 mph;
+        power:                            550 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     5;
+        running_cost_factor:             64;
+        cargo_capacity:                  93/param_capacity_mod;
+        loading_speed: 20;
+
+        variant_group: Item_Budd_RDC_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: spriteset_Budd_RDC_Liv0;
+        purchase: spriteset_Budd_RDC_Liv0_Purchase;
+        additional_text: string(STR_INFO_BUDD_RDC);
+		reverse_build_probability: return 50;
+}
+}
+
+//Budd _Budd_SPV2000
+spriteset(spriteset_Budd_SPV2000_Liv0_Purchase,   "gfx/Budd_SPV2000_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Budd_SPV2000_Liv0,   "gfx/Budd_SPV2000_Liv0.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
+
+item(FEAT_TRAINS, Item_Budd_SPV2000_Liv0, 5260) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                ALL_CLIMATES;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_DIESEL;
+
+        name:                            string(STR_NAME_BUDD_SPV2000);
+        introduction_date:                date(1978,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        58	 ton;
+        speed:                            120 mph;
+        power:                            720 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     6;
+        running_cost_factor:             69;
+        cargo_capacity:                  100/param_capacity_mod;
+        loading_speed: 20;
+
+        variant_group: Item_Budd_SPV2000_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: spriteset_Budd_SPV2000_Liv0;
+        purchase: spriteset_Budd_SPV2000_Liv0_Purchase;
+        additional_text: string(STR_INFO_BUDD_SPV2000);
+		reverse_build_probability: return 50;
+}
+}
+
 //Pantographs
 spriteset(spriteset_PRR_MP54_PantoUp,   "gfx/PRR_MP54_PantoUp.png") {template_8(7, 39)}
 spriteset(spriteset_PRR_MP54_PantoDown,   "gfx/PRR_MP54_PantoDown.png") {template_8(7, 39)}
@@ -2392,6 +2490,91 @@ item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv4, 13244) {
 		running_cost_factor: 43;
 
     }
+}
+
+//Pantographs
+spriteset(spriteset_NipponSharyo_EMU_PantoUp,   "gfx/NipponSharyo_EMU_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_NipponSharyo_EMU_PantoUp_r,   "gfx/NipponSharyo_EMU_Pantographs.png") {template_8_r(7, 69)}
+spriteset(spriteset_NipponSharyo_EMU_PantoDown,   "gfx/NipponSharyo_EMU_Pantographs.png") {template_8_repeat(7, 39)}
+
+//NipponSharyo_EMU_Liv0
+spriteset(spriteset_NipponSharyo_EMU_Liv0_Purchase,   "gfx/NipponSharyo_EMU_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_NipponSharyo_EMU_Liv0,   "gfx/NipponSharyo_EMU_Liv0.png") {template_8_repeat(7, 39)}
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_NipponSharyo_EMU_Liv0_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_NipponSharyo_EMU_PantoDown;
+ 1: spriteset_NipponSharyo_EMU_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NipponSharyo_EMU_Liv0_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NipponSharyo_EMU_Liv0;
+    1: switch_NipponSharyo_EMU_Liv0_Fw_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NipponSharyo_EMU_Liv0_r_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_NipponSharyo_EMU_PantoDown;
+ 1: spriteset_NipponSharyo_EMU_PantoUp_r;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NipponSharyo_EMU_Liv0_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NipponSharyo_EMU_Liv0;
+    1: switch_NipponSharyo_EMU_Liv0_r_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NipponSharyo_EMU_Liv0_position, vehicle_is_flipped) {
+ 0: switch_NipponSharyo_EMU_Liv0_Fw;
+ 1: switch_NipponSharyo_EMU_Liv0_r;
+}
+
+item(FEAT_TRAINS, Item_NipponSharyo_EMU_Liv0, 13440) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        OHLE_DC;
+        running_cost_base:                RUNNING_COST_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_NIPPONSHARYO_EMU);
+        introduction_date:                date(1982,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        54 ton;
+        speed:                            80 mph;
+        power:                            800 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     13;
+        running_cost_factor:             190;
+        cargo_capacity:                  125/param_capacity_mod;
+        loading_speed: 20;
+
+//        variant_group: Item_NipponSharyo_EMU_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_NipponSharyo_EMU_Liv0_position;
+        purchase: spriteset_NipponSharyo_EMU_Liv0_Purchase;
+        additional_text: string(STR_INFO_NIPPONSHARYO_EMU);
+		reverse_build_probability: return 50;
+}
 }
 
 //Pantographs

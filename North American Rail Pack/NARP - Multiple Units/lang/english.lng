@@ -45,8 +45,11 @@ STR_POWER_SOURCE_3RAIL:{GREEN}Third Rail
 STR_MU_TRAILER:Multiple Unit Trailer
 STR_MU_TRAILER_INFO:{GOLD}Attach this to a another multiple unit to make it longer
 
-STR_NAME_RDC:Budd RDC
-STR_INFO_RDC:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Power:{BROWN}Diesel {}{GOLD}The ultimate in friend shaped trains
+STR_NAME_BUDD_RDC:Budd RDC
+STR_INFO_BUDD_RDC:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BROWN}Diesel
+
+STR_NAME_BUDD_SPV2000:Budd SPV-2000
+STR_INFO_BUDD_SPV2000:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 
 
@@ -97,6 +100,9 @@ STR_NAME_JERSEYARROWII_RM:GE Arrow II (Single Car)
 STR_NAME_JERSEYARROWII_MU:GE Arrow II (Multiple Unit)
 STR_INFO_JERSEYARROWII_RM:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
 STR_INFO_JERSEYARROWII_MU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
+
+STR_NAME_NIPPONSHARYO_EMU:Nippon Sharyo EMU
+STR_INFO_NIPPONSHARYO_EMU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
 STR_NAME_BOMBARDIER_MR90:Bombardier MR-90
 STR_INFO_BOMBARDIER_MR90:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
