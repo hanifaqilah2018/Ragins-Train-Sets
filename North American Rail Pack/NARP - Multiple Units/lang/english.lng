@@ -127,6 +127,9 @@ STR_INFO_GALLERY2000:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple
 STR_NAME_PORTLINERI:Comeng-Tokyu PortLiner I
 STR_INFO_PORTLINERI:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
 
+STR_NAME_HIGHLINERII:Nippon Sharyo Highliner II
+STR_INFO_HIGHLINERII:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
+
 
 STR_NAME_BOMBARDIERRAILSTAR:Bombardier Railstar
 STR_INFO_BOMBARDIERRAILSTAR:{BLACK}Role:{GOLD}Intercity{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
