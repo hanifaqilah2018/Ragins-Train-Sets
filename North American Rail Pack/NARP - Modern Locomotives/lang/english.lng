@@ -412,10 +412,10 @@ STR_NAME_PRR_P5A:Altoona P5A
 STR_INFO_PRR_P5A:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_PRR_DD2:Juniata DD2
-STR_INFO_PRR_DD2:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
+STR_INFO_PRR_DD2:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
 STR_NAME_GE_LITTLEJOE:GE Little Joe
-STR_INFO_GE_LITTLEJOE:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
+STR_INFO_GE_LITTLEJOE:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
 STR_NAME_EMD_JF6C:EMD JF6C
 STR_INFO_EMD_JF6C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
