@@ -42,7 +42,7 @@ STR_POWER_SOURCE_OHLE_DC: {BLUE}DC Overhead Line
 STR_POWER_SOURCE_OHLE_AC: {RED}AC Overhead Line
 STR_POWER_SOURCE_3RAIL:{GREEN}Third Rail
 
-STR_MU_TRAILER:Multiple Unit Trailer
+STR_MU_TRAILER:MU Car (NARP-Multiple Units)
 STR_MU_TRAILER_INFO:{GOLD}Attach this to a another multiple unit to make it longer
 
 STR_NAME_BUDD_RDC:Budd RDC
@@ -64,8 +64,14 @@ STR_INFO_BUDDCOMENG_XPT:{BLACK}Role:{GOLD}Express {}{BLACK}Formation:{GOLD}Push-
 
 
 
+STR_NAME_CEMU1:Commuter Car
+STR_INFO_CEMU1:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
+
 STR_NAME_PRR_MP54_OHLE:PRR MP54E
 STR_INFO_PRR_MP54_OHLE:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
+
+STR_NAME_PULLMAN_WICKERLINER:Pullman Wickerliner
+STR_INFO_PULLMAN_WICKERLINER:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
 STR_NAME_LACKAWANNAEMU:Pullman Lackawanna EMU
 STR_INFO_LACKAWANNAEMU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
@@ -73,8 +79,8 @@ STR_INFO_LACKAWANNAEMU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multip
 STR_NAME_BLUEBIRDEMU:Bethlehem Steel Blueliner EMU
 STR_INFO_BLUEBIRDEMU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
 
-STR_NAME_CCANDFEMU:CC&F EMU
-STR_INFO_CCANDFEMU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
+STR_NAME_CCF_EMU:CC&F EMU
+STR_INFO_CCF_EMU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
 STR_NAME_WASHBOARDEMU:Pullman Washboard EMU
 STR_INFO_WASHBOARDEMU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
@@ -110,6 +116,10 @@ STR_INFO_BOMBARDIER_MR90:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Mult
 STR_NAME_KAWASAKI_M8:Kawasaki M8
 STR_INFO_KAWASAKI_M8:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
 
+
+
+STR_NAME_HIGHLINERI:SLCC Highliner I
+STR_INFO_HIGHLINERI:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
 STR_NAME_GALLERY2000:Budd-Comeng Highliner 2000
 STR_INFO_GALLERY2000:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
