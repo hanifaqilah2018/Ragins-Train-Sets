@@ -30,6 +30,13 @@ STR_PARAM_DESC_PROPOSALDISABLE:Enable/disable Proposed trains (trains that were 
 STR_PARAM_NAME_FICTIONALDISABLE:Disable Fictional Trains
 STR_PARAM_DESC_FICTIONALDISABLE:Enable/disable Fictional trains (trains that are entirely fictional, and are only included for gameplay balance).
 
+STR_PARAM_NAME_COUPLERS:What Coupers should trains use?
+STR_PARAM_DESC_COUPLERS:IRL trains in Australia/New Zealand started with Buffer and Chain Couplers, but transitioned to knuckles over time. What should this set do with them? {}{}{WHITE}Buffers:{BLACK} Buffer Couplers only {}{WHITE}Knuckles:{BLACK} Knuckle couplers only {}{WHITE}Transition:{BLACK} Transition from Buffers to Knuckles between 1945 & 1960 {}{WHITE}Realistic:{BLACK} Locomotive couplers change based on when its IRL operater changed couplers. {}{GOLD}Don't forget to change this setting in the wagon pack too!
+STR_PARAM_COUPLERS_BUFFERS:Buffers Only
+STR_PARAM_COUPLERS_KNUCKLES:Knuckles Only
+STR_PARAM_TRANSITION:Transition
+STR_PARAM_REALISTIC:Realistic
+
 STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR:{STRING}{}{STRING}
 STR_POWER_BY_POWER_SOURCE_TWO_SOURCES:{BLACK}Power on {STRING}: {GOLD}{POWER} {}{BLACK}Power on {STRING}: {GOLD}{POWER}
 STR_POWER_SOURCE_DIESEL: {BROWN}Diesel
@@ -194,7 +201,7 @@ STR_NAME_EE_LCLASS:English-Electric L Class
 STR_INFO_EE_LCLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}VR L Class
 
 STR_NAME_METROVICK_46CLASS:Metro-Vick 46 Class
-STR_INFO_METROVICK_46CLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}NSW 46 Class {}{}{GOLD}King of the Mountain
+STR_INFO_METROVICK_46CLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}NSW 46 Class {}{}{GOLD}King of the Mountain
 
 STR_NAME_CLYDE_JE28C:Clyde JE28C
 STR_INFO_CLYDE_JE28C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}Proposed Clyde locomotive for NSW PTC

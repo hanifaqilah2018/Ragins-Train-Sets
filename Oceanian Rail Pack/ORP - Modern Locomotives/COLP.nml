@@ -88,7 +88,24 @@ grf{
      def_value: 0;
     }
     }
-	}
+//ProposalDisable
+	param {
+    param_Couplers {
+     type: int;
+            name: string(STR_PARAM_NAME_COUPLERS);
+            desc: string(STR_PARAM_DESC_COUPLERS);
+            min_value: 0;
+            max_value: 3;
+            def_value: 2;
+            names: {
+                        0: string(STR_PARAM_COUPLERS_BUFFERS);
+                        1: string(STR_PARAM_COUPLERS_KNUCKLES);
+                        2: string(STR_PARAM_TRANSITION);
+                        3: string(STR_PARAM_REALISTIC);
+            };
+        }
+    }
+  }
 
 railtypetable {
     RAIL, SAA3: [ MTRO, SBA3, SCA3, SDA3, "3RDR", "3RDC", MTRO, ELRL], ELRL, OHLE_DC: [SAAD, SAAE, ELRL], OHLE_AC: [SAAA, SAAE, ELRL], TR_UNIVERSAL: [_AAE, RAIL], BG_RAIL: [BAAN, RAIL], BG_RAIL_ONLY: [BAAN], NG_RAIL: [NAAN, RAIL], NG_RAIL_ONLY: [NAAN],
@@ -609,23 +626,575 @@ template template_10_repeat(x, y) {
     [ x+78,     y,        26,        22,        -4,            -11, ANIM]
 }
 
+//7 Long Couplers
+
+spriteset(spriteset_Knuckles_7_Repeat_Purchase,   "gfx/Couplers_7_Repeat.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_Knuckles_7_Repeat,   "gfx/Couplers_7_Repeat.png") {template_7_repeat(7, 39)}
+
+spriteset(spriteset_Buffers_7_Repeat_Purchase,   "gfx/Couplers_7_Repeat.png") {template_purchase_7(187, 21)}
+spriteset(spriteset_Buffers_7_Repeat,   "gfx/Couplers_7_Repeat.png") {template_7_repeat(187, 39)}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Purchase_Transition, current_year) {
+    0..1945: spriteset_Buffers_7_Repeat_Purchase;
+	1945..2100: spriteset_Knuckles_7_Repeat_Purchase;
+  return spriteset_Knuckles_7_Repeat_Purchase;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Purchase_Realistic_QLD, current_year) {
+    0..1970: spriteset_Buffers_7_Repeat_Purchase;
+	1970..2100: spriteset_Knuckles_7_Repeat_Purchase;
+  return spriteset_Knuckles_7_Repeat_Purchase;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Purchase_Realistic_NSW, current_year) {
+    0..1945: spriteset_Buffers_7_Repeat_Purchase;
+	1945..2100: spriteset_Knuckles_7_Repeat_Purchase;
+  return spriteset_Knuckles_7_Repeat_Purchase;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Purchase_Realistic_VIC, current_year) {
+    0..1945: spriteset_Buffers_7_Repeat_Purchase;
+	1945..2100: spriteset_Knuckles_7_Repeat_Purchase;
+  return spriteset_Knuckles_7_Repeat_Purchase;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Purchase_Realistic_TAS, current_year) {
+    0..1970: spriteset_Buffers_7_Repeat_Purchase;
+	1970..2100: spriteset_Knuckles_7_Repeat_Purchase;
+  return spriteset_Knuckles_7_Repeat_Purchase;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Purchase_Realistic_SA, current_year) {
+    0..1945: spriteset_Buffers_7_Repeat_Purchase;
+	1945..2100: spriteset_Knuckles_7_Repeat_Purchase;
+  return spriteset_Knuckles_7_Repeat_Purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_NZ_Purchase, param_Couplers) {0:spriteset_Buffers_7_Repeat_Purchase; 1:spriteset_Knuckles_7_Repeat_Purchase; 2:switch_Couplers_7_Repeat_Purchase_Transition; 3:spriteset_Knuckles_7_Repeat_Purchase;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_QLD_Purchase, param_Couplers) {0:spriteset_Buffers_7_Repeat_Purchase; 1:spriteset_Knuckles_7_Repeat_Purchase; 2:switch_Couplers_7_Repeat_Purchase_Transition; 3:switch_Couplers_7_Repeat_Purchase_Realistic_QLD;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_NSW_Purchase, param_Couplers) {0:spriteset_Buffers_7_Repeat_Purchase; 1:spriteset_Knuckles_7_Repeat_Purchase; 2:switch_Couplers_7_Repeat_Purchase_Transition; 3:switch_Couplers_7_Repeat_Purchase_Realistic_NSW;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_VIC_Purchase, param_Couplers) {0:spriteset_Buffers_7_Repeat_Purchase; 1:spriteset_Knuckles_7_Repeat_Purchase; 2:switch_Couplers_7_Repeat_Purchase_Transition; 3:switch_Couplers_7_Repeat_Purchase_Realistic_VIC;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_TAS_Purchase, param_Couplers) {0:spriteset_Buffers_7_Repeat_Purchase; 1:spriteset_Knuckles_7_Repeat_Purchase; 2:switch_Couplers_7_Repeat_Purchase_Transition; 3:switch_Couplers_7_Repeat_Purchase_Realistic_TAS;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_SA_Purchase, param_Couplers) {0:spriteset_Buffers_7_Repeat_Purchase; 1:spriteset_Knuckles_7_Repeat_Purchase; 2:switch_Couplers_7_Repeat_Purchase_Transition; 3:switch_Couplers_7_Repeat_Purchase_Realistic_SA;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_WA_Purchase, param_Couplers) {0:spriteset_Buffers_7_Repeat_Purchase; 1:spriteset_Knuckles_7_Repeat_Purchase; 2:switch_Couplers_7_Repeat_Purchase_Transition; 3:spriteset_Knuckles_7_Repeat_Purchase;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_NAT_Purchase, param_Couplers) {0:spriteset_Buffers_7_Repeat_Purchase; 1:spriteset_Knuckles_7_Repeat_Purchase; 2:switch_Couplers_7_Repeat_Purchase_Transition; 3:spriteset_Knuckles_7_Repeat_Purchase;}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_Random1){
+    1 : spriteset_Knuckles_7_Repeat;
+    3 : spriteset_Buffers_7_Repeat;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_Random2){
+    1 : spriteset_Knuckles_7_Repeat;
+    1 : spriteset_Buffers_7_Repeat;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_Random3){
+    3 : spriteset_Knuckles_7_Repeat;
+    1 : spriteset_Buffers_7_Repeat;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Transition, current_year) {
+    0..1945: spriteset_Buffers_7_Repeat;
+	1945..1950: switch_Couplers_7_Repeat_Random1;
+	1950..1955: switch_Couplers_7_Repeat_Random2;
+	1955..1960: switch_Couplers_7_Repeat_Random3;
+	1960..2100: spriteset_Knuckles_7_Repeat;
+  return spriteset_Knuckles_7_Repeat;
+}
+
+//NZ
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Realistic_QLD, current_year) {
+    0..1970: spriteset_Buffers_7_Repeat;
+	1970..1975: switch_Couplers_7_Repeat_Random1;
+	1975..1980: switch_Couplers_7_Repeat_Random2;
+	1985..1990: switch_Couplers_7_Repeat_Random3;
+	1990..2100: spriteset_Knuckles_7_Repeat;
+  return spriteset_Knuckles_7_Repeat;
+}
+
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Realistic_NSW, current_year) {
+    0..1945: spriteset_Buffers_7_Repeat;
+	1945..1950: switch_Couplers_7_Repeat_Random1;
+	1950..1955: switch_Couplers_7_Repeat_Random2;
+	1955..1960: switch_Couplers_7_Repeat_Random3;
+	1960..2100: spriteset_Knuckles_7_Repeat;
+  return spriteset_Knuckles_7_Repeat;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Realistic_VIC, current_year) {
+    0..1945: spriteset_Buffers_7_Repeat;
+	1945..1946: switch_Couplers_7_Repeat_Random1;
+	1946..1948: switch_Couplers_7_Repeat_Random2;
+	1948..1950: switch_Couplers_7_Repeat_Random3;
+	1950..2100: spriteset_Knuckles_7_Repeat;
+  return spriteset_Knuckles_7_Repeat;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Realistic_TAS, current_year) {
+    0..1970: spriteset_Buffers_7_Repeat;
+	1970..1975: switch_Couplers_7_Repeat_Random1;
+	1975..1980: switch_Couplers_7_Repeat_Random2;
+	1985..1990: switch_Couplers_7_Repeat_Random3;
+	1990..2100: spriteset_Knuckles_7_Repeat;
+  return spriteset_Knuckles_7_Repeat;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Realistic_SA, current_year) {
+    0..1945: spriteset_Buffers_7_Repeat;
+	1945..1946: switch_Couplers_7_Repeat_Random1;
+	1946..1948: switch_Couplers_7_Repeat_Random2;
+	1948..1950: switch_Couplers_7_Repeat_Random3;
+	1950..2100: spriteset_Knuckles_7_Repeat;
+  return spriteset_Knuckles_7_Repeat;
+}
+
+//WA
+
+//NAT
+
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_NZ, param_Couplers) {0:spriteset_Buffers_7_Repeat; 1:spriteset_Knuckles_7_Repeat; 2:switch_Couplers_7_Repeat_Transition; 3:spriteset_Knuckles_7_Repeat;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_QLD, param_Couplers) {0:spriteset_Buffers_7_Repeat; 1:spriteset_Knuckles_7_Repeat; 2:switch_Couplers_7_Repeat_Transition; 3:switch_Couplers_7_Repeat_Realistic_QLD;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_NSW, param_Couplers) {0:spriteset_Buffers_7_Repeat; 1:spriteset_Knuckles_7_Repeat; 2:switch_Couplers_7_Repeat_Transition; 3:switch_Couplers_7_Repeat_Realistic_NSW;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_VIC, param_Couplers) {0:spriteset_Buffers_7_Repeat; 1:spriteset_Knuckles_7_Repeat; 2:switch_Couplers_7_Repeat_Transition; 3:switch_Couplers_7_Repeat_Realistic_VIC;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_TAS, param_Couplers) {0:spriteset_Buffers_7_Repeat; 1:spriteset_Knuckles_7_Repeat; 2:switch_Couplers_7_Repeat_Transition; 3:switch_Couplers_7_Repeat_Realistic_TAS;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_SA, param_Couplers) {0:spriteset_Buffers_7_Repeat; 1:spriteset_Knuckles_7_Repeat; 2:switch_Couplers_7_Repeat_Transition; 3:switch_Couplers_7_Repeat_Realistic_SA;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_WA, param_Couplers) {0:spriteset_Buffers_7_Repeat; 1:spriteset_Knuckles_7_Repeat; 2:switch_Couplers_7_Repeat_Transition; 3:spriteset_Knuckles_7_Repeat;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat_NAT, param_Couplers) {0:spriteset_Buffers_7_Repeat; 1:spriteset_Knuckles_7_Repeat; 2:switch_Couplers_7_Repeat_Transition; 3:spriteset_Knuckles_7_Repeat;}
+
+//8 Long Couplers
+spriteset(spriteset_Knuckles_8_Purchase,   "gfx/Couplers_8.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Knuckles_8,   "gfx/Couplers_8.png") {template_8(7, 39)}
+spriteset(spriteset_Knuckles_8_r,   "gfx/Couplers_8.png") {template_8_r(7, 39)}
+
+spriteset(spriteset_Buffers_8_Purchase,   "gfx/Couplers_8.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Buffers_8,   "gfx/Couplers_8.png") {template_8(187, 39)}
+spriteset(spriteset_Buffers_8_r,   "gfx/Couplers_8.png") {template_8_r(187, 39)}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Purchase_Transition, current_year) {
+    0..1945: spriteset_Buffers_8_Purchase;
+	1945..2100: spriteset_Knuckles_8_Purchase;
+  return spriteset_Knuckles_8_Purchase;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Purchase_Realistic_QLD, current_year) {
+    0..1970: spriteset_Buffers_8_Purchase;
+	1970..2100: spriteset_Knuckles_8_Purchase;
+  return spriteset_Knuckles_8_Purchase;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Purchase_Realistic_NSW, current_year) {
+    0..1945: spriteset_Buffers_8_Purchase;
+	1945..2100: spriteset_Knuckles_8_Purchase;
+  return spriteset_Knuckles_8_Purchase;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Purchase_Realistic_VIC, current_year) {
+    0..1945: spriteset_Buffers_8_Purchase;
+	1945..2100: spriteset_Knuckles_8_Purchase;
+  return spriteset_Knuckles_8_Purchase;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Purchase_Realistic_TAS, current_year) {
+    0..1970: spriteset_Buffers_8_Purchase;
+	1970..2100: spriteset_Knuckles_8_Purchase;
+  return spriteset_Knuckles_8_Purchase;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Purchase_Realistic_SA, current_year) {
+    0..1945: spriteset_Buffers_8_Purchase;
+	1945..2100: spriteset_Knuckles_8_Purchase;
+  return spriteset_Knuckles_8_Purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_NZ_Purchase, param_Couplers) {0:spriteset_Buffers_8_Purchase; 1:spriteset_Knuckles_8_Purchase; 2:switch_Couplers_8_Purchase_Transition; 3:spriteset_Knuckles_8_Purchase;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_QLD_Purchase, param_Couplers) {0:spriteset_Buffers_8_Purchase; 1:spriteset_Knuckles_8_Purchase; 2:switch_Couplers_8_Purchase_Transition; 3:switch_Couplers_8_Purchase_Realistic_QLD;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_NSW_Purchase, param_Couplers) {0:spriteset_Buffers_8_Purchase; 1:spriteset_Knuckles_8_Purchase; 2:switch_Couplers_8_Purchase_Transition; 3:switch_Couplers_8_Purchase_Realistic_NSW;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_VIC_Purchase, param_Couplers) {0:spriteset_Buffers_8_Purchase; 1:spriteset_Knuckles_8_Purchase; 2:switch_Couplers_8_Purchase_Transition; 3:switch_Couplers_8_Purchase_Realistic_VIC;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_TAS_Purchase, param_Couplers) {0:spriteset_Buffers_8_Purchase; 1:spriteset_Knuckles_8_Purchase; 2:switch_Couplers_8_Purchase_Transition; 3:switch_Couplers_8_Purchase_Realistic_TAS;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_SA_Purchase, param_Couplers) {0:spriteset_Buffers_8_Purchase; 1:spriteset_Knuckles_8_Purchase; 2:switch_Couplers_8_Purchase_Transition; 3:switch_Couplers_8_Purchase_Realistic_SA;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_WA_Purchase, param_Couplers) {0:spriteset_Buffers_8_Purchase; 1:spriteset_Knuckles_8_Purchase; 2:switch_Couplers_8_Purchase_Transition; 3:spriteset_Knuckles_8_Purchase;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_NAT_Purchase, param_Couplers) {0:spriteset_Buffers_8_Purchase; 1:spriteset_Knuckles_8_Purchase; 2:switch_Couplers_8_Purchase_Transition; 3:spriteset_Knuckles_8_Purchase;}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_8_Random1){
+    1 : spriteset_Knuckles_8;
+    3 : spriteset_Buffers_8;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_8_Random1_r){
+    1 : spriteset_Knuckles_8_r;
+    3 : spriteset_Buffers_8_r;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_8_Random2){
+    1 : spriteset_Knuckles_8;
+    1 : spriteset_Buffers_8;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_8_Random2_r){
+    1 : spriteset_Knuckles_8_r;
+    1 : spriteset_Buffers_8_r;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_8_Random3){
+    3 : spriteset_Knuckles_8;
+    1 : spriteset_Buffers_8;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_8_Random3_r){
+    3 : spriteset_Knuckles_8_r;
+    1 : spriteset_Buffers_8_r;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Transition, current_year) {
+    0..1945: spriteset_Buffers_8;
+	1945..1950: switch_Couplers_8_Random1;
+	1950..1955: switch_Couplers_8_Random2;
+	1955..1960: switch_Couplers_8_Random3;
+	1960..2100: spriteset_Knuckles_8;
+  return spriteset_Knuckles_8;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Transition_r, current_year) {
+    0..1945: spriteset_Buffers_8_r;
+	1945..1950: switch_Couplers_8_Random1_r;
+	1950..1955: switch_Couplers_8_Random2_r;
+	1955..1960: switch_Couplers_8_Random3_r;
+	1960..2100: spriteset_Knuckles_8_r;
+  return spriteset_Knuckles_8_r;
+}
+
+//NZ
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Realistic_QLD, current_year) {
+    0..1970: spriteset_Buffers_8;
+	1970..1975: switch_Couplers_8_Random1;
+	1975..1980: switch_Couplers_8_Random2;
+	1985..1990: switch_Couplers_8_Random3;
+	1990..2100: spriteset_Knuckles_8;
+  return spriteset_Knuckles_8;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Realistic_QLD_r, current_year) {
+    0..1970: spriteset_Buffers_8_r;
+	1970..1975: switch_Couplers_8_Random1_r;
+	1975..1980: switch_Couplers_8_Random2_r;
+	1985..1990: switch_Couplers_8_Random3_r;
+	1990..2100: spriteset_Knuckles_8_r;
+  return spriteset_Knuckles_8_r;
+}
+
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Realistic_NSW, current_year) {
+    0..1945: spriteset_Buffers_8;
+	1945..1950: switch_Couplers_8_Random1;
+	1950..1955: switch_Couplers_8_Random2;
+	1955..1960: switch_Couplers_8_Random3;
+	1960..2100: spriteset_Knuckles_8;
+  return spriteset_Knuckles_8;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Realistic_NSW_r, current_year) {
+    0..1945: spriteset_Buffers_8_r;
+	1945..1950: switch_Couplers_8_Random1_r;
+	1950..1955: switch_Couplers_8_Random2_r;
+	1955..1960: switch_Couplers_8_Random3_r;
+	1960..2100: spriteset_Knuckles_8_r;
+  return spriteset_Knuckles_8_r;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Realistic_VIC, current_year) {
+    0..1945: spriteset_Buffers_8;
+	1945..1946: switch_Couplers_8_Random1;
+	1946..1948: switch_Couplers_8_Random2;
+	1948..1950: switch_Couplers_8_Random3;
+	1950..2100: spriteset_Knuckles_8;
+  return spriteset_Knuckles_8;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Realistic_VIC_r, current_year) {
+    0..1945: spriteset_Buffers_8_r;
+	1945..1946: switch_Couplers_8_Random1_r;
+	1946..1948: switch_Couplers_8_Random2_r;
+	1948..1950: switch_Couplers_8_Random3_r;
+	1950..2100: spriteset_Knuckles_8_r;
+  return spriteset_Knuckles_8_r;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Realistic_TAS, current_year) {
+    0..1970: spriteset_Buffers_8;
+	1970..1975: switch_Couplers_8_Random1;
+	1975..1980: switch_Couplers_8_Random2;
+	1985..1990: switch_Couplers_8_Random3;
+	1990..2100: spriteset_Knuckles_8;
+  return spriteset_Knuckles_8;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Realistic_TAS_r, current_year) {
+    0..1970: spriteset_Buffers_8_r;
+	1970..1975: switch_Couplers_8_Random1_r;
+	1975..1980: switch_Couplers_8_Random2_r;
+	1985..1990: switch_Couplers_8_Random3_r;
+	1990..2100: spriteset_Knuckles_8_r;
+  return spriteset_Knuckles_8_r;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Realistic_SA, current_year) {
+    0..1945: spriteset_Buffers_8;
+	1945..1946: switch_Couplers_8_Random1;
+	1946..1948: switch_Couplers_8_Random2;
+	1948..1950: switch_Couplers_8_Random3;
+	1950..2100: spriteset_Knuckles_8;
+  return spriteset_Knuckles_8;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Realistic_SA_r, current_year) {
+    0..1945: spriteset_Buffers_8_r;
+	1945..1946: switch_Couplers_8_Random1_r;
+	1946..1948: switch_Couplers_8_Random2_r;
+	1948..1950: switch_Couplers_8_Random3_r;
+	1950..2100: spriteset_Knuckles_8_r;
+  return spriteset_Knuckles_8_r;
+}
+
+//WA
+
+//NAT
+
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_NZ, param_Couplers) {0:spriteset_Buffers_8; 1:spriteset_Knuckles_8; 2:switch_Couplers_8_Transition; 3:spriteset_Knuckles_8;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_NZ_r, param_Couplers) {0:spriteset_Buffers_8_r; 1:spriteset_Knuckles_8_r; 2:switch_Couplers_8_Transition_r; 3:spriteset_Knuckles_8_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_QLD, param_Couplers) {0:spriteset_Buffers_8; 1:spriteset_Knuckles_8; 2:switch_Couplers_8_Transition; 3:switch_Couplers_8_Realistic_QLD;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_QLD_r, param_Couplers) {0:spriteset_Buffers_8_r; 1:spriteset_Knuckles_8_r; 2:switch_Couplers_8_Transition_r; 3:switch_Couplers_8_Realistic_QLD_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_NSW, param_Couplers) {0:spriteset_Buffers_8; 1:spriteset_Knuckles_8; 2:switch_Couplers_8_Transition; 3:switch_Couplers_8_Realistic_NSW;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_NSW_r, param_Couplers) {0:spriteset_Buffers_8_r; 1:spriteset_Knuckles_8_r; 2:switch_Couplers_8_Transition_r; 3:switch_Couplers_8_Realistic_NSW_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_VIC, param_Couplers) {0:spriteset_Buffers_8; 1:spriteset_Knuckles_8; 2:switch_Couplers_8_Transition; 3:switch_Couplers_8_Realistic_VIC;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_VIC_r, param_Couplers) {0:spriteset_Buffers_8_r; 1:spriteset_Knuckles_8_r; 2:switch_Couplers_8_Transition_r; 3:switch_Couplers_8_Realistic_VIC_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_TAS, param_Couplers) {0:spriteset_Buffers_8; 1:spriteset_Knuckles_8; 2:switch_Couplers_8_Transition; 3:switch_Couplers_8_Realistic_TAS;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_TAS_r, param_Couplers) {0:spriteset_Buffers_8_r; 1:spriteset_Knuckles_8_r; 2:switch_Couplers_8_Transition_r; 3:switch_Couplers_8_Realistic_TAS_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_SA, param_Couplers) {0:spriteset_Buffers_8; 1:spriteset_Knuckles_8; 2:switch_Couplers_8_Transition; 3:switch_Couplers_8_Realistic_SA;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_SA_r, param_Couplers) {0:spriteset_Buffers_8_r; 1:spriteset_Knuckles_8_r; 2:switch_Couplers_8_Transition_r; 3:switch_Couplers_8_Realistic_SA_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_WA, param_Couplers) {0:spriteset_Buffers_8; 1:spriteset_Knuckles_8; 2:switch_Couplers_8_Transition; 3:spriteset_Knuckles_8;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_WA_r, param_Couplers) {0:spriteset_Buffers_8_r; 1:spriteset_Knuckles_8_r; 2:switch_Couplers_8_Transition_r; 3:spriteset_Knuckles_8_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_NAT, param_Couplers) {0:spriteset_Buffers_8; 1:spriteset_Knuckles_8; 2:switch_Couplers_8_Transition; 3:spriteset_Knuckles_8;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_NAT_r, param_Couplers) {0:spriteset_Buffers_8_r; 1:spriteset_Knuckles_8_r; 2:switch_Couplers_8_Transition_r; 3:spriteset_Knuckles_8_r;}
+
+//8 Long Couplers (for F-units)
+spriteset(spriteset_Knuckles_8F,   "gfx/Couplers_8F.png") {template_8(7, 39)}
+spriteset(spriteset_Knuckles_8F_r,   "gfx/Couplers_8F.png") {template_8_r(7, 39)}
+
+spriteset(spriteset_Buffers_8F,   "gfx/Couplers_8F.png") {template_8(187, 39)}
+spriteset(spriteset_Buffers_8F_r,   "gfx/Couplers_8F.png") {template_8_r(187, 39)}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_8F_Random1){
+    1 : spriteset_Knuckles_8F;
+    3 : spriteset_Buffers_8F;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_8F_Random1_r){
+    1 : spriteset_Knuckles_8F_r;
+    3 : spriteset_Buffers_8F_r;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_8F_Random2){
+    1 : spriteset_Knuckles_8F;
+    1 : spriteset_Buffers_8F;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_8F_Random2_r){
+    1 : spriteset_Knuckles_8F_r;
+    1 : spriteset_Buffers_8F_r;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_8F_Random3){
+    3 : spriteset_Knuckles_8F;
+    1 : spriteset_Buffers_8F;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Couplers_8F_Random3_r){
+    3 : spriteset_Knuckles_8F_r;
+    1 : spriteset_Buffers_8F_r;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8F_Transition, current_year) {
+    0..1945: spriteset_Buffers_8F;
+	1945..1950: switch_Couplers_8F_Random1;
+	1950..1955: switch_Couplers_8F_Random2;
+	1955..1960: switch_Couplers_8F_Random3;
+	1960..2100: spriteset_Knuckles_8F;
+  return spriteset_Knuckles_8F;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8F_Transition_r, current_year) {
+    0..1945: spriteset_Buffers_8F_r;
+	1945..1950: switch_Couplers_8F_Random1_r;
+	1950..1955: switch_Couplers_8F_Random2_r;
+	1955..1960: switch_Couplers_8F_Random3_r;
+	1960..2100: spriteset_Knuckles_8F_r;
+  return spriteset_Knuckles_8F_r;
+}
+
+//NZ
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8F_Realistic_QLD, current_year) {
+    0..1970: spriteset_Buffers_8F;
+	1970..1975: switch_Couplers_8F_Random1;
+	1975..1980: switch_Couplers_8F_Random2;
+	1985..1990: switch_Couplers_8F_Random3;
+	1990..2100: spriteset_Knuckles_8F;
+  return spriteset_Knuckles_8F;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8F_Realistic_QLD_r, current_year) {
+    0..1970: spriteset_Buffers_8F_r;
+	1970..1975: switch_Couplers_8F_Random1_r;
+	1975..1980: switch_Couplers_8F_Random2_r;
+	1985..1990: switch_Couplers_8F_Random3_r;
+	1990..2100: spriteset_Knuckles_8F_r;
+  return spriteset_Knuckles_8F_r;
+}
+
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8F_Realistic_NSW, current_year) {
+    0..1945: spriteset_Buffers_8F;
+	1945..1950: switch_Couplers_8F_Random1;
+	1950..1955: switch_Couplers_8F_Random2;
+	1955..1960: switch_Couplers_8F_Random3;
+	1960..2100: spriteset_Knuckles_8F;
+  return spriteset_Knuckles_8F;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8F_Realistic_NSW_r, current_year) {
+    0..1945: spriteset_Buffers_8F_r;
+	1945..1950: switch_Couplers_8F_Random1_r;
+	1950..1955: switch_Couplers_8F_Random2_r;
+	1955..1960: switch_Couplers_8F_Random3_r;
+	1960..2100: spriteset_Knuckles_8F_r;
+  return spriteset_Knuckles_8F_r;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8F_Realistic_VIC, current_year) {
+    0..1945: spriteset_Buffers_8F;
+	1945..1946: switch_Couplers_8F_Random1;
+	1946..1948: switch_Couplers_8F_Random2;
+	1948..1950: switch_Couplers_8F_Random3;
+	1950..2100: spriteset_Knuckles_8F;
+  return spriteset_Knuckles_8F;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8F_Realistic_VIC_r, current_year) {
+    0..1945: spriteset_Buffers_8F_r;
+	1945..1946: switch_Couplers_8F_Random1_r;
+	1946..1948: switch_Couplers_8F_Random2_r;
+	1948..1950: switch_Couplers_8F_Random3_r;
+	1950..2100: spriteset_Knuckles_8F_r;
+  return spriteset_Knuckles_8F_r;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8F_Realistic_TAS, current_year) {
+    0..1970: spriteset_Buffers_8F;
+	1970..1975: switch_Couplers_8F_Random1;
+	1975..1980: switch_Couplers_8F_Random2;
+	1985..1990: switch_Couplers_8F_Random3;
+	1990..2100: spriteset_Knuckles_8F;
+  return spriteset_Knuckles_8F;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8F_Realistic_TAS_r, current_year) {
+    0..1970: spriteset_Buffers_8F_r;
+	1970..1975: switch_Couplers_8F_Random1_r;
+	1975..1985: switch_Couplers_8F_Random2_r;
+	1985..1990: switch_Couplers_8F_Random3_r;
+	1990..2100: spriteset_Knuckles_8F_r;
+  return spriteset_Knuckles_8F_r;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8F_Realistic_SA, current_year) {
+    0..1945: spriteset_Buffers_8F;
+	1945..1946: switch_Couplers_8F_Random1;
+	1946..1948: switch_Couplers_8F_Random2;
+	1948..1950: switch_Couplers_8F_Random3;
+	1950..2100: spriteset_Knuckles_8F;
+  return spriteset_Knuckles_8F;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8F_Realistic_SA_r, current_year) {
+    0..1945: spriteset_Buffers_8F_r;
+	1945..1946: switch_Couplers_8F_Random1_r;
+	1946..1948: switch_Couplers_8F_Random2_r;
+	1948..1950: switch_Couplers_8F_Random3_r;
+	1950..2100: spriteset_Knuckles_8F_r;
+  return spriteset_Knuckles_8F_r;
+}
+
+//WA
+
+//NAT
+
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_NZ, param_Couplers) {0:spriteset_Buffers_8F; 1:spriteset_Knuckles_8F; 2:switch_Couplers_8F_Transition; 3:spriteset_Knuckles_8F;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_NZ_r, param_Couplers) {0:spriteset_Buffers_8F_r; 1:spriteset_Knuckles_8F_r; 2:switch_Couplers_8F_Transition_r; 3:spriteset_Knuckles_8F_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_QLD, param_Couplers) {0:spriteset_Buffers_8F; 1:spriteset_Knuckles_8F; 2:switch_Couplers_8F_Transition; 3:switch_Couplers_8F_Realistic_QLD;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_QLD_r, param_Couplers) {0:spriteset_Buffers_8F_r; 1:spriteset_Knuckles_8F_r; 2:switch_Couplers_8F_Transition_r; 3:switch_Couplers_8F_Realistic_QLD_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_NSW, param_Couplers) {0:spriteset_Buffers_8F; 1:spriteset_Knuckles_8F; 2:switch_Couplers_8F_Transition; 3:switch_Couplers_8F_Realistic_NSW;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_NSW_r, param_Couplers) {0:spriteset_Buffers_8F_r; 1:spriteset_Knuckles_8F_r; 2:switch_Couplers_8F_Transition_r; 3:switch_Couplers_8F_Realistic_NSW_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_VIC, param_Couplers) {0:spriteset_Buffers_8F; 1:spriteset_Knuckles_8F; 2:switch_Couplers_8F_Transition; 3:switch_Couplers_8F_Realistic_VIC;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_VIC_r, param_Couplers) {0:spriteset_Buffers_8F_r; 1:spriteset_Knuckles_8F_r; 2:switch_Couplers_8F_Transition_r; 3:switch_Couplers_8F_Realistic_VIC_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_TAS, param_Couplers) {0:spriteset_Buffers_8F; 1:spriteset_Knuckles_8F; 2:switch_Couplers_8F_Transition; 3:switch_Couplers_8F_Realistic_TAS;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_TAS_r, param_Couplers) {0:spriteset_Buffers_8F_r; 1:spriteset_Knuckles_8F_r; 2:switch_Couplers_8F_Transition_r; 3:switch_Couplers_8F_Realistic_TAS_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_SA, param_Couplers) {0:spriteset_Buffers_8F; 1:spriteset_Knuckles_8F; 2:switch_Couplers_8F_Transition; 3:switch_Couplers_8F_Realistic_SA;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_SA_r, param_Couplers) {0:spriteset_Buffers_8F_r; 1:spriteset_Knuckles_8F_r; 2:switch_Couplers_8F_Transition_r; 3:switch_Couplers_8F_Realistic_SA_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_WA, param_Couplers) {0:spriteset_Buffers_8F; 1:spriteset_Knuckles_8F; 2:switch_Couplers_8F_Transition; 3:spriteset_Knuckles_8F;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_WA_r, param_Couplers) {0:spriteset_Buffers_8F_r; 1:spriteset_Knuckles_8F_r; 2:switch_Couplers_8F_Transition_r; 3:spriteset_Knuckles_8F_r;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_NAT, param_Couplers) {0:spriteset_Buffers_8F; 1:spriteset_Knuckles_8F; 2:switch_Couplers_8F_Transition; 3:spriteset_Knuckles_8F;}
+switch(FEAT_TRAINS, SELF, switch_Couplers_8F_NAT_r, param_Couplers) {0:spriteset_Buffers_8F_r; 1:spriteset_Knuckles_8F_r; 2:switch_Couplers_8F_Transition_r; 3:spriteset_Knuckles_8F_r;}
+
+//Trains Below!
+
 //Clyde_ML1_Liv0
 spriteset(spriteset_Clyde_ML1_Liv0_Purchase,   "gfx/Clyde_ML1_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_Clyde_ML1_Liv0,   "gfx/Clyde_ML1_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
 spriteset(spriteset_Clyde_ML1_Liv0_r,   "gfx/Clyde_ML1_Liv0.png") {template_8_r(7, 39)}
 
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_ML1_Liv0_Purchase;
+    1: switch_Couplers_8_NAT_Purchase;
+}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_Liv0_Fw_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_ML1_Liv0;
+    1: switch_Couplers_8F_NAT;
+}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_Liv0_Rw_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_ML1_Liv0_r;
+    1: switch_Couplers_8F_NAT_r;
+}
+
 switch(FEAT_TRAINS, SELF, switch_Clyde_ML1_Liv0_pair, position_in_vehid_chain % 2) {
- 1: spriteset_Clyde_ML1_Liv0_r;
-  spriteset_Clyde_ML1_Liv0;
+ 1: switch_Clyde_ML1_Liv0_Rw_Stack;
+  switch_Clyde_ML1_Liv0_Fw_Stack;
 }
 
 switch(FEAT_TRAINS, SELF, switch_Clyde_ML1_Liv0_rear, position_in_vehid_chain_from_end) {
- 0: spriteset_Clyde_ML1_Liv0_r;
+ 0: switch_Clyde_ML1_Liv0_Rw_Stack;
   switch_Clyde_ML1_Liv0_pair;
 }
 
 switch(FEAT_TRAINS, SELF, switch_Clyde_ML1_Liv0_position, position_in_consist) {
- 0: spriteset_Clyde_ML1_Liv0;
+ 0: switch_Clyde_ML1_Liv0_Fw_Stack;
   switch_Clyde_ML1_Liv0_rear;
 }
 
@@ -665,7 +1234,7 @@ item(FEAT_TRAINS, Item_Clyde_ML1_Liv0, 5500) {
     graphics {
         default: switch_Clyde_ML1_Liv0_position;
 //		sound_effect: switch_EMD_16_567;
-        purchase: spriteset_Clyde_ML1_Liv0_Purchase;
+        purchase: switch_Clyde_ML1_Liv0_Purchase_Stack;
         additional_text: string(STR_INFO_CLYDE_ML1);
 }
 }
@@ -728,5 +1297,104 @@ item(FEAT_TRAINS, Item_Clyde_ML1_BG_Liv0, 5600) {
 //		sound_effect: switch_EMD_16_567;
         purchase: spriteset_Clyde_ML1_BG_Liv0_Purchase;
         additional_text: string(STR_INFO_CLYDE_ML1_BG);
+}
+}
+
+spriteset(spriteset_MetroVick_46Class_PantoDown,   "gfx/MetroVick_46Class_Pantographs.png") {template_7_repeat(7, 39)}
+spriteset(spriteset_MetroVick_46Class_PantoBothUp,   "gfx/MetroVick_46Class_Pantographs.png") {template_7_repeat(7, 69)}
+spriteset(spriteset_MetroVick_46Class_PantoUp,   "gfx/MetroVick_46Class_Pantographs.png") {template_7(7, 99)}
+spriteset(spriteset_MetroVick_46Class_PantoUp_r,   "gfx/MetroVick_46Class_Pantographs.png") {template_7_r(7, 99)}
+
+ random_switch(FEAT_TRAINS, SELF, switch_MetroVick_46Class_Pantograph_Random, bitmask(TRIGGER_VEHICLE_SERVICE)){ //verify this works before using it in more stuff
+    1 : spriteset_MetroVick_46Class_PantoBothUp;
+    1 : spriteset_MetroVick_46Class_PantoUp;
+	1 : spriteset_MetroVick_46Class_PantoUp_r;
+}
+
+//MetroVick_46Class_Liv0
+spriteset(spriteset_MetroVick_46Class_Liv0_Purchase,   "gfx/MetroVick_46Class_Liv0.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_MetroVick_46Class_Liv0,   "gfx/MetroVick_46Class_Liv0.png") {template_7_repeat(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_MetroVick_46Class_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_MetroVick_46Class_Liv0_Purchase;
+    1: switch_Couplers_7_Repeat_NSW_Purchase;    //Return
+}
+
+switch(FEAT_TRAINS, SELF, switch_MetroVick_46Class_Liv0_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_MetroVick_46Class_PantoDown;
+ 1: switch_MetroVick_46Class_Pantograph_Random;
+}
+
+switch (FEAT_TRAINS, SELF, switch_MetroVick_46Class_Liv0_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_MetroVick_46Class_Liv0;
+	1: switch_Couplers_7_Repeat_NSW;
+    2: switch_MetroVick_46Class_Liv0_Fw_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_MetroVick_46Class_Liv0_r_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_MetroVick_46Class_PantoDown;
+ 1: switch_MetroVick_46Class_Pantograph_Random;
+}
+
+switch (FEAT_TRAINS, SELF, switch_MetroVick_46Class_Liv0_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_MetroVick_46Class_Liv0;
+	1: switch_Couplers_7_Repeat_NSW;
+    2: switch_MetroVick_46Class_Liv0_r_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_MetroVick_46Class_Liv0_position, vehicle_is_flipped) {
+ 0: switch_MetroVick_46Class_Liv0_Fw;
+ 1: switch_MetroVick_46Class_Liv0_r;
+}
+
+item(FEAT_TRAINS, Item_MetroVick_46Class_Liv0, 49000) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        OHLE_DC;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_METROVICK_46CLASS);
+        introduction_date:                date(1956,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            7;
+
+        weight:                        111 ton;
+        speed:                            115 km/h;
+        power:                            3400 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     15;
+        running_cost_factor:             110;
+		cargo_capacity:                  0;
+		
+//        variant_group: Item_MetroVick_46Class_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_MetroVick_46Class_Liv0_position;
+//		sound_effect: switch_Modern_Electric_Horn;
+        purchase: switch_MetroVick_46Class_Liv0_Purchase_Stack;
+        additional_text: string(STR_INFO_METROVICK_46CLASS);
+		reverse_build_probability: return 50;
 }
 }

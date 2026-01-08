@@ -808,7 +808,7 @@ switch (FEAT_TRAINS, SELF, switch_PRR_MP54_OHLE_Liv0_stack, [
 }
 
 
-item(FEAT_TRAINS, Item_PRR_MP54_OHLE_Liv0, 13040) {
+item(FEAT_TRAINS, Item_PRR_MP54_OHLE_Liv0, 13080) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
