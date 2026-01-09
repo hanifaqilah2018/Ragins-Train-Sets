@@ -1165,7 +1165,7 @@ switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_Liv0_Purchase_Stack, [
     1: switch_Couplers_8_NAT_Purchase;
 }
 
-//Purchase Sprite Stacker
+//Forward Stack
 switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_Liv0_Fw_Stack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
@@ -1174,7 +1174,7 @@ switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_Liv0_Fw_Stack, [
     1: switch_Couplers_8F_NAT;
 }
 
-//Purchase Sprite Stacker
+//Rear Stack
 switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_Liv0_Rw_Stack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
@@ -1244,18 +1244,45 @@ spriteset(spriteset_Clyde_ML1_BG_Liv0_Purchase,   "gfx/Clyde_ML1_Liv0.png") {tem
 spriteset(spriteset_Clyde_ML1_BG_Liv0,   "gfx/Clyde_ML1_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
 spriteset(spriteset_Clyde_ML1_BG_Liv0_r,   "gfx/Clyde_ML1_Liv0.png") {template_8_r(7, 39)}
 
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_BG_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_ML1_BG_Liv0_Purchase;
+    1: switch_Couplers_8_NAT_Purchase;
+}
+
+//Forward Stack
+switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_BG_Liv0_Fw_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_ML1_BG_Liv0;
+    1: switch_Couplers_8F_NAT;
+}
+
+//Rear Stack
+switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_BG_Liv0_Rw_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_ML1_BG_Liv0_r;
+    1: switch_Couplers_8F_NAT_r;
+}
+
 switch(FEAT_TRAINS, SELF, switch_Clyde_ML1_BG_Liv0_pair, position_in_vehid_chain % 2) {
- 1: spriteset_Clyde_ML1_BG_Liv0_r;
-  spriteset_Clyde_ML1_BG_Liv0;
+ 1: switch_Clyde_ML1_BG_Liv0_Rw_Stack;
+  switch_Clyde_ML1_BG_Liv0_Fw_Stack;
 }
 
 switch(FEAT_TRAINS, SELF, switch_Clyde_ML1_BG_Liv0_rear, position_in_vehid_chain_from_end) {
- 0: spriteset_Clyde_ML1_BG_Liv0_r;
+ 0: switch_Clyde_ML1_BG_Liv0_Rw_Stack;
   switch_Clyde_ML1_BG_Liv0_pair;
 }
 
 switch(FEAT_TRAINS, SELF, switch_Clyde_ML1_BG_Liv0_position, position_in_consist) {
- 0: spriteset_Clyde_ML1_BG_Liv0;
+ 0: switch_Clyde_ML1_BG_Liv0_Fw_Stack;
   switch_Clyde_ML1_BG_Liv0_rear;
 }
 
