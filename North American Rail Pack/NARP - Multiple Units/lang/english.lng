@@ -70,6 +70,9 @@ STR_INFO_CEMU1:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{
 STR_NAME_PRR_MP54_OHLE:PRR MP54E
 STR_INFO_PRR_MP54_OHLE:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 
+STR_NAME_PRR_MP54_ALT:PRR MP54D
+STR_INFO_PRR_MP54_ALT:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
+
 STR_NAME_PULLMAN_WICKERLINER:Pullman Wickerliner
 STR_INFO_PULLMAN_WICKERLINER:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
@@ -82,8 +85,8 @@ STR_INFO_BLUEBIRDEMU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-U
 STR_NAME_CCF_EMU:CC&F EMU
 STR_INFO_CCF_EMU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
-STR_NAME_WASHBOARDEMU:Pullman Washboard EMU
-STR_INFO_WASHBOARDEMU:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Power:{LTBLUE}Overhead Line
+STR_NAME_PULLMAN_WASHBOARD:Pullman Washboard EMU
+STR_INFO_PULLMAN_WASHBOARD::{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
 
 STR_NAME_BUDD_PIONEERIII:Budd Pioneer III Railmotor
 STR_INFO_BUDD_PIONEERIII:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line

@@ -773,10 +773,20 @@ item(FEAT_TRAINS, Item_CEMU1_Liv0, 13000) {
 }
 }
 
-//Pantographs
-spriteset(spriteset_PRR_MP54_PantoUp,   "gfx/PRR_MP54_PantoUp.png") {template_8(7, 39)}
-spriteset(spriteset_PRR_MP54_PantoDown,   "gfx/PRR_MP54_PantoDown.png") {template_8(7, 39)}
-spriteset(spriteset_PRR_MP54_Panto_Purchase,   "gfx/PRR_MP54_PantoDown.png") {template_purchase_88mu(7, 21)}
+//MP54 Single Pantographs
+spriteset(spriteset_PRR_MP54_Panto_Purchase,   "gfx/PRR_MP54_Pantographs.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_PRR_MP54_PantoDown,   "gfx/PRR_MP54_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_PRR_MP54_PantoUp,   "gfx/PRR_MP54_Pantographs.png") {template_8(7, 69)}
+
+//MP54 Double Pantographs
+spriteset(spriteset_PRR_MP54_Alt_Panto_Purchase,   "gfx/PRR_MP54_DoublePantographs.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_PRR_MP54_Alt_PantoUp,   "gfx/PRR_MP54_DoublePantographs.png") {template_8(7, 69)}
+spriteset(spriteset_PRR_MP54_Alt_PantoUp_r,   "gfx/PRR_MP54_DoublePantographs.png") {template_8_r(7, 69)}
+spriteset(spriteset_PRR_MP54_Alt_PantoDown,   "gfx/PRR_MP54_DoublePantographs.png") {template_8_repeat(7, 39)}
+
+//MP54 3R Shoes
+spriteset(spriteset_PRR_MP54_3RShoes_Purchase,   "gfx/PRR_MP54_3RShoes.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_PRR_MP54_3RShoes,   "gfx/PRR_MP54_3RShoes.png") {template_8_repeat(7, 39)}
 
 //PRR_MP54_OHLE_Liv0
 spriteset(spriteset_PRR_MP54_Liv0_Purchase,   "gfx/PRR_MP54_Liv0.png") {template_purchase_8(7, 21)}
@@ -790,7 +800,6 @@ switch (FEAT_TRAINS, SELF, switch_PRR_MP54_OHLE_Liv0_PurchaseStack, [
     0: spriteset_PRR_MP54_Liv0_Purchase;
     1: spriteset_PRR_MP54_Panto_Purchase;
 }
-
 
 //Pantograph Controls
 switch(FEAT_TRAINS, SELF, switch_PRR_MP54_OHLE_Liv0_railtype, tile_powers_railtype("OHLE_AC")) {
@@ -806,7 +815,6 @@ switch (FEAT_TRAINS, SELF, switch_PRR_MP54_OHLE_Liv0_stack, [
     0: spriteset_PRR_MP54_Liv0;
 	1: switch_PRR_MP54_OHLE_Liv0_railtype;
 }
-
 
 item(FEAT_TRAINS, Item_PRR_MP54_OHLE_Liv0, 13080) {
     property {
@@ -848,6 +856,129 @@ item(FEAT_TRAINS, Item_PRR_MP54_OHLE_Liv0, 13080) {
         default: switch_PRR_MP54_OHLE_Liv0_stack;
         purchase: switch_PRR_MP54_OHLE_Liv0_PurchaseStack;
         additional_text: string(STR_INFO_PRR_MP54_OHLE);
+		reverse_build_probability: return 50;
+}
+}
+
+//PRR_MP54_Alt_Liv0
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_PRR_MP54_Alt_Liv0_power_1, tile_powers_railtype("OHLE_AC")) {
+            1: return 600;
+        }
+        switch (FEAT_TRAINS, SELF, switch_PRR_MP54_Alt_Liv0_power_0, tile_powers_railtype("SAA3")) {
+            1: return 600;
+                return switch_PRR_MP54_Alt_Liv0_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_PRR_MP54_Alt_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("SAA3")]) {
+            1: return VISUAL_EFFECT_DISABLE;
+            return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, ENABLE_WAGON_POWER);
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_PRR_MP54_Alt_Liv0_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE_AC)
+                    | (600 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_3RAIL)
+                    | (600 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_PRR_MP54_ALT));
+        }
+
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_PRR_MP54_Alt_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_PRR_MP54_Liv0_Purchase;
+	1: spriteset_PRR_MP54_3RShoes_Purchase;
+    2: spriteset_PRR_MP54_Alt_Panto_Purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_PRR_MP54_Alt_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_PRR_MP54_Alt_PantoDown;
+ 1: spriteset_PRR_MP54_Alt_PantoUp;
+}
+
+switch (FEAT_TRAINS, SELF, switch_PRR_MP54_Alt_Liv0_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_PRR_MP54_Liv0;
+	1: spriteset_PRR_MP54_3RShoes;
+    2: switch_PRR_MP54_Alt_Liv0_Fw_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_PRR_MP54_Alt_Liv0_r_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_PRR_MP54_Alt_PantoDown;
+ 1: spriteset_PRR_MP54_Alt_PantoUp_r;
+}
+
+switch (FEAT_TRAINS, SELF, switch_PRR_MP54_Alt_Liv0_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_PRR_MP54_Liv0;
+	1: spriteset_PRR_MP54_3RShoes;
+    2: switch_PRR_MP54_Alt_Liv0_r_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_PRR_MP54_Alt_Liv0_position, vehicle_is_flipped) {
+ 0: switch_PRR_MP54_Alt_Liv0_Fw;
+ 1: switch_PRR_MP54_Alt_Liv0_r;
+}
+
+
+item(FEAT_TRAINS, Item_PRR_MP54_Alt_Liv0, 13100) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        [OHLE_AC, SAA3];
+        running_cost_base:                RUNNING_COST_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_PRR_MP54_ALT);
+        introduction_date:                date(1915,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        48 ton;
+        speed:                            65 mph;
+        power:                            600 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     9;
+        running_cost_factor:             110;
+        cargo_capacity:                  96/param_capacity_mod;
+        loading_speed: 20;
+
+//        variant_group: Item_PRR_MP54_Alt_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_PRR_MP54_Alt_Liv0_position;
+        purchase: switch_PRR_MP54_Alt_Liv0_PurchaseStack;
+        power: switch_PRR_MP54_Alt_Liv0_power_0;
+        visual_effect_and_powered: switch_PRR_MP54_Alt_Liv0_effect_spawn_model_and_powered;
+        additional_text: switch_PRR_MP54_Alt_Liv0_buy_menu_additional_text;
 		reverse_build_probability: return 50;
 }
 }
@@ -1588,6 +1719,107 @@ item(FEAT_TRAINS, Item_CCF_EMU_Liv1, 13221) {
 }
 
 //Pantographs
+spriteset(spriteset_Pullman_Washboard_PantoDown,   "gfx/Pullman_Washboard_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_Pullman_Washboard_PantoUp,   "gfx/Pullman_Washboard_Pantographs.png") {template_8(7, 69)}
+
+//Pullman_Washboard_Liv0
+spriteset(spriteset_Pullman_Washboard_Liv0_Purchase,   "gfx/Pullman_Washboard_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Pullman_Washboard_Liv0,   "gfx/Pullman_Washboard_Liv0.png") {template_8(7, 39)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_Pullman_Washboard_Liv0_power_1, tile_powers_railtype("OHLE_AC")) {
+            1: return 600;
+        }
+        switch (FEAT_TRAINS, SELF, switch_Pullman_Washboard_Liv0_power_0, tile_powers_railtype("SAA3")) {
+            1: return 600;
+                return switch_Pullman_Washboard_Liv0_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_Pullman_Washboard_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("SAA3")]) {
+            1: return VISUAL_EFFECT_DISABLE;
+            return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, ENABLE_WAGON_POWER);
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_Pullman_Washboard_Liv0_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE_AC)
+                    | (600 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_3RAIL)
+                    | (600 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_PULLMAN_WASHBOARD));
+        }
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_Pullman_Washboard_Liv0_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_Pullman_Washboard_PantoDown;
+ 1: spriteset_Pullman_Washboard_PantoUp;
+}
+
+//Sprite Stack
+switch (FEAT_TRAINS, SELF, switch_Pullman_Washboard_Liv0_stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Pullman_Washboard_Liv0;
+	1: switch_Pullman_Washboard_Liv0_railtype;
+}
+
+
+item(FEAT_TRAINS, Item_Pullman_Washboard_Liv0, 13240) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        [OHLE_AC, SAA3];
+        running_cost_base:                RUNNING_COST_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_PULLMAN_WASHBOARD);
+        introduction_date:                date(1954,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        45 ton;
+        speed:                            70 mph;
+        power:                            600 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     7;
+        running_cost_factor:             176;
+        cargo_capacity:                  105/param_capacity_mod;
+        loading_speed: 20;
+
+//        variant_group: Item_Pullman_Washboard_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Pullman_Washboard_Liv0_stack;
+		purchase: spriteset_Pullman_Washboard_Liv0_Purchase;
+        power: switch_Pullman_Washboard_Liv0_power_0;
+        visual_effect_and_powered: switch_Pullman_Washboard_Liv0_effect_spawn_model_and_powered;
+        additional_text: switch_Pullman_Washboard_Liv0_buy_menu_additional_text;
+		reverse_build_probability: return 50;
+}
+}
+
+//Pantographs
 spriteset(spriteset_Budd_PioneerIII_PantoUp,   "gfx/Budd_PioneerIII_PantoUp.png") {template_8(7, 39)}
 spriteset(spriteset_Budd_PioneerIII_PantoDown,   "gfx/Budd_PioneerIII_PantoDown.png") {template_8(7, 39)}
 
@@ -1940,7 +2172,7 @@ switch(FEAT_TRAINS, PARENT, sw_Budd_Cosmopolitan_Liv0_revcheck, vehicle_is_rever
     return sw_Budd_Cosmopolitan_Liv0_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv0, 13240) {
+item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv0, 13340) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2265,7 +2497,7 @@ switch(FEAT_TRAINS, PARENT, sw_Budd_Cosmopolitan_Liv1_revcheck, vehicle_is_rever
     return sw_Budd_Cosmopolitan_Liv1_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv1, 13241) {
+item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv1, 13341) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2590,7 +2822,7 @@ switch(FEAT_TRAINS, PARENT, sw_Budd_Cosmopolitan_Liv2_revcheck, vehicle_is_rever
     return sw_Budd_Cosmopolitan_Liv2_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv2, 13242) {
+item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv2, 13342) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2915,7 +3147,7 @@ switch(FEAT_TRAINS, PARENT, sw_Budd_Cosmopolitan_Liv3_revcheck, vehicle_is_rever
     return sw_Budd_Cosmopolitan_Liv3_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv3, 13243) {
+item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv3, 13343) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3240,7 +3472,7 @@ switch(FEAT_TRAINS, PARENT, sw_Budd_Cosmopolitan_Liv4_revcheck, vehicle_is_rever
     return sw_Budd_Cosmopolitan_Liv4_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv4, 13244) {
+item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv4, 13344) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6086,10 +6318,6 @@ item(FEAT_TRAINS, Item_Budd_MetrolinerII_Liv1, 21181) {
 
     }
 }
-
-//MP54 3R Shoes
-spriteset(spriteset_PRR_MP54_3RShoes_Purchase,   "gfx/PRR_MP54_3RShoes.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_PRR_MP54_3RShoes,   "gfx/PRR_MP54_3RShoes.png") {template_8_repeat(7, 39)}
 
 //Purchase Stack
 switch (FEAT_TRAINS, SELF, switch_PRR_MP54_3R_Liv0_PurchaseStack, [
