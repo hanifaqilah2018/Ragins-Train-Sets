@@ -6220,6 +6220,133 @@ item(FEAT_TRAINS, Item_Budd_MetrolinerII_Liv1, 21181) {
     }
 }
 
+//Pantographs
+spriteset(spriteset_AcelaExpress_PantoDown,   "gfx/AcelaExpress_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_AcelaExpress_PantoUp,   "gfx/AcelaExpress_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_AcelaExpress_PantoUp_Alt,   "gfx/AcelaExpress_Pantographs.png") {template_8(7, 99)}
+
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_AcelaExpress_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_AcelaExpress_PantoDown;
+ 1: spriteset_AcelaExpress_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_AcelaExpress_Rw_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_AcelaExpress_PantoDown;
+ 1: spriteset_AcelaExpress_PantoUp_Alt;
+}
+
+//AcelaExpress_Liv0
+spriteset(spriteset_AcelaExpress_Liv0_Purchase,   "gfx/AcelaExpress_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_AcelaExpress_Liv0_Lead,   "gfx/AcelaExpress_Liv0.png") {template_8(7, 39)}
+
+spriteset(spriteset_AcelaExpress_Liv0_Trailer_Lead,   "gfx/AcelaExpress_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_AcelaExpress_Liv0_Trailer_Rear,   "gfx/AcelaExpress_Liv0.png") {template_8_r(7, 69)}
+spriteset(spriteset_AcelaExpress_Liv0_Trailer_Buffet,   "gfx/AcelaExpress_Liv0.png") {template_8(7, 99)}
+spriteset(spriteset_AcelaExpress_Liv0_Trailer_Buffet_r,   "gfx/AcelaExpress_Liv0.png") {template_8_r(7, 99)}
+spriteset(spriteset_AcelaExpress_Liv0_Trailer,   "gfx/AcelaExpress_Liv0.png") {template_8_repeat(7, 129)}
+
+//Sprite Stacks
+switch (FEAT_TRAINS, SELF, switch_AcelaExpress_Liv0_LeadStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_AcelaExpress_Liv0_Lead;
+	1: switch_AcelaExpress_Fw_railtype;
+}
+
+switch (FEAT_TRAINS, SELF, switch_AcelaExpress_Liv0_RearStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_AcelaExpress_Liv0_Lead;
+	1: switch_AcelaExpress_Rw_railtype;
+}
+
+//Other Controls
+switch(FEAT_TRAINS, SELF, switch_AcelaExpress_Liv0_last, position_in_consist_from_end){ // <- This code tells the game whether to use the cab or flipped cab, based on if they're right at the end or not
+    0:    switch_AcelaExpress_Liv0_RearStack;
+    switch_AcelaExpress_Liv0_LeadStack;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_AcelaExpress_Liv0_Diner_revcheck, vehicle_is_reversed){
+    0 : spriteset_AcelaExpress_Liv0_Trailer_Buffet;
+    return spriteset_AcelaExpress_Liv0_Trailer_Buffet_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_AcelaExpress_Liv0_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: switch_AcelaExpress_Liv0_Diner_revcheck;
+  spriteset_AcelaExpress_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, switch_AcelaExpress_Liv0_Trailer_Rear, position_in_vehid_chain_from_end){ // <- This code tells the game whether to use the cab or flipped cab, based on if they're right at the end or not
+    0:    spriteset_AcelaExpress_Liv0_Trailer_Rear;
+    switch_AcelaExpress_Liv0_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_AcelaExpress_Liv0_Trailer_Lead, position_in_vehid_chain){ // <- This code tells the game whether to use the cab or flipped cab, based on if they're right at the end or not
+    0:    spriteset_AcelaExpress_Liv0_Trailer_Lead;
+    switch_AcelaExpress_Liv0_Trailer_Rear;
+}
+
+switch(FEAT_TRAINS, SELF, switch_AcelaExpress_Liv0_solo, num_vehs_in_vehid_chain){ // <- This code tells the game whether to use the cab or flipped cab, based on if they're right at the end or not
+    1:    spriteset_AcelaExpress_Liv0_Trailer;
+    switch_AcelaExpress_Liv0_Trailer_Lead;
+}
+
+item(FEAT_TRAINS, Item_AcelaExpress_Liv0, 26000) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_TILT); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        OHLE_AC;
+        running_cost_base:                RUNNING_COST_ELECTRIC;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        dual_headed:                    1; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_ACELAEXPRESS);
+        introduction_date:                date(2000,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        93 ton;
+        speed:                            165 mph;
+        power:                            12320 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     60;
+        running_cost_factor:             240;
+        cargo_capacity:                  0;
+        loading_speed: 10;
+
+        variant_group: Item_AcelaExpress_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_AcelaExpress_Liv0_last;
+        purchase: spriteset_AcelaExpress_Liv0_Purchase;
+        additional_text: string(STR_INFO_ACELAEXPRESS);
+}
+        livery_override (Item_MU_Trailer) { // <- Override the appearance and stats of Item_FAI_WAGON_MU_COACH when attached, to make it fit the MU's appearance and stats
+        default:                        switch_AcelaExpress_Liv0_solo; // <- This tells the game that when attached, the livery_override wagon needs to use this sprite
+        length:                            8;
+        cargo_capacity:                   (70/param_capacity_mod);
+        power:                            0;
+        weight:                        63;
+        running_cost_factor:             60;
+    }
+}
+
 //Purchase Stack
 switch (FEAT_TRAINS, SELF, switch_PRR_MP54_3R_Liv0_PurchaseStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),

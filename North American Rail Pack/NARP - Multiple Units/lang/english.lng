@@ -154,6 +154,11 @@ STR_NAME_ADTRANZ_X2000:Adtranz X2000
 STR_INFO_ADTRANZ_X2000:{BLACK}Role:{GOLD}Express Service{}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{LTBLUE}Overhead Line{}{BLACK}Special:{GOLD}Tilt train (20% faster through curves)
 
 
+
+STR_NAME_ACELAEXPRESS:Alstom-Bombardier Acela Express
+STR_INFO_ACELAEXPRESS:{BLACK}Role:{GOLD}High Speed{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line{}{BLACK}Special:{GOLD}Tilt train (20% faster through curves)
+
+
 STR_NAME_PRR_MP54_3R:PRR MP54
 STR_INFO_PRR_MP54_3R:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {GREEN}Third Rail
 
