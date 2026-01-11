@@ -52,6 +52,10 @@ STR_NAME_BUDD_SPV2000:Budd SPV-2000
 STR_INFO_BUDD_SPV2000:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BROWN}Diesel
 
 
+STR_NAME_JETTRAIN:Bombardier Jet Train
+STR_INFO_JETTRAIN:{BLACK}Role:{GOLD}Commuter{}{BLACK}Formation:{GOLD}Single-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {WHITE}Turbine
+
+
 
 STR_NAME_EMDFLYLINER:EMD-Pullman Flyliner
 STR_INFO_EMDFLYLINER:{BLACK}Role:{GOLD}Express {}{BLACK}Formation:{GOLD}Push-Pull Train{}{BLACK}Power:{BROWN}Diesel

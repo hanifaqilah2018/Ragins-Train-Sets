@@ -705,6 +705,94 @@ item(FEAT_TRAINS, Item_Budd_SPV2000_Liv0, 5260) {
 }
 }
 
+//JetTrain_Liv0
+spriteset(spriteset_JetTrain_Liv0_Purchase,   "gfx/JetTrain_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_JetTrain_Liv0_Lead,   "gfx/JetTrain_Liv0.png") {template_8(7, 39)}
+
+spriteset(spriteset_JetTrain_Liv0_Trailer_Lead,   "gfx/JetTrain_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_JetTrain_Liv0_Trailer_Rear,   "gfx/JetTrain_Liv0.png") {template_8_r(7, 69)}
+spriteset(spriteset_JetTrain_Liv0_Trailer_Buffet,   "gfx/JetTrain_Liv0.png") {template_8(7, 99)}
+spriteset(spriteset_JetTrain_Liv0_Trailer_Buffet_r,   "gfx/JetTrain_Liv0.png") {template_8_r(7, 99)}
+spriteset(spriteset_JetTrain_Liv0_Trailer,   "gfx/JetTrain_Liv0.png") {template_8_repeat(7, 129)}
+
+//Other Controls
+switch(FEAT_TRAINS, PARENT, switch_JetTrain_Liv0_Diner_revcheck, vehicle_is_reversed){
+    0 : spriteset_JetTrain_Liv0_Trailer_Buffet;
+    return spriteset_JetTrain_Liv0_Trailer_Buffet_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_JetTrain_Liv0_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: switch_JetTrain_Liv0_Diner_revcheck;
+  spriteset_JetTrain_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, switch_JetTrain_Liv0_Trailer_Rear, position_in_vehid_chain_from_end){ // <- This code tells the game whether to use the cab or flipped cab, based on if they're right at the end or not
+    0:    spriteset_JetTrain_Liv0_Trailer_Rear;
+    switch_JetTrain_Liv0_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_JetTrain_Liv0_Trailer_Lead, position_in_vehid_chain){ // <- This code tells the game whether to use the cab or flipped cab, based on if they're right at the end or not
+    0:    spriteset_JetTrain_Liv0_Trailer_Lead;
+    switch_JetTrain_Liv0_Trailer_Rear;
+}
+
+switch(FEAT_TRAINS, SELF, switch_JetTrain_Liv0_solo, num_vehs_in_vehid_chain){ // <- This code tells the game whether to use the cab or flipped cab, based on if they're right at the end or not
+    1:    spriteset_JetTrain_Liv0_Trailer;
+    switch_JetTrain_Liv0_Trailer_Lead;
+}
+
+item(FEAT_TRAINS, Item_JetTrain_Liv0, 12840) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_TILT); // <- Train Flag MU needed here
+
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+
+        track_type:                        RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        dual_headed:                    1; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_JETTRAIN);
+        introduction_date:                date(2000,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        90 ton;
+        speed:                            165 mph;
+        power:                            8000 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     60;
+        running_cost_factor:             255;
+        cargo_capacity:                  0;
+        loading_speed: 10;
+
+        variant_group: Item_JetTrain_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: spriteset_JetTrain_Liv0_Lead;
+        purchase: spriteset_JetTrain_Liv0_Purchase;
+        additional_text: string(STR_INFO_JETTRAIN);
+}
+        livery_override (Item_MU_Trailer) { // <- Override the appearance and stats of Item_FAI_WAGON_MU_COACH when attached, to make it fit the MU's appearance and stats
+        default:                        switch_JetTrain_Liv0_solo; // <- This tells the game that when attached, the livery_override wagon needs to use this sprite
+        length:                            8;
+        cargo_capacity:                   (70/param_capacity_mod);
+        power:                            0;
+        weight:                        63;
+        running_cost_factor:             60;
+    }
+}
+
 //Pantographs
 spriteset(spriteset_CEMU1_PantoUp,   "gfx/CEMU1_Pantographs.png") {template_8(7, 39)}
 spriteset(spriteset_CEMU1_PantoDown,   "gfx/CEMU1_Pantographs.png") {template_8(7, 69)}
@@ -816,7 +904,7 @@ switch (FEAT_TRAINS, SELF, switch_PRR_MP54_OHLE_Liv0_stack, [
 	1: switch_PRR_MP54_OHLE_Liv0_railtype;
 }
 
-item(FEAT_TRAINS, Item_PRR_MP54_OHLE_Liv0, 13080) {
+item(FEAT_TRAINS, Item_PRR_MP54_OHLE_Liv0, 13100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -937,7 +1025,7 @@ switch(FEAT_TRAINS, SELF, switch_PRR_MP54_Alt_Liv0_position, vehicle_is_flipped)
 }
 
 
-item(FEAT_TRAINS, Item_PRR_MP54_Alt_Liv0, 13100) {
+item(FEAT_TRAINS, Item_PRR_MP54_Alt_Liv0, 13120) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -1177,7 +1265,7 @@ switch(FEAT_TRAINS, PARENT, sw_Pullman_Wickerliner_Liv0_revcheck, vehicle_is_rev
     return sw_Pullman_Wickerliner_Liv0_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Pullman_Wickerliner_Liv0, 13120) {
+item(FEAT_TRAINS, Item_Pullman_Wickerliner_Liv0, 13140) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -1424,7 +1512,7 @@ switch(FEAT_TRAINS, PARENT, sw_CCF_EMU_Liv0_revcheck, vehicle_is_reversed){
     return sw_CCF_EMU_Liv0_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_CCF_EMU_Liv0, 13220) {
+item(FEAT_TRAINS, Item_CCF_EMU_Liv0, 13240) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -1665,7 +1753,7 @@ switch(FEAT_TRAINS, PARENT, sw_CCF_EMU_Liv1_revcheck, vehicle_is_reversed){
     return sw_CCF_EMU_Liv1_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_CCF_EMU_Liv1, 13221) {
+item(FEAT_TRAINS, Item_CCF_EMU_Liv1, 13241) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -1773,7 +1861,7 @@ switch (FEAT_TRAINS, SELF, switch_Pullman_Washboard_Liv0_stack, [
 }
 
 
-item(FEAT_TRAINS, Item_Pullman_Washboard_Liv0, 13240) {
+item(FEAT_TRAINS, Item_Pullman_Washboard_Liv0, 13260) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -1843,7 +1931,7 @@ switch (FEAT_TRAINS, SELF, switch_Budd_PioneerIII_Liv0_stack, [
 }
 
 
-item(FEAT_TRAINS, Item_Budd_PioneerIII_Liv0, 13180) {
+item(FEAT_TRAINS, Item_Budd_PioneerIII_Liv0, 13280) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2172,7 +2260,7 @@ switch(FEAT_TRAINS, PARENT, sw_Budd_Cosmopolitan_Liv0_revcheck, vehicle_is_rever
     return sw_Budd_Cosmopolitan_Liv0_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv0, 13340) {
+item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv0, 13360) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2497,7 +2585,7 @@ switch(FEAT_TRAINS, PARENT, sw_Budd_Cosmopolitan_Liv1_revcheck, vehicle_is_rever
     return sw_Budd_Cosmopolitan_Liv1_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv1, 13341) {
+item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv1, 13361) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -2822,7 +2910,7 @@ switch(FEAT_TRAINS, PARENT, sw_Budd_Cosmopolitan_Liv2_revcheck, vehicle_is_rever
     return sw_Budd_Cosmopolitan_Liv2_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv2, 13342) {
+item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv2, 13362) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3147,7 +3235,7 @@ switch(FEAT_TRAINS, PARENT, sw_Budd_Cosmopolitan_Liv3_revcheck, vehicle_is_rever
     return sw_Budd_Cosmopolitan_Liv3_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv3, 13343) {
+item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv3, 13363) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3472,7 +3560,7 @@ switch(FEAT_TRAINS, PARENT, sw_Budd_Cosmopolitan_Liv4_revcheck, vehicle_is_rever
     return sw_Budd_Cosmopolitan_Liv4_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv4, 13344) {
+item(FEAT_TRAINS, Item_Budd_Cosmopolitan_Liv4, 13364) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3568,7 +3656,7 @@ switch(FEAT_TRAINS, SELF, switch_NipponSharyo_EMU_Liv0_position, vehicle_is_flip
  1: switch_NipponSharyo_EMU_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_NipponSharyo_EMU_Liv0, 13440) {
+item(FEAT_TRAINS, Item_NipponSharyo_EMU_Liv0, 13460) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -3807,7 +3895,7 @@ switch(FEAT_TRAINS, PARENT, sw_Bombardier_MR90_Liv0_revcheck, vehicle_is_reverse
     return sw_Bombardier_MR90_Liv0_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Bombardier_MR90_Liv0, 13400) {
+item(FEAT_TRAINS, Item_Bombardier_MR90_Liv0, 13480) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4086,7 +4174,7 @@ switch(FEAT_TRAINS, PARENT, sw_Kawasaki_M8_Liv0_revcheck, vehicle_is_reversed){
     return sw_Kawasaki_M8_Liv0_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Kawasaki_M8_Liv0, 13580) {
+item(FEAT_TRAINS, Item_Kawasaki_M8_Liv0, 13660) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -6224,7 +6312,6 @@ item(FEAT_TRAINS, Item_Budd_MetrolinerII_Liv1, 21181) {
 spriteset(spriteset_AcelaExpress_PantoDown,   "gfx/AcelaExpress_Pantographs.png") {template_8(7, 39)}
 spriteset(spriteset_AcelaExpress_PantoUp,   "gfx/AcelaExpress_Pantographs.png") {template_8(7, 69)}
 spriteset(spriteset_AcelaExpress_PantoUp_Alt,   "gfx/AcelaExpress_Pantographs.png") {template_8(7, 99)}
-
 
 //Pantograph Controls
 switch(FEAT_TRAINS, SELF, switch_AcelaExpress_Fw_railtype, tile_powers_railtype("OHLE_AC")) {

@@ -78,8 +78,8 @@ STR_INFO_CLYDE_G8C:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Power: {BROWN
 
 
 
-STR_NAME_ALCO_RSC3:ALCO-MLW RSC-3
-STR_INFO_ALCO_RSC3:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 40 Class
+STR_NAME_MLW_RSC3:ALCO-MLW RSC-3
+STR_INFO_MLW_RSC3:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 40 Class
 
 STR_NAME_EE_1250CLASS:English-Electric MCH139C 
 STR_INFO_EE_1250CLASS:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}QR 1250 Class
