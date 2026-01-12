@@ -1513,52 +1513,6 @@ item(FEAT_TRAINS, Item_Clyde_ML1_Liv0, 5500) {
 }
 
 //Clyde_ML1_BG_Liv0
-spriteset(spriteset_Clyde_ML1_BG_Liv0_Purchase,   "gfx/Clyde_ML1_Liv0.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_Clyde_ML1_BG_Liv0,   "gfx/Clyde_ML1_Liv0.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
-spriteset(spriteset_Clyde_ML1_BG_Liv0_r,   "gfx/Clyde_ML1_Liv0.png") {template_8_r(7, 39)}
-
-//Purchase Sprite Stacker
-switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_BG_Liv0_Purchase_Stack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0: spriteset_Clyde_ML1_BG_Liv0_Purchase;
-    1: switch_Couplers_8_NAT_Purchase;
-}
-
-//Forward Stack
-switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_BG_Liv0_Fw_Stack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0: spriteset_Clyde_ML1_BG_Liv0;
-    1: switch_Couplers_8F_NAT;
-}
-
-//Rear Stack
-switch (FEAT_TRAINS, SELF, switch_Clyde_ML1_BG_Liv0_Rw_Stack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0: spriteset_Clyde_ML1_BG_Liv0_r;
-    1: switch_Couplers_8F_NAT_r;
-}
-
-switch(FEAT_TRAINS, SELF, switch_Clyde_ML1_BG_Liv0_pair, position_in_vehid_chain % 2) {
- 1: switch_Clyde_ML1_BG_Liv0_Rw_Stack;
-  switch_Clyde_ML1_BG_Liv0_Fw_Stack;
-}
-
-switch(FEAT_TRAINS, SELF, switch_Clyde_ML1_BG_Liv0_rear, position_in_vehid_chain_from_end) {
- 0: switch_Clyde_ML1_BG_Liv0_Rw_Stack;
-  switch_Clyde_ML1_BG_Liv0_pair;
-}
-
-switch(FEAT_TRAINS, SELF, switch_Clyde_ML1_BG_Liv0_position, position_in_consist) {
- 0: switch_Clyde_ML1_BG_Liv0_Fw_Stack;
-  switch_Clyde_ML1_BG_Liv0_rear;
-}
-
 item(FEAT_TRAINS, Item_Clyde_ML1_BG_Liv0, 5600) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
@@ -1593,9 +1547,9 @@ item(FEAT_TRAINS, Item_Clyde_ML1_BG_Liv0, 5600) {
 //        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: switch_Clyde_ML1_BG_Liv0_position;
+        default: switch_Clyde_ML1_Liv0_position;
 //		sound_effect: switch_EMD_16_567;
-        purchase: spriteset_Clyde_ML1_BG_Liv0_Purchase;
+        purchase: spriteset_Clyde_ML1_Liv0_Purchase;
         additional_text: string(STR_INFO_CLYDE_ML1_BG);
 }
 }
@@ -1687,6 +1641,92 @@ item(FEAT_TRAINS, Item_MLW_RSC3_Liv0, 16700) {
 }
 }
 
+//Clyde_GL26C2_Liv0
+spriteset(spriteset_Clyde_GL26C2_Liv0_Purchase,   "gfx/Clyde_GL26C2_Liv0.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_Clyde_GL26C2_Liv0,   "gfx/Clyde_GL26C2_Liv0.png") {template_7(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_Clyde_GL26C2_Liv0_r,   "gfx/Clyde_GL26C2_Liv0.png") {template_7_r(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Clyde_GL26C2_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_GL26C2_Liv0_Purchase;
+    1: switch_Couplers_7_Repeat_QLD_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Clyde_ML2_Liv0_Fw_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_GL26C2_Liv0;
+    1: switch_Couplers_7_Repeat_QLD;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Clyde_GL26C2_Liv0_Rw_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_GL26C2_Liv0_r;
+    1: switch_Couplers_7_Repeat_QLD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Clyde_GL26C2_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: switch_Clyde_GL26C2_Liv0_Rw_Stack;
+  switch_Clyde_ML2_Liv0_Fw_Stack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Clyde_GL26C2_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: switch_Clyde_GL26C2_Liv0_Rw_Stack;
+  switch_Clyde_GL26C2_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Clyde_GL26C2_Liv0_position, position_in_consist) {
+ 0: switch_Clyde_ML2_Liv0_Fw_Stack;
+  switch_Clyde_GL26C2_Liv0_rear;
+}
+
+item(FEAT_TRAINS, Item_Clyde_GL26C2_Liv0, 18300) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        NG_RAIL;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_CLYDE_GL26C2);
+        introduction_date:                date(1982,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            7;
+
+        weight:                        98 ton;
+        speed:                            100 km/h;
+        power:                            2200 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     15;
+        running_cost_factor:             120;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_Clyde_GL26C2_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Clyde_GL26C2_Liv0_position;
+//		sound_effect: switch_EMD_16_645;
+        purchase: switch_Clyde_GL26C2_Liv0_Purchase_Stack;
+        additional_text: string(STR_INFO_CLYDE_GL26C2);
+}
+}
+
 //Clyde_ML2_Liv0
 spriteset(spriteset_Clyde_ML2_Liv0_Purchase,   "gfx/Clyde_ML2_Liv0.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_Clyde_ML2_Liv0,   "gfx/Clyde_ML2_Liv0.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
@@ -1708,7 +1748,7 @@ switch (FEAT_TRAINS, SELF, switch_Clyde_ML2_Liv0_Normal_Stack, [
     1: switch_Couplers_8F_Repeat_VIC;
 }
 
-item(FEAT_TRAINS, Item_Clyde_ML2_Liv0, 15450) {
+item(FEAT_TRAINS, Item_Clyde_ML2_Liv0, 30200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -1746,6 +1786,49 @@ item(FEAT_TRAINS, Item_Clyde_ML2_Liv0, 15450) {
 //		sound_effect: switch_Generic_Modern_Diesel;
         purchase: switch_Clyde_ML2_Liv0_Purchase_Stack;
         additional_text: string(STR_INFO_CLYDE_ML2);
+		reverse_build_probability: return 50;
+}
+}
+
+//Clyde_ML2_BG_Liv0
+item(FEAT_TRAINS, Item_Clyde_ML2_BG_Liv0, 30300) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        BG_RAIL_ONLY;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                            string(STR_NAME_CLYDE_ML2_BG);
+        introduction_date:                date(1952,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        114 ton;
+        speed:                            130 km/h;
+        power:                            1500 hp;
+        tractive_effort_coefficient:     0.7;
+        cost_factor:                     11;
+        running_cost_factor:             88;
+		cargo_capacity:                  0;
+
+//        variant_group: Item_Clyde_ML2_BG_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Clyde_ML2_Liv0_Normal_Stack;
+//		sound_effect: switch_Generic_Modern_Diesel;
+        purchase: switch_Clyde_ML2_Liv0_Purchase_Stack;
+        additional_text: string(STR_INFO_CLYDE_ML2_BG);
 		reverse_build_probability: return 50;
 }
 }

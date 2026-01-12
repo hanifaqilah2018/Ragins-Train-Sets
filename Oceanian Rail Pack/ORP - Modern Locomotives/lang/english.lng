@@ -93,6 +93,9 @@ STR_INFO_ALCODL541_CROCODILE:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}D
 STR_NAME_ALCODL541_PILBARA:Goodwin-ALCO DL541 (Pilbara Cab)
 STR_INFO_ALCODL541_PILBARA:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Junee Workshops attempted rebuild of NSW 3505 (formerly 4505)
 
+STR_NAME_CLYDE_GL26C2:Clyde-EMD GL26C-2
+STR_INFO_CLYDE_GL26C2:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}QR 2170 Class
+
 STR_NAME_CLYDE_JT42CX:Clyde-EMD JT42C-X
 STR_INFO_CLYDE_JT42CX:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Clyde GML10 Prototype {}{}{GOLD}it's not so bad being alone
 
@@ -145,7 +148,10 @@ STR_INFO_CLYDE_JL22C:{BLACK}Role: {GOLD}Branch Line Mixed Traffic {}{BLACK}Power
 
 
 STR_NAME_CLYDE_ML2:Clyde-EMD ML2
-STR_INFO_CLYDE_ML2:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR B Class
+STR_INFO_CLYDE_ML2:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR B Class
+
+STR_NAME_CLYDE_ML2_BG:Clyde-EMD ML2
+STR_INFO_CLYDE_ML2_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR B Class
 
 STR_NAME_EE_DFCLASS:English-Electric DF Class
 STR_INFO_EE_DFCLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZR DF Class
