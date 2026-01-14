@@ -76,6 +76,11 @@ STR_INFO_CLYDE_AJT32HB2:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Dies
 
 
 
+STR_NAME_AGE_41CLASS:AGE 41 Class
+STR_INFO_AGE_41CLASS:{BLACK}Role: {GOLD}Shunter {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 41 Class {}{GOLD}I hope you like engine fires!
+
+
+
 STR_NAME_ALCODL531:Goodwin-ALCO DL531
 STR_INFO_ALCODL531:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{}{GOLD}Also known as the ALCO RSD-8
 
@@ -162,8 +167,10 @@ STR_INFO_CLYDE_ML2_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Bro
 STR_NAME_EE_DFCLASS:English-Electric DF Class
 STR_INFO_EE_DFCLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZR DF Class
 
-STR_NAME_ALCODL500B:Goodwin-ALCO DL500B
-STR_INFO_ALCODL500B:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 44 Class, SAR 930 Class
+STR_NAME_ALCO_DL500B:Goodwin-ALCO DL500B
+STR_INFO_ALCO_DL500B:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 44 Class, SAR 930 Class
+STR_NAME_ALCO_DL500B_BG:Goodwin-ALCO DL500B
+STR_INFO_ALCO_DL500B_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 44 Class, SAR 930 Class
 
 STR_NAME_CLYDE_J26C:Clyde-EMD J26C
 STR_INFO_CLYDE_J26C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 422 Class
