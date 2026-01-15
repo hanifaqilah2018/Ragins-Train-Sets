@@ -54,13 +54,16 @@ STR_POWER_SOURCE_3RAIL:{GREEN}Third Rail
 
 STR_NAME_CLYDE_ML1:Clyde-EMD ML1
 STR_INFO_CLYDE_ML1:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}CR GM Class
+STR_NAME_CLYDE_ML1_BG:Clyde-EMD ML1
 STR_INFO_CLYDE_ML1_BG:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}CR GM Class
 
 STR_NAME_EE_1200CLASS:English-Electric M129C
 STR_INFO_EE_1200CLASS:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}QR 1200 Class
 
 STR_NAME_CLYDE_A16C:Clyde-EMD A16C
-STR_INFO_CLYDE_A16C:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 42 Class, VR S Class
+STR_INFO_CLYDE_A16C:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 42 Class, VR S Class
+STR_NAME_CLYDE_A16C_BG:Clyde-EMD A16C
+STR_INFO_CLYDE_A16C_BG:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 42 Class, VR S Class
 
 STR_NAME_CLYDE_AJ16C:Clyde-EMD AJ16C
 STR_INFO_CLYDE_AJ16C:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 421 Class
@@ -95,6 +98,21 @@ STR_INFO_CLYDE_G8C:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Power: {BROWN
 
 STR_NAME_MLW_RSC3:ALCO-MLW RSC-3
 STR_INFO_MLW_RSC3:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 40 Class
+
+STR_NAME_CLYDE_G16CS1:Clyde-EMD G16C
+STR_INFO_CLYDE_G16CS1:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR X Class Series 1
+STR_NAME_CLYDE_G16CS1_BG:Clyde-EMD G16C
+STR_INFO_CLYDE_G16CS1_BG:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR X Class Series 1
+
+STR_NAME_CLYDE_G26CS2:Clyde-EMD G26C (Series 1)
+STR_INFO_CLYDE_G26CS2:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR X Class Series 2
+STR_NAME_CLYDE_G26CS2_BG:Clyde-EMD G26C (Series 1)
+STR_INFO_CLYDE_G26CS2_BG:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR X Class Series 2
+
+STR_NAME_CLYDE_G26CS3:Clyde-EMD G26C (Series 2)
+STR_INFO_CLYDE_G26CS3:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR X Class Series 3
+STR_NAME_CLYDE_G26CS3_BG:Clyde-EMD G26C (Series 2)
+STR_INFO_CLYDE_G26CS3_BG:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR X Class Series 3
 
 STR_NAME_EE_1250CLASS:English-Electric MCH139C 
 STR_INFO_EE_1250CLASS:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}QR 1250 Class
