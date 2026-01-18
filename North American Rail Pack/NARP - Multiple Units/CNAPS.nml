@@ -706,7 +706,7 @@ item(FEAT_TRAINS, Item_Budd_SPV2000_Liv0, 5260) {
 }
 
 //JetTrain_Liv0
-spriteset(spriteset_JetTrain_Liv0_Purchase,   "gfx/JetTrain_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_JetTrain_Liv0_Purchase,   "gfx/JetTrain_Liv0.png") {template_purchase_88mu(7, 21)}
 spriteset(spriteset_JetTrain_Liv0_Lead,   "gfx/JetTrain_Liv0.png") {template_8(7, 39)}
 
 spriteset(spriteset_JetTrain_Liv0_Trailer_Lead,   "gfx/JetTrain_Liv0.png") {template_8(7, 69)}
@@ -3621,7 +3621,7 @@ spriteset(spriteset_NipponSharyo_EMU_PantoUp_r,   "gfx/NipponSharyo_EMU_Pantogra
 spriteset(spriteset_NipponSharyo_EMU_PantoDown,   "gfx/NipponSharyo_EMU_Pantographs.png") {template_8_repeat(7, 39)}
 
 //NipponSharyo_EMU_Liv0
-spriteset(spriteset_NipponSharyo_EMU_Liv0_Purchase,   "gfx/NipponSharyo_EMU_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_NipponSharyo_EMU_Liv0_Purchase,   "gfx/NipponSharyo_EMU_Liv0.png") {template_purchase_88mu(7, 21)}
 spriteset(spriteset_NipponSharyo_EMU_Liv0,   "gfx/NipponSharyo_EMU_Liv0.png") {template_8_repeat(7, 39)}
 
 //Pantograph Controls
@@ -6325,7 +6325,7 @@ switch(FEAT_TRAINS, SELF, switch_AcelaExpress_Rw_railtype, tile_powers_railtype(
 }
 
 //AcelaExpress_Liv0
-spriteset(spriteset_AcelaExpress_Liv0_Purchase,   "gfx/AcelaExpress_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_AcelaExpress_Liv0_Purchase,   "gfx/AcelaExpress_Liv0.png") {template_purchase_88mu(7, 21)}
 spriteset(spriteset_AcelaExpress_Liv0_Lead,   "gfx/AcelaExpress_Liv0.png") {template_8(7, 39)}
 
 spriteset(spriteset_AcelaExpress_Liv0_Trailer_Lead,   "gfx/AcelaExpress_Liv0.png") {template_8(7, 69)}
