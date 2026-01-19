@@ -233,6 +233,9 @@ STR_INFO_COMENG_CL628:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overh
 STR_NAME_COMENG_85CLASS:Comeng CL627
 STR_INFO_COMENG_85CLASS:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}NSW 85 Class
 
+STR_NAME_CLYDE_CF48:Asea-Clyde-Walkers CF48
+STR_INFO_CLYDE_CF48:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge{}{BLACK}Power: {RED}AC Overhead Line {}{BLACK}Based on: {GOLD}QR 3500/3600 Class
+
 STR_NAME_COMENG_CL632:Comeng CL632
 STR_INFO_COMENG_CL632:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {RED}AC Overhead Line {}{BLACK}Based on: {GOLD}Proposed Maldon-Dombarton locomotive based on 8650
 
@@ -258,8 +261,8 @@ STR_INFO_COMENG_CL627A_TRIBO:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GO
 STR_NAME_EFCLASS:Brush EF Class
 STR_INFO_EFCLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}NZ EF Class
 
-STR_NAME_WALKERS_JA393B:ASEA-Clyde-Walkers JA39-3B
-STR_INFO_WALKERS_JA393B:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}QR 3900 Class
+STR_NAME_CLYDE_JAE393B:Asea-Clyde-Walkers JAE39-3B
+STR_INFO_CLYDE_JAE393B:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge{}{BLACK}Power: {RED}AC Overhead Line {}{BLACK}Based on: {GOLD}QR 3900 Class
 
 
 STR_NAME_ALCO_C628:ALCO C628

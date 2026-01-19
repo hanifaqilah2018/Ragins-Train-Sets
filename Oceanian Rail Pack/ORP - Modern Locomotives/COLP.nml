@@ -128,7 +128,20 @@ grf{
   }
 
 railtypetable {
-    RAIL, SAA3: [ MTRO, SBA3, SCA3, SDA3, "3RDR", "3RDC", MTRO, ELRL], ELRL, OHLE_DC: [SAAD, SAAE, ELRL], OHLE_AC: [SAAA, SAAE, ELRL], TR_UNIVERSAL: [_AAE, RAIL], BG_RAIL: [BAAN, RAIL], BG_RAIL_ONLY: [BAAN], NG_RAIL: [NAAN, RAIL], NG_RAIL_ONLY: [NAAN],
+    RAIL, 
+	SAA3: [ MTRO, SBA3, SCA3, SDA3, "3RDR", "3RDC", MTRO, ELRL], 
+	ELRL, 
+	OHLE_DC: [SAAD, SAAE, ELRL], 
+	OHLE_AC: [SAAA, SAAE, ELRL], 
+	TR_UNIVERSAL: [_AAE, RAIL], 
+	BG_RAIL: [BAAN, RAIL], 
+	BG_RAIL_ONLY: [BAAN], 
+	NG_RAIL: [NAAN, RAIL], 
+	NG_RAIL_ONLY: [NAAN], 
+	NG_RAIL_OHLE_DC: [NAAD, NAAE, SAAD, SAAE, ELRL], 
+	NG_RAIL_ONLY_OHLE_DC: [NAAD, NAAE],
+	NG_RAIL_OHLE_AC: [NAAA, NAAE, SAAA, SAAE, ELRL], 
+	NG_RAIL_ONLY_OHLE_AC: [NAAA, NAAE],
 }
 
 //Basecost Paramater Variables
@@ -1654,7 +1667,7 @@ item(FEAT_TRAINS, Item_Clyde_ML1_Liv0, 5500) {
         weight:                        108 ton;
         speed:                            145 km/h;
         power:                            1500 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     12;
         running_cost_factor:             95;
 		cargo_capacity:                  0;
@@ -1696,7 +1709,7 @@ item(FEAT_TRAINS, Item_Clyde_ML1_BG_Liv0, 5600) {
         weight:                        108 ton;
         speed:                            145 km/h;
         power:                            1500 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     12;
         running_cost_factor:             95;
 		cargo_capacity:                  0;
@@ -1784,7 +1797,7 @@ item(FEAT_TRAINS, Item_Clyde_A16C_Liv0, 5900) {
         weight:                        120 ton;
         speed:                            145 km/h;
         power:                            1750 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             88;
 		cargo_capacity:                  0;
@@ -1826,7 +1839,7 @@ item(FEAT_TRAINS, Item_Clyde_A16C_BG_Liv0, 6000) {
         weight:                        120 ton;
         speed:                            145 km/h;
         power:                            1750 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             88;
 		cargo_capacity:                  0;
@@ -1888,7 +1901,7 @@ item(FEAT_TRAINS, Item_AGE_41Class_Liv0, 9000) {
         weight:                        82 ton;
         speed:                            95 km/h;
         power:                            1000 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     5;
         running_cost_factor:             55;
 		cargo_capacity:                  0;
@@ -1976,7 +1989,7 @@ item(FEAT_TRAINS, Item_ALCO_DL531_NG_Liv0, 12200) {
         weight:                        74 ton;
         speed:                            120 km/h;
         power:                            1050 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     7;
         running_cost_factor:             59;
 		cargo_capacity:                  0;
@@ -2020,7 +2033,7 @@ item(FEAT_TRAINS, Item_ALCO_DL531_Liv0, 12300) {
         weight:                        74 ton;
         speed:                            120 km/h;
         power:                            1050 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     7;
         running_cost_factor:             59;
 		cargo_capacity:                  0;
@@ -2063,7 +2076,7 @@ item(FEAT_TRAINS, Item_ALCO_DL531_BG_Liv0, 12400) {
         weight:                        74 ton;
         speed:                            120 km/h;
         power:                            1050 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     7;
         running_cost_factor:             59;
 		cargo_capacity:                  0;
@@ -2150,7 +2163,7 @@ item(FEAT_TRAINS, Item_MLW_RSC3_Liv0, 16700) {
         weight:                        111 ton;
         speed:                            120 km/h;
         power:                            1650 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             80;
 		cargo_capacity:                  0;
@@ -2238,7 +2251,7 @@ item(FEAT_TRAINS, Item_Clyde_G16CS1_Liv0, 17100) {
         weight:                        112 ton;
         speed:                            130 km/h;
         power:                            1800 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             88;
 		cargo_capacity:                  0;
@@ -2281,7 +2294,7 @@ item(FEAT_TRAINS, Item_Clyde_G16CS1_BG_Liv0, 17200) {
         weight:                        112 ton;
         speed:                            130 km/h;
         power:                            1800 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             88;
 		cargo_capacity:                  0;
@@ -2324,7 +2337,7 @@ item(FEAT_TRAINS, Item_Clyde_G26CS2_Liv0, 17600) {
         weight:                        114 ton;
         speed:                            130 km/h;
         power:                            2200 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             98;
 		cargo_capacity:                  0;
@@ -2367,7 +2380,7 @@ item(FEAT_TRAINS, Item_Clyde_G26CS2_BG_Liv0, 17700) {
         weight:                        114 ton;
         speed:                            130 km/h;
         power:                            2200 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             98;
 		cargo_capacity:                  0;
@@ -2455,7 +2468,7 @@ item(FEAT_TRAINS, Item_Clyde_G26CS3_Liv0, 18000) {
         weight:                        116 ton;
         speed:                            130 km/h;
         power:                            2200 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             97;
 		cargo_capacity:                  0;
@@ -2498,7 +2511,7 @@ item(FEAT_TRAINS, Item_Clyde_G26CS3_BG_Liv0, 18100) {
         weight:                        116 ton;
         speed:                            130 km/h;
         power:                            2200 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             97;
 		cargo_capacity:                  0;
@@ -2647,7 +2660,7 @@ item(FEAT_TRAINS, Item_Clyde_ML2_Liv0, 30200) {
         weight:                        114 ton;
         speed:                            130 km/h;
         power:                            1500 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             88;
 		cargo_capacity:                  0;
@@ -2690,7 +2703,7 @@ item(FEAT_TRAINS, Item_Clyde_ML2_BG_Liv0, 30300) {
         weight:                        114 ton;
         speed:                            130 km/h;
         power:                            1500 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     11;
         running_cost_factor:             88;
 		cargo_capacity:                  0;
@@ -2777,7 +2790,7 @@ item(FEAT_TRAINS, Item_ALCO_DL500B_Liv0, 30800) {
         weight:                        112 ton;
         speed:                            130 km/h;
         power:                            1950 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     12;
         running_cost_factor:             110;
 		cargo_capacity:                  0;
@@ -2820,7 +2833,7 @@ item(FEAT_TRAINS, Item_ALCO_DL500B_BG_Liv0, 30900) {
         weight:                        112 ton;
         speed:                            130 km/h;
         power:                            1950 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     12;
         running_cost_factor:             110;
 		cargo_capacity:                  0;
@@ -2834,6 +2847,82 @@ item(FEAT_TRAINS, Item_ALCO_DL500B_BG_Liv0, 30900) {
         purchase: switch_ALCO_DL500B_Liv0_Purchase_Stack;
         additional_text: string(STR_INFO_ALCO_DL500B_BG);
 		reverse_build_probability: return 25;
+}
+}
+
+spriteset(spriteset_Clyde_CF48_Pantograph_Purchase,   "gfx/Clyde_CF48_Pantographs.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_Clyde_CF48_PantoDown,   "gfx/Clyde_CF48_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_Clyde_CF48_PantoUp,   "gfx/Clyde_CF48_Pantographs.png") {template_8(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_Clyde_CF48_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_Clyde_CF48_PantoDown;
+ 1: spriteset_Clyde_CF48_PantoUp;
+}
+
+//Clyde_CF48_Liv0
+spriteset(spriteset_Clyde_CF48_Liv0_Purchase,   "gfx/Clyde_CF48_Liv0A.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Clyde_CF48_Liv0,   "gfx/Clyde_CF48_Liv0A.png") {template_8(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Clyde_CF48_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_CF48_Liv0_Purchase;
+    1: switch_Couplers_8_Repeat_QLD_Purchase;
+	2: spriteset_Clyde_CF48_Pantograph_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Clyde_CF48_Liv0_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_CF48_Liv0;
+	1: switch_Couplers_8_Repeat_QLD;
+    2: switch_Clyde_CF48_railtype;
+}
+
+
+item(FEAT_TRAINS, Item_Clyde_CF48_Liv0, 44700) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        NG_RAIL_OHLE_AC;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_CLYDE_CF48);
+        introduction_date:                date(1986,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        109 ton;
+        speed:                            80 km/h;
+        power:                            3880 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     15;
+        running_cost_factor:             115;
+		cargo_capacity:                  0;
+		
+//        variant_group: Item_Clyde_CF48_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Clyde_CF48_Liv0_Stack;
+//		sound_effect: switch_Modern_Electric_Horn;
+        purchase: switch_Clyde_CF48_Liv0_Purchase_Stack;
+        additional_text: string(STR_INFO_CLYDE_CF48);
+		reverse_build_probability: return 50;
 }
 }
 
@@ -2961,7 +3050,7 @@ item(FEAT_TRAINS, Item_Comeng_CL632_Liv0, 44800) {
         weight:                        123 ton;
         speed:                            130 km/h;
         power:                            3620 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     17;
         running_cost_factor:             128;
 		cargo_capacity:                  0;
@@ -3061,7 +3150,7 @@ item(FEAT_TRAINS, Item_MetroVick_46Class_Liv0, 49000) {
         weight:                        111 ton;
         speed:                            115 km/h;
         power:                            3400 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     15;
         running_cost_factor:             110;
 		cargo_capacity:                  0;
@@ -3185,7 +3274,7 @@ item(FEAT_TRAINS, Item_Comeng_CL627A_Liv0, 49200) {
         weight:                        119 ton;
         speed:                            130 km/h;
         power:                            3620 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     16;
         running_cost_factor:             120;
 		cargo_capacity:                  0;
@@ -3264,7 +3353,7 @@ item(FEAT_TRAINS, Item_Comeng_CL627A_Liv0_TriBo, 49300) {
         weight:                        123 ton;
         speed:                            130 km/h;
         power:                            3620 hp;
-        tractive_effort_coefficient:     0.7;
+        tractive_effort_coefficient:     0.5;
         cost_factor:                     16;
         running_cost_factor:             120;
 		cargo_capacity:                  0;
@@ -3277,6 +3366,72 @@ item(FEAT_TRAINS, Item_Comeng_CL627A_Liv0_TriBo, 49300) {
 //		sound_effect: switch_Modern_Electric_Horn;
         purchase: switch_Comeng_CL627A_Liv0_TriBo_Purchase_Stack;
         additional_text: string(STR_INFO_COMENG_CL627A_TRIBO);
+		reverse_build_probability: return 50;
+}
+}
+
+//Clyde_JAE393B_Liv0
+spriteset(spriteset_Clyde_JAE393B_Liv0_Purchase,   "gfx/Clyde_CF48_Liv0B.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Clyde_JAE393B_Liv0,   "gfx/Clyde_CF48_Liv0B.png") {template_8(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Clyde_JAE393B_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_JAE393B_Liv0_Purchase;
+    1: switch_Couplers_8_Repeat_QLD_Purchase;
+	2: spriteset_Clyde_CF48_Pantograph_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Clyde_JAE393B_Liv0_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_JAE393B_Liv0;
+	1: switch_Couplers_8_Repeat_QLD;
+    2: switch_Clyde_CF48_railtype;
+}
+
+
+item(FEAT_TRAINS, Item_Clyde_JAE393B_Liv0, 49200) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        NG_RAIL_OHLE_AC;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_CLYDE_JAE393B);
+        introduction_date:                date(1988,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        109 ton;
+        speed:                            100 km/h;
+        power:                            3880 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     15;
+        running_cost_factor:             115;
+		cargo_capacity:                  0;
+		
+//        variant_group: Item_Clyde_JAE393B_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Clyde_JAE393B_Liv0_Stack;
+//		sound_effect: switch_Modern_Electric_Horn;
+        purchase: switch_Clyde_JAE393B_Liv0_Purchase_Stack;
+        additional_text: string(STR_INFO_CLYDE_JAE393B);
 		reverse_build_probability: return 50;
 }
 }
