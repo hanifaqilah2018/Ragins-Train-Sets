@@ -98,6 +98,9 @@ STR_INFO_CLYDE_G8C:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} 
 STR_NAME_GMD_G8A:GMD G8A
 STR_INFO_GMD_G8A:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZ DB Class
 
+STR_NAME_GONINAN_47CLASS:Goninan 47 Class
+STR_INFO_GONINAN_47CLASS:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 47 Class {}{GOLD}Born to haul coal trains, forced to go to Bathurst
+
 
 
 STR_NAME_MLW_RSC3:ALCO-MLW RSC-3
@@ -284,9 +287,9 @@ STR_INFO_COMENG_CL632_3R:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standa
 
 
 STR_NAME_CLYDE_AAT22C2R:Clyde-EMD AAT22C-2R
-STR_INFO_CLYDE_AAT22C2R:{BLACK}Role: {GOLD}Passenger {}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}Clyde-EMD ML2 {}{BLACK}Based on: {GOLD}V/Line A Class
+STR_INFO_CLYDE_AAT22C2R:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}Clyde-EMD ML2 {}{BLACK}Based on: {GOLD}V/Line A Class
 STR_NAME_CLYDE_AAT22C2R_BG:Clyde-EMD AAT22C-2R
-STR_INFO_CLYDE_AAT22C2R_BG:{BLACK}Role: {GOLD}Passenger {}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}Clyde-EMD ML2 {}{BLACK}Based on: {GOLD}V/Line A Class
+STR_INFO_CLYDE_AAT22C2R_BG:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}Clyde-EMD ML2 {}{BLACK}Based on: {GOLD}V/Line A Class
 
 
 
