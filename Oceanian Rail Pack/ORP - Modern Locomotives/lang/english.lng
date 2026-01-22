@@ -71,9 +71,9 @@ STR_NAME_CLYDE_AJ16C:Clyde-EMD AJ16C
 STR_INFO_CLYDE_AJ16C:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 421 Class
 
 STR_NAME_CLYDE_JT22HC2:Clyde-EMD JT22HC-2
-STR_INFO_CLYDE_JT22HC2:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}V/Line N Class {}{}{GOLD}Thump Thump Thump
+STR_INFO_CLYDE_JT22HC2:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}V/Line N Class {}{GOLD}Thump Thump Thump
 STR_NAME_CLYDE_JT22HC2_BG:Clyde-EMD JT22HC-2
-STR_INFO_CLYDE_JT22HC2_BG:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}V/Line N Class {}{}{GOLD}Thump Thump Thump
+STR_INFO_CLYDE_JT22HC2_BG:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}V/Line N Class {}{GOLD}Thump Thump Thump
 
 STR_NAME_CLYDE_AJT32HB2:Clyde-EMD AJT32HB2
 STR_INFO_CLYDE_AJT32HB2:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Fictional, but inspired by proposed Bo-Bo HPT Locomotive
@@ -94,6 +94,9 @@ STR_INFO_ALCO_DL531_BG:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GO
 
 STR_NAME_CLYDE_G8C:Clyde-EMD G8C
 STR_INFO_CLYDE_G8C:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 49 Class {}{GOLD}Pride of the West
+
+STR_NAME_GMD_G8A:GMD G8A
+STR_INFO_GMD_G8A:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZ DB Class
 
 
 
@@ -189,6 +192,9 @@ STR_INFO_CLYDE_ML2:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standa
 
 STR_NAME_CLYDE_ML2_BG:Clyde-EMD ML2
 STR_INFO_CLYDE_ML2_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR B Class
+
+STR_NAME_CLYDE_G12A:Clyde-EMD G12A
+STR_INFO_CLYDE_G12A:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZ DA Class
 
 STR_NAME_EE_DFCLASS:English-Electric DF Class
 STR_INFO_EE_DFCLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZR DF Class
