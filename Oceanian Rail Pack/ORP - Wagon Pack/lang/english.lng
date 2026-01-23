@@ -1,0 +1,59 @@
+##grflangid 0x0
+
+STR_GRF_NAME:Oceanian Rail Pack - Wagons v1
+STR_GRF_DESCRIPTION:Diesel and electric locomotives from the US, Canada, and Mexico, all in 2cc. Drawn and Coded by Zachary Moore (Ragin1_)
+
+STR_PARAM_PURCHASE_COST             :Purchase cost multiplier
+STR_PARAM_PURCHASE_COST_DESC        :You can use this setting to increase or decrease the purchase costs of the vehicles in this set.
+STR_PARAM_RUNNING_COST              :Running cost multiplier
+STR_PARAM_RUNNING_COST_DESC         :You can use this setting to increase or decrease the running costs of the vehicles in this set.
+
+STR_PARAM_DIVIDE_16                 :1/16
+STR_PARAM_DIVIDE_8                  :1/8
+STR_PARAM_DIVIDE_4                  :1/4
+STR_PARAM_DIVIDE_2                  :1/2
+STR_PARAM_NORMAL                    :1 (default)
+STR_PARAM_TIMES_2                   :2
+STR_PARAM_TIMES_4                   :4
+STR_PARAM_TIMES_8                   :8
+STR_PARAM_TIMES_16                  :16
+
+STR_PARAM_NAME_CAPACITY:Passenger Car Capacity
+STR_PARAM_NAME_FREIGHT_CAPACITY:Freight Car Capacity
+STR_PARAM_DESC_CAPACITY:You can use this setting to adjust the capacity of trains. Useful for balancing it against sets like NARS or UKRS
+STR_PARAM_REAL_CAPACITY:Realistic Capacity
+STR_PARAM_NORMAL_REDUCED:Reduced Capacity
+
+STR_PARAM_NAME_REALDISABLE:Disable Real Trains
+STR_PARAM_DESC_REALDISABLE:Enable/disable Real trains (Trains that were physically built, and put in service).
+
+STR_PARAM_NAME_PROTOTYPEDISABLE:Disable Prototype Trains
+STR_PARAM_DESC_PROTOTYPEDISABLE:Enable/disable Prototype trains (trains that were built, but were mostly used for testing, and potentially put in limited service).
+
+STR_PARAM_NAME_PROPOSALDISABLE:Disable Proposed Trains
+STR_PARAM_DESC_PROPOSALDISABLE:Enable/disable Proposed trains (trains that were designed, or seriously proposed, but not actually built).
+
+STR_PARAM_NAME_FICTIONALDISABLE:Disable Fictional Trains
+STR_PARAM_DESC_FICTIONALDISABLE:Enable/disable Fictional trains (trains that are entirely fictional, and are only included for gameplay balance).
+
+STR_PARAM_NAME_COUPLERS:What Coupers should trains use?
+STR_PARAM_DESC_COUPLERS:IRL trains in Australia/New Zealand started with Buffer and Chain Couplers, but transitioned to knuckles over time. What should this set do with them? {}{}{WHITE}Buffers:{BLACK} Buffer Couplers only (Best compatibility with Iron Horse){}{WHITE}Knuckles:{BLACK} Knuckle couplers only {}{WHITE}Transition:{BLACK} Transition from Buffers to Knuckles in 1945 {}{GOLD}Don't forget to change this setting in the locomotive packs too!
+STR_PARAM_COUPLERS_BUFFERS:Buffers Only
+STR_PARAM_COUPLERS_KNUCKLES:Knuckles Only
+STR_PARAM_TRANSITION:Transition
+
+
+
+STR_NAME_GEN4_HOPPER_NG:BCH Hopper
+STR_INFO_GEN4_HOPPER_NG:{BLACK}Gauge:{GOLD} Narrow Gauge
+STR_NAME_GEN4_HOPPER:BCH Hopper
+STR_INFO_GEN4_HOPPER:{BLACK}Gauge:{GOLD} Standard Gauge
+STR_NAME_GEN4_HOPPER_BG:BCH Hopper
+STR_INFO_GEN4_HOPPER_BG:{BLACK}Gauge:{GOLD} Broad Gauge
+
+STR_NAME_GEN5_HOPPER_NG:Gen5 Hopper
+STR_INFO_GEN5_HOPPER_NG:{BLACK}Gauge:{GOLD} Narrow Gauge
+STR_NAME_GEN5_HOPPER:Gen5 Hopper
+STR_INFO_GEN5_HOPPER:{BLACK}Gauge:{GOLD} Standard Gauge
+STR_NAME_GEN5_HOPPER_BG:Gen5 Hopper
+STR_INFO_GEN5_HOPPER_BG:{BLACK}Gauge:{GOLD} Broad Gauge

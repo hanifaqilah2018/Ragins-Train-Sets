@@ -130,7 +130,6 @@ grf{
 railtypetable {
     RAIL, 
 	SAA3: [ MTRO, SBA3, SCA3, SDA3, "3RDR", "3RDC", MTRO, ELRL], 
-	ELRL, 
 	OHLE_DC: [SAAD, SAAE, ELRL], 
 	OHLE_AC: [SAAA, SAAE, ELRL], 
 	TR_UNIVERSAL: [_AAE, RAIL], 
@@ -3545,9 +3544,9 @@ item(FEAT_TRAINS, Item_Clyde_J26C_Liv0, 20700) {
 spriteset(spriteset_Clyde_CF48_Pantograph_Purchase,   "gfx/Clyde_CF48_Pantographs.png") {template_purchase_8(7, 21)}
 
 spriteset(spriteset_Clyde_CF48_PantoDown,   "gfx/Clyde_CF48_Pantographs.png") {template_8(7, 39)}
-spriteset(spriteset_Clyde_CF48_PantoUp,   "gfx/Clyde_CF48_Pantographs.png") {template_8(7, 99)}
+spriteset(spriteset_Clyde_CF48_PantoUp,   "gfx/Clyde_CF48_Pantographs.png") {template_8(7, 69)}
 
-switch(FEAT_TRAINS, SELF, switch_Clyde_CF48_railtype, tile_powers_railtype("OHLE_AC")) {
+switch(FEAT_TRAINS, SELF, switch_Clyde_CF48_railtype, tile_powers_railtype("NG_RAIL_OHLE_AC")) {
  0: spriteset_Clyde_CF48_PantoDown;
  1: spriteset_Clyde_CF48_PantoUp;
 }

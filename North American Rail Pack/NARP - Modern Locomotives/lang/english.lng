@@ -329,7 +329,7 @@ STR_NAME_GE_EP4:GE EP4
 STR_INFO_GE_EP4:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
 
 STR_NAME_GE_EP5:GE EP5
-STR_INFO_GE_EP5:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
+STR_INFO_GE_EP5:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line {GREEN}Third Rail
 
 STR_NAME_GE_E60CH:GE E60CH
 STR_INFO_GE_E60CH:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
