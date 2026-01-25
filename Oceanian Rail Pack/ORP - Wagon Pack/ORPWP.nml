@@ -2301,6 +2301,8 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_BG, 30820) {
 }
 }
 
+sort(FEAT_TRAINS, [Item_Gen5A_GoodsVan_Liv0_BG, Item_Gen5B_GoodsVan_Liv0_NG, Item_Gen5B_GoodsVan_Liv0, Item_Gen5B_GoodsVan_Liv0_BG]);
+
 //Gen5B_GoodsVan_Liv0
 spriteset(spriteset_Gen5B_GoodsVan_Liv0_Purchase,   "gfx/Gen5B_GoodsVan_Liv0_0.png") {template_purchase_9(7, 21)}
 
@@ -2388,13 +2390,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_NG, 3000) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv0_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv0_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv0_articulated_part;  
 }
@@ -2435,13 +2437,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0, 3010) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv0_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv0_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv0_articulated_part;  
 }
@@ -2482,13 +2484,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_BG, 3020) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv0_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv0_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv0_articulated_part;  
 }
@@ -2581,13 +2583,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_NG, 3001) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv1_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv1_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv1_articulated_part;  
 }
@@ -2628,13 +2630,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1, 3011) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv1_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv1_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv1_articulated_part;  
 }
@@ -2675,13 +2677,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_BG, 3021) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv1_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv1_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv1_articulated_part;  
 }
@@ -2774,13 +2776,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_NG, 3002) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv2_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv2_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv2_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv2_articulated_part;  
 }
@@ -2821,13 +2823,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2, 3012) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv2_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv2_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv2_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv2_articulated_part;  
 }
@@ -2868,13 +2870,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_BG, 3022) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv2_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv2_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv2_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv2_articulated_part;  
 }
@@ -2967,13 +2969,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_NG, 3003) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv3_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv3_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv3_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv3_articulated_part;  
 }
@@ -3014,13 +3016,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3, 3013) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv3_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv3_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv3_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv3_articulated_part;  
 }
@@ -3061,13 +3063,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_BG, 3023) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv3_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv3_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv3_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv3_articulated_part;  
 }
@@ -3160,13 +3162,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_NG, 3004) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv4_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv4_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv4_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv4_articulated_part;  
 }
@@ -3207,13 +3209,13 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4, 3014) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv4_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv4_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv4_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv4_articulated_part;  
 }
@@ -3254,15 +3256,202 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_BG, 3024) {
 
         speed:                            115 km/h;
         weight:                            30 ton;
-        cargo_capacity:                    40/param_freight_capacity_mod; //Callback!!!
+        cargo_capacity:                    50/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
     default:                             switch_Gen5B_GoodsVan_Liv4_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv4_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	cargo_capacity:                   return 40/param_freight_capacity_mod;
+	cargo_capacity:                   return 50/param_freight_capacity_mod;
 	length: switch_Gen5B_GoodsVan_Liv4_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv4_articulated_part;  
+}
+}
+
+//Gen6D_GoodsVan_Liv0
+spriteset(spriteset_Gen6D_GoodsVan_Purchase,   "gfx/Gen6D_GoodsVan_Liv0_0.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_Gen6D_GoodsVan_Liv0_0,   "gfx/Gen6D_GoodsVan_Liv0_0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen6D_GoodsVan_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen6D_GoodsVan_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen6D_GoodsVan_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_8_Modern_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen6D_GoodsVan_SpriteStack1;
+    return switch_Gen6D_GoodsVan_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen6D_GoodsVan_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_8_Modern_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen6D_GoodsVan_SpriteStack2;
+    return switch_Gen6D_GoodsVan_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_position, vehicle_is_flipped) {
+ 0: switch_Gen6D_GoodsVan_rearcheck1;
+ 1: switch_Gen6D_GoodsVan_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_NG, 32360) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
+		default_cargo_type:				GOOD;
+		cargo_disallow_refit:			[TOUR, LVST];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        NG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    80;
+        running_cost_factor:            1;
+        loading_speed:                    5;
+
+//        variant_group: Item_Gen6D_GoodsVan_Liv0_NG;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN6D_GOODSVAN_NG);
+        introduction_date:                date(1995, 1, 1);
+
+        speed:                            145 km/h;
+        weight:                            27 ton;
+        cargo_capacity:                    80/param_freight_capacity_mod; //Callback!!!
+    }
+    graphics {
+    default:                             switch_Gen6D_GoodsVan_position;
+    purchase:                            switch_Gen6D_GoodsVan_PurchaseStack;
+    additional_text: string(STR_INFO_GEN6D_GOODSVAN_NG);
+	cargo_capacity:                   return 80/param_freight_capacity_mod;
+}
+}
+
+
+item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0, 32370) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
+		default_cargo_type:				GOOD;
+		cargo_disallow_refit:			[TOUR, LVST];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    80;
+        running_cost_factor:            1;
+        loading_speed:                    5;
+
+//        variant_group: Item_Gen6D_GoodsVan_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN6D_GOODSVAN);
+        introduction_date:                date(1995, 1, 1);
+
+        speed:                            145 km/h;
+        weight:                            27 ton;
+        cargo_capacity:                    80/param_freight_capacity_mod; //Callback!!!
+    }
+    graphics {
+    default:                             switch_Gen6D_GoodsVan_position;
+    purchase:                            switch_Gen6D_GoodsVan_PurchaseStack;
+    additional_text: string(STR_INFO_GEN6D_GOODSVAN);
+	cargo_capacity:                   return 80/param_freight_capacity_mod;
+}
+}
+
+item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_BG, 32380) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
+		default_cargo_type:				GOOD;
+		cargo_disallow_refit:			[TOUR, LVST];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        BG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    80;
+        running_cost_factor:            1;
+        loading_speed:                    5;
+
+//        variant_group: Item_Gen6D_GoodsVan_Liv0_BG;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN6D_GOODSVAN_BG);
+        introduction_date:                date(1995, 1, 1);
+
+        speed:                            145 km/h;
+        weight:                            27 ton;
+        cargo_capacity:                    80/param_freight_capacity_mod; //Callback!!!
+    }
+    graphics {
+    default:                             switch_Gen6D_GoodsVan_position;
+    purchase:                            switch_Gen6D_GoodsVan_PurchaseStack;
+    additional_text: string(STR_INFO_GEN6D_GOODSVAN_BG);
+	cargo_capacity:                   return 80/param_freight_capacity_mod;
 }
 }
 
