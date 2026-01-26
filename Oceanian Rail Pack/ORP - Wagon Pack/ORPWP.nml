@@ -1617,7 +1617,7 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_NG, 30550) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -1662,7 +1662,7 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0, 30565) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -1706,7 +1706,7 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_BG, 30580) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -1804,7 +1804,7 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_NG, 30600) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -1849,7 +1849,7 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0, 30615) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -1893,7 +1893,7 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_BG, 30630) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -1991,7 +1991,7 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_NG, 30650) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2036,7 +2036,7 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0, 30665) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2080,7 +2080,7 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_BG, 30680) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2178,7 +2178,7 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_NG, 30700) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2223,7 +2223,7 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0, 30715) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2267,7 +2267,7 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_BG, 30730) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2365,7 +2365,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_NG, 3000) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2412,7 +2412,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0, 3015) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2459,7 +2459,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_BG, 3030) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2558,7 +2558,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_NG, 3001) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2605,7 +2605,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1, 3016) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2652,7 +2652,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_BG, 3031) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2751,7 +2751,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_NG, 3002) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2798,7 +2798,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2, 3017) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2845,7 +2845,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_BG, 3032) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2944,7 +2944,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_NG, 3003) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -2991,7 +2991,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3, 3018) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3038,7 +3038,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_BG, 3033) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3137,7 +3137,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_NG, 3004) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3184,7 +3184,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4, 3019) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3231,7 +3231,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_BG, 3034) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3332,7 +3332,7 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_NG, 32250) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3377,7 +3377,7 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0, 32265) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3421,7 +3421,7 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_BG, 32280) {
 		default_cargo_type:				GOOD;
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3536,7 +3536,7 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0_NG, 42150) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3580,7 +3580,7 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0, 42165) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3623,7 +3623,7 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0_BG, 42180) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3730,7 +3730,7 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1_NG, 42151) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3774,7 +3774,7 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1, 42166) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3817,7 +3817,7 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1_BG, 42181) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3931,7 +3931,7 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv0_NG, 42650) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -3975,7 +3975,7 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv0, 42665) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4018,7 +4018,7 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv0_BG, 42680) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4125,7 +4125,7 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv1_NG, 42651) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4169,7 +4169,7 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv1, 42666) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4212,7 +4212,7 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv1_BG, 42681) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4326,7 +4326,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv0_NG, 44200) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4370,7 +4370,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv0, 44215) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4413,7 +4413,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv0_BG, 44230) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4514,7 +4514,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv1_NG, 44201) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4558,7 +4558,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv1, 44216) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4601,7 +4601,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv1_BG, 44231) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4702,7 +4702,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv2_NG, 44202) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4746,7 +4746,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv2, 44217) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4789,7 +4789,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv2_BG, 44232) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4890,7 +4890,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv3_NG, 44203) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4934,7 +4934,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv3, 44218) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -4977,7 +4977,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv3_BG, 44233) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -5078,7 +5078,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv4_NG, 44204) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -5122,7 +5122,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv4, 44219) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -5165,7 +5165,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv4_BG, 44234) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -5266,7 +5266,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5_NG, 44205) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        NG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -5310,7 +5310,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5, 44220) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        RAIL;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -5353,7 +5353,7 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5_BG, 44235) {
 		default_cargo_type:				COAL;
 		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
         refit_cost:                        0;
         track_type:                        BG_RAIL_ONLY;
         ai_special_flag:                AI_FLAG_CARGO;
@@ -5444,39 +5444,40 @@ switch(FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv0_position, vehicle_is_f
 
 item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_NG, 46650) {
     property {
-        climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE);
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
-		default_cargo_type:				GRAI;
-		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                        NG_RAIL_ONLY;
+		ai_special_flag:                AI_FLAG_CARGO;
+		bitmask_vehicle_info:            0;
+		
+		climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE); //CoveredHopper
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS); //CoveredHopper
+		default_cargo_type:				GRAI; //CoveredHopper
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //CoveredHopper
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE, WOOL]; //CoveredHopper
+
+        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER_NG);
+
         refit_cost:                        0;
-        track_type:                        NG_RAIL_ONLY;
-        ai_special_flag:                AI_FLAG_CARGO;
         power:                            0 hp;
         dual_headed:                    0;
         air_drag_coefficient:            0.08;
-        bitmask_vehicle_info:            0;
-
         running_cost_base:                RUNNING_COST_STEAM;
-
         model_life:                        30;
-
+		
         length:                            6;
         cost_factor:                    85;
         running_cost_factor:            6;
         loading_speed:                    5;
 
-//        variant_group: Item_Gen4A_CoveredHopper_Liv0_NG;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-
-        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER_NG);
         introduction_date:                date(1950, 1, 1);
-
         speed:                            115 km/h;
         weight:                            20 ton;
         cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+		
+		//variant_group: Item_Gen4A_CoveredHopper_Liv0_NG;
+		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
     default:                             switch_Gen4A_CoveredHopper_Liv0_position;
@@ -5489,39 +5490,40 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_NG, 46650) {
 
 item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0, 46665) {
     property {
-        climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE);
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
-		default_cargo_type:				GRAI;
-		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                        RAIL;
+		ai_special_flag:                AI_FLAG_CARGO;
+		bitmask_vehicle_info:            0;
+		
+		climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE); //CoveredHopper
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS); //CoveredHopper
+		default_cargo_type:				GRAI; //CoveredHopper
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //CoveredHopper
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE, WOOL]; //CoveredHopper
+
+        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER);
+
         refit_cost:                        0;
-        track_type:                        RAIL;
-        ai_special_flag:                AI_FLAG_CARGO;
         power:                            0 hp;
         dual_headed:                    0;
         air_drag_coefficient:            0.08;
-        bitmask_vehicle_info:            0;
-
         running_cost_base:                RUNNING_COST_STEAM;
-
         model_life:                        30;
-
+		
         length:                            6;
         cost_factor:                    85;
         running_cost_factor:            6;
         loading_speed:                    5;
 
-//        variant_group: Item_Gen4A_CoveredHopper_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-
-        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER);
         introduction_date:                date(1950, 1, 1);
-
         speed:                            115 km/h;
         weight:                            20 ton;
         cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+		
+		//variant_group: Item_Gen4A_CoveredHopper_Liv0;
+		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
     default:                             switch_Gen4A_CoveredHopper_Liv0_position;
@@ -5533,39 +5535,40 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0, 46665) {
 
 item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_BG, 46680) {
     property {
-        climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE);
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
-		default_cargo_type:				GRAI;
-		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                        BG_RAIL_ONLY;
+		ai_special_flag:                AI_FLAG_CARGO;
+		bitmask_vehicle_info:            0;
+		
+		climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE); //CoveredHopper
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS); //CoveredHopper
+		default_cargo_type:				GRAI; //CoveredHopper
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //CoveredHopper
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE, WOOL]; //CoveredHopper
+
+        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER_NG);
+
         refit_cost:                        0;
-        track_type:                        BG_RAIL_ONLY;
-        ai_special_flag:                AI_FLAG_CARGO;
         power:                            0 hp;
         dual_headed:                    0;
         air_drag_coefficient:            0.08;
-        bitmask_vehicle_info:            0;
-
         running_cost_base:                RUNNING_COST_STEAM;
-
         model_life:                        30;
-
+		
         length:                            6;
         cost_factor:                    85;
         running_cost_factor:            6;
         loading_speed:                    5;
 
-//        variant_group: Item_Gen4A_CoveredHopper_Liv0_BG;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-
-        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER_BG);
         introduction_date:                date(1950, 1, 1);
-
         speed:                            115 km/h;
         weight:                            20 ton;
         cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+		
+		//variant_group: Item_Gen4A_CoveredHopper_Liv0_BG;
+		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
     default:                             switch_Gen4A_CoveredHopper_Liv0_position;
@@ -5631,39 +5634,40 @@ switch(FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv1_position, vehicle_is_f
 
 item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_NG, 46651) {
     property {
-        climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE);
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
-		default_cargo_type:				GRAI;
-		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                        NG_RAIL_ONLY;
+		ai_special_flag:                AI_FLAG_CARGO;
+		bitmask_vehicle_info:            0;
+		
+		climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE); //CoveredHopper
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS); //CoveredHopper
+		default_cargo_type:				GRAI; //CoveredHopper
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //CoveredHopper
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE, WOOL]; //CoveredHopper
+
+        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER_NG);
+
         refit_cost:                        0;
-        track_type:                        NG_RAIL_ONLY;
-        ai_special_flag:                AI_FLAG_CARGO;
         power:                            0 hp;
         dual_headed:                    0;
         air_drag_coefficient:            0.08;
-        bitmask_vehicle_info:            0;
-
         running_cost_base:                RUNNING_COST_STEAM;
-
         model_life:                        30;
-
+		
         length:                            6;
         cost_factor:                    85;
         running_cost_factor:            6;
         loading_speed:                    5;
 
-        variant_group: Item_Gen4A_CoveredHopper_Liv0_NG;
-        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-
-        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER_NG);
         introduction_date:                date(1950, 1, 1);
-
         speed:                            115 km/h;
         weight:                            20 ton;
         cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+		
+		variant_group: Item_Gen4A_CoveredHopper_Liv1_NG;
+		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
     default:                             switch_Gen4A_CoveredHopper_Liv1_position;
@@ -5676,39 +5680,40 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_NG, 46651) {
 
 item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1, 46666) {
     property {
-        climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE);
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
-		default_cargo_type:				GRAI;
-		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                        RAIL;
+		ai_special_flag:                AI_FLAG_CARGO;
+		bitmask_vehicle_info:            0;
+		
+		climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE); //CoveredHopper
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS); //CoveredHopper
+		default_cargo_type:				GRAI; //CoveredHopper
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //CoveredHopper
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE, WOOL]; //CoveredHopper
+
+        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER);
+
         refit_cost:                        0;
-        track_type:                        RAIL;
-        ai_special_flag:                AI_FLAG_CARGO;
         power:                            0 hp;
         dual_headed:                    0;
         air_drag_coefficient:            0.08;
-        bitmask_vehicle_info:            0;
-
         running_cost_base:                RUNNING_COST_STEAM;
-
         model_life:                        30;
-
+		
         length:                            6;
         cost_factor:                    85;
         running_cost_factor:            6;
         loading_speed:                    5;
 
-        variant_group: Item_Gen4A_CoveredHopper_Liv0;
-        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-
-        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER);
         introduction_date:                date(1950, 1, 1);
-
         speed:                            115 km/h;
         weight:                            20 ton;
         cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+		
+		variant_group: Item_Gen4A_CoveredHopper_Liv0;
+		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
     default:                             switch_Gen4A_CoveredHopper_Liv1_position;
@@ -5720,39 +5725,40 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1, 46666) {
 
 item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_BG, 46681) {
     property {
-        climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE);
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
-		default_cargo_type:				GRAI;
-		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                        BG_RAIL_ONLY;
+		ai_special_flag:                AI_FLAG_CARGO;
+		bitmask_vehicle_info:            0;
+		
+		climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE); //CoveredHopper
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS); //CoveredHopper
+		default_cargo_type:				GRAI; //CoveredHopper
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //CoveredHopper
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE, WOOL]; //CoveredHopper
+
+        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER_NG);
+
         refit_cost:                        0;
-        track_type:                        BG_RAIL_ONLY;
-        ai_special_flag:                AI_FLAG_CARGO;
         power:                            0 hp;
         dual_headed:                    0;
         air_drag_coefficient:            0.08;
-        bitmask_vehicle_info:            0;
-
         running_cost_base:                RUNNING_COST_STEAM;
-
         model_life:                        30;
-
+		
         length:                            6;
         cost_factor:                    85;
         running_cost_factor:            6;
         loading_speed:                    5;
 
-        variant_group: Item_Gen4A_CoveredHopper_Liv0_BG;
-        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-
-        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER_BG);
         introduction_date:                date(1950, 1, 1);
-
         speed:                            115 km/h;
         weight:                            20 ton;
         cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+		
+		variant_group: Item_Gen4A_CoveredHopper_Liv0_BG;
+		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
     default:                             switch_Gen4A_CoveredHopper_Liv1_position;
