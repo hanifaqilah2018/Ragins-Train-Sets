@@ -17721,7 +17721,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_EP6DP_Liv0_power_1, tile_powers_railtype("R
 //Change effects based on railtype
 switch (FEAT_TRAINS, SELF, switch_GE_EP6DP_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("OHLE_AC")]) {
             1: return VISUAL_EFFECT_ELECTRIC;
-            return VISUAL_EFFECT_DIESEL;
+            return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
         }
 
 //Power Language File Switch
@@ -17839,7 +17839,7 @@ switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_power_1, tile_powers_railtype(
 //Change effects based on railtype
 switch (FEAT_TRAINS, SELF, switch_EMD_DP32AC_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("OHLE_AC")]) {
             1: return VISUAL_EFFECT_ELECTRIC;
-            return VISUAL_EFFECT_DIESEL;
+            return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
         }
 
 //Power Language File Switch
@@ -18004,7 +18004,7 @@ switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_power_1, tile_powers_railty
 //Change effects based on railtype
 switch (FEAT_TRAINS, SELF, switch_Alstom_PL52DP_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("OHLE_AC")]) {
             1: return VISUAL_EFFECT_ELECTRIC;
-            return VISUAL_EFFECT_DIESEL;
+            return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
         }
 
 //Power Language File Switch
@@ -18166,7 +18166,7 @@ switch (FEAT_TRAINS, SELF, switch_SD40_Liv0_DM_power_1, tile_powers_railtype("RA
 //Change effects based on railtype
 switch (FEAT_TRAINS, SELF, switch_SD40_Liv0_DM_effect_spawn_model_and_powered, [tile_powers_railtype("OHLE_AC")]) {
             1: return VISUAL_EFFECT_ELECTRIC;
-            return VISUAL_EFFECT_DIESEL;
+            return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
         }
 
 //Power Language File Switch
@@ -18333,7 +18333,7 @@ switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_power_1, tile_powers_railtype(
 //Change effects based on railtype
 switch (FEAT_TRAINS, SELF, switch_GE_ES44ACE_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("OHLE_AC")]) {
             1: return VISUAL_EFFECT_ELECTRIC;
-            return VISUAL_EFFECT_DIESEL;
+            return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
         }
 
 //Power Language File Switch
