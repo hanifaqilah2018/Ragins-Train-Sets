@@ -1560,7 +1560,7 @@ spriteset(spriteset_Gen2A_GoodsVan_Liv0_Purchase,   "gfx/Gen2A_GoodsVan_Liv0_0.p
 
 spriteset(spriteset_Gen2A_GoodsVan_Liv0_0,   "gfx/Gen2A_GoodsVan_Liv0_0.png") {template_5_repeat(7, 39)}
 
-switch (FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_PurchaseStack, [
+switch (FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_Liv0_PurchaseStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -1568,7 +1568,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_PurchaseStack, [
 	1: switch_Couplers_5_Repeat_Purchase;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_NormalStack, [
+switch (FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_Liv0_NormalStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -1576,7 +1576,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_NormalStack, [
 	1: switch_Couplers_5_Repeat;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_SpriteStack1, [
+switch (FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_Liv0_SpriteStack1, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -1585,12 +1585,12 @@ switch (FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_SpriteStack1, [
     2: spriteset_5_Old_EOTD;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_rearcheck1, position_in_consist_from_end){
-    0 : switch_Gen2A_GoodsVan_SpriteStack1;
-    return switch_Gen2A_GoodsVan_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen2A_GoodsVan_Liv0_SpriteStack1;
+    return switch_Gen2A_GoodsVan_Liv0_NormalStack;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_SpriteStack2, [
+switch (FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_Liv0_SpriteStack2, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -1599,14 +1599,14 @@ switch (FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_SpriteStack2, [
     2: spriteset_5_Old_EOTD_r;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_rearcheck2, position_in_consist_from_end){
-    0 : switch_Gen2A_GoodsVan_SpriteStack2;
-    return switch_Gen2A_GoodsVan_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen2A_GoodsVan_Liv0_SpriteStack2;
+    return switch_Gen2A_GoodsVan_Liv0_NormalStack;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_position, vehicle_is_flipped) {
- 0: switch_Gen2A_GoodsVan_rearcheck1;
- 1: switch_Gen2A_GoodsVan_rearcheck2;
+switch(FEAT_TRAINS, SELF, switch_Gen2A_GoodsVan_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen2A_GoodsVan_Liv0_rearcheck1;
+ 1: switch_Gen2A_GoodsVan_Liv0_rearcheck2;
 }
 
 item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_NG, 30550) {
@@ -1615,7 +1615,7 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_NG, 30550) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -1646,8 +1646,8 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_NG, 30550) {
         cargo_capacity:                    38/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen2A_GoodsVan_position;
-    purchase:                            switch_Gen2A_GoodsVan_PurchaseStack;
+    default:                             switch_Gen2A_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen2A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN2A_GOODSVAN_NG);
 	cargo_capacity:                   return 38/param_freight_capacity_mod;
 }
@@ -1660,7 +1660,7 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0, 30565) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -1691,8 +1691,8 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0, 30565) {
         cargo_capacity:                    38/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen2A_GoodsVan_position;
-    purchase:                            switch_Gen2A_GoodsVan_PurchaseStack;
+    default:                             switch_Gen2A_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen2A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN2A_GOODSVAN);
 	cargo_capacity:                   return 38/param_freight_capacity_mod;
 }
@@ -1704,7 +1704,7 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_BG, 30580) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -1735,27 +1735,27 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_BG, 30580) {
         cargo_capacity:                    38/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen2A_GoodsVan_position;
-    purchase:                            switch_Gen2A_GoodsVan_PurchaseStack;
+    default:                             switch_Gen2A_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen2A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN2A_GOODSVAN_BG);
 	cargo_capacity:                   return 38/param_freight_capacity_mod;
 }
 }
 
 //Gen3A_GoodsVan_Liv0
-spriteset(spriteset_Gen3A_GoodsVan_Purchase,   "gfx/Gen3A_GoodsVan_Liv0_0.png") {template_purchase_6(7, 21)}
+spriteset(spriteset_Gen3A_GoodsVan_Liv0_Purchase,   "gfx/Gen3A_GoodsVan_Liv0_0.png") {template_purchase_6(7, 21)}
 
 spriteset(spriteset_Gen3A_GoodsVan_Liv0_0,   "gfx/Gen3A_GoodsVan_Liv0_0.png") {template_6_repeat(7, 39)}
 
-switch (FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_PurchaseStack, [
+switch (FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_Liv0_PurchaseStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Gen3A_GoodsVan_Purchase;
+    0: spriteset_Gen3A_GoodsVan_Liv0_Purchase;
 	1: switch_Couplers_6_Repeat_Purchase;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_NormalStack, [
+switch (FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_Liv0_NormalStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -1763,7 +1763,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_NormalStack, [
 	1: switch_Couplers_6_Repeat;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_SpriteStack1, [
+switch (FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_Liv0_SpriteStack1, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -1772,12 +1772,12 @@ switch (FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_SpriteStack1, [
     2: spriteset_6_Old_EOTD;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_rearcheck1, position_in_consist_from_end){
-    0 : switch_Gen3A_GoodsVan_SpriteStack1;
-    return switch_Gen3A_GoodsVan_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen3A_GoodsVan_Liv0_SpriteStack1;
+    return switch_Gen3A_GoodsVan_Liv0_NormalStack;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_SpriteStack2, [
+switch (FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_Liv0_SpriteStack2, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -1786,14 +1786,14 @@ switch (FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_SpriteStack2, [
     2: spriteset_6_Old_EOTD_r;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_rearcheck2, position_in_consist_from_end){
-    0 : switch_Gen3A_GoodsVan_SpriteStack2;
-    return switch_Gen3A_GoodsVan_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen3A_GoodsVan_Liv0_SpriteStack2;
+    return switch_Gen3A_GoodsVan_Liv0_NormalStack;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_position, vehicle_is_flipped) {
- 0: switch_Gen3A_GoodsVan_rearcheck1;
- 1: switch_Gen3A_GoodsVan_rearcheck2;
+switch(FEAT_TRAINS, SELF, switch_Gen3A_GoodsVan_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen3A_GoodsVan_Liv0_rearcheck1;
+ 1: switch_Gen3A_GoodsVan_Liv0_rearcheck2;
 }
 
 item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_NG, 30600) {
@@ -1802,7 +1802,7 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_NG, 30600) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -1833,8 +1833,8 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_NG, 30600) {
         cargo_capacity:                    45/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen3A_GoodsVan_position;
-    purchase:                            switch_Gen3A_GoodsVan_PurchaseStack;
+    default:                             switch_Gen3A_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen3A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN3A_GOODSVAN_NG);
 	cargo_capacity:                   return 45/param_freight_capacity_mod;
 }
@@ -1847,7 +1847,7 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0, 30615) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -1878,8 +1878,8 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0, 30615) {
         cargo_capacity:                    45/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen3A_GoodsVan_position;
-    purchase:                            switch_Gen3A_GoodsVan_PurchaseStack;
+    default:                             switch_Gen3A_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen3A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN3A_GOODSVAN);
 	cargo_capacity:                   return 45/param_freight_capacity_mod;
 }
@@ -1891,7 +1891,7 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_BG, 30630) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -1922,27 +1922,27 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_BG, 30630) {
         cargo_capacity:                    45/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen3A_GoodsVan_position;
-    purchase:                            switch_Gen3A_GoodsVan_PurchaseStack;
+    default:                             switch_Gen3A_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen3A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN3A_GOODSVAN_BG);
 	cargo_capacity:                   return 45/param_freight_capacity_mod;
 }
 }
 
 //Gen4A_GoodsVan_Liv0
-spriteset(spriteset_Gen4A_GoodsVan_Purchase,   "gfx/Gen4A_GoodsVan_Liv0_0.png") {template_purchase_6(7, 21)}
+spriteset(spriteset_Gen4A_GoodsVan_Liv0_Purchase,   "gfx/Gen4A_GoodsVan_Liv0_0.png") {template_purchase_6(7, 21)}
 
 spriteset(spriteset_Gen4A_GoodsVan_Liv0_0,   "gfx/Gen4A_GoodsVan_Liv0_0.png") {template_6_repeat(7, 39)}
 
-switch (FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_PurchaseStack, [
+switch (FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_Liv0_PurchaseStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Gen4A_GoodsVan_Purchase;
+    0: spriteset_Gen4A_GoodsVan_Liv0_Purchase;
 	1: switch_Couplers_6_Repeat_Purchase;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_NormalStack, [
+switch (FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_Liv0_NormalStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -1950,7 +1950,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_NormalStack, [
 	1: switch_Couplers_6_Repeat;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_SpriteStack1, [
+switch (FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_Liv0_SpriteStack1, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -1959,12 +1959,12 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_SpriteStack1, [
     2: spriteset_6_Old_EOTD;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_rearcheck1, position_in_consist_from_end){
-    0 : switch_Gen4A_GoodsVan_SpriteStack1;
-    return switch_Gen4A_GoodsVan_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen4A_GoodsVan_Liv0_SpriteStack1;
+    return switch_Gen4A_GoodsVan_Liv0_NormalStack;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_SpriteStack2, [
+switch (FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_Liv0_SpriteStack2, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -1973,14 +1973,14 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_SpriteStack2, [
     2: spriteset_6_Old_EOTD_r;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_rearcheck2, position_in_consist_from_end){
-    0 : switch_Gen4A_GoodsVan_SpriteStack2;
-    return switch_Gen4A_GoodsVan_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen4A_GoodsVan_Liv0_SpriteStack2;
+    return switch_Gen4A_GoodsVan_Liv0_NormalStack;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_position, vehicle_is_flipped) {
- 0: switch_Gen4A_GoodsVan_rearcheck1;
- 1: switch_Gen4A_GoodsVan_rearcheck2;
+switch(FEAT_TRAINS, SELF, switch_Gen4A_GoodsVan_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen4A_GoodsVan_Liv0_rearcheck1;
+ 1: switch_Gen4A_GoodsVan_Liv0_rearcheck2;
 }
 
 item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_NG, 30650) {
@@ -1989,7 +1989,7 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_NG, 30650) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2020,8 +2020,8 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_NG, 30650) {
         cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen4A_GoodsVan_position;
-    purchase:                            switch_Gen4A_GoodsVan_PurchaseStack;
+    default:                             switch_Gen4A_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen4A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_GOODSVAN_NG);
 	cargo_capacity:                   return 55/param_freight_capacity_mod;
 }
@@ -2034,7 +2034,7 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0, 30665) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2065,8 +2065,8 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0, 30665) {
         cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen4A_GoodsVan_position;
-    purchase:                            switch_Gen4A_GoodsVan_PurchaseStack;
+    default:                             switch_Gen4A_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen4A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_GOODSVAN);
 	cargo_capacity:                   return 55/param_freight_capacity_mod;
 }
@@ -2078,7 +2078,7 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_BG, 30680) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2109,27 +2109,27 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_BG, 30680) {
         cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen4A_GoodsVan_position;
-    purchase:                            switch_Gen4A_GoodsVan_PurchaseStack;
+    default:                             switch_Gen4A_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen4A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_GOODSVAN_BG);
 	cargo_capacity:                   return 55/param_freight_capacity_mod;
 }
 }
 
 //Gen5A_GoodsVan_Liv0
-spriteset(spriteset_Gen5A_GoodsVan_Purchase,   "gfx/Gen5A_GoodsVan_Liv0_0.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_Gen5A_GoodsVan_Liv0_Purchase,   "gfx/Gen5A_GoodsVan_Liv0_0.png") {template_purchase_7(7, 21)}
 
 spriteset(spriteset_Gen5A_GoodsVan_Liv0_0,   "gfx/Gen5A_GoodsVan_Liv0_0.png") {template_7_repeat(7, 39)}
 
-switch (FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_PurchaseStack, [
+switch (FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_Liv0_PurchaseStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Gen5A_GoodsVan_Purchase;
+    0: spriteset_Gen5A_GoodsVan_Liv0_Purchase;
 	1: switch_Couplers_7_Repeat_Purchase;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_NormalStack, [
+switch (FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_Liv0_NormalStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -2137,7 +2137,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_NormalStack, [
 	1: switch_Couplers_7_Repeat;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_SpriteStack1, [
+switch (FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_Liv0_SpriteStack1, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -2146,12 +2146,12 @@ switch (FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_SpriteStack1, [
     2: spriteset_7_Modern_EOTD;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_rearcheck1, position_in_consist_from_end){
-    0 : switch_Gen5A_GoodsVan_SpriteStack1;
-    return switch_Gen5A_GoodsVan_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen5A_GoodsVan_Liv0_SpriteStack1;
+    return switch_Gen5A_GoodsVan_Liv0_NormalStack;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_SpriteStack2, [
+switch (FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_Liv0_SpriteStack2, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -2160,14 +2160,14 @@ switch (FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_SpriteStack2, [
     2: spriteset_7_Modern_EOTD_r;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_rearcheck2, position_in_consist_from_end){
-    0 : switch_Gen5A_GoodsVan_SpriteStack2;
-    return switch_Gen5A_GoodsVan_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen5A_GoodsVan_Liv0_SpriteStack2;
+    return switch_Gen5A_GoodsVan_Liv0_NormalStack;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_position, vehicle_is_flipped) {
- 0: switch_Gen5A_GoodsVan_rearcheck1;
- 1: switch_Gen5A_GoodsVan_rearcheck2;
+switch(FEAT_TRAINS, SELF, switch_Gen5A_GoodsVan_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen5A_GoodsVan_Liv0_rearcheck1;
+ 1: switch_Gen5A_GoodsVan_Liv0_rearcheck2;
 }
 
 item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_NG, 30700) {
@@ -2176,7 +2176,7 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_NG, 30700) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2207,8 +2207,8 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_NG, 30700) {
         cargo_capacity:                    73/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen5A_GoodsVan_position;
-    purchase:                            switch_Gen5A_GoodsVan_PurchaseStack;
+    default:                             switch_Gen5A_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen5A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5A_GOODSVAN_NG);
 	cargo_capacity:                   return 73/param_freight_capacity_mod;
 }
@@ -2221,7 +2221,7 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0, 30715) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2252,8 +2252,8 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0, 30715) {
         cargo_capacity:                    73/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen5A_GoodsVan_position;
-    purchase:                            switch_Gen5A_GoodsVan_PurchaseStack;
+    default:                             switch_Gen5A_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen5A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5A_GOODSVAN);
 	cargo_capacity:                   return 73/param_freight_capacity_mod;
 }
@@ -2265,7 +2265,7 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_BG, 30730) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2296,8 +2296,8 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_BG, 30730) {
         cargo_capacity:                    73/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen5A_GoodsVan_position;
-    purchase:                            switch_Gen5A_GoodsVan_PurchaseStack;
+    default:                             switch_Gen5A_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen5A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5A_GOODSVAN_BG);
 	cargo_capacity:                   return 73/param_freight_capacity_mod;
 }
@@ -2363,7 +2363,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_NG, 3000) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2410,7 +2410,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0, 3015) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2457,7 +2457,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_BG, 3030) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2556,7 +2556,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_NG, 3001) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2603,7 +2603,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1, 3016) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2650,7 +2650,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_BG, 3031) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2749,7 +2749,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_NG, 3002) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2796,7 +2796,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2, 3017) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2843,7 +2843,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_BG, 3032) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2942,7 +2942,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_NG, 3003) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -2989,7 +2989,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3, 3018) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -3036,7 +3036,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_BG, 3033) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -3135,7 +3135,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_NG, 3004) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -3182,7 +3182,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4, 3019) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -3229,7 +3229,7 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_BG, 3034) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -3271,19 +3271,19 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_BG, 3034) {
 }
 
 //Gen6D_GoodsVan_Liv0
-spriteset(spriteset_Gen6D_GoodsVan_Purchase,   "gfx/Gen6D_GoodsVan_Liv0_0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Gen6D_GoodsVan_Liv0_Purchase,   "gfx/Gen6D_GoodsVan_Liv0_0.png") {template_purchase_8(7, 21)}
 
 spriteset(spriteset_Gen6D_GoodsVan_Liv0_0,   "gfx/Gen6D_GoodsVan_Liv0_0.png") {template_8_repeat(7, 39)}
 
-switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_PurchaseStack, [
+switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_Liv0_PurchaseStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Gen6D_GoodsVan_Purchase;
+    0: spriteset_Gen6D_GoodsVan_Liv0_Purchase;
 	1: switch_Couplers_8_Repeat_Purchase;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_NormalStack, [
+switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_Liv0_NormalStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -3291,7 +3291,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_NormalStack, [
 	1: switch_Couplers_8_Repeat;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_SpriteStack1, [
+switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_Liv0_SpriteStack1, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -3300,12 +3300,12 @@ switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_SpriteStack1, [
     2: spriteset_8_Modern_EOTD;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_rearcheck1, position_in_consist_from_end){
-    0 : switch_Gen6D_GoodsVan_SpriteStack1;
-    return switch_Gen6D_GoodsVan_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen6D_GoodsVan_Liv0_SpriteStack1;
+    return switch_Gen6D_GoodsVan_Liv0_NormalStack;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_SpriteStack2, [
+switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_Liv0_SpriteStack2, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -3314,14 +3314,14 @@ switch (FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_SpriteStack2, [
     2: spriteset_8_Modern_EOTD_r;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_rearcheck2, position_in_consist_from_end){
-    0 : switch_Gen6D_GoodsVan_SpriteStack2;
-    return switch_Gen6D_GoodsVan_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen6D_GoodsVan_Liv0_SpriteStack2;
+    return switch_Gen6D_GoodsVan_Liv0_NormalStack;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_position, vehicle_is_flipped) {
- 0: switch_Gen6D_GoodsVan_rearcheck1;
- 1: switch_Gen6D_GoodsVan_rearcheck2;
+switch(FEAT_TRAINS, SELF, switch_Gen6D_GoodsVan_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen6D_GoodsVan_Liv0_rearcheck1;
+ 1: switch_Gen6D_GoodsVan_Liv0_rearcheck2;
 }
 
 item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_NG, 32250) {
@@ -3330,7 +3330,7 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_NG, 32250) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -3361,8 +3361,8 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_NG, 32250) {
         cargo_capacity:                    90/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen6D_GoodsVan_position;
-    purchase:                            switch_Gen6D_GoodsVan_PurchaseStack;
+    default:                             switch_Gen6D_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen6D_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN6D_GOODSVAN_NG);
 	cargo_capacity:                   return 90/param_freight_capacity_mod;
 }
@@ -3375,7 +3375,7 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0, 32265) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -3406,8 +3406,8 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0, 32265) {
         cargo_capacity:                    90/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen6D_GoodsVan_position;
-    purchase:                            switch_Gen6D_GoodsVan_PurchaseStack;
+    default:                             switch_Gen6D_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen6D_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN6D_GOODSVAN);
 	cargo_capacity:                   return 90/param_freight_capacity_mod;
 }
@@ -3419,7 +3419,7 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_BG, 32280) {
         refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED );
 		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
 		default_cargo_type:				GOOD;
-		cargo_disallow_refit:			[TOUR, LVST];
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
         refit_cost:                        0;
@@ -3450,10 +3450,405 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_BG, 32280) {
         cargo_capacity:                    90/param_freight_capacity_mod; //Callback!!!
     }
     graphics {
-    default:                             switch_Gen6D_GoodsVan_position;
-    purchase:                            switch_Gen6D_GoodsVan_PurchaseStack;
+    default:                             switch_Gen6D_GoodsVan_Liv0_position;
+    purchase:                            switch_Gen6D_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN6D_GOODSVAN_BG);
 	cargo_capacity:                   return 90/param_freight_capacity_mod;
+}
+}
+
+//Hoppers
+spriteset(spriteset_Gen4D_OpenHopper_Loadh,   "gfx/Gen4D_OpenHopper_Load.png") {template_6_repeat(7, 39)}
+spriteset(spriteset_Gen4D_OpenHopper_Loadf,   "gfx/Gen4D_OpenHopper_Load.png") {template_6_repeat(7, 69)}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_loadcheck, cargo_count * (100 / cargo_capacity)){
+	1..50	: spriteset_Gen4D_OpenHopper_Loadh ;
+	51..100	: spriteset_Gen4D_OpenHopper_Loadf ;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return switch_Gen4D_OpenHopper_loadcheck;
+}
+
+//Gen4D_OpenHopper_Liv0
+spriteset(spriteset_Gen4D_OpenHopper_Liv0_Purchase,   "gfx/Gen4D_OpenHopper_Liv0_0.png") {template_purchase_6(7, 21)}
+
+spriteset(spriteset_Gen4D_OpenHopper_Liv0_0,   "gfx/Gen4D_OpenHopper_Liv0_0.png") {template_6_repeat(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4D_OpenHopper_Liv0_Purchase;
+    1: switch_Couplers_6_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv0_CargoStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4D_OpenHopper_Liv0_0;
+	1: switch_Couplers_6_Repeat;
+    2: switch_Gen4D_OpenHopper_recolour_load;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv0_RearStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4D_OpenHopper_Liv0_0;
+	1: switch_Couplers_6_Repeat;
+	2: spriteset_6_Old_EOTD;
+    3: switch_Gen4D_OpenHopper_recolour_load;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen4D_OpenHopper_Liv0_RearStack1;
+    return switch_Gen4D_OpenHopper_Liv0_CargoStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv0_RearStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4D_OpenHopper_Liv0_0;
+	1: switch_Couplers_6_Repeat;
+	2: spriteset_6_Old_EOTD_r;
+    3: switch_Gen4D_OpenHopper_recolour_load;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen4D_OpenHopper_Liv0_RearStack2;
+    return switch_Gen4D_OpenHopper_Liv0_CargoStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen4D_OpenHopper_Liv0_rearcheck1;
+ 1: switch_Gen4D_OpenHopper_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0_NG, 42150) {
+    property {
+        climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:		bitmask(CC_BULK);
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_COVERED_BULK, CC_POTABLE, CC_HAZARDOUS);
+		default_cargo_type:				COAL;
+		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        NG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_STEAM;
+
+        model_life:                        30;
+
+        length:                            6;
+        cost_factor:                    85;
+        running_cost_factor:            6;
+        loading_speed:                    5;
+
+//        variant_group: Item_Gen4D_OpenHopper_Liv0_NG;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN4D_OPENHOPPER_NG);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            115 km/h;
+        weight:                            20 ton;
+        cargo_capacity:                    55/param_freight_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Gen4D_OpenHopper_Liv0_position;
+    purchase:                            switch_Gen4D_OpenHopper_Liv0_Purchase_Stack;
+    additional_text: string(STR_INFO_GEN4D_OPENHOPPER_NG);
+}
+}
+
+
+item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0, 42165) {
+    property {
+        climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:		bitmask(CC_BULK);
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_COVERED_BULK, CC_POTABLE, CC_HAZARDOUS);
+		default_cargo_type:				COAL;
+		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_STEAM;
+
+        model_life:                        30;
+
+        length:                            6;
+        cost_factor:                    85;
+        running_cost_factor:            6;
+        loading_speed:                    5;
+
+//        variant_group: Item_Gen4D_OpenHopper_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN4D_OPENHOPPER);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            115 km/h;
+        weight:                            20 ton;
+        cargo_capacity:                    55/param_freight_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Gen4D_OpenHopper_Liv0_position;
+    purchase:                            switch_Gen4D_OpenHopper_Liv0_Purchase_Stack;
+    additional_text: string(STR_INFO_GEN4D_OPENHOPPER);
+}
+}
+
+item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0_BG, 42180) {
+    property {
+        climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:		bitmask(CC_BULK);
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_COVERED_BULK, CC_POTABLE, CC_HAZARDOUS);
+		default_cargo_type:				COAL;
+		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        BG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_STEAM;
+
+        model_life:                        30;
+
+        length:                            6;
+        cost_factor:                    85;
+        running_cost_factor:            6;
+        loading_speed:                    5;
+
+//        variant_group: Item_Gen4D_OpenHopper_Liv0_BG;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN4D_OPENHOPPER_BG);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            115 km/h;
+        weight:                            20 ton;
+        cargo_capacity:                    55/param_freight_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Gen4D_OpenHopper_Liv0_position;
+    purchase:                            switch_Gen4D_OpenHopper_Liv0_Purchase_Stack;
+    additional_text: string(STR_INFO_GEN4D_OPENHOPPER_BG);
+}
+}
+
+//Gen4D_OpenHopper_Liv1
+spriteset(spriteset_Gen4D_OpenHopper_Liv1_Purchase,   "gfx/Gen4D_OpenHopper_Liv1_0.png") {template_purchase_6(7, 21)}
+
+spriteset(spriteset_Gen4D_OpenHopper_Liv1_0,   "gfx/Gen4D_OpenHopper_Liv1_0.png") {template_6_repeat(7, 39)}
+spriteset(spriteset_Gen4D_OpenHopper_Liv1_1,   "gfx/Gen4D_OpenHopper_Liv1_1.png") {template_6_repeat(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv1_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4D_OpenHopper_Liv1_Purchase;
+    1: switch_Couplers_6_Repeat_Purchase;
+}
+
+ random_switch(FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv1_Random){
+    1 : spriteset_Gen4D_OpenHopper_Liv1_0;
+	1 : spriteset_Gen4D_OpenHopper_Liv1_1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv1_CargoStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_Gen4D_OpenHopper_Liv1_Random;
+	1: switch_Couplers_6_Repeat;
+    2: switch_Gen4D_OpenHopper_recolour_load;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv1_RearStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_Gen4D_OpenHopper_Liv1_Random;
+	1: switch_Couplers_6_Repeat;
+	2: spriteset_6_Old_EOTD;
+    3: switch_Gen4D_OpenHopper_recolour_load;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen4D_OpenHopper_Liv1_RearStack1;
+    return switch_Gen4D_OpenHopper_Liv1_CargoStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv1_RearStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_Gen4D_OpenHopper_Liv1_Random;
+	1: switch_Couplers_6_Repeat;
+	2: spriteset_6_Old_EOTD_r;
+    3: switch_Gen4D_OpenHopper_recolour_load;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen4D_OpenHopper_Liv1_RearStack2;
+    return switch_Gen4D_OpenHopper_Liv1_CargoStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4D_OpenHopper_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Gen4D_OpenHopper_Liv1_rearcheck1;
+ 1: switch_Gen4D_OpenHopper_Liv1_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1_NG, 42151) {
+    property {
+        climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:		bitmask(CC_BULK);
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_COVERED_BULK, CC_POTABLE, CC_HAZARDOUS);
+		default_cargo_type:				COAL;
+		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        NG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_STEAM;
+
+        model_life:                        30;
+
+        length:                            6;
+        cost_factor:                    85;
+        running_cost_factor:            6;
+        loading_speed:                    5;
+
+        variant_group: Item_Gen4D_OpenHopper_Liv0_NG;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN4D_OPENHOPPER_NG);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            115 km/h;
+        weight:                            20 ton;
+        cargo_capacity:                    55/param_freight_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Gen4D_OpenHopper_Liv1_position;
+    purchase:                            switch_Gen4D_OpenHopper_Liv1_Purchase_Stack;
+    additional_text: string(STR_INFO_GEN4D_OPENHOPPER_NG);
+}
+}
+
+
+item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1, 42166) {
+    property {
+        climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:		bitmask(CC_BULK);
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_COVERED_BULK, CC_POTABLE, CC_HAZARDOUS);
+		default_cargo_type:				COAL;
+		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_STEAM;
+
+        model_life:                        30;
+
+        length:                            6;
+        cost_factor:                    85;
+        running_cost_factor:            6;
+        loading_speed:                    5;
+
+        variant_group: Item_Gen4D_OpenHopper_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN4D_OPENHOPPER);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            115 km/h;
+        weight:                            20 ton;
+        cargo_capacity:                    55/param_freight_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Gen4D_OpenHopper_Liv1_position;
+    purchase:                            switch_Gen4D_OpenHopper_Liv1_Purchase_Stack;
+    additional_text: string(STR_INFO_GEN4D_OPENHOPPER);
+}
+}
+
+item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1_BG, 42181) {
+    property {
+        climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:		bitmask(CC_BULK);
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_COVERED_BULK, CC_POTABLE, CC_HAZARDOUS);
+		default_cargo_type:				COAL;
+		cargo_disallow_refit:			[TOUR, LVST, MAIZ, GRAI, WHEA, CERE, BEAN, CASS, SGBT, CTCD, TOFF];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        BG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_STEAM;
+
+        model_life:                        30;
+
+        length:                            6;
+        cost_factor:                    85;
+        running_cost_factor:            6;
+        loading_speed:                    5;
+
+        variant_group: Item_Gen4D_OpenHopper_Liv0_BG;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN4D_OPENHOPPER_BG);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            115 km/h;
+        weight:                            20 ton;
+        cargo_capacity:                    55/param_freight_capacity_mod;
+    }
+    graphics {
+    default:                             switch_Gen4D_OpenHopper_Liv1_position;
+    purchase:                            switch_Gen4D_OpenHopper_Liv1_Purchase_Stack;
+    additional_text: string(STR_INFO_GEN4D_OPENHOPPER_BG);
 }
 }
 
@@ -4990,5 +5385,379 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5_BG, 44235) {
     default:                             switch_Gen5H_OpenHopper_Liv5_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv5_Purchase_Stack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
+}
+}
+
+//Gen4A_CoveredHopper_Liv0
+spriteset(spriteset_Gen4A_CoveredHopper_Purchase_Liv0,   "gfx/Gen4A_CoveredHopper_Liv0_0.png") {template_purchase_6(7, 21)}
+
+spriteset(spriteset_Gen4A_CoveredHopper_Liv0_0,   "gfx/Gen4A_CoveredHopper_Liv0_0.png") {template_6_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_CoveredHopper_Purchase_Liv0;
+	1: switch_Couplers_6_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_CoveredHopper_Liv0_0;
+	1: switch_Couplers_6_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_CoveredHopper_Liv0_0;
+	1: switch_Couplers_6_Repeat;
+    2: spriteset_6_Old_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen4A_CoveredHopper_Liv0_SpriteStack1;
+    return switch_Gen4A_CoveredHopper_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_CoveredHopper_Liv0_0;
+	1: switch_Couplers_6_Repeat;
+    2: spriteset_6_Old_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen4A_CoveredHopper_Liv0_SpriteStack2;
+    return switch_Gen4A_CoveredHopper_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen4A_CoveredHopper_Liv0_rearcheck1;
+ 1: switch_Gen4A_CoveredHopper_Liv0_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_NG, 46650) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE);
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
+		default_cargo_type:				GRAI;
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        NG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_STEAM;
+
+        model_life:                        30;
+
+        length:                            6;
+        cost_factor:                    85;
+        running_cost_factor:            6;
+        loading_speed:                    5;
+
+//        variant_group: Item_Gen4A_CoveredHopper_Liv0_NG;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER_NG);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            115 km/h;
+        weight:                            20 ton;
+        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+    }
+    graphics {
+    default:                             switch_Gen4A_CoveredHopper_Liv0_position;
+    purchase:                            switch_Gen4A_CoveredHopper_Liv0_PurchaseStack;
+    additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER_NG);
+	cargo_capacity:                   return 55/param_freight_capacity_mod;
+}
+}
+
+
+item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0, 46665) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE);
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
+		default_cargo_type:				GRAI;
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_STEAM;
+
+        model_life:                        30;
+
+        length:                            6;
+        cost_factor:                    85;
+        running_cost_factor:            6;
+        loading_speed:                    5;
+
+//        variant_group: Item_Gen4A_CoveredHopper_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            115 km/h;
+        weight:                            20 ton;
+        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+    }
+    graphics {
+    default:                             switch_Gen4A_CoveredHopper_Liv0_position;
+    purchase:                            switch_Gen4A_CoveredHopper_Liv0_PurchaseStack;
+    additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER);
+	cargo_capacity:                   return 55/param_freight_capacity_mod;
+}
+}
+
+item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_BG, 46680) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE);
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
+		default_cargo_type:				GRAI;
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        BG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_STEAM;
+
+        model_life:                        30;
+
+        length:                            6;
+        cost_factor:                    85;
+        running_cost_factor:            6;
+        loading_speed:                    5;
+
+//        variant_group: Item_Gen4A_CoveredHopper_Liv0_BG;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER_BG);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            115 km/h;
+        weight:                            20 ton;
+        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+    }
+    graphics {
+    default:                             switch_Gen4A_CoveredHopper_Liv0_position;
+    purchase:                            switch_Gen4A_CoveredHopper_Liv0_PurchaseStack;
+    additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER_BG);
+	cargo_capacity:                   return 55/param_freight_capacity_mod;
+}
+}
+
+//Gen4A_CoveredHopper_Liv1
+spriteset(spriteset_Gen4A_CoveredHopper_Purchase_Liv1,   "gfx/Gen4A_CoveredHopper_Liv1_0.png") {template_purchase_6(7, 21)}
+
+spriteset(spriteset_Gen4A_CoveredHopper_Liv1_0,   "gfx/Gen4A_CoveredHopper_Liv1_0.png") {template_6_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_CoveredHopper_Purchase_Liv1;
+	1: switch_Couplers_6_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv1_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_CoveredHopper_Liv1_0;
+	1: switch_Couplers_6_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv1_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_CoveredHopper_Liv1_0;
+	1: switch_Couplers_6_Repeat;
+    2: spriteset_6_Old_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen4A_CoveredHopper_Liv1_SpriteStack1;
+    return switch_Gen4A_CoveredHopper_Liv1_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv1_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_CoveredHopper_Liv1_0;
+	1: switch_Couplers_6_Repeat;
+    2: spriteset_6_Old_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen4A_CoveredHopper_Liv1_SpriteStack2;
+    return switch_Gen4A_CoveredHopper_Liv1_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_CoveredHopper_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Gen4A_CoveredHopper_Liv1_rearcheck1;
+ 1: switch_Gen4A_CoveredHopper_Liv1_rearcheck2;
+}
+
+item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_NG, 46651) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE);
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
+		default_cargo_type:				GRAI;
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        NG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_STEAM;
+
+        model_life:                        30;
+
+        length:                            6;
+        cost_factor:                    85;
+        running_cost_factor:            6;
+        loading_speed:                    5;
+
+        variant_group: Item_Gen4A_CoveredHopper_Liv0_NG;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER_NG);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            115 km/h;
+        weight:                            20 ton;
+        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+    }
+    graphics {
+    default:                             switch_Gen4A_CoveredHopper_Liv1_position;
+    purchase:                            switch_Gen4A_CoveredHopper_Liv1_PurchaseStack;
+    additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER_NG);
+	cargo_capacity:                   return 55/param_freight_capacity_mod;
+}
+}
+
+
+item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1, 46666) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE);
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
+		default_cargo_type:				GRAI;
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_STEAM;
+
+        model_life:                        30;
+
+        length:                            6;
+        cost_factor:                    85;
+        running_cost_factor:            6;
+        loading_speed:                    5;
+
+        variant_group: Item_Gen4A_CoveredHopper_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            115 km/h;
+        weight:                            20 ton;
+        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+    }
+    graphics {
+    default:                             switch_Gen4A_CoveredHopper_Liv1_position;
+    purchase:                            switch_Gen4A_CoveredHopper_Liv1_PurchaseStack;
+    additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER);
+	cargo_capacity:                   return 55/param_freight_capacity_mod;
+}
+}
+
+item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_BG, 46681) {
+    property {
+        climates_available:             ALL_CLIMATES;
+        refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE);
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS);
+		default_cargo_type:				GRAI;
+		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE]; //Covered Hopper
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        BG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_CARGO;
+        power:                            0 hp;
+        dual_headed:                    0;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_STEAM;
+
+        model_life:                        30;
+
+        length:                            6;
+        cost_factor:                    85;
+        running_cost_factor:            6;
+        loading_speed:                    5;
+
+        variant_group: Item_Gen4A_CoveredHopper_Liv0_BG;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_GEN4A_COVEREDHOPPER_BG);
+        introduction_date:                date(1950, 1, 1);
+
+        speed:                            115 km/h;
+        weight:                            20 ton;
+        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+    }
+    graphics {
+    default:                             switch_Gen4A_CoveredHopper_Liv1_position;
+    purchase:                            switch_Gen4A_CoveredHopper_Liv1_PurchaseStack;
+    additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER_BG);
+	cargo_capacity:                   return 55/param_freight_capacity_mod;
 }
 }
