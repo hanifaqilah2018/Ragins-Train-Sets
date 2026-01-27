@@ -5666,7 +5666,7 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_NG, 46651) {
         weight:                            20 ton;
         cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
 		
-		variant_group: Item_Gen4A_CoveredHopper_Liv1_NG;
+		variant_group: Item_Gen4A_CoveredHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {

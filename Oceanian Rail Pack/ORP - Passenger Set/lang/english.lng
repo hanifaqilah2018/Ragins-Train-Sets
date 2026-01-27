@@ -1,6 +1,6 @@
 ##grflangid 0x0
 
-STR_GRF_NAME:Oceanian Rail Pack - Passenger Set v10
+STR_GRF_NAME:Oceanian Rail Pack - Multiple Units v11
 STR_GRF_DESCRIPTION:Multiple units and passenger coaches from Australia and New Zealand, all in 2cc. Drawn and Coded by Zachary Moore (Ragin1_)
 
 STR_PARAM_PURCHASE_COST             :Purchase cost multiplier
@@ -366,8 +366,8 @@ STR_INFO_COMENGINTERURBANMK2:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formati
 STR_NAME_TULLOCHDDINTERURBAN:Tulloch Double-Deck Interurban
 STR_INFO_TULLOCHDDINTERURBAN:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Early V-Set Design (NSWGR Specification 2384)
 
-STR_NAME_COMENGVSET:Comeng V-Set
-STR_INFO_COMENGVSET:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}NSW V-Sets
+STR_NAME_COMENG_VSET:Comeng V-Set
+STR_INFO_COMENG_VSET:{BLACK}Role:{GOLD}Intercity {}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on:{GOLD}NSW V-Sets
 
 STR_NAME_COMENGDKVSET:Comeng DK V-Set
 STR_INFO_COMENGDKVSET:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Proposed Tangara V-Set Hybrid
