@@ -98,7 +98,7 @@ STR_NAME_SSD_DMU_CPH:CPH Railmotor
 STR_INFO_SSD_DMU_CPH:{BLACK}Role:{GOLD}Suburban & Country Service{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{BROWN}Petrol
 
 STR_NAME_EDISON:Edison Railmotor
-STR_INFO_EDISON:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{GREEN}Battery {}{GOLD}When it's done, just chuck it in the ocean
+STR_INFO_EDISON:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{GREEN}Battery {}{GOLD}When it's done, just chuck it in the ocean
 
 STR_NAME_SSD_DMU_PERM:Petrol-Electric Railmotor
 STR_INFO_SSD_DMU_PERM:{BLACK}Role:{GOLD}Suburban & Country Service{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{BROWN}Petrol
@@ -114,19 +114,19 @@ STR_INFO_SSD_DMU_610CLASS:{BLACK}Role:{GOLD}Suburban & Country Service{}{BLACK}F
 
 STR_NAME_SSD_DMU_ADA:Cravens Railmotor (1 Door)
 STR_NAME_SSD_DMU_ADG:Cravens Railmotor (2 Doors)
-STR_INFO_SSD_DMU_ADAX:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{BROWN}Diesel
+STR_INFO_SSD_DMU_ADAX:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{BROWN}Diesel
 
 STR_NAME_TULLOCHRAILMOTOR:Tulloch Railmotor
 STR_INFO_TULLOCHRAILMOTOR:{BLACK}Role:{GOLD}Suburban & Country Service{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{BROWN}Diesel {}{GOLD}A better life, underground!
 
 STR_NAME_SSD_DMU_ADK:Comeng ADK Class
-STR_INFO_SSD_DMU_ADK:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{GOLD}These guys somehow ended up in Mozambique!
+STR_INFO_SSD_DMU_ADK:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{GOLD}These guys somehow ended up in Mozambique!
 
 STR_NAME_SSD_DMU_1300CLASS:Comeng Suburban Railcar
 STR_INFO_SSD_DMU_1300CLASS:{BLACK}Role:{GOLD}Suburban & Country Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
 
 STR_NAME_SSD_DMU_2000CLASS:Comeng 2000 Class
-STR_INFO_SSD_DMU_2000CLASS:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{GOLD}Those guys at Boeing stole our cab design!
+STR_INFO_SSD_DMU_2000CLASS:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{GOLD}Those guys at Boeing stole our cab design!
 
 STR_NAME_EVELEIGH_NWCRAILMOTOR:Eveleigh NWC Railmotor
 STR_INFO_EVELEIGH_NWCRAILMOTOR:{BLACK}Role:{GOLD}Country Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
@@ -138,19 +138,19 @@ STR_INFO_COMENGRAILCAR_MU:{BLACK}Role:{GOLD}Country Service{}{BLACK}Formation:{G
 
 STR_NAME_SSD_DMU_3000CLASS:Comeng 3000 Class (Railcar)
 STR_NAME_SSD_DMU_3000CLASS_MU:Comeng 3000 Class (Multiple Unit)
-STR_INFO_SSD_DMU_3000CLASS:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{BROWN}Diesel
-STR_INFO_SSD_DMU_3000CLASS_MU:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
+STR_INFO_SSD_DMU_3000CLASS:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{BROWN}Diesel
+STR_INFO_SSD_DMU_3000CLASS_MU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
 
 STR_NAME_SSD_DMU_SPRINTER:Goninan Sprinter Railcar
 STR_INFO_SSD_DMU_SPRINTER:{BLACK}Role:{GOLD}Suburban & Country Service{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{BROWN}Diesel
 
 STR_NAME_SSD_DMU_HUNTER:UGL Hunter Railcar
-STR_INFO_SSD_DMU_HUNTER:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{GOLD}Fine trains these are
+STR_INFO_SSD_DMU_HUNTER:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{GOLD}Fine trains these are
 
 STR_NAME_SSD_DMU_HUNTERMK2:UGL Mk2 Hunter Railcar
-STR_INFO_SSD_DMU_HUNTERMK2:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
+STR_INFO_SSD_DMU_HUNTERMK2:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
 
-STR_NAME_SSD_DMU_NRFSI:CAF Suburban Service R Set
+STR_NAME_SSD_DMU_NRFSI:CAF Suburban R Set
 STR_INFO_SSD_DMU_NRFSI:{BLACK}Role:{GOLD}Suburban & Country Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
 
 
@@ -226,126 +226,127 @@ STR_NAME_EXP_DMU_DTT:EDi Diesel Tilt Train
 STR_INFO_EXP_DMU_DTT:{BLACK}Role:{GOLD}Express Service{}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{BROWN}Diesel{}{BLACK}Special:{GOLD}Tilt train (20% faster through curves)
 
 
-
+STR_NAME_TAIT_SINGLE:Tait Set (Single)
+STR_INFO_TAIT_SINGLE:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Single Car{}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
 STR_NAME_TAIT:Tait Set
-STR_INFO_TAIT:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
+STR_INFO_TAIT:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
 
 STR_NAME_SSD_EMU_BRADFIELD:Bradfield Set
-STR_INFO_SSD_EMU_BRADFIELD:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_BRADFIELD:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SSD_EMU_STANDARD:Standard Set
-STR_INFO_SSD_EMU_STANDARD:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_STANDARD:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SSD_EMU_DMD:English Electric DM/D Class
-STR_INFO_SSD_EMU_DMD:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}Good ol' Cyclops
+STR_INFO_SSD_EMU_DMD:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}Good ol' Cyclops
 
 STR_NAME_SSD_EMU_TULLOCH:Tulloch Set
-STR_INFO_SSD_EMU_TULLOCH:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_TULLOCH:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_HARRIS_2DOOR:M&K Harris Set (2 Doors)
 STR_NAME_HARRIS_3DOOR:M&K Harris Set (3 Doors)
-STR_INFO_HARRIS:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Melbourne Harris Trains
+STR_INFO_HARRIS:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Melbourne Harris Trains
 
 STR_NAME_SSD_EMU_SPUTNIK:Comeng Sputnik Set
-STR_INFO_SSD_EMU_SPUTNIK:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_SPUTNIK:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SXEMU:Comeng SX EMU
-STR_INFO_SXEMU:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}If only the Banana Benders put up the wires...
+STR_INFO_SXEMU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}If only the Banana Benders put up the wires...
 
 STR_NAME_HITACHI:Comeng-M&K Hitachi EMU
-STR_INFO_HITACHI:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Melbourne Hitachi Trains {}{GOLD}Surprisingly, not built by Hitachi
+STR_INFO_HITACHI:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Melbourne Hitachi Trains {}{GOLD}Surprisingly, not built by Hitachi
 
 STR_NAME_SSD_EMU_AUPTMKI:Comeng AUPT Mk I
-STR_INFO_SSD_EMU_AUPTMKI:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}The guy that designed these was a former spy!
+STR_INFO_SSD_EMU_AUPTMKI:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}The guy that designed these was a former spy!
 
 STR_NAME_SSD_EMU_AUPTMKII:Comeng-Walkers AUPT Mk II
-STR_INFO_SSD_EMU_AUPTMKII:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_AUPTMKII:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SSD_EMU_QREMU:Walkers-ASEA EMU
-STR_INFO_SSD_EMU_QREMU:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}QR EMUs
+STR_INFO_SSD_EMU_QREMU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}QR EMUs
 
 STR_NAME_COMENG_SMU:Comeng EMU
-STR_INFO_COMENG_SMU:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Melbourne Comeng Trains
+STR_INFO_COMENG_SMU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Melbourne Comeng Trains
 
 STR_NAME_SSD_EMU_GANZMAVAG:Ganz-Mavag EMU
-STR_INFO_SSD_EMU_GANZMAVAG:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Wellington Ganz-Mavag Suburban Trains
+STR_INFO_SSD_EMU_GANZMAVAG:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Wellington Ganz-Mavag Suburban Trains
 
 STR_NAME_HARRISREFURB:Comeng-M&K Refurbished Harris
-STR_INFO_HARRISREFURB:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Refurbished Harris Trains
+STR_INFO_HARRISREFURB:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Refurbished Harris Trains
 
 STR_NAME_SSD_EMU_ASERIESSMU:Walkers A-Series SMU
-STR_INFO_SSD_EMU_ASERIESSMU:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_ASERIESSMU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SSD_EMU_XTRAPOLIS:Alstom X-Trapolis
-STR_INFO_SSD_EMU_XTRAPOLIS:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}Who needs suspension?
+STR_INFO_SSD_EMU_XTRAPOLIS:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}Who needs suspension?
 
 STR_NAME_SSD_EMU_NEXUS:Siemens Nexus
-STR_INFO_SSD_EMU_NEXUS:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}Who needs working brakes?
+STR_INFO_SSD_EMU_NEXUS:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}Who needs working brakes?
 
 STR_NAME_SSD_EMU_BSERIESSMU:Downer EDi-Bombardier B-Series SMU
-STR_INFO_SSD_EMU_BSERIESSMU:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_BSERIESSMU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SSD_EMU_MATANGI:Hyundai Rotem Matangi EMU
-STR_INFO_SSD_EMU_MATANGI:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_MATANGI:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SSD_EMU_AMCLASS:CAF AM Class EMU
-STR_INFO_SSD_EMU_AMCLASS:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_AMCLASS:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SSD_EMU_ACITY:Bombardier A-City
-STR_INFO_SSD_EMU_ACITY:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_ACITY:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SSD_EMU_NGR:Bombardier New Generation Rolling Stock
-STR_INFO_SSD_EMU_NGR:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_NGR:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SSD_EMU_HCMT:CRRC High Capacity Metro Train
-STR_INFO_SSD_EMU_HCMT:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_HCMT:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SSD_EMU_CSERIES:Alstom C-Series
-STR_INFO_SSD_EMU_CSERIES:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_CSERIES:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SSD_EMU_XTRAPOLIS2:Alstom X-Trapolis 2.0
-STR_INFO_SSD_EMU_XTRAPOLIS2:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}We fixed the suspension this time
+STR_INFO_SSD_EMU_XTRAPOLIS2:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}We fixed the suspension this time
 
 
 
 STR_NAME_SDD_EMU_TULLOCHDD:Tulloch Double-Decker
-STR_INFO_SDD_EMU_TULLOCHDD:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}First Double-Deck EMUs in the world
+STR_INFO_SDD_EMU_TULLOCHDD:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}First Double-Deck EMUs in the world
 
 STR_NAME_SDD_EMU_COMENGSSET:Comeng S-Set
-STR_INFO_SDD_EMU_COMENGSSET:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SDD_EMU_COMENGSSET:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SDD_EMU_AUPTDD:Comeng AUPT Double-Decker
-STR_INFO_SDD_EMU_AUPTDD:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SDD_EMU_AUPTDD:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SDD_EMU_VSSET:Comeng VS-Set
-STR_INFO_SDD_EMU_VSSET:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}We put bigger doors in your interurban
+STR_INFO_SDD_EMU_VSSET:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}We put bigger doors in your interurban
 
 STR_NAME_SDD_EMU_GONINANKSET:Goninan K-Set
-STR_INFO_SDD_EMU_GONINANKSET:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}We finally managed to put AC in some of these...
+STR_INFO_SDD_EMU_GONINANKSET:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}We finally managed to put AC in some of these...
 
 STR_NAME_SDD_EMU_COMENGKSET:Comeng K-Set
-STR_INFO_SDD_EMU_COMENGKSET:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}Raised cabs are pretty cool
+STR_INFO_SDD_EMU_COMENGKSET:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}Raised cabs are pretty cool
 
 STR_NAME_SDD_EMU_GONINANCHOPPER:Goninan Chopper Set
-STR_INFO_SDD_EMU_GONINANCHOPPER:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}Chopper Chopper Chopper
+STR_INFO_SDD_EMU_GONINANCHOPPER:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}Chopper Chopper Chopper
 
 STR_NAME_SDD_EMU_GONINANTANGARA:Goninan Tangara
-STR_INFO_SDD_EMU_GONINANTANGARA:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SDD_EMU_GONINANTANGARA:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SDD_EMU_COMENGTANGARA:Comeng Tangara
-STR_INFO_SDD_EMU_COMENGTANGARA:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}The worst part about this train is deciding who's Tangara you like the most
+STR_INFO_SDD_EMU_COMENGTANGARA:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}The worst part about this train is deciding who's Tangara you like the most
 
 STR_NAME_SDD_EMU_COMENGABBVRDD:ABB-Comeng VR Double-Decker
-STR_INFO_SDD_EMU_COMENGABBVRDD:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SDD_EMU_COMENGABBVRDD:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 STR_NAME_SDD_EMU_ABBVRDD:ABB VR Double-Decker
-STR_INFO_SDD_EMU_ABBVRDD:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line{}{GOLD}More Doors, More Better
+STR_INFO_SDD_EMU_ABBVRDD:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line{}{GOLD}More Doors, More Better
 
 STR_NAME_SDD_EMU_MILLENIUM:Downer EDi Millenium
-STR_INFO_SDD_EMU_MILLENIUM:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line{}{GOLD}Crew *hate* these
+STR_INFO_SDD_EMU_MILLENIUM:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line{}{GOLD}Crew *hate* these
 
 STR_NAME_SDD_EMU_WARATAH:Downer EDi Waratah
-STR_INFO_SDD_EMU_WARATAH:{BLACK}Role:{GOLD}Suburban Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_INFO_SDD_EMU_WARATAH:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
 
 
@@ -405,10 +406,10 @@ STR_INFO_MAIL_AMERICANCOACH:{BLACK}Role:{GOLD}Mail Van
 
 
 STR_NAME_AMERICANSUBURBANCOACH:American Suburban Coach
-STR_INFO_AMERICANSUBURBANCOACH:{BLACK}Role:{GOLD}Suburban Service
+STR_INFO_AMERICANSUBURBANCOACH:{BLACK}Role:{GOLD}Suburban
 
 STR_NAME_TAITCOACH:Tait Suburban Coach
-STR_INFO_TAITCOACH:{BLACK}Role:{GOLD}Suburban Service
+STR_INFO_TAITCOACH:{BLACK}Role:{GOLD}Suburban
 
 STR_NAME_SXCOACH:Comeng SX Suburban Coach
 STR_INFO_SXCOACH:{BLACK}Role:{GOLD}Suburban Coach
@@ -423,7 +424,7 @@ STR_INFO_HTYPE_CAB:{BLACK}Role:{GOLD}Suburban/Country Coach Driving Trailer {}{B
 
 
 STR_NAME_TULLOCHDOUBLEDECKERS:Tulloch Double-Deck Coach
-STR_INFO_TULLOCHDOUBLEDECKERS:{BLACK}Role:{GOLD}Suburban Service {}{GOLD}You can put me in a Standard, Tulloch, Sputnik or S-Set set too!
+STR_INFO_TULLOCHDOUBLEDECKERS:{BLACK}Role:{GOLD}Suburban {}{GOLD}You can put me in a Standard, Tulloch, Sputnik or S-Set set too!
 
 
 
