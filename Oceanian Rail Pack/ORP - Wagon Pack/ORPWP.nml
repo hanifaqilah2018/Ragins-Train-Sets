@@ -1516,12 +1516,13 @@ switch(FEAT_TRAINS, SELF, switch_bulk_recolour, cargo_type_in_veh) {
 }
 
 
-switch(FEAT_TRAINS, SELF, switch_generic_recolour, cargo_classes) {
-	bitmask(CC_BULK): switch_bulk_recolour;
-	bitmask(CC_BULK, CC_COVERED): switch_bulk_recolour;
+switch(FEAT_TRAINS, SELF, switch_covered_recolour, hasbit(cargo_classes, CC_COVERED)) {
+    0: switch_piece_recolour;
+        switch_bulk_recolour;}
 
-	switch_piece_recolour;
-	
+switch(FEAT_TRAINS, SELF, switch_generic_recolour, hasbit(cargo_classes, CC_BULK)) {
+    0: switch_covered_recolour;
+        switch_bulk_recolour;
 }
 
 spriteset(spriteset_8_Blank, "gfx/Blank.png") {template_8_repeat(7, 39)} //ANGERY >:////
