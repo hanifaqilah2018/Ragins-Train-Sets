@@ -14386,6 +14386,131 @@ item(FEAT_TRAINS, Item_EMD_GF6CH_Liv46, 35896) {
 }
 }
 
+spriteset(spriteset_EMD_AEM5_Pantograph_Purchase,   "gfx/EMD_AEM5_Pantographs.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_EMD_AEM5_PantoDown,   "gfx/EMD_AEM5_Pantographs.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_EMD_AEM5_PantoUp,   "gfx/EMD_AEM5_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_EMD_AEM5_PantoUp_r,   "gfx/EMD_AEM5_Pantographs.png") {template_8_r(7, 69)}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_AEM5_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_EMD_AEM5_PantoDown;
+ 1: spriteset_EMD_AEM5_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_AEM5_r_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_EMD_AEM5_PantoDown;
+ 1: spriteset_EMD_AEM5_PantoUp_r;
+}
+
+//EMD_AEM5_Liv0
+spriteset(spriteset_EMD_AEM5_Liv0_Purchase,   "gfx/EMD_AEM5_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_EMD_AEM5_Liv0,   "gfx/EMD_AEM5_Liv0.png") {template_8_repeat(7, 39)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_EMD_AEM5_Liv0_power_1, tile_powers_railtype("OHLE_AC")) {
+            1: return 5000;
+        }
+        switch (FEAT_TRAINS, SELF, switch_EMD_AEM5_Liv0_power_0, tile_powers_railtype("SAA3")) {
+            1: return 4200;
+                return switch_EMD_AEM5_Liv0_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_EMD_AEM5_Liv0_effect_spawn_model_and_powered, [tile_powers_railtype("SAA3")]) {
+            1: return VISUAL_EFFECT_DISABLE;
+            return visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 3, ENABLE_WAGON_POWER);
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_EMD_AEM5_Liv0_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE_AC)
+                    | (5000 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_3RAIL)
+                    | (4200 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_EMD_AEM5));
+        }
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_EMD_AEM5_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_AEM5_Liv0_Purchase;
+	1: spriteset_EMD_AEM5_Pantograph_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_EMD_AEM5_Liv0_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_AEM5_Liv0;
+    1: switch_EMD_AEM5_Fw_railtype;
+}
+
+switch (FEAT_TRAINS, SELF, switch_EMD_AEM5_Liv0_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EMD_AEM5_Liv0;
+    1: switch_EMD_AEM5_r_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_AEM5_Liv0_position, vehicle_is_flipped) {
+ 0: switch_EMD_AEM5_Liv0_Fw;
+ 1: switch_EMD_AEM5_Liv0_r;
+}
+
+item(FEAT_TRAINS, Item_EMD_AEM5_Liv0, 35900) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        [OHLE_AC, SAA3];
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_EMD_AEM5);
+        introduction_date:                date(1986,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        125 ton;
+        speed:                            160 km/h;
+        power:                            5000 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     18;
+        running_cost_factor:             135;
+		cargo_capacity:                  0;
+		
+//        variant_group: Item_EMD_AEM5_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_AEM5_Liv0_position;
+		sound_effect: switch_Modern_Electric_Horn;
+        purchase: switch_EMD_AEM5_Liv0_Purchase_Stack;
+        power: switch_EMD_AEM5_Liv0_power_0;
+        visual_effect_and_powered: switch_EMD_AEM5_Liv0_effect_spawn_model_and_powered;
+        additional_text: switch_EMD_AEM5_Liv0_buy_menu_additional_text;
+		reverse_build_probability: return 50;
+}
+}
+
 spriteset(spriteset_ABB_ALP44_PantoUp,   "gfx/ABB_ALP44_PantoUp.png") {template_7(7, 39)}
 spriteset(spriteset_ABB_ALP44_PantoUp_r,   "gfx/ABB_ALP44_PantoUp.png") {template_7(7, 69)}
 spriteset(spriteset_ABB_ALP44_PantoDown,   "gfx/ABB_ALP44_PantoDown.png") {template_7(7, 39)}
@@ -14425,7 +14550,7 @@ switch(FEAT_TRAINS, SELF, switch_ABB_ALP44_Liv0_position, vehicle_is_flipped) {
  1: switch_ABB_ALP44_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_ABB_ALP44_Liv0, 35900) {
+item(FEAT_TRAINS, Item_ABB_ALP44_Liv0, 35950) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -14463,6 +14588,98 @@ item(FEAT_TRAINS, Item_ABB_ALP44_Liv0, 35900) {
 		sound_effect: switch_Modern_Electric_Horn;
         purchase: spriteset_ABB_ALP44_Liv0_Purchase;
         additional_text: string(STR_INFO_ABB_ALP44);
+		reverse_build_probability: return 50;
+}
+}
+
+spriteset(spriteset_Comeng_CL657_Pantograph_Purchase,   "gfx/Comeng_CL657_Pantographs.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_Comeng_CL657_PantoDown,   "gfx/Comeng_CL657_Pantographs.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Comeng_CL657_PantoUp,   "gfx/Comeng_CL657_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_Comeng_CL657_PantoUp_r,   "gfx/Comeng_CL657_Pantographs.png") {template_8_r(7, 69)}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_CL657_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_Comeng_CL657_PantoDown;
+ 1: spriteset_Comeng_CL657_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_CL657_r_railtype, tile_powers_railtype("OHLE_AC")) {
+ 0: spriteset_Comeng_CL657_PantoDown;
+ 1: spriteset_Comeng_CL657_PantoUp_r;
+}
+
+//Comeng_CL657_Liv0
+spriteset(spriteset_Comeng_CL657_Liv0_Purchase,   "gfx/Comeng_CL657_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Comeng_CL657_Liv0,   "gfx/Comeng_CL657_Liv0.png") {template_8_repeat(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Comeng_CL657_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_CL657_Liv0_Purchase;
+	1: spriteset_Comeng_CL657_Pantograph_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_CL657_Liv0_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_CL657_Liv0;
+    1: switch_Comeng_CL657_Fw_railtype;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_CL657_Liv0_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_CL657_Liv0;
+    1: switch_Comeng_CL657_r_railtype;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_CL657_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Comeng_CL657_Liv0_Fw;
+ 1: switch_Comeng_CL657_Liv0_r;
+}
+
+item(FEAT_TRAINS, Item_Comeng_CL657_Liv0, 36000) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        OHLE_AC;
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_COMENG_CL657);
+        introduction_date:                date(1991,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        145 ton;
+        speed:                            160 km/h;
+        power:                            7650 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     22;
+        running_cost_factor:             155;
+		cargo_capacity:                  0;
+		
+//        variant_group: Item_Comeng_CL657_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_Comeng_CL657_Liv0_position;
+		sound_effect: switch_Modern_Electric_Horn;
+        purchase: switch_Comeng_CL657_Liv0_Purchase_Stack;
+        additional_text: string(STR_INFO_COMENG_CL657);
 		reverse_build_probability: return 50;
 }
 }
@@ -14506,7 +14723,7 @@ switch(FEAT_TRAINS, SELF, switch_Bombardier_HHP8_Liv0_position, vehicle_is_flipp
  1: switch_Bombardier_HHP8_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_Bombardier_HHP8_Liv0, 35950) {
+item(FEAT_TRAINS, Item_Bombardier_HHP8_Liv0, 36050) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -14587,7 +14804,7 @@ switch(FEAT_TRAINS, SELF, switch_Bombardier_ALP46_Liv0_position, vehicle_is_flip
  1: switch_Bombardier_ALP46_Liv0_r;
 }
 
-item(FEAT_TRAINS, Item_Bombardier_ALP46_Liv0, 36000) {
+item(FEAT_TRAINS, Item_Bombardier_ALP46_Liv0, 36100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
