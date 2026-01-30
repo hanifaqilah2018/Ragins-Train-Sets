@@ -3219,7 +3219,7 @@ item(FEAT_TRAINS, Item_Comeng_CL632_Liv0, 32400) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 

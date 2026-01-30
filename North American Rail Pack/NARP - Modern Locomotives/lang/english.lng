@@ -423,6 +423,9 @@ STR_INFO_PRR_DD2:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard
 STR_NAME_GE_LITTLEJOE:GE Little Joe
 STR_INFO_GE_LITTLEJOE:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line
 
+STR_NAME_GE_E38DV:GE E38DV
+STR_INFO_GE_E38DV:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {RED}AC Overhead Line
+
 STR_NAME_EMD_JF6C:EMD JF6C
 STR_INFO_EMD_JF6C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {RED}AC Overhead Line
 

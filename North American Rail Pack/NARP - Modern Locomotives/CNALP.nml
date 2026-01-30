@@ -17917,7 +17917,137 @@ item(FEAT_TRAINS, Item_GE_LittleJoe_Liv0, 2400) {
 }
 }
 
-sort(FEAT_TRAINS, [Item_GE_LittleJoe_Liv0, Item_GE_EP6DP_Liv0]);
+//Pantographs
+spriteset(spriteset_GE_E38DV_Pantograph_Purchase,   "gfx/GE_E38DV_Pantographs.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_GE_E38DV_PantoDown,   "gfx/GE_E38DV_Pantographs.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_GE_E38DV_PantoUp,   "gfx/GE_E38DV_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_GE_E38DV_PantoUp_r,   "gfx/GE_E38DV_Pantographs.png") {template_8_r(7, 69)}
+
+
+//Railtype checks
+switch(FEAT_TRAINS, SELF, switch_GE_E38DV_Fw_railtype_DC, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_GE_E38DV_PantoDown;
+ 1: spriteset_GE_E38DV_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E38DV_r_railtype_DC, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_GE_E38DV_PantoDown;
+ 1: spriteset_GE_E38DV_PantoUp_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E38DV_Fw_railtype_AC, tile_powers_railtype("OHLE_AC")) {
+ 0: switch_GE_E38DV_Fw_railtype_DC;
+ 1: spriteset_GE_E38DV_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E38DV_r_railtype_AC, tile_powers_railtype("OHLE_AC")) {
+ 0: switch_GE_E38DV_r_railtype_DC;
+ 1: spriteset_GE_E38DV_PantoUp_r;
+}
+
+//GE_E38DV_Liv0
+spriteset(spriteset_GE_E38DV_Liv0_Purchase,   "gfx/GE_E38DV_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_GE_E38DV_Liv0,   "gfx/GE_E38DV_Liv0.png") {template_8(7, 39)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_GE_E38DV_Liv0_power_1, tile_powers_railtype("OHLE_DC")) {
+            1: return 3200;
+        }
+        switch (FEAT_TRAINS, SELF, switch_GE_E38DV_Liv0_power_0, tile_powers_railtype("OHLE_AC")) {
+            1: return 3800;
+                return switch_GE_E38DV_Liv0_power_1;
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_GE_E38DV_Liv0_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE_DC)
+                    | (3200 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_OHLE_AC)
+                    | (3800 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_GE_E38DV));
+        }
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_GE_E38DV_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_E38DV_Liv0_Purchase;
+	1: spriteset_GE_E38DV_Pantograph_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_E38DV_Liv0_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_E38DV_Liv0;
+    1: switch_GE_E38DV_Fw_railtype_AC;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_E38DV_Liv0_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_E38DV_Liv0;
+    1: switch_GE_E38DV_r_railtype_AC;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_E38DV_Liv0_position, vehicle_is_flipped) {
+ 0: switch_GE_E38DV_Liv0_Fw;
+ 1: switch_GE_E38DV_Liv0_r;
+}
+
+item(FEAT_TRAINS, Item_GE_E38DV_Liv0, 43950) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        [OHLE_DC, OHLE_AC];
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_ELECTRIC;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
+
+        name:                            string(STR_NAME_GE_E38DV);
+        introduction_date:                date(1958,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        125 ton;
+        speed:                            70 mph;
+        power:                            3800 hp;
+        tractive_effort_coefficient:     0.5;
+        cost_factor:                     25;
+        running_cost_factor:             155;
+		cargo_capacity:                  0;
+		
+//        variant_group: Item_GE_E38DV_Liv0;
+//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_GE_E38DV_Liv0_position;
+		sound_effect: switch_Modern_Electric_Horn;
+        purchase: switch_GE_E38DV_Liv0_Purchase_Stack;
+		power: switch_GE_E38DV_Liv0_power_0;
+        additional_text: switch_GE_E38DV_Liv0_buy_menu_additional_text;
+		reverse_build_probability: return 50;
+}
+}
+
+sort(FEAT_TRAINS, [Item_GE_E38DV_Liv0, Item_GE_EP6DP_Liv0]);
 
 spriteset(spriteset_GE_EP6DP_PantoUp,   "gfx/GE_EP6DP_PantoUp.png") {template_10(7, 39)}
 spriteset(spriteset_GE_EP6DP_PantoDown,   "gfx/GE_EP6DP_PantoDown.png") {template_10(7, 39)}
