@@ -20849,6 +20849,196 @@ item(FEAT_TRAINS, Item_EMD_F39PHDM_Liv0, 53450) {
 }
 }
 
+//EMD_F39PHDM_Liv16
+spriteset(spriteset_EMD_F39PHDM_Liv16_Purchase,   "gfx/EMD_F39PHDM_Liv16.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_EMD_F39PHDM_Liv16,   "gfx/EMD_F39PHDM_Liv16.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_F39PHDM_Liv16_r,   "gfx/EMD_F39PHDM_Liv16.png") {template_8_r(7, 39)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv16_power_1, tile_powers_railtype("RAIL")) {
+            1: return 1750;
+        }
+        switch (FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv16_power_0, tile_powers_railtype("SAA3")) {
+            1: return 2600;
+                return switch_EMD_F39PHDM_Liv16_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv16_effect_spawn_model_and_powered, [tile_powers_railtype("SAA3")]) {
+            1: return VISUAL_EFFECT_DISABLE;
+            return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv16_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_DIESEL)
+                    | (2300 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_3RAIL)
+                    | (2600 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_EMD_F39PHDM));
+        }
+
+switch(FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv16_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_F39PHDM_Liv16_r;
+  spriteset_EMD_F39PHDM_Liv16;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv16_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_F39PHDM_Liv16_r;
+  switch_EMD_F39PHDM_Liv16_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv16_position, position_in_consist) {
+ 0: spriteset_EMD_F39PHDM_Liv16;
+  switch_EMD_F39PHDM_Liv16_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_F39PHDM_Liv16, 53466) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        [RAIL, SAA3];
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
+
+        name:                            string(STR_NAME_EMD_F39PHDM);
+        introduction_date:                date(1976,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        120 ton;
+        speed:                            90 mph;
+        power:                            2300 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     13;
+        running_cost_factor:             114;
+        cargo_capacity:                  0;
+
+        variant_group: Item_EMD_F39PHDM_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_F39PHDM_Liv16_position;
+		sound_effect: switch_EMD_12_645;
+        purchase: spriteset_EMD_F39PHDM_Liv16_Purchase;
+        power: switch_EMD_F39PHDM_Liv16_power_0;
+        visual_effect_and_powered: switch_EMD_F39PHDM_Liv16_effect_spawn_model_and_powered;
+        additional_text: switch_EMD_F39PHDM_Liv16_buy_menu_additional_text;
+}
+}
+
+//EMD_F39PHDM_Liv45
+spriteset(spriteset_EMD_F39PHDM_Liv45_Purchase,   "gfx/EMD_F39PHDM_Liv45.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_EMD_F39PHDM_Liv45,   "gfx/EMD_F39PHDM_Liv45.png") {template_8(7, 39)} // <- Define a wagon, in this case the cab
+spriteset(spriteset_EMD_F39PHDM_Liv45_r,   "gfx/EMD_F39PHDM_Liv45.png") {template_8_r(7, 39)}
+
+//Change power output based on rail type
+switch (FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv45_power_1, tile_powers_railtype("RAIL")) {
+            1: return 1750;
+        }
+        switch (FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv45_power_0, tile_powers_railtype("SAA3")) {
+            1: return 2600;
+                return switch_EMD_F39PHDM_Liv45_power_1;
+        }
+
+//Change effects based on railtype
+switch (FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv45_effect_spawn_model_and_powered, [tile_powers_railtype("SAA3")]) {
+            1: return VISUAL_EFFECT_DISABLE;
+            return visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+        }
+
+//Power Language File Switch
+switch (FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv45_buy_menu_additional_text, [
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_DIESEL)
+                    | (2300 << 16),
+                    0x100
+                ),
+                STORE_TEMP(
+                    string(STR_POWER_SOURCE_3RAIL)
+                    | (2600 << 16),
+                    0x101
+                ),
+        ]) {
+            return string(STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR, string(STR_POWER_BY_POWER_SOURCE_TWO_SOURCES), string(STR_INFO_EMD_F39PHDM));
+        }
+
+switch(FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv45_pair, position_in_vehid_chain % 2) {
+ 1: spriteset_EMD_F39PHDM_Liv45_r;
+  spriteset_EMD_F39PHDM_Liv45;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv45_rear, position_in_vehid_chain_from_end) {
+ 0: spriteset_EMD_F39PHDM_Liv45_r;
+  switch_EMD_F39PHDM_Liv45_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EMD_F39PHDM_Liv45_position, position_in_consist) {
+ 0: spriteset_EMD_F39PHDM_Liv45;
+  switch_EMD_F39PHDM_Liv45_rear;
+}
+
+item(FEAT_TRAINS, Item_EMD_F39PHDM_Liv45, 53495) {
+    property {
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        refit_cost:                        0;
+        climates_available:                (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        bitmask_vehicle_info:            0;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+
+        track_type:                        [RAIL, SAA3];
+        running_cost_base:                RUNNING_COST_DIESEL;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_CARGO;
+        dual_headed:                    0; // <- Double Headed, so cab on each end
+
+        visual_effect_and_powered: VISUAL_EFFECT_DEFAULT;
+
+        name:                            string(STR_NAME_EMD_F39PHDM);
+        introduction_date:                date(1976,1,1);
+        vehicle_life:                     50;
+        model_life:                        30;
+        length:                            8;
+
+        weight:                        120 ton;
+        speed:                            90 mph;
+        power:                            2300 hp;
+        tractive_effort_coefficient:     0.3;
+        cost_factor:                     13;
+        running_cost_factor:             114;
+        cargo_capacity:                  0;
+
+        variant_group: Item_EMD_F39PHDM_Liv0;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: switch_EMD_F39PHDM_Liv45_position;
+		sound_effect: switch_EMD_12_645;
+        purchase: spriteset_EMD_F39PHDM_Liv45_Purchase;
+        power: switch_EMD_F39PHDM_Liv45_power_0;
+        visual_effect_and_powered: switch_EMD_F39PHDM_Liv45_effect_spawn_model_and_powered;
+        additional_text: switch_EMD_F39PHDM_Liv45_buy_menu_additional_text;
+}
+}
+
 //GE_P32AC_Liv0
 spriteset(spriteset_GE_P32AC_Liv0_Purchase,   "gfx/GE_P32AC_Liv0.png") {template_purchase_8(7, 21)}
 
