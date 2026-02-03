@@ -2006,6 +2006,7 @@ item(FEAT_TRAINS, Item_GE_U34CH_Liv0, 6350) {
         speed:                            100 mph;
         power:                            3400 hp;
         tractive_effort_coefficient:     0.53;
+		cost_factor:                     16;
         running_cost_factor:             154;
 		cargo_capacity:                  0;
 

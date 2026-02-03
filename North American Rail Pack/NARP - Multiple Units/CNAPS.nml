@@ -4252,12 +4252,12 @@ switch (FEAT_TRAINS, SELF, switch_HighlinerI_Liv0_PurchaseStack, [
 }
 
 //Pantograph Controls
-switch(FEAT_TRAINS, SELF, switch_HighlinerI_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
+switch(FEAT_TRAINS, SELF, switch_HighlinerI_Liv0_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_HighlinerI_PantoDown;
  1: spriteset_HighlinerI_PantoUp;
 }
 
-switch(FEAT_TRAINS, SELF, switch_HighlinerI_Liv0_Rw_railtype, tile_powers_railtype("OHLE_AC")) {
+switch(FEAT_TRAINS, SELF, switch_HighlinerI_Liv0_Rw_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_HighlinerI_PantoDown_r; //might need switching back to just panto down
  1: spriteset_HighlinerI_PantoUp_r;
 }
@@ -4507,12 +4507,12 @@ switch (FEAT_TRAINS, SELF, switch_HighlinerI_Liv1_PurchaseStack, [
 }
 
 //Pantograph Controls
-switch(FEAT_TRAINS, SELF, switch_HighlinerI_Liv1_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
+switch(FEAT_TRAINS, SELF, switch_HighlinerI_Liv1_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_HighlinerI_PantoDown;
  1: spriteset_HighlinerI_PantoUp;
 }
 
-switch(FEAT_TRAINS, SELF, switch_HighlinerI_Liv1_Rw_railtype, tile_powers_railtype("OHLE_AC")) {
+switch(FEAT_TRAINS, SELF, switch_HighlinerI_Liv1_Rw_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_HighlinerI_PantoDown_r; //might need switching back to just panto down
  1: spriteset_HighlinerI_PantoUp_r;
 }
@@ -4770,12 +4770,12 @@ switch (FEAT_TRAINS, SELF, switch_HighlinerII_Liv0_PurchaseStack, [
 }
 
 //Pantograph Controls
-switch(FEAT_TRAINS, SELF, switch_HighlinerII_Liv0_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
+switch(FEAT_TRAINS, SELF, switch_HighlinerII_Liv0_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_HighlinerII_PantoDown;
  1: spriteset_HighlinerII_PantoUp;
 }
 
-switch(FEAT_TRAINS, SELF, switch_HighlinerII_Liv0_Rw_railtype, tile_powers_railtype("OHLE_AC")) {
+switch(FEAT_TRAINS, SELF, switch_HighlinerII_Liv0_Rw_railtype, tile_powers_railtype("OHLE_DC")) {
  0: spriteset_HighlinerII_PantoDown_r; //might need switching back to just panto down
  1: spriteset_HighlinerII_PantoUp_r;
 }

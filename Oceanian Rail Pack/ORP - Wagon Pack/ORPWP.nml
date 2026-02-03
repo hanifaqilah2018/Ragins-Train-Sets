@@ -1556,6 +1556,189 @@ spriteset(spriteset_8_Modern_EOTD_r,   "gfx/8_EOTD.png") {template_8_r(7, 69)}
 spriteset(spriteset_9_Old_EOTD,   "gfx/9_EOTD.png") {template_9(7, 39)}
 spriteset(spriteset_9_Modern_EOTD,   "gfx/9_EOTD.png") {template_9(7, 73)}
 
+//loading speed
+switch (FEAT_TRAINS, SELF, Variable_Gen1_LoadingSpeed, 5) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_LoadingSpeed, 5) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_LoadingSpeed, 5) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_LoadingSpeed, 5) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_LoadingSpeed, 5) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_LoadingSpeed, 5) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen7_LoadingSpeed, 5) {return;}
+//speed
+//Add (* 161 / 100) to the value to convert to MPH
+switch (FEAT_TRAINS, SELF, Variable_Gen1_Speed, 60 ) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_Speed, 80) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_Speed, 80) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_Speed, 115) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_Speed, 115) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_Speed, 145) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen7_Speed, 145) {return;}
+
+//cost_factor
+//Gen1
+switch (FEAT_TRAINS, SELF, Variable_Gen1_4_CostFactor, 20) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_5_CostFactor, 35) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_6_CostFactor, 50) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_7_CostFactor, 65) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_8_CostFactor, 80) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_9_CostFactor, 95) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_10_CostFactor, 110) {return;}
+
+//Gen2
+switch (FEAT_TRAINS, SELF, Variable_Gen2_4_CostFactor, 40) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_5_CostFactor, 55) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_6_CostFactor, 70) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_7_CostFactor, 85) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_8_CostFactor, 100) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_9_CostFactor, 115) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_10_CostFactor, 130) {return;}
+
+//Gen3
+switch (FEAT_TRAINS, SELF, Variable_Gen3_4_CostFactor, 40) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_5_CostFactor, 55) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_6_CostFactor, 70) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_7_CostFactor, 85) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_8_CostFactor, 100) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_9_CostFactor, 115) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_10_CostFactor, 130) {return;}
+
+//Gen4
+switch (FEAT_TRAINS, SELF, Variable_Gen4_4_CostFactor, 55) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_5_CostFactor, 70) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_6_CostFactor, 85) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_7_CostFactor, 100) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_8_CostFactor, 115) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_9_CostFactor, 130) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_10_CostFactor, 145) {return;}
+
+//Gen5
+switch (FEAT_TRAINS, SELF, Variable_Gen5_4_CostFactor, 70) {return;} 
+switch (FEAT_TRAINS, SELF, Variable_Gen5_5_CostFactor, 85) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_6_CostFactor, 100) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_7_CostFactor, 115) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_8_CostFactor, 130) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_9_CostFactor, 145) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_10_CostFactor, 160) {return;}
+
+//Gen6
+switch (FEAT_TRAINS, SELF, Variable_Gen6_4_CostFactor, 85) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_5_CostFactor, 100) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_6_CostFactor, 115) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_7_CostFactor, 130) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_8_CostFactor, 145) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_9_CostFactor, 160) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_10_CostFactor, 175) {return;}
+
+//running_cost_factor
+//Gen1
+switch (FEAT_TRAINS, SELF, Variable_Gen1_4_RunningCostFactor, 2) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_5_RunningCostFactor, 3) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_6_RunningCostFactor, 5) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_7_RunningCostFactor, 6) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_8_RunningCostFactor, 8) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_9_RunningCostFactor, 9) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_10_RunningCostFactor, 10) {return;}
+
+//Gen2
+switch (FEAT_TRAINS, SELF, Variable_Gen2_4_RunningCostFactor, 2) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_5_RunningCostFactor, 3) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_6_RunningCostFactor, 5) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_7_RunningCostFactor, 6) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_8_RunningCostFactor, 7) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_9_RunningCostFactor, 8) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_10_RunningCostFactor, 10) {return;}
+
+//Gen3
+switch (FEAT_TRAINS, SELF, Variable_Gen3_4_RunningCostFactor, 2) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_5_RunningCostFactor, 3) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_6_RunningCostFactor, 5) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_7_RunningCostFactor, 6) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_8_RunningCostFactor, 8) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_9_RunningCostFactor, 9) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_10_RunningCostFactor, 10) {return;}
+
+//Gen4
+switch (FEAT_TRAINS, SELF, Variable_Gen4_4_RunningCostFactor, 3) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_5_RunningCostFactor, 5) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_6_RunningCostFactor, 6) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_7_RunningCostFactor, 8) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_8_RunningCostFactor, 9) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_9_RunningCostFactor, 11) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_10_RunningCostFactor, 12) {return;}
+
+//Gen5
+switch (FEAT_TRAINS, SELF, Variable_Gen5_4_RunningCostFactor, 4) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_5_RunningCostFactor, 6) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_6_RunningCostFactor, 7) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_7_RunningCostFactor, 9) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_8_RunningCostFactor, 10) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_9_RunningCostFactor, 12) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_10_RunningCostFactor, 13) {return;}
+
+//Gen6
+switch (FEAT_TRAINS, SELF, Variable_Gen6_4_RunningCostFactor, 10) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_5_RunningCostFactor, 12) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_6_RunningCostFactor, 14) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_7_RunningCostFactor, 16) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_8_RunningCostFactor, 18) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_9_RunningCostFactor, 20) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_10_RunningCostFactor, 24) {return;}
+
+//Cargo Capacities
+//Gen1
+switch (FEAT_TRAINS, SELF, Variable_Gen1_4_CargoCapacity, 30/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_5_CargoCapacity, 38/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_6_CargoCapacity, 45/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_7_CargoCapacity, 53/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_8_CargoCapacity, 60/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_9_CargoCapacity, (68/param_freight_capacity_mod)/2) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen1_10_CargoCapacity, (75/param_freight_capacity_mod)/2) {return;}
+
+//Gen2
+switch (FEAT_TRAINS, SELF, Variable_Gen2_4_CargoCapacity, 30/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_5_CargoCapacity, 38/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_6_CargoCapacity, 45/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_7_CargoCapacity, 53/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_8_CargoCapacity, 60/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_9_CargoCapacity, (68/param_freight_capacity_mod)/2) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen2_10_CargoCapacity, (75/param_freight_capacity_mod)/2) {return;}
+
+//Gen3
+switch (FEAT_TRAINS, SELF, Variable_Gen3_4_CargoCapacity, 30/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_5_CargoCapacity, 38/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_6_CargoCapacity, 45/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_7_CargoCapacity, 53/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_8_CargoCapacity, 60/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_9_CargoCapacity, (68/param_freight_capacity_mod)/2) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen3_10_CargoCapacity, (75/param_freight_capacity_mod)/2) {return;}
+
+//Gen4
+switch (FEAT_TRAINS, SELF, Variable_Gen4_4_CargoCapacity, 40/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_5_CargoCapacity, 48/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_6_CargoCapacity, 55/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_7_CargoCapacity, 63/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_8_CargoCapacity, 70/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_9_CargoCapacity, (78/param_freight_capacity_mod)/2) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen4_10_CargoCapacity, (58/param_freight_capacity_mod)/2) {return;}
+
+//Gen5
+switch (FEAT_TRAINS, SELF, Variable_Gen5_4_CargoCapacity, 50/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_5_CargoCapacity, 58/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_6_CargoCapacity, 65/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_7_CargoCapacity, 73/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_8_CargoCapacity, 80/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_9_CargoCapacity, (88/param_freight_capacity_mod)/2) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen5_10_CargoCapacity, (95/param_freight_capacity_mod)/2) {return;}
+
+//Gen6
+switch (FEAT_TRAINS, SELF, Variable_Gen6_4_CargoCapacity, 60/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_5_CargoCapacity, 68/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_6_CargoCapacity, 75/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_7_CargoCapacity, 83/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_8_CargoCapacity, 90/param_freight_capacity_mod) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_9_CargoCapacity, (98/param_freight_capacity_mod)/2) {return;}
+switch (FEAT_TRAINS, SELF, Variable_Gen6_10_CargoCapacity, (105/param_freight_capacity_mod)/2) {return;}
+
 //Gen2A_GoodsVan_Liv0
 spriteset(spriteset_Gen2A_GoodsVan_Liv0_Purchase,   "gfx/Gen2A_GoodsVan_Liv0_0.png") {template_purchase_5(7, 21)}
 
@@ -1634,15 +1817,15 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_NG, 30550) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            5;
-        cost_factor:                    55;
-        running_cost_factor:            3;
-        loading_speed:                    5;
-
-        introduction_date:                date(1880, 1, 1);
-        speed:                            80 km/h;
-        weight:                            14 ton;
-        cargo_capacity:                    38/param_freight_capacity_mod; //Callback!!!
+		introduction_date:              date(1880, 1, 1);		
+		length:                         5;
+		weight:                         14 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4A_GoodsVan_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1651,7 +1834,11 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_NG, 30550) {
     default:                             switch_Gen2A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen2A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN2A_GOODSVAN_NG);
-	cargo_capacity:                   return 38/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen2_LoadingSpeed;
+	speed:							  return Variable_Gen2_Speed;
+	cost_factor:					  return Variable_Gen2_5_CostFactor;
+	running_cost_factor:			  return Variable_Gen2_5_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen2_5_CargoCapacity;
 }
 }
 
@@ -1680,15 +1867,15 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0, 30565) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            5;
-        cost_factor:                    55;
-        running_cost_factor:            3;
-        loading_speed:                    5;
-
-        introduction_date:                date(1880, 1, 1);
-        speed:                            80 km/h;
-        weight:                            14 ton;
-        cargo_capacity:                    38/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1880, 1, 1);		
+		length:                         5;
+		weight:                         14 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4A_GoodsVan_Liv0;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1697,7 +1884,11 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0, 30565) {
     default:                             switch_Gen2A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen2A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN2A_GOODSVAN);
-	cargo_capacity:                   return 38/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen2_LoadingSpeed;
+	speed:							  return Variable_Gen2_Speed;
+	cost_factor:					  return Variable_Gen2_5_CostFactor;
+	running_cost_factor:			  return Variable_Gen2_5_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen2_5_CargoCapacity;
 }
 }
 
@@ -1725,15 +1916,15 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_BG, 30580) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            5;
-        cost_factor:                    55;
-        running_cost_factor:            3;
-        loading_speed:                    5;
-
-        introduction_date:                date(1880, 1, 1);
-        speed:                            80 km/h;
-        weight:                            14 ton;
-        cargo_capacity:                    38/param_freight_capacity_mod; //Callback!!!
+		introduction_date:              date(1880, 1, 1);		
+		length:                         5;
+		weight:                         14 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4A_GoodsVan_Liv0_BG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1742,7 +1933,11 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_BG, 30580) {
     default:                             switch_Gen2A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen2A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN2A_GOODSVAN_BG);
-	cargo_capacity:                   return 38/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen2_LoadingSpeed;
+	speed:							  return Variable_Gen2_Speed;
+	cost_factor:					  return Variable_Gen2_5_CostFactor;
+	running_cost_factor:			  return Variable_Gen2_5_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen2_5_CargoCapacity;
 }
 }
 
@@ -1824,15 +2019,15 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_NG, 30600) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    70;
-        running_cost_factor:            5;
-        loading_speed:                    5;
-
-        introduction_date:                date(1910, 1, 1);
-        speed:                            80 km/h;
-        weight:                            16 ton;
-        cargo_capacity:                    45/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1910, 1, 1);		
+		length:                         6;
+		weight:                         16 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4A_GoodsVan_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1841,7 +2036,11 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_NG, 30600) {
     default:                             switch_Gen3A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen3A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN3A_GOODSVAN_NG);
-	cargo_capacity:                   return 45/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen3_LoadingSpeed;
+	speed:							  return Variable_Gen3_Speed;
+	cost_factor:					  return Variable_Gen3_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen3_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen3_6_CargoCapacity;
 }
 }
 
@@ -1870,15 +2069,15 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0, 30615) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    70;
-        running_cost_factor:            5;
-        loading_speed:                    5;
-
-        introduction_date:                date(1910, 1, 1);
-        speed:                            80 km/h;
-        weight:                            16 ton;
-        cargo_capacity:                    45/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1910, 1, 1);		
+		length:                         6;
+		weight:                         16 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4A_GoodsVan_Liv0;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1887,7 +2086,11 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0, 30615) {
     default:                             switch_Gen3A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen3A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN3A_GOODSVAN);
-	cargo_capacity:                   return 45/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen3_LoadingSpeed;
+	speed:							  return Variable_Gen3_Speed;
+	cost_factor:					  return Variable_Gen3_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen3_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen3_6_CargoCapacity;
 }
 }
 
@@ -1915,15 +2118,15 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_BG, 30630) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    70;
-        running_cost_factor:            5;
-        loading_speed:                    5;
-
-        introduction_date:                date(1910, 1, 1);
-        speed:                            80 km/h;
-        weight:                            16 ton;
-        cargo_capacity:                    45/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1910, 1, 1);		
+		length:                         6;
+		weight:                         16 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4A_GoodsVan_Liv0_BG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1932,7 +2135,11 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_BG, 30630) {
     default:                             switch_Gen3A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen3A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN3A_GOODSVAN_BG);
-	cargo_capacity:                   return 45/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen3_LoadingSpeed;
+	speed:							  return Variable_Gen3_Speed;
+	cost_factor:					  return Variable_Gen3_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen3_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen3_6_CargoCapacity;
 }
 }
 
@@ -2014,15 +2221,15 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_NG, 30650) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4A_GoodsVan_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2031,7 +2238,11 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_NG, 30650) {
     default:                             switch_Gen4A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen4A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_GOODSVAN_NG);
-	cargo_capacity:                   return 55/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -2060,15 +2271,15 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0, 30665) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4A_GoodsVan_Liv0;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2077,7 +2288,11 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0, 30665) {
     default:                             switch_Gen4A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen4A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_GOODSVAN);
-	cargo_capacity:                   return 55/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -2105,15 +2320,15 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_BG, 30680) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4A_GoodsVan_Liv0_BG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2122,7 +2337,11 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_BG, 30680) {
     default:                             switch_Gen4A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen4A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_GOODSVAN_BG);
-	cargo_capacity:                   return 55/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -2204,15 +2423,15 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_NG, 30700) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            27 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         27 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen5A_GoodsVan_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2221,7 +2440,11 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_NG, 30700) {
     default:                             switch_Gen5A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen5A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5A_GOODSVAN_NG);
-	cargo_capacity:                   return 73/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -2250,15 +2473,15 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0, 30715) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            27 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         27 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen5A_GoodsVan_Liv0;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2267,7 +2490,11 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0, 30715) {
     default:                             switch_Gen5A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen5A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5A_GOODSVAN);
-	cargo_capacity:                   return 73/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -2295,15 +2522,15 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_BG, 30730) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            27 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         27 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen5A_GoodsVan_Liv0_BG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2312,7 +2539,11 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_BG, 30730) {
     default:                             switch_Gen5A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen5A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5A_GOODSVAN_BG);
-	cargo_capacity:                   return 73/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -2394,15 +2625,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_NG, 3000) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen5B_GoodsVan_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2411,7 +2642,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_NG, 3000) {
     default:                             switch_Gen5B_GoodsVan_Liv0_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv0_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv0_articulated_part;  
 }
@@ -2442,15 +2677,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0, 3015) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen5B_GoodsVan_Liv0;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2459,7 +2694,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0, 3015) {
     default:                             switch_Gen5B_GoodsVan_Liv0_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv0_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv0_articulated_part;  
 }
@@ -2489,15 +2728,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_BG, 3030) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen5B_GoodsVan_Liv0_BG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2506,7 +2745,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_BG, 3030) {
     default:                             switch_Gen5B_GoodsVan_Liv0_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv0_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv0_articulated_part;  
 }
@@ -2588,15 +2831,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_NG, 3001) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5B_GoodsVan_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2605,7 +2848,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_NG, 3001) {
     default:                             switch_Gen5B_GoodsVan_Liv1_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv1_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv1_articulated_part;  
 }
@@ -2636,15 +2883,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1, 3016) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5B_GoodsVan_Liv0;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2653,7 +2900,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1, 3016) {
     default:                             switch_Gen5B_GoodsVan_Liv1_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv1_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv1_articulated_part;  
 }
@@ -2683,15 +2934,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_BG, 3031) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5B_GoodsVan_Liv0_BG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2700,7 +2951,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_BG, 3031) {
     default:                             switch_Gen5B_GoodsVan_Liv1_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv1_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv1_articulated_part;  
 }
@@ -2788,15 +3043,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_NG, 3002) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5B_GoodsVan_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2805,7 +3060,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_NG, 3002) {
     default:                             switch_Gen5B_GoodsVan_Liv2_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv2_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv2_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv2_articulated_part;  
 }
@@ -2836,15 +3095,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2, 3017) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5B_GoodsVan_Liv0;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2853,7 +3112,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2, 3017) {
     default:                             switch_Gen5B_GoodsVan_Liv2_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv2_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv2_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv2_articulated_part;  
 }
@@ -2883,15 +3146,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_BG, 3032) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5B_GoodsVan_Liv0_BG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2900,7 +3163,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_BG, 3032) {
     default:                             switch_Gen5B_GoodsVan_Liv2_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv2_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv2_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv2_articulated_part;  
 }
@@ -2982,15 +3249,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_NG, 3003) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5B_GoodsVan_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2999,7 +3266,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_NG, 3003) {
     default:                             switch_Gen5B_GoodsVan_Liv3_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv3_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv3_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv3_articulated_part;  
 }
@@ -3030,15 +3301,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3, 3018) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5B_GoodsVan_Liv0;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3047,7 +3318,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3, 3018) {
     default:                             switch_Gen5B_GoodsVan_Liv3_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv3_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv3_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv3_articulated_part;  
 }
@@ -3077,15 +3352,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_BG, 3033) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5B_GoodsVan_Liv0_BG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3094,7 +3369,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_BG, 3033) {
     default:                             switch_Gen5B_GoodsVan_Liv3_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv3_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv3_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv3_articulated_part;  
 }
@@ -3176,15 +3455,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_NG, 3004) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5B_GoodsVan_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3193,7 +3472,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_NG, 3004) {
     default:                             switch_Gen5B_GoodsVan_Liv4_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv4_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv4_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv4_articulated_part;  
 }
@@ -3224,15 +3507,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4, 3019) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5B_GoodsVan_Liv0;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3241,7 +3524,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4, 3019) {
     default:                             switch_Gen5B_GoodsVan_Liv4_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv4_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv4_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv4_articulated_part;  
 }
@@ -3271,15 +3558,15 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_BG, 3034) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            12;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            30 ton;
-        cargo_capacity:                    44/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1970, 1, 1);		
+		length:                         8;
+		weight:                         30 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5B_GoodsVan_Liv0_BG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3288,7 +3575,11 @@ item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_BG, 3034) {
     default:                             switch_Gen5B_GoodsVan_Liv4_position;
     purchase:                            switch_Gen5B_GoodsVan_Liv4_PurchaseStack;
     additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	cargo_capacity:                   return 44/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_9_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
 	length: switch_Gen5B_GoodsVan_Liv4_length;
     articulated_part: switch_Gen5B_GoodsVan_Liv4_articulated_part;  
 }
@@ -3372,15 +3663,15 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_NG, 32250) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            18;
-        loading_speed:                    5;
-
-        introduction_date:                date(1995, 1, 1);
-        speed:                            145 km/h;
-        weight:                            27 ton;
-        cargo_capacity:                    90/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1995, 1, 1);		
+		length:                         8;
+		weight:                         27 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen6D_GoodsVan_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3389,7 +3680,11 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_NG, 32250) {
     default:                             switch_Gen6D_GoodsVan_Liv0_position;
     purchase:                            switch_Gen6D_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN6D_GOODSVAN_NG);
-	cargo_capacity:                   return 90/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen6_LoadingSpeed;
+	speed:							  return Variable_Gen6_Speed;
+	cost_factor:					  return Variable_Gen6_8_CostFactor;
+	running_cost_factor:			  return Variable_Gen6_8_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen6_8_CargoCapacity;
 }
 }
 
@@ -3418,15 +3713,15 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0, 32265) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            18;
-        loading_speed:                    5;
-
-        introduction_date:                date(1995, 1, 1);
-        speed:                            145 km/h;
-        weight:                            27 ton;
-        cargo_capacity:                    90/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1995, 1, 1);		
+		length:                         8;
+		weight:                         27 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen6D_GoodsVan_Liv0;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3435,7 +3730,11 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0, 32265) {
     default:                             switch_Gen6D_GoodsVan_Liv0_position;
     purchase:                            switch_Gen6D_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN6D_GOODSVAN);
-	cargo_capacity:                   return 90/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen6_LoadingSpeed;
+	speed:							  return Variable_Gen6_Speed;
+	cost_factor:					  return Variable_Gen6_8_CostFactor;
+	running_cost_factor:			  return Variable_Gen6_8_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen6_8_CargoCapacity;
 }
 }
 
@@ -3463,15 +3762,15 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_BG, 32280) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            8;
-        cost_factor:                    145;
-        running_cost_factor:            18;
-        loading_speed:                    5;
-
-        introduction_date:                date(1995, 1, 1);
-        speed:                            145 km/h;
-        weight:                            27 ton;
-        cargo_capacity:                    90/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1995, 1, 1);		
+		length:                         8;
+		weight:                         27 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen6D_GoodsVan_Liv0_BG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3480,7 +3779,11 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_BG, 32280) {
     default:                             switch_Gen6D_GoodsVan_Liv0_position;
     purchase:                            switch_Gen6D_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN6D_GOODSVAN_BG);
-	cargo_capacity:                   return 90/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen6_LoadingSpeed;
+	speed:							  return Variable_Gen6_Speed;
+	cost_factor:					  return Variable_Gen6_8_CostFactor;
+	running_cost_factor:			  return Variable_Gen6_8_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen6_8_CargoCapacity;
 }
 }
 
@@ -3579,15 +3882,15 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0_NG, 42150) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod;
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4D_OpenHopper_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3596,6 +3899,11 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0_NG, 42150) {
     default:                             switch_Gen4D_OpenHopper_Liv0_position;
     purchase:                            switch_Gen4D_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4D_OPENHOPPER_NG);
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -3624,15 +3932,15 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0, 42165) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod;
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4D_OpenHopper_Liv0;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3641,6 +3949,11 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0, 42165) {
     default:                             switch_Gen4D_OpenHopper_Liv0_position;
     purchase:                            switch_Gen4D_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4D_OPENHOPPER);
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -3668,15 +3981,15 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0_BG, 42180) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod;
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4D_OpenHopper_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3685,6 +3998,11 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0_BG, 42180) {
     default:                             switch_Gen4D_OpenHopper_Liv0_position;
     purchase:                            switch_Gen4D_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4D_OPENHOPPER_BG);
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -3770,15 +4088,15 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1_NG, 42151) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod;
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen4D_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3787,6 +4105,11 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1_NG, 42151) {
     default:                             switch_Gen4D_OpenHopper_Liv1_position;
     purchase:                            switch_Gen4D_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4D_OPENHOPPER_NG);
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -3815,15 +4138,15 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1, 42166) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod;
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen4D_OpenHopper_Liv0;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3832,6 +4155,11 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1, 42166) {
     default:                             switch_Gen4D_OpenHopper_Liv1_position;
     purchase:                            switch_Gen4D_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4D_OPENHOPPER);
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -3859,15 +4187,15 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1_BG, 42181) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod;
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen4D_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3876,6 +4204,11 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1_BG, 42181) {
     default:                             switch_Gen4D_OpenHopper_Liv1_position;
     purchase:                            switch_Gen4D_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4D_OPENHOPPER_BG);
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -3974,15 +4307,15 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv0_NG, 42650) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod;
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4E_OpenHopper_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -3991,6 +4324,11 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv0_NG, 42650) {
     default:                             switch_Gen4E_OpenHopper_Liv0_position;
     purchase:                            switch_Gen4E_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4E_OPENHOPPER_NG);
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -4019,15 +4357,15 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv0, 42665) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod;
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4E_OpenHopper_Liv0;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4036,6 +4374,11 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv0, 42665) {
     default:                             switch_Gen4E_OpenHopper_Liv0_position;
     purchase:                            switch_Gen4E_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4E_OPENHOPPER);
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -4063,15 +4406,15 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv0_BG, 42680) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod;
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4E_OpenHopper_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4080,6 +4423,11 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv0_BG, 42680) {
     default:                             switch_Gen4E_OpenHopper_Liv0_position;
     purchase:                            switch_Gen4E_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4E_OPENHOPPER_BG);
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -4165,15 +4513,15 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv1_NG, 42651) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod;
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen4E_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4182,6 +4530,11 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv1_NG, 42651) {
     default:                             switch_Gen4E_OpenHopper_Liv1_position;
     purchase:                            switch_Gen4E_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4E_OPENHOPPER_NG);
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -4210,15 +4563,15 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv1, 42666) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod;
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen4E_OpenHopper_Liv0;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4227,6 +4580,11 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv1, 42666) {
     default:                             switch_Gen4E_OpenHopper_Liv1_position;
     purchase:                            switch_Gen4E_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4E_OPENHOPPER);
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -4254,15 +4612,15 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv1_BG, 42681) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod;
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen4E_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4271,6 +4629,11 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv1_BG, 42681) {
     default:                             switch_Gen4E_OpenHopper_Liv1_position;
     purchase:                            switch_Gen4E_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4E_OPENHOPPER_BG);
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -4369,15 +4732,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv0_NG, 44200) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen5H_OpenHopper_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4386,6 +4749,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv0_NG, 44200) {
     default:                             switch_Gen5H_OpenHopper_Liv0_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_NG);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -4414,15 +4782,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv0, 44215) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen5H_OpenHopper_Liv0;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4431,6 +4799,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv0, 44215) {
     default:                             switch_Gen5H_OpenHopper_Liv0_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -4458,15 +4831,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv0_BG, 44230) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen5H_OpenHopper_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4475,6 +4848,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv0_BG, 44230) {
     default:                             switch_Gen5H_OpenHopper_Liv0_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -4560,15 +4938,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv1_NG, 44201) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4577,6 +4955,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv1_NG, 44201) {
     default:                             switch_Gen5H_OpenHopper_Liv1_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_NG);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -4605,15 +4988,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv1, 44216) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4622,6 +5005,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv1, 44216) {
     default:                             switch_Gen5H_OpenHopper_Liv1_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -4649,15 +5037,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv1_BG, 44231) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4666,6 +5054,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv1_BG, 44231) {
     default:                             switch_Gen5H_OpenHopper_Liv1_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -4751,15 +5144,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv2_NG, 44202) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4768,6 +5161,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv2_NG, 44202) {
     default:                             switch_Gen5H_OpenHopper_Liv2_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv2_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_NG);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -4796,15 +5194,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv2, 44217) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4813,6 +5211,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv2, 44217) {
     default:                             switch_Gen5H_OpenHopper_Liv2_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv2_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -4840,15 +5243,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv2_BG, 44232) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4857,6 +5260,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv2_BG, 44232) {
     default:                             switch_Gen5H_OpenHopper_Liv2_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv2_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -4942,15 +5350,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv3_NG, 44203) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -4959,6 +5367,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv3_NG, 44203) {
     default:                             switch_Gen5H_OpenHopper_Liv3_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv3_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_NG);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -4987,15 +5400,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv3, 44218) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5004,6 +5417,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv3, 44218) {
     default:                             switch_Gen5H_OpenHopper_Liv3_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv3_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -5031,15 +5449,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv3_BG, 44233) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5048,6 +5466,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv3_BG, 44233) {
     default:                             switch_Gen5H_OpenHopper_Liv3_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv3_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -5133,15 +5556,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv4_NG, 44204) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5150,6 +5573,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv4_NG, 44204) {
     default:                             switch_Gen5H_OpenHopper_Liv4_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv4_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_NG);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -5178,15 +5606,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv4, 44219) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5195,6 +5623,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv4, 44219) {
     default:                             switch_Gen5H_OpenHopper_Liv4_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv4_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -5222,15 +5655,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv4_BG, 44234) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5239,6 +5672,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv4_BG, 44234) {
     default:                             switch_Gen5H_OpenHopper_Liv4_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv4_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -5324,15 +5762,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5_NG, 44205) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5341,6 +5779,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5_NG, 44205) {
     default:                             switch_Gen5H_OpenHopper_Liv5_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv5_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_NG);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -5369,15 +5812,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5, 44220) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5386,6 +5829,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5, 44220) {
     default:                             switch_Gen5H_OpenHopper_Liv5_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv5_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -5413,15 +5861,15 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5_BG, 44235) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            7;
-        cost_factor:                    115;
-        running_cost_factor:            9;
-        loading_speed:                    5;
-
-        introduction_date:                date(1970, 1, 1);
-        speed:                            115 km/h;
-        weight:                            23 ton;
-        cargo_capacity:                    73/param_freight_capacity_mod;
+        introduction_date:              date(1970, 1, 1);		
+		length:                         7;
+		weight:                         23 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen5H_OpenHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5430,6 +5878,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5_BG, 44235) {
     default:                             switch_Gen5H_OpenHopper_Liv5_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv5_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
+	loading_speed:					  return Variable_Gen5_LoadingSpeed;
+	speed:							  return Variable_Gen5_Speed;
+	cost_factor:					  return Variable_Gen5_7_CostFactor;
+	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
 }
 }
 
@@ -5497,7 +5950,7 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_NG, 46650) {
 		
 		climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE); //CoveredHopper
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS); //CoveredHopper
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS, CC_LIQUID); //CoveredHopper
 		default_cargo_type:				GRAI; //CoveredHopper
 		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //CoveredHopper
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE, WOOL]; //CoveredHopper
@@ -5511,15 +5964,15 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_NG, 46650) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4A_CoveredHopper_Liv0_NG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5528,7 +5981,11 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_NG, 46650) {
     default:                             switch_Gen4A_CoveredHopper_Liv0_position;
     purchase:                            switch_Gen4A_CoveredHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER_NG);
-	cargo_capacity:                   return 55/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -5543,7 +6000,7 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0, 46665) {
 		
 		climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE); //CoveredHopper
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS); //CoveredHopper
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS, CC_LIQUID); //CoveredHopper
 		default_cargo_type:				GRAI; //CoveredHopper
 		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //CoveredHopper
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE, WOOL]; //CoveredHopper
@@ -5557,15 +6014,15 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0, 46665) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4A_CoveredHopper_Liv0;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5574,7 +6031,11 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0, 46665) {
     default:                             switch_Gen4A_CoveredHopper_Liv0_position;
     purchase:                            switch_Gen4A_CoveredHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER);
-	cargo_capacity:                   return 55/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -5588,7 +6049,7 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_BG, 46680) {
 		
 		climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE); //CoveredHopper
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS); //CoveredHopper
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS, CC_LIQUID); //CoveredHopper
 		default_cargo_type:				GRAI; //CoveredHopper
 		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //CoveredHopper
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE, WOOL]; //CoveredHopper
@@ -5602,15 +6063,15 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_BG, 46680) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		//variant_group: Item_Gen4A_CoveredHopper_Liv0_BG;
 		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5619,7 +6080,11 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_BG, 46680) {
     default:                             switch_Gen4A_CoveredHopper_Liv0_position;
     purchase:                            switch_Gen4A_CoveredHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER_BG);
-	cargo_capacity:                   return 55/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -5687,7 +6152,7 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_NG, 46651) {
 		
 		climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE); //CoveredHopper
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS); //CoveredHopper
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS, CC_LIQUID); //CoveredHopper
 		default_cargo_type:				GRAI; //CoveredHopper
 		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //CoveredHopper
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE, WOOL]; //CoveredHopper
@@ -5701,15 +6166,15 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_NG, 46651) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen4A_CoveredHopper_Liv0_NG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5718,7 +6183,11 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_NG, 46651) {
     default:                             switch_Gen4A_CoveredHopper_Liv1_position;
     purchase:                            switch_Gen4A_CoveredHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER_NG);
-	cargo_capacity:                   return 55/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -5733,7 +6202,7 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1, 46666) {
 		
 		climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE); //CoveredHopper
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS); //CoveredHopper
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS, CC_LIQUID); //CoveredHopper
 		default_cargo_type:				GRAI; //CoveredHopper
 		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //CoveredHopper
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE, WOOL]; //CoveredHopper
@@ -5747,15 +6216,15 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1, 46666) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen4A_CoveredHopper_Liv0;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5764,7 +6233,11 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1, 46666) {
     default:                             switch_Gen4A_CoveredHopper_Liv1_position;
     purchase:                            switch_Gen4A_CoveredHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER);
-	cargo_capacity:                   return 55/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
 
@@ -5778,7 +6251,7 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_BG, 46681) {
 		
 		climates_available:             ALL_CLIMATES;
         refittable_cargo_classes:		bitmask(CC_COVERED_BULK, CC_POTABLE, CC_NON_POTABLE); //CoveredHopper
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS); //CoveredHopper
+		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_HAZARDOUS, CC_LIQUID); //CoveredHopper
 		default_cargo_type:				GRAI; //CoveredHopper
 		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //CoveredHopper
 		cargo_disallow_refit:			[TOUR, LVST, COAL, IORE, WOOL]; //CoveredHopper
@@ -5792,15 +6265,15 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_BG, 46681) {
         running_cost_base:                RUNNING_COST_STEAM;
         model_life:                        30;
 		
-        length:                            6;
-        cost_factor:                    85;
-        running_cost_factor:            6;
-        loading_speed:                    5;
-
-        introduction_date:                date(1950, 1, 1);
-        speed:                            115 km/h;
-        weight:                            20 ton;
-        cargo_capacity:                    55/param_freight_capacity_mod; //Callback!!!
+        introduction_date:              date(1950, 1, 1);		
+		length:                         6;
+		weight:                         20 ton;
+		
+		loading_speed:					1;
+		speed:							1;
+		cost_factor:					1;
+		running_cost_factor:			1;
+		cargo_capacity: 				1;
 		
 		variant_group: Item_Gen4A_CoveredHopper_Liv0_BG;
 		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -5809,6 +6282,10 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_BG, 46681) {
     default:                             switch_Gen4A_CoveredHopper_Liv1_position;
     purchase:                            switch_Gen4A_CoveredHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER_BG);
-	cargo_capacity:                   return 55/param_freight_capacity_mod;
+	loading_speed:					  return Variable_Gen4_LoadingSpeed;
+	speed:							  return Variable_Gen4_Speed;
+	cost_factor:					  return Variable_Gen4_6_CostFactor;
+	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
 }
 }
