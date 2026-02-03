@@ -61,6 +61,17 @@ STR_INFO_COMPOSITE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car
 STR_NAME_ARNINE:AC&F Arnine
 STR_INFO_ARNINE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R1-R9 cars
 
+STR_NAME_R11:Budd R11
+STR_INFO_R11:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R11/34 cars
+
+STR_NAME_HSC_1200SERIES:Hawker-Siddely 1200 Series
+STR_INFO_HSC_1200SERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Orange line Hawker-Siddely Cars
+
+
+
+STR_NAME_HSC_1200SERIES_DV:Hawker-Siddely 1200 Series Dual-Voltage
+STR_INFO_HSC_1200SERIES_DV:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {BLUE}DC Overhead Line {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Orange line Hawker-Siddely Cars with proposed OHLE equipment
+
 
 
 
@@ -122,16 +133,11 @@ STR_INFO_TRIPLEX:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair
 STR_NAME_SLCC_ME1:SLCC Low-Density Transit Car
 STR_INFO_SLCC_ME1:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Staten Island Railway ME-1 Cars
 
-STR_NAME_HSC_1200SERIES:Hawker-Siddely 1200 Series
-STR_INFO_HSC_1200SERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Orange line Hawker-Siddely Cars
-
-STR_NAME_HSC_1200SERIES_DV:Hawker-Siddely 1200 Series Dual-Voltage
-STR_INFO_HSC_1200SERIES_DV:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {BLUE}DC Overhead Line {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Orange line Hawker-Siddely Cars with proposed OHLE equipment
 
 
 
-STR_NAME_BUDD_R11:Budd R11
-STR_INFO_BUDD_R11:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R11/34 cars
+
+
 
 STR_NAME_GRCW_GSERIES:G&RCW G-Series
 STR_INFO_GRCW_GSERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Toronto's G-Series cars {}{}{GOLD}The Canadian counsin of Melbourne's Harris trains
