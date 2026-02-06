@@ -179,11 +179,11 @@ cargotable {
 
 //Basecost Paramater Variables
 basecost {
- PR_BUILD_VEHICLE_TRAIN: 1 + param_purchase_cost - 4;
- PR_BUILD_VEHICLE_WAGON: 1 + param_purchase_cost - 4;
+ PR_BUILD_VEHICLE_TRAIN: 	1 + param_purchase_cost - 4;
+ PR_BUILD_VEHICLE_WAGON: 	1 + param_purchase_cost - 4;
  PR_RUNNING_TRAIN_ELECTRIC: 3 + param_running_cost - 4;
- PR_RUNNING_TRAIN_DIESEL: 3 + param_running_cost - 4;
- PR_RUNNING_TRAIN_STEAM: 0 + param_running_cost - 4;
+ PR_RUNNING_TRAIN_DIESEL: 	3 + param_running_cost - 4;
+ PR_RUNNING_TRAIN_STEAM: 	0 + param_running_cost - 4;
 }
 
 // Fix depot view
