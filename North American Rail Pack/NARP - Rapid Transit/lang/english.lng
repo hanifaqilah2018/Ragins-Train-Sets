@@ -69,6 +69,12 @@ STR_INFO_ABSTANDARD_MU:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Marrie
 STR_NAME_R11:Budd R11
 STR_INFO_R11:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R11/34 cars
 
+STR_NAME_R16:AC&F R16
+STR_INFO_R16:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R16
+
+STR_NAME_R27:SLCC R27
+STR_INFO_R27:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R27 & R30
+
 STR_NAME_HSC_1200SERIES:Hawker-Siddely 1200 Series
 STR_INFO_HSC_1200SERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Orange line Hawker-Siddely Cars
 
@@ -142,13 +148,9 @@ STR_INFO_SLCC_ME1:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pai
 
 
 STR_NAME_GRCW_GSERIES:G&RCW G-Series
-STR_INFO_GRCW_GSERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Toronto's G-Series cars {}{}{GOLD}The Canadian counsin of Melbourne's Harris trains
+STR_INFO_GRCW_GSERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Toronto's G-Series cars {}{GOLD}The Canadian counsin of Melbourne's Harris trains
 
-STR_NAME_ACF_R16:AC&F R16
-STR_INFO_ACF_R16:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R16
 
-STR_NAME_SLCC_REDBIRD:SLCC Redbird
-STR_INFO_SLCC_REDBIRD:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R27 & R30
 
 STR_NAME_TORONTO_MSERIES:MLW M-Series
 STR_INFO_TORONTO_MSERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Toronto M-Series Cars
@@ -157,7 +159,7 @@ STR_NAME_PULLMAN_MBTA_RED:Pullman 1400 Series
 STR_INFO_PULLMAN_MBTA_RED:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Red Line Pullman Cars
 
 STR_NAME_BUDD_R32:Budd Brightliner
-STR_INFO_BUDD_R32:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R32/38
+STR_INFO_BUDD_R32:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R32 {}{GOLD}Budd under-bid on these hoping they'd get future orders. They did not.
 
 STR_NAME_TORONTO_HSERIES:Hawker-Siddely RTC-75
 STR_INFO_TORONTO_HSERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Toronto H-Series Cars
