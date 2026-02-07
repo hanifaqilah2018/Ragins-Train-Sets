@@ -226,10 +226,10 @@ STR_NAME_EXP_DMU_DTT:EDi Diesel Tilt Train
 STR_INFO_EXP_DMU_DTT:{BLACK}Role:{GOLD}Express Service{}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{BROWN}Diesel{}{BLACK}Special:{GOLD}Tilt train (20% faster through curves)
 
 
-STR_NAME_TAIT_SINGLE:Tait Set (Single)
-STR_INFO_TAIT_SINGLE:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Single Car{}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
-STR_NAME_TAIT:Tait Set
-STR_INFO_TAIT:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
+STR_NAME_TAIT:Tait Set (Single)
+STR_INFO_TAIT:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Single Car{}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
+STR_NAME_TAIT_MU:Tait Set
+STR_INFO_TAIT_MU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
 
 STR_NAME_SSD_EMU_BRADFIELD:Bradfield Set
 STR_INFO_SSD_EMU_BRADFIELD:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
