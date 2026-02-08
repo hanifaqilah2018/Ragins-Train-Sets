@@ -62,9 +62,9 @@ STR_NAME_ARNINE:AC&F Arnine
 STR_INFO_ARNINE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R1-R9 cars
 
 STR_NAME_ABSTANDARD:AB Standard (Single)
-STR_INFO_ABSTANDARD:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC AB Standard {}{}{GOLD}Formed the Basis of Sydney's Suburban Cars
+STR_INFO_ABSTANDARD:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC AB Standard {}{GOLD}Formed the Basis of Sydney's Suburban Cars
 STR_NAME_ABSTANDARD_MU:AB Standard
-STR_INFO_ABSTANDARD_MU:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC AB Standard {}{}{GOLD}Formed the Basis of Sydney's Suburban Cars
+STR_INFO_ABSTANDARD_MU:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC AB Standard {}{GOLD}Formed the Basis of Sydney's Suburban Cars
 
 STR_NAME_R11:Budd R11
 STR_INFO_R11:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R11/34 cars

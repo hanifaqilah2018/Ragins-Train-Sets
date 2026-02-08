@@ -1556,188 +1556,240 @@ spriteset(spriteset_8_Modern_EOTD_r,   "gfx/8_EOTD.png") {template_8_r(7, 69)}
 spriteset(spriteset_9_Old_EOTD,   "gfx/9_EOTD.png") {template_9(7, 39)}
 spriteset(spriteset_9_Modern_EOTD,   "gfx/9_EOTD.png") {template_9(7, 73)}
 
-//loading speed
-switch (FEAT_TRAINS, SELF, Variable_Gen1_LoadingSpeed, 5) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_LoadingSpeed, 5) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_LoadingSpeed, 5) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_LoadingSpeed, 5) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_LoadingSpeed, 5) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_LoadingSpeed, 5) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen7_LoadingSpeed, 5) {return;}
+const Liv0_ID = 0;
+const Liv1_ID = 1;
+const Liv2_ID = 2;
+const Liv3_ID = 3;
+const Liv4_ID = 4;
+const Liv5_ID = 5;
+const Liv6_ID = 6;
+const Liv7_ID = 7;
+const Liv8_ID = 8;
+const Liv9_ID = 9;
+const Liv10_ID = 10;
+const Liv11_ID = 11;
+const Liv12_ID = 12;
+const Liv13_ID = 13;
+const Liv14_ID = 14;
+const Liv15_ID = 15;
+const Liv16_ID = 16;
+const Liv17_ID = 17;
+const Liv18_ID = 18;
+const Liv19_ID = 19;
+const Liv20_ID = 20;
+const Liv21_ID = 21;
+const Liv22_ID = 22;
+const Liv23_ID = 23;
+const Liv24_ID = 24;
+const Liv25_ID = 25;
+const Liv26_ID = 26;
+const Liv27_ID = 27;
+const Liv28_ID = 28;
+const Liv29_ID = 29;
+const Liv30_ID = 30;
+const Liv31_ID = 31;
+const Liv32_ID = 32;
+const Liv33_ID = 33;
+const Liv34_ID = 34;
+const Liv35_ID = 35;
+const Liv36_ID = 36;
+const Liv37_ID = 37;
+const Liv38_ID = 38;
+const Liv39_ID = 39;
+const Liv40_ID = 40;
+const Liv41_ID = 41;
+const Liv42_ID = 42;
+const Liv43_ID = 43;
+const Liv44_ID = 44;
+const Liv45_ID = 45;
+const Liv46_ID = 46;
+const Liv47_ID = 47;
+const Liv48_ID = 48;
+const Liv49_ID = 49;
+
+//Loading speed
+const Gen1_LoadingSpeed = 5;
+const Gen2_LoadingSpeed = 5;
+const Gen3_LoadingSpeed = 5;
+const Gen4_LoadingSpeed = 5;
+const Gen5_LoadingSpeed = 5;
+const Gen6_LoadingSpeed = 5;
+const Gen7_LoadingSpeed = 5;
+
+
 //speed
-//Add (* 161 / 100) to the value to convert to MPH
-switch (FEAT_TRAINS, SELF, Variable_Gen1_Speed, 60 ) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_Speed, 80) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_Speed, 80) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_Speed, 115) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_Speed, 115) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_Speed, 145) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen7_Speed, 145) {return;}
+const Gen1_Speed = 60;
+const Gen2_Speed = 80;
+const Gen3_Speed = 80;
+const Gen4_Speed = 115;
+const Gen5_Speed = 115;
+const Gen6_Speed = 145;
+const Gen7_Speed = 145;
 
 //cost_factor
 //Gen1
-switch (FEAT_TRAINS, SELF, Variable_Gen1_4_CostFactor, 20) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_5_CostFactor, 35) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_6_CostFactor, 50) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_7_CostFactor, 65) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_8_CostFactor, 80) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_9_CostFactor, 95) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_10_CostFactor, 110) {return;}
+const Gen1_4_CostFactor = 20;
+const Gen1_5_CostFactor = 35;
+const Gen1_6_CostFactor = 50;
+const Gen1_7_CostFactor = 65;
+const Gen1_8_CostFactor = 80;
+const Gen1_9_CostFactor = 95;
+const Gen1_10_CostFactor = 110;
 
 //Gen2
-switch (FEAT_TRAINS, SELF, Variable_Gen2_4_CostFactor, 40) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_5_CostFactor, 55) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_6_CostFactor, 70) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_7_CostFactor, 85) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_8_CostFactor, 100) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_9_CostFactor, 115) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_10_CostFactor, 130) {return;}
+const Gen2_4_CostFactor = 40;
+const Gen2_5_CostFactor = 55;
+const Gen2_6_CostFactor = 70;
+const Gen2_7_CostFactor = 85;
+const Gen2_8_CostFactor = 100;
+const Gen2_9_CostFactor = 115;
+const Gen2_10_CostFactor = 130;
 
 //Gen3
-switch (FEAT_TRAINS, SELF, Variable_Gen3_4_CostFactor, 40) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_5_CostFactor, 55) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_6_CostFactor, 70) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_7_CostFactor, 85) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_8_CostFactor, 100) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_9_CostFactor, 115) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_10_CostFactor, 130) {return;}
+const Gen3_4_CostFactor = 40;
+const Gen3_5_CostFactor = 55;
+const Gen3_6_CostFactor = 70;
+const Gen3_7_CostFactor = 85;
+const Gen3_8_CostFactor = 100;
+const Gen3_9_CostFactor = 115;
+const Gen3_10_CostFactor = 130;
 
 //Gen4
-switch (FEAT_TRAINS, SELF, Variable_Gen4_4_CostFactor, 55) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_5_CostFactor, 70) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_6_CostFactor, 85) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_7_CostFactor, 100) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_8_CostFactor, 115) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_9_CostFactor, 130) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_10_CostFactor, 145) {return;}
+const Gen4_4_CostFactor = 55;
+const Gen4_5_CostFactor = 70;
+const Gen4_6_CostFactor = 85;
+const Gen4_7_CostFactor = 100;
+const Gen4_8_CostFactor = 115;
+const Gen4_9_CostFactor = 130;
+const Gen4_10_CostFactor = 145;
 
 //Gen5
-switch (FEAT_TRAINS, SELF, Variable_Gen5_4_CostFactor, 70) {return;} 
-switch (FEAT_TRAINS, SELF, Variable_Gen5_5_CostFactor, 85) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_6_CostFactor, 100) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_7_CostFactor, 115) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_8_CostFactor, 130) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_9_CostFactor, 145) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_10_CostFactor, 160) {return;}
+const Gen5_4_CostFactor = 70;
+const Gen5_5_CostFactor = 85;
+const Gen5_6_CostFactor = 100;
+const Gen5_7_CostFactor = 115;
+const Gen5_8_CostFactor = 130;
+const Gen5_9_CostFactor = 145;
+const Gen5_10_CostFactor = 160;
 
 //Gen6
-switch (FEAT_TRAINS, SELF, Variable_Gen6_4_CostFactor, 85) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_5_CostFactor, 100) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_6_CostFactor, 115) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_7_CostFactor, 130) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_8_CostFactor, 145) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_9_CostFactor, 160) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_10_CostFactor, 175) {return;}
+const Gen6_4_CostFactor = 85;
+const Gen6_5_CostFactor = 100;
+const Gen6_6_CostFactor = 115;
+const Gen6_7_CostFactor = 130;
+const Gen6_8_CostFactor = 145;
+const Gen6_9_CostFactor = 160;
+const Gen6_10_CostFactor = 175;
 
 //running_cost_factor
 //Gen1
-switch (FEAT_TRAINS, SELF, Variable_Gen1_4_RunningCostFactor, 2) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_5_RunningCostFactor, 3) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_6_RunningCostFactor, 5) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_7_RunningCostFactor, 6) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_8_RunningCostFactor, 8) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_9_RunningCostFactor, 9) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_10_RunningCostFactor, 10) {return;}
+const Gen1_4_RunningCostFactor = 2;
+const Gen1_5_RunningCostFactor = 3;
+const Gen1_6_RunningCostFactor = 5;
+const Gen1_7_RunningCostFactor = 6;
+const Gen1_8_RunningCostFactor = 8;
+const Gen1_9_RunningCostFactor = 9;
+const Gen1_10_RunningCostFactor = 10;
 
 //Gen2
-switch (FEAT_TRAINS, SELF, Variable_Gen2_4_RunningCostFactor, 2) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_5_RunningCostFactor, 3) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_6_RunningCostFactor, 5) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_7_RunningCostFactor, 6) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_8_RunningCostFactor, 7) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_9_RunningCostFactor, 8) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_10_RunningCostFactor, 10) {return;}
+const Gen2_4_RunningCostFactor = 2;
+const Gen2_5_RunningCostFactor = 3;
+const Gen2_6_RunningCostFactor = 5;
+const Gen2_7_RunningCostFactor = 6;
+const Gen2_8_RunningCostFactor = 7;
+const Gen2_9_RunningCostFactor = 8;
+const Gen2_10_RunningCostFactor = 10;
 
 //Gen3
-switch (FEAT_TRAINS, SELF, Variable_Gen3_4_RunningCostFactor, 2) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_5_RunningCostFactor, 3) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_6_RunningCostFactor, 5) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_7_RunningCostFactor, 6) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_8_RunningCostFactor, 8) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_9_RunningCostFactor, 9) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_10_RunningCostFactor, 10) {return;}
+const Gen3_4_RunningCostFactor = 2;
+const Gen3_5_RunningCostFactor = 3;
+const Gen3_6_RunningCostFactor = 5;
+const Gen3_7_RunningCostFactor = 6;
+const Gen3_8_RunningCostFactor = 8;
+const Gen3_9_RunningCostFactor = 9;
+const Gen3_10_RunningCostFactor = 10;
 
 //Gen4
-switch (FEAT_TRAINS, SELF, Variable_Gen4_4_RunningCostFactor, 3) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_5_RunningCostFactor, 5) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_6_RunningCostFactor, 6) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_7_RunningCostFactor, 8) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_8_RunningCostFactor, 9) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_9_RunningCostFactor, 11) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_10_RunningCostFactor, 12) {return;}
+const Gen4_4_RunningCostFactor = 3;
+const Gen4_5_RunningCostFactor = 5;
+const Gen4_6_RunningCostFactor = 6;
+const Gen4_7_RunningCostFactor = 8;
+const Gen4_8_RunningCostFactor = 9;
+const Gen4_9_RunningCostFactor = 11;
+const Gen4_10_RunningCostFactor = 12;
 
 //Gen5
-switch (FEAT_TRAINS, SELF, Variable_Gen5_4_RunningCostFactor, 4) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_5_RunningCostFactor, 6) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_6_RunningCostFactor, 7) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_7_RunningCostFactor, 9) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_8_RunningCostFactor, 10) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_9_RunningCostFactor, 12) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_10_RunningCostFactor, 13) {return;}
+const Gen5_4_RunningCostFactor = 4;
+const Gen5_5_RunningCostFactor = 6;
+const Gen5_6_RunningCostFactor = 7;
+const Gen5_7_RunningCostFactor = 9;
+const Gen5_8_RunningCostFactor = 10;
+const Gen5_9_RunningCostFactor = 12;
+const Gen5_10_RunningCostFactor = 13;
 
 //Gen6
-switch (FEAT_TRAINS, SELF, Variable_Gen6_4_RunningCostFactor, 10) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_5_RunningCostFactor, 12) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_6_RunningCostFactor, 14) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_7_RunningCostFactor, 16) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_8_RunningCostFactor, 18) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_9_RunningCostFactor, 20) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_10_RunningCostFactor, 24) {return;}
+const Gen6_4_RunningCostFactor = 10;
+const Gen6_5_RunningCostFactor = 12;
+const Gen6_6_RunningCostFactor = 14;
+const Gen6_7_RunningCostFactor = 16;
+const Gen6_8_RunningCostFactor = 18;
+const Gen6_9_RunningCostFactor = 20;
+const Gen6_10_RunningCostFactor = 24;
 
 //Cargo Capacities
 //Gen1
-switch (FEAT_TRAINS, SELF, Variable_Gen1_4_CargoCapacity, 30/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_5_CargoCapacity, 38/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_6_CargoCapacity, 45/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_7_CargoCapacity, 53/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_8_CargoCapacity, 60/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_9_CargoCapacity, (68/param_freight_capacity_mod)/2) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen1_10_CargoCapacity, (75/param_freight_capacity_mod)/2) {return;}
+const Gen1_4_CargoCapacity = 30;
+const Gen1_5_CargoCapacity = 38;
+const Gen1_6_CargoCapacity = 45;
+const Gen1_7_CargoCapacity = 53;
+const Gen1_8_CargoCapacity = 60;
+const Gen1_9_CargoCapacity = 68;
+const Gen1_10_CargoCapacity = 75;
 
 //Gen2
-switch (FEAT_TRAINS, SELF, Variable_Gen2_4_CargoCapacity, 30/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_5_CargoCapacity, 38/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_6_CargoCapacity, 45/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_7_CargoCapacity, 53/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_8_CargoCapacity, 60/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_9_CargoCapacity, (68/param_freight_capacity_mod)/2) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen2_10_CargoCapacity, (75/param_freight_capacity_mod)/2) {return;}
+const Gen2_4_CargoCapacity = 30;
+const Gen2_5_CargoCapacity = 38;
+const Gen2_6_CargoCapacity = 45;
+const Gen2_7_CargoCapacity = 53;
+const Gen2_8_CargoCapacity = 60;
+const Gen2_9_CargoCapacity = 68;
+const Gen2_10_CargoCapacity = 75;
 
 //Gen3
-switch (FEAT_TRAINS, SELF, Variable_Gen3_4_CargoCapacity, 30/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_5_CargoCapacity, 38/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_6_CargoCapacity, 45/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_7_CargoCapacity, 53/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_8_CargoCapacity, 60/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_9_CargoCapacity, (68/param_freight_capacity_mod)/2) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen3_10_CargoCapacity, (75/param_freight_capacity_mod)/2) {return;}
+const Gen3_4_CargoCapacity = 30;
+const Gen3_5_CargoCapacity = 38;
+const Gen3_6_CargoCapacity = 45;
+const Gen3_7_CargoCapacity = 53;
+const Gen3_8_CargoCapacity = 60;
+const Gen3_9_CargoCapacity = 68;
+const Gen3_10_CargoCapacity = 75;
 
 //Gen4
-switch (FEAT_TRAINS, SELF, Variable_Gen4_4_CargoCapacity, 40/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_5_CargoCapacity, 48/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_6_CargoCapacity, 55/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_7_CargoCapacity, 63/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_8_CargoCapacity, 70/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_9_CargoCapacity, (78/param_freight_capacity_mod)/2) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen4_10_CargoCapacity, (58/param_freight_capacity_mod)/2) {return;}
+const Gen4_4_CargoCapacity = 40;
+const Gen4_5_CargoCapacity = 48;
+const Gen4_6_CargoCapacity = 55;
+const Gen4_7_CargoCapacity = 63;
+const Gen4_8_CargoCapacity = 70;
+const Gen4_9_CargoCapacity = 78;
+const Gen4_10_CargoCapacity = 58;
 
 //Gen5
-switch (FEAT_TRAINS, SELF, Variable_Gen5_4_CargoCapacity, 50/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_5_CargoCapacity, 58/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_6_CargoCapacity, 65/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_7_CargoCapacity, 73/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_8_CargoCapacity, 80/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_9_CargoCapacity, (88/param_freight_capacity_mod)/2) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen5_10_CargoCapacity, (95/param_freight_capacity_mod)/2) {return;}
+const Gen5_4_CargoCapacity = 50;
+const Gen5_5_CargoCapacity = 58;
+const Gen5_6_CargoCapacity = 65;
+const Gen5_7_CargoCapacity = 73;
+const Gen5_8_CargoCapacity = 80;
+const Gen5_9_CargoCapacity = 88;
+const Gen5_10_CargoCapacity = 95;
 
 //Gen6
-switch (FEAT_TRAINS, SELF, Variable_Gen6_4_CargoCapacity, 60/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_5_CargoCapacity, 68/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_6_CargoCapacity, 75/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_7_CargoCapacity, 83/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_8_CargoCapacity, 90/param_freight_capacity_mod) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_9_CargoCapacity, (98/param_freight_capacity_mod)/2) {return;}
-switch (FEAT_TRAINS, SELF, Variable_Gen6_10_CargoCapacity, (105/param_freight_capacity_mod)/2) {return;}
+const Gen6_4_CargoCapacity = 60;
+const Gen6_5_CargoCapacity = 68;
+const Gen6_6_CargoCapacity = 75;
+const Gen6_7_CargoCapacity = 83;
+const Gen6_8_CargoCapacity = 90;
+const Gen6_9_CargoCapacity = 98;
+const Gen6_10_CargoCapacity = 105;
 
 //Gen2A_GoodsVan_Liv0
 spriteset(spriteset_Gen2A_GoodsVan_Liv0_Purchase,   "gfx/Gen2A_GoodsVan_Liv0_0.png") {template_purchase_5(7, 21)}
@@ -1834,11 +1886,11 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_NG, 30550) {
     default:                             switch_Gen2A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen2A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN2A_GOODSVAN_NG);
-	loading_speed:					  return Variable_Gen2_LoadingSpeed;
-	speed:							  return Variable_Gen2_Speed;
-	cost_factor:					  return Variable_Gen2_5_CostFactor;
-	running_cost_factor:			  return Variable_Gen2_5_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen2_5_CargoCapacity;
+	loading_speed:					  return Gen2_LoadingSpeed;
+	speed:							  return Gen2_Speed;
+	cost_factor:					  return Gen2_5_CostFactor;
+	running_cost_factor:			  return Gen2_5_RunningCostFactor;
+	cargo_capacity:                   return Gen2_5_CargoCapacity;
 }
 }
 
@@ -1884,11 +1936,11 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0, 30565) {
     default:                             switch_Gen2A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen2A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN2A_GOODSVAN);
-	loading_speed:					  return Variable_Gen2_LoadingSpeed;
-	speed:							  return Variable_Gen2_Speed;
-	cost_factor:					  return Variable_Gen2_5_CostFactor;
-	running_cost_factor:			  return Variable_Gen2_5_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen2_5_CargoCapacity;
+	loading_speed:					  return Gen2_LoadingSpeed;
+	speed:							  return Gen2_Speed;
+	cost_factor:					  return Gen2_5_CostFactor;
+	running_cost_factor:			  return Gen2_5_RunningCostFactor;
+	cargo_capacity:                   return Gen2_5_CargoCapacity;
 }
 }
 
@@ -1933,11 +1985,11 @@ item (FEAT_TRAINS, Item_Gen2A_GoodsVan_Liv0_BG, 30580) {
     default:                             switch_Gen2A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen2A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN2A_GOODSVAN_BG);
-	loading_speed:					  return Variable_Gen2_LoadingSpeed;
-	speed:							  return Variable_Gen2_Speed;
-	cost_factor:					  return Variable_Gen2_5_CostFactor;
-	running_cost_factor:			  return Variable_Gen2_5_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen2_5_CargoCapacity;
+	loading_speed:					  return Gen2_LoadingSpeed;
+	speed:							  return Gen2_Speed;
+	cost_factor:					  return Gen2_5_CostFactor;
+	running_cost_factor:			  return Gen2_5_RunningCostFactor;
+	cargo_capacity:                   return Gen2_5_CargoCapacity;
 }
 }
 
@@ -2036,11 +2088,11 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_NG, 30600) {
     default:                             switch_Gen3A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen3A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN3A_GOODSVAN_NG);
-	loading_speed:					  return Variable_Gen3_LoadingSpeed;
-	speed:							  return Variable_Gen3_Speed;
-	cost_factor:					  return Variable_Gen3_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen3_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen3_6_CargoCapacity;
+	loading_speed:					  return Gen3_LoadingSpeed;
+	speed:							  return Gen3_Speed;
+	cost_factor:					  return Gen3_6_CostFactor;
+	running_cost_factor:			  return Gen3_6_RunningCostFactor;
+	cargo_capacity:                   return Gen3_6_CargoCapacity;
 }
 }
 
@@ -2086,11 +2138,11 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0, 30615) {
     default:                             switch_Gen3A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen3A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN3A_GOODSVAN);
-	loading_speed:					  return Variable_Gen3_LoadingSpeed;
-	speed:							  return Variable_Gen3_Speed;
-	cost_factor:					  return Variable_Gen3_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen3_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen3_6_CargoCapacity;
+	loading_speed:					  return Gen3_LoadingSpeed;
+	speed:							  return Gen3_Speed;
+	cost_factor:					  return Gen3_6_CostFactor;
+	running_cost_factor:			  return Gen3_6_RunningCostFactor;
+	cargo_capacity:                   return Gen3_6_CargoCapacity;
 }
 }
 
@@ -2135,11 +2187,11 @@ item (FEAT_TRAINS, Item_Gen3A_GoodsVan_Liv0_BG, 30630) {
     default:                             switch_Gen3A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen3A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN3A_GOODSVAN_BG);
-	loading_speed:					  return Variable_Gen3_LoadingSpeed;
-	speed:							  return Variable_Gen3_Speed;
-	cost_factor:					  return Variable_Gen3_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen3_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen3_6_CargoCapacity;
+	loading_speed:					  return Gen3_LoadingSpeed;
+	speed:							  return Gen3_Speed;
+	cost_factor:					  return Gen3_6_CostFactor;
+	running_cost_factor:			  return Gen3_6_RunningCostFactor;
+	cargo_capacity:                   return Gen3_6_CargoCapacity;
 }
 }
 
@@ -2238,11 +2290,11 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_NG, 30650) {
     default:                             switch_Gen4A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen4A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_GOODSVAN_NG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -2288,11 +2340,11 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0, 30665) {
     default:                             switch_Gen4A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen4A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_GOODSVAN);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -2337,11 +2389,11 @@ item (FEAT_TRAINS, Item_Gen4A_GoodsVan_Liv0_BG, 30680) {
     default:                             switch_Gen4A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen4A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_GOODSVAN_BG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -2440,11 +2492,11 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_NG, 30700) {
     default:                             switch_Gen5A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen5A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5A_GOODSVAN_NG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -2490,11 +2542,11 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0, 30715) {
     default:                             switch_Gen5A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen5A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5A_GOODSVAN);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -2539,15 +2591,22 @@ item (FEAT_TRAINS, Item_Gen5A_GoodsVan_Liv0_BG, 30730) {
     default:                             switch_Gen5A_GoodsVan_Liv0_position;
     purchase:                            switch_Gen5A_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5A_GOODSVAN_BG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
 sort(FEAT_TRAINS, [Item_Gen5A_GoodsVan_Liv0_BG, Item_Gen5B_GoodsVan_Liv0_NG, Item_Gen5B_GoodsVan_Liv0, Item_Gen5B_GoodsVan_Liv0_BG]);
+
+//ID
+const Gen5B_GoodsVan_ID = 3000;
+//introduction_date
+const Gen5B_GoodsVan_IntroDate = date(1970, 1, 1);
+//weight
+const Gen5B_GoodsVan_Weight = 108;
 
 //Gen5B_GoodsVan_Liv0
 spriteset(spriteset_Gen5B_GoodsVan_Liv0_Purchase,   "gfx/Gen5B_GoodsVan_Liv0_0.png") {template_purchase_9(7, 21)}
@@ -2596,162 +2655,158 @@ switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv0_length, position_in_vehid_c
  }
 
 // Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv0_NG_articulated_part, extra_callback_info1) {
+    0..1: return Item_Gen5B_GoodsVan_Liv0_NG;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+const Gen5B_GoodsVan_Liv0_NG_ID = (Gen5B_GoodsVan_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_NG, Gen5B_GoodsVan_Liv0_NG_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
+		default_cargo_type:				GOOD; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
+
+        name:                           string(STR_NAME_GEN5B_GOODSVAN_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+//        variant_group: 					Item_Gen5B_GoodsVan_Liv0_NG;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Gen5B_GoodsVan_Liv0_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN_NG);
+	length: 							switch_Gen5B_GoodsVan_Liv0_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv0_NG_articulated_part;  
+}
+}
+
+// Articulated part callback
 switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv0_articulated_part, extra_callback_info1) {
     0..1: return Item_Gen5B_GoodsVan_Liv0;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_NG, 3000) {
+const Gen5B_GoodsVan_Liv0_ID = (Gen5B_GoodsVan_Liv0_NG_ID + 15);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0, Gen5B_GoodsVan_Liv0_ID) {
     property {
-		sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        NG_RAIL_ONLY;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
 	
 		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
 		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
 		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
 
-        name:                             string(STR_NAME_GEN5B_GOODSVAN_NG);
-
-        refit_cost:                        0;
-        power:                            0 hp;
+        name:                           string(STR_NAME_GEN5B_GOODSVAN);
+		
+		refit_cost:                     0;
         dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
 		
-        introduction_date:              date(1970, 1, 1);		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
 		length:                         8;
-		weight:                         30 ton;
 		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		//variant_group: Item_Gen5B_GoodsVan_Liv0_NG;
-		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+//        variant_group: 					Item_Gen5B_GoodsVan_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv0_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv0_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv0_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv0_articulated_part;  
+    default:                            switch_Gen5B_GoodsVan_Liv0_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN);
+	length: 							switch_Gen5B_GoodsVan_Liv0_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv0_articulated_part;  
 }
 }
 
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv0_BG_articulated_part, extra_callback_info1) {
+    0..1: return Item_Gen5B_GoodsVan_Liv0_BG;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
 
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0, 3015) {
+const Gen5B_GoodsVan_Liv0_BG_ID = (Gen5B_GoodsVan_Liv0_ID + 15);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_BG, Gen5B_GoodsVan_Liv0_BG_ID) {
     property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        RAIL;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
 	
 		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
 		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
 		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
 
-        name:                             string(STR_NAME_GEN5B_GOODSVAN);
-
-        refit_cost:                        0;
-        power:                            0 hp;
+        name:                           string(STR_NAME_GEN5B_GOODSVAN_NG);
+		
+		refit_cost:                     0;
         dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
 		
-        introduction_date:              date(1970, 1, 1);		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
 		length:                         8;
-		weight:                         30 ton;
 		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		//variant_group: Item_Gen5B_GoodsVan_Liv0;
-		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+//        variant_group: 					Item_Gen5B_GoodsVan_Liv0_BG;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv0_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv0_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv0_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv0_articulated_part;  
-}
-}
-
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv0_BG, 3030) {
-    property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        BG_RAIL_ONLY;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
-	
-		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
-		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
-		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
-
-        name:                             string(STR_NAME_GEN5B_GOODSVAN_BG);
-
-        refit_cost:                        0;
-        power:                            0 hp;
-        dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
-		
-        introduction_date:              date(1970, 1, 1);		
-		length:                         8;
-		weight:                         30 ton;
-		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		//variant_group: Item_Gen5B_GoodsVan_Liv0_BG;
-		//extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-	}
-    graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv0_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv0_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv0_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv0_articulated_part;  
+    default:                            switch_Gen5B_GoodsVan_Liv0_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN_BG);
+	length: 							switch_Gen5B_GoodsVan_Liv0_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv0_BG_articulated_part;  
 }
 }
 
@@ -2802,162 +2857,158 @@ switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv1_length, position_in_vehid_c
  }
 
 // Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv1_NG_articulated_part, extra_callback_info1) {
+    0..1: return Item_Gen5B_GoodsVan_Liv1_NG;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+const Gen5B_GoodsVan_Liv1_NG_ID = (Gen5B_GoodsVan_ID + Liv1_ID);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_NG, Gen5B_GoodsVan_Liv1_NG_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
+		default_cargo_type:				GOOD; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
+
+        name:                           string(STR_NAME_GEN5B_GOODSVAN_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+        variant_group: 					Item_Gen5B_GoodsVan_Liv0_NG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Gen5B_GoodsVan_Liv1_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN_NG);
+	length: 							switch_Gen5B_GoodsVan_Liv1_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv1_NG_articulated_part;  
+}
+}
+
+// Articulated part callback
 switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv1_articulated_part, extra_callback_info1) {
     0..1: return Item_Gen5B_GoodsVan_Liv1;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_NG, 3001) {
+const Gen5B_GoodsVan_Liv1_ID = (Gen5B_GoodsVan_Liv1_NG_ID + 15);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1, Gen5B_GoodsVan_Liv1_ID) {
     property {
-		sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        NG_RAIL_ONLY;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
 	
 		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
 		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
 		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
 
-        name:                             string(STR_NAME_GEN5B_GOODSVAN_NG);
-
-        refit_cost:                        0;
-        power:                            0 hp;
+        name:                           string(STR_NAME_GEN5B_GOODSVAN);
+		
+		refit_cost:                     0;
         dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
 		
-        introduction_date:              date(1970, 1, 1);		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
 		length:                         8;
-		weight:                         30 ton;
 		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		variant_group: Item_Gen5B_GoodsVan_Liv0_NG;
-		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+        variant_group: 					Item_Gen5B_GoodsVan_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv1_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv1_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv1_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv1_articulated_part;  
+    default:                            switch_Gen5B_GoodsVan_Liv1_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN);
+	length: 							switch_Gen5B_GoodsVan_Liv1_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv1_articulated_part;  
 }
 }
 
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv1_BG_articulated_part, extra_callback_info1) {
+    0..1: return Item_Gen5B_GoodsVan_Liv1_BG;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
 
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1, 3016) {
+const Gen5B_GoodsVan_Liv1_BG_ID = (Gen5B_GoodsVan_Liv1_ID + 15);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_BG, Gen5B_GoodsVan_Liv1_BG_ID) {
     property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        RAIL;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
 	
 		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
 		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
 		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
 
-        name:                             string(STR_NAME_GEN5B_GOODSVAN);
-
-        refit_cost:                        0;
-        power:                            0 hp;
+        name:                           string(STR_NAME_GEN5B_GOODSVAN_NG);
+		
+		refit_cost:                     0;
         dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
 		
-        introduction_date:              date(1970, 1, 1);		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
 		length:                         8;
-		weight:                         30 ton;
 		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		variant_group: Item_Gen5B_GoodsVan_Liv0;
-		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+        variant_group: 					Item_Gen5B_GoodsVan_Liv0_BG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv1_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv1_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv1_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv1_articulated_part;  
-}
-}
-
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv1_BG, 3031) {
-    property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        BG_RAIL_ONLY;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
-	
-		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
-		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
-		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
-
-        name:                             string(STR_NAME_GEN5B_GOODSVAN_BG);
-
-        refit_cost:                        0;
-        power:                            0 hp;
-        dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
-		
-        introduction_date:              date(1970, 1, 1);		
-		length:                         8;
-		weight:                         30 ton;
-		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		variant_group: Item_Gen5B_GoodsVan_Liv0_BG;
-		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-	}
-    graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv1_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv1_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv1_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv1_articulated_part;  
+    default:                            switch_Gen5B_GoodsVan_Liv1_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN_BG);
+	length: 							switch_Gen5B_GoodsVan_Liv1_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv1_BG_articulated_part;  
 }
 }
 
@@ -2967,8 +3018,8 @@ spriteset(spriteset_Gen5B_GoodsVan_Liv2_Purchase,   "gfx/Gen5B_GoodsVan_Liv2_0.p
 spriteset(spriteset_Gen5B_GoodsVan_Liv2_0,   "gfx/Gen5B_GoodsVan_Liv2_0.png") {template_9_repeat(7, 39)}
 spriteset(spriteset_Gen5B_GoodsVan_Liv2_1,   "gfx/Gen5B_GoodsVan_Liv2_1.png") {template_9_repeat(7, 39)}
 
- random_switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv2_Random){
-    1 : spriteset_Gen5B_GoodsVan_Liv2_0;
+random_switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv2_Random){
+    3 : spriteset_Gen5B_GoodsVan_Liv2_0;
 	1 : spriteset_Gen5B_GoodsVan_Liv2_1;
 }
 
@@ -3014,162 +3065,158 @@ switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv2_length, position_in_vehid_c
  }
 
 // Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv2_NG_articulated_part, extra_callback_info1) {
+    0..1: return Item_Gen5B_GoodsVan_Liv2_NG;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+const Gen5B_GoodsVan_Liv2_NG_ID = (Gen5B_GoodsVan_ID + Liv2_ID);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_NG, Gen5B_GoodsVan_Liv2_NG_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
+		default_cargo_type:				GOOD; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
+
+        name:                           string(STR_NAME_GEN5B_GOODSVAN_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+        variant_group: 					Item_Gen5B_GoodsVan_Liv0_NG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Gen5B_GoodsVan_Liv2_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv2_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN_NG);
+	length: 							switch_Gen5B_GoodsVan_Liv2_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv2_NG_articulated_part;  
+}
+}
+
+// Articulated part callback
 switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv2_articulated_part, extra_callback_info1) {
     0..1: return Item_Gen5B_GoodsVan_Liv2;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_NG, 3002) {
+const Gen5B_GoodsVan_Liv2_ID = (Gen5B_GoodsVan_Liv2_NG_ID + 15);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2, Gen5B_GoodsVan_Liv2_ID) {
     property {
-		sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        NG_RAIL_ONLY;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
 	
 		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
 		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
 		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
 
-        name:                             string(STR_NAME_GEN5B_GOODSVAN_NG);
-
-        refit_cost:                        0;
-        power:                            0 hp;
+        name:                           string(STR_NAME_GEN5B_GOODSVAN);
+		
+		refit_cost:                     0;
         dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
 		
-        introduction_date:              date(1970, 1, 1);		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
 		length:                         8;
-		weight:                         30 ton;
 		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		variant_group: Item_Gen5B_GoodsVan_Liv0_NG;
-		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+        variant_group: 					Item_Gen5B_GoodsVan_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv2_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv2_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv2_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv2_articulated_part;  
+    default:                            switch_Gen5B_GoodsVan_Liv2_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv2_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN);
+	length: 							switch_Gen5B_GoodsVan_Liv2_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv2_articulated_part;  
 }
 }
 
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv2_BG_articulated_part, extra_callback_info1) {
+    0..1: return Item_Gen5B_GoodsVan_Liv2_BG;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
 
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2, 3017) {
+const Gen5B_GoodsVan_Liv2_BG_ID = (Gen5B_GoodsVan_Liv2_ID + 15);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_BG, Gen5B_GoodsVan_Liv2_BG_ID) {
     property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        RAIL;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
 	
 		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
 		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
 		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
 
-        name:                             string(STR_NAME_GEN5B_GOODSVAN);
-
-        refit_cost:                        0;
-        power:                            0 hp;
+        name:                           string(STR_NAME_GEN5B_GOODSVAN_NG);
+		
+		refit_cost:                     0;
         dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
 		
-        introduction_date:              date(1970, 1, 1);		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
 		length:                         8;
-		weight:                         30 ton;
 		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		variant_group: Item_Gen5B_GoodsVan_Liv0;
-		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+        variant_group: 					Item_Gen5B_GoodsVan_Liv0_BG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv2_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv2_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv2_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv2_articulated_part;  
-}
-}
-
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv2_BG, 3032) {
-    property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        BG_RAIL_ONLY;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
-	
-		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
-		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
-		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
-
-        name:                             string(STR_NAME_GEN5B_GOODSVAN_BG);
-
-        refit_cost:                        0;
-        power:                            0 hp;
-        dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
-		
-        introduction_date:              date(1970, 1, 1);		
-		length:                         8;
-		weight:                         30 ton;
-		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		variant_group: Item_Gen5B_GoodsVan_Liv0_BG;
-		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-	}
-    graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv2_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv2_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv2_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv2_articulated_part;  
+    default:                            switch_Gen5B_GoodsVan_Liv2_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv2_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN_BG);
+	length: 							switch_Gen5B_GoodsVan_Liv2_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv2_BG_articulated_part;  
 }
 }
 
@@ -3220,162 +3267,158 @@ switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv3_length, position_in_vehid_c
  }
 
 // Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv3_NG_articulated_part, extra_callback_info1) {
+    0..1: return Item_Gen5B_GoodsVan_Liv3_NG;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+const Gen5B_GoodsVan_Liv3_NG_ID = (Gen5B_GoodsVan_ID + Liv3_ID);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_NG, Gen5B_GoodsVan_Liv3_NG_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
+		default_cargo_type:				GOOD; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
+
+        name:                           string(STR_NAME_GEN5B_GOODSVAN_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+        variant_group: 					Item_Gen5B_GoodsVan_Liv0_NG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Gen5B_GoodsVan_Liv3_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv3_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN_NG);
+	length: 							switch_Gen5B_GoodsVan_Liv3_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv3_NG_articulated_part;  
+}
+}
+
+// Articulated part callback
 switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv3_articulated_part, extra_callback_info1) {
     0..1: return Item_Gen5B_GoodsVan_Liv3;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_NG, 3003) {
+const Gen5B_GoodsVan_Liv3_ID = (Gen5B_GoodsVan_Liv3_NG_ID + 15);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3, Gen5B_GoodsVan_Liv3_ID) {
     property {
-		sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        NG_RAIL_ONLY;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
 	
 		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
 		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
 		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
 
-        name:                             string(STR_NAME_GEN5B_GOODSVAN_NG);
-
-        refit_cost:                        0;
-        power:                            0 hp;
+        name:                           string(STR_NAME_GEN5B_GOODSVAN);
+		
+		refit_cost:                     0;
         dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
 		
-        introduction_date:              date(1970, 1, 1);		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
 		length:                         8;
-		weight:                         30 ton;
 		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		variant_group: Item_Gen5B_GoodsVan_Liv0_NG;
-		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+        variant_group: 					Item_Gen5B_GoodsVan_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv3_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv3_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv3_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv3_articulated_part;  
+    default:                            switch_Gen5B_GoodsVan_Liv3_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv3_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN);
+	length: 							switch_Gen5B_GoodsVan_Liv3_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv3_articulated_part;  
 }
 }
 
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv3_BG_articulated_part, extra_callback_info1) {
+    0..1: return Item_Gen5B_GoodsVan_Liv3_BG;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
 
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3, 3018) {
+const Gen5B_GoodsVan_Liv3_BG_ID = (Gen5B_GoodsVan_Liv3_ID + 15);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_BG, Gen5B_GoodsVan_Liv3_BG_ID) {
     property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        RAIL;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
 	
 		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
 		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
 		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
 
-        name:                             string(STR_NAME_GEN5B_GOODSVAN);
-
-        refit_cost:                        0;
-        power:                            0 hp;
+        name:                           string(STR_NAME_GEN5B_GOODSVAN_NG);
+		
+		refit_cost:                     0;
         dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
 		
-        introduction_date:              date(1970, 1, 1);		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
 		length:                         8;
-		weight:                         30 ton;
 		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		variant_group: Item_Gen5B_GoodsVan_Liv0;
-		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+        variant_group: 					Item_Gen5B_GoodsVan_Liv0_BG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv3_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv3_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv3_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv3_articulated_part;  
-}
-}
-
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv3_BG, 3033) {
-    property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        BG_RAIL_ONLY;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
-	
-		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
-		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
-		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
-
-        name:                             string(STR_NAME_GEN5B_GOODSVAN_BG);
-
-        refit_cost:                        0;
-        power:                            0 hp;
-        dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
-		
-        introduction_date:              date(1970, 1, 1);		
-		length:                         8;
-		weight:                         30 ton;
-		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		variant_group: Item_Gen5B_GoodsVan_Liv0_BG;
-		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-	}
-    graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv3_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv3_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv3_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv3_articulated_part;  
+    default:                            switch_Gen5B_GoodsVan_Liv3_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv3_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN_BG);
+	length: 							switch_Gen5B_GoodsVan_Liv3_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv3_BG_articulated_part;  
 }
 }
 
@@ -3426,162 +3469,158 @@ switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv4_length, position_in_vehid_c
  }
 
 // Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv4_NG_articulated_part, extra_callback_info1) {
+    0..1: return Item_Gen5B_GoodsVan_Liv4_NG;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+const Gen5B_GoodsVan_Liv4_NG_ID = (Gen5B_GoodsVan_ID + Liv4_ID);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_NG, Gen5B_GoodsVan_Liv4_NG_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
+		default_cargo_type:				GOOD; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
+
+        name:                           string(STR_NAME_GEN5B_GOODSVAN_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+        variant_group: 					Item_Gen5B_GoodsVan_Liv0_NG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Gen5B_GoodsVan_Liv4_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv4_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN_NG);
+	length: 							switch_Gen5B_GoodsVan_Liv4_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv4_NG_articulated_part;  
+}
+}
+
+// Articulated part callback
 switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv4_articulated_part, extra_callback_info1) {
     0..1: return Item_Gen5B_GoodsVan_Liv4;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_NG, 3004) {
+const Gen5B_GoodsVan_Liv4_ID = (Gen5B_GoodsVan_Liv4_NG_ID + 15);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4, Gen5B_GoodsVan_Liv4_ID) {
     property {
-		sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        NG_RAIL_ONLY;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
 	
 		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
 		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
 		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
 
-        name:                             string(STR_NAME_GEN5B_GOODSVAN_NG);
-
-        refit_cost:                        0;
-        power:                            0 hp;
+        name:                           string(STR_NAME_GEN5B_GOODSVAN);
+		
+		refit_cost:                     0;
         dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
 		
-        introduction_date:              date(1970, 1, 1);		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
 		length:                         8;
-		weight:                         30 ton;
 		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		variant_group: Item_Gen5B_GoodsVan_Liv0_NG;
-		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+        variant_group: 					Item_Gen5B_GoodsVan_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv4_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv4_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN_NG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv4_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv4_articulated_part;  
+    default:                            switch_Gen5B_GoodsVan_Liv4_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv4_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN);
+	length: 							switch_Gen5B_GoodsVan_Liv4_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv4_articulated_part;  
 }
 }
 
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_Gen5B_GoodsVan_Liv4_BG_articulated_part, extra_callback_info1) {
+    0..1: return Item_Gen5B_GoodsVan_Liv4_BG;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
 
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4, 3019) {
+const Gen5B_GoodsVan_Liv4_BG_ID = (Gen5B_GoodsVan_Liv4_ID + 15);
+
+item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_BG, Gen5B_GoodsVan_Liv4_BG_ID) {
     property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        RAIL;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
 	
 		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
+		refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
 		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
+		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
 		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
 
-        name:                             string(STR_NAME_GEN5B_GOODSVAN);
-
-        refit_cost:                        0;
-        power:                            0 hp;
+        name:                           string(STR_NAME_GEN5B_GOODSVAN_NG);
+		
+		refit_cost:                     0;
         dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
 		
-        introduction_date:              date(1970, 1, 1);		
+        introduction_date:              Gen5B_GoodsVan_IntroDate;		
 		length:                         8;
-		weight:                         30 ton;
 		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		variant_group: Item_Gen5B_GoodsVan_Liv0;
-		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		loading_speed:					Gen5_LoadingSpeed;
+		speed:							Gen5_Speed km/h;
+		cost_factor:					Gen5_9_CostFactor;
+		running_cost_factor:			Gen5_9_RunningCostFactor;
+		cargo_capacity: 				((Gen5_9_CargoCapacity / param_freight_capacity_mod) / 2);
+		weight:							Gen5B_GoodsVan_Weight ton;
+
+        variant_group: 					Item_Gen5B_GoodsVan_Liv0_BG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv4_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv4_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv4_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv4_articulated_part;  
-}
-}
-
-item (FEAT_TRAINS, Item_Gen5B_GoodsVan_Liv4_BG, 3034) {
-    property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-		misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		track_type:                        BG_RAIL_ONLY;
-		ai_special_flag:                AI_FLAG_CARGO;
-		bitmask_vehicle_info:            0;
-	
-		climates_available:             ALL_CLIMATES;
-        refittable_cargo_classes:		bitmask( CC_MAIL, CC_POTABLE, CC_PIECE_GOODS, CC_COVERED_BULK, CC_POWDER_BULK, CC_LIQUID_BULK, CC_GAS_BULK, CC_EXPRESS, CC_ARMOURED ); //GoodsVan
-		non_refittable_cargo_classes:		bitmask(CC_PASSENGERS); //GoodsVan
-		default_cargo_type:				GOOD; //GoodsVan
-//		cargo_allow_refit:				[GRAI, WHEA, BEAN, SGCN, SGBT, OLSD, MAIZ, PEAT, SEED]; //GoodsVan
-		cargo_disallow_refit:			[TOUR, LVST]; //GoodsVan
-
-        name:                             string(STR_NAME_GEN5B_GOODSVAN_BG);
-
-        refit_cost:                        0;
-        power:                            0 hp;
-        dual_headed:                    0;
-        air_drag_coefficient:            0.08;
-        running_cost_base:                RUNNING_COST_STEAM;
-        model_life:                        30;
-		
-        introduction_date:              date(1970, 1, 1);		
-		length:                         8;
-		weight:                         30 ton;
-		
-		loading_speed:					1;
-		speed:							1;
-		cost_factor:					1;
-		running_cost_factor:			1;
-		cargo_capacity: 				1;
-		
-		variant_group: Item_Gen5B_GoodsVan_Liv0_BG;
-		extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-	}
-    graphics {
-    default:                             switch_Gen5B_GoodsVan_Liv4_position;
-    purchase:                            switch_Gen5B_GoodsVan_Liv4_PurchaseStack;
-    additional_text: string(STR_INFO_GEN5B_GOODSVAN_BG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_9_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_9_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_9_CargoCapacity;
-	length: switch_Gen5B_GoodsVan_Liv4_length;
-    articulated_part: switch_Gen5B_GoodsVan_Liv4_articulated_part;  
+    default:                            switch_Gen5B_GoodsVan_Liv4_position;
+    purchase:                           switch_Gen5B_GoodsVan_Liv4_PurchaseStack;
+    additional_text: 					string(STR_INFO_GEN5B_GOODSVAN_BG);
+	length: 							switch_Gen5B_GoodsVan_Liv4_length;
+    articulated_part: 					switch_Gen5B_GoodsVan_Liv4_BG_articulated_part;  
 }
 }
 
@@ -3680,11 +3719,11 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_NG, 32250) {
     default:                             switch_Gen6D_GoodsVan_Liv0_position;
     purchase:                            switch_Gen6D_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN6D_GOODSVAN_NG);
-	loading_speed:					  return Variable_Gen6_LoadingSpeed;
-	speed:							  return Variable_Gen6_Speed;
-	cost_factor:					  return Variable_Gen6_8_CostFactor;
-	running_cost_factor:			  return Variable_Gen6_8_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen6_8_CargoCapacity;
+	loading_speed:					  return Gen6_LoadingSpeed;
+	speed:							  return Gen6_Speed;
+	cost_factor:					  return Gen6_8_CostFactor;
+	running_cost_factor:			  return Gen6_8_RunningCostFactor;
+	cargo_capacity:                   return Gen6_8_CargoCapacity;
 }
 }
 
@@ -3730,11 +3769,11 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0, 32265) {
     default:                             switch_Gen6D_GoodsVan_Liv0_position;
     purchase:                            switch_Gen6D_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN6D_GOODSVAN);
-	loading_speed:					  return Variable_Gen6_LoadingSpeed;
-	speed:							  return Variable_Gen6_Speed;
-	cost_factor:					  return Variable_Gen6_8_CostFactor;
-	running_cost_factor:			  return Variable_Gen6_8_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen6_8_CargoCapacity;
+	loading_speed:					  return Gen6_LoadingSpeed;
+	speed:							  return Gen6_Speed;
+	cost_factor:					  return Gen6_8_CostFactor;
+	running_cost_factor:			  return Gen6_8_RunningCostFactor;
+	cargo_capacity:                   return Gen6_8_CargoCapacity;
 }
 }
 
@@ -3779,11 +3818,11 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_BG, 32280) {
     default:                             switch_Gen6D_GoodsVan_Liv0_position;
     purchase:                            switch_Gen6D_GoodsVan_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN6D_GOODSVAN_BG);
-	loading_speed:					  return Variable_Gen6_LoadingSpeed;
-	speed:							  return Variable_Gen6_Speed;
-	cost_factor:					  return Variable_Gen6_8_CostFactor;
-	running_cost_factor:			  return Variable_Gen6_8_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen6_8_CargoCapacity;
+	loading_speed:					  return Gen6_LoadingSpeed;
+	speed:							  return Gen6_Speed;
+	cost_factor:					  return Gen6_8_CostFactor;
+	running_cost_factor:			  return Gen6_8_RunningCostFactor;
+	cargo_capacity:                   return Gen6_8_CargoCapacity;
 }
 }
 
@@ -3899,11 +3938,11 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0_NG, 42150) {
     default:                             switch_Gen4D_OpenHopper_Liv0_position;
     purchase:                            switch_Gen4D_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4D_OPENHOPPER_NG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -3949,11 +3988,11 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0, 42165) {
     default:                             switch_Gen4D_OpenHopper_Liv0_position;
     purchase:                            switch_Gen4D_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4D_OPENHOPPER);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -3998,11 +4037,11 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv0_BG, 42180) {
     default:                             switch_Gen4D_OpenHopper_Liv0_position;
     purchase:                            switch_Gen4D_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4D_OPENHOPPER_BG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -4105,11 +4144,11 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1_NG, 42151) {
     default:                             switch_Gen4D_OpenHopper_Liv1_position;
     purchase:                            switch_Gen4D_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4D_OPENHOPPER_NG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -4155,11 +4194,11 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1, 42166) {
     default:                             switch_Gen4D_OpenHopper_Liv1_position;
     purchase:                            switch_Gen4D_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4D_OPENHOPPER);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -4204,11 +4243,11 @@ item (FEAT_TRAINS, Item_Gen4D_OpenHopper_Liv1_BG, 42181) {
     default:                             switch_Gen4D_OpenHopper_Liv1_position;
     purchase:                            switch_Gen4D_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4D_OPENHOPPER_BG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -4324,11 +4363,11 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv0_NG, 42650) {
     default:                             switch_Gen4E_OpenHopper_Liv0_position;
     purchase:                            switch_Gen4E_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4E_OPENHOPPER_NG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -4374,11 +4413,11 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv0, 42665) {
     default:                             switch_Gen4E_OpenHopper_Liv0_position;
     purchase:                            switch_Gen4E_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4E_OPENHOPPER);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -4423,11 +4462,11 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv0_BG, 42680) {
     default:                             switch_Gen4E_OpenHopper_Liv0_position;
     purchase:                            switch_Gen4E_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4E_OPENHOPPER_BG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -4530,11 +4569,11 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv1_NG, 42651) {
     default:                             switch_Gen4E_OpenHopper_Liv1_position;
     purchase:                            switch_Gen4E_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4E_OPENHOPPER_NG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -4580,11 +4619,11 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv1, 42666) {
     default:                             switch_Gen4E_OpenHopper_Liv1_position;
     purchase:                            switch_Gen4E_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4E_OPENHOPPER);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -4629,11 +4668,11 @@ item (FEAT_TRAINS, Item_Gen4E_OpenHopper_Liv1_BG, 42681) {
     default:                             switch_Gen4E_OpenHopper_Liv1_position;
     purchase:                            switch_Gen4E_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4E_OPENHOPPER_BG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -4749,11 +4788,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv0_NG, 44200) {
     default:                             switch_Gen5H_OpenHopper_Liv0_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_NG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -4799,11 +4838,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv0, 44215) {
     default:                             switch_Gen5H_OpenHopper_Liv0_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -4848,11 +4887,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv0_BG, 44230) {
     default:                             switch_Gen5H_OpenHopper_Liv0_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -4955,11 +4994,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv1_NG, 44201) {
     default:                             switch_Gen5H_OpenHopper_Liv1_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_NG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5005,11 +5044,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv1, 44216) {
     default:                             switch_Gen5H_OpenHopper_Liv1_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5054,11 +5093,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv1_BG, 44231) {
     default:                             switch_Gen5H_OpenHopper_Liv1_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5161,11 +5200,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv2_NG, 44202) {
     default:                             switch_Gen5H_OpenHopper_Liv2_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv2_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_NG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5211,11 +5250,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv2, 44217) {
     default:                             switch_Gen5H_OpenHopper_Liv2_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv2_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5260,11 +5299,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv2_BG, 44232) {
     default:                             switch_Gen5H_OpenHopper_Liv2_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv2_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5367,11 +5406,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv3_NG, 44203) {
     default:                             switch_Gen5H_OpenHopper_Liv3_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv3_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_NG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5417,11 +5456,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv3, 44218) {
     default:                             switch_Gen5H_OpenHopper_Liv3_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv3_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5466,11 +5505,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv3_BG, 44233) {
     default:                             switch_Gen5H_OpenHopper_Liv3_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv3_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5573,11 +5612,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv4_NG, 44204) {
     default:                             switch_Gen5H_OpenHopper_Liv4_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv4_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_NG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5623,11 +5662,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv4, 44219) {
     default:                             switch_Gen5H_OpenHopper_Liv4_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv4_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5672,11 +5711,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv4_BG, 44234) {
     default:                             switch_Gen5H_OpenHopper_Liv4_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv4_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5779,11 +5818,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5_NG, 44205) {
     default:                             switch_Gen5H_OpenHopper_Liv5_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv5_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_NG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5829,11 +5868,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5, 44220) {
     default:                             switch_Gen5H_OpenHopper_Liv5_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv5_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5878,11 +5917,11 @@ item (FEAT_TRAINS, Item_Gen5H_OpenHopper_Liv5_BG, 44235) {
     default:                             switch_Gen5H_OpenHopper_Liv5_position;
     purchase:                            switch_Gen5H_OpenHopper_Liv5_PurchaseStack;
     additional_text: string(STR_INFO_GEN5H_OPENHOPPER_BG);
-	loading_speed:					  return Variable_Gen5_LoadingSpeed;
-	speed:							  return Variable_Gen5_Speed;
-	cost_factor:					  return Variable_Gen5_7_CostFactor;
-	running_cost_factor:			  return Variable_Gen5_7_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen5_7_CargoCapacity;
+	loading_speed:					  return Gen5_LoadingSpeed;
+	speed:							  return Gen5_Speed;
+	cost_factor:					  return Gen5_7_CostFactor;
+	running_cost_factor:			  return Gen5_7_RunningCostFactor;
+	cargo_capacity:                   return Gen5_7_CargoCapacity;
 }
 }
 
@@ -5981,11 +6020,11 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_NG, 46650) {
     default:                             switch_Gen4A_CoveredHopper_Liv0_position;
     purchase:                            switch_Gen4A_CoveredHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER_NG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -6031,11 +6070,11 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0, 46665) {
     default:                             switch_Gen4A_CoveredHopper_Liv0_position;
     purchase:                            switch_Gen4A_CoveredHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -6080,11 +6119,11 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv0_BG, 46680) {
     default:                             switch_Gen4A_CoveredHopper_Liv0_position;
     purchase:                            switch_Gen4A_CoveredHopper_Liv0_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER_BG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -6183,11 +6222,11 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_NG, 46651) {
     default:                             switch_Gen4A_CoveredHopper_Liv1_position;
     purchase:                            switch_Gen4A_CoveredHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER_NG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -6233,11 +6272,11 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1, 46666) {
     default:                             switch_Gen4A_CoveredHopper_Liv1_position;
     purchase:                            switch_Gen4A_CoveredHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }
 
@@ -6282,10 +6321,10 @@ item (FEAT_TRAINS, Item_Gen4A_CoveredHopper_Liv1_BG, 46681) {
     default:                             switch_Gen4A_CoveredHopper_Liv1_position;
     purchase:                            switch_Gen4A_CoveredHopper_Liv1_PurchaseStack;
     additional_text: string(STR_INFO_GEN4A_COVEREDHOPPER_BG);
-	loading_speed:					  return Variable_Gen4_LoadingSpeed;
-	speed:							  return Variable_Gen4_Speed;
-	cost_factor:					  return Variable_Gen4_6_CostFactor;
-	running_cost_factor:			  return Variable_Gen4_6_RunningCostFactor;
-	cargo_capacity:                   return Variable_Gen4_6_CargoCapacity;
+	loading_speed:					  return Gen4_LoadingSpeed;
+	speed:							  return Gen4_Speed;
+	cost_factor:					  return Gen4_6_CostFactor;
+	running_cost_factor:			  return Gen4_6_RunningCostFactor;
+	cargo_capacity:                   return Gen4_6_CargoCapacity;
 }
 }

@@ -140,11 +140,11 @@ PASS, COAL, MAIL, OIL_, LVST, EOIL, COKE, VBOD, SULP, SASH, MNO2, BOOM, IRON, QL
 
 //Basecost Paramater Variables
 basecost {
- PR_BUILD_VEHICLE_TRAIN: 1 + param_purchase_cost - 4;
- PR_BUILD_VEHICLE_WAGON: 3 + param_purchase_cost - 4;
- PR_RUNNING_TRAIN_STEAM: 4 + param_running_cost - 4;
- PR_RUNNING_TRAIN_DIESEL: 3 + param_running_cost - 4;
- PR_RUNNING_TRAIN_ELECTRIC: 2 + param_running_cost - 4;
+ PR_BUILD_VEHICLE_TRAIN: 	1 + param_purchase_cost - 6;
+ PR_BUILD_VEHICLE_WAGON: 	1 + param_purchase_cost - 4;
+ PR_RUNNING_TRAIN_ELECTRIC: 3 + param_running_cost - 4;
+ PR_RUNNING_TRAIN_DIESEL: 	3 + param_running_cost - 4;
+ PR_RUNNING_TRAIN_STEAM: 	0 + param_running_cost - 4;
 }
 
 // Fix depot view
@@ -692,6 +692,57 @@ const DD_Suburban_LoadingSpeed = 8;
 const SD_Intercity_LoadingSpeed = 5;
 const DD_Intercity_LoadingSpeed = 3;
 
+const Liv0_ID = 0;
+const Liv1_ID = 1;
+const Liv2_ID = 2;
+const Liv3_ID = 3;
+const Liv4_ID = 4;
+const Liv5_ID = 5;
+const Liv6_ID = 6;
+const Liv7_ID = 7;
+const Liv8_ID = 8;
+const Liv9_ID = 9;
+const Liv10_ID = 10;
+const Liv11_ID = 11;
+const Liv12_ID = 12;
+const Liv13_ID = 13;
+const Liv14_ID = 14;
+const Liv15_ID = 15;
+const Liv16_ID = 16;
+const Liv17_ID = 17;
+const Liv18_ID = 18;
+const Liv19_ID = 19;
+const Liv20_ID = 20;
+const Liv21_ID = 21;
+const Liv22_ID = 22;
+const Liv23_ID = 23;
+const Liv24_ID = 24;
+const Liv25_ID = 25;
+const Liv26_ID = 26;
+const Liv27_ID = 27;
+const Liv28_ID = 28;
+const Liv29_ID = 29;
+const Liv30_ID = 30;
+const Liv31_ID = 31;
+const Liv32_ID = 32;
+const Liv33_ID = 33;
+const Liv34_ID = 34;
+const Liv35_ID = 35;
+const Liv36_ID = 36;
+const Liv37_ID = 37;
+const Liv38_ID = 38;
+const Liv39_ID = 39;
+const Liv40_ID = 40;
+const Liv41_ID = 41;
+const Liv42_ID = 42;
+const Liv43_ID = 43;
+const Liv44_ID = 44;
+const Liv45_ID = 45;
+const Liv46_ID = 46;
+const Liv47_ID = 47;
+const Liv48_ID = 48;
+const Liv49_ID = 49;
+
 spriteset(spriteset_MU_purchase,   "gfx/MU_Carriage.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_MU_trailer,   "gfx/MU_Carriage.png") {template_8(7, 89)}
 
@@ -702,7 +753,7 @@ item (FEAT_TRAINS, Item_MU_Trailer, 0) {
         refit_cost:                        0;
         climates_available:                ALL_CLIMATES;
         bitmask_vehicle_info:            0;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+        misc_flags:                        bitmask(TRAIN_FLAG_TILT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
         track_type:                        [NG_RAIL, RAIL, BG_RAIL];
 		running_cost_base: 				RUNNING_COST_ELECTRIC;
@@ -733,6 +784,8 @@ item (FEAT_TRAINS, Item_MU_Trailer, 0) {
 }
 }
 
+//ID
+const Tait_ID = 11080;
 //introduction_date
 const Tait_IntroDate = date(1919, 1, 1);
 //speed
@@ -745,7 +798,6 @@ const Tait_RunningCostFactor = 47;
 const Tait_CargoCapacity = 88;
 //power
 const Tait_Power = 564;
-const Tait_Power_MU = 1128; //MU power is for 2 individual vehicles
 //weight
 const Tait_Weight = 35;
 
@@ -872,8 +924,9 @@ switch (FEAT_TRAINS, SELF, switch_Tait_Single_Liv0_stack, [
 	2: switch_Tait_Fw_railtype;
 }
 
+const Tait_ID_Single_Liv0 = (Tait_ID + Liv0_ID);
 
-item(FEAT_TRAINS, Item_Tait_Single_Liv0, 11080) {
+item(FEAT_TRAINS, Item_Tait_Single_Liv0, Tait_ID_Single_Liv0) {
     property {
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -901,13 +954,13 @@ item(FEAT_TRAINS, Item_Tait_Single_Liv0, 11080) {
         introduction_date:              Tait_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Tait_Speed km/h;
+		cost_factor:					Tait_CostFactor;
+		running_cost_factor:			Tait_RunningCostFactor;
+		cargo_capacity: 				Tait_CargoCapacity;
+		power:							Tait_Power;
+		weight:							Tait_Weight ton;
 
 //        variant_group: 					Item_Tait_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -917,13 +970,6 @@ item(FEAT_TRAINS, Item_Tait_Single_Liv0, 11080) {
         purchase: 						switch_Tait_Single_Liv0_Purchasestack;
         additional_text: 				string(STR_INFO_TAIT);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return SD_Suburban_LoadingSpeed;
-		speed:							return Tait_Speed;
-		cost_factor:					return Tait_CostFactor;
-		running_cost_factor:			return Tait_RunningCostFactor;
-		cargo_capacity:                 return Tait_CargoCapacity;
-		power:							return Tait_Power;
-		weight:							return Tait_Weight;
 }
 }
 
@@ -1132,7 +1178,9 @@ switch(FEAT_TRAINS, PARENT, sw_Tait_Liv0_revcheck, vehicle_is_reversed){
     return sw_Tait_Liv0_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Tait_Liv0, 11100) {
+const Tait_ID_Liv0 = (Tait_ID_Single_Liv0 + 10);
+
+item(FEAT_TRAINS, Item_Tait_Liv0, Tait_ID_Liv0) {
     property {
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1160,13 +1208,13 @@ item(FEAT_TRAINS, Item_Tait_Liv0, 11100) {
         introduction_date:              Tait_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Tait_Speed km/h;
+		cost_factor:					(Tait_CostFactor * 2);
+		running_cost_factor:			(Tait_RunningCostFactor * 2);
+		cargo_capacity: 				(Tait_CargoCapacity / param_capacity_mod);
+		power:							(Tait_Power * 2);
+		weight:							Tait_Weight ton;
 
 //        variant_group: 					Item_Tait_MU_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1175,25 +1223,20 @@ item(FEAT_TRAINS, Item_Tait_Liv0, 11100) {
         default: 						sw_Tait_Liv0_directioncheck;
         purchase: 						switch_Tait_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_TAIT_MU);
-		loading_speed:					return SD_Suburban_LoadingSpeed;
-		speed:							return Tait_Speed;
-		cost_factor:					return [Tait_CostFactor * 2];
-		running_cost_factor:			return [Tait_RunningCostFactor * 2];
-		cargo_capacity:                 return [Tait_CargoCapacity / param_capacity_mod];
-		power:							return Tait_Power_MU;
-		weight:							return Tait_Weight;
     }
     livery_override (Item_MU_Trailer){
         default:						sw_Tait_Liv0_revcheck ;
         length:							8;
         cargo_capacity:                 [Tait_CargoCapacity / param_capacity_mod];
-        power:                          [Tait_Power_MU / 2];
+        power:                          Tait_Power;
 		weight:                        	Tait_Weight;
 		running_cost_factor:            Tait_RunningCostFactor;
 
     }
 }
 
+//ID
+const Comeng_VSet_ID = 14040;
 //introduction_date
 const Comeng_VSet_IntroDate = date(1970, 1, 1);
 //speed
@@ -1205,7 +1248,7 @@ const Comeng_VSet_RunningCostFactor = 105;
 //Cargo Capacity
 const Comeng_VSet_CargoCapacity = 130;
 //power
-const Comeng_VSet_Power = 1440; //MU power is for 2 individual vehicles
+const Comeng_VSet_Power = 720;
 //weight
 const Comeng_VSet_Weight = 50;
 
@@ -1413,7 +1456,9 @@ switch(FEAT_TRAINS, PARENT, sw_Comeng_VSet_Liv0_revcheck, vehicle_is_reversed){
     return sw_Comeng_VSet_Liv0_lencheck_r;
 }
 
-item(FEAT_TRAINS, Item_Comeng_VSet_Liv0, 26040) {
+const Comeng_VSet_ID_Liv0 = (Comeng_VSet_ID + Liv0_ID );
+
+item(FEAT_TRAINS, Item_Comeng_VSet_Liv0, Comeng_VSet_ID_Liv0) {
     property {
         sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1441,13 +1486,13 @@ item(FEAT_TRAINS, Item_Comeng_VSet_Liv0, 26040) {
         introduction_date:              Comeng_VSet_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					DD_Intercity_LoadingSpeed;
+		speed:							Comeng_VSet_Speed km/h;
+		cost_factor:					(Comeng_VSet_CostFactor * 2);
+		running_cost_factor:			(Comeng_VSet_RunningCostFactor * 2);
+		cargo_capacity: 				(Comeng_VSet_CargoCapacity / param_capacity_mod);
+		power:							(Comeng_VSet_Power * 2);
+		weight:							Comeng_VSet_Weight ton;
 
 //        variant_group: 					Item_Tait_MU_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1456,19 +1501,12 @@ item(FEAT_TRAINS, Item_Comeng_VSet_Liv0, 26040) {
         default: 						sw_Comeng_VSet_Liv0_directioncheck;
         purchase: 						switch_Comeng_VSet_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_COMENG_VSET);
-		loading_speed:					return DD_Intercity_LoadingSpeed;
-		speed:							return Comeng_VSet_Speed;
-		cost_factor:					return [Comeng_VSet_CostFactor * 2];
-		running_cost_factor:			return [Comeng_VSet_RunningCostFactor * 2];
-		cargo_capacity:                 return [Comeng_VSet_CargoCapacity / param_capacity_mod];
-		power:							return Comeng_VSet_Power;
-		weight:							return Comeng_VSet_Weight;
     }
     livery_override (Item_MU_Trailer){
         default: 						sw_Comeng_VSet_Liv0_revcheck ;
         length: 						8;
-        cargo_capacity:                 [Comeng_VSet_CargoCapacity / param_capacity_mod];
-        power:                          [Comeng_VSet_Power / 2];
+        cargo_capacity:                 (Comeng_VSet_CargoCapacity / param_capacity_mod);
+        power:                          Comeng_VSet_Power;
 		weight:                        	Comeng_VSet_Weight;
 		running_cost_factor:            Comeng_VSet_RunningCostFactor;
 

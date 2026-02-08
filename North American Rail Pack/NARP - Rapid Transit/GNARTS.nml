@@ -672,6 +672,57 @@ template template_10_repeat(x, y) {
 
 const Heavy_Metro_LoadingSpeed = 45;
 
+const Liv0_ID = 0;
+const Liv1_ID = 1;
+const Liv2_ID = 2;
+const Liv3_ID = 3;
+const Liv4_ID = 4;
+const Liv5_ID = 5;
+const Liv6_ID = 6;
+const Liv7_ID = 7;
+const Liv8_ID = 8;
+const Liv9_ID = 9;
+const Liv10_ID = 10;
+const Liv11_ID = 11;
+const Liv12_ID = 12;
+const Liv13_ID = 13;
+const Liv14_ID = 14;
+const Liv15_ID = 15;
+const Liv16_ID = 16;
+const Liv17_ID = 17;
+const Liv18_ID = 18;
+const Liv19_ID = 19;
+const Liv20_ID = 20;
+const Liv21_ID = 21;
+const Liv22_ID = 22;
+const Liv23_ID = 23;
+const Liv24_ID = 24;
+const Liv25_ID = 25;
+const Liv26_ID = 26;
+const Liv27_ID = 27;
+const Liv28_ID = 28;
+const Liv29_ID = 29;
+const Liv30_ID = 30;
+const Liv31_ID = 31;
+const Liv32_ID = 32;
+const Liv33_ID = 33;
+const Liv34_ID = 34;
+const Liv35_ID = 35;
+const Liv36_ID = 36;
+const Liv37_ID = 37;
+const Liv38_ID = 38;
+const Liv39_ID = 39;
+const Liv40_ID = 40;
+const Liv41_ID = 41;
+const Liv42_ID = 42;
+const Liv43_ID = 43;
+const Liv44_ID = 44;
+const Liv45_ID = 45;
+const Liv46_ID = 46;
+const Liv47_ID = 47;
+const Liv48_ID = 48;
+const Liv49_ID = 49;
+
 spriteset(spriteset_MU_Purchase,   "gfx/MU_Carriage.png") {template_Purchase_8(7, 21)}
 spriteset(spriteset_MU_trailer,   "gfx/MU_Carriage.png") {template_8_repeat(7, 39)}
 
@@ -713,6 +764,8 @@ item (FEAT_TRAINS, Item_MU_Trailer, 0) {
 }
 }
 
+//ID
+const BrooklynGateCar_ID = 5000;
 //introduction_date
 const BrooklynGateCar_IntroDate = date(1890, 1, 1);
 //speed
@@ -732,7 +785,9 @@ const BrooklynGateCar_Weight = 28;
 spriteset(spriteset_BrooklynGateCar_Liv0_Purchase,   "gfx/BrooklynGateCar_Liv0.png") {template_Purchase_6(7, 21)}
 spriteset(spriteset_BrooklynGateCar_Liv0,   "gfx/BrooklynGateCar_Liv0.png") {template_6_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_BrooklynGateCar_Liv0, 5000) {
+const BrooklynGateCar_ID_Liv0 = (BrooklynGateCar_ID + Liv0_ID );
+
+item(FEAT_TRAINS, Item_BrooklynGateCar_Liv0, BrooklynGateCar_ID_Liv0) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -760,13 +815,13 @@ item(FEAT_TRAINS, Item_BrooklynGateCar_Liv0, 5000) {
         introduction_date:              BrooklynGateCar_IntroDate;		
 		length:                         6;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							BrooklynGateCar_Speed mph;
+		cost_factor:					BrooklynGateCar_CostFactor;
+		running_cost_factor:			BrooklynGateCar_RunningCostFactor;
+		cargo_capacity: 				BrooklynGateCar_CargoCapacity;
+		power:							BrooklynGateCar_Power;
+		weight:							BrooklynGateCar_Weight;
 
 //        variant_group: 					Item_BrooklynGateCar_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -776,13 +831,6 @@ item(FEAT_TRAINS, Item_BrooklynGateCar_Liv0, 5000) {
         purchase: 						spriteset_BrooklynGateCar_Liv0_Purchase;
         additional_text: 				string(STR_INFO_BROOKLYNGATECAR);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [BrooklynGateCar_Speed * 161 / 100];
-		cost_factor:					return BrooklynGateCar_CostFactor;
-		running_cost_factor:			return BrooklynGateCar_RunningCostFactor;
-		cargo_capacity:                 return BrooklynGateCar_CargoCapacity;
-		power:							return BrooklynGateCar_Power;
-		weight:							return BrooklynGateCar_Weight;
 }
 }
 
@@ -790,7 +838,9 @@ item(FEAT_TRAINS, Item_BrooklynGateCar_Liv0, 5000) {
 spriteset(spriteset_BrooklynGateCar_Liv1_Purchase,   "gfx/BrooklynGateCar_Liv1.png") {template_Purchase_6(7, 21)}
 spriteset(spriteset_BrooklynGateCar_Liv1,   "gfx/BrooklynGateCar_Liv1.png") {template_6_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_BrooklynGateCar_Liv1, 5001) {
+const BrooklynGateCar_ID_Liv1 = (BrooklynGateCar_ID + Liv1_ID );
+
+item(FEAT_TRAINS, Item_BrooklynGateCar_Liv1, BrooklynGateCar_ID_Liv1) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -818,13 +868,13 @@ item(FEAT_TRAINS, Item_BrooklynGateCar_Liv1, 5001) {
         introduction_date:              BrooklynGateCar_IntroDate;		
 		length:                         6;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							BrooklynGateCar_Speed mph;
+		cost_factor:					BrooklynGateCar_CostFactor;
+		running_cost_factor:			BrooklynGateCar_RunningCostFactor;
+		cargo_capacity: 				BrooklynGateCar_CargoCapacity;
+		power:							BrooklynGateCar_Power;
+		weight:							BrooklynGateCar_Weight;
 
         variant_group: 					Item_BrooklynGateCar_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -834,13 +884,6 @@ item(FEAT_TRAINS, Item_BrooklynGateCar_Liv1, 5001) {
         purchase: 						spriteset_BrooklynGateCar_Liv1_Purchase;
         additional_text: 				string(STR_INFO_BROOKLYNGATECAR);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [BrooklynGateCar_Speed * 161 / 100];
-		cost_factor:					return BrooklynGateCar_CostFactor;
-		running_cost_factor:			return BrooklynGateCar_RunningCostFactor;
-		cargo_capacity:                 return BrooklynGateCar_CargoCapacity;
-		power:							return BrooklynGateCar_Power;
-		weight:							return BrooklynGateCar_Weight;
 }
 }
 
@@ -848,7 +891,9 @@ item(FEAT_TRAINS, Item_BrooklynGateCar_Liv1, 5001) {
 spriteset(spriteset_BrooklynGateCar_Liv2_Purchase,   "gfx/BrooklynGateCar_Liv2.png") {template_Purchase_6(7, 21)}
 spriteset(spriteset_BrooklynGateCar_Liv2,   "gfx/BrooklynGateCar_Liv2.png") {template_6_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_BrooklynGateCar_Liv2, 5002) {
+const BrooklynGateCar_ID_Liv2 = (BrooklynGateCar_ID + Liv2_ID );
+
+item(FEAT_TRAINS, Item_BrooklynGateCar_Liv2, BrooklynGateCar_ID_Liv2) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -876,13 +921,13 @@ item(FEAT_TRAINS, Item_BrooklynGateCar_Liv2, 5002) {
         introduction_date:              BrooklynGateCar_IntroDate;		
 		length:                         6;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							BrooklynGateCar_Speed mph;
+		cost_factor:					BrooklynGateCar_CostFactor;
+		running_cost_factor:			BrooklynGateCar_RunningCostFactor;
+		cargo_capacity: 				BrooklynGateCar_CargoCapacity;
+		power:							BrooklynGateCar_Power;
+		weight:							BrooklynGateCar_Weight;
 
         variant_group: 					Item_BrooklynGateCar_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -892,16 +937,11 @@ item(FEAT_TRAINS, Item_BrooklynGateCar_Liv2, 5002) {
         purchase: 						spriteset_BrooklynGateCar_Liv2_Purchase;
         additional_text: 				string(STR_INFO_BROOKLYNGATECAR);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [BrooklynGateCar_Speed * 161 / 100];
-		cost_factor:					return BrooklynGateCar_CostFactor;
-		running_cost_factor:			return BrooklynGateCar_RunningCostFactor;
-		cargo_capacity:                 return BrooklynGateCar_CargoCapacity;
-		power:							return BrooklynGateCar_Power;
-		weight:							return BrooklynGateCar_Weight;
 }
 }
 
+//ID
+const Composite_ID = 5040;
 //introduction_date
 const Composite_IntroDate = date(1903, 1, 1);
 //speed
@@ -921,7 +961,9 @@ const Composite_Weight = 30;
 spriteset(spriteset_Composite_Liv0_Purchase,   "gfx/Composite_Liv0.png") {template_Purchase_6(7, 21)}
 spriteset(spriteset_Composite_Liv0,   "gfx/Composite_Liv0.png") {template_6_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_Composite_Liv0, 5040) {
+const Composite_ID_Liv0 = (Composite_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_Composite_Liv0, Composite_ID_Liv0) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -949,13 +991,13 @@ item(FEAT_TRAINS, Item_Composite_Liv0, 5040) {
         introduction_date:              Composite_IntroDate;		
 		length:                         6;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Composite_Speed mph;
+		cost_factor:					Composite_CostFactor;
+		running_cost_factor:			Composite_RunningCostFactor;
+		cargo_capacity: 				Composite_CargoCapacity;
+		power:							Composite_Power;
+		weight:							Composite_Weight;
 
 //        variant_group: 					Item_Composite_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -965,13 +1007,6 @@ item(FEAT_TRAINS, Item_Composite_Liv0, 5040) {
         purchase: 						spriteset_Composite_Liv0_Purchase;
         additional_text: 				string(STR_INFO_COMPOSITE);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [Composite_Speed * 161 / 100];
-		cost_factor:					return Composite_CostFactor;
-		running_cost_factor:			return Composite_RunningCostFactor;
-		cargo_capacity:                 return Composite_CargoCapacity;
-		power:							return Composite_Power;
-		weight:							return Composite_Weight;
 }
 }
 
@@ -980,7 +1015,9 @@ item(FEAT_TRAINS, Item_Composite_Liv0, 5040) {
 spriteset(spriteset_Composite_Liv1_Purchase,   "gfx/Composite_Liv1.png") {template_Purchase_6(7, 21)}
 spriteset(spriteset_Composite_Liv1,   "gfx/Composite_Liv1.png") {template_6_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_Composite_Liv1, 5041) {
+const Composite_ID_Liv1 = (Composite_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_Composite_Liv1, Composite_ID_Liv1) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1008,13 +1045,13 @@ item(FEAT_TRAINS, Item_Composite_Liv1, 5041) {
         introduction_date:              Composite_IntroDate;		
 		length:                         6;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Composite_Speed mph;
+		cost_factor:					Composite_CostFactor;
+		running_cost_factor:			Composite_RunningCostFactor;
+		cargo_capacity: 				Composite_CargoCapacity;
+		power:							Composite_Power;
+		weight:							Composite_Weight;
 
         variant_group: 					Item_Composite_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1024,16 +1061,11 @@ item(FEAT_TRAINS, Item_Composite_Liv1, 5041) {
         purchase: 						spriteset_Composite_Liv1_Purchase;
         additional_text: 				string(STR_INFO_COMPOSITE);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [Composite_Speed * 161 / 100];
-		cost_factor:					return Composite_CostFactor;
-		running_cost_factor:			return Composite_RunningCostFactor;
-		cargo_capacity:                 return Composite_CargoCapacity;
-		power:							return Composite_Power;
-		weight:							return Composite_Weight;
 }
 }
 
+//ID
+const PressedSteel_ElCar_ID = 5120;
 //introduction_date
 const PressedSteel_ElCar_IntroDate = date(1906, 1, 1);
 //speed
@@ -1053,7 +1085,9 @@ const PressedSteel_ElCar_Weight = 32;
 spriteset(spriteset_PressedSteel_ElCar_Liv0_Purchase,   "gfx/PressedSteel_ElCar_Liv0.png") {template_Purchase_6(7, 21)}
 spriteset(spriteset_PressedSteel_ElCar_Liv0,   "gfx/PressedSteel_ElCar_Liv0.png") {template_6_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv0, 5120) {
+const PressedSteel_ElCar_ID_Liv0 = (PressedSteel_ElCar_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv0, PressedSteel_ElCar_ID_Liv0) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1081,13 +1115,13 @@ item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv0, 5120) {
         introduction_date:              PressedSteel_ElCar_IntroDate;		
 		length:                         6;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							PressedSteel_ElCar_Speed mph;
+		cost_factor:					PressedSteel_ElCar_CostFactor;
+		running_cost_factor:			PressedSteel_ElCar_RunningCostFactor;
+		cargo_capacity: 				PressedSteel_ElCar_CargoCapacity;
+		power:							PressedSteel_ElCar_Power;
+		weight:							PressedSteel_ElCar_Weight;
 
 //        variant_group: 					Item_PressedSteel_ElCar_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1097,13 +1131,6 @@ item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv0, 5120) {
         purchase: 						spriteset_PressedSteel_ElCar_Liv0_Purchase;
         additional_text: 				string(STR_INFO_PRESSEDSTEEL_ELCAR);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [PressedSteel_ElCar_Speed * 161 / 100];
-		cost_factor:					return PressedSteel_ElCar_CostFactor;
-		running_cost_factor:			return PressedSteel_ElCar_RunningCostFactor;
-		cargo_capacity:                 return PressedSteel_ElCar_CargoCapacity;
-		power:							return PressedSteel_ElCar_Power;
-		weight:							return PressedSteel_ElCar_Weight;
 }
 }
 
@@ -1111,7 +1138,9 @@ item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv0, 5120) {
 spriteset(spriteset_PressedSteel_ElCar_Liv1_Purchase,   "gfx/PressedSteel_ElCar_Liv1.png") {template_Purchase_6(7, 21)}
 spriteset(spriteset_PressedSteel_ElCar_Liv1,   "gfx/PressedSteel_ElCar_Liv1.png") {template_6_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv1, 5121) {
+const PressedSteel_ElCar_ID_Liv1 = (PressedSteel_ElCar_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv1, PressedSteel_ElCar_ID_Liv1) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1139,13 +1168,13 @@ item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv1, 5121) {
         introduction_date:              PressedSteel_ElCar_IntroDate;		
 		length:                         6;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							PressedSteel_ElCar_Speed mph;
+		cost_factor:					PressedSteel_ElCar_CostFactor;
+		running_cost_factor:			PressedSteel_ElCar_RunningCostFactor;
+		cargo_capacity: 				PressedSteel_ElCar_CargoCapacity;
+		power:							PressedSteel_ElCar_Power;
+		weight:							PressedSteel_ElCar_Weight;
 
         variant_group: 					Item_PressedSteel_ElCar_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1155,13 +1184,6 @@ item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv1, 5121) {
         purchase: 						spriteset_PressedSteel_ElCar_Liv1_Purchase;
         additional_text: 				string(STR_INFO_PRESSEDSTEEL_ELCAR);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [PressedSteel_ElCar_Speed * 161 / 100];
-		cost_factor:					return PressedSteel_ElCar_CostFactor;
-		running_cost_factor:			return PressedSteel_ElCar_RunningCostFactor;
-		cargo_capacity:                 return PressedSteel_ElCar_CargoCapacity;
-		power:							return PressedSteel_ElCar_Power;
-		weight:							return PressedSteel_ElCar_Weight;
 }
 }
 
@@ -1169,7 +1191,9 @@ item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv1, 5121) {
 spriteset(spriteset_PressedSteel_ElCar_Liv2_Purchase,   "gfx/PressedSteel_ElCar_Liv2.png") {template_Purchase_6(7, 21)}
 spriteset(spriteset_PressedSteel_ElCar_Liv2,   "gfx/PressedSteel_ElCar_Liv2.png") {template_6_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv2, 5122) {
+const PressedSteel_ElCar_ID_Liv2 = (PressedSteel_ElCar_ID + Liv2_ID);
+
+item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv2, PressedSteel_ElCar_ID_Liv2) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1197,13 +1221,13 @@ item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv2, 5122) {
         introduction_date:              PressedSteel_ElCar_IntroDate;		
 		length:                         6;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							PressedSteel_ElCar_Speed mph;
+		cost_factor:					PressedSteel_ElCar_CostFactor;
+		running_cost_factor:			PressedSteel_ElCar_RunningCostFactor;
+		cargo_capacity: 				PressedSteel_ElCar_CargoCapacity;
+		power:							PressedSteel_ElCar_Power;
+		weight:							PressedSteel_ElCar_Weight;
 
         variant_group: 					Item_PressedSteel_ElCar_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1213,13 +1237,6 @@ item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv2, 5122) {
         purchase: 						spriteset_PressedSteel_ElCar_Liv2_Purchase;
         additional_text: 				string(STR_INFO_PRESSEDSTEEL_ELCAR);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [PressedSteel_ElCar_Speed * 161 / 100];
-		cost_factor:					return PressedSteel_ElCar_CostFactor;
-		running_cost_factor:			return PressedSteel_ElCar_RunningCostFactor;
-		cargo_capacity:                 return PressedSteel_ElCar_CargoCapacity;
-		power:							return PressedSteel_ElCar_Power;
-		weight:							return PressedSteel_ElCar_Weight;
 }
 }
 
@@ -1227,7 +1244,9 @@ item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv2, 5122) {
 spriteset(spriteset_PressedSteel_ElCar_Liv3_Purchase,   "gfx/PressedSteel_ElCar_Liv3.png") {template_Purchase_6(7, 21)}
 spriteset(spriteset_PressedSteel_ElCar_Liv3,   "gfx/PressedSteel_ElCar_Liv3.png") {template_6_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv3, 5123) {
+const PressedSteel_ElCar_ID_Liv3 = (PressedSteel_ElCar_ID + Liv3_ID);
+
+item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv3, PressedSteel_ElCar_ID_Liv3) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1255,13 +1274,13 @@ item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv3, 5123) {
         introduction_date:              PressedSteel_ElCar_IntroDate;		
 		length:                         6;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							PressedSteel_ElCar_Speed mph;
+		cost_factor:					PressedSteel_ElCar_CostFactor;
+		running_cost_factor:			PressedSteel_ElCar_RunningCostFactor;
+		cargo_capacity: 				PressedSteel_ElCar_CargoCapacity;
+		power:							PressedSteel_ElCar_Power;
+		weight:							PressedSteel_ElCar_Weight;
 
         variant_group: 					Item_PressedSteel_ElCar_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1271,16 +1290,11 @@ item(FEAT_TRAINS, Item_PressedSteel_ElCar_Liv3, 5123) {
         purchase: 						spriteset_PressedSteel_ElCar_Liv3_Purchase;
         additional_text: 				string(STR_INFO_PRESSEDSTEEL_ELCAR);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [PressedSteel_ElCar_Speed * 161 / 100];
-		cost_factor:					return PressedSteel_ElCar_CostFactor;
-		running_cost_factor:			return PressedSteel_ElCar_RunningCostFactor;
-		cargo_capacity:                 return PressedSteel_ElCar_CargoCapacity;
-		power:							return PressedSteel_ElCar_Power;
-		weight:							return PressedSteel_ElCar_Weight;
 }
 }
 
+//ID
+const ABStandard_ID = 5360;
 //introduction_date
 const ABStandard_IntroDate = date(1915, 1, 1);
 //speed
@@ -1301,7 +1315,9 @@ const ABStandard_Weight = 43;
 spriteset(spriteset_ABStandard_Liv0_Purchase,   "gfx/ABStandard_Liv0.png") {template_Purchase_8(7, 21)}
 spriteset(spriteset_ABStandard_Liv0,   "gfx/ABStandard_Liv0.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_ABStandard_Liv0, 5360) {
+const ABStandard_ID_Liv0 = (ABStandard_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_ABStandard_Liv0, ABStandard_ID_Liv0) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1329,13 +1345,13 @@ item(FEAT_TRAINS, Item_ABStandard_Liv0, 5360) {
         introduction_date:              ABStandard_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							ABStandard_Speed mph;
+		cost_factor:					ABStandard_CostFactor;
+		running_cost_factor:			ABStandard_RunningCostFactor;
+		cargo_capacity: 				ABStandard_CargoCapacity;
+		power:							ABStandard_Power;
+		weight:							ABStandard_Weight;
 
 //        variant_group: 					Item_ABStandard_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1345,13 +1361,6 @@ item(FEAT_TRAINS, Item_ABStandard_Liv0, 5360) {
         purchase: 						spriteset_ABStandard_Liv0_Purchase;
         additional_text: 				string(STR_INFO_ABSTANDARD);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [ABStandard_Speed * 161 / 100];
-		cost_factor:					return ABStandard_CostFactor;
-		running_cost_factor:			return ABStandard_RunningCostFactor;
-		cargo_capacity:                 return ABStandard_CargoCapacity;
-		power:							return ABStandard_Power;
-		weight:							return ABStandard_Weight;
 }
 }
 
@@ -1360,7 +1369,9 @@ spriteset(spriteset_ABStandard_MU_Liv0_Purchase,   "gfx/ABStandard_Liv0.png") {t
 spriteset(spriteset_ABStandard_MU_Liv0_Lead,   "gfx/ABStandard_Liv0.png") {template_8(187, 39)}
 spriteset(spriteset_ABStandard_MU_Liv0_Trailer,   "gfx/ABStandard_Liv0.png") {template_8_repeat(187, 69)}
 
-item(FEAT_TRAINS, Item_ABStandard_MU_Liv0, 5400) {
+const ABStandard_MU_ID_Liv0 = (ABStandard_ID_Liv0 + 40);
+
+item(FEAT_TRAINS, Item_ABStandard_MU_Liv0, ABStandard_MU_ID_Liv0) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1388,13 +1399,13 @@ item(FEAT_TRAINS, Item_ABStandard_MU_Liv0, 5400) {
         introduction_date:              ABStandard_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							ABStandard_Speed mph;
+		cost_factor:					(ABStandard_CostFactor * 2);
+		running_cost_factor:			(ABStandard_RunningCostFactor * 2);
+		cargo_capacity: 				(ABStandard_CargoCapacity / param_capacity_mod);
+		power:							ABStandard_Power;
+		weight:							ABStandard_Weight;
 
 //        variant_group: 					Item_ABStandard_MU_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1404,23 +1415,19 @@ item(FEAT_TRAINS, Item_ABStandard_MU_Liv0, 5400) {
         purchase: 						spriteset_ABStandard_MU_Liv0_Purchase;
         additional_text: 				string(STR_INFO_ABSTANDARD_MU);
 		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [ABStandard_Speed * 161 / 100];
-		cost_factor:					return [ABStandard_CostFactor * 2];
-		running_cost_factor:			return [ABStandard_RunningCostFactor * 2];
-		cargo_capacity:                 return [ABStandard_CargoCapacity / param_capacity_mod];
-		power:							return ABStandard_Power_MU;
-		weight:							return ABStandard_Weight;
 }
         livery_override (Item_MU_Trailer) {
         default:                        spriteset_ABStandard_MU_Liv0_Trailer;
         length:                         8;
-        cargo_capacity:                 [ABStandard_CargoCapacity / param_capacity_mod];
-        power:                          [ABStandard_Power_MU / 2];
+        cargo_capacity:                 (ABStandard_CargoCapacity / param_capacity_mod);
+        power:                          (ABStandard_Power_MU / 2);
 		weight:                        	ABStandard_Weight;
 		running_cost_factor:            ABStandard_RunningCostFactor;
     }
 }
 
+//ID
+const Arnine_ID = 5600;
 //introduction_date
 const Arnine_IntroDate = date(1931, 1, 1);
 //speed
@@ -1440,7 +1447,9 @@ const Arnine_Weight = 37;
 spriteset(spriteset_Arnine_Liv0_Purchase,   "gfx/Arnine_Liv0.png") {template_Purchase_8(7, 21)}
 spriteset(spriteset_Arnine_Liv0,   "gfx/Arnine_Liv0.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_Arnine_Liv0, 5600) {
+const Arnine_ID_Liv0 = (Arnine_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_Arnine_Liv0, Arnine_ID_Liv0) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1468,13 +1477,13 @@ item(FEAT_TRAINS, Item_Arnine_Liv0, 5600) {
         introduction_date:              Arnine_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Arnine_Speed mph;
+		cost_factor:					Arnine_CostFactor;
+		running_cost_factor:			Arnine_RunningCostFactor;
+		cargo_capacity: 				Arnine_CargoCapacity;
+		power:							Arnine_Power;
+		weight:							Arnine_Weight;
 
 //        variant_group: 					Item_Arnine_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1484,13 +1493,6 @@ item(FEAT_TRAINS, Item_Arnine_Liv0, 5600) {
         purchase: 						spriteset_Arnine_Liv0_Purchase;
         additional_text: 				string(STR_INFO_ARNINE);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [Arnine_Speed * 161 / 100];
-		cost_factor:					return Arnine_CostFactor;
-		running_cost_factor:			return Arnine_RunningCostFactor;
-		cargo_capacity:                 return Arnine_CargoCapacity;
-		power:							return Arnine_Power;
-		weight:							return Arnine_Weight;
 }
 }
 
@@ -1498,7 +1500,9 @@ item(FEAT_TRAINS, Item_Arnine_Liv0, 5600) {
 spriteset(spriteset_Arnine_Liv1_Purchase,   "gfx/Arnine_Liv1.png") {template_Purchase_8(7, 21)}
 spriteset(spriteset_Arnine_Liv1,   "gfx/Arnine_Liv1.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_Arnine_Liv1, 5601) {
+const Arnine_ID_Liv1 = (Arnine_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_Arnine_Liv1, Arnine_ID_Liv1) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1526,13 +1530,13 @@ item(FEAT_TRAINS, Item_Arnine_Liv1, 5601) {
         introduction_date:              Arnine_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Arnine_Speed mph;
+		cost_factor:					Arnine_CostFactor;
+		running_cost_factor:			Arnine_RunningCostFactor;
+		cargo_capacity: 				Arnine_CargoCapacity;
+		power:							Arnine_Power;
+		weight:							Arnine_Weight;
 
         variant_group: 					Item_Arnine_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1542,13 +1546,6 @@ item(FEAT_TRAINS, Item_Arnine_Liv1, 5601) {
         purchase: 						spriteset_Arnine_Liv1_Purchase;
         additional_text: 				string(STR_INFO_ARNINE);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [Arnine_Speed * 161 / 100];
-		cost_factor:					return Arnine_CostFactor;
-		running_cost_factor:			return Arnine_RunningCostFactor;
-		cargo_capacity:                 return Arnine_CargoCapacity;
-		power:							return Arnine_Power;
-		weight:							return Arnine_Weight;
 }
 }
 
@@ -1556,7 +1553,9 @@ item(FEAT_TRAINS, Item_Arnine_Liv1, 5601) {
 spriteset(spriteset_Arnine_Liv2_Purchase,   "gfx/Arnine_Liv2.png") {template_Purchase_8(7, 21)}
 spriteset(spriteset_Arnine_Liv2,   "gfx/Arnine_Liv2.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_Arnine_Liv2, 5602) {
+const Arnine_ID_Liv2 = (Arnine_ID + Liv2_ID);
+
+item(FEAT_TRAINS, Item_Arnine_Liv2, Arnine_ID_Liv2) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1584,13 +1583,13 @@ item(FEAT_TRAINS, Item_Arnine_Liv2, 5602) {
         introduction_date:              Arnine_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Arnine_Speed mph;
+		cost_factor:					Arnine_CostFactor;
+		running_cost_factor:			Arnine_RunningCostFactor;
+		cargo_capacity: 				Arnine_CargoCapacity;
+		power:							Arnine_Power;
+		weight:							Arnine_Weight;
 
         variant_group: 					Item_Arnine_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1600,13 +1599,6 @@ item(FEAT_TRAINS, Item_Arnine_Liv2, 5602) {
         purchase: 						spriteset_Arnine_Liv2_Purchase;
         additional_text: 				string(STR_INFO_ARNINE);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [Arnine_Speed * 161 / 100];
-		cost_factor:					return Arnine_CostFactor;
-		running_cost_factor:			return Arnine_RunningCostFactor;
-		cargo_capacity:                 return Arnine_CargoCapacity;
-		power:							return Arnine_Power;
-		weight:							return Arnine_Weight;
 }
 }
 
@@ -1614,7 +1606,9 @@ item(FEAT_TRAINS, Item_Arnine_Liv2, 5602) {
 spriteset(spriteset_Arnine_Liv3_Purchase,   "gfx/Arnine_Liv3.png") {template_Purchase_8(7, 21)}
 spriteset(spriteset_Arnine_Liv3,   "gfx/Arnine_Liv3.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_Arnine_Liv3, 5603) {
+const Arnine_ID_Liv3 = (Arnine_ID + Liv3_ID);
+
+item(FEAT_TRAINS, Item_Arnine_Liv3, Arnine_ID_Liv3) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1642,13 +1636,13 @@ item(FEAT_TRAINS, Item_Arnine_Liv3, 5603) {
         introduction_date:              Arnine_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Arnine_Speed mph;
+		cost_factor:					Arnine_CostFactor;
+		running_cost_factor:			Arnine_RunningCostFactor;
+		cargo_capacity: 				Arnine_CargoCapacity;
+		power:							Arnine_Power;
+		weight:							Arnine_Weight;
 
         variant_group: 					Item_Arnine_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1658,13 +1652,6 @@ item(FEAT_TRAINS, Item_Arnine_Liv3, 5603) {
         purchase: 						spriteset_Arnine_Liv3_Purchase;
         additional_text: 				string(STR_INFO_ARNINE);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [Arnine_Speed * 161 / 100];
-		cost_factor:					return Arnine_CostFactor;
-		running_cost_factor:			return Arnine_RunningCostFactor;
-		cargo_capacity:                 return Arnine_CargoCapacity;
-		power:							return Arnine_Power;
-		weight:							return Arnine_Weight;
 }
 }
 
@@ -1672,7 +1659,9 @@ item(FEAT_TRAINS, Item_Arnine_Liv3, 5603) {
 spriteset(spriteset_Arnine_Liv4_Purchase,   "gfx/Arnine_Liv4.png") {template_Purchase_8(7, 21)}
 spriteset(spriteset_Arnine_Liv4,   "gfx/Arnine_Liv4.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_Arnine_Liv4, 5604) {
+const Arnine_ID_Liv4 = (Arnine_ID + Liv4_ID);
+
+item(FEAT_TRAINS, Item_Arnine_Liv4, Arnine_ID_Liv4) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1700,13 +1689,13 @@ item(FEAT_TRAINS, Item_Arnine_Liv4, 5604) {
         introduction_date:              Arnine_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Arnine_Speed mph;
+		cost_factor:					Arnine_CostFactor;
+		running_cost_factor:			Arnine_RunningCostFactor;
+		cargo_capacity: 				Arnine_CargoCapacity;
+		power:							Arnine_Power;
+		weight:							Arnine_Weight;
 
         variant_group: 					Item_Arnine_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1716,16 +1705,11 @@ item(FEAT_TRAINS, Item_Arnine_Liv4, 5604) {
         purchase: 						spriteset_Arnine_Liv4_Purchase;
         additional_text: 				string(STR_INFO_ARNINE);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [Arnine_Speed * 161 / 100];
-		cost_factor:					return Arnine_CostFactor;
-		running_cost_factor:			return Arnine_RunningCostFactor;
-		cargo_capacity:                 return Arnine_CargoCapacity;
-		power:							return Arnine_Power;
-		weight:							return Arnine_Weight;
 }
 }
 
+//ID
+const R11_ID = 6000;
 //introduction_date
 const R11_IntroDate = date(1949, 1, 1);
 //speed
@@ -1745,7 +1729,9 @@ const R11_Weight = 37;
 spriteset(spriteset_R11_Liv0_Purchase,   "gfx/R11_Liv0.png") {template_Purchase_8(7, 21)}
 spriteset(spriteset_R11_Liv0,   "gfx/R11_Liv0.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_R11_Liv0, 6000) {
+const R11_ID_Liv0 = (R11_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_R11_Liv0, R11_ID_Liv0) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1773,13 +1759,13 @@ item(FEAT_TRAINS, Item_R11_Liv0, 6000) {
         introduction_date:              R11_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R11_Speed mph;
+		cost_factor:					R11_CostFactor;
+		running_cost_factor:			R11_RunningCostFactor;
+		cargo_capacity: 				R11_CargoCapacity;
+		power:							R11_Power;
+		weight:							R11_Weight;
 
 //        variant_group: 					Item_R11_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1789,13 +1775,6 @@ item(FEAT_TRAINS, Item_R11_Liv0, 6000) {
         purchase: 						spriteset_R11_Liv0_Purchase;
         additional_text: 				string(STR_INFO_R11);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [R11_Speed * 161 / 100];
-		cost_factor:					return R11_CostFactor;
-		running_cost_factor:			return R11_RunningCostFactor;
-		cargo_capacity:                 return R11_CargoCapacity;
-		power:							return R11_Power;
-		weight:							return R11_Weight;
 }
 }
 
@@ -1803,7 +1782,9 @@ item(FEAT_TRAINS, Item_R11_Liv0, 6000) {
 spriteset(spriteset_R11_Liv1_Purchase,   "gfx/R11_Liv1.png") {template_Purchase_8(7, 21)}
 spriteset(spriteset_R11_Liv1,   "gfx/R11_Liv1.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_R11_Liv1, 6001) {
+const R11_ID_Liv1 = (R11_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_R11_Liv1, R11_ID_Liv1) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1831,13 +1812,13 @@ item(FEAT_TRAINS, Item_R11_Liv1, 6001) {
         introduction_date:              R11_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R11_Speed mph;
+		cost_factor:					R11_CostFactor;
+		running_cost_factor:			R11_RunningCostFactor;
+		cargo_capacity: 				R11_CargoCapacity;
+		power:							R11_Power;
+		weight:							R11_Weight;
 
         variant_group: 					Item_R11_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1848,15 +1829,11 @@ item(FEAT_TRAINS, Item_R11_Liv1, 6001) {
         additional_text: 				string(STR_INFO_R11);
 		reverse_build_probability: 		return 50;
 		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [R11_Speed * 161 / 100];
-		cost_factor:					return R11_CostFactor;
-		running_cost_factor:			return R11_RunningCostFactor;
-		cargo_capacity:                 return R11_CargoCapacity;
-		power:							return R11_Power;
-		weight:							return R11_Weight;
 }
 }
 
+//ID
+const R16_ID = 6280;
 //introduction_date
 const R16_IntroDate = date(1956, 1, 1);
 //speed
@@ -1876,7 +1853,9 @@ const R16_Weight = 38;
 spriteset(spriteset_R16_Liv0_Purchase,   "gfx/R16_Redbird_Liv0.png") {template_Purchase_8(7, 21)}
 spriteset(spriteset_R16_Liv0,   "gfx/R16_Redbird_Liv0.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
 
-item(FEAT_TRAINS, Item_R16_Liv0, 6280) {
+const R16_ID_Liv0 = (R16_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_R16_Liv0, R16_ID_Liv0) {
     property {		
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -1904,13 +1883,13 @@ item(FEAT_TRAINS, Item_R16_Liv0, 6280) {
         introduction_date:              R16_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R16_Speed mph;
+		cost_factor:					R16_CostFactor;
+		running_cost_factor:			R16_RunningCostFactor;
+		cargo_capacity: 				R16_CargoCapacity;
+		power:							R16_Power;
+		weight:							R16_Weight;
 
 //        variant_group: 					Item_R16_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1920,19 +1899,14 @@ item(FEAT_TRAINS, Item_R16_Liv0, 6280) {
         purchase: 						spriteset_R16_Liv0_Purchase;
         additional_text: 				string(STR_INFO_R16);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [R16_Speed * 161 / 100];
-		cost_factor:					return R16_CostFactor;
-		running_cost_factor:			return R16_RunningCostFactor;
-		cargo_capacity:                 return R16_CargoCapacity;
-		power:							return R16_Power;
-		weight:							return R16_Weight;
 }
 }
 
 //R16_Liv1
 spriteset(spriteset_R16_Liv1_Purchase,   "gfx/R16_Redbird_Liv1.png") {template_Purchase_8(7, 21)}
 spriteset(spriteset_R16_Liv1,   "gfx/R16_Redbird_Liv1.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
+
+const R16_ID_Liv1 = (R16_ID + Liv1_ID);
 
 item(FEAT_TRAINS, Item_R16_Liv1, 6281) {
     property {		
@@ -1962,13 +1936,13 @@ item(FEAT_TRAINS, Item_R16_Liv1, 6281) {
         introduction_date:              R16_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R16_Speed mph;
+		cost_factor:					R16_CostFactor;
+		running_cost_factor:			R16_RunningCostFactor;
+		cargo_capacity: 				R16_CargoCapacity;
+		power:							R16_Power;
+		weight:							R16_Weight;
 
         variant_group: 					Item_R16_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -1978,16 +1952,11 @@ item(FEAT_TRAINS, Item_R16_Liv1, 6281) {
         purchase: 						spriteset_R16_Liv1_Purchase;
         additional_text: 				string(STR_INFO_R16);
 		reverse_build_probability: 		return 50;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [R16_Speed * 161 / 100];
-		cost_factor:					return R16_CostFactor;
-		running_cost_factor:			return R16_RunningCostFactor;
-		cargo_capacity:                 return R16_CargoCapacity;
-		power:							return R16_Power;
-		weight:							return R16_Weight;
 }
 }
 
+//ID
+const R27_ID = 6480;
 //introduction_date
 const R27_IntroDate = date(1960, 1, 1);
 //speed
@@ -2003,12 +1972,14 @@ const R27_Power = 800; //MU power is for 2 individual vehicles
 //weight
 const R27_Weight = 36;
 
-//R27_MU_Liv0
-spriteset(spriteset_R27_MU_Liv0_Purchase,   "gfx/R16_Redbird_Liv0.png") {template_Purchase_88mu(187, 21)}
-spriteset(spriteset_R27_MU_Liv0_Lead,   "gfx/R16_Redbird_Liv0.png") {template_8(187, 39)}
-spriteset(spriteset_R27_MU_Liv0_Trailer,   "gfx/R16_Redbird_Liv0.png") {template_8_repeat(187, 69)}
+//R27_Liv0
+spriteset(spriteset_R27_Liv0_Purchase,   "gfx/R16_Redbird_Liv0.png") {template_Purchase_88mu(187, 21)}
+spriteset(spriteset_R27_Liv0_Lead,   "gfx/R16_Redbird_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_R27_Liv0_Trailer,   "gfx/R16_Redbird_Liv0.png") {template_8_repeat(187, 69)}
 
-item(FEAT_TRAINS, Item_R27_MU_Liv0, 6480) {
+const R27_ID_Liv0 = (R27_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_R27_Liv0, R27_ID_Liv0) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -2036,45 +2007,40 @@ item(FEAT_TRAINS, Item_R27_MU_Liv0, 6480) {
         introduction_date:              R27_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R27_Speed mph;
+		cost_factor:					(R27_CostFactor * 2);
+		running_cost_factor:			(R27_RunningCostFactor * 2);
+		cargo_capacity: 				(R27_CargoCapacity / param_capacity_mod);
+		power:							R27_Power;
+		weight:							R27_Weight;
 
-//        variant_group: 					Item_R27_MU_Liv0;
+//        variant_group: 					Item_R27_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						spriteset_R27_MU_Liv0_Lead;
-        purchase: 						spriteset_R27_MU_Liv0_Purchase;
+        default: 						spriteset_R27_Liv0_Lead;
+        purchase: 						spriteset_R27_Liv0_Purchase;
         additional_text: 				string(STR_INFO_R27);
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [R27_Speed * 161 / 100];
-		cost_factor:					return [R27_CostFactor * 2];
-		running_cost_factor:			return [R27_RunningCostFactor * 2];
-		cargo_capacity:                 return [R27_CargoCapacity / param_capacity_mod];
-		power:							return R27_Power;
-		weight:							return R27_Weight;
 }
         livery_override (Item_MU_Trailer) {
-        default:                        spriteset_R27_MU_Liv0_Trailer;
+        default:                        spriteset_R27_Liv0_Trailer;
         length:                         8;
-        cargo_capacity:                 [R27_CargoCapacity / param_capacity_mod];
-        power:                          [R27_Power /2];
+        cargo_capacity:                 (R27_CargoCapacity / param_capacity_mod);
+        power:                          (R27_Power / 2);
 		weight:                        	R27_Weight;
 		running_cost_factor:            R27_RunningCostFactor;
     }
 }
 
-//R27_MU_Liv1
-spriteset(spriteset_R27_MU_Liv1_Purchase,   "gfx/R16_Redbird_Liv1.png") {template_Purchase_88mu(187, 21)}
-spriteset(spriteset_R27_MU_Liv1_Lead,   "gfx/R16_Redbird_Liv1.png") {template_8(187, 39)}
-spriteset(spriteset_R27_MU_Liv1_Trailer,   "gfx/R16_Redbird_Liv1.png") {template_8_repeat(187, 69)}
+//R27_Liv1
+spriteset(spriteset_R27_Liv1_Purchase,   "gfx/R16_Redbird_Liv1.png") {template_Purchase_88mu(187, 21)}
+spriteset(spriteset_R27_Liv1_Lead,   "gfx/R16_Redbird_Liv1.png") {template_8(187, 39)}
+spriteset(spriteset_R27_Liv1_Trailer,   "gfx/R16_Redbird_Liv1.png") {template_8_repeat(187, 69)}
 
-item(FEAT_TRAINS, Item_R27_MU_Liv1, 6481) {
+const R27_ID_Liv1 = (R27_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_R27_Liv1, R27_ID_Liv1) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -2102,39 +2068,34 @@ item(FEAT_TRAINS, Item_R27_MU_Liv1, 6481) {
         introduction_date:              R27_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R27_Speed mph;
+		cost_factor:					(R27_CostFactor * 2);
+		running_cost_factor:			(R27_RunningCostFactor * 2);
+		cargo_capacity: 				(R27_CargoCapacity / param_capacity_mod);
+		power:							R27_Power;
+		weight:							R27_Weight;
 
-        variant_group: 					Item_R27_MU_Liv0;
+        variant_group: 					Item_R27_Liv0;
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						spriteset_R27_MU_Liv1_Lead;
-        purchase: 						spriteset_R27_MU_Liv1_Purchase;
+        default: 						spriteset_R27_Liv1_Lead;
+        purchase: 						spriteset_R27_Liv1_Purchase;
         additional_text: 				string(STR_INFO_R27);
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [R27_Speed * 161 / 100];
-		cost_factor:					return [R27_CostFactor * 2];
-		running_cost_factor:			return [R27_RunningCostFactor * 2];
-		cargo_capacity:                 return [R27_CargoCapacity / param_capacity_mod];
-		power:							return R27_Power;
-		weight:							return R27_Weight;
 }
         livery_override (Item_MU_Trailer) {
-        default:                        spriteset_R27_MU_Liv1_Trailer;
+        default:                        spriteset_R27_Liv1_Trailer;
         length:                         8;
-        cargo_capacity:                 [R27_CargoCapacity / param_capacity_mod];
-        power:                          [R27_Power /2];
+        cargo_capacity:                 (R27_CargoCapacity / param_capacity_mod);
+        power:                          (R27_Power / 2);
 		weight:                        	R27_Weight;
 		running_cost_factor:            R27_RunningCostFactor;
     }
 }
 
+//ID
+const HSC_1200Series_ID = 7680;
 //introduction_date
 const HSC_1200Series_IntroDate = date(1981, 1, 1);
 //speed
@@ -2157,7 +2118,9 @@ spriteset(spriteset_HSC_1200Series_Liv0_Lead,   "gfx/HSC_1200Series_Liv0.png") {
 spriteset(spriteset_HSC_1200Series_Liv0_Lead_r,   "gfx/HSC_1200Series_Liv0.png") {template_8_r(7, 39)}
 spriteset(spriteset_HSC_1200Series_Liv0_Trailer,   "gfx/HSC_1200Series_Liv0.png") {template_8_repeat(7, 69)}
 
-item(FEAT_TRAINS, Item_HSC_1200Series_Liv0, 7680) {
+const HSC_1200Series_ID_Liv0 = (HSC_1200Series_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_HSC_1200Series_Liv0, HSC_1200Series_ID_Liv0) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -2185,13 +2148,13 @@ item(FEAT_TRAINS, Item_HSC_1200Series_Liv0, 7680) {
         introduction_date:              HSC_1200Series_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							HSC_1200Series_Speed mph;
+		cost_factor:					(HSC_1200Series_CostFactor * 2);
+		running_cost_factor:			(HSC_1200Series_RunningCostFactor * 2);
+		cargo_capacity: 				(HSC_1200Series_CargoCapacity / param_capacity_mod);
+		power:							HSC_1200Series_Power;
+		weight:							HSC_1200Series_Weight;
 
 //        variant_group: 					Item_HSC_1200Series_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2200,24 +2163,19 @@ item(FEAT_TRAINS, Item_HSC_1200Series_Liv0, 7680) {
         default: 						spriteset_HSC_1200Series_Liv0_Lead;
         purchase: 						spriteset_HSC_1200Series_Liv0_Purchase;
         additional_text: 				string(STR_INFO_HSC_1200SERIES);
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [HSC_1200Series_Speed * 161 / 100];
-		cost_factor:					return [HSC_1200Series_CostFactor * 2];
-		running_cost_factor:			return [HSC_1200Series_RunningCostFactor * 2];
-		cargo_capacity:                 return [HSC_1200Series_CargoCapacity / param_capacity_mod];
-		power:							return HSC_1200Series_Power;
-		weight:							return HSC_1200Series_Weight;
 }
         livery_override (Item_MU_Trailer) {
         default:                        spriteset_HSC_1200Series_Liv0_Trailer;
         length:                         8;
-        cargo_capacity:                 [HSC_1200Series_CargoCapacity / param_capacity_mod];
-        power:                          [HSC_1200Series_Power /2];
+        cargo_capacity:                 (HSC_1200Series_CargoCapacity / param_capacity_mod);
+        power:                          (HSC_1200Series_Power /2);
 		weight:                        	HSC_1200Series_Weight;
 		running_cost_factor:            HSC_1200Series_RunningCostFactor;
     }
 }
 
+//ID
+const HSC_1200Series_DV_ID = 16200;
 //introduction_date
 const HSC_1200Series_DV_IntroDate = date(1981, 1, 1);
 //speed
@@ -2477,8 +2435,10 @@ switch(FEAT_TRAINS, PARENT, sw_HSC_1200Series_Liv0_revcheck, vehicle_is_reversed
     return sw_HSC_1200Series_Liv0_lencheck_r;
 }
 
+const HSC_1200Series_DV_ID_Liv0 = (HSC_1200Series_DV_ID + Liv0_ID);
+
 //HSC_1200Series_DV_Liv0
-item(FEAT_TRAINS, Item_HSC_1200Series_DV_Liv0, 16200) {
+item(FEAT_TRAINS, Item_HSC_1200Series_DV_Liv0, HSC_1200Series_DV_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
@@ -2506,13 +2466,13 @@ item(FEAT_TRAINS, Item_HSC_1200Series_DV_Liv0, 16200) {
         introduction_date:              HSC_1200Series_DV_IntroDate;		
 		length:                         8;
 		
-		loading_speed:					1;
-		speed:							1;
-		//cost_factor:					1;
-		//running_cost_factor:			1;
-		cargo_capacity: 				1;
-		power:							1;
-		weight:							1;
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							HSC_1200Series_DV_Speed mph;
+		cost_factor:					(HSC_1200Series_DV_CostFactor * 2);
+		running_cost_factor:			(HSC_1200Series_DV_RunningCostFactor * 2);
+		cargo_capacity: 				(HSC_1200Series_DV_CargoCapacity / param_capacity_mod);
+//		power:							HSC_1200Series_DV_Power;
+		weight:							HSC_1200Series_DV_Weight;
 
 //        variant_group: 					Item_HSC_1200Series_DV_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
@@ -2522,18 +2482,12 @@ item(FEAT_TRAINS, Item_HSC_1200Series_DV_Liv0, 16200) {
         purchase: 						switch_HSC_1200Series_Liv0_PurchaseStack;
         additional_text: 				switch_HSC_1200Series_buy_menu_additional_text;
 		visual_effect_and_powered: 		switch_HSC_1200Series_effect_spawn_model_and_powered;
-		loading_speed:					return Heavy_Metro_LoadingSpeed;
-		speed:							return [HSC_1200Series_DV_Speed * 161 / 100];
-		cost_factor:					return [HSC_1200Series_DV_CostFactor * 2];
-		running_cost_factor:			return [HSC_1200Series_DV_RunningCostFactor * 2];
-		cargo_capacity:                 return [HSC_1200Series_DV_CargoCapacity / param_capacity_mod];
 		power:							return switch_HSC_1200Series_power_0;
-		weight:							return HSC_1200Series_DV_Weight;
 }
         livery_override (Item_MU_Trailer) { // <- Override the appearance and stats of Item_FAI_WAGON_MU_COACH when attached, to make it fit the MU's appearance and stats
         default:                        sw_HSC_1200Series_Liv0_revcheck; // <- This tells the game that when attached, the livery_override wagon needs to use this sprite
         length:                         8;
-        cargo_capacity:                 [HSC_1200Series_CargoCapacity / param_capacity_mod];
+        cargo_capacity:                 (HSC_1200Series_CargoCapacity / param_capacity_mod);
         power:                          switch_HSC_1200Series_Trailer_power_0 () / 2;
 		weight:                        	HSC_1200Series_DV_Weight;
 		running_cost_factor:            HSC_1200Series_DV_RunningCostFactor;
