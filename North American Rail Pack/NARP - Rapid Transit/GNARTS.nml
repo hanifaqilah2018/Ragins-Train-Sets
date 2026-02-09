@@ -281,7 +281,7 @@ template template_Purchase_66mu(x, y) {
     [x-2 , y,  1,  1,   0,  0, ANIM]
     [x-2 , y,  1,  1,   0,  0, ANIM]
     [x-2 , y,  1,  1,   0,  0, ANIM]
-    [x     , y, 88, 15, -47, -11, ANIM]
+    [x     , y, 88, 15, -33, -11, ANIM]
     [x-2 , y,  1,  1,   0,  0, ANIM]
 }
 
@@ -442,15 +442,30 @@ template template_6(x, y) {
     //left_x, upper_y, width, height, offset_x, offset_y
     //                            more negative to shift left
     //                                            more negative to shift up
-    [ x,        y,        8,        29,        -3,            -20, ANIM]
-    [ x+9,      y,        22,        20,        -12,        -13, ANIM]
-    [ x+32,     y,        33,        16,        -8,        -12, ANIM]
-    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+    [ x,     y, 8,  29, -3,  -20, ANIM]
+    [ x+9,   y, 22, 20, -12, -13, ANIM]
+    [ x+32,  y, 33, 16, -8,  -12, ANIM]
+    [ x+66,  y, 22, 20, -4,  -11, ANIM]
 
-    [ x+89,     y,        8,        29,        -3,            -16, ANIM]
-    [ x+98,     y,        22,        20,        -16,        -11, ANIM]
-    [ x+121,    y,        33,        16,        -16,        -12, ANIM]
-    [ x+155,    y,        22,        20,        -8,        -13, ANIM]
+    [ x+89,  y, 8,  29, -3,  -16, ANIM]
+    [ x+98,  y, 22, 20, -16, -11, ANIM]
+    [ x+121, y, 33, 16, -16, -12, ANIM]
+    [ x+155, y, 22, 20, -8,  -13, ANIM]
+}
+
+template template_6_alt(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,     y, 8,  29, -3,  -16, ANIM]
+    [ x+9,   y, 22, 20, -16, -11, ANIM]
+    [ x+32,  y, 33, 16, -16, -12, ANIM]
+    [ x+66,  y, 22, 20, -8,  -13, ANIM]
+
+    [ x+89,  y, 8,  29, -3,  -20, ANIM]
+    [ x+98,  y, 22, 20, -12, -13, ANIM]
+    [ x+121, y, 33, 16, -8,  -12, ANIM]
+    [ x+155, y, 22, 20, -4,  -11, ANIM]
 }
 
 template template_6_r(x, y) {
@@ -504,15 +519,15 @@ template template_7_r(x, y) {
     //left_x, upper_y, width, height, offset_x, offset_y
     //                            more negative to shift left
     //                                            more negative to shift up
-    [ x+89 , y, 8 , 29,  -3, -18, ANIM]
-    [ x+98 , y, 22, 20, -14, -12, ANIM]
+    [ x+89,  y, 8 , 29,  -3, -18, ANIM]
+    [ x+98,  y, 22, 20, -14, -12, ANIM]
     [ x+121, y, 33, 16, -12, -12, ANIM]
     [ x+155, y, 22, 20,  -4, -11, ANIM]
 
-    [ x    , y, 8 , 29,  -3, -15, ANIM]
-    [ x+9  , y, 22, 20, -16, -11, ANIM]
-    [ x+32 , y, 33, 16, -16, -12, ANIM]
-    [ x+66 , y, 22, 20,  -6, -12, ANIM]
+    [ x , 	 y, 8 , 29,  -3, -15, ANIM]
+    [ x+9,	 y, 22, 20, -16, -11, ANIM]
+    [ x+32,  y, 33, 16, -16, -12, ANIM]
+    [ x+66,  y, 22, 20,  -6, -12, ANIM]
 }
 
 //7 Template Reversed Alt
@@ -520,15 +535,15 @@ template template_7_alt_r(x, y) {
     //left_x, upper_y, width, height, offset_x, offset_y
     //                            more negative to shift left
     //                                            more negative to shift up
-    [ x,        y,        8,        29,        -3,            -15, ANIM]
-    [ x+9,      y,        22,        20,        -16,        -11, ANIM]
-    [ x+32,     y,        33,        16,        -16,        -12, ANIM]
-    [ x+66,     y,        22,        20,        -6,            -12, ANIM]
+    [ x,     y, 8,  29, -3,  -15, ANIM]
+    [ x+9,   y, 22, 20, -16, -11, ANIM]
+    [ x+32,  y, 33, 16, -16, -12, ANIM]
+    [ x+66,  y, 22, 20, -6,  -12, ANIM]
 
-    [ x+89,     y,        8,        29,        -3,            -16, ANIM]
-    [ x+98,     y,        22,        20,        -14,        -12, ANIM]
-    [ x+121,    y,        33,        16,        -12,        -12, ANIM]
-    [ x+155,    y,        22,        20,        -4,        -11, ANIM]
+    [ x+89,  y,	8,  29, -3,  -16, ANIM]
+    [ x+98,  y, 22, 20, -14, -12, ANIM]
+    [ x+121, y, 33, 16, -12, -12, ANIM]
+    [ x+155, y, 22, 20, -4,  -11, ANIM]
 }
 
 //7 Template
@@ -2093,6 +2108,234 @@ item(FEAT_TRAINS, Item_R27_Liv1, R27_ID_Liv1) {
 		running_cost_factor:            R27_RunningCostFactor;
     }
 }
+
+//ID
+const CTA_2000_ID = 6760;
+//introduction_date
+const CTA_2000_IntroDate = date(1964, 1, 1);
+//speed
+//Add (* 161 / 100) to the value to convert to MPH
+const CTA_2000_Speed = 65;
+//cost_factor
+const CTA_2000_CostFactor = 15;
+//running_cost_factor
+const CTA_2000_RunningCostFactor = 39;
+//Cargo Capacity
+const CTA_2000_CargoCapacity = 132;
+//power
+const CTA_2000_Power = 800; //MU power is for 2 individual vehicles
+//weight
+const CTA_2000_Weight = 21;
+
+//CTA_2000_Liv0
+spriteset(spriteset_CTA_2000_Liv0_Purchase,   "gfx/CTA_2000_Liv0.png") {template_Purchase_66mu(7, 21)}
+spriteset(spriteset_CTA_2000_Liv0_Lead,   "gfx/CTA_2000_Liv0.png") {template_6(7, 39)}
+spriteset(spriteset_CTA_2000_Liv0_Lead_Alt,   "gfx/CTA_2000_Liv0.png") {template_6_alt(7, 39)}
+spriteset(spriteset_CTA_2000_Liv0_Trailer,   "gfx/CTA_2000_Liv0.png") {template_6_repeat(7, 69)}
+
+switch(FEAT_TRAINS, SELF, switch_CTA_2000_Liv0_last, vehicle_is_flipped){ //only required for MUs under 8 long
+    0:    spriteset_CTA_2000_Liv0_Lead;
+    spriteset_CTA_2000_Liv0_Lead_Alt;
+}
+
+const CTA_2000_ID_Liv0 = (CTA_2000_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_CTA_2000_Liv0, CTA_2000_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_CTA_2000);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              CTA_2000_IntroDate;		
+		length:                         6;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							CTA_2000_Speed mph;
+		cost_factor:					(CTA_2000_CostFactor * 2);
+		running_cost_factor:			(CTA_2000_RunningCostFactor * 2);
+		cargo_capacity: 				(CTA_2000_CargoCapacity / param_capacity_mod);
+		power:							CTA_2000_Power;
+		weight:							CTA_2000_Weight;
+
+//        variant_group: 					Item_CTA_2000_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_CTA_2000_Liv0_last;
+        purchase: 						spriteset_CTA_2000_Liv0_Purchase;
+        additional_text: 				string(STR_INFO_CTA_2000);
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_CTA_2000_Liv0_Trailer;
+        length:                         6;
+        cargo_capacity:                 (CTA_2000_CargoCapacity / param_capacity_mod);
+        power:                          (CTA_2000_Power /2);
+		weight:                        	CTA_2000_Weight;
+		running_cost_factor:            CTA_2000_RunningCostFactor;
+    }
+}
+
+//ID
+const R32_ID = 6840;
+//introduction_date
+const R32_IntroDate = date(1964, 1, 1);
+//speed
+//Add (* 161 / 100) to the value to convert to MPH
+const R32_Speed = 55;
+//cost_factor
+const R32_CostFactor = 20;
+//running_cost_factor
+const R32_RunningCostFactor = 51;
+//Cargo Capacity
+const R32_CargoCapacity = 176;
+//power
+const R32_Power = 920; //MU power is for 2 individual vehicles
+//weight
+const R32_Weight = 36;
+
+//R32_Liv0
+spriteset(spriteset_R32_Liv0_Purchase,   "gfx/R32_Liv0.png") {template_Purchase_88mu(7, 21)}
+spriteset(spriteset_R32_Liv0_Lead,   "gfx/R32_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_R32_Liv0_Lead_r,   "gfx/R32_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_R32_Liv0_Trailer,   "gfx/R32_Liv0.png") {template_8_repeat(7, 69)}
+
+const R32_ID_Liv0 = (R32_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_R32_Liv0, R32_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_R32);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              R32_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R32_Speed mph;
+		cost_factor:					(R32_CostFactor * 2);
+		running_cost_factor:			(R32_RunningCostFactor * 2);
+		cargo_capacity: 				(R32_CargoCapacity / param_capacity_mod);
+		power:							R32_Power;
+		weight:							R32_Weight;
+
+//        variant_group: 					Item_R32_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_R32_Liv0_Lead;
+        purchase: 						spriteset_R32_Liv0_Purchase;
+        additional_text: 				string(STR_INFO_R32);
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_R32_Liv0_Trailer;
+        length:                         8;
+        cargo_capacity:                 (R32_CargoCapacity / param_capacity_mod);
+        power:                          (R32_Power /2);
+		weight:                        	R32_Weight;
+		running_cost_factor:            R32_RunningCostFactor;
+    }
+}
+
+//R32_Liv1
+spriteset(spriteset_R32_Liv1_Purchase,   "gfx/R32_Liv1.png") {template_Purchase_88mu(7, 21)}
+spriteset(spriteset_R32_Liv1_Lead,   "gfx/R32_Liv1.png") {template_8(7, 39)}
+spriteset(spriteset_R32_Liv1_Lead_r,   "gfx/R32_Liv1.png") {template_8_r(7, 39)}
+spriteset(spriteset_R32_Liv1_Trailer,   "gfx/R32_Liv1.png") {template_8_repeat(7, 69)}
+
+const R32_ID_Liv1 = (R32_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_R32_Liv1, R32_ID_Liv1) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_R32);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              R32_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R32_Speed mph;
+		cost_factor:					(R32_CostFactor * 2);
+		running_cost_factor:			(R32_RunningCostFactor * 2);
+		cargo_capacity: 				(R32_CargoCapacity / param_capacity_mod);
+		power:							R32_Power;
+		weight:							R32_Weight;
+
+        variant_group: 					Item_R32_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_R32_Liv1_Lead;
+        purchase: 						spriteset_R32_Liv1_Purchase;
+        additional_text: 				string(STR_INFO_R32);
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_R32_Liv1_Trailer;
+        length:                         8;
+        cargo_capacity:                 (R32_CargoCapacity / param_capacity_mod);
+        power:                          (R32_Power /2);
+		weight:                        	R32_Weight;
+		running_cost_factor:            R32_RunningCostFactor;
+    }
+}
+
 
 //ID
 const HSC_1200Series_ID = 7680;

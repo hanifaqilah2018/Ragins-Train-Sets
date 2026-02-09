@@ -1248,7 +1248,7 @@ const Comeng_VSet_RunningCostFactor = 105;
 //Cargo Capacity
 const Comeng_VSet_CargoCapacity = 130;
 //power
-const Comeng_VSet_Power = 720;
+const Comeng_VSet_Power = 400;
 //weight
 const Comeng_VSet_Weight = 50;
 

@@ -50,38 +50,44 @@ STR_MU_TRAILER_INFO:{GOLD}Attach this to a another multiple unit to make it long
 
 
 STR_NAME_BROOKLYNGATECAR:Gate Elevated Car
-STR_INFO_BROOKLYNGATECAR:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Early NYC & Chicago Elevated Gate Cars
+STR_INFO_BROOKLYNGATECAR:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Early NYC & Chicago Elevated Gate Cars
 
 STR_NAME_PRESSEDSTEEL_ELCAR:Pressed Steel El Car
-STR_INFO_PRESSEDSTEEL_ELCAR:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Early Boston & Philadelphia Elevated Cars
+STR_INFO_PRESSEDSTEEL_ELCAR:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Early Boston & Philadelphia Elevated Cars
 
 STR_NAME_COMPOSITE:Composite Car
-STR_INFO_COMPOSITE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC Composite & Gibbs car
+STR_INFO_COMPOSITE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC Composite & Gibbs car
 
 STR_NAME_ARNINE:AC&F Arnine
-STR_INFO_ARNINE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R1-R9 cars
+STR_INFO_ARNINE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R1-R9 cars
 
 STR_NAME_ABSTANDARD:AB Standard (Single)
-STR_INFO_ABSTANDARD:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC AB Standard {}{GOLD}Formed the Basis of Sydney's Suburban Cars
+STR_INFO_ABSTANDARD:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC AB Standard {}{GOLD}Formed the Basis of Sydney's Suburban Cars
 STR_NAME_ABSTANDARD_MU:AB Standard
-STR_INFO_ABSTANDARD_MU:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC AB Standard {}{GOLD}Formed the Basis of Sydney's Suburban Cars
+STR_INFO_ABSTANDARD_MU:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC AB Standard {}{GOLD}Formed the Basis of Sydney's Suburban Cars
 
 STR_NAME_R11:Budd R11
-STR_INFO_R11:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R11/34 cars
+STR_INFO_R11:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R11/34 cars
 
 STR_NAME_R16:AC&F R16
-STR_INFO_R16:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R16
+STR_INFO_R16:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R16
 
 STR_NAME_R27:SLCC R27
-STR_INFO_R27:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R27 & R30
+STR_INFO_R27:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R27 & R30
+
+STR_NAME_CTA_2000:Pullman 2000 Series
+STR_INFO_CTA_2000:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Chicago's 2000 Series Cars
+
+STR_NAME_R32:Budd Brightliner
+STR_INFO_R32:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R32 {}{GOLD}Budd under-bid on these hoping they'd get future orders. They did not.
 
 STR_NAME_HSC_1200SERIES:Hawker-Siddely 1200 Series
-STR_INFO_HSC_1200SERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Orange line Hawker-Siddely Cars
+STR_INFO_HSC_1200SERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Orange line Hawker-Siddely Cars
 
 
 
 STR_NAME_HSC_1200SERIES_DV:Hawker-Siddely 1200 Series Dual-Voltage
-STR_INFO_HSC_1200SERIES_DV:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {BLUE}DC Overhead Line {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Orange line Hawker-Siddely Cars with proposed OHLE equipment
+STR_INFO_HSC_1200SERIES_DV:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Orange line Hawker-Siddely Cars with proposed OHLE equipment
 
 
 
@@ -107,8 +113,7 @@ STR_INFO_PULLMAN_MBTA_ORANGE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}
 STR_NAME_SLCC_150SERIES:SLCC 1-50 Series
 STR_INFO_SLCC_150SERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Chicago's 1-50 Series Cars
 
-STR_NAME_PULLMAN_2000SERIES:Pullman 2000 Series
-STR_INFO_PULLMAN_2000SERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Chicago's 2000 Series Cars
+
 
 STR_NAME_BUDD_2200SERIES:Budd 2200 Series
 STR_INFO_BUDD_2200SERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Chicago's 2200 Series Cars
@@ -157,9 +162,6 @@ STR_INFO_TORONTO_MSERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Marr
 
 STR_NAME_PULLMAN_MBTA_RED:Pullman 1400 Series
 STR_INFO_PULLMAN_MBTA_RED:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Red Line Pullman Cars
-
-STR_NAME_BUDD_R32:Budd Brightliner
-STR_INFO_BUDD_R32:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R32 {}{GOLD}Budd under-bid on these hoping they'd get future orders. They did not.
 
 STR_NAME_TORONTO_HSERIES:Hawker-Siddely RTC-75
 STR_INFO_TORONTO_HSERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Toronto H-Series Cars
