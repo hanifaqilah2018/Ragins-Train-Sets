@@ -67,10 +67,10 @@ STR_NAME_ABSTANDARD_MU:AB Standard
 STR_INFO_ABSTANDARD_MU:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC AB Standard {}{GOLD}Formed the Basis of Sydney's Suburban Cars
 
 STR_NAME_R11:Budd R11
-STR_INFO_R11:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R11/34 cars
+STR_INFO_R11:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R11/34 cars
 
 STR_NAME_R16:AC&F R16
-STR_INFO_R16:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R16
+STR_INFO_R16:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R16
 
 STR_NAME_R27:SLCC R27
 STR_INFO_R27:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R27 & R30
@@ -94,7 +94,13 @@ STR_NAME_HSC_1200SERIES:Hawker-Siddely 1200 Series
 STR_INFO_HSC_1200SERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Orange line Hawker-Siddely Cars
 
 STR_NAME_R68:Amarail R68
-STR_INFO_R68:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R68 & R68A
+STR_INFO_R68:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R68 & R68A
+
+STR_NAME_R143:Kawasaki R143
+STR_INFO_R143:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R143
+
+STR_NAME_R211:Kawasaki R211
+STR_INFO_R211:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R211
 
 
 
@@ -206,9 +212,6 @@ STR_INFO_BREDA_A650:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married P
 STR_NAME_TORONTO_TSERIES:Bombardier RTC-75
 STR_INFO_TORONTO_TSERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Toronto T-Series Cars
 
-STR_NAME_KAWASAKI_R143:Kawasaki R143
-STR_INFO_KAWASAKI_R143:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R143/R160/R179
-
 STR_NAME_BOMBARDIER_ROCKET:Bombardier Movia Rocket
 STR_INFO_BOMBARDIER_ROCKET:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Toronto Rocket
 
@@ -220,6 +223,3 @@ STR_INFO_CRRC_MBTA_ORANGE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Mar
 
 STR_NAME_CRRC_MBTA_RED:CRRC 1900 Series
 STR_INFO_CRRC_MBTA_RED:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Red line CRRC Cars
-
-STR_NAME_KAWASAKI_R211:Kawasaki R211
-STR_INFO_KAWASAKI_R211:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R211
