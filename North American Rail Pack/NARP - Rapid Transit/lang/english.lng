@@ -81,8 +81,20 @@ STR_INFO_CTA_2000:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pai
 STR_NAME_R32:Budd Brightliner
 STR_INFO_R32:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R32 {}{GOLD}Budd under-bid on these hoping they'd get future orders. They did not.
 
+STR_NAME_R40:SLCC R40
+STR_INFO_R40:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R40
+
+STR_NAME_R42:SLCC R42
+STR_INFO_R42:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R42
+
+STR_NAME_R44:SLCC R44
+STR_INFO_R44:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R44 {}{GOLD}Last large order that the St. Louis Car Company built.
+
 STR_NAME_HSC_1200SERIES:Hawker-Siddely 1200 Series
 STR_INFO_HSC_1200SERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Orange line Hawker-Siddely Cars
+
+STR_NAME_R68:Amarail R68
+STR_INFO_R68:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R68 & R68A
 
 
 
@@ -166,8 +178,7 @@ STR_INFO_PULLMAN_MBTA_RED:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Mar
 STR_NAME_TORONTO_HSERIES:Hawker-Siddely RTC-75
 STR_INFO_TORONTO_HSERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Toronto H-Series Cars
 
-STR_NAME_SLCC_R40:SLCC R40
-STR_INFO_SLCC_R40:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R40
+
 
 STR_NAME_PULLMAN_SILVERBIRD_SINGLE:Pullman Silverbird (Single Unit)
 STR_INFO_PULLMAN_SILVERBIRD_SINGLE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car  {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Red Line 1500 Series
@@ -175,8 +186,6 @@ STR_INFO_PULLMAN_SILVERBIRD_SINGLE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: 
 STR_NAME_PULLMAN_SILVERBIRD_PAIR:Pullman Silverbird
 STR_INFO_PULLMAN_SILVERBIRD_PAIR:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Red Line 1500 Series
 
-STR_NAME_SLCC_R44:SLCC R44
-STR_INFO_SLCC_R44:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R40A, R42, R44, R46 {}{}{GOLD}Last large order that the St. Louis Car Company built.
 
 STR_NAME_KAWASAKI_BIV_SINGLE:Kawasaki B-IV (Single Unit)
 STR_INFO_KAWASAKI_BIV_SINGLE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car  {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}SEPTA Broad Street Line B-IV cars
@@ -187,8 +196,6 @@ STR_INFO_KAWASAKI_BIV_PAIR:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Ma
 STR_NAME_BUDD_UTV:Budd Universal Transit Vehicle
 STR_INFO_BUDD_UTV:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Budd UTV {}{}{GOLD}The last cars built by Budd
 
-STR_NAME_AMARAIL_R68:Amarail R68
-STR_INFO_AMARAIL_R68:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R68 & R68A
 
 STR_NAME_BOMBARDIER_1800SERIES:Bombardier 1800 Series
 STR_INFO_BOMBARDIER_1800SERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Red line Bombardier Cars

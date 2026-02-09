@@ -2336,6 +2336,369 @@ item(FEAT_TRAINS, Item_R32_Liv1, R32_ID_Liv1) {
     }
 }
 
+//ID
+const R40_ID = 7000;
+//introduction_date
+const R40_IntroDate = date(1968, 1, 1);
+//speed
+//Add (* 161 / 100) to the value to convert to MPH
+const R40_Speed = 55;
+//cost_factor
+const R40_CostFactor = 20;
+//running_cost_factor
+const R40_RunningCostFactor = 52;
+//Cargo Capacity
+const R40_CargoCapacity = 179;
+//power
+const R40_Power = 920; //MU power is for 2 individual vehicles
+//weight
+const R40_Weight = 35;
+
+//R40_Liv0
+spriteset(spriteset_R40_Liv0_Purchase,   "gfx/R40_Liv0.png") {template_Purchase_88mu(7, 21)}
+spriteset(spriteset_R40_Liv0_Lead,   "gfx/R40_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_R40_Liv0_Lead_r,   "gfx/R40_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_R40_Liv0_Trailer,   "gfx/R40_Liv0.png") {template_8_repeat(7, 69)}
+
+const R40_ID_Liv0 = (R40_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_R40_Liv0, R40_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_R40);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              R40_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R40_Speed mph;
+		cost_factor:					(R40_CostFactor * 2);
+		running_cost_factor:			(R40_RunningCostFactor * 2);
+		cargo_capacity: 				(R40_CargoCapacity / param_capacity_mod);
+		power:							R40_Power;
+		weight:							R40_Weight;
+
+//        variant_group: 					Item_R40_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_R40_Liv0_Lead;
+        purchase: 						spriteset_R40_Liv0_Purchase;
+        additional_text: 				string(STR_INFO_R40);
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_R40_Liv0_Trailer;
+        length:                         8;
+        cargo_capacity:                 (R40_CargoCapacity / param_capacity_mod);
+        power:                          (R40_Power /2);
+		weight:                        	R40_Weight;
+		running_cost_factor:            R40_RunningCostFactor;
+    }
+}
+
+//ID
+const R42_ID = 7120;
+//introduction_date
+const R42_IntroDate = date(1969, 1, 1);
+//speed
+//Add (* 161 / 100) to the value to convert to MPH
+const R42_Speed = 55;
+//cost_factor
+const R42_CostFactor = 20;
+//running_cost_factor
+const R42_RunningCostFactor = 52;
+//Cargo Capacity
+const R42_CargoCapacity = 179;
+//power
+const R42_Power = 920; //MU power is for 2 individual vehicles
+//weight
+const R42_Weight = 33;
+
+//R42_Liv0
+spriteset(spriteset_R42_Liv0_Purchase,   "gfx/R42_Liv0.png") {template_Purchase_88mu(7, 21)}
+spriteset(spriteset_R42_Liv0_Lead,   "gfx/R42_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_R42_Liv0_Lead_r,   "gfx/R42_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_R42_Liv0_Trailer,   "gfx/R42_Liv0.png") {template_8_repeat(7, 69)}
+
+const R42_ID_Liv0 = (R42_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_R42_Liv0, R42_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_R42);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              R42_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R42_Speed mph;
+		cost_factor:					(R42_CostFactor * 2);
+		running_cost_factor:			(R42_RunningCostFactor * 2);
+		cargo_capacity: 				(R42_CargoCapacity / param_capacity_mod);
+		power:							R42_Power;
+		weight:							R42_Weight;
+
+//        variant_group: 					Item_R42_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_R42_Liv0_Lead;
+        purchase: 						spriteset_R42_Liv0_Purchase;
+        additional_text: 				string(STR_INFO_R42);
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_R42_Liv0_Trailer;
+        length:                         8;
+        cargo_capacity:                 (R42_CargoCapacity / param_capacity_mod);
+        power:                          (R42_Power /2);
+		weight:                        	R42_Weight;
+		running_cost_factor:            R42_RunningCostFactor;
+    }
+}
+
+//R42_Liv1
+spriteset(spriteset_R42_Liv1_Purchase,   "gfx/R42_Liv1.png") {template_Purchase_88mu(7, 21)}
+spriteset(spriteset_R42_Liv1_Lead,   "gfx/R42_Liv1.png") {template_8(7, 39)}
+spriteset(spriteset_R42_Liv1_Lead_r,   "gfx/R42_Liv1.png") {template_8_r(7, 39)}
+spriteset(spriteset_R42_Liv1_Trailer,   "gfx/R42_Liv1.png") {template_8_repeat(7, 69)}
+
+const R42_ID_Liv1 = (R42_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_R42_Liv1, R42_ID_Liv1) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_R42);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              R42_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R42_Speed mph;
+		cost_factor:					(R42_CostFactor * 2);
+		running_cost_factor:			(R42_RunningCostFactor * 2);
+		cargo_capacity: 				(R42_CargoCapacity / param_capacity_mod);
+		power:							R42_Power;
+		weight:							R42_Weight;
+
+        variant_group: 					Item_R42_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_R42_Liv1_Lead;
+        purchase: 						spriteset_R42_Liv1_Purchase;
+        additional_text: 				string(STR_INFO_R42);
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_R42_Liv1_Trailer;
+        length:                         8;
+        cargo_capacity:                 (R42_CargoCapacity / param_capacity_mod);
+        power:                          (R42_Power /2);
+		weight:                        	R42_Weight;
+		running_cost_factor:            R42_RunningCostFactor;
+    }
+}
+
+//ID
+const R44_ID = 7360;
+//introduction_date
+const R44_IntroDate = date(1971, 1, 1);
+//speed
+//Add (* 161 / 100) to the value to convert to MPH
+const R44_Speed = 55;
+//cost_factor
+const R44_CostFactor = 20;
+//running_cost_factor
+const R44_RunningCostFactor = 53;
+//Cargo Capacity
+const R44_CargoCapacity = 181;
+//power
+const R44_Power = 920; //MU power is for 2 individual vehicles
+//weight
+const R44_Weight = 39;
+
+//R44_Liv0
+spriteset(spriteset_R44_Liv0_Purchase,   "gfx/R44_Liv0.png") {template_Purchase_88mu(7, 21)}
+spriteset(spriteset_R44_Liv0_Lead,   "gfx/R44_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_R44_Liv0_Lead_r,   "gfx/R44_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_R44_Liv0_Trailer,   "gfx/R44_Liv0.png") {template_8_repeat(7, 69)}
+
+const R44_ID_Liv0 = (R44_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_R44_Liv0, R44_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_R44);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              R44_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R44_Speed mph;
+		cost_factor:					(R44_CostFactor * 2);
+		running_cost_factor:			(R44_RunningCostFactor * 2);
+		cargo_capacity: 				(R44_CargoCapacity / param_capacity_mod);
+		power:							R44_Power;
+		weight:							R44_Weight;
+
+//        variant_group: 					Item_R44_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_R44_Liv0_Lead;
+        purchase: 						spriteset_R44_Liv0_Purchase;
+        additional_text: 				string(STR_INFO_R44);
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_R44_Liv0_Trailer;
+        length:                         8;
+        cargo_capacity:                 (R44_CargoCapacity / param_capacity_mod);
+        power:                          (R44_Power /2);
+		weight:                        	R44_Weight;
+		running_cost_factor:            R44_RunningCostFactor;
+    }
+}
+
+//R44_Liv1
+spriteset(spriteset_R44_Liv1_Purchase,   "gfx/R44_Liv1.png") {template_Purchase_88mu(7, 21)}
+spriteset(spriteset_R44_Liv1_Lead,   "gfx/R44_Liv1.png") {template_8(7, 39)}
+spriteset(spriteset_R44_Liv1_Lead_r,   "gfx/R44_Liv1.png") {template_8_r(7, 39)}
+spriteset(spriteset_R44_Liv1_Trailer,   "gfx/R44_Liv1.png") {template_8_repeat(7, 69)}
+
+const R44_ID_Liv1 = (R44_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_R44_Liv1, R44_ID_Liv1) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_R44);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              R44_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R44_Speed mph;
+		cost_factor:					(R44_CostFactor * 2);
+		running_cost_factor:			(R44_RunningCostFactor * 2);
+		cargo_capacity: 				(R44_CargoCapacity / param_capacity_mod);
+		power:							R44_Power;
+		weight:							R44_Weight;
+
+        variant_group: 					Item_R44_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_R44_Liv1_Lead;
+        purchase: 						spriteset_R44_Liv1_Purchase;
+        additional_text: 				string(STR_INFO_R44);
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_R44_Liv1_Trailer;
+        length:                         8;
+        cargo_capacity:                 (R44_CargoCapacity / param_capacity_mod);
+        power:                          (R44_Power /2);
+		weight:                        	R44_Weight;
+		running_cost_factor:            R44_RunningCostFactor;
+    }
+}
 
 //ID
 const HSC_1200Series_ID = 7680;
@@ -2415,6 +2778,76 @@ item(FEAT_TRAINS, Item_HSC_1200Series_Liv0, HSC_1200Series_ID_Liv0) {
 		weight:                        	HSC_1200Series_Weight;
 		running_cost_factor:            HSC_1200Series_RunningCostFactor;
     }
+}
+
+//ID
+const R68_ID = 8000;
+//introduction_date
+const R68_IntroDate = date(1986, 1, 1);
+//speed
+const R68_Speed = 55;
+//cost_factor
+const R68_CostFactor = 21;
+//running_cost_factor
+const R68_RunningCostFactor = 56;
+//Cargo Capacity
+const R68_CargoCapacity = 191;
+//power
+const R68_Power = 460;
+//weight
+const R68_Weight = 42;
+
+//R68_Liv0
+spriteset(spriteset_R68_Liv0_Purchase,   "gfx/R68_Liv0.png") {template_Purchase_8(7, 21)}
+spriteset(spriteset_R68_Liv0,   "gfx/R68_Liv0.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
+
+const R68_ID_Liv0 = (R68_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_R68_Liv0, R68_ID_Liv0) {
+    property {		
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_R68);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              R68_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							R68_Speed mph;
+		cost_factor:					R68_CostFactor;
+		running_cost_factor:			R68_RunningCostFactor;
+		cargo_capacity: 				R68_CargoCapacity;
+		power:							R68_Power;
+		weight:							R68_Weight;
+
+//        variant_group: 					Item_R68_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_R68_Liv0;
+        purchase: 						spriteset_R68_Liv0_Purchase;
+        additional_text: 				string(STR_INFO_R68);
+		reverse_build_probability: 		return 50;
+}
 }
 
 //ID
@@ -2685,7 +3118,7 @@ item(FEAT_TRAINS, Item_HSC_1200Series_DV_Liv0, HSC_1200Series_DV_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
-		track_type:                    	[OHLE_AC, SAA3];
+		track_type:                    	[OHLE_DC, SAA3];
 		running_cost_base:              RUNNING_COST_ELECTRIC;
         engine_class:                   ENGINE_CLASS_ELECTRIC;
         ai_special_flag:                AI_FLAG_PASSENGER;
