@@ -1442,7 +1442,183 @@ item(FEAT_TRAINS, Item_ABStandard_MU_Liv0, ABStandard_MU_ID_Liv0) {
 }
 
 //ID
-const Arnine_ID = 5600;
+const Brill_B1_ID = 5600;
+//introduction_date
+const Brill_B1_IntroDate = date(1928, 1, 1);
+//speed
+const Brill_B1_Speed = 55;
+//cost_factor
+const Brill_B1_CostFactor = 17;
+//running_cost_factor
+const Brill_B1_RunningCostFactor = 44;
+//Cargo Capacity
+const Brill_B1_CargoCapacity = 152;
+//power
+const Brill_B1_Power = 360;
+//weight
+const Brill_B1_Weight = 38;
+
+//Brill_B1_Liv0
+spriteset(spriteset_Brill_B1_Liv0_Purchase,   "gfx/Brill_B1_Liv0.png") {template_Purchase_8(7, 21)}
+spriteset(spriteset_Brill_B1_Liv0,   "gfx/Brill_B1_Liv0.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
+
+const Brill_B1_ID_Liv0 = (Brill_B1_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_Brill_B1_Liv0, Brill_B1_ID_Liv0) {
+    property {		
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_BRILL_B1);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Brill_B1_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Brill_B1_Speed mph;
+		cost_factor:					Brill_B1_CostFactor;
+		running_cost_factor:			Brill_B1_RunningCostFactor;
+		cargo_capacity: 				Brill_B1_CargoCapacity;
+		power:							Brill_B1_Power;
+		weight:							Brill_B1_Weight;
+
+//        variant_group: 					Item_Brill_B1_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_Brill_B1_Liv0;
+        purchase: 						spriteset_Brill_B1_Liv0_Purchase;
+        additional_text: 				string(STR_INFO_BRILL_B1);
+		reverse_build_probability: 		return 50;
+}
+}
+
+//Brill_B1_Liv1
+spriteset(spriteset_Brill_B1_Liv1_Purchase,   "gfx/Brill_B1_Liv1.png") {template_Purchase_8(7, 21)}
+spriteset(spriteset_Brill_B1_Liv1,   "gfx/Brill_B1_Liv1.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
+
+const Brill_B1_ID_Liv1 = (Brill_B1_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_Brill_B1_Liv1, Brill_B1_ID_Liv1) {
+    property {		
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_BRILL_B1);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Brill_B1_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Brill_B1_Speed mph;
+		cost_factor:					Brill_B1_CostFactor;
+		running_cost_factor:			Brill_B1_RunningCostFactor;
+		cargo_capacity: 				Brill_B1_CargoCapacity;
+		power:							Brill_B1_Power;
+		weight:							Brill_B1_Weight;
+
+        variant_group: 					Item_Brill_B1_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_Brill_B1_Liv1;
+        purchase: 						spriteset_Brill_B1_Liv1_Purchase;
+        additional_text: 				string(STR_INFO_BRILL_B1);
+		reverse_build_probability: 		return 50;
+}
+}
+
+//Brill_B1_Liv2
+spriteset(spriteset_Brill_B1_Liv2_Purchase,   "gfx/Brill_B1_Liv2.png") {template_Purchase_8(7, 21)}
+spriteset(spriteset_Brill_B1_Liv2,   "gfx/Brill_B1_Liv2.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
+
+const Brill_B1_ID_Liv2 = (Brill_B1_ID + Liv2_ID);
+
+item(FEAT_TRAINS, Item_Brill_B1_Liv2, Brill_B1_ID_Liv2) {
+    property {		
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_BRILL_B1);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Brill_B1_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Brill_B1_Speed mph;
+		cost_factor:					Brill_B1_CostFactor;
+		running_cost_factor:			Brill_B1_RunningCostFactor;
+		cargo_capacity: 				Brill_B1_CargoCapacity;
+		power:							Brill_B1_Power;
+		weight:							Brill_B1_Weight;
+
+        variant_group: 					Item_Brill_B1_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_Brill_B1_Liv2;
+        purchase: 						spriteset_Brill_B1_Liv2_Purchase;
+        additional_text: 				string(STR_INFO_BRILL_B1);
+		reverse_build_probability: 		return 50;
+}
+}
+
+//ID
+const Arnine_ID = 5640;
 //introduction_date
 const Arnine_IntroDate = date(1931, 1, 1);
 //speed
