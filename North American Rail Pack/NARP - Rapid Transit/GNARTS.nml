@@ -2957,6 +2957,255 @@ item(FEAT_TRAINS, Item_HSC_1200Series_Liv0, HSC_1200Series_ID_Liv0) {
 }
 
 //ID
+const Kawasaki_B4_ID = 7800;
+//introduction_date
+const Kawasaki_B4_IntroDate = date(1982, 1, 1);
+//speed
+const Kawasaki_B4_Speed = 45;
+//cost_factor
+const Kawasaki_B4_CostFactor = 21;
+//running_cost_factor
+const Kawasaki_B4_RunningCostFactor = 55;
+//Cargo Capacity
+const Kawasaki_B4_CargoCapacity = 187;
+//power
+const Kawasaki_B4_Power = 460;
+const Kawasaki_B4_Power_MU = (Kawasaki_B4_Power * 2); //MU power is for 2 individual vehicles
+//weight
+const Kawasaki_B4_Weight = 32;
+
+//Kawasaki_B4_Liv0
+spriteset(spriteset_Kawasaki_B4_Liv0_Purchase,   "gfx/Kawasaki_B4_Liv0.png") {template_Purchase_8(7, 21)}
+spriteset(spriteset_Kawasaki_B4_Liv0,   "gfx/Kawasaki_B4_Liv0.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
+
+const Kawasaki_B4_ID_Liv0 = (Kawasaki_B4_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_Kawasaki_B4_Liv0, Kawasaki_B4_ID_Liv0) {
+    property {		
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_KAWASAKI_B4);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Kawasaki_B4_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Kawasaki_B4_Speed mph;
+		cost_factor:					Kawasaki_B4_CostFactor;
+		running_cost_factor:			Kawasaki_B4_RunningCostFactor;
+		cargo_capacity: 				Kawasaki_B4_CargoCapacity;
+		power:							Kawasaki_B4_Power;
+		weight:							Kawasaki_B4_Weight;
+
+//        variant_group: 					Item_Kawasaki_B4_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_Kawasaki_B4_Liv0;
+        purchase: 						spriteset_Kawasaki_B4_Liv0_Purchase;
+        additional_text: 				string(STR_INFO_KAWASAKI_B4);
+		reverse_build_probability: 		return 50;
+}
+}
+
+//Kawasaki_B4_MU_Liv0
+spriteset(spriteset_Kawasaki_B4_MU_Liv0_Purchase,   "gfx/Kawasaki_B4_Liv0.png") {template_Purchase_88mu(187, 21)}
+spriteset(spriteset_Kawasaki_B4_MU_Liv0_Lead,   "gfx/Kawasaki_B4_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_Kawasaki_B4_MU_Liv0_Trailer,   "gfx/Kawasaki_B4_Liv0.png") {template_8_repeat(187, 69)}
+
+const Kawasaki_B4_MU_ID_Liv0 = (Kawasaki_B4_ID_Liv0 + 40);
+
+item(FEAT_TRAINS, Item_Kawasaki_B4_MU_Liv0, Kawasaki_B4_MU_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_KAWASAKI_B4_MU);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Kawasaki_B4_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Kawasaki_B4_Speed mph;
+		cost_factor:					(Kawasaki_B4_CostFactor * 2);
+		running_cost_factor:			(Kawasaki_B4_RunningCostFactor * 2);
+		cargo_capacity: 				(Kawasaki_B4_CargoCapacity / param_capacity_mod);
+		power:							Kawasaki_B4_Power_MU;
+		weight:							Kawasaki_B4_Weight;
+
+//        variant_group: 					Item_Kawasaki_B4_MU_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_Kawasaki_B4_MU_Liv0_Lead;
+        purchase: 						spriteset_Kawasaki_B4_MU_Liv0_Purchase;
+        additional_text: 				string(STR_INFO_KAWASAKI_B4_MU);
+		loading_speed:					return Heavy_Metro_LoadingSpeed;
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_Kawasaki_B4_MU_Liv0_Trailer;
+        length:                         8;
+        cargo_capacity:                 (Kawasaki_B4_CargoCapacity / param_capacity_mod);
+        power:                          (Kawasaki_B4_Power_MU / 2);
+		weight:                        	Kawasaki_B4_Weight;
+		running_cost_factor:            Kawasaki_B4_RunningCostFactor;
+    }
+}
+
+//Kawasaki_B4_Liv1
+spriteset(spriteset_Kawasaki_B4_Liv1_Purchase,   "gfx/Kawasaki_B4_Liv1.png") {template_Purchase_8(7, 21)}
+spriteset(spriteset_Kawasaki_B4_Liv1,   "gfx/Kawasaki_B4_Liv1.png") {template_8_repeat(7, 39)} // <- Define a wagon, in this case the cab
+
+const Kawasaki_B4_ID_Liv1 = (Kawasaki_B4_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_Kawasaki_B4_Liv1, Kawasaki_B4_ID_Liv1) {
+    property {		
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_KAWASAKI_B4);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Kawasaki_B4_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Kawasaki_B4_Speed mph;
+		cost_factor:					Kawasaki_B4_CostFactor;
+		running_cost_factor:			Kawasaki_B4_RunningCostFactor;
+		cargo_capacity: 				Kawasaki_B4_CargoCapacity;
+		power:							Kawasaki_B4_Power;
+		weight:							Kawasaki_B4_Weight;
+
+        variant_group: 					Item_Kawasaki_B4_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_Kawasaki_B4_Liv1;
+        purchase: 						spriteset_Kawasaki_B4_Liv1_Purchase;
+        additional_text: 				string(STR_INFO_KAWASAKI_B4);
+		reverse_build_probability: 		return 50;
+}
+}
+
+//Kawasaki_B4_MU_Liv1
+spriteset(spriteset_Kawasaki_B4_MU_Liv1_Purchase,   "gfx/Kawasaki_B4_Liv1.png") {template_Purchase_88mu(187, 21)}
+spriteset(spriteset_Kawasaki_B4_MU_Liv1_Lead,   "gfx/Kawasaki_B4_Liv1.png") {template_8(187, 39)}
+spriteset(spriteset_Kawasaki_B4_MU_Liv1_Trailer,   "gfx/Kawasaki_B4_Liv1.png") {template_8_repeat(187, 69)}
+
+const Kawasaki_B4_MU_ID_Liv1 = (Kawasaki_B4_ID_Liv1 + 40);
+
+item(FEAT_TRAINS, Item_Kawasaki_B4_MU_Liv1, Kawasaki_B4_MU_ID_Liv1) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_KAWASAKI_B4_MU);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Kawasaki_B4_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							Kawasaki_B4_Speed mph;
+		cost_factor:					(Kawasaki_B4_CostFactor * 2);
+		running_cost_factor:			(Kawasaki_B4_RunningCostFactor * 2);
+		cargo_capacity: 				(Kawasaki_B4_CargoCapacity / param_capacity_mod);
+		power:							Kawasaki_B4_Power_MU;
+		weight:							Kawasaki_B4_Weight;
+
+        variant_group: 					Item_Kawasaki_B4_MU_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_Kawasaki_B4_MU_Liv1_Lead;
+        purchase: 						spriteset_Kawasaki_B4_MU_Liv1_Purchase;
+        additional_text: 				string(STR_INFO_KAWASAKI_B4_MU);
+		loading_speed:					return Heavy_Metro_LoadingSpeed;
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_Kawasaki_B4_MU_Liv1_Trailer;
+        length:                         8;
+        cargo_capacity:                 (Kawasaki_B4_CargoCapacity / param_capacity_mod);
+        power:                          (Kawasaki_B4_Power_MU / 2);
+		weight:                        	Kawasaki_B4_Weight;
+		running_cost_factor:            Kawasaki_B4_RunningCostFactor;
+    }
+}
+
+
+//ID
 const R68_ID = 8000;
 //introduction_date
 const R68_IntroDate = date(1986, 1, 1);

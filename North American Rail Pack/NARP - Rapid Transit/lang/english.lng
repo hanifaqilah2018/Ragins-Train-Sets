@@ -99,6 +99,11 @@ STR_INFO_HSC_1200SERIES:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Marri
 STR_NAME_R68:Amarail R68
 STR_INFO_R68:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R68 & R68A
 
+STR_NAME_KAWASAKI_B4:Kawasaki B-IV (Single)
+STR_INFO_KAWASAKI_B4:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car  {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}SEPTA Broad Street Line B-IV cars
+STR_NAME_KAWASAKI_B4_MU:Kawasaki B-IV
+STR_INFO_KAWASAKI_B4_MU:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}SEPTA Broad Street Line B-IV cars
+
 STR_NAME_R143:Kawasaki R143
 STR_INFO_R143:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}NYC R143
 
@@ -196,11 +201,9 @@ STR_NAME_PULLMAN_SILVERBIRD_PAIR:Pullman Silverbird
 STR_INFO_PULLMAN_SILVERBIRD_PAIR:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}MBTA Red Line 1500 Series
 
 
-STR_NAME_KAWASAKI_BIV_SINGLE:Kawasaki B-IV (Single Unit)
-STR_INFO_KAWASAKI_BIV_SINGLE:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Single Car  {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}SEPTA Broad Street Line B-IV cars
 
-STR_NAME_KAWASAKI_BIV_PAIR:Kawasaki B-IV
-STR_INFO_KAWASAKI_BIV_PAIR:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}SEPTA Broad Street Line B-IV cars
+
+
 
 STR_NAME_BUDD_UTV:Budd Universal Transit Vehicle
 STR_INFO_BUDD_UTV:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Married Pair/Multiple Unit {}{BLACK}Power: {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Budd UTV {}{}{GOLD}The last cars built by Budd
