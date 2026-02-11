@@ -1525,7 +1525,266 @@ switch(FEAT_TRAINS, SELF, switch_generic_recolour, hasbit(cargo_classes, CC_BULK
         switch_bulk_recolour;
 }
 
-spriteset(spriteset_8_Blank, "gfx/Blank.png") {template_8_repeat(7, 39)} //ANGERY >:////
+
+spriteset(spriteset_8_Blank, "gfx/blank.png") {template_8_repeat(7, 39)}
+
+//8 Long Flatcar loads
+spriteset(spriteset_Flatbed_8_tarp_a, "gfx/Flatbed_8A.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Flatbed_8_tarp_b, "gfx/Flatbed_8A.png") {template_8_repeat(96, 39)}
+spriteset(spriteset_Flatbed_8_tarp_c, "gfx/Flatbed_8A.png") {template_8_repeat(7, 69)}
+spriteset(spriteset_Flatbed_8_planks_half, "gfx/Flatbed_8A.png") {template_8_repeat(7, 99)}
+spriteset(spriteset_Flatbed_8_planks_full, "gfx/Flatbed_8A.png") {template_8_repeat(96, 99)}
+spriteset(spriteset_Flatbed_8_rods_half, "gfx/Flatbed_8A.png") {template_8_repeat(7, 129)}
+spriteset(spriteset_Flatbed_8_rods_full, "gfx/Flatbed_8A.png") {template_8_repeat(96, 129)}
+spriteset(spriteset_Flatbed_8_beams_half, "gfx/Flatbed_8A.png") {template_8_repeat(187, 39)}
+spriteset(spriteset_Flatbed_8_beams_full, "gfx/Flatbed_8A.png") {template_8_repeat(276, 39)}
+spriteset(spriteset_Flatbed_8_pipes_half, "gfx/Flatbed_8A.png") {template_8_repeat(187, 69)}
+spriteset(spriteset_Flatbed_8_pipes_full, "gfx/Flatbed_8A.png") {template_8_repeat(276, 69)}
+spriteset(spriteset_Flatbed_8_slabs_half, "gfx/Flatbed_8A.png") {template_8_repeat(187, 99)}
+spriteset(spriteset_Flatbed_8_slabs_full, "gfx/Flatbed_8A.png") {template_8_repeat(276, 99)}
+spriteset(spriteset_Flatbed_8_coils_half, "gfx/Flatbed_8A.png") {template_8_repeat(187, 129)}
+spriteset(spriteset_Flatbed_8_coils_full, "gfx/Flatbed_8A.png") {template_8_repeat(276, 129)}
+spriteset(spriteset_Flatbed_8_fmsp, "gfx/Flatbed_8A.png") {template_8(367, 39)}
+spriteset(spriteset_Flatbed_8_ensp, "gfx/Flatbed_8A.png") {template_8(367, 69)}
+spriteset(spriteset_Flatbed_8_cars_a, "gfx/Flatbed_8A.png") {template_8(547, 39)}
+spriteset(spriteset_Flatbed_8_cars_b, "gfx/Flatbed_8A.png") {template_8(547, 69)}
+spriteset(spriteset_Flatbed_8_cars_c, "gfx/Flatbed_8A.png") {template_8(547, 99)}
+spriteset(spriteset_Flatbed_8_cars_d, "gfx/Flatbed_8A.png") {template_8(547, 129)}
+spriteset(spriteset_Flatbed_8_logs_half, "gfx/Flatbed_8b.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Flatbed_8_logs_full, "gfx/Flatbed_8b.png") {template_8_repeat(96, 39)}
+spriteset(spriteset_Flatbed_8_wires_half, "gfx/Flatbed_8b.png") {template_8_repeat(7, 69)}
+spriteset(spriteset_Flatbed_8_wires_full, "gfx/Flatbed_8b.png") {template_8_repeat(96, 69)}
+spriteset(spriteset_Flatbed_8_pipes_alt_half, "gfx/Flatbed_8b.png") {template_8_repeat(7, 99)}
+spriteset(spriteset_Flatbed_8_pipes_alt_full, "gfx/Flatbed_8b.png") {template_8_repeat(96, 99)}
+
+
+//loads spritegroups
+spritegroup spritegroup_Flatbed_8_tarp_a {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_tarp_a];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_tarp_a];
+}
+
+spritegroup spritegroup_Flatbed_8_tarp_b {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_tarp_b];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_tarp_b];
+}
+
+spritegroup spritegroup_Flatbed_8_tarp_c {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_tarp_c];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_tarp_c];
+}
+
+spritegroup spritegroup_Flatbed_8_fmsp {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_fmsp];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_fmsp];
+}
+
+spritegroup spritegroup_Flatbed_8_ensp {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_ensp];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_ensp];
+}
+
+spritegroup spritegroup_Flatbed_8_cars_a {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_cars_a];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_cars_a];
+}
+
+spritegroup spritegroup_Flatbed_8_cars_b {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_cars_b];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_cars_b];
+}
+
+spritegroup spritegroup_Flatbed_8_cars_c {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_cars_c];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_cars_c];
+}
+
+spritegroup spritegroup_Flatbed_8_cars_d {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_cars_d];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_cars_d];
+}
+
+spritegroup spritegroup_Flatbed_8_planks {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_planks_half, spriteset_Flatbed_8_planks_full];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_planks_half, spriteset_Flatbed_8_planks_full];
+}
+
+spritegroup spritegroup_Flatbed_8_rods {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_rods_half, spriteset_Flatbed_8_rods_full];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_rods_half, spriteset_Flatbed_8_rods_full];
+}
+
+spritegroup spritegroup_Flatbed_8_beams {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_beams_half, spriteset_Flatbed_8_beams_full];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_beams_half, spriteset_Flatbed_8_beams_full];
+}
+
+spritegroup spritegroup_Flatbed_8_pipes {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_pipes_half, spriteset_Flatbed_8_pipes_full];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_pipes_half, spriteset_Flatbed_8_pipes_full];
+}
+
+spritegroup spritegroup_Flatbed_8_slabs {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_slabs_half, spriteset_Flatbed_8_slabs_full];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_slabs_half, spriteset_Flatbed_8_slabs_full];
+}
+
+spritegroup spritegroup_Flatbed_8_coils {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_coils_half, spriteset_Flatbed_8_coils_full];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_coils_half, spriteset_Flatbed_8_coils_full];
+}
+
+spritegroup spritegroup_Flatbed_8_logs {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_logs_half, spriteset_Flatbed_8_logs_full];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_logs_half, spriteset_Flatbed_8_logs_full];
+}
+
+spritegroup spritegroup_Flatbed_8_wires {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_wires_half, spriteset_Flatbed_8_wires_full];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_wires_half, spriteset_Flatbed_8_wires_full];
+}
+
+spritegroup spritegroup_Flatbed_8_pipes_alt {
+    loading: [spriteset_8_Blank, spriteset_Flatbed_8_pipes_alt_half, spriteset_Flatbed_8_pipes_alt_full];
+    loaded:  [spriteset_8_Blank, spriteset_Flatbed_8_pipes_alt_half, spriteset_Flatbed_8_pipes_alt_full];
+}
+
+//Flated_8 Recolours
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_rods_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return spritegroup_Flatbed_8_rods;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_beams_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return spritegroup_Flatbed_8_beams;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_pipes_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return spritegroup_Flatbed_8_pipes;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_slabs_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return spritegroup_Flatbed_8_slabs;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_coils_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return spritegroup_Flatbed_8_coils;
+}
+
+//random cargos
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_tarp) {
+	1: spritegroup_Flatbed_8_tarp_a;
+	1: spritegroup_Flatbed_8_tarp_b;
+	1: spritegroup_Flatbed_8_tarp_c;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_metal) {
+	3: switch_Flatbed_8_coils_recolour_load;
+	1: switch_Flatbed_8_rods_recolour_load;
+	1: switch_Flatbed_8_slabs_recolour_load;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_metal_ferrous) {
+	3: switch_Flatbed_8_coils_recolour_load;
+	1: switch_Flatbed_8_rods_recolour_load;
+	1: switch_Flatbed_8_slabs_recolour_load;
+	1: spritegroup_Flatbed_8_pipes_alt;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_metal_prod) {
+	3: switch_Flatbed_8_rods_recolour_load;
+	1: switch_Flatbed_8_pipes_recolour_load; 
+	2: switch_Flatbed_8_slabs_recolour_load;
+	1: spritegroup_Flatbed_8_pipes_alt;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_bdmt) {
+	3: switch_Flatbed_8_beams_recolour_load;
+	1: switch_Flatbed_8_pipes_recolour_load;
+	1: switch_Flatbed_8_slabs_recolour_load;
+	2: random_Flatbed_8_tarp;
+	1: spritegroup_Flatbed_8_pipes_alt;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_pipe) {
+	1: switch_Flatbed_8_pipes_recolour_load;
+	1: spritegroup_Flatbed_8_pipes_alt;
+}
+
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_wdpr) {
+	3: switch_Flatbed_8_rods_recolour_load;
+	1: switch_Flatbed_8_beams_recolour_load;
+	1: switch_Flatbed_8_slabs_recolour_load;
+	2: random_Flatbed_8_tarp;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_ensp) {
+	2: spritegroup_Flatbed_8_ensp;
+	1: spritegroup_Flatbed_8_ensp;
+	2: random_Flatbed_8_tarp;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_fmsp) {
+	2: spritegroup_Flatbed_8_fmsp;
+	1: spritegroup_Flatbed_8_fmsp;
+	2: random_Flatbed_8_tarp;
+}
+
+random_switch (FEAT_TRAINS, SELF, random_Flatbed_8_cars) {
+	1: spritegroup_Flatbed_8_cars_a;
+	1: spritegroup_Flatbed_8_cars_b;
+	1: spritegroup_Flatbed_8_cars_c;
+	1: spritegroup_Flatbed_8_cars_d;
+}
+
+//main cargo switch
+
+switch(FEAT_TRAINS, SELF, switch_Flatbed_8_cargo_type, cargo_type_in_veh) { //feed in
+	IRON: random_Flatbed_8_metal;
+	STEL: random_Flatbed_8_metal_ferrous;
+	METL: random_Flatbed_8_metal_ferrous;
+	ALUM: switch_Flatbed_8_coils_recolour_load;
+	ZINC: random_Flatbed_8_metal;
+	COPR: random_Flatbed_8_metal;
+	CSTI: switch_Flatbed_8_slabs_recolour_load;
+	STST: random_Flatbed_8_metal;
+	STSH: switch_Flatbed_8_slabs_recolour_load;
+	STAL: random_Flatbed_8_metal;
+	STCB: random_Flatbed_8_metal_ferrous;
+	STWR: spritegroup_Flatbed_8_wires;
+	STSE: random_Flatbed_8_metal_prod;
+	NICK: random_Flatbed_8_metal;
+	COBL: random_Flatbed_8_metal;
+	
+	ENSP: random_Flatbed_8_ensp;
+	FMSP: random_Flatbed_8_fmsp;
+	MNSP: random_Flatbed_8_tarp;
+	POWR: random_Flatbed_8_tarp;
+	VPTS: random_Flatbed_8_tarp;
+	MPTS: random_Flatbed_8_tarp;
+	GOOD: random_Flatbed_8_wdpr;
+	
+	BDMT: random_Flatbed_8_bdmt;
+	GLAS: random_Flatbed_8_wdpr;
+	BRCK: random_Flatbed_8_bdmt;
+	PIPE: random_Flatbed_8_pipe;
+	
+	PAPR: random_Flatbed_8_tarp;
+	TYRE: random_Flatbed_8_tarp;
+	WOOL: random_Flatbed_8_tarp;
+	TEXT: random_Flatbed_8_tarp;
+	
+	WOOD: spritegroup_Flatbed_8_logs;
+	TWOD: spritegroup_Flatbed_8_logs;
+	WDPR: spritegroup_Flatbed_8_planks;
+	
+	VEHI: random_Flatbed_8_cars;
+	
+	
+	random_Flatbed_8_tarp;
+}
 
 //EOTD Sprites
 spriteset(spriteset_4_Old_EOTD,   "gfx/4_EOTD.png") {template_4(7, 39)}
@@ -2606,7 +2865,7 @@ const Gen5B_GoodsVan_ID = 3000;
 //introduction_date
 const Gen5B_GoodsVan_IntroDate = date(1970, 1, 1);
 //weight
-const Gen5B_GoodsVan_Weight = 108;
+const Gen5B_GoodsVan_Weight = 45;
 
 //Gen5B_GoodsVan_Liv0
 spriteset(spriteset_Gen5B_GoodsVan_Liv0_Purchase,   "gfx/Gen5B_GoodsVan_Liv0_0.png") {template_purchase_9(7, 21)}
@@ -3823,6 +4082,1160 @@ item (FEAT_TRAINS, Item_Gen6D_GoodsVan_Liv0_BG, 32280) {
 	cost_factor:					  return Gen6_8_CostFactor;
 	running_cost_factor:			  return Gen6_8_RunningCostFactor;
 	cargo_capacity:                   return Gen6_8_CargoCapacity;
+}
+}
+
+//Flatcars
+//ID
+const Gen4A_Flatcar_ID = 35650;
+//introduction_date
+const Gen4A_Flatcar_IntroDate = date(1950, 1, 1);
+//weight
+const Gen4A_Flatcar_Weight = 20;
+
+//Gen4A_Flatcar_Liv0
+spriteset(spriteset_Gen4A_Flatcar_Liv0_Purchase,   "gfx/Gen4A_Flatcar_Liv0_0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Gen4A_Flatcar_Liv0_0,   "gfx/Gen4A_Flatcar_Liv0_0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_Purchase;
+    1: switch_Couplers_8_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_CargoStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+    2: switch_Flatbed_8_cargo_type;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_RearStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+	2: spriteset_8_Modern_EOTD;
+    3: switch_Flatbed_8_cargo_type;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen4A_Flatcar_Liv0_RearStack1;
+    return switch_Gen4A_Flatcar_Liv0_CargoStack1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_CargoStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+    1: switch_Couplers_8_Repeat;
+    2: switch_Flatbed_8_cargo_type;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_RearStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+	2: spriteset_8_Modern_EOTD_r;
+    3: switch_Flatbed_8_cargo_type;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen4A_Flatcar_Liv0_RearStack2;
+    return switch_Gen4A_Flatcar_Liv0_CargoStack2;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen4A_Flatcar_Liv0_rearcheck1;
+ 1: switch_Gen4A_Flatcar_Liv0_rearcheck2;
+}
+
+const Gen4A_Flatcar_ID_Liv0_NG = (Gen4A_Flatcar_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Gen6D_Flatcar_Liv0_NG, Gen4A_Flatcar_ID_Liv0_NG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_FLATBED); //Flatcar
+		non_refittable_cargo_classes: 	bitmask(); //Flatcar
+		default_cargo_type:				GOOD; //Flatcar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //Flatcar
+		cargo_disallow_refit:			[TOUR, LVST]; //Flatcar
+
+        name:                           string(STR_NAME_GEN4A_FLATCAR_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_Flatcar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_Flatcar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_Flatcar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_Flatcar_Liv0_position;
+    purchase:                            switch_Gen4A_Flatcar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_FLATCAR_NG);
+}
+}
+
+const Gen4A_Flatcar_ID_Liv0 = (Gen4A_Flatcar_ID_Liv0_NG + 15);
+item (FEAT_TRAINS, Item_Gen6D_Flatcar_Liv0, Gen4A_Flatcar_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_FLATBED); //Flatcar
+		non_refittable_cargo_classes: 	bitmask(); //Flatcar
+		default_cargo_type:				GOOD; //Flatcar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //Flatcar
+		cargo_disallow_refit:			[TOUR, LVST]; //Flatcar
+
+        name:                           string(STR_NAME_GEN4A_FLATCAR);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_Flatcar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_Flatcar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_Flatcar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_Flatcar_Liv0_position;
+    purchase:                            switch_Gen4A_Flatcar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_FLATCAR);
+}
+}
+
+const Gen4A_Flatcar_ID_Liv0_BG = (Gen4A_Flatcar_ID_Liv0 + 15);
+item (FEAT_TRAINS, Item_Gen6D_Flatcar_Liv0_BG, Gen4A_Flatcar_ID_Liv0_BG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_FLATBED); //Flatcar
+		non_refittable_cargo_classes: 	bitmask(); //Flatcar
+		default_cargo_type:				GOOD; //Flatcar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //Flatcar
+		cargo_disallow_refit:			[TOUR, LVST]; //Flatcar
+
+        name:                           string(STR_NAME_GEN4A_FLATCAR_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_Flatcar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_Flatcar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_Flatcar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_Flatcar_Liv0_position;
+    purchase:                            switch_Gen4A_Flatcar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_FLATCAR_BG);
+}
+}
+
+//Gen4A Stakecar Sprites
+spriteset(spriteset_Gen4A_Flatcar_Stakes_Purchase,   "gfx/Gen4A_Flatcar_Stakes.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Gen4A_Flatcar_Stakes_rear,   "gfx/Gen4A_Flatcar_Stakes.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Gen4A_Flatcar_Stakes_front,   "gfx/Gen4A_Flatcar_Stakes.png") {template_8_repeat(7, 69)}
+
+//Stakecars
+//ID
+const Gen4A_Stakecar_ID = 37650;
+//introduction_date
+const Gen4A_Stakecar_IntroDate = date(1950, 1, 1);
+//weight
+const Gen4A_Stakecar_Weight = 20;
+
+//Gen4A_Stakecar_Liv0
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_Purchase;
+	1: spriteset_Gen4A_Flatcar_Stakes_Purchase;
+    2: switch_Couplers_8_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_CargoStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+	2: spriteset_Gen4A_Flatcar_Stakes_rear;
+    3: switch_Flatbed_8_cargo_type;
+	4: spriteset_Gen4A_Flatcar_Stakes_front;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_RearStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 6 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+	2: spriteset_Gen4A_Flatcar_Stakes_rear;
+	3: spriteset_8_Modern_EOTD;
+    4: switch_Flatbed_8_cargo_type;
+	5: spriteset_Gen4A_Flatcar_Stakes_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen4A_Stakecar_Liv0_RearStack1;
+    return switch_Gen4A_Stakecar_Liv0_CargoStack1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_CargoStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+    1: switch_Couplers_8_Repeat;
+	2: spriteset_Gen4A_Flatcar_Stakes_rear;
+    3: switch_Flatbed_8_cargo_type;
+	4: spriteset_Gen4A_Flatcar_Stakes_front;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_RearStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 6 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+	2: spriteset_Gen4A_Flatcar_Stakes_rear;
+	3: spriteset_8_Modern_EOTD_r;
+    4: switch_Flatbed_8_cargo_type;
+	5: spriteset_Gen4A_Flatcar_Stakes_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen4A_Stakecar_Liv0_RearStack2;
+    return switch_Gen4A_Stakecar_Liv0_CargoStack2;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen4A_Stakecar_Liv0_rearcheck1;
+ 1: switch_Gen4A_Stakecar_Liv0_rearcheck2;
+}
+
+const Gen4A_Stakecar_ID_Liv0_NG = (Gen4A_Stakecar_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Gen6D_Stakecar_Liv0_NG, Gen4A_Stakecar_ID_Liv0_NG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_FLATBED); //Stakecar
+		non_refittable_cargo_classes: 	bitmask(); //Stakecar
+		default_cargo_type:				GOOD; //Stakecar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //Stakecar
+		cargo_disallow_refit:			[TOUR, LVST]; //Stakecar
+
+        name:                           string(STR_NAME_GEN4A_STAKECAR_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_Stakecar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_Stakecar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_Stakecar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_Stakecar_Liv0_position;
+    purchase:                            switch_Gen4A_Stakecar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_STAKECAR_NG);
+}
+}
+
+const Gen4A_Stakecar_ID_Liv0 = (Gen4A_Stakecar_ID_Liv0_NG + 15);
+item (FEAT_TRAINS, Item_Gen6D_Stakecar_Liv0, Gen4A_Stakecar_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_FLATBED); //Stakecar
+		non_refittable_cargo_classes: 	bitmask(); //Stakecar
+		default_cargo_type:				GOOD; //Stakecar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //Stakecar
+		cargo_disallow_refit:			[TOUR, LVST]; //Stakecar
+
+        name:                           string(STR_NAME_GEN4A_STAKECAR);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_Stakecar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_Stakecar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_Stakecar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_Stakecar_Liv0_position;
+    purchase:                            switch_Gen4A_Stakecar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_STAKECAR);
+}
+}
+
+const Gen4A_Stakecar_ID_Liv0_BG = (Gen4A_Stakecar_ID_Liv0 + 15);
+item (FEAT_TRAINS, Item_Gen6D_Stakecar_Liv0_BG, Gen4A_Stakecar_ID_Liv0_BG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_FLATBED); //Stakecar
+		non_refittable_cargo_classes: 	bitmask(); //Stakecar
+		default_cargo_type:				GOOD; //Stakecar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //Stakecar
+		cargo_disallow_refit:			[TOUR, LVST]; //Stakecar
+
+        name:                           string(STR_NAME_GEN4A_STAKECAR_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_Stakecar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_Stakecar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_Stakecar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_Stakecar_Liv0_position;
+    purchase:                            switch_Gen4A_Stakecar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_STAKECAR_BG);
+}
+}
+
+//StakeBulkheadcars
+//ID
+const Gen4A_StakeBulkheadcar_ID = 38650;
+//introduction_date
+const Gen4A_StakeBulkheadcar_IntroDate = date(1950, 1, 1);
+//weight
+const Gen4A_StakeBulkheadcar_Weight = 20;
+
+//Gen4A_StakeBulkheadcar_Liv0
+spriteset(spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_Purchase,   "gfx/Gen4A_Flatcar_Liv0_0_Bulkheads.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_rear,   "gfx/Gen4A_Flatcar_Liv0_0_Bulkheads.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_front,   "gfx/Gen4A_Flatcar_Liv0_0_Bulkheads.png") {template_8_repeat(7, 69)}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 4 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_Purchase;
+	1: spriteset_Gen4A_Flatcar_Stakes_Purchase;
+	2: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_Purchase;
+    3: switch_Couplers_8_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_CargoStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+	2: spriteset_Gen4A_Flatcar_Stakes_rear;
+	3: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_rear;
+    4: switch_Flatbed_8_cargo_type;
+	5: spriteset_Gen4A_Flatcar_Stakes_front;
+	6: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_front;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_RearStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 8 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+	2: spriteset_Gen4A_Flatcar_Stakes_rear;
+	3: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_rear;
+	4: spriteset_8_Modern_EOTD;
+    5: switch_Flatbed_8_cargo_type;
+	6: spriteset_Gen4A_Flatcar_Stakes_front;
+	7: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen4A_StakeBulkheadcar_Liv0_RearStack1;
+    return switch_Gen4A_StakeBulkheadcar_Liv0_CargoStack1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_CargoStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+    1: switch_Couplers_8_Repeat;
+	2: spriteset_Gen4A_Flatcar_Stakes_rear;
+	3: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_rear;
+    4: switch_Flatbed_8_cargo_type;
+	5: spriteset_Gen4A_Flatcar_Stakes_front;
+	6: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_front;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_RearStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 8 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+	2: spriteset_Gen4A_Flatcar_Stakes_rear;
+	3: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_rear;
+	4: spriteset_8_Modern_EOTD_r;
+    5: switch_Flatbed_8_cargo_type;
+	6: spriteset_Gen4A_Flatcar_Stakes_front;
+	7: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen4A_StakeBulkheadcar_Liv0_RearStack2;
+    return switch_Gen4A_StakeBulkheadcar_Liv0_CargoStack2;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen4A_StakeBulkheadcar_Liv0_rearcheck1;
+ 1: switch_Gen4A_StakeBulkheadcar_Liv0_rearcheck2;
+}
+
+const Gen4A_StakeBulkheadcar_ID_Liv0_NG = (Gen4A_StakeBulkheadcar_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Gen6D_StakeBulkheadcar_Liv0_NG, Gen4A_StakeBulkheadcar_ID_Liv0_NG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_FLATBED); //StakeBulkheadcar
+		non_refittable_cargo_classes: 	bitmask(); //StakeBulkheadcar
+		default_cargo_type:				GOOD; //StakeBulkheadcar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //StakeBulkheadcar
+		cargo_disallow_refit:			[TOUR, LVST]; //StakeBulkheadcar
+
+        name:                           string(STR_NAME_GEN4A_STAKEBULKHEADCAR_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_StakeBulkheadcar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_StakeBulkheadcar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_StakeBulkheadcar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_StakeBulkheadcar_Liv0_position;
+    purchase:                            switch_Gen4A_StakeBulkheadcar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_STAKEBULKHEADCAR_NG);
+}
+}
+
+const Gen4A_StakeBulkheadcar_ID_Liv0 = (Gen4A_StakeBulkheadcar_ID_Liv0_NG + 15);
+item (FEAT_TRAINS, Item_Gen6D_StakeBulkheadcar_Liv0, Gen4A_StakeBulkheadcar_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_FLATBED); //StakeBulkheadcar
+		non_refittable_cargo_classes: 	bitmask(); //StakeBulkheadcar
+		default_cargo_type:				GOOD; //StakeBulkheadcar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //StakeBulkheadcar
+		cargo_disallow_refit:			[TOUR, LVST]; //StakeBulkheadcar
+
+        name:                           string(STR_NAME_GEN4A_STAKEBULKHEADCAR);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_StakeBulkheadcar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_StakeBulkheadcar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_StakeBulkheadcar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_StakeBulkheadcar_Liv0_position;
+    purchase:                            switch_Gen4A_StakeBulkheadcar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_STAKEBULKHEADCAR);
+}
+}
+
+const Gen4A_StakeBulkheadcar_ID_Liv0_BG = (Gen4A_StakeBulkheadcar_ID_Liv0 + 15);
+item (FEAT_TRAINS, Item_Gen6D_StakeBulkheadcar_Liv0_BG, Gen4A_StakeBulkheadcar_ID_Liv0_BG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_FLATBED); //StakeBulkheadcar
+		non_refittable_cargo_classes: 	bitmask(); //StakeBulkheadcar
+		default_cargo_type:				GOOD; //StakeBulkheadcar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //StakeBulkheadcar
+		cargo_disallow_refit:			[TOUR, LVST]; //StakeBulkheadcar
+
+        name:                           string(STR_NAME_GEN4A_STAKEBULKHEADCAR_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_StakeBulkheadcar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_StakeBulkheadcar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_StakeBulkheadcar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_StakeBulkheadcar_Liv0_position;
+    purchase:                            switch_Gen4A_StakeBulkheadcar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_STAKEBULKHEADCAR_BG);
+}
+}
+
+//Bulkheadcars
+//ID
+const Gen4A_Bulkheadcar_ID = 39650;
+//introduction_date
+const Gen4A_Bulkheadcar_IntroDate = date(1950, 1, 1);
+//weight
+const Gen4A_Bulkheadcar_Weight = 20;
+
+//Gen4A_Bulkheadcar_Liv0
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Bulkheadcar_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_Purchase;
+	1: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_Purchase;
+    2: switch_Couplers_8_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Bulkheadcar_Liv0_CargoStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+	2: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_rear;
+    3: switch_Flatbed_8_cargo_type;
+	4: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_front;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Bulkheadcar_Liv0_RearStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 6 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+	2: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_rear;
+	3: spriteset_8_Modern_EOTD;
+    4: switch_Flatbed_8_cargo_type;
+	5: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Bulkheadcar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen4A_Bulkheadcar_Liv0_RearStack1;
+    return switch_Gen4A_Bulkheadcar_Liv0_CargoStack1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Bulkheadcar_Liv0_CargoStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+    1: switch_Couplers_8_Repeat;
+	2: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_rear;
+    3: switch_Flatbed_8_cargo_type;
+	4: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_front;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Bulkheadcar_Liv0_RearStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 6 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Flatcar_Liv0_0;
+	1: switch_Couplers_8_Repeat;
+	2: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_rear;
+	3: spriteset_8_Modern_EOTD_r;
+    4: switch_Flatbed_8_cargo_type;
+	5: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_front;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Bulkheadcar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen4A_Bulkheadcar_Liv0_RearStack2;
+    return switch_Gen4A_Bulkheadcar_Liv0_CargoStack2;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Bulkheadcar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen4A_Bulkheadcar_Liv0_rearcheck1;
+ 1: switch_Gen4A_Bulkheadcar_Liv0_rearcheck2;
+}
+
+const Gen4A_Bulkheadcar_ID_Liv0_NG = (Gen4A_Bulkheadcar_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Gen6D_Bulkheadcar_Liv0_NG, Gen4A_Bulkheadcar_ID_Liv0_NG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_FLATBED); //Bulkheadcar
+		non_refittable_cargo_classes: 	bitmask(); //Bulkheadcar
+		default_cargo_type:				GOOD; //Bulkheadcar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //Bulkheadcar
+		cargo_disallow_refit:			[TOUR, LVST]; //Bulkheadcar
+
+        name:                           string(STR_NAME_GEN4A_BULKHEADCAR_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_Bulkheadcar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_Bulkheadcar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_Bulkheadcar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_Bulkheadcar_Liv0_position;
+    purchase:                            switch_Gen4A_Bulkheadcar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_BULKHEADCAR_NG);
+}
+}
+
+const Gen4A_Bulkheadcar_ID_Liv0 = (Gen4A_Bulkheadcar_ID_Liv0_NG + 15);
+item (FEAT_TRAINS, Item_Gen6D_Bulkheadcar_Liv0, Gen4A_Bulkheadcar_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_FLATBED); //Bulkheadcar
+		non_refittable_cargo_classes: 	bitmask(); //Bulkheadcar
+		default_cargo_type:				GOOD; //Bulkheadcar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //Bulkheadcar
+		cargo_disallow_refit:			[TOUR, LVST]; //Bulkheadcar
+
+        name:                           string(STR_NAME_GEN4A_BULKHEADCAR);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_Bulkheadcar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_Bulkheadcar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_Bulkheadcar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_Bulkheadcar_Liv0_position;
+    purchase:                            switch_Gen4A_Bulkheadcar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_BULKHEADCAR);
+}
+}
+
+const Gen4A_Bulkheadcar_ID_Liv0_BG = (Gen4A_Bulkheadcar_ID_Liv0 + 15);
+item (FEAT_TRAINS, Item_Gen6D_Bulkheadcar_Liv0_BG, Gen4A_Bulkheadcar_ID_Liv0_BG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_FLATBED); //Bulkheadcar
+		non_refittable_cargo_classes: 	bitmask(); //Bulkheadcar
+		default_cargo_type:				GOOD; //Bulkheadcar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //Bulkheadcar
+		cargo_disallow_refit:			[TOUR, LVST]; //Bulkheadcar
+
+        name:                           string(STR_NAME_GEN4A_BULKHEADCAR_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_Bulkheadcar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_Bulkheadcar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_Bulkheadcar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_Bulkheadcar_Liv0_position;
+    purchase:                            switch_Gen4A_Bulkheadcar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_BULKHEADCAR_BG);
+}
+}
+
+//Opencars
+//ID
+const Gen4A_Opencar_ID = 41150;
+//introduction_date
+const Gen4A_Opencar_IntroDate = date(1950, 1, 1);
+//weight
+const Gen4A_Opencar_Weight = 20;
+//Base
+spriteset(spriteset_Gen4A_Opencar_Base_Purchase,   "gfx/Gen4A_Opencar_Base.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Gen4A_Opencar_Base,   "gfx/Gen4A_Opencar_Base.png") {template_8_repeat(7, 39)}
+
+spriteset(spriteset_Gen4A_Opencar_Loadh,   "gfx/Gen4A_Opencar_Load.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Gen4A_Opencar_Loadf,   "gfx/Gen4A_Opencar_Load.png") {template_8_repeat(7, 69)}
+
+spriteset(spriteset_Gen4A_Opencar_Tarp,   "gfx/Gen4A_Opencar_Tarp.png") {template_8_repeat(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_loadcheck, cargo_count * (100 / cargo_capacity)){
+	1..50	: spriteset_Gen4A_Opencar_Loadh ;
+	51..100	: spriteset_Gen4A_Opencar_Loadf ;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+    return switch_Gen4A_Opencar_loadcheck;
+}
+
+//Cargo switch
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_cargo_class, cargo_classes) {
+	bitmask(CC_BULK): switch_Gen4A_Opencar_recolour_load;
+	bitmask(CC_BULK, CC_COVERED): spriteset_Gen4A_Opencar_Tarp; //make this
+	bitmask(CC_COVERED): spriteset_Gen4A_Opencar_Tarp; //make this
+	bitmask(CC_PIECE_GOODS): switch_Flatbed_8_cargo_type;
+	spriteset_Gen4A_Opencar_Tarp; //make this
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_cargo_type, cargo_type_in_veh) {
+	IRON: switch_Flatbed_8_cargo_type;
+	STEL: switch_Flatbed_8_cargo_type;
+	METL: switch_Flatbed_8_cargo_type;
+	ALUM: switch_Flatbed_8_cargo_type;
+	ZINC: switch_Flatbed_8_cargo_type;
+	COPR: switch_Flatbed_8_cargo_type;
+	STST: switch_Flatbed_8_cargo_type;
+	STSH: switch_Flatbed_8_cargo_type;
+	STAL: switch_Flatbed_8_cargo_type;
+	STCB: switch_Flatbed_8_cargo_type;
+	
+	ENSP: spriteset_Gen4A_Opencar_Tarp;
+	FMSP: spriteset_Gen4A_Opencar_Tarp;
+	MNSP: spriteset_Gen4A_Opencar_Tarp;
+	POWR: spriteset_Gen4A_Opencar_Tarp;
+	VPTS: spriteset_Gen4A_Opencar_Tarp;
+	MPTS: spriteset_Gen4A_Opencar_Tarp;
+	GOOD: spriteset_Gen4A_Opencar_Tarp;
+	
+	BDMT: switch_Flatbed_8_cargo_type;
+	WDPR: spriteset_Gen4A_Opencar_Tarp;
+	GLAS: switch_Flatbed_8_cargo_type;
+	BRCK: switch_Flatbed_8_cargo_type;
+	STWR: switch_Flatbed_8_cargo_type;
+	STSE: switch_Flatbed_8_cargo_type;
+	
+	PAPR: spriteset_Gen4A_Opencar_Tarp;
+	TYRE: spriteset_Gen4A_Opencar_Tarp;
+	WOOL: spriteset_Gen4A_Opencar_Tarp;
+	TEXT: spriteset_Gen4A_Opencar_Tarp;
+	
+	SCMT: switch_Gen4A_Opencar_recolour_load;
+	RCYC: switch_Gen4A_Opencar_recolour_load;
+	WSTE: switch_Gen4A_Opencar_recolour_load;
+	SGCN: switch_Gen4A_Opencar_recolour_load;
+	
+	COAL: switch_Gen4A_Opencar_recolour_load;
+	COKE: switch_Gen4A_Opencar_recolour_load;
+	IORE: switch_Gen4A_Opencar_recolour_load;
+	
+	SULP: spriteset_Gen4A_Opencar_Tarp;
+	SEED: spriteset_Gen4A_Opencar_Tarp;
+	FERT: spriteset_Gen4A_Opencar_Tarp;
+	SASH: spriteset_Gen4A_Opencar_Tarp;
+	FRUT: spriteset_Gen4A_Opencar_Tarp;
+	FRVG: spriteset_Gen4A_Opencar_Tarp;
+	TATO: spriteset_Gen4A_Opencar_Tarp;
+	GRAI: spriteset_Gen4A_Opencar_Tarp;
+	CMNT: spriteset_Gen4A_Opencar_Tarp;
+	COCO: spriteset_Gen4A_Opencar_Tarp;
+	SALT: spriteset_Gen4A_Opencar_Tarp;
+	NHNO: spriteset_Gen4A_Opencar_Tarp;
+	FECR: spriteset_Gen4A_Opencar_Tarp;
+	QLME: spriteset_Gen4A_Opencar_Tarp;
+	CBLK: spriteset_Gen4A_Opencar_Tarp;
+
+	WOOD: switch_Flatbed_8_cargo_type;
+	PIPE: switch_Flatbed_8_cargo_type;
+	
+	switch_Gen4A_Opencar_cargo_class;
+}
+
+//Gen4A_Opencar_Liv0
+spriteset(spriteset_Gen4A_Opencar_Liv0_Purchase,   "gfx/Gen4A_Opencar_Liv0_0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Gen4A_Opencar_Liv0_0_BaseR,   "gfx/Gen4A_Opencar_Liv0_0.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Gen4A_Opencar_Liv0_0_BaseF,   "gfx/Gen4A_Opencar_Liv0_0.png") {template_8_repeat(96, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Opencar_Base_Purchase;
+	1: spriteset_Gen4A_Opencar_Liv0_Purchase;
+    2: switch_Couplers_8_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_CargoStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Opencar_Base;
+	1: spriteset_Gen4A_Opencar_Liv0_0_BaseR;
+	2: switch_Couplers_8_Repeat;
+    3: switch_Gen4A_Opencar_cargo_type;
+	4: spriteset_Gen4A_Opencar_Liv0_0_BaseF;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_RearStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 6 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Opencar_Base;
+	1: spriteset_Gen4A_Opencar_Liv0_0_BaseR;
+	2: spriteset_8_Modern_EOTD;
+	3: switch_Couplers_8_Repeat;
+    4: switch_Gen4A_Opencar_cargo_type;
+	5: spriteset_Gen4A_Opencar_Liv0_0_BaseF;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Gen4A_Opencar_Liv0_RearStack1;
+    return switch_Gen4A_Opencar_Liv0_CargoStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_RearStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 6 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Gen4A_Opencar_Base;
+	1: spriteset_Gen4A_Opencar_Liv0_0_BaseR;
+	2: spriteset_8_Modern_EOTD_r;
+    3: switch_Couplers_8_Repeat;
+    4: switch_Gen4A_Opencar_cargo_type;
+	5: spriteset_Gen4A_Opencar_Liv0_0_BaseF;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Gen4A_Opencar_Liv0_RearStack2;
+    return switch_Gen4A_Opencar_Liv0_CargoStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Gen4A_Opencar_Liv0_rearcheck1;
+ 1: switch_Gen4A_Opencar_Liv0_rearcheck2;
+}
+
+const Gen4A_Opencar_ID_Liv0_NG = (Gen4A_Opencar_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Gen6D_Opencar_Liv0_NG, Gen4A_Opencar_ID_Liv0_NG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_ARMOURED,CC_COVERED_BULK,CC_EXPRESS,CC_FLATBED,CC_GAS_BULK,CC_LIQUID_BULK,CC_OPEN_BULK,CC_PIECE_GOODS,CC_POWDER_BULK,CC_REFRIGERATED,CC_WEIRD); //Opencar
+		non_refittable_cargo_classes: 	bitmask(); //Opencar
+		default_cargo_type:				GOOD; //Opencar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //Opencar
+		cargo_disallow_refit:			[TOUR, LVST]; //Opencar
+
+        name:                           string(STR_NAME_GEN4A_OPENCAR_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_Opencar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_Opencar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_Opencar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_Opencar_Liv0_position;
+    purchase:                            switch_Gen4A_Opencar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_OPENCAR_NG);
+}
+}
+
+const Gen4A_Opencar_ID_Liv0 = (Gen4A_Opencar_ID_Liv0_NG + 15);
+item (FEAT_TRAINS, Item_Gen6D_Opencar_Liv0, Gen4A_Opencar_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_ARMOURED,CC_COVERED_BULK,CC_EXPRESS,CC_FLATBED,CC_GAS_BULK,CC_LIQUID_BULK,CC_OPEN_BULK,CC_PIECE_GOODS,CC_POWDER_BULK,CC_REFRIGERATED,CC_WEIRD); //Opencar
+		non_refittable_cargo_classes: 	bitmask(); //Opencar
+		default_cargo_type:				GOOD; //Opencar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //Opencar
+		cargo_disallow_refit:			[TOUR, LVST]; //Opencar
+
+        name:                           string(STR_NAME_GEN4A_OPENCAR);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_Opencar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_Opencar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_Opencar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_Opencar_Liv0_position;
+    purchase:                            switch_Gen4A_Opencar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_OPENCAR);
+}
+}
+
+const Gen4A_Opencar_ID_Liv0_BG = (Gen4A_Opencar_ID_Liv0 + 15);
+item (FEAT_TRAINS, Item_Gen6D_Opencar_Liv0_BG, Gen4A_Opencar_ID_Liv0_BG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes: 		bitmask(CC_ARMOURED,CC_COVERED_BULK,CC_EXPRESS,CC_FLATBED,CC_GAS_BULK,CC_LIQUID_BULK,CC_OPEN_BULK,CC_PIECE_GOODS,CC_POWDER_BULK,CC_REFRIGERATED,CC_WEIRD); //Opencar
+		non_refittable_cargo_classes: 	bitmask(); //Opencar
+		default_cargo_type:				GOOD; //Opencar
+		cargo_allow_refit: 				[METL,PIPE,STEL,WDPR,WOOD]; //Opencar
+		cargo_disallow_refit:			[TOUR, LVST]; //Opencar
+
+        name:                           string(STR_NAME_GEN4A_OPENCAR_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Gen4A_Opencar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Gen4_LoadingSpeed;
+		speed:							Gen4_Speed km/h;
+		cost_factor:					Gen4_8_CostFactor;
+		running_cost_factor:			Gen4_8_RunningCostFactor;
+		cargo_capacity: 				(Gen4_8_CargoCapacity / param_freight_capacity_mod);
+		weight:							Gen4A_Opencar_Weight ton;
+
+//        variant_group: 					Item_Gen4A_Opencar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                             switch_Gen4A_Opencar_Liv0_position;
+    purchase:                            switch_Gen4A_Opencar_Liv0_PurchaseStack;
+    additional_text: 					 string(STR_INFO_GEN4A_OPENCAR_BG);
 }
 }
 

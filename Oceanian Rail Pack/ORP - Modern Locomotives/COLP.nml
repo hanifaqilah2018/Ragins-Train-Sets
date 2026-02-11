@@ -2798,6 +2798,21 @@ item(FEAT_TRAINS, Item_Clyde_G26CS2_BG_Liv23, Clyde_G26CS2_BG_Liv23_ID) {
 }
 }
 
+//ID
+const GE_U26C_ID = 11900;
+//introduction_date
+const GE_U26C_IntroDate = date(1972, 1, 1);
+//speed
+const GE_U26C_Speed = 105;
+//cost_factor
+const GE_U26C_CostFactor = 50;
+//running_cost_factor
+const GE_U26C_RunningCostFactor = 135;
+//power
+const GE_U26C_Power = 2500;
+//weight
+const GE_U26C_Weight = 98;
+
 //GE_U26C_Liv0
 spriteset(spriteset_GE_U26C_Liv0_Purchase,   "gfx/GE_U26C_Liv0.png") {template_purchase_7(7, 21)}
 spriteset(spriteset_GE_U26C_Liv0,   "gfx/GE_U26C_Liv0.png") {template_7(7, 39)}
@@ -2843,46 +2858,498 @@ switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv0_position, position_in_consist) {
   switch_GE_U26C_Liv0_rear;
 }
 
+const GE_U26C_Liv0_ID = (GE_U26C_ID + Liv0_ID);
 //GE_U26C_Liv0
-item(FEAT_TRAINS, Item_GE_U26C_Liv0, 11900) {
+item(FEAT_TRAINS, Item_GE_U26C_Liv0, GE_U26C_Liv0_ID) {
     property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        refit_cost:                        0;
-        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
-        bitmask_vehicle_info:            0;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
-        track_type:                        NG_RAIL;
-        running_cost_base:                RUNNING_COST_DIESEL;
-        engine_class:                     ENGINE_CLASS_DIESEL;
-//        ai_special_flag:                AI_FLAG_CARGO;
-        dual_headed:                    0; // <- Double Headed, so cab on each end
-
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
-
-        name:                            string(STR_NAME_GE_U26C);
-        introduction_date:                date(1972,1,1);
-        vehicle_life:                     50;
-        model_life:                        30;
-        length:                            7;
-
-        weight:                        98 ton;
-        speed:                            105 km/h;
-        power:                            2500 hp;
-        tractive_effort_coefficient:     0.5;
-        cost_factor:                     50;
-        running_cost_factor:             135;
-		cargo_capacity:                  0;
-
-//        variant_group: Item_GE_G16CS1_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+        name:                           string(STR_NAME_GE_U26C);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              GE_U26C_IntroDate;		
+		length:                         7;
+		
+		speed:							GE_U26C_Speed km/h;
+		cost_factor:					GE_U26C_CostFactor;
+		running_cost_factor:			GE_U26C_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							GE_U26C_Power;
+		weight:							GE_U26C_Weight;
+		
+//        variant_group: 					Item_GE_U26C_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: switch_GE_U26C_Liv0_position;
-//		sound_effect: switch_GE_7FDL12;
-        purchase: switch_GE_U26C_Liv0_Purchase_Stack;
-        additional_text: string(STR_INFO_GE_U26C);
-//		reverse_build_probability: return 25;
+        default: 						switch_GE_U26C_Liv0_position;
+//		sound_effect: 					switch_GE_7FDL12;
+        purchase: 						switch_GE_U26C_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_GE_U26C);
+}
+}
+
+//GE_U26C_Liv6
+spriteset(spriteset_GE_U26C_Liv6_Purchase,   "gfx/GE_U26C_Liv6.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_GE_U26C_Liv6,   "gfx/GE_U26C_Liv6.png") {template_7(7, 39)}
+spriteset(spriteset_GE_U26C_Liv6_r,   "gfx/GE_U26C_Liv6.png") {template_7_r(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv6_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv6_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv6_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv6;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv6_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv6_r;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv6_pair, position_in_vehid_chain % 2) {
+ 1: switch_GE_U26C_Liv6_r;
+  switch_GE_U26C_Liv6_Fw;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv6_rear, position_in_vehid_chain_from_end) {
+ 0: switch_GE_U26C_Liv6_r;
+  switch_GE_U26C_Liv6_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv6_position, position_in_consist) {
+ 0: switch_GE_U26C_Liv6_Fw;
+  switch_GE_U26C_Liv6_rear;
+}
+
+const GE_U26C_Liv6_ID = (GE_U26C_ID + Liv6_ID);
+//GE_U26C_Liv6
+item(FEAT_TRAINS, Item_GE_U26C_Liv6, GE_U26C_Liv6_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_GE_U26C);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              GE_U26C_IntroDate;		
+		length:                         7;
+		
+		speed:							GE_U26C_Speed km/h;
+		cost_factor:					GE_U26C_CostFactor;
+		running_cost_factor:			GE_U26C_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							GE_U26C_Power;
+		weight:							GE_U26C_Weight;
+		
+        variant_group: 					Item_GE_U26C_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_GE_U26C_Liv6_position;
+//		sound_effect: 					switch_GE_7FDL12;
+        purchase: 						switch_GE_U26C_Liv6_Purchase_Stack;
+        additional_text: 				string(STR_INFO_GE_U26C);
+}
+}
+
+//GE_U26C_Liv7
+spriteset(spriteset_GE_U26C_Liv7_Purchase,   "gfx/GE_U26C_Liv7.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_GE_U26C_Liv7,   "gfx/GE_U26C_Liv7.png") {template_7(7, 39)}
+spriteset(spriteset_GE_U26C_Liv7_r,   "gfx/GE_U26C_Liv7.png") {template_7_r(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv7_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv7_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv7_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv7;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv7_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv7_r;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv7_pair, position_in_vehid_chain % 2) {
+ 1: switch_GE_U26C_Liv7_r;
+  switch_GE_U26C_Liv7_Fw;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv7_rear, position_in_vehid_chain_from_end) {
+ 0: switch_GE_U26C_Liv7_r;
+  switch_GE_U26C_Liv7_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv7_position, position_in_consist) {
+ 0: switch_GE_U26C_Liv7_Fw;
+  switch_GE_U26C_Liv7_rear;
+}
+
+const GE_U26C_Liv7_ID = (GE_U26C_ID + Liv7_ID);
+//GE_U26C_Liv7
+item(FEAT_TRAINS, Item_GE_U26C_Liv7, GE_U26C_Liv7_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_GE_U26C);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              GE_U26C_IntroDate;		
+		length:                         7;
+		
+		speed:							GE_U26C_Speed km/h;
+		cost_factor:					GE_U26C_CostFactor;
+		running_cost_factor:			GE_U26C_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							GE_U26C_Power;
+		weight:							GE_U26C_Weight;
+		
+        variant_group: 					Item_GE_U26C_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_GE_U26C_Liv7_position;
+//		sound_effect: 					switch_GE_7FDL12;
+        purchase: 						switch_GE_U26C_Liv7_Purchase_Stack;
+        additional_text: 				string(STR_INFO_GE_U26C);
+}
+}
+
+//GE_U26C_Liv8
+spriteset(spriteset_GE_U26C_Liv8_Purchase,   "gfx/GE_U26C_Liv8.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_GE_U26C_Liv8,   "gfx/GE_U26C_Liv8.png") {template_7(7, 39)}
+spriteset(spriteset_GE_U26C_Liv8_r,   "gfx/GE_U26C_Liv8.png") {template_7_r(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv8_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv8_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv8_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv8;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv8_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv8_r;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv8_pair, position_in_vehid_chain % 2) {
+ 1: switch_GE_U26C_Liv8_r;
+  switch_GE_U26C_Liv8_Fw;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv8_rear, position_in_vehid_chain_from_end) {
+ 0: switch_GE_U26C_Liv8_r;
+  switch_GE_U26C_Liv8_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv8_position, position_in_consist) {
+ 0: switch_GE_U26C_Liv8_Fw;
+  switch_GE_U26C_Liv8_rear;
+}
+
+const GE_U26C_Liv8_ID = (GE_U26C_ID + Liv8_ID);
+//GE_U26C_Liv8
+item(FEAT_TRAINS, Item_GE_U26C_Liv8, GE_U26C_Liv8_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_GE_U26C);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              GE_U26C_IntroDate;		
+		length:                         7;
+		
+		speed:							GE_U26C_Speed km/h;
+		cost_factor:					GE_U26C_CostFactor;
+		running_cost_factor:			GE_U26C_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							GE_U26C_Power;
+		weight:							GE_U26C_Weight;
+		
+        variant_group: 					Item_GE_U26C_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_GE_U26C_Liv8_position;
+//		sound_effect: 					switch_GE_7FDL12;
+        purchase: 						switch_GE_U26C_Liv8_Purchase_Stack;
+        additional_text: 				string(STR_INFO_GE_U26C);
+}
+}
+
+//GE_U26C_Liv9
+spriteset(spriteset_GE_U26C_Liv9_Purchase,   "gfx/GE_U26C_Liv9.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_GE_U26C_Liv9,   "gfx/GE_U26C_Liv9.png") {template_7(7, 39)}
+spriteset(spriteset_GE_U26C_Liv9_r,   "gfx/GE_U26C_Liv9.png") {template_7_r(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv9_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv9_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv9_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv9;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv9_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv9_r;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv9_pair, position_in_vehid_chain % 2) {
+ 1: switch_GE_U26C_Liv9_r;
+  switch_GE_U26C_Liv9_Fw;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv9_rear, position_in_vehid_chain_from_end) {
+ 0: switch_GE_U26C_Liv9_r;
+  switch_GE_U26C_Liv9_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv9_position, position_in_consist) {
+ 0: switch_GE_U26C_Liv9_Fw;
+  switch_GE_U26C_Liv9_rear;
+}
+
+const GE_U26C_Liv9_ID = (GE_U26C_ID + Liv9_ID);
+//GE_U26C_Liv9
+item(FEAT_TRAINS, Item_GE_U26C_Liv9, GE_U26C_Liv9_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_GE_U26C);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              GE_U26C_IntroDate;		
+		length:                         7;
+		
+		speed:							GE_U26C_Speed km/h;
+		cost_factor:					GE_U26C_CostFactor;
+		running_cost_factor:			GE_U26C_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							GE_U26C_Power;
+		weight:							GE_U26C_Weight;
+		
+        variant_group: 					Item_GE_U26C_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_GE_U26C_Liv9_position;
+//		sound_effect: 					switch_GE_7FDL12;
+        purchase: 						switch_GE_U26C_Liv9_Purchase_Stack;
+        additional_text: 				string(STR_INFO_GE_U26C);
+}
+}
+
+//GE_U26C_Liv10
+spriteset(spriteset_GE_U26C_Liv10_Purchase,   "gfx/GE_U26C_Liv10.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_GE_U26C_Liv10,   "gfx/GE_U26C_Liv10.png") {template_7(7, 39)}
+spriteset(spriteset_GE_U26C_Liv10_r,   "gfx/GE_U26C_Liv10.png") {template_7_r(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv10_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv10_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv10_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv10;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_GE_U26C_Liv10_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_GE_U26C_Liv10_r;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv10_pair, position_in_vehid_chain % 2) {
+ 1: switch_GE_U26C_Liv10_r;
+  switch_GE_U26C_Liv10_Fw;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv10_rear, position_in_vehid_chain_from_end) {
+ 0: switch_GE_U26C_Liv10_r;
+  switch_GE_U26C_Liv10_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_GE_U26C_Liv10_position, position_in_consist) {
+ 0: switch_GE_U26C_Liv10_Fw;
+  switch_GE_U26C_Liv10_rear;
+}
+
+const GE_U26C_Liv10_ID = (GE_U26C_ID + Liv10_ID);
+//GE_U26C_Liv10
+item(FEAT_TRAINS, Item_GE_U26C_Liv10, GE_U26C_Liv10_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_GE_U26C);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              GE_U26C_IntroDate;		
+		length:                         7;
+		
+		speed:							GE_U26C_Speed km/h;
+		cost_factor:					GE_U26C_CostFactor;
+		running_cost_factor:			GE_U26C_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							GE_U26C_Power;
+		weight:							GE_U26C_Weight;
+		
+        variant_group: 					Item_GE_U26C_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_GE_U26C_Liv10_position;
+//		sound_effect: 					switch_GE_7FDL12;
+        purchase: 						switch_GE_U26C_Liv10_Purchase_Stack;
+        additional_text: 				string(STR_INFO_GE_U26C);
 }
 }
 

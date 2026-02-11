@@ -7802,45 +7802,25 @@ spriteset(spriteset_Flatbed_8_blank, "gfx/blank.png") {template_8_repeat(7, 39)}
 
 //8A
 spriteset(spriteset_Flatbed_8_tarp_a, "gfx/Flatbed_8A.png") {template_8_repeat(7, 39)}
-
 spriteset(spriteset_Flatbed_8_tarp_b, "gfx/Flatbed_8A.png") {template_8_repeat(96, 39)}
-
 spriteset(spriteset_Flatbed_8_tarp_c, "gfx/Flatbed_8A.png") {template_8_repeat(7, 69)}
-
 spriteset(spriteset_Flatbed_8_planks_half, "gfx/Flatbed_8A.png") {template_8_repeat(7, 99)}
-
 spriteset(spriteset_Flatbed_8_planks_full, "gfx/Flatbed_8A.png") {template_8_repeat(96, 99)}
-
 spriteset(spriteset_Flatbed_8_rods_half, "gfx/Flatbed_8A.png") {template_8_repeat(7, 129)}
-
 spriteset(spriteset_Flatbed_8_rods_full, "gfx/Flatbed_8A.png") {template_8_repeat(96, 129)}
-
 spriteset(spriteset_Flatbed_8_beams_half, "gfx/Flatbed_8A.png") {template_8_repeat(187, 39)}
-
 spriteset(spriteset_Flatbed_8_beams_full, "gfx/Flatbed_8A.png") {template_8_repeat(276, 39)}
-
 spriteset(spriteset_Flatbed_8_pipes_half, "gfx/Flatbed_8A.png") {template_8_repeat(187, 69)}
-
 spriteset(spriteset_Flatbed_8_pipes_full, "gfx/Flatbed_8A.png") {template_8_repeat(276, 69)}
-
 spriteset(spriteset_Flatbed_8_slabs_half, "gfx/Flatbed_8A.png") {template_8_repeat(187, 99)}
-
 spriteset(spriteset_Flatbed_8_slabs_full, "gfx/Flatbed_8A.png") {template_8_repeat(276, 99)}
-
 spriteset(spriteset_Flatbed_8_coils_half, "gfx/Flatbed_8A.png") {template_8_repeat(187, 129)}
-
 spriteset(spriteset_Flatbed_8_coils_full, "gfx/Flatbed_8A.png") {template_8_repeat(276, 129)}
-
 spriteset(spriteset_Flatbed_8_fmsp, "gfx/Flatbed_8A.png") {template_8(367, 39)}
-
 spriteset(spriteset_Flatbed_8_ensp, "gfx/Flatbed_8A.png") {template_8(367, 69)}
-
 spriteset(spriteset_Flatbed_8_cars_a, "gfx/Flatbed_8A.png") {template_8(547, 39)}
-
 spriteset(spriteset_Flatbed_8_cars_b, "gfx/Flatbed_8A.png") {template_8(547, 69)}
-
 spriteset(spriteset_Flatbed_8_cars_c, "gfx/Flatbed_8A.png") {template_8(547, 99)}
-
 spriteset(spriteset_Flatbed_8_cars_d, "gfx/Flatbed_8A.png") {template_8(547, 129)}
 
 //8A
