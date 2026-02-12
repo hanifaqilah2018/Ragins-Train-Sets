@@ -1650,23 +1650,23 @@ spritegroup spritegroup_Flatbed_8_pipes_alt {
 }
 
 //Flated_8 Recolours
-switch (FEAT_TRAINS, SELF, switch_Flatbed_8_rods_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_rods_recolour_load, STORE_TEMP(CB_FLAG_MORE_SPRITES | switch_generic_recolour(), 0x100)) {
     return spritegroup_Flatbed_8_rods;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Flatbed_8_beams_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_beams_recolour_load, STORE_TEMP(CB_FLAG_MORE_SPRITES | switch_generic_recolour(), 0x100)) {
     return spritegroup_Flatbed_8_beams;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Flatbed_8_pipes_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_pipes_recolour_load, STORE_TEMP(CB_FLAG_MORE_SPRITES | switch_generic_recolour(), 0x100)) {
     return spritegroup_Flatbed_8_pipes;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Flatbed_8_slabs_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_slabs_recolour_load, STORE_TEMP(CB_FLAG_MORE_SPRITES | switch_generic_recolour(), 0x100)) {
     return spritegroup_Flatbed_8_slabs;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Flatbed_8_coils_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+switch (FEAT_TRAINS, SELF, switch_Flatbed_8_coils_recolour_load, STORE_TEMP(CB_FLAG_MORE_SPRITES | switch_generic_recolour(), 0x100)) {
     return spritegroup_Flatbed_8_coils;
 }
 
@@ -4105,7 +4105,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_PurchaseStack, [
     1: switch_Couplers_8_Repeat_Purchase;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_CargoStack1, [
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_CargoStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -4126,16 +4126,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_RearStack1, [
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_rearcheck1, position_in_consist_from_end){
     0 : switch_Gen4A_Flatcar_Liv0_RearStack1;
-    return switch_Gen4A_Flatcar_Liv0_CargoStack1;
-}
-
-switch (FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_CargoStack2, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0: spriteset_Gen4A_Flatcar_Liv0_0;
-    1: switch_Couplers_8_Repeat;
-    2: switch_Flatbed_8_cargo_type;
+    return switch_Gen4A_Flatcar_Liv0_CargoStack;
 }
 
 switch (FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_RearStack2, [
@@ -4150,7 +4141,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_RearStack2, [
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_rearcheck2, position_in_consist_from_end){
     0 : switch_Gen4A_Flatcar_Liv0_RearStack2;
-    return switch_Gen4A_Flatcar_Liv0_CargoStack2;
+    return switch_Gen4A_Flatcar_Liv0_CargoStack;
 }
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_Flatcar_Liv0_position, vehicle_is_flipped) {
@@ -4314,7 +4305,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_PurchaseStack, [
     2: switch_Couplers_8_Repeat_Purchase;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_CargoStack1, [
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_CargoStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -4339,18 +4330,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_RearStack1, [
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_rearcheck1, position_in_consist_from_end){
     0 : switch_Gen4A_Stakecar_Liv0_RearStack1;
-    return switch_Gen4A_Stakecar_Liv0_CargoStack1;
-}
-
-switch (FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_CargoStack2, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0: spriteset_Gen4A_Flatcar_Liv0_0;
-    1: switch_Couplers_8_Repeat;
-	2: spriteset_Gen4A_Flatcar_Stakes_rear;
-    3: switch_Flatbed_8_cargo_type;
-	4: spriteset_Gen4A_Flatcar_Stakes_front;
+    return switch_Gen4A_Stakecar_Liv0_CargoStack;
 }
 
 switch (FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_RearStack2, [
@@ -4367,7 +4347,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_RearStack2, [
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_rearcheck2, position_in_consist_from_end){
     0 : switch_Gen4A_Stakecar_Liv0_RearStack2;
-    return switch_Gen4A_Stakecar_Liv0_CargoStack2;
+    return switch_Gen4A_Stakecar_Liv0_CargoStack;
 }
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_Stakecar_Liv0_position, vehicle_is_flipped) {
@@ -4531,7 +4511,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_PurchaseStack, [
     3: switch_Couplers_8_Repeat_Purchase;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_CargoStack1, [
+switch (FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_CargoStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
@@ -4560,20 +4540,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_RearStack1, [
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_rearcheck1, position_in_consist_from_end){
     0 : switch_Gen4A_StakeBulkheadcar_Liv0_RearStack1;
-    return switch_Gen4A_StakeBulkheadcar_Liv0_CargoStack1;
-}
-
-switch (FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_CargoStack2, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0: spriteset_Gen4A_Flatcar_Liv0_0;
-    1: switch_Couplers_8_Repeat;
-	2: spriteset_Gen4A_Flatcar_Stakes_rear;
-	3: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_rear;
-    4: switch_Flatbed_8_cargo_type;
-	5: spriteset_Gen4A_Flatcar_Stakes_front;
-	6: spriteset_Gen4A_Flatcar_Liv0_0_Bulkheads_front;
+    return switch_Gen4A_StakeBulkheadcar_Liv0_CargoStack;
 }
 
 switch (FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_RearStack2, [
@@ -4592,7 +4559,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_RearStack2, [
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_rearcheck2, position_in_consist_from_end){
     0 : switch_Gen4A_StakeBulkheadcar_Liv0_RearStack2;
-    return switch_Gen4A_StakeBulkheadcar_Liv0_CargoStack2;
+    return switch_Gen4A_StakeBulkheadcar_Liv0_CargoStack;
 }
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_StakeBulkheadcar_Liv0_position, vehicle_is_flipped) {
@@ -4959,24 +4926,32 @@ spriteset(spriteset_Gen4A_Opencar_Base,   "gfx/Gen4A_Opencar_Base.png") {templat
 spriteset(spriteset_Gen4A_Opencar_Loadh,   "gfx/Gen4A_Opencar_Load.png") {template_8_repeat(7, 39)}
 spriteset(spriteset_Gen4A_Opencar_Loadf,   "gfx/Gen4A_Opencar_Load.png") {template_8_repeat(7, 69)}
 
-spriteset(spriteset_Gen4A_Opencar_Tarp,   "gfx/Gen4A_Opencar_Tarp.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Gen4A_Opencar_Tarp1,   "gfx/Gen4A_Opencar_Tarp.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Gen4A_Opencar_Tarp2,   "gfx/Gen4A_Opencar_Tarp.png") {template_8_repeat(7, 69)}
+spriteset(spriteset_Gen4A_Opencar_Tarp3,   "gfx/Gen4A_Opencar_Tarp.png") {template_8_repeat(7, 99)}
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_loadcheck, cargo_count * (100 / cargo_capacity)){
 	1..50	: spriteset_Gen4A_Opencar_Loadh ;
 	51..100	: spriteset_Gen4A_Opencar_Loadf ;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_recolour_load, STORE_TEMP(switch_generic_recolour(), 0x100)) {
+switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_recolour_load, STORE_TEMP(CB_FLAG_MORE_SPRITES | switch_generic_recolour(), 0x100)) {
     return switch_Gen4A_Opencar_loadcheck;
+}
+
+ random_switch(FEAT_TRAINS, SELF, switch_spriteset_Gen4A_Opencar_Tarp_Random){
+    1 : spriteset_Gen4A_Opencar_Tarp1;
+	1 : spriteset_Gen4A_Opencar_Tarp2;
+	1 : spriteset_Gen4A_Opencar_Tarp3;
 }
 
 //Cargo switch
 switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_cargo_class, cargo_classes) {
 	bitmask(CC_BULK): switch_Gen4A_Opencar_recolour_load;
-	bitmask(CC_BULK, CC_COVERED): spriteset_Gen4A_Opencar_Tarp; //make this
-	bitmask(CC_COVERED): spriteset_Gen4A_Opencar_Tarp; //make this
+	bitmask(CC_BULK, CC_COVERED): switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	bitmask(CC_COVERED): switch_spriteset_Gen4A_Opencar_Tarp_Random;
 	bitmask(CC_PIECE_GOODS): switch_Flatbed_8_cargo_type;
-	spriteset_Gen4A_Opencar_Tarp; //make this
+	switch_spriteset_Gen4A_Opencar_Tarp_Random;
 }
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_cargo_type, cargo_type_in_veh) {
@@ -4991,55 +4966,97 @@ switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_cargo_type, cargo_type_in_veh) {
 	STAL: switch_Flatbed_8_cargo_type;
 	STCB: switch_Flatbed_8_cargo_type;
 	
-	ENSP: spriteset_Gen4A_Opencar_Tarp;
-	FMSP: spriteset_Gen4A_Opencar_Tarp;
-	MNSP: spriteset_Gen4A_Opencar_Tarp;
-	POWR: spriteset_Gen4A_Opencar_Tarp;
-	VPTS: spriteset_Gen4A_Opencar_Tarp;
-	MPTS: spriteset_Gen4A_Opencar_Tarp;
-	GOOD: spriteset_Gen4A_Opencar_Tarp;
-	
 	BDMT: switch_Flatbed_8_cargo_type;
-	WDPR: spriteset_Gen4A_Opencar_Tarp;
 	GLAS: switch_Flatbed_8_cargo_type;
 	BRCK: switch_Flatbed_8_cargo_type;
 	STWR: switch_Flatbed_8_cargo_type;
 	STSE: switch_Flatbed_8_cargo_type;
 	
-	PAPR: spriteset_Gen4A_Opencar_Tarp;
-	TYRE: spriteset_Gen4A_Opencar_Tarp;
-	WOOL: spriteset_Gen4A_Opencar_Tarp;
-	TEXT: spriteset_Gen4A_Opencar_Tarp;
-	
 	SCMT: switch_Gen4A_Opencar_recolour_load;
 	RCYC: switch_Gen4A_Opencar_recolour_load;
 	WSTE: switch_Gen4A_Opencar_recolour_load;
-	SGCN: switch_Gen4A_Opencar_recolour_load;
-	
-	COAL: switch_Gen4A_Opencar_recolour_load;
-	COKE: switch_Gen4A_Opencar_recolour_load;
+
 	IORE: switch_Gen4A_Opencar_recolour_load;
-	
-	SULP: spriteset_Gen4A_Opencar_Tarp;
-	SEED: spriteset_Gen4A_Opencar_Tarp;
-	FERT: spriteset_Gen4A_Opencar_Tarp;
-	SASH: spriteset_Gen4A_Opencar_Tarp;
-	FRUT: spriteset_Gen4A_Opencar_Tarp;
-	FRVG: spriteset_Gen4A_Opencar_Tarp;
-	TATO: spriteset_Gen4A_Opencar_Tarp;
-	GRAI: spriteset_Gen4A_Opencar_Tarp;
-	CMNT: spriteset_Gen4A_Opencar_Tarp;
-	COCO: spriteset_Gen4A_Opencar_Tarp;
-	SALT: spriteset_Gen4A_Opencar_Tarp;
-	NHNO: spriteset_Gen4A_Opencar_Tarp;
-	FECR: spriteset_Gen4A_Opencar_Tarp;
-	QLME: spriteset_Gen4A_Opencar_Tarp;
-	CBLK: spriteset_Gen4A_Opencar_Tarp;
+	PORE: switch_Gen4A_Opencar_recolour_load;
+    SULP: switch_Gen4A_Opencar_recolour_load;
+    SAND: switch_Gen4A_Opencar_recolour_load;
+	NITR: switch_Gen4A_Opencar_recolour_load;
+    AORE: switch_Gen4A_Opencar_recolour_load;
+	CORE: switch_Gen4A_Opencar_recolour_load;
+	NKOR: switch_Gen4A_Opencar_recolour_load;
+	MNO2: switch_Gen4A_Opencar_recolour_load;
+    LIME: switch_Gen4A_Opencar_recolour_load;
+    GRVL: switch_Gen4A_Opencar_recolour_load;
+    FECR: switch_Gen4A_Opencar_recolour_load;
+    ALO_: switch_Gen4A_Opencar_recolour_load;
+    SCMT: switch_Gen4A_Opencar_recolour_load;	
+	RCYC: switch_Gen4A_Opencar_recolour_load;
+	WSTE: switch_Gen4A_Opencar_recolour_load;
+	BDMT: switch_Gen4A_Opencar_recolour_load;
+	WOOD: switch_Gen4A_Opencar_recolour_load;
+	SLAG: switch_Gen4A_Opencar_recolour_load;
 
 	WOOD: switch_Flatbed_8_cargo_type;
 	PIPE: switch_Flatbed_8_cargo_type;
 	
 	switch_Gen4A_Opencar_cargo_class;
+}
+
+//Cargo switch
+switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_tarp_cargo_type, cargo_type_in_veh) {
+	ENSP: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	FMSP: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	MNSP: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	POWR: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	VPTS: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	MPTS: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	GOOD: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	
+	WDPR: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	
+	PAPR: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	TYRE: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	WOOL: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	TEXT: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	
+	GRAI: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	CERE: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	MAIZ: switch_spriteset_Gen4A_Opencar_Tarp_Random;	
+	WHEA: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+    FERT: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	TOFF: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	CLAY: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+    OLSD: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	BEAN: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	SEED: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	SASH: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+    POTA: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	QLME: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+    FECR: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	CMNT: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+    FRUT: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+    FRVG: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+//	CASS: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+//	TATO: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+    SGCN: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	TWOD: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+    JAVA: switch_Gen4A_Opencar_recolour_load;	
+//	PEAT: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+//	BIOM: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	NUTS: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	FICR: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	PHOS: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+//	SALT: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	BAKE: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	SUGR: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	URAN: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	KAOL: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	SULP: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	COCO: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	NHNO: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	CBLK: switch_spriteset_Gen4A_Opencar_Tarp_Random;
+	
+	spriteset_8_Blank;
 }
 
 //Gen4A_Opencar_Liv0
@@ -5057,7 +5074,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_PurchaseStack, [
 }
 
 switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_CargoStack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 5 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 6 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen4A_Opencar_Base;
@@ -5065,10 +5082,11 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_CargoStack, [
 	2: switch_Couplers_8_Repeat;
     3: switch_Gen4A_Opencar_cargo_type;
 	4: spriteset_Gen4A_Opencar_Liv0_0_BaseF;
+	5: switch_Gen4A_Opencar_tarp_cargo_type;
 }
 
 switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_RearStack1, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 6 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen4A_Opencar_Base;
@@ -5077,6 +5095,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_RearStack1, [
 	3: switch_Couplers_8_Repeat;
     4: switch_Gen4A_Opencar_cargo_type;
 	5: spriteset_Gen4A_Opencar_Liv0_0_BaseF;
+	6: switch_Gen4A_Opencar_tarp_cargo_type;
 }
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_rearcheck1, position_in_consist_from_end){
@@ -5085,7 +5104,7 @@ switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_rearcheck1, position_in_cons
 }
 
 switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_RearStack2, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 6 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 7 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen4A_Opencar_Base;
@@ -5094,6 +5113,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_RearStack2, [
     3: switch_Couplers_8_Repeat;
     4: switch_Gen4A_Opencar_cargo_type;
 	5: spriteset_Gen4A_Opencar_Liv0_0_BaseF;
+	6: switch_Gen4A_Opencar_tarp_cargo_type;
 }
 
 switch(FEAT_TRAINS, SELF, switch_Gen4A_Opencar_Liv0_rearcheck2, position_in_consist_from_end){
