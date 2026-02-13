@@ -210,16 +210,16 @@ STR_INFO_ALCO_DL500B_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}B
 STR_NAME_CLYDE_J26C:Clyde-EMD J26C
 STR_INFO_CLYDE_J26C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 422 Class
 
-STR_NAME_GOODWIN_DL500G:Goodwin-ALCO DL500G "Jumbo"
-STR_INFO_GOODWIN_DL500G:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 442 Class, SAR 700 Class {}{}{GOLD}They also proposed one of these to Victorian Railways
-STR_NAME_GOODWIN_DL500G_BG:Goodwin-ALCO DL500G "Jumbo"
-STR_INFO_GOODWIN_DL500G_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 442 Class, SAR 700 Class {}{}{GOLD}They also proposed one of these to Victorian Railways
+STR_NAME_ALCO_DL500G:Goodwin-ALCO DL500G "Jumbo"
+STR_INFO_ALCO_DL500G:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 442 Class, SAR 700 Class
+STR_NAME_ALCO_DL500G_BG:Goodwin-ALCO DL500G "Jumbo"
+STR_INFO_ALCO_DL500G_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 442 Class, SAR 700 Class
+
+STR_NAME_COMENG_CE615A:Comeng CE615A
+STR_INFO_COMENG_CE615A:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 80 Class
 
 STR_NAME_CLYDE_JT26C2:Clyde-EMD JT26C-2
 STR_INFO_CLYDE_JT26C2:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}AN AL Class
-
-STR_NAME_COMENG_CE615A:Comeng CE615A
-STR_INFO_COMENG_CE615A:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 80 Class
 
 STR_NAME_NSW_CLYDE_JT26C2SS:Clyde-EMD JT26C-2SS
 STR_INFO_NSW_CLYDE_JT26C2SS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 81 Class
@@ -267,6 +267,9 @@ STR_INFO_METROVICK_46CLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD
 
 STR_NAME_CLYDE_JE28C:Clyde JE28C
 STR_INFO_CLYDE_JE28C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}Proposed Clyde locomotive for NSW PTC
+
+STR_NAME_COMENG_CL627:Comeng CL627
+STR_INFO_COMENG_CL627:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}NSW 85 Class {}{GOLD}Not. A. Diesel.
 
 STR_NAME_COMENG_CL627A:Comeng CL627A
 STR_INFO_COMENG_CL627A:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}NSW 86 Class
