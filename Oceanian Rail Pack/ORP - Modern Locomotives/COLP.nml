@@ -4092,6 +4092,21 @@ item(FEAT_TRAINS, Item_Clyde_G12A_Liv0, 20250) {
 }
 }
 
+//ID
+const ALCO_DL500B_ID = 20450;
+//introduction_date
+const ALCO_DL500B_IntroDate = date(1957, 1, 1);
+//speed
+const ALCO_DL500B_Speed = 	130;
+//cost_factor
+const ALCO_DL500B_CostFactor = 38;
+//running_cost_factor
+const ALCO_DL500B_RunningCostFactor = 102;
+//power
+const ALCO_DL500B_Power = 1800;
+//weight
+const ALCO_DL500B_Weight = 110;
+
 //ALCO_DL500B_Liv0
 spriteset(spriteset_ALCO_DL500B_Liv0_Purchase,   "gfx/ALCO_DL500B_Liv0.png") {template_purchase_7(7, 21)}
 spriteset(spriteset_ALCO_DL500B_Liv0,   "gfx/ALCO_DL500B_Liv0.png") {template_7(7, 39)}
@@ -4137,88 +4152,786 @@ switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv0_position, position_in_consist)
   switch_ALCO_DL500B_Liv0_rear;
 }
 
-item(FEAT_TRAINS, Item_ALCO_DL500B_Liv0, 20450) {
+const ALCO_DL500B_Liv0_ID = (ALCO_DL500B_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_ALCO_DL500B_Liv0, ALCO_DL500B_Liv0_ID) {
     property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        refit_cost:                        0;
-        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
-        bitmask_vehicle_info:            0;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
-        track_type:                        RAIL;
-        running_cost_base:                RUNNING_COST_DIESEL;
-        engine_class:                     ENGINE_CLASS_DIESEL;
-//        ai_special_flag:                AI_FLAG_CARGO;
-        dual_headed:                    0; // <- Double Headed, so cab on each end
-
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
-
-        name:                            string(STR_NAME_ALCO_DL500B);
-        introduction_date:                date(1957,1,1);
-        vehicle_life:                     50;
-        model_life:                        30;
-        length:                            7;
-
-        weight:                        112 ton;
-        speed:                            130 km/h;
-        power:                            1950 hp;
-        tractive_effort_coefficient:     0.5;
-        cost_factor:                     43;
-        running_cost_factor:             116;
-		cargo_capacity:                  0;
-
-//        variant_group: Item_ALCO_DL500B_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+        name:                           string(STR_NAME_ALCO_DL500B);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ALCO_DL500B_IntroDate;		
+		length:                         7;
+		
+		speed:							ALCO_DL500B_Speed km/h;
+		cost_factor:					ALCO_DL500B_CostFactor;
+		running_cost_factor:			ALCO_DL500B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ALCO_DL500B_Power;
+		weight:							ALCO_DL500B_Weight;
+		
+//        variant_group: 					Item_ALCO_DL500B_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: switch_ALCO_DL500B_Liv0_position;
-//		sound_effect: switch_ALCO_12_244;
-        purchase: switch_ALCO_DL500B_Liv0_Purchase_Stack;
-        additional_text: string(STR_INFO_ALCO_DL500B);
-		reverse_build_probability: return 25;
+        default: 						switch_ALCO_DL500B_Liv0_position;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_ALCO_DL500B_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ALCO_DL500B);
+		reverse_build_probability: 		return 25;
 }
 }
 
-//ALCO_DL500B_BG_Liv0
-item(FEAT_TRAINS, Item_ALCO_DL500B_BG_Liv0, 20500) {
+const ALCO_DL500B_Liv0_BG_ID = (ALCO_DL500B_Liv0_ID + 50);
+
+//ALCO_DL500B_Liv0_BG
+item(FEAT_TRAINS, Item_ALCO_DL500B_Liv0_BG, ALCO_DL500B_Liv0_BG_ID) {
     property {
-        sprite_id:                        SPRITE_ID_NEW_TRAIN;
-        refit_cost:                        0;
-        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
-        bitmask_vehicle_info:            0;
-        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
-        track_type:                        BG_RAIL_ONLY;
-        running_cost_base:                RUNNING_COST_DIESEL;
-        engine_class:                     ENGINE_CLASS_DIESEL;
-//        ai_special_flag:                AI_FLAG_CARGO;
-        dual_headed:                    0; // <- Double Headed, so cab on each end
-
-        visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
-
-        name:                            string(STR_NAME_ALCO_DL500B_BG);
-        introduction_date:                date(1957,1,1);
-        vehicle_life:                     50;
-        model_life:                        30;
-        length:                            7;
-
-        weight:                        112 ton;
-        speed:                            130 km/h;
-        power:                            1950 hp;
-        tractive_effort_coefficient:     0.5;
-        cost_factor:                     43;
-        running_cost_factor:             116;
-		cargo_capacity:                  0;
-
-//        variant_group: Item_ALCO_DL500B_BG_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+        name:                           string(STR_NAME_ALCO_DL500B_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ALCO_DL500B_IntroDate;		
+		length:                         7;
+		
+		speed:							ALCO_DL500B_Speed km/h;
+		cost_factor:					ALCO_DL500B_CostFactor;
+		running_cost_factor:			ALCO_DL500B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ALCO_DL500B_Power;
+		weight:							ALCO_DL500B_Weight;
+		
+//        variant_group: 					Item_ALCO_DL500B_Liv0_BG;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: switch_ALCO_DL500B_Liv0_position;
-//		sound_effect: switch_ALCO_12_244;
-        purchase: switch_ALCO_DL500B_Liv0_Purchase_Stack;
-        additional_text: string(STR_INFO_ALCO_DL500B_BG);
-		reverse_build_probability: return 25;
+        default: 						switch_ALCO_DL500B_Liv0_position;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_ALCO_DL500B_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ALCO_DL500B_BG);
+		reverse_build_probability: 		return 25;
+}
+}
+
+//ALCO_DL500B_Liv1
+spriteset(spriteset_ALCO_DL500B_Liv1_Purchase,   "gfx/ALCO_DL500B_Liv1.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_ALCO_DL500B_Liv1,   "gfx/ALCO_DL500B_Liv1.png") {template_7(7, 39)}
+spriteset(spriteset_ALCO_DL500B_Liv1_r,   "gfx/ALCO_DL500B_Liv1.png") {template_7_r(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv1_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv1_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv1_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv1;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv1_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv1_r;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv1_pair, position_in_vehid_chain % 2) {
+ 1: switch_ALCO_DL500B_Liv1_r;
+  switch_ALCO_DL500B_Liv1_Fw;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv1_rear, position_in_vehid_chain_from_end) {
+ 0: switch_ALCO_DL500B_Liv1_r;
+  switch_ALCO_DL500B_Liv1_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv1_position, position_in_consist) {
+ 0: switch_ALCO_DL500B_Liv1_Fw;
+  switch_ALCO_DL500B_Liv1_rear;
+}
+
+const ALCO_DL500B_Liv1_ID = (ALCO_DL500B_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_ALCO_DL500B_Liv1, ALCO_DL500B_Liv1_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_ALCO_DL500B);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ALCO_DL500B_IntroDate;		
+		length:                         7;
+		
+		speed:							ALCO_DL500B_Speed km/h;
+		cost_factor:					ALCO_DL500B_CostFactor;
+		running_cost_factor:			ALCO_DL500B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ALCO_DL500B_Power;
+		weight:							ALCO_DL500B_Weight;
+		
+        variant_group: 					Item_ALCO_DL500B_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_ALCO_DL500B_Liv1_position;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_ALCO_DL500B_Liv1_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ALCO_DL500B);
+		reverse_build_probability: 		return 25;
+}
+}
+
+const ALCO_DL500B_Liv1_BG_ID = (ALCO_DL500B_Liv1_ID + 50);
+
+//ALCO_DL500B_Liv1_BG
+item(FEAT_TRAINS, Item_ALCO_DL500B_Liv1_BG, ALCO_DL500B_Liv1_BG_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_ALCO_DL500B_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ALCO_DL500B_IntroDate;		
+		length:                         7;
+		
+		speed:							ALCO_DL500B_Speed km/h;
+		cost_factor:					ALCO_DL500B_CostFactor;
+		running_cost_factor:			ALCO_DL500B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ALCO_DL500B_Power;
+		weight:							ALCO_DL500B_Weight;
+		
+        variant_group: 					Item_ALCO_DL500B_Liv0_BG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_ALCO_DL500B_Liv1_position;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_ALCO_DL500B_Liv1_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ALCO_DL500B_BG);
+		reverse_build_probability: 		return 25;
+}
+}
+
+//ALCO_DL500B_Liv17
+spriteset(spriteset_ALCO_DL500B_Liv17_Purchase,   "gfx/ALCO_DL500B_Liv17.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_ALCO_DL500B_Liv17,   "gfx/ALCO_DL500B_Liv17.png") {template_7(7, 39)}
+spriteset(spriteset_ALCO_DL500B_Liv17_r,   "gfx/ALCO_DL500B_Liv17.png") {template_7_r(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv17_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv17_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv17_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv17;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv17_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv17_r;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv17_pair, position_in_vehid_chain % 2) {
+ 1: switch_ALCO_DL500B_Liv17_r;
+  switch_ALCO_DL500B_Liv17_Fw;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv17_rear, position_in_vehid_chain_from_end) {
+ 0: switch_ALCO_DL500B_Liv17_r;
+  switch_ALCO_DL500B_Liv17_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv17_position, position_in_consist) {
+ 0: switch_ALCO_DL500B_Liv17_Fw;
+  switch_ALCO_DL500B_Liv17_rear;
+}
+
+const ALCO_DL500B_Liv17_ID = (ALCO_DL500B_ID + Liv17_ID);
+
+item(FEAT_TRAINS, Item_ALCO_DL500B_Liv17, ALCO_DL500B_Liv17_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_ALCO_DL500B);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ALCO_DL500B_IntroDate;		
+		length:                         7;
+		
+		speed:							ALCO_DL500B_Speed km/h;
+		cost_factor:					ALCO_DL500B_CostFactor;
+		running_cost_factor:			ALCO_DL500B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ALCO_DL500B_Power;
+		weight:							ALCO_DL500B_Weight;
+		
+        variant_group: 					Item_ALCO_DL500B_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_ALCO_DL500B_Liv17_position;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_ALCO_DL500B_Liv17_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ALCO_DL500B);
+		reverse_build_probability: 		return 25;
+}
+}
+
+const ALCO_DL500B_Liv17_BG_ID = (ALCO_DL500B_Liv17_ID + 50);
+
+//ALCO_DL500B_Liv17_BG
+item(FEAT_TRAINS, Item_ALCO_DL500B_Liv17_BG, ALCO_DL500B_Liv17_BG_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_ALCO_DL500B_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ALCO_DL500B_IntroDate;		
+		length:                         7;
+		
+		speed:							ALCO_DL500B_Speed km/h;
+		cost_factor:					ALCO_DL500B_CostFactor;
+		running_cost_factor:			ALCO_DL500B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ALCO_DL500B_Power;
+		weight:							ALCO_DL500B_Weight;
+		
+        variant_group: 					Item_ALCO_DL500B_Liv0_BG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_ALCO_DL500B_Liv17_position;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_ALCO_DL500B_Liv17_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ALCO_DL500B_BG);
+		reverse_build_probability: 		return 25;
+}
+}
+
+//ALCO_DL500B_Liv18
+spriteset(spriteset_ALCO_DL500B_Liv18_Purchase,   "gfx/ALCO_DL500B_Liv18.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_ALCO_DL500B_Liv18,   "gfx/ALCO_DL500B_Liv18.png") {template_7(7, 39)}
+spriteset(spriteset_ALCO_DL500B_Liv18_r,   "gfx/ALCO_DL500B_Liv18.png") {template_7_r(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv18_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv18_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv18_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv18;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv18_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv18_r;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv18_pair, position_in_vehid_chain % 2) {
+ 1: switch_ALCO_DL500B_Liv18_r;
+  switch_ALCO_DL500B_Liv18_Fw;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv18_rear, position_in_vehid_chain_from_end) {
+ 0: switch_ALCO_DL500B_Liv18_r;
+  switch_ALCO_DL500B_Liv18_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv18_position, position_in_consist) {
+ 0: switch_ALCO_DL500B_Liv18_Fw;
+  switch_ALCO_DL500B_Liv18_rear;
+}
+
+const ALCO_DL500B_Liv18_ID = (ALCO_DL500B_ID + Liv18_ID);
+
+item(FEAT_TRAINS, Item_ALCO_DL500B_Liv18, ALCO_DL500B_Liv18_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_ALCO_DL500B);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ALCO_DL500B_IntroDate;		
+		length:                         7;
+		
+		speed:							ALCO_DL500B_Speed km/h;
+		cost_factor:					ALCO_DL500B_CostFactor;
+		running_cost_factor:			ALCO_DL500B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ALCO_DL500B_Power;
+		weight:							ALCO_DL500B_Weight;
+		
+        variant_group: 					Item_ALCO_DL500B_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_ALCO_DL500B_Liv18_position;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_ALCO_DL500B_Liv18_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ALCO_DL500B);
+		reverse_build_probability: 		return 25;
+}
+}
+
+const ALCO_DL500B_Liv18_BG_ID = (ALCO_DL500B_Liv18_ID + 50);
+
+//ALCO_DL500B_Liv18_BG
+item(FEAT_TRAINS, Item_ALCO_DL500B_Liv18_BG, ALCO_DL500B_Liv18_BG_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_ALCO_DL500B_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ALCO_DL500B_IntroDate;		
+		length:                         7;
+		
+		speed:							ALCO_DL500B_Speed km/h;
+		cost_factor:					ALCO_DL500B_CostFactor;
+		running_cost_factor:			ALCO_DL500B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ALCO_DL500B_Power;
+		weight:							ALCO_DL500B_Weight;
+		
+        variant_group: 					Item_ALCO_DL500B_Liv0_BG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_ALCO_DL500B_Liv18_position;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_ALCO_DL500B_Liv18_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ALCO_DL500B_BG);
+		reverse_build_probability: 		return 25;
+}
+}
+
+//ALCO_DL500B_Liv19
+spriteset(spriteset_ALCO_DL500B_Liv19_Purchase,   "gfx/ALCO_DL500B_Liv19.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_ALCO_DL500B_Liv19,   "gfx/ALCO_DL500B_Liv19.png") {template_7(7, 39)}
+spriteset(spriteset_ALCO_DL500B_Liv19_r,   "gfx/ALCO_DL500B_Liv19.png") {template_7_r(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv19_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv19_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv19_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv19;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv19_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv19_r;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv19_pair, position_in_vehid_chain % 2) {
+ 1: switch_ALCO_DL500B_Liv19_r;
+  switch_ALCO_DL500B_Liv19_Fw;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv19_rear, position_in_vehid_chain_from_end) {
+ 0: switch_ALCO_DL500B_Liv19_r;
+  switch_ALCO_DL500B_Liv19_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv19_position, position_in_consist) {
+ 0: switch_ALCO_DL500B_Liv19_Fw;
+  switch_ALCO_DL500B_Liv19_rear;
+}
+
+const ALCO_DL500B_Liv19_ID = (ALCO_DL500B_ID + Liv19_ID);
+
+item(FEAT_TRAINS, Item_ALCO_DL500B_Liv19, ALCO_DL500B_Liv19_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_ALCO_DL500B);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ALCO_DL500B_IntroDate;		
+		length:                         7;
+		
+		speed:							ALCO_DL500B_Speed km/h;
+		cost_factor:					ALCO_DL500B_CostFactor;
+		running_cost_factor:			ALCO_DL500B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ALCO_DL500B_Power;
+		weight:							ALCO_DL500B_Weight;
+		
+        variant_group: 					Item_ALCO_DL500B_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_ALCO_DL500B_Liv19_position;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_ALCO_DL500B_Liv19_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ALCO_DL500B);
+		reverse_build_probability: 		return 25;
+}
+}
+
+const ALCO_DL500B_Liv19_BG_ID = (ALCO_DL500B_Liv19_ID + 50);
+
+//ALCO_DL500B_Liv19_BG
+item(FEAT_TRAINS, Item_ALCO_DL500B_Liv19_BG, ALCO_DL500B_Liv19_BG_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_ALCO_DL500B_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ALCO_DL500B_IntroDate;		
+		length:                         7;
+		
+		speed:							ALCO_DL500B_Speed km/h;
+		cost_factor:					ALCO_DL500B_CostFactor;
+		running_cost_factor:			ALCO_DL500B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ALCO_DL500B_Power;
+		weight:							ALCO_DL500B_Weight;
+		
+        variant_group: 					Item_ALCO_DL500B_Liv0_BG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_ALCO_DL500B_Liv19_position;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_ALCO_DL500B_Liv19_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ALCO_DL500B_BG);
+		reverse_build_probability: 		return 25;
+}
+}
+
+//ALCO_DL500B_Liv20
+spriteset(spriteset_ALCO_DL500B_Liv20_Purchase,   "gfx/ALCO_DL500B_Liv20.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_ALCO_DL500B_Liv20,   "gfx/ALCO_DL500B_Liv20.png") {template_7(7, 39)}
+spriteset(spriteset_ALCO_DL500B_Liv20_r,   "gfx/ALCO_DL500B_Liv20.png") {template_7_r(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv20_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv20_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv20_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv20;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv20_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ALCO_DL500B_Liv20_r;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv20_pair, position_in_vehid_chain % 2) {
+ 1: switch_ALCO_DL500B_Liv20_r;
+  switch_ALCO_DL500B_Liv20_Fw;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv20_rear, position_in_vehid_chain_from_end) {
+ 0: switch_ALCO_DL500B_Liv20_r;
+  switch_ALCO_DL500B_Liv20_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ALCO_DL500B_Liv20_position, position_in_consist) {
+ 0: switch_ALCO_DL500B_Liv20_Fw;
+  switch_ALCO_DL500B_Liv20_rear;
+}
+
+const ALCO_DL500B_Liv20_ID = (ALCO_DL500B_ID + Liv20_ID);
+
+item(FEAT_TRAINS, Item_ALCO_DL500B_Liv20, ALCO_DL500B_Liv20_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_ALCO_DL500B);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ALCO_DL500B_IntroDate;		
+		length:                         7;
+		
+		speed:							ALCO_DL500B_Speed km/h;
+		cost_factor:					ALCO_DL500B_CostFactor;
+		running_cost_factor:			ALCO_DL500B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ALCO_DL500B_Power;
+		weight:							ALCO_DL500B_Weight;
+		
+        variant_group: 					Item_ALCO_DL500B_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_ALCO_DL500B_Liv20_position;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_ALCO_DL500B_Liv20_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ALCO_DL500B);
+		reverse_build_probability: 		return 25;
+}
+}
+
+const ALCO_DL500B_Liv20_BG_ID = (ALCO_DL500B_Liv20_ID + 50);
+
+//ALCO_DL500B_Liv20_BG
+item(FEAT_TRAINS, Item_ALCO_DL500B_Liv20_BG, ALCO_DL500B_Liv20_BG_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_ALCO_DL500B_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ALCO_DL500B_IntroDate;		
+		length:                         7;
+		
+		speed:							ALCO_DL500B_Speed km/h;
+		cost_factor:					ALCO_DL500B_CostFactor;
+		running_cost_factor:			ALCO_DL500B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ALCO_DL500B_Power;
+		weight:							ALCO_DL500B_Weight;
+		
+        variant_group: 					Item_ALCO_DL500B_Liv0_BG;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_ALCO_DL500B_Liv20_position;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_ALCO_DL500B_Liv20_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ALCO_DL500B_BG);
+		reverse_build_probability: 		return 25;
 }
 }
 
