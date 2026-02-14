@@ -802,8 +802,14 @@ const Tait_Power = 564;
 const Tait_Weight = 35;
 
 //Pantographs
-spriteset(spriteset_Tait_Panto_Purchase,   "gfx/Tait_Pantographs.png") {template_purchase_88mu(7, 21)}
+//Single
 spriteset(spriteset_Tait_Panto_Single_Purchase,   "gfx/Tait_Pantographs.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_Tait_Roof1_Single_Purchase,   "gfx/Tait_Roof1.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Tait_Roof2_Single_Purchase,   "gfx/Tait_Roof2.png") {template_purchase_8(187, 21)}
+
+//MU
+spriteset(spriteset_Tait_Panto_Purchase,   "gfx/Tait_Pantographs.png") {template_purchase_88mu(7, 21)}
 
 spriteset(spriteset_Tait_PantoDown,   "gfx/Tait_Pantographs.png") {template_8(7, 39)}
 spriteset(spriteset_Tait_PantoDown_r,   "gfx/Tait_Pantographs.png") {template_8_r(7, 39)}
@@ -814,13 +820,12 @@ spriteset(spriteset_Tait_Roof1_Purchase,   "gfx/Tait_Roof1.png") {template_purch
 spriteset(spriteset_Tait_Roof1_Motor,   "gfx/Tait_Roof1.png") {template_8(7, 39)}
 spriteset(spriteset_Tait_Roof1_Motor_r,   "gfx/Tait_Roof1.png") {template_8_r(7, 39)}
 spriteset(spriteset_Tait_Roof1_Trailer,   "gfx/Tait_Roof1.png") {template_8_repeat(7, 69)}
-spriteset(spriteset_Tait_Roof1_Single_Purchase,   "gfx/Tait_Roof1.png") {template_purchase_8(187, 21)}
+
 
 spriteset(spriteset_Tait_Roof2_Purchase,   "gfx/Tait_Roof2.png") {template_purchase_88mu(7, 21)}
 spriteset(spriteset_Tait_Roof2_Motor,   "gfx/Tait_Roof2.png") {template_8(7, 39)}
 spriteset(spriteset_Tait_Roof2_Motor_r,   "gfx/Tait_Roof2.png") {template_8_r(7, 39)}
 spriteset(spriteset_Tait_Roof2_Trailer,   "gfx/Tait_Roof2.png") {template_8_repeat(7, 69)}
-spriteset(spriteset_Tait_Roof2_Single_Purchase,   "gfx/Tait_Roof2.png") {template_purchase_8(187, 21)}
 
 //Pantograph Controls
 switch(FEAT_TRAINS, SELF, switch_Tait_Fw_railtype, tile_powers_railtype("BG_RAIL_OHLE_DC")) {
