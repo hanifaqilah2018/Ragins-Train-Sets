@@ -229,9 +229,8 @@ STR_INFO_CLYDE_JT26C2SS_G:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD
 STR_NAME_CLYDE_JT26C2SS_G_BG:Clyde-EMD JT26C-2SS
 STR_INFO_CLYDE_JT26C2SS_G_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}V/Line G Class, AN BL Class
 
-
 STR_NAME_CLYDE_AT42C:Clyde-EMD AT42C
-STR_INFO_CLYDE_AT42C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}AN DL Class
+STR_INFO_CLYDE_AT42C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Based on: {GOLD}AN DL Class
 
 STR_NAME_CLYDE_GT46CW:Clyde-EMD GT46CW
 STR_INFO_CLYDE_GT46CW:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Proposed NR Class Design, basically a 90 class after a diet
@@ -291,6 +290,9 @@ STR_NAME_COMENG_CL632_3R:Comeng CL632
 STR_INFO_COMENG_CL632_3R:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {RED}AC Overhead Line {GREEN}Third Rail {}{BLACK}Based on: {GOLD}Proposed Maldon-Dombarton locomotive based on 8650
 
 
+
+STR_NAME_CLYDE_J26C2SS:Clyde-EMD J26C-2SS
+STR_INFO_CLYDE_J26C2SS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}Clyde-EMD J26C {}{BLACK}Based on: {GOLD}NSW 42220 Rebuild {}{GOLD}Built to demonstrate the SD50 series Super-Series creep control later used in the 81 Class (JT26C-2SS)
 
 STR_NAME_CLYDE_AAT22C2R:Clyde-EMD AAT22C-2R
 STR_INFO_CLYDE_AAT22C2R:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}Clyde-EMD ML2 {}{BLACK}Based on: {GOLD}V/Line A Class
