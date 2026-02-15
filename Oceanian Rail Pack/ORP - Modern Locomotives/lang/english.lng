@@ -145,11 +145,16 @@ STR_INFO_CLYDE_JT42CX:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {
 STR_NAME_CLYDE_JT26C2M:Clyde-EMD JT26C-2M
 STR_INFO_CLYDE_JT26C2M:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}AN ALF Class
 
-STR_NAME_CLYDE_JT42C:Clyde-EMD JT42C
-STR_INFO_CLYDE_JT42C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 82 Class
+STR_NAME_CLYDE_JT42C_82:Clyde-EMD JT42C
+STR_INFO_CLYDE_JT42C_82:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 82 Class
 
 STR_NAME_CLYDE_GT46C:Clyde-EMD GT46C
 STR_INFO_CLYDE_GT46C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Westrail Q Class, Freight Australia V Class, FreightLink FQ Class
+
+STR_NAME_CLYDE_JT42C_S_NG:Clyde-EMD JT42C
+STR_INFO_CLYDE_JT42C_S_NG:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Westrail S Class, COMALCO R1005 & R1006
+STR_NAME_CLYDE_JT42C_S:Clyde-EMD JT42C
+STR_INFO_CLYDE_JT42C_S:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Westrail S Class, COMALCO R1005 & R1006
 
 STR_NAME_DOWNER_GT46CACE:Downer-EMD GT46C-ACe
 STR_INFO_DOWNER_GT46CACE:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel
