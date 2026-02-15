@@ -9948,7 +9948,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv0_PurchaseStack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv0_Purchase;
-    1: switch_Couplers_6_Repeat_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
 }
 
 switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv0_CargoStack, [
@@ -9956,7 +9956,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv0_CargoStack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv0_0;
-	1: switch_Couplers_6_Repeat;
+	1: switch_Couplers_7_Repeat;
     2: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -9965,8 +9965,8 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv0_RearStack1, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv0_0;
-	1: switch_Couplers_6_Repeat;
-	2: spriteset_6_Old_EOTD;
+	1: switch_Couplers_7_Repeat;
+	2: spriteset_7_Modern_EOTD;
     3: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -9980,8 +9980,8 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv0_RearStack2, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv0_0;
-	1: switch_Couplers_6_Repeat;
-	2: spriteset_6_Old_EOTD_r;
+	1: switch_Couplers_7_Repeat;
+	2: spriteset_7_Modern_EOTD_r;
     3: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10154,7 +10154,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv1_PurchaseStack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv1_Purchase;
-    1: switch_Couplers_6_Repeat_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
 }
 
 switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv1_CargoStack, [
@@ -10162,7 +10162,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv1_CargoStack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv1_0;
-	1: switch_Couplers_6_Repeat;
+	1: switch_Couplers_7_Repeat;
     2: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10171,8 +10171,8 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv1_RearStack1, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv1_0;
-	1: switch_Couplers_6_Repeat;
-	2: spriteset_6_Old_EOTD;
+	1: switch_Couplers_7_Repeat;
+	2: spriteset_7_Modern_EOTD;
     3: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10186,8 +10186,8 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv1_RearStack2, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv1_0;
-	1: switch_Couplers_6_Repeat;
-	2: spriteset_6_Old_EOTD_r;
+	1: switch_Couplers_7_Repeat;
+	2: spriteset_7_Modern_EOTD_r;
     3: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10360,7 +10360,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv2_PurchaseStack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv2_Purchase;
-    1: switch_Couplers_6_Repeat_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
 }
 
 switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv2_CargoStack, [
@@ -10368,7 +10368,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv2_CargoStack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv2_0;
-	1: switch_Couplers_6_Repeat;
+	1: switch_Couplers_7_Repeat;
     2: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10377,8 +10377,8 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv2_RearStack1, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv2_0;
-	1: switch_Couplers_6_Repeat;
-	2: spriteset_6_Old_EOTD;
+	1: switch_Couplers_7_Repeat;
+	2: spriteset_7_Modern_EOTD;
     3: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10392,8 +10392,8 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv2_RearStack2, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv2_0;
-	1: switch_Couplers_6_Repeat;
-	2: spriteset_6_Old_EOTD_r;
+	1: switch_Couplers_7_Repeat;
+	2: spriteset_7_Modern_EOTD_r;
     3: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10566,7 +10566,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv3_PurchaseStack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv3_Purchase;
-    1: switch_Couplers_6_Repeat_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
 }
 
 switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv3_CargoStack, [
@@ -10574,7 +10574,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv3_CargoStack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv3_0;
-	1: switch_Couplers_6_Repeat;
+	1: switch_Couplers_7_Repeat;
     2: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10583,8 +10583,8 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv3_RearStack1, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv3_0;
-	1: switch_Couplers_6_Repeat;
-	2: spriteset_6_Old_EOTD;
+	1: switch_Couplers_7_Repeat;
+	2: spriteset_7_Modern_EOTD;
     3: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10598,8 +10598,8 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv3_RearStack2, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv3_0;
-	1: switch_Couplers_6_Repeat;
-	2: spriteset_6_Old_EOTD_r;
+	1: switch_Couplers_7_Repeat;
+	2: spriteset_7_Modern_EOTD_r;
     3: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10772,7 +10772,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv4_PurchaseStack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv4_Purchase;
-    1: switch_Couplers_6_Repeat_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
 }
 
 switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv4_CargoStack, [
@@ -10780,7 +10780,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv4_CargoStack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv4_0;
-	1: switch_Couplers_6_Repeat;
+	1: switch_Couplers_7_Repeat;
     2: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10789,8 +10789,8 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv4_RearStack1, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv4_0;
-	1: switch_Couplers_6_Repeat;
-	2: spriteset_6_Old_EOTD;
+	1: switch_Couplers_7_Repeat;
+	2: spriteset_7_Modern_EOTD;
     3: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10804,8 +10804,8 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv4_RearStack2, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv4_0;
-	1: switch_Couplers_6_Repeat;
-	2: spriteset_6_Old_EOTD_r;
+	1: switch_Couplers_7_Repeat;
+	2: spriteset_7_Modern_EOTD_r;
     3: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10978,7 +10978,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv5_PurchaseStack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv5_Purchase;
-    1: switch_Couplers_6_Repeat_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
 }
 
 switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv5_CargoStack, [
@@ -10986,7 +10986,7 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv5_CargoStack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv5_0;
-	1: switch_Couplers_6_Repeat;
+	1: switch_Couplers_7_Repeat;
     2: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -10995,8 +10995,8 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv5_RearStack1, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv5_0;
-	1: switch_Couplers_6_Repeat;
-	2: spriteset_6_Old_EOTD;
+	1: switch_Couplers_7_Repeat;
+	2: spriteset_7_Modern_EOTD;
     3: switch_Gen5H_OpenHopper_recolour_load;
 }
 
@@ -11010,8 +11010,8 @@ switch (FEAT_TRAINS, SELF, switch_Gen5H_OpenHopper_Liv5_RearStack2, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_Gen5H_OpenHopper_Liv5_0;
-	1: switch_Couplers_6_Repeat;
-	2: spriteset_6_Old_EOTD_r;
+	1: switch_Couplers_7_Repeat;
+	2: spriteset_7_Modern_EOTD_r;
     3: switch_Gen5H_OpenHopper_recolour_load;
 }
 

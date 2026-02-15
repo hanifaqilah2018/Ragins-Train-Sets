@@ -139,11 +139,11 @@ STR_INFO_ALCODL541_PILBARA:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Die
 STR_NAME_CLYDE_GL26C2:Clyde-EMD GL26C-2
 STR_INFO_CLYDE_GL26C2:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}QR 2170 Class
 
-STR_NAME_CLYDE_JT42CX:Clyde-EMD JT42C-X
-STR_INFO_CLYDE_JT42CX:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Clyde GML10 Prototype {}{}{GOLD}it's not so bad being alone
+STR_NAME_CLYDE_JT42C_GML:Clyde-EMD JT42C-X
+STR_INFO_CLYDE_JT42C_GML:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Goldsworthy Mining Limited No. 10 (AKA GML10) {}{GOLD}it's not so bad being alone
 
 STR_NAME_CLYDE_JT26C2M:Clyde-EMD JT26C-2M
-STR_INFO_CLYDE_JT26C2M:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}AN ALF Class
+STR_INFO_CLYDE_JT26C2M:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}AN ALF Class
 
 STR_NAME_CLYDE_JT42C_82:Clyde-EMD JT42C
 STR_INFO_CLYDE_JT42C_82:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 82 Class
