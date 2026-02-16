@@ -101,6 +101,12 @@ STR_INFO_GMD_G8A:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Na
 STR_NAME_GONINAN_47CLASS:Goninan 47 Class
 STR_INFO_GONINAN_47CLASS:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 47 Class {}{GOLD}Born to haul coal trains, forced to go to Bathurst
 
+STR_NAME_EE_ML202C:English Electric ML202C
+STR_INFO_EE_ML202C:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}TGR Z Class
+
+STR_NAME_EE_ML255C:English Electric ML255C
+STR_INFO_EE_ML255C:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}QR 2350 Class,TGR Za/Zb Class
+
 
 
 STR_NAME_MLW_RSC3:ALCO-MLW RSC-3
