@@ -179,11 +179,11 @@ cargotable {
 
 //Basecost Paramater Variables
 basecost {
- PR_BUILD_VEHICLE_TRAIN: 	1 + param_purchase_cost - 4;
- PR_BUILD_VEHICLE_WAGON: 	1 + param_purchase_cost - 4;
+ PR_BUILD_VEHICLE_TRAIN: 	1 + param_purchase_cost - 8;
+ PR_BUILD_VEHICLE_WAGON: 	1 + param_purchase_cost - 2;
  PR_RUNNING_TRAIN_ELECTRIC: 3 + param_running_cost - 4;
  PR_RUNNING_TRAIN_DIESEL: 	3 + param_running_cost - 4;
- PR_RUNNING_TRAIN_STEAM: 	0 + param_running_cost - 4;
+ PR_RUNNING_TRAIN_STEAM: 	0 + param_running_cost - 2;
 }
 
 // Fix depot view
@@ -1865,6 +1865,1544 @@ const Liv46_ID = 46;
 const Liv47_ID = 47;
 const Liv48_ID = 48;
 const Liv49_ID = 49;
+
+const Light_Metro_LoadingSpeed = 30;
+const Heavy_Metro_LoadingSpeed = 30;
+const SD_Suburban_LoadingSpeed = 10;
+const DD_Suburban_LoadingSpeed = 8;
+const SD_Intercity_LoadingSpeed = 5;
+const DD_Intercity_LoadingSpeed = 3;
+
+//VLine_HType
+spriteset(spriteset_VLine_HType_EOTD,   "gfx/VLine_HType_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_VLine_HType_EOTD_r,   "gfx/VLine_HType_EOTD.png") {template_8_r(7, 39)}
+
+//ID
+const VLine_HType_ID = 6950;
+//introduction_date
+const VLine_HType_IntroDate = date(1984, 1, 1);
+//speed
+const VLine_HType_Speed = 115;
+//cost_factor
+const VLine_HType_CostFactor = 57;
+//running_cost_factor
+const VLine_HType_RunningCostFactor = 24;
+//Cargo Capacity
+const VLine_HType_CargoCapacity = 114;
+//weight
+const VLine_HType_Weight = 33;
+
+//VLine_HType_Liv0
+spriteset(spriteset_VLine_HType_Liv0_Purchase,   "gfx/VLine_HType_Liv0.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_VLine_HType_Liv0,   "gfx/VLine_HType_Liv0.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_VLine_HType_Liv0_Terminal,   "gfx/VLine_HType_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_VLine_HType_Liv0_Terminal_r,   "gfx/VLine_HType_Liv0.png") {template_8_r(7, 69)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_Liv0_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_Liv0;
+	1: switch_Couplers_8_Repeat;
+}
+
+//MTH Rear Switches
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_Liv0_MTHRearStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_Liv0;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_VLine_HType_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_Liv0_MTHrearcheck1, position_in_consist_from_end){
+    0 : switch_VLine_HType_Liv0_MTHRearStack1;
+    return switch_VLine_HType_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_Liv0_MTHRearStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_Liv0;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_VLine_HType_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_Liv0_MTHrearcheck2, position_in_consist_from_end){
+    0 : switch_VLine_HType_Liv0_MTHRearStack2;
+    return switch_VLine_HType_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_Liv0_MTHposition, vehicle_is_flipped) {
+ 0: switch_VLine_HType_Liv0_MTHrearcheck1;
+ 1: switch_VLine_HType_Liv0_MTHrearcheck2;
+}
+
+//Terminal Cars Switches
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_Liv0_TerminalStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_Liv0_Terminal;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_VLine_HType_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_VLine_HType_Liv0_TerminalStack1;
+    return switch_VLine_HType_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_Liv0_TerminalStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_Liv0_Terminal_r;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_VLine_HType_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_VLine_HType_Liv0_TerminalStack2;
+    return switch_VLine_HType_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_Liv0_position, vehicle_is_flipped) {
+ 0: switch_VLine_HType_Liv0_rearcheck1;
+ 1: switch_VLine_HType_Liv0_rearcheck2;
+}
+
+//MTH Checks
+switch(FEAT_TRAINS, SELF, switch_HType_Liv0_MTHrearcheck, position_in_consist_from_end){
+    0 : switch_VLine_HType_Liv0_MTHposition;
+    return switch_VLine_HType_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_HType_Liv0_MTHCheck, num_vehs_in_vehid_chain){
+    1..3 : switch_HType_Liv0_MTHrearcheck;
+    return switch_VLine_HType_Liv0_position;
+}
+
+const VLine_HType_Liv0_ID = (VLine_HType_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_VLine_HType_Liv0, VLine_HType_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_VLINE_HTYPE);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              VLine_HType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_HType_Speed km/h;
+		cost_factor:					VLine_HType_CostFactor;
+		running_cost_factor:			VLine_HType_RunningCostFactor;
+		cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							VLine_HType_Weight ton;
+
+//        variant_group: 					Item_VLine_HType_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_HType_Liv0_MTHCheck;
+    purchase:                           switch_VLine_HType_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_VLINE_HTYPE);
+}
+}
+
+const VLine_HType_BG_Liv0_ID = (VLine_HType_Liv0_ID + 25);
+
+item (FEAT_TRAINS, Item_VLine_HType_BG_Liv0, VLine_HType_BG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_VLINE_HTYPE_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              VLine_HType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_HType_Speed km/h;
+		cost_factor:					VLine_HType_CostFactor;
+		running_cost_factor:			VLine_HType_RunningCostFactor;
+		cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							VLine_HType_Weight ton;
+
+//        variant_group: 					Item_VLine_HType_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_HType_Liv0_MTHCheck;
+    purchase:                           switch_VLine_HType_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_VLINE_HTYPE_BG);
+}
+}
+
+//VLine_HType_DT_Liv0
+spriteset(spriteset_VLine_HType_DT_Liv0_Purchase,   "gfx/VLine_HType_Liv0.png") {template_purchase_8(187, 21)}
+
+spriteset(spriteset_VLine_HType_DT_Liv0,   "gfx/VLine_HType_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_VLine_HType_DT_Liv0_r,   "gfx/VLine_HType_Liv0.png") {template_8_r(187, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_DT_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_DT_Liv0_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Forwards
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_DT_Liv0_ForwardStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_DT_Liv0;
+	1: switch_Couplers_8_Repeat;
+}
+
+//Backwards
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_DT_Liv0_ReverseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_DT_Liv0_r;
+	1: switch_Couplers_8_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_DT_Liv0_rearcheck, position_in_consist){
+    0 : switch_VLine_HType_DT_Liv0_ForwardStack;
+    return switch_VLine_HType_DT_Liv0_ReverseStack;
+}
+
+const VLine_HType_DT_Liv0_ID = (VLine_HType_BG_Liv0_ID + 25);
+
+item (FEAT_TRAINS, Item_VLine_HType_DT_Liv0, VLine_HType_DT_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_VLINE_HTYPE_DT);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              VLine_HType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_HType_Speed km/h;
+		cost_factor:					VLine_HType_CostFactor;
+		running_cost_factor:			VLine_HType_RunningCostFactor;
+		cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
+		power:							1 hp;
+		weight:							VLine_HType_Weight ton;
+
+//        variant_group: 					Item_VLine_HType_DT_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_VLine_HType_DT_Liv0_rearcheck;
+    purchase:                           switch_VLine_HType_DT_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_VLINE_HTYPE_DT);
+}
+}
+
+const VLine_HType_DT_BG_Liv0_ID = (VLine_HType_DT_Liv0_ID + 25);
+
+item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv0, VLine_HType_DT_BG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_VLINE_HTYPE_DT_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              VLine_HType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_HType_Speed km/h;
+		cost_factor:					VLine_HType_CostFactor;
+		running_cost_factor:			VLine_HType_RunningCostFactor;
+		cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
+		power:							1 hp;
+		weight:							VLine_HType_Weight ton;
+
+//        variant_group: 					Item_VLine_HType_DT_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_VLine_HType_DT_Liv0_rearcheck;
+    purchase:                           switch_VLine_HType_DT_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_VLINE_HTYPE_DT_BG);
+}
+}
+
+//VLine_HType_Liv1
+spriteset(spriteset_VLine_HType_Liv1_Purchase,   "gfx/VLine_HType_Liv1.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_VLine_HType_Liv1,   "gfx/VLine_HType_Liv1.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_VLine_HType_Liv1_Terminal,   "gfx/VLine_HType_Liv1.png") {template_8(7, 69)}
+spriteset(spriteset_VLine_HType_Liv1_Terminal_r,   "gfx/VLine_HType_Liv1.png") {template_8_r(7, 69)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_Liv1_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_Liv1_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_Liv1;
+	1: switch_Couplers_8_Repeat;
+}
+
+//MTH Rear Switches
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_Liv1_MTHRearStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_Liv1;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_VLine_HType_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_Liv1_MTHrearcheck1, position_in_consist_from_end){
+    0 : switch_VLine_HType_Liv1_MTHRearStack1;
+    return switch_VLine_HType_Liv1_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_Liv1_MTHRearStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_Liv1;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_VLine_HType_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_Liv1_MTHrearcheck2, position_in_consist_from_end){
+    0 : switch_VLine_HType_Liv1_MTHRearStack2;
+    return switch_VLine_HType_Liv1_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_Liv1_MTHposition, vehicle_is_flipped) {
+ 0: switch_VLine_HType_Liv1_MTHrearcheck1;
+ 1: switch_VLine_HType_Liv1_MTHrearcheck2;
+}
+
+//Terminal Cars Switches
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_Liv1_TerminalStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_Liv1_Terminal;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_VLine_HType_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_VLine_HType_Liv1_TerminalStack1;
+    return switch_VLine_HType_Liv1_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_Liv1_TerminalStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_Liv1_Terminal_r;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_VLine_HType_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_VLine_HType_Liv1_TerminalStack2;
+    return switch_VLine_HType_Liv1_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_Liv1_position, vehicle_is_flipped) {
+ 0: switch_VLine_HType_Liv1_rearcheck1;
+ 1: switch_VLine_HType_Liv1_rearcheck2;
+}
+
+//MTH Checks
+switch(FEAT_TRAINS, SELF, switch_HType_Liv1_MTHrearcheck, position_in_consist_from_end){
+    0 : switch_VLine_HType_Liv1_MTHposition;
+    return switch_VLine_HType_Liv1_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_HType_Liv1_MTHCheck, num_vehs_in_vehid_chain){
+    1..3 : switch_HType_Liv1_MTHrearcheck;
+    return switch_VLine_HType_Liv1_position;
+}
+
+const VLine_HType_Liv1_ID = (VLine_HType_ID + Liv1_ID);
+
+item (FEAT_TRAINS, Item_VLine_HType_Liv1, VLine_HType_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_VLINE_HTYPE);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              VLine_HType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_HType_Speed km/h;
+		cost_factor:					VLine_HType_CostFactor;
+		running_cost_factor:			VLine_HType_RunningCostFactor;
+		cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							VLine_HType_Weight ton;
+
+        variant_group: 					Item_VLine_HType_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_HType_Liv1_MTHCheck;
+    purchase:                           switch_VLine_HType_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_VLINE_HTYPE);
+}
+}
+
+const VLine_HType_BG_Liv1_ID = (VLine_HType_Liv1_ID + 25);
+
+item (FEAT_TRAINS, Item_VLine_HType_BG_Liv1, VLine_HType_BG_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_VLINE_HTYPE_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              VLine_HType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_HType_Speed km/h;
+		cost_factor:					VLine_HType_CostFactor;
+		running_cost_factor:			VLine_HType_RunningCostFactor;
+		cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							VLine_HType_Weight ton;
+
+        variant_group: 					Item_VLine_HType_BG_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_HType_Liv1_MTHCheck;
+    purchase:                           switch_VLine_HType_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_VLINE_HTYPE_BG);
+}
+}
+
+//VLine_HType_DT_Liv1
+spriteset(spriteset_VLine_HType_DT_Liv1_Purchase,   "gfx/VLine_HType_Liv1.png") {template_purchase_8(187, 21)}
+
+spriteset(spriteset_VLine_HType_DT_Liv1,   "gfx/VLine_HType_Liv1.png") {template_8(187, 39)}
+spriteset(spriteset_VLine_HType_DT_Liv1_r,   "gfx/VLine_HType_Liv1.png") {template_8_r(187, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_DT_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_DT_Liv1_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Forwards
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_DT_Liv1_ForwardStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_DT_Liv1;
+	1: switch_Couplers_8_Repeat;
+}
+
+//Backwards
+switch (FEAT_TRAINS, SELF, switch_VLine_HType_DT_Liv1_ReverseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_HType_DT_Liv1_r;
+	1: switch_Couplers_8_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_HType_DT_Liv1_rearcheck, position_in_consist){
+    0 : switch_VLine_HType_DT_Liv1_ForwardStack;
+    return switch_VLine_HType_DT_Liv1_ReverseStack;
+}
+
+const VLine_HType_DT_Liv1_ID = (VLine_HType_BG_Liv1_ID + 25);
+
+item (FEAT_TRAINS, Item_VLine_HType_DT_Liv1, VLine_HType_DT_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_VLINE_HTYPE_DT);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              VLine_HType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_HType_Speed km/h;
+		cost_factor:					VLine_HType_CostFactor;
+		running_cost_factor:			VLine_HType_RunningCostFactor;
+		cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
+		power:							1 hp;
+		weight:							VLine_HType_Weight ton;
+
+        variant_group: 					Item_VLine_HType_DT_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_VLine_HType_DT_Liv1_rearcheck;
+    purchase:                           switch_VLine_HType_DT_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_VLINE_HTYPE_DT);
+}
+}
+
+const VLine_HType_DT_BG_Liv1_ID = (VLine_HType_DT_Liv1_ID + 25);
+
+item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv1, VLine_HType_DT_BG_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_VLINE_HTYPE_DT_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              VLine_HType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_HType_Speed km/h;
+		cost_factor:					VLine_HType_CostFactor;
+		running_cost_factor:			VLine_HType_RunningCostFactor;
+		cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
+		power:							1 hp;
+		weight:							VLine_HType_Weight ton;
+
+        variant_group: 					Item_VLine_HType_DT_BG_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_VLine_HType_DT_Liv1_rearcheck;
+    purchase:                           switch_VLine_HType_DT_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_VLINE_HTYPE_DT_BG);
+}
+}
+
+//Tulloch_InterurbanCoach
+spriteset(spriteset_Tulloch_InterurbanCoach_EOTD,   "gfx/Tulloch_InterurbanCoach_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_Tulloch_InterurbanCoach_EOTD_r,   "gfx/Tulloch_InterurbanCoach_EOTD.png") {template_8_r(7, 39)}
+
+//ID
+const Tulloch_InterurbanCoach_ID = 12850;
+//introduction_date
+const Tulloch_InterurbanCoach_IntroDate = date(1948, 1, 1);
+//speed
+const Tulloch_InterurbanCoach_Speed = 115;
+//cost_factor
+const Tulloch_InterurbanCoach_CostFactor = 50;
+//running_cost_factor
+const Tulloch_InterurbanCoach_RunningCostFactor = 21;
+//Cargo Capacity
+const Tulloch_InterurbanCoach_CargoCapacity = 79;
+//weight
+const Tulloch_InterurbanCoach_Weight = 35;
+
+//Tulloch_InterurbanCoach_Liv0
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv0_Purchase,   "gfx/Tulloch_InterurbanCoach_Liv0.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv0,   "gfx/Tulloch_InterurbanCoach_Liv0.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv0_Diner,   "gfx/Tulloch_InterurbanCoach_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv0_Terminal,   "gfx/Tulloch_InterurbanCoach_Liv0.png") {template_8(7, 99)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv0_Terminal_r,   "gfx/Tulloch_InterurbanCoach_Liv0.png") {template_8_r(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv0_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_Tulloch_InterurbanCoach_Liv0_Diner;
+  spriteset_Tulloch_InterurbanCoach_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_InterurbanCoach_Liv0_Terminal;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Tulloch_InterurbanCoach_Liv0_SpriteStack1;
+    return switch_Tulloch_InterurbanCoach_Liv0_dinerposition;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_InterurbanCoach_Liv0_Terminal_r;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Tulloch_InterurbanCoach_Liv0_SpriteStack2;
+    return switch_Tulloch_InterurbanCoach_Liv0_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Tulloch_InterurbanCoach_Liv0_rearcheck1;
+ 1: switch_Tulloch_InterurbanCoach_Liv0_rearcheck2;
+}
+
+const Tulloch_InterurbanCoach_Liv0_ID = (Tulloch_InterurbanCoach_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv0, Tulloch_InterurbanCoach_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_TULLOCH_INTERURBANCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Tulloch_InterurbanCoach_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Tulloch_InterurbanCoach_Speed km/h;
+		cost_factor:					Tulloch_InterurbanCoach_CostFactor;
+		running_cost_factor:			Tulloch_InterurbanCoach_RunningCostFactor;
+		cargo_capacity: 				(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Tulloch_InterurbanCoach_Weight ton;
+
+//        variant_group: 					Item_Tulloch_InterurbanCoach_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Tulloch_InterurbanCoach_Liv0_position;
+    purchase:                           spriteset_Tulloch_InterurbanCoach_Liv0;
+    additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+}
+}
+
+//Mail_Tulloch_InterurbanCoach_Liv0
+spriteset(spriteset_Mail_Tulloch_InterurbanCoach_Liv0_Purchase,   "gfx/Tulloch_InterurbanCoach_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_Tulloch_InterurbanCoach_Liv0,   "gfx/Tulloch_InterurbanCoach_Liv0.png") {template_8_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Tulloch_InterurbanCoach_Liv0;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_Tulloch_InterurbanCoach_Liv0_SpriteStack1;
+    return spriteset_Mail_Tulloch_InterurbanCoach_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Tulloch_InterurbanCoach_Liv0;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_Tulloch_InterurbanCoach_Liv0_SpriteStack2;
+    return spriteset_Mail_Tulloch_InterurbanCoach_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_Tulloch_InterurbanCoach_Liv0_rearcheck1;
+ 1: switch_Mail_Tulloch_InterurbanCoach_Liv0_rearcheck2;
+}
+
+const Mail_Tulloch_InterurbanCoach_Liv0_ID = (Tulloch_InterurbanCoach_Liv0_ID + 25);
+
+item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv0, Mail_Tulloch_InterurbanCoach_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_TULLOCH_INTERURBANCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Tulloch_InterurbanCoach_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Tulloch_InterurbanCoach_Speed km/h;
+		cost_factor:					Tulloch_InterurbanCoach_CostFactor;
+		running_cost_factor:			Tulloch_InterurbanCoach_RunningCostFactor;
+		cargo_capacity: 				(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Tulloch_InterurbanCoach_Weight ton;
+
+//        variant_group: 					Item_Mail_Tulloch_InterurbanCoach_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_Tulloch_InterurbanCoach_Liv0_position;
+    purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv0;
+    additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+}
+}
+
+//Tulloch_InterurbanCoach_Liv1
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv1_Purchase,   "gfx/Tulloch_InterurbanCoach_Liv1.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv1,   "gfx/Tulloch_InterurbanCoach_Liv1.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv1_Diner,   "gfx/Tulloch_InterurbanCoach_Liv1.png") {template_8(7, 69)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv1_Terminal,   "gfx/Tulloch_InterurbanCoach_Liv1.png") {template_8(7, 99)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv1_Terminal_r,   "gfx/Tulloch_InterurbanCoach_Liv1.png") {template_8_r(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv1_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_Tulloch_InterurbanCoach_Liv1_Diner;
+  spriteset_Tulloch_InterurbanCoach_Liv1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv1_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_InterurbanCoach_Liv1_Terminal;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_Tulloch_InterurbanCoach_Liv1_SpriteStack1;
+    return switch_Tulloch_InterurbanCoach_Liv1_dinerposition;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv1_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_InterurbanCoach_Liv1_Terminal_r;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_Tulloch_InterurbanCoach_Liv1_SpriteStack2;
+    return switch_Tulloch_InterurbanCoach_Liv1_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Tulloch_InterurbanCoach_Liv1_rearcheck1;
+ 1: switch_Tulloch_InterurbanCoach_Liv1_rearcheck2;
+}
+
+const Tulloch_InterurbanCoach_Liv1_ID = (Tulloch_InterurbanCoach_ID + Liv1_ID);
+
+item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv1, Tulloch_InterurbanCoach_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_TULLOCH_INTERURBANCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Tulloch_InterurbanCoach_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Tulloch_InterurbanCoach_Speed km/h;
+		cost_factor:					Tulloch_InterurbanCoach_CostFactor;
+		running_cost_factor:			Tulloch_InterurbanCoach_RunningCostFactor;
+		cargo_capacity: 				(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Tulloch_InterurbanCoach_Weight ton;
+
+        variant_group: 					Item_Tulloch_InterurbanCoach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Tulloch_InterurbanCoach_Liv1_position;
+    purchase:                           spriteset_Tulloch_InterurbanCoach_Liv1;
+    additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+}
+}
+
+//Mail_Tulloch_InterurbanCoach_Liv1
+spriteset(spriteset_Mail_Tulloch_InterurbanCoach_Liv1_Purchase,   "gfx/Tulloch_InterurbanCoach_Liv1.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_Tulloch_InterurbanCoach_Liv1,   "gfx/Tulloch_InterurbanCoach_Liv1.png") {template_8_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv1_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Tulloch_InterurbanCoach_Liv1;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_Tulloch_InterurbanCoach_Liv1_SpriteStack1;
+    return spriteset_Mail_Tulloch_InterurbanCoach_Liv1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv1_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Tulloch_InterurbanCoach_Liv1;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_Tulloch_InterurbanCoach_Liv1_SpriteStack2;
+    return spriteset_Mail_Tulloch_InterurbanCoach_Liv1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Mail_Tulloch_InterurbanCoach_Liv1_rearcheck1;
+ 1: switch_Mail_Tulloch_InterurbanCoach_Liv1_rearcheck2;
+}
+
+const Mail_Tulloch_InterurbanCoach_Liv1_ID = (Tulloch_InterurbanCoach_Liv1_ID + 25);
+
+item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv1, Mail_Tulloch_InterurbanCoach_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_TULLOCH_INTERURBANCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Tulloch_InterurbanCoach_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Tulloch_InterurbanCoach_Speed km/h;
+		cost_factor:					Tulloch_InterurbanCoach_CostFactor;
+		running_cost_factor:			Tulloch_InterurbanCoach_RunningCostFactor;
+		cargo_capacity: 				(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Tulloch_InterurbanCoach_Weight ton;
+
+        variant_group: 					Item_Mail_Tulloch_InterurbanCoach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_Tulloch_InterurbanCoach_Liv1_position;
+    purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv1;
+    additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+}
+}
+
+//Tulloch_InterurbanCoach_Liv2
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv2_Purchase,   "gfx/Tulloch_InterurbanCoach_Liv2.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv2,   "gfx/Tulloch_InterurbanCoach_Liv2.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv2_Diner,   "gfx/Tulloch_InterurbanCoach_Liv2.png") {template_8(7, 69)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv2_Terminal,   "gfx/Tulloch_InterurbanCoach_Liv2.png") {template_8(7, 99)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv2_Terminal_r,   "gfx/Tulloch_InterurbanCoach_Liv2.png") {template_8_r(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv2_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_Tulloch_InterurbanCoach_Liv2_Diner;
+  spriteset_Tulloch_InterurbanCoach_Liv2;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv2_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_InterurbanCoach_Liv2_Terminal;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv2_rearcheck1, position_in_consist_from_end){
+    0 : switch_Tulloch_InterurbanCoach_Liv2_SpriteStack1;
+    return switch_Tulloch_InterurbanCoach_Liv2_dinerposition;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv2_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_InterurbanCoach_Liv2_Terminal_r;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv2_rearcheck2, position_in_consist_from_end){
+    0 : switch_Tulloch_InterurbanCoach_Liv2_SpriteStack2;
+    return switch_Tulloch_InterurbanCoach_Liv2_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv2_position, vehicle_is_flipped) {
+ 0: switch_Tulloch_InterurbanCoach_Liv2_rearcheck1;
+ 1: switch_Tulloch_InterurbanCoach_Liv2_rearcheck2;
+}
+
+const Tulloch_InterurbanCoach_Liv2_ID = (Tulloch_InterurbanCoach_ID + Liv2_ID);
+
+item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv2, Tulloch_InterurbanCoach_Liv2_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_TULLOCH_INTERURBANCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Tulloch_InterurbanCoach_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Tulloch_InterurbanCoach_Speed km/h;
+		cost_factor:					Tulloch_InterurbanCoach_CostFactor;
+		running_cost_factor:			Tulloch_InterurbanCoach_RunningCostFactor;
+		cargo_capacity: 				(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Tulloch_InterurbanCoach_Weight ton;
+
+        variant_group: 					Item_Tulloch_InterurbanCoach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Tulloch_InterurbanCoach_Liv2_position;
+    purchase:                           spriteset_Tulloch_InterurbanCoach_Liv2;
+    additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+}
+}
+
+//Mail_Tulloch_InterurbanCoach_Liv2
+spriteset(spriteset_Mail_Tulloch_InterurbanCoach_Liv2_Purchase,   "gfx/Tulloch_InterurbanCoach_Liv2.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_Tulloch_InterurbanCoach_Liv2,   "gfx/Tulloch_InterurbanCoach_Liv2.png") {template_8_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv2_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Tulloch_InterurbanCoach_Liv2;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv2_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_Tulloch_InterurbanCoach_Liv2_SpriteStack1;
+    return spriteset_Mail_Tulloch_InterurbanCoach_Liv2;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv2_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Tulloch_InterurbanCoach_Liv2;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv2_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_Tulloch_InterurbanCoach_Liv2_SpriteStack2;
+    return spriteset_Mail_Tulloch_InterurbanCoach_Liv2;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv2_position, vehicle_is_flipped) {
+ 0: switch_Mail_Tulloch_InterurbanCoach_Liv2_rearcheck1;
+ 1: switch_Mail_Tulloch_InterurbanCoach_Liv2_rearcheck2;
+}
+
+const Mail_Tulloch_InterurbanCoach_Liv2_ID = (Tulloch_InterurbanCoach_Liv2_ID + 25);
+
+item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv2, Mail_Tulloch_InterurbanCoach_Liv2_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_TULLOCH_INTERURBANCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Tulloch_InterurbanCoach_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Tulloch_InterurbanCoach_Speed km/h;
+		cost_factor:					Tulloch_InterurbanCoach_CostFactor;
+		running_cost_factor:			Tulloch_InterurbanCoach_RunningCostFactor;
+		cargo_capacity: 				(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Tulloch_InterurbanCoach_Weight ton;
+
+        variant_group: 					Item_Mail_Tulloch_InterurbanCoach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_Tulloch_InterurbanCoach_Liv2_position;
+    purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv2;
+    additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+}
+}
+
+//Tulloch_InterurbanCoach_Liv3
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv3_Purchase,   "gfx/Tulloch_InterurbanCoach_Liv3.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv3,   "gfx/Tulloch_InterurbanCoach_Liv3.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv3_Diner,   "gfx/Tulloch_InterurbanCoach_Liv3.png") {template_8(7, 69)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv3_Terminal,   "gfx/Tulloch_InterurbanCoach_Liv3.png") {template_8(7, 99)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv3_Terminal_r,   "gfx/Tulloch_InterurbanCoach_Liv3.png") {template_8_r(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv3_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_Tulloch_InterurbanCoach_Liv3_Diner;
+  spriteset_Tulloch_InterurbanCoach_Liv3;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv3_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_InterurbanCoach_Liv3_Terminal;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv3_rearcheck1, position_in_consist_from_end){
+    0 : switch_Tulloch_InterurbanCoach_Liv3_SpriteStack1;
+    return switch_Tulloch_InterurbanCoach_Liv3_dinerposition;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv3_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_InterurbanCoach_Liv3_Terminal_r;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv3_rearcheck2, position_in_consist_from_end){
+    0 : switch_Tulloch_InterurbanCoach_Liv3_SpriteStack2;
+    return switch_Tulloch_InterurbanCoach_Liv3_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv3_position, vehicle_is_flipped) {
+ 0: switch_Tulloch_InterurbanCoach_Liv3_rearcheck1;
+ 1: switch_Tulloch_InterurbanCoach_Liv3_rearcheck2;
+}
+
+const Tulloch_InterurbanCoach_Liv3_ID = (Tulloch_InterurbanCoach_ID + Liv3_ID);
+
+item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv3, Tulloch_InterurbanCoach_Liv3_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_TULLOCH_INTERURBANCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Tulloch_InterurbanCoach_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Tulloch_InterurbanCoach_Speed km/h;
+		cost_factor:					Tulloch_InterurbanCoach_CostFactor;
+		running_cost_factor:			Tulloch_InterurbanCoach_RunningCostFactor;
+		cargo_capacity: 				(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Tulloch_InterurbanCoach_Weight ton;
+
+        variant_group: 					Item_Tulloch_InterurbanCoach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Tulloch_InterurbanCoach_Liv3_position;
+    purchase:                           spriteset_Tulloch_InterurbanCoach_Liv3;
+    additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+}
+}
+
+//Mail_Tulloch_InterurbanCoach_Liv3
+spriteset(spriteset_Mail_Tulloch_InterurbanCoach_Liv3_Purchase,   "gfx/Tulloch_InterurbanCoach_Liv3.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_Tulloch_InterurbanCoach_Liv3,   "gfx/Tulloch_InterurbanCoach_Liv3.png") {template_8_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv3_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Tulloch_InterurbanCoach_Liv3;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv3_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_Tulloch_InterurbanCoach_Liv3_SpriteStack1;
+    return spriteset_Mail_Tulloch_InterurbanCoach_Liv3;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv3_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Tulloch_InterurbanCoach_Liv3;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv3_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_Tulloch_InterurbanCoach_Liv3_SpriteStack2;
+    return spriteset_Mail_Tulloch_InterurbanCoach_Liv3;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv3_position, vehicle_is_flipped) {
+ 0: switch_Mail_Tulloch_InterurbanCoach_Liv3_rearcheck1;
+ 1: switch_Mail_Tulloch_InterurbanCoach_Liv3_rearcheck2;
+}
+
+const Mail_Tulloch_InterurbanCoach_Liv3_ID = (Tulloch_InterurbanCoach_Liv3_ID + 25);
+
+item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv3, Mail_Tulloch_InterurbanCoach_Liv3_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_TULLOCH_INTERURBANCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Tulloch_InterurbanCoach_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Tulloch_InterurbanCoach_Speed km/h;
+		cost_factor:					Tulloch_InterurbanCoach_CostFactor;
+		running_cost_factor:			Tulloch_InterurbanCoach_RunningCostFactor;
+		cargo_capacity: 				(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Tulloch_InterurbanCoach_Weight ton;
+
+        variant_group: 					Item_Mail_Tulloch_InterurbanCoach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_Tulloch_InterurbanCoach_Liv3_position;
+    purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv3;
+    additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+}
+}
+
+//Tulloch_InterurbanCoach_Liv4
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv4_Purchase,   "gfx/Tulloch_InterurbanCoach_Liv4.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv4,   "gfx/Tulloch_InterurbanCoach_Liv4.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv4_Diner,   "gfx/Tulloch_InterurbanCoach_Liv4.png") {template_8(7, 69)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv4_Terminal,   "gfx/Tulloch_InterurbanCoach_Liv4.png") {template_8(7, 99)}
+spriteset(spriteset_Tulloch_InterurbanCoach_Liv4_Terminal_r,   "gfx/Tulloch_InterurbanCoach_Liv4.png") {template_8_r(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv4_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_Tulloch_InterurbanCoach_Liv4_Diner;
+  spriteset_Tulloch_InterurbanCoach_Liv4;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv4_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_InterurbanCoach_Liv4_Terminal;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv4_rearcheck1, position_in_consist_from_end){
+    0 : switch_Tulloch_InterurbanCoach_Liv4_SpriteStack1;
+    return switch_Tulloch_InterurbanCoach_Liv4_dinerposition;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv4_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_InterurbanCoach_Liv4_Terminal_r;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv4_rearcheck2, position_in_consist_from_end){
+    0 : switch_Tulloch_InterurbanCoach_Liv4_SpriteStack2;
+    return switch_Tulloch_InterurbanCoach_Liv4_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_InterurbanCoach_Liv4_position, vehicle_is_flipped) {
+ 0: switch_Tulloch_InterurbanCoach_Liv4_rearcheck1;
+ 1: switch_Tulloch_InterurbanCoach_Liv4_rearcheck2;
+}
+
+const Tulloch_InterurbanCoach_Liv4_ID = (Tulloch_InterurbanCoach_ID + Liv4_ID);
+
+item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv4, Tulloch_InterurbanCoach_Liv4_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_TULLOCH_INTERURBANCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Tulloch_InterurbanCoach_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Tulloch_InterurbanCoach_Speed km/h;
+		cost_factor:					Tulloch_InterurbanCoach_CostFactor;
+		running_cost_factor:			Tulloch_InterurbanCoach_RunningCostFactor;
+		cargo_capacity: 				(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Tulloch_InterurbanCoach_Weight ton;
+
+        variant_group: 					Item_Tulloch_InterurbanCoach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Tulloch_InterurbanCoach_Liv4_position;
+    purchase:                           spriteset_Tulloch_InterurbanCoach_Liv4;
+    additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+}
+}
+
+//Mail_Tulloch_InterurbanCoach_Liv4
+spriteset(spriteset_Mail_Tulloch_InterurbanCoach_Liv4_Purchase,   "gfx/Tulloch_InterurbanCoach_Liv4.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_Tulloch_InterurbanCoach_Liv4,   "gfx/Tulloch_InterurbanCoach_Liv4.png") {template_8_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv4_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Tulloch_InterurbanCoach_Liv4;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv4_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_Tulloch_InterurbanCoach_Liv4_SpriteStack1;
+    return spriteset_Mail_Tulloch_InterurbanCoach_Liv4;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv4_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Tulloch_InterurbanCoach_Liv4;
+    1: spriteset_Tulloch_InterurbanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv4_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_Tulloch_InterurbanCoach_Liv4_SpriteStack2;
+    return spriteset_Mail_Tulloch_InterurbanCoach_Liv4;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Tulloch_InterurbanCoach_Liv4_position, vehicle_is_flipped) {
+ 0: switch_Mail_Tulloch_InterurbanCoach_Liv4_rearcheck1;
+ 1: switch_Mail_Tulloch_InterurbanCoach_Liv4_rearcheck2;
+}
+
+const Mail_Tulloch_InterurbanCoach_Liv4_ID = (Tulloch_InterurbanCoach_Liv4_ID + 25);
+
+item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv4, Mail_Tulloch_InterurbanCoach_Liv4_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_TULLOCH_INTERURBANCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Tulloch_InterurbanCoach_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Tulloch_InterurbanCoach_Speed km/h;
+		cost_factor:					Tulloch_InterurbanCoach_CostFactor;
+		running_cost_factor:			Tulloch_InterurbanCoach_RunningCostFactor;
+		cargo_capacity: 				(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Tulloch_InterurbanCoach_Weight ton;
+
+        variant_group: 					Item_Mail_Tulloch_InterurbanCoach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_Tulloch_InterurbanCoach_Liv4_position;
+    purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv4;
+    additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+}
+}
+
+
 
 //Loading speed
 const Gen1_LoadingSpeed = 5;

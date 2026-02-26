@@ -42,6 +42,26 @@ STR_PARAM_COUPLERS_BUFFERS:Buffers Only
 STR_PARAM_COUPLERS_KNUCKLES:Knuckles Only
 STR_PARAM_TRANSITION:Transition
 
+
+
+STR_NAME_VLINE_HTYPE:Comeng-M&K H-Type Suburban Coach
+STR_INFO_VLINE_HTYPE:{BLACK}Role:{GOLD}Suburban/Country Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}VLine H-Type Coaches
+STR_NAME_VLINE_HTYPE_BG:Comeng-M&K H-Type Suburban Coach
+STR_INFO_VLINE_HTYPE_BG:{BLACK}Role:{GOLD}Suburban/Country Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}VLine H-Type Coaches
+
+STR_NAME_VLINE_HTYPE_DT:Comeng-M&K H-Type Driving Trailer
+STR_INFO_VLINE_HTYPE_DT:{BLACK}Role:{GOLD}Suburban/Country Service {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Based on:{GOLD}VLine H-Type Coaches
+STR_NAME_VLINE_HTYPE_DT_BG:Comeng-M&K H-Type Driving Trailer
+STR_INFO_VLINE_HTYPE_DT_BG:{BLACK}Role:{GOLD}Suburban/Country Service {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Based on:{GOLD}VLine H-Type Coaches
+
+
+
+
+STR_NAME_TULLOCH_INTERURBANCOACH:Tulloch Interurban Coach
+STR_INFO_TULLOCH_INTERURBANCOACH:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Based on:{GOLD}NSW RUB Stock
+STR_NAME_MAIL_TULLOCH_INTERURBANCOACH:Tulloch Interurban Mail Coach
+STR_INFO_MAIL_TULLOCH_INTERURBANCOACH:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Based on:{GOLD}NSW RUB Stock
+
 STR_NAME_GEN2A_GOODSVAN_NG:Goods Van
 STR_INFO_GEN2A_GOODSVAN_NG:{BLACK}Gauge:{GOLD} Narrow Gauge
 STR_NAME_GEN2A_GOODSVAN:Goods Van
