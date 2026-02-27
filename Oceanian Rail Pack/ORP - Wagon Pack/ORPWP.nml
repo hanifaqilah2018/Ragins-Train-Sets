@@ -3402,6 +3402,519 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv4, Mail_Tulloch_Interurb
 }
 }
 
+//VLine_RType
+spriteset(spriteset_VLine_RType_EOTD,   "gfx/VLine_RType_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_VLine_RType_EOTD_r,   "gfx/VLine_RType_EOTD.png") {template_8_r(7, 39)}
+
+//ID
+const VLine_RType_ID = 13650;
+//introduction_date
+const VLine_RType_IntroDate = date(1983, 1, 1);
+//speed
+const VLine_RType_Speed = 160;
+//cost_factor
+const VLine_RType_CostFactor = 68;
+//running_cost_factor
+const VLine_RType_RunningCostFactor = 28;
+//Cargo Capacity
+const VLine_RType_CargoCapacity = 91;
+//weight
+const VLine_RType_Weight = 35;
+
+//VLine_RType_Liv0
+spriteset(spriteset_VLine_RType_Liv0_Purchase,   "gfx/VLine_RType_Liv0.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_VLine_RType_Liv0,   "gfx/VLine_RType_Liv0.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_VLine_RType_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_RType_Liv0;
+    1: spriteset_VLine_RType_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_RType_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_VLine_RType_Liv0_SpriteStack1;
+    return spriteset_VLine_RType_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_VLine_RType_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_RType_Liv0;
+    1: spriteset_VLine_RType_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_RType_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_VLine_RType_Liv0_SpriteStack2;
+    return spriteset_VLine_RType_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_RType_Liv0_position, vehicle_is_flipped) {
+ 0: switch_VLine_RType_Liv0_rearcheck1;
+ 1: switch_VLine_RType_Liv0_rearcheck2;
+}
+
+const VLine_RType_Liv0_ID = (VLine_RType_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_VLine_RType_Liv0, VLine_RType_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_VLINE_RTYPE);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              VLine_RType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_RType_Speed km/h;
+		cost_factor:					VLine_RType_CostFactor;
+		running_cost_factor:			VLine_RType_RunningCostFactor;
+		cargo_capacity: 				(VLine_RType_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							VLine_RType_Weight ton;
+
+//        variant_group: 					Item_VLine_RType_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_VLine_RType_Liv0_position;
+    purchase:                           spriteset_VLine_RType_Liv0;
+    additional_text: 					string(STR_INFO_VLINE_RTYPE);
+}
+}
+
+const VLine_RType_Liv0_BG_ID = (VLine_RType_Liv0_ID + 25);
+
+item (FEAT_TRAINS, Item_VLine_RType_BG_Liv0, VLine_RType_Liv0_BG_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_VLINE_RTYPE_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              VLine_RType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_RType_Speed km/h;
+		cost_factor:					VLine_RType_CostFactor;
+		running_cost_factor:			VLine_RType_RunningCostFactor;
+		cargo_capacity: 				(VLine_RType_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							VLine_RType_Weight ton;
+
+//        variant_group: 					Item_VLine_RType_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_VLine_RType_Liv0_position;
+    purchase:                           spriteset_VLine_RType_Liv0;
+    additional_text: 					string(STR_INFO_VLINE_RTYPE_BG);
+}
+}
+
+//Mail_VLine_RType_Liv0
+spriteset(spriteset_Mail_VLine_RType_Liv0_Purchase,   "gfx/VLine_RType_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_VLine_RType_Liv0,   "gfx/VLine_RType_Liv0.png") {template_8_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_VLine_RType_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_VLine_RType_Liv0;
+    1: spriteset_VLine_RType_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_VLine_RType_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_VLine_RType_Liv0_SpriteStack1;
+    return spriteset_Mail_VLine_RType_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_VLine_RType_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_VLine_RType_Liv0;
+    1: spriteset_VLine_RType_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_VLine_RType_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_VLine_RType_Liv0_SpriteStack2;
+    return spriteset_Mail_VLine_RType_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_VLine_RType_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_VLine_RType_Liv0_rearcheck1;
+ 1: switch_Mail_VLine_RType_Liv0_rearcheck2;
+}
+
+const Mail_VLine_RType_Liv0_ID = (VLine_RType_Liv0_BG_ID + 25);
+
+item (FEAT_TRAINS, Item_Mail_VLine_RType_Liv0, Mail_VLine_RType_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_VLINE_RTYPE);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              VLine_RType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_RType_Speed km/h;
+		cost_factor:					VLine_RType_CostFactor;
+		running_cost_factor:			VLine_RType_RunningCostFactor;
+		cargo_capacity: 				(VLine_RType_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							VLine_RType_Weight ton;
+
+//        variant_group: 					Item_Mail_VLine_RType_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_VLine_RType_Liv0_position;
+    purchase:                           spriteset_Mail_VLine_RType_Liv0;
+    additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE);
+}
+}
+
+const Mail_VLine_RType_Liv0_BG_ID = (Mail_VLine_RType_Liv0_ID + 25);
+
+item (FEAT_TRAINS, Item_Mail_VLine_RType_BG_Liv0, Mail_VLine_RType_Liv0_BG_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_VLINE_RTYPE_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              VLine_RType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_RType_Speed km/h;
+		cost_factor:					VLine_RType_CostFactor;
+		running_cost_factor:			VLine_RType_RunningCostFactor;
+		cargo_capacity: 				(VLine_RType_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							VLine_RType_Weight ton;
+
+//        variant_group: 					Item_Mail_VLine_RType_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_VLine_RType_Liv0_position;
+    purchase:                           spriteset_Mail_VLine_RType_Liv0;
+    additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE_BG);
+}
+}
+
+//VLine_RType_Liv1
+spriteset(spriteset_VLine_RType_Liv1_Purchase,   "gfx/VLine_RType_Liv1.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_VLine_RType_Liv1,   "gfx/VLine_RType_Liv1.png") {template_8_repeat(7, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_VLine_RType_Liv1_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_RType_Liv1;
+    1: spriteset_VLine_RType_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_RType_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_VLine_RType_Liv1_SpriteStack1;
+    return spriteset_VLine_RType_Liv1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_VLine_RType_Liv1_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_VLine_RType_Liv1;
+    1: spriteset_VLine_RType_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_RType_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_VLine_RType_Liv1_SpriteStack2;
+    return spriteset_VLine_RType_Liv1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_VLine_RType_Liv1_position, vehicle_is_flipped) {
+ 0: switch_VLine_RType_Liv1_rearcheck1;
+ 1: switch_VLine_RType_Liv1_rearcheck2;
+}
+
+const VLine_RType_Liv1_ID = (VLine_RType_ID + Liv1_ID);
+
+item (FEAT_TRAINS, Item_VLine_RType_Liv1, VLine_RType_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_VLINE_RTYPE);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              VLine_RType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_RType_Speed km/h;
+		cost_factor:					VLine_RType_CostFactor;
+		running_cost_factor:			VLine_RType_RunningCostFactor;
+		cargo_capacity: 				(VLine_RType_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							VLine_RType_Weight ton;
+
+        variant_group: 					Item_VLine_RType_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_VLine_RType_Liv1_position;
+    purchase:                           spriteset_VLine_RType_Liv1;
+    additional_text: 					string(STR_INFO_VLINE_RTYPE);
+}
+}
+
+const VLine_RType_Liv1_BG_ID = (VLine_RType_Liv1_ID + 25);
+
+item (FEAT_TRAINS, Item_VLine_RType_BG_Liv1, VLine_RType_Liv1_BG_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_VLINE_RTYPE_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              VLine_RType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_RType_Speed km/h;
+		cost_factor:					VLine_RType_CostFactor;
+		running_cost_factor:			VLine_RType_RunningCostFactor;
+		cargo_capacity: 				(VLine_RType_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							VLine_RType_Weight ton;
+
+        variant_group: 					Item_VLine_RType_BG_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_VLine_RType_Liv1_position;
+    purchase:                           spriteset_VLine_RType_Liv1;
+    additional_text: 					string(STR_INFO_VLINE_RTYPE_BG);
+}
+}
+
+//Mail_VLine_RType_Liv1
+spriteset(spriteset_Mail_VLine_RType_Liv1_Purchase,   "gfx/VLine_RType_Liv1.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_VLine_RType_Liv1,   "gfx/VLine_RType_Liv1.png") {template_8_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_VLine_RType_Liv1_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_VLine_RType_Liv1;
+    1: spriteset_VLine_RType_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_VLine_RType_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_VLine_RType_Liv1_SpriteStack1;
+    return spriteset_Mail_VLine_RType_Liv1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_VLine_RType_Liv1_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_VLine_RType_Liv1;
+    1: spriteset_VLine_RType_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_VLine_RType_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_VLine_RType_Liv1_SpriteStack2;
+    return spriteset_Mail_VLine_RType_Liv1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_VLine_RType_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Mail_VLine_RType_Liv1_rearcheck1;
+ 1: switch_Mail_VLine_RType_Liv1_rearcheck2;
+}
+
+const Mail_VLine_RType_Liv1_ID = (VLine_RType_Liv1_BG_ID + 25);
+
+item (FEAT_TRAINS, Item_Mail_VLine_RType_Liv1, Mail_VLine_RType_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_VLINE_RTYPE);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              VLine_RType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_RType_Speed km/h;
+		cost_factor:					VLine_RType_CostFactor;
+		running_cost_factor:			VLine_RType_RunningCostFactor;
+		cargo_capacity: 				(VLine_RType_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							VLine_RType_Weight ton;
+
+        variant_group: 					Item_Mail_VLine_RType_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_VLine_RType_Liv1_position;
+    purchase:                           spriteset_Mail_VLine_RType_Liv1;
+    additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE);
+}
+}
+
+const Mail_VLine_RType_Liv1_BG_ID = (Mail_VLine_RType_Liv1_ID + 25);
+
+item (FEAT_TRAINS, Item_Mail_VLine_RType_BG_Liv1, Mail_VLine_RType_Liv1_BG_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_VLINE_RTYPE_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              VLine_RType_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							VLine_RType_Speed km/h;
+		cost_factor:					VLine_RType_CostFactor;
+		running_cost_factor:			VLine_RType_RunningCostFactor;
+		cargo_capacity: 				(VLine_RType_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							VLine_RType_Weight ton;
+
+        variant_group: 					Item_Mail_VLine_RType_BG_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_VLine_RType_Liv1_position;
+    purchase:                           spriteset_Mail_VLine_RType_Liv1;
+    additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE_BG);
+}
+}
+
 
 
 //Loading speed
