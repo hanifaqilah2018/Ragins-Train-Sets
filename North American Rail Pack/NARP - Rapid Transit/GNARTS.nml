@@ -2755,7 +2755,6 @@ const R44_Weight = 39;
 //R44_Liv0
 spriteset(spriteset_R44_Liv0_Purchase,   "gfx/R44_Liv0.png") {template_Purchase_88mu(7, 21)}
 spriteset(spriteset_R44_Liv0_Lead,   "gfx/R44_Liv0.png") {template_8(7, 39)}
-spriteset(spriteset_R44_Liv0_Lead_r,   "gfx/R44_Liv0.png") {template_8_r(7, 39)}
 spriteset(spriteset_R44_Liv0_Trailer,   "gfx/R44_Liv0.png") {template_8_repeat(7, 69)}
 
 const R44_ID_Liv0 = (R44_ID + Liv0_ID);

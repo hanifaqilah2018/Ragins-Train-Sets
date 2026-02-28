@@ -785,6 +785,703 @@ item (FEAT_TRAINS, Item_MU_Trailer, 0) {
 }
 
 //ID
+const DEBSet_ID = 8120;
+//introduction_date
+const DEBSet_IntroDate = date(1951, 1, 1);
+//speed
+const DEBSet_Speed = 115;
+//cost_factor
+const DEBSet_CostFactor = 28;
+//running_cost_factor
+const DEBSet_RunningCostFactor = 70;
+//Cargo Capacity
+const DEBSet_CargoCapacity = 80;
+//power
+const DEBSet_Power = 240;
+//weight
+const DEBSet_Weight = 27;
+
+//DEBSet_Liv0
+spriteset(spriteset_DEBSet_Liv0_purchase,   "gfx/DEBSet_Liv0.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_DEBSet_Liv0_lead,   "gfx/DEBSet_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_DEBSet_Liv0_Trailer,   "gfx/DEBSet_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_DEBSet_Liv0_Trailer_r,   "gfx/DEBSet_Liv0.png") {template_8_r(7, 69)}
+
+ random_switch(FEAT_TRAINS, SELF, switch_DEBSet_Liv0_Trailer_Random){
+    1 : spriteset_DEBSet_Liv0_Trailer;
+    1 : spriteset_DEBSet_Liv0_Trailer_r;
+}
+
+const DEBSet_ID_Liv0 = (DEBSet_ID + Liv0_ID );
+
+item(FEAT_TRAINS, Item_DEBSet_Liv0, DEBSet_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_DIESEL;
+
+        name:                           string(STR_NAME_DEBSET);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              DEBSet_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							DEBSet_Speed km/h;
+		cost_factor:					(DEBSet_CostFactor * 2);
+		running_cost_factor:			(DEBSet_RunningCostFactor * 2);
+		cargo_capacity: 				(DEBSet_CargoCapacity / param_capacity_mod);
+		power:							(DEBSet_Power * 2);
+		weight:							DEBSet_Weight ton;
+
+//        variant_group: 					Item_DEBSet_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_DEBSet_Liv0_lead;
+        purchase: 						spriteset_DEBSet_Liv0_purchase;
+        additional_text: 				string(STR_INFO_DEBSET);
+    }
+    livery_override (Item_MU_Trailer){
+        default: 						switch_DEBSet_Liv0_Trailer_Random ;
+        length: 						8;
+        cargo_capacity:                 (DEBSet_CargoCapacity / param_capacity_mod);
+        power:                          DEBSet_Power;
+		weight:                        	DEBSet_Weight;
+		running_cost_factor:            DEBSet_RunningCostFactor;
+
+    }
+}
+
+//DEBSet_Liv1
+spriteset(spriteset_DEBSet_Liv1_purchase,   "gfx/DEBSet_Liv1.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_DEBSet_Liv1_lead,   "gfx/DEBSet_Liv1.png") {template_8(7, 39)}
+spriteset(spriteset_DEBSet_Liv1_Trailer,   "gfx/DEBSet_Liv1.png") {template_8(7, 69)}
+spriteset(spriteset_DEBSet_Liv1_Trailer_r,   "gfx/DEBSet_Liv1.png") {template_8_r(7, 69)}
+
+ random_switch(FEAT_TRAINS, SELF, switch_DEBSet_Liv1_Trailer_Random){
+    1 : spriteset_DEBSet_Liv1_Trailer;
+    1 : spriteset_DEBSet_Liv1_Trailer_r;
+}
+
+const DEBSet_ID_Liv1 = (DEBSet_ID + Liv1_ID );
+
+item(FEAT_TRAINS, Item_DEBSet_Liv1, DEBSet_ID_Liv1) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_DIESEL;
+
+        name:                           string(STR_NAME_DEBSET);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              DEBSet_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							DEBSet_Speed km/h;
+		cost_factor:					(DEBSet_CostFactor * 2);
+		running_cost_factor:			(DEBSet_RunningCostFactor * 2);
+		cargo_capacity: 				(DEBSet_CargoCapacity / param_capacity_mod);
+		power:							(DEBSet_Power * 2);
+		weight:							DEBSet_Weight ton;
+
+        variant_group: 					Item_DEBSet_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_DEBSet_Liv1_lead;
+        purchase: 						spriteset_DEBSet_Liv1_purchase;
+        additional_text: 				string(STR_INFO_DEBSET);
+    }
+    livery_override (Item_MU_Trailer){
+        default: 						switch_DEBSet_Liv1_Trailer_Random ;
+        length: 						8;
+        cargo_capacity:                 (DEBSet_CargoCapacity / param_capacity_mod);
+        power:                          DEBSet_Power;
+		weight:                        	DEBSet_Weight;
+		running_cost_factor:            DEBSet_RunningCostFactor;
+
+    }
+}
+
+//DEBSet_Liv2
+spriteset(spriteset_DEBSet_Liv2_purchase,   "gfx/DEBSet_Liv2.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_DEBSet_Liv2_lead,   "gfx/DEBSet_Liv2.png") {template_8(7, 39)}
+spriteset(spriteset_DEBSet_Liv2_Trailer,   "gfx/DEBSet_Liv2.png") {template_8(7, 69)}
+spriteset(spriteset_DEBSet_Liv2_Trailer_r,   "gfx/DEBSet_Liv2.png") {template_8_r(7, 69)}
+
+ random_switch(FEAT_TRAINS, SELF, switch_DEBSet_Liv2_Trailer_Random){
+    1 : spriteset_DEBSet_Liv2_Trailer;
+    1 : spriteset_DEBSet_Liv2_Trailer_r;
+}
+
+const DEBSet_ID_Liv2 = (DEBSet_ID + Liv2_ID );
+
+item(FEAT_TRAINS, Item_DEBSet_Liv2, DEBSet_ID_Liv2) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_DIESEL;
+
+        name:                           string(STR_NAME_DEBSET);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              DEBSet_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							DEBSet_Speed km/h;
+		cost_factor:					(DEBSet_CostFactor * 2);
+		running_cost_factor:			(DEBSet_RunningCostFactor * 2);
+		cargo_capacity: 				(DEBSet_CargoCapacity / param_capacity_mod);
+		power:							(DEBSet_Power * 2);
+		weight:							DEBSet_Weight ton;
+
+        variant_group: 					Item_DEBSet_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_DEBSet_Liv2_lead;
+        purchase: 						spriteset_DEBSet_Liv2_purchase;
+        additional_text: 				string(STR_INFO_DEBSET);
+    }
+    livery_override (Item_MU_Trailer){
+        default: 						switch_DEBSet_Liv2_Trailer_Random ;
+        length: 						8;
+        cargo_capacity:                 (DEBSet_CargoCapacity / param_capacity_mod);
+        power:                          DEBSet_Power;
+		weight:                        	DEBSet_Weight;
+		running_cost_factor:            DEBSet_RunningCostFactor;
+
+    }
+}
+
+//DEBSet_Liv3
+spriteset(spriteset_DEBSet_Liv3_purchase,   "gfx/DEBSet_Liv3.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_DEBSet_Liv3_lead,   "gfx/DEBSet_Liv3.png") {template_8(7, 39)}
+spriteset(spriteset_DEBSet_Liv3_Trailer,   "gfx/DEBSet_Liv3.png") {template_8(7, 69)}
+spriteset(spriteset_DEBSet_Liv3_Trailer_r,   "gfx/DEBSet_Liv3.png") {template_8_r(7, 69)}
+
+ random_switch(FEAT_TRAINS, SELF, switch_DEBSet_Liv3_Trailer_Random){
+    1 : spriteset_DEBSet_Liv3_Trailer;
+    1 : spriteset_DEBSet_Liv3_Trailer_r;
+}
+
+const DEBSet_ID_Liv3 = (DEBSet_ID + Liv3_ID );
+
+item(FEAT_TRAINS, Item_DEBSet_Liv3, DEBSet_ID_Liv3) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_DIESEL;
+
+        name:                           string(STR_NAME_DEBSET);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              DEBSet_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							DEBSet_Speed km/h;
+		cost_factor:					(DEBSet_CostFactor * 2);
+		running_cost_factor:			(DEBSet_RunningCostFactor * 2);
+		cargo_capacity: 				(DEBSet_CargoCapacity / param_capacity_mod);
+		power:							(DEBSet_Power * 2);
+		weight:							DEBSet_Weight ton;
+
+        variant_group: 					Item_DEBSet_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_DEBSet_Liv3_lead;
+        purchase: 						spriteset_DEBSet_Liv3_purchase;
+        additional_text: 				string(STR_INFO_DEBSET);
+    }
+    livery_override (Item_MU_Trailer){
+        default: 						switch_DEBSet_Liv3_Trailer_Random ;
+        length: 						8;
+        cargo_capacity:                 (DEBSet_CargoCapacity / param_capacity_mod);
+        power:                          DEBSet_Power;
+		weight:                        	DEBSet_Weight;
+		running_cost_factor:            DEBSet_RunningCostFactor;
+
+    }
+}
+
+//ID
+const SilverFern_ID = 8240;
+//introduction_date
+const SilverFern_IntroDate = date(1972, 1, 1);
+//speed
+const SilverFern_Speed = 115;
+//cost_factor
+const SilverFern_CostFactor = 30;
+//running_cost_factor
+const SilverFern_RunningCostFactor = 76;
+//Cargo Capacity
+const SilverFern_CargoCapacity = 87;
+//power
+const SilverFern_Power = 900;
+//weight
+const SilverFern_Weight = 53;
+const SilverFern_Weight_T = 44;
+
+//SilverFern_Liv0
+spriteset(spriteset_SilverFern_Liv0_purchase,   "gfx/SilverFern_Liv0.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_SilverFern_Liv0_lead,   "gfx/SilverFern_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_SilverFern_Liv0_DT_lead,   "gfx/SilverFern_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_SilverFern_Liv0_Trailer,   "gfx/SilverFern_Liv0.png") {template_8_repeat(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv0_forward, vehicle_is_flipped){
+    0:	spriteset_SilverFern_Liv0_lead;
+    1: 	spriteset_SilverFern_Liv0_DT_lead;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv0_rev, vehicle_is_flipped){
+    0:  spriteset_SilverFern_Liv0_DT_lead;
+    1: 	spriteset_SilverFern_Liv0_lead;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_SilverFern_Liv0_directioncheck, vehicle_is_reversed){ 
+    0:    switch_SilverFern_Liv0_forward;
+    1:    switch_SilverFern_Liv0_rev;
+}
+
+const SilverFern_ID_Liv0 = (SilverFern_ID + Liv0_ID );
+
+item(FEAT_TRAINS, Item_SilverFern_Liv0, SilverFern_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_DIESEL;
+
+        name:                           string(STR_NAME_SILVERFERN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              SilverFern_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							SilverFern_Speed km/h;
+		cost_factor:					(SilverFern_CostFactor * 2);
+		running_cost_factor:			(SilverFern_RunningCostFactor * 2);
+		cargo_capacity: 				(SilverFern_CargoCapacity / param_capacity_mod);
+		power:							SilverFern_Power;
+		weight:							SilverFern_Weight ton;
+
+//        variant_group: 					Item_SilverFern_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_SilverFern_Liv0_directioncheck;
+        purchase: 						spriteset_SilverFern_Liv0_purchase;
+        additional_text: 				string(STR_INFO_SILVERFERN);
+    }
+    livery_override (Item_MU_Trailer){
+        default: 						spriteset_SilverFern_Liv0_Trailer ;
+        length: 						8;
+        cargo_capacity:                 (SilverFern_CargoCapacity / param_capacity_mod);
+        power:                          0;
+		weight:                        	SilverFern_Weight_T;
+		running_cost_factor:            (SilverFern_RunningCostFactor / 2); //maybe remove the divide?
+
+    }
+}
+
+//SilverFern_Liv1
+spriteset(spriteset_SilverFern_Liv1_purchase,   "gfx/SilverFern_Liv1.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_SilverFern_Liv1_lead,   "gfx/SilverFern_Liv1.png") {template_8(7, 39)}
+spriteset(spriteset_SilverFern_Liv1_DT_lead,   "gfx/SilverFern_Liv1.png") {template_8(7, 69)}
+spriteset(spriteset_SilverFern_Liv1_Trailer,   "gfx/SilverFern_Liv1.png") {template_8_repeat(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv1_forward, vehicle_is_flipped){
+    0:	spriteset_SilverFern_Liv1_lead;
+    1: 	spriteset_SilverFern_Liv1_DT_lead;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv1_rev, vehicle_is_flipped){
+    0:  spriteset_SilverFern_Liv1_DT_lead;
+    1: 	spriteset_SilverFern_Liv1_lead;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_SilverFern_Liv1_directioncheck, vehicle_is_reversed){ 
+    0:    switch_SilverFern_Liv1_forward;
+    1:    switch_SilverFern_Liv1_rev;
+}
+
+const SilverFern_ID_Liv1 = (SilverFern_ID + Liv1_ID );
+
+item(FEAT_TRAINS, Item_SilverFern_Liv1, SilverFern_ID_Liv1) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_DIESEL;
+
+        name:                           string(STR_NAME_SILVERFERN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              SilverFern_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							SilverFern_Speed km/h;
+		cost_factor:					(SilverFern_CostFactor * 2);
+		running_cost_factor:			(SilverFern_RunningCostFactor * 2);
+		cargo_capacity: 				(SilverFern_CargoCapacity / param_capacity_mod);
+		power:							SilverFern_Power;
+		weight:							SilverFern_Weight ton;
+
+        variant_group: 					Item_SilverFern_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_SilverFern_Liv1_directioncheck;
+        purchase: 						spriteset_SilverFern_Liv1_purchase;
+        additional_text: 				string(STR_INFO_SILVERFERN);
+    }
+    livery_override (Item_MU_Trailer){
+        default: 						spriteset_SilverFern_Liv1_Trailer ;
+        length: 						8;
+        cargo_capacity:                 (SilverFern_CargoCapacity / param_capacity_mod);
+        power:                          0;
+		weight:                        	SilverFern_Weight_T;
+		running_cost_factor:            (SilverFern_RunningCostFactor / 2); //maybe remove the divide?
+
+    }
+}
+
+//SilverFern_Liv2
+spriteset(spriteset_SilverFern_Liv2_purchase,   "gfx/SilverFern_Liv2.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_SilverFern_Liv2_lead,   "gfx/SilverFern_Liv2.png") {template_8(7, 39)}
+spriteset(spriteset_SilverFern_Liv2_DT_lead,   "gfx/SilverFern_Liv2.png") {template_8(7, 69)}
+spriteset(spriteset_SilverFern_Liv2_Trailer,   "gfx/SilverFern_Liv2.png") {template_8_repeat(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv2_forward, vehicle_is_flipped){
+    0:	spriteset_SilverFern_Liv2_lead;
+    1: 	spriteset_SilverFern_Liv2_DT_lead;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv2_rev, vehicle_is_flipped){
+    0:  spriteset_SilverFern_Liv2_DT_lead;
+    1: 	spriteset_SilverFern_Liv2_lead;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_SilverFern_Liv2_directioncheck, vehicle_is_reversed){ 
+    0:    switch_SilverFern_Liv2_forward;
+    1:    switch_SilverFern_Liv2_rev;
+}
+
+const SilverFern_ID_Liv2 = (SilverFern_ID + Liv2_ID );
+
+item(FEAT_TRAINS, Item_SilverFern_Liv2, SilverFern_ID_Liv2) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_DIESEL;
+
+        name:                           string(STR_NAME_SILVERFERN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              SilverFern_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							SilverFern_Speed km/h;
+		cost_factor:					(SilverFern_CostFactor * 2);
+		running_cost_factor:			(SilverFern_RunningCostFactor * 2);
+		cargo_capacity: 				(SilverFern_CargoCapacity / param_capacity_mod);
+		power:							SilverFern_Power;
+		weight:							SilverFern_Weight ton;
+
+        variant_group: 					Item_SilverFern_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_SilverFern_Liv2_directioncheck;
+        purchase: 						spriteset_SilverFern_Liv2_purchase;
+        additional_text: 				string(STR_INFO_SILVERFERN);
+    }
+    livery_override (Item_MU_Trailer){
+        default: 						spriteset_SilverFern_Liv2_Trailer ;
+        length: 						8;
+        cargo_capacity:                 (SilverFern_CargoCapacity / param_capacity_mod);
+        power:                          0;
+		weight:                        	SilverFern_Weight_T;
+		running_cost_factor:            (SilverFern_RunningCostFactor / 2); //maybe remove the divide?
+
+    }
+}
+
+//SilverFern_Liv3
+spriteset(spriteset_SilverFern_Liv3_purchase,   "gfx/SilverFern_Liv3.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_SilverFern_Liv3_lead,   "gfx/SilverFern_Liv3.png") {template_8(7, 39)}
+spriteset(spriteset_SilverFern_Liv3_DT_lead,   "gfx/SilverFern_Liv3.png") {template_8(7, 69)}
+spriteset(spriteset_SilverFern_Liv3_Trailer,   "gfx/SilverFern_Liv3.png") {template_8_repeat(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv3_forward, vehicle_is_flipped){
+    0:	spriteset_SilverFern_Liv3_lead;
+    1: 	spriteset_SilverFern_Liv3_DT_lead;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv3_rev, vehicle_is_flipped){
+    0:  spriteset_SilverFern_Liv3_DT_lead;
+    1: 	spriteset_SilverFern_Liv3_lead;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_SilverFern_Liv3_directioncheck, vehicle_is_reversed){ 
+    0:    switch_SilverFern_Liv3_forward;
+    1:    switch_SilverFern_Liv3_rev;
+}
+
+const SilverFern_ID_Liv3 = (SilverFern_ID + Liv3_ID );
+
+item(FEAT_TRAINS, Item_SilverFern_Liv3, SilverFern_ID_Liv3) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_DIESEL;
+
+        name:                           string(STR_NAME_SILVERFERN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              SilverFern_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							SilverFern_Speed km/h;
+		cost_factor:					(SilverFern_CostFactor * 2);
+		running_cost_factor:			(SilverFern_RunningCostFactor * 2);
+		cargo_capacity: 				(SilverFern_CargoCapacity / param_capacity_mod);
+		power:							SilverFern_Power;
+		weight:							SilverFern_Weight ton;
+
+        variant_group: 					Item_SilverFern_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_SilverFern_Liv3_directioncheck;
+        purchase: 						spriteset_SilverFern_Liv3_purchase;
+        additional_text: 				string(STR_INFO_SILVERFERN);
+    }
+    livery_override (Item_MU_Trailer){
+        default: 						spriteset_SilverFern_Liv3_Trailer ;
+        length: 						8;
+        cargo_capacity:                 (SilverFern_CargoCapacity / param_capacity_mod);
+        power:                          0;
+		weight:                        	SilverFern_Weight_T;
+		running_cost_factor:            (SilverFern_RunningCostFactor / 2); //maybe remove the divide?
+
+    }
+}
+
+//SilverFern_Liv4
+spriteset(spriteset_SilverFern_Liv4_purchase,   "gfx/SilverFern_Liv4.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_SilverFern_Liv4_lead,   "gfx/SilverFern_Liv4.png") {template_8(7, 39)}
+spriteset(spriteset_SilverFern_Liv4_DT_lead,   "gfx/SilverFern_Liv4.png") {template_8(7, 69)}
+spriteset(spriteset_SilverFern_Liv4_Trailer,   "gfx/SilverFern_Liv4.png") {template_8_repeat(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv4_forward, vehicle_is_flipped){
+    0:	spriteset_SilverFern_Liv4_lead;
+    1: 	spriteset_SilverFern_Liv4_DT_lead;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv4_rev, vehicle_is_flipped){
+    0:  spriteset_SilverFern_Liv4_DT_lead;
+    1: 	spriteset_SilverFern_Liv4_lead;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_SilverFern_Liv4_directioncheck, vehicle_is_reversed){ 
+    0:    switch_SilverFern_Liv4_forward;
+    1:    switch_SilverFern_Liv4_rev;
+}
+
+const SilverFern_ID_Liv4 = (SilverFern_ID + Liv4_ID );
+
+item(FEAT_TRAINS, Item_SilverFern_Liv4, SilverFern_ID_Liv4) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_DIESEL;
+
+        name:                           string(STR_NAME_SILVERFERN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              SilverFern_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							SilverFern_Speed km/h;
+		cost_factor:					(SilverFern_CostFactor * 2);
+		running_cost_factor:			(SilverFern_RunningCostFactor * 2);
+		cargo_capacity: 				(SilverFern_CargoCapacity / param_capacity_mod);
+		power:							SilverFern_Power;
+		weight:							SilverFern_Weight ton;
+
+        variant_group: 					Item_SilverFern_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_SilverFern_Liv4_directioncheck;
+        purchase: 						spriteset_SilverFern_Liv4_purchase;
+        additional_text: 				string(STR_INFO_SILVERFERN);
+    }
+    livery_override (Item_MU_Trailer){
+        default: 						spriteset_SilverFern_Liv4_Trailer ;
+        length: 						8;
+        cargo_capacity:                 (SilverFern_CargoCapacity / param_capacity_mod);
+        power:                          0;
+		weight:                        	SilverFern_Weight_T;
+		running_cost_factor:            (SilverFern_RunningCostFactor / 2); //maybe remove the divide?
+
+    }
+}
+
+//ID
 const Tait_ID = 11080;
 //introduction_date
 const Tait_IntroDate = date(1919, 1, 1);

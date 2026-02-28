@@ -154,59 +154,11 @@ STR_NAME_SSD_DMU_NRFSI:CAF Suburban R Set
 STR_INFO_SSD_DMU_NRFSI:{BLACK}Role:{GOLD}Suburban & Country Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
 
 
+STR_NAME_DEBSET:DEB Set
+STR_INFO_DEBSET:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
 
-STR_NAME_ICSD_DMU_COMETPOWERVAN:Comet Power Van
-STR_INFO_ICSD_DMU_COMETPOWERVAN:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Power Van and Wagons {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Note:{GOLD}Combine this with the Comet Passenger cars
-STR_NAME_ICSD_DMU_COMETPASSCAR:Comet Passenger Car
-
-STR_NAME_ICSD_DMU_METEORPOWERVAN:Meteor Power Van
-STR_INFO_ICSD_DMU_METEORPOWERVAN:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Power Van and Wagons {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Note:{GOLD}Combine this with the Meteor Passenger cars
-STR_NAME_ICSD_DMU_METEORPASSCAR:Meteor Passenger Car
-
-STR_NAME_ICSD_DMU_SPEEDLINER:Budd-Waddingtons SpeedLiner
-STR_INFO_ICSD_DMU_SPEEDLINER:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{GOLD}I don't care about the war, I just want fast trains!
-
-STR_NAME_ICSD_DMU_DEBSET:DEB Set
-STR_INFO_ICSD_DMU_DEBSET:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
-
-STR_NAME_ICSD_DMU_TWINSET:Fiat Twin Set
-STR_INFO_ICSD_DMU_TWINSET:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{GOLD}Warranty void if used
-
-STR_NAME_ICSD_DMU_1100CLASS:Budd-Comeng Railcar
-STR_INFO_ICSD_DMU_1100CLASS:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{BROWN}Diesel {}{GOLD}If these work for the Yanks, they'll work for us
-
-STR_NAME_TULLOCHDRC:Tulloch Diesel Railcar
-STR_INFO_TULLOCHDRC:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Based on:{GOLD}NSW 1200 & VR DRC DMUs
-
-STR_NAME_ICSD_DMU_PROSPECTOR:Comeng Prospector Railcar
-STR_INFO_ICSD_DMU_PROSPECTOR:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Based on:{GOLD}Original TransWA Prospector DMus
-
-STR_NAME_ICSD_DMU_SILVERFERN:Kawasaki Silver Fern
-STR_INFO_ICSD_DMU_SILVERFERN:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Based on:{GOLD}NZR Silver Fern Railcars
-
-STR_NAME_ICSD_DMU_KORU:Comeng Koru Railcar
-STR_INFO_ICSD_DMU_KORU:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Based on:{GOLD}Proposed Comeng Railcar for NZR
-
-STR_NAME_ICSD_DMU_ADPADQ:Comeng ADP/ADQ Railcar
-STR_INFO_ICSD_DMU_ADPADQ:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Based on:{GOLD}TransWA Prospector DMUs
-
-STR_NAME_ICSD_DMU_XPLORER:ABB Xplorer Railcar
-STR_INFO_ICSD_DMU_XPLORER:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Based on:{GOLD}NSW Xplorer and Endeavour DMUs {}{GOLD}Those DEB Sets weren't gonna last forever, so here you go
-
-STR_NAME_ICSD_DMU_WDCLASS:United Goninan DMU
-STR_INFO_ICSD_DMU_WDCLASS:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Based on:{GOLD}TransWA Prospector DMUs {}{BLACK}Power:{BROWN}Diesel
-
-STR_NAME_VLOCITY:Bombardier Vlocity
-STR_INFO_VLOCITY:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Based on:{GOLD}V/Line Vlocity DMUs {}{GOLD}Too many...
-
-STR_NAME_ICSD_DMU_BHRC:UGL Broken Hill Railcar
-STR_INFO_ICSD_DMU_BHRC:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Based on:{GOLD}Proposed Long-Distance version of the Hunter Railcar {}{GOLD}Need more Hunters? Just pop the window out!
-
-STR_NAME_ICSD_DMU_AUSTRALIND:Alstom Australind Railcar
-STR_INFO_ICSD_DMU_AUSTRALIND:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
-
-STR_NAME_ICSD_DMU_NRFLR:CAF Intercity R Set
-STR_INFO_ICSD_DMU_NRFLR:{BLACK}Role:{GOLD}Intercity Service{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
+STR_NAME_SILVERFERN:Kawasaki Silver Fern
+STR_INFO_SILVERFERN:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Formation:{GOLD}Push-Pull {}{BLACK}Power:{BROWN}Diesel
 
 
 
@@ -227,9 +179,9 @@ STR_INFO_EXP_DMU_DTT:{BLACK}Role:{GOLD}Express Service{}{BLACK}Formation:{GOLD}P
 
 
 STR_NAME_TAIT:Tait Set (Single)
-STR_INFO_TAIT:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Single Car{}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
+STR_INFO_TAIT:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
 STR_NAME_TAIT_MU:Tait Set
-STR_INFO_TAIT_MU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
+STR_INFO_TAIT_MU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple-Unit {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
 
 STR_NAME_SSD_EMU_BRADFIELD:Bradfield Set
 STR_INFO_SSD_EMU_BRADFIELD:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
