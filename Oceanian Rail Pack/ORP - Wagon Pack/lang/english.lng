@@ -58,9 +58,14 @@ STR_INFO_VLINE_HTYPE_DT_BG:{BLACK}Role:{GOLD}Suburban/Country Service {}{BLACK}G
 
 
 STR_NAME_TULLOCH_INTERURBANCOACH:Tulloch Interurban Coach
-STR_INFO_TULLOCH_INTERURBANCOACH:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Based on:{GOLD}NSW RUB Stock
+STR_INFO_TULLOCH_INTERURBANCOACH:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Based on: {GOLD}NSW RUB Stock
 STR_NAME_MAIL_TULLOCH_INTERURBANCOACH:Tulloch Interurban Mail Coach
-STR_INFO_MAIL_TULLOCH_INTERURBANCOACH:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Based on:{GOLD}NSW RUB Stock
+STR_INFO_MAIL_TULLOCH_INTERURBANCOACH:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Based on: {GOLD}NSW RUB Stock
+
+STR_NAME_SILVERSTAR:Hitachi-Nippon Sharyo Silver Star Coach
+STR_INFO_SILVERSTAR:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Based on: {GOLD}NZR Silver Star Coaches
+STR_NAME_MAIL_SILVERSTAR:Tulloch Hitachi-Nippon Sharyo Silver Star Mail Coach
+STR_INFO_MAIL_SILVERSTAR:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Based on: {GOLD}NZR Silver Star Coaches
 
 STR_NAME_VLINE_RTYPE:Comeng High Speed Coach
 STR_INFO_VLINE_RTYPE:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Proposed V/Line R-Type Coaches

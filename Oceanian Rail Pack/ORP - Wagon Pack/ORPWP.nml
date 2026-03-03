@@ -817,6 +817,39 @@ switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Repeat_Transition, current_year) {
 
 switch(FEAT_TRAINS, SELF, switch_Couplers_7_Repeat, param_Couplers) {0:spriteset_Buffers_7_Repeat; 1:spriteset_Knuckles_7_Repeat; 2:switch_Couplers_7_Repeat_Transition;}
 
+//8 Long Couplers
+spriteset(spriteset_Knuckles_8_Purchase,   "gfx/Couplers_8.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Knuckles_8,   "gfx/Couplers_8.png") {template_8(7, 39)}
+spriteset(spriteset_Knuckles_8_r,   "gfx/Couplers_8.png") {template_8_r(7, 39)}
+
+spriteset(spriteset_Buffers_8_Purchase,   "gfx/Couplers_8.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Buffers_8,   "gfx/Couplers_8.png") {template_8(187, 39)}
+spriteset(spriteset_Buffers_8_r,   "gfx/Couplers_8.png") {template_8_r(187, 39)}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Purchase_Transition, current_year) {
+    0..1945: spriteset_Buffers_8_Purchase;
+	1945..2100: spriteset_Knuckles_8_Purchase;
+  return spriteset_Knuckles_8_Purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_Purchase, param_Couplers) {0:spriteset_Buffers_8_Purchase; 1:spriteset_Knuckles_8_Purchase; 2:switch_Couplers_8_Purchase_Transition;}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_Transition, current_year) {
+    0..1945: spriteset_Buffers_8;
+	1945..2100: spriteset_Knuckles_8;
+  return spriteset_Knuckles_8;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Couplers_8, param_Couplers) {0:spriteset_Buffers_8; 1:spriteset_Knuckles_8; 2:switch_Couplers_8_Transition;}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_8_r_Transition, current_year) {
+    0..1945: spriteset_Buffers_8_r;
+	1945..2100: spriteset_Knuckles_8_r;
+  return spriteset_Knuckles_8_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Couplers_8_r, param_Couplers) {0:spriteset_Buffers_8_r; 1:spriteset_Knuckles_8_r; 2:switch_Couplers_8_r_Transition;}
+
 //8 Long Couplers Repeat
 spriteset(spriteset_Knuckles_8_Repeat_Purchase,   "gfx/Couplers_8_Repeat.png") {template_purchase_8(7, 21)}
 spriteset(spriteset_Knuckles_8_Repeat,   "gfx/Couplers_8_Repeat.png") {template_8_repeat(7, 39)}
@@ -3399,6 +3432,244 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv4, Mail_Tulloch_Interurb
     default:                            switch_Mail_Tulloch_InterurbanCoach_Liv4_position;
     purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv4;
     additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+}
+}
+
+//SilverStar
+spriteset(spriteset_SilverStar_EOTD,   "gfx/SilverStar_EOTD.png") {template_8(7, 39)}
+spriteset(spriteset_SilverStar_EOTD_r,   "gfx/SilverStar_EOTD.png") {template_8_r(7, 39)}
+
+//ID
+const SilverStar_ID = 13350;
+//introduction_date
+const SilverStar_IntroDate = date(1971, 1, 1);
+//speed
+const SilverStar_Speed = 115;
+//cost_factor
+const SilverStar_CostFactor = 65;
+//running_cost_factor
+const SilverStar_RunningCostFactor = 27;
+//Cargo Capacity
+const SilverStar_CargoCapacity = 87;
+//weight
+const SilverStar_Weight = 38;
+
+//SilverStar_Liv0
+spriteset(spriteset_SilverStar_Liv0_Purchase,   "gfx/SilverStar_Liv0.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_SilverStar_Liv0,   "gfx/SilverStar_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_SilverStar_Liv0_r,   "gfx/SilverStar_Liv0.png") {template_8_r(7, 39)}
+
+spriteset(spriteset_SilverStar_Liv0_Terminal,   "gfx/SilverStar_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_SilverStar_Liv0_Terminal_r,   "gfx/SilverStar_Liv0.png") {template_8_r(7, 69)}
+
+random_switch(FEAT_TRAINS, SELF, switch_SilverStar_Liv0_Random){
+    1 : spriteset_SilverStar_Liv0;
+	1 : spriteset_SilverStar_Liv0_r;
+}
+
+//Power Van Sprite Stacks
+switch (FEAT_TRAINS, SELF, switch_SilverStar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_SilverStar_Liv0_Random;
+	1: switch_Couplers_8_r;
+    2: spriteset_SilverStar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SilverStar_Liv0_rearcheck1, position_in_vehid_chain_from_end){
+    0 : switch_SilverStar_Liv0_SpriteStack1;
+    return switch_SilverStar_Liv0_Random;
+}
+
+switch (FEAT_TRAINS, SELF, switch_SilverStar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_SilverStar_Liv0_Random;
+	1: switch_Couplers_8;
+    2: spriteset_SilverStar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SilverStar_Liv0_rearcheck2, position_in_vehid_chain_from_end){
+    0 : switch_SilverStar_Liv0_SpriteStack2;
+    return switch_SilverStar_Liv0_Random;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SilverStar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_SilverStar_Liv0_rearcheck1;
+ 1: switch_SilverStar_Liv0_rearcheck2;
+}
+
+
+//Power Van Sprite Stacks
+switch (FEAT_TRAINS, SELF, switch_SilverStar_Liv0_Terminal_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SilverStar_Liv0_Terminal;
+	1: switch_Couplers_8_r;
+    2: spriteset_SilverStar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SilverStar_Liv0_Terminal_rearcheck1, position_in_vehid_chain_from_end){
+    0 : switch_SilverStar_Liv0_Terminal_SpriteStack1;
+    return switch_SilverStar_Liv0_Random;
+}
+
+switch (FEAT_TRAINS, SELF, switch_SilverStar_Liv0_Terminal_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SilverStar_Liv0_Terminal_r;
+	1: switch_Couplers_8;
+    2: spriteset_SilverStar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SilverStar_Liv0_Terminal_rearcheck2, position_in_vehid_chain_from_end){
+    0 : switch_SilverStar_Liv0_Terminal_SpriteStack2;
+    return switch_SilverStar_Liv0_Random;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SilverStar_Liv0_Terminal_position, vehicle_is_flipped) {
+ 0: switch_SilverStar_Liv0_Terminal_rearcheck1;
+ 1: switch_SilverStar_Liv0_Terminal_rearcheck2;
+}
+
+//Additional Checks
+switch(FEAT_TRAINS, SELF, switch_SilverStar_Liv0_NormalRearcheck, position_in_consist_from_end){
+    0 : switch_SilverStar_Liv0_position;
+    return switch_SilverStar_Liv0_Random;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SilverStar_Liv0_FinalCheck, num_vehs_in_vehid_chain){
+    1..3 : switch_SilverStar_Liv0_NormalRearcheck;
+    return switch_SilverStar_Liv0_Terminal_position;
+}
+
+const SilverStar_Liv0_ID = (SilverStar_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_SilverStar_Liv0, SilverStar_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_SILVERSTAR);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              SilverStar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							SilverStar_Speed km/h;
+		cost_factor:					SilverStar_CostFactor;
+		running_cost_factor:			SilverStar_RunningCostFactor;
+//		cargo_capacity: 				(SilverStar_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							SilverStar_Weight ton;
+
+//        variant_group: 					Item_SilverStar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_SilverStar_Liv0_FinalCheck;
+    purchase:                           spriteset_SilverStar_Liv0;
+    additional_text: 					string(STR_INFO_SILVERSTAR);
+	cargo_capacity:						return (SilverStar_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Mail_SilverStar_Liv0
+spriteset(spriteset_Mail_SilverStar_Liv0_Purchase,   "gfx/SilverStar_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_SilverStar_Liv0,   "gfx/SilverStar_Liv0.png") {template_8_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_SilverStar_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_SilverStar_Liv0;
+    1: spriteset_SilverStar_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_SilverStar_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_SilverStar_Liv0_SpriteStack1;
+    return spriteset_Mail_SilverStar_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_SilverStar_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_SilverStar_Liv0;
+    1: spriteset_SilverStar_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_SilverStar_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_SilverStar_Liv0_SpriteStack2;
+    return spriteset_Mail_SilverStar_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_SilverStar_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_SilverStar_Liv0_rearcheck1;
+ 1: switch_Mail_SilverStar_Liv0_rearcheck2;
+}
+
+const Mail_SilverStar_Liv0_ID = (SilverStar_Liv0_ID + 25);
+
+item (FEAT_TRAINS, Item_Mail_SilverStar_Liv0, Mail_SilverStar_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_SILVERSTAR);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              SilverStar_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							SilverStar_Speed km/h;
+		cost_factor:					SilverStar_CostFactor;
+		running_cost_factor:			SilverStar_RunningCostFactor;
+//		cargo_capacity: 				(SilverStar_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							SilverStar_Weight ton;
+
+//        variant_group: 					Item_Mail_SilverStar_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_SilverStar_Liv0_position;
+    purchase:                           spriteset_Mail_SilverStar_Liv0;
+    additional_text: 					string(STR_INFO_MAIL_SILVERSTAR);
+	cargo_capacity:						return (SilverStar_CargoCapacity / param_capacity_mod);
 }
 }
 

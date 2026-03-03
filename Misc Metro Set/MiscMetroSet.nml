@@ -1,0 +1,859 @@
+grf{
+    grfid: "ZM\17\00";
+    name: string(STR_GRF_NAME);
+    desc: string(STR_GRF_DESCRIPTION);
+    version: 5;
+    min_compatible_version: 1;
+//Purchase Cost Parameter
+    param {
+        param_Purchase_cost {
+            type: int;
+            name: string(STR_PARAM_PURCHASE_COST);
+            desc: string(STR_PARAM_PURCHASE_COST_DESC);
+            min_value: 0;
+            max_value: 8;
+            def_value: 4;
+            names: {
+                        0: string(STR_PARAM_DIVIDE_16);
+                        1: string(STR_PARAM_DIVIDE_8);
+                        2: string(STR_PARAM_DIVIDE_4);
+                        3: string(STR_PARAM_DIVIDE_2);
+                        4: string(STR_PARAM_NORMAL);
+                        5: string(STR_PARAM_TIMES_2);
+                        6: string(STR_PARAM_TIMES_4);
+                        7: string(STR_PARAM_TIMES_8);
+                        8: string(STR_PARAM_TIMES_16);
+            };
+        }
+    }
+//Running Cost Parameter
+     param {
+        param_running_cost {
+            type: int;
+            name: string(STR_PARAM_RUNNING_COST);
+            desc: string(STR_PARAM_RUNNING_COST_DESC);
+            min_value: 0;
+            max_value: 8;
+            def_value: 4;
+            names: {
+                        0: string(STR_PARAM_DIVIDE_16);
+                        1: string(STR_PARAM_DIVIDE_8);
+                        2: string(STR_PARAM_DIVIDE_4);
+                        3: string(STR_PARAM_DIVIDE_2);
+                        4: string(STR_PARAM_NORMAL);
+                        5: string(STR_PARAM_TIMES_2);
+                        6: string(STR_PARAM_TIMES_4);
+                        7: string(STR_PARAM_TIMES_8);
+                        8: string(STR_PARAM_TIMES_16);
+            };
+        }
+    }
+//Carry Capacity Parameter
+    param {
+                param_capacities {
+                        type: int;
+                        name: string(STR_PARAM_NAME_CAPACITY);
+                        desc: string(STR_PARAM_DESC_CAPACITY);
+                        min_value: 0;
+                        max_value: 1;
+                        def_value: 0;
+                        names: {
+                                                0: string(STR_PARAM_REAL_CAPACITY);
+                                                1: string(STR_PARAM_NORMAL_REDUCED);
+                        };
+					}
+				}
+//RealDisable
+	param {
+    param_EuroDisable {
+     name: string(STR_PARAM_NAME_EURODISABLE);
+     desc: string(STR_PARAM_DESC_EURODISABLE);
+     type: bool;
+     bit: 0;
+     def_value: 0;
+    }
+  }
+//PrototypeDisable
+	param {
+    param_HongKongDisable {
+     name: string(STR_PARAM_NAME_HONGKONGDISABLE);
+     desc: string(STR_PARAM_DESC_HONGKONGDISABLE);
+     type: bool;
+     bit: 0;
+     def_value: 0;
+    }
+  }
+//ProposalDisable
+	param {
+    param_SingaporeDisable {
+     name: string(STR_PARAM_NAME_SINGAPOREDISABLE);
+     desc: string(STR_PARAM_DESC_SINGAPOREDISABLE);
+     type: bool;
+     bit: 0;
+     def_value: 0;
+    }
+  }
+//FictionalDisable
+	param {
+    param_CISDisable {
+     name: string(STR_PARAM_NAME_CISDISABLE);
+     desc: string(STR_PARAM_DESC_CISDISABLE);
+     type: bool;
+     bit: 0;
+     def_value: 0;
+    }
+    }
+	}
+
+
+//Carry Capacity Variables
+if (param_capacities == 0) {
+    param_capacity_mod = 0;
+}
+
+if (param_capacities == 1) {
+    param_capacity_mod = 2;
+}
+
+railtypetable {
+    RAIL, 
+	SAA3: [ MTRO, SBA3, SCA3, SDA3, "3RDR", "3RDC", MTRO, ELRL], 
+	OHLE_DC: [SAAD, SAAE, ELRL], 
+	OHLE_AC: [SAAA, SAAE, ELRL], 
+}
+
+cargotable {
+PASS, COAL, MAIL, OIL_, LVST, EOIL, COKE, VBOD, SULP, SASH, MNO2, BOOM, IRON, QLME, PHOS, VPTS, SLAG, PIPE, CASS, NUTS, METL, GOOD, GRAI, WOOD, IORE, STEL, VALU, PAPR, WHEA, FOOD, GOLD, RUBR, FRUT, MAIZ, CORE, WATR, DIAM, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, AORE, BEER, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, DYES, ENSP, FERT, FICR, FISH, FMSP, FRVG, GLAS, GRVL, JAVA, LIME, MILK, MNSP, OLSD, PETR, PLAS, POTA, RCYC, RFPR, SAND, SCMT, SGBT, SGCN, TOUR, VEHI, WDPR, WOOL, URAN, YETI, YETY, BEAN, NITR
+}
+
+//Basecost Paramater Variables
+basecost {
+ PR_BUILD_VEHICLE_TRAIN: 	1 + param_Purchase_cost - 6;
+ PR_BUILD_VEHICLE_WAGON: 	1 + param_Purchase_cost - 4;
+ PR_RUNNING_TRAIN_ELECTRIC: 3 + param_running_cost - 4;
+ PR_RUNNING_TRAIN_DIESEL: 	3 + param_running_cost - 4;
+ PR_RUNNING_TRAIN_STEAM: 	0 + param_running_cost - 4;
+}
+
+// Fix depot view
+traininfo_y_offset = 2;
+train_width_32_px = 1;
+
+
+// Purchase Sprite
+template template_Purchase(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -60, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_4(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -31, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_5(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -33, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_6(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -35, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_7(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -37, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_8(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -39, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_9(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -41, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_10(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -43, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_44(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -39, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_55(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -43, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_66(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -47, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_66mu(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -33, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_77(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -51, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_77mu(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -37, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_88(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -55, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_88mu(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -41, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+template template_Purchase_88xl(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+    [x     , y, 88, 15, -55, -11, ANIM]
+    [x-2 , y,  1,  1,   0,  0, ANIM]
+}
+
+// 4 Template
+template template_4(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        29,        -3,            -24, ANIM]
+    [ x+9,      y,        22,        20,        -8,        -15, ANIM]
+    [ x+32,     y,        33,        16,        0,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+
+    [ x+89,     y,        8,        29,        -3,            -16, ANIM]
+    [ x+98,     y,        22,        20,        -16,        -11, ANIM]
+    [ x+121,    y,        33,        16,        -16,        -12, ANIM]
+    [ x+155,    y,        22,        20,        -12,        -15, ANIM]
+}
+
+template template_4_r(x, y) { //WIP
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x+89,     y,        8,        29,        -3,            -23, ANIM]
+    [ x+98,     y,        22,        20,        -8,        -15, ANIM]
+    [ x+121,    y,        33,        16,        0,        -12, ANIM]
+    [ x+155,    y,        22,        20,        -4,            -11, ANIM]
+
+    [ x,        y,        8,        29,        -3,            -16, ANIM]
+    [ x+9,      y,        22,        20,        -16,        -11, ANIM]
+    [ x+32,     y,        33,        16,        -16,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -12,        -15, ANIM]
+}
+
+template template_4_repeat(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        29,        -3,            -24, ANIM]
+    [ x+9,      y,        22,        20,        -8,        -15, ANIM]
+    [ x+32,     y,        33,        16,        0,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+
+    [ x,     y,        8,        29,        -3,            -16, ANIM]
+    [ x+9,     y,        22,        20,        -16,        -11, ANIM]
+    [ x+32,    y,        33,        16,        -16,        -12, ANIM]
+    [ x+66,    y,        22,        20,        -12,        -15, ANIM]
+}
+
+// 5 Template
+template template_5(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        29,        -3,            -22, ANIM]
+    [ x+9,      y,        22,        20,        -10,        -14, ANIM]
+    [ x+32,     y,        33,        16,        -4,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+
+    [ x+89,     y,        8,        29,        -3,            -16, ANIM]
+    [ x+98,     y,        22,        20,        -16,        -11, ANIM]
+    [ x+121,    y,        33,        16,        -16,        -12, ANIM]
+    [ x+155,    y,        22,        20,        -10,        -14, ANIM]
+}
+
+template template_5_r(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        29,        -3,            -22, ANIM]
+    [ x+9,      y,        22,        20,        -10,        -14, ANIM]
+    [ x+32,     y,        33,        16,        -4,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+
+    [ x+89,     y,        8,        29,        -3,            -16, ANIM]
+    [ x+98,     y,        22,        20,        -16,        -11, ANIM]
+    [ x+121,    y,        33,        16,        -16,        -12, ANIM]
+    [ x+155,    y,        22,        20,        -10,        -14, ANIM]
+}
+
+template template_5_repeat(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        29,        -3,            -22, ANIM]
+    [ x+9,      y,        22,        20,        -10,        -14, ANIM]
+    [ x+32,     y,        33,        16,        -4,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+
+    [ x,        y,        8,        29,        -3,            -16, ANIM]
+    [ x+9,      y,        22,        20,        -16,        -11, ANIM]
+    [ x+32,     y,        33,        16,        -16,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -10,        -14, ANIM]
+}
+
+// 6 Template
+template template_6(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,     y, 8,  29, -3,  -20, ANIM]
+    [ x+9,   y, 22, 20, -12, -13, ANIM]
+    [ x+32,  y, 33, 16, -8,  -12, ANIM]
+    [ x+66,  y, 22, 20, -4,  -11, ANIM]
+
+    [ x+89,  y, 8,  29, -3,  -16, ANIM]
+    [ x+98,  y, 22, 20, -16, -11, ANIM]
+    [ x+121, y, 33, 16, -16, -12, ANIM]
+    [ x+155, y, 22, 20, -8,  -13, ANIM]
+}
+
+template template_6_alt(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,     y, 8,  29, -3,  -16, ANIM]
+    [ x+9,   y, 22, 20, -16, -11, ANIM]
+    [ x+32,  y, 33, 16, -16, -12, ANIM]
+    [ x+66,  y, 22, 20, -8,  -13, ANIM]
+
+    [ x+89,  y, 8,  29, -3,  -20, ANIM]
+    [ x+98,  y, 22, 20, -12, -13, ANIM]
+    [ x+121, y, 33, 16, -8,  -12, ANIM]
+    [ x+155, y, 22, 20, -4,  -11, ANIM]
+}
+
+template template_6_r(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x+89,     y,        8,        24,        -3,            -20, ANIM]
+    [ x+98,     y,        22,        20,        -12,        -13, ANIM]
+    [ x+121,    y,        33,        16,        -8,        -12, ANIM]
+    [ x+155,    y,        22,        20,        -4,        -11, ANIM]
+
+    [ x,        y,        8,        24,        -3,            -16, ANIM]
+    [ x+9,      y,        22,        20,        -16,        -11, ANIM]
+    [ x+32,     y,        33,        16,        -16,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -8,            -13, ANIM]
+}
+
+template template_6_repeat(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        29,        -3,            -20, ANIM]
+    [ x+9,      y,        22,        20,        -12,        -13, ANIM]
+    [ x+32,     y,        33,        16,        -8,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+
+    [ x,     y,        8,        29,        -3,            -16, ANIM]
+    [ x+9,     y,        22,        20,        -16,        -11, ANIM]
+    [ x+32,    y,        33,        16,        -16,        -12, ANIM]
+    [ x+66,    y,        22,        20,        -8,        -13, ANIM]
+}
+
+//7 Template
+template template_7(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        29,        -3,            -18, ANIM]
+    [ x+9,      y,        22,        20,        -14,        -12, ANIM]
+    [ x+32,     y,        33,        16,        -12,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+
+    [ x+89,     y,        8,        29,        -3,            -15, ANIM]
+    [ x+98,     y,        22,        20,        -16,        -11, ANIM]
+    [ x+121,    y,        33,        16,        -16,        -12, ANIM]
+    [ x+155,    y,        22,        20,        -6,        -12, ANIM]
+}
+
+//7 Template Reversed
+template template_7_r(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x+89,  y, 8 , 29,  -3, -18, ANIM]
+    [ x+98,  y, 22, 20, -14, -12, ANIM]
+    [ x+121, y, 33, 16, -12, -12, ANIM]
+    [ x+155, y, 22, 20,  -4, -11, ANIM]
+
+    [ x , 	 y, 8 , 29,  -3, -15, ANIM]
+    [ x+9,	 y, 22, 20, -16, -11, ANIM]
+    [ x+32,  y, 33, 16, -16, -12, ANIM]
+    [ x+66,  y, 22, 20,  -6, -12, ANIM]
+}
+
+//7 Template Reversed Alt
+template template_7_alt_r(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,     y, 8,  29, -3,  -15, ANIM]
+    [ x+9,   y, 22, 20, -16, -11, ANIM]
+    [ x+32,  y, 33, 16, -16, -12, ANIM]
+    [ x+66,  y, 22, 20, -6,  -12, ANIM]
+
+    [ x+89,  y,	8,  29, -3,  -16, ANIM]
+    [ x+98,  y, 22, 20, -14, -12, ANIM]
+    [ x+121, y, 33, 16, -12, -12, ANIM]
+    [ x+155, y, 22, 20, -4,  -11, ANIM]
+}
+
+//7 Template
+template template_7_repeat(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        29,        -3,            -18, ANIM]
+    [ x+9,      y,        22,        20,        -14,        -12, ANIM]
+    [ x+32,     y,        33,        16,        -12,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+
+    [ x,     y,        8,        29,        -3,            -15, ANIM]
+    [ x+9,     y,        22,        20,        -16,        -11, ANIM]
+    [ x+32,    y,        33,        16,        -16,        -12, ANIM]
+    [ x+66,    y,        22,        20,        -6,        -12, ANIM]
+}
+
+// 8 Template
+template template_8(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        29,        -3,            -16, ANIM]
+    [ x+9,      y,        22,        20,        -16,        -11, ANIM]
+    [ x+32,     y,        33,        16,        -16,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+
+    [ x+89,     y,        8,        29,        -3,            -16, ANIM]
+    [ x+98,     y,        22,        20,        -16,        -11, ANIM]
+    [ x+121,    y,        33,        16,        -16,        -12, ANIM]
+    [ x+155,    y,        22,        20,        -4,        -11, ANIM]
+}
+
+template template_8_r(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+
+    [ x+89,     y,        8,        29,        -3,            -16, ANIM]
+    [ x+98,     y,        22,        20,        -16,        -11, ANIM]
+    [ x+121,    y,        33,        16,        -16,        -12, ANIM]
+    [ x+155,    y,        22,        20,        -4,        -11, ANIM]
+
+    [ x,        y,        8,        29,        -3,            -16, ANIM]
+    [ x+9,      y,        22,        20,        -16,        -11, ANIM]
+    [ x+32,     y,        33,        16,        -16,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+}
+
+template template_8_repeat(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        29,        -3,            -16, ANIM]
+    [ x+9,      y,        22,        20,        -16,        -11, ANIM]
+    [ x+32,     y,        33,        16,        -16,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+
+    [ x,        y,        8,        29,        -3,            -16, ANIM]
+    [ x+9,      y,        22,        20,        -16,        -11, ANIM]
+    [ x+32,     y,        33,        16,        -16,        -12, ANIM]
+    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+}
+
+//Extra Long Templates
+template template_9(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        33,        -3,            -18, ANIM]
+    [ x+9,      y,        26,        22,        -18,        -12, ANIM]
+    [ x+36,     y,        41,        16,        -20,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -8,            -13, ANIM]
+
+    [ x+105,     y,        8,        33,        -3,            -16, ANIM]
+    [ x+114,     y,        26,        22,        -16,        -13, ANIM]
+    [ x+141,    y,        41,        16,        -16,        -12, ANIM]
+    [ x+183,    y,        26,        22,        -4,            -11, ANIM]
+}
+
+template template_9_repeat(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        33,        -3,            -18, ANIM]
+    [ x+9,      y,        26,        22,        -18,        -12, ANIM]
+    [ x+36,     y,        41,        16,        -20,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -8,            -13, ANIM]
+
+    [ x,        y,        8,        33,        -3,            -20, ANIM]
+    [ x+9,      y,        26,        22,        -16,        -13, ANIM]
+    [ x+36,     y,        41,        16,        -16,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -6,            -12, ANIM]
+}
+
+template template_10(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        33,        -3,            -16, ANIM]
+    [ x+9,      y,        26,        22,        -20,        -11, ANIM]
+    [ x+36,     y,        41,        16,        -24,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -8,            -13, ANIM]
+
+    [ x+105,     y,        8,        33,        -3,            -16, ANIM]
+    [ x+114,     y,        26,        22,        -16,        -13, ANIM]
+    [ x+141,    y,        41,        16,        -16,        -12, ANIM]
+    [ x+183,    y,        26,        22,        -4,            -11, ANIM]
+}
+
+template template_10_r(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x+105,     y,        8,        33,        -3,            -16, ANIM]
+    [ x+114,     y,        26,        22,        -20,        -11, ANIM]
+    [ x+141,    y,        41,        16,        -24,        -12, ANIM]
+    [ x+183,    y,        26,        22,        -8,            -13, ANIM]
+
+    [ x,        y,        8,        33,        -3,            -16, ANIM]
+    [ x+9,      y,        26,        22,        -16,        -13, ANIM]
+    [ x+36,     y,        41,        16,        -16,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -4,            -11, ANIM]
+}
+
+template template_10_repeat(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,        y,        8,        33,        -3,            -16, ANIM]
+    [ x+9,      y,        26,        22,        -20,        -11, ANIM]
+    [ x+36,     y,        41,        16,        -24,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -8,            -13, ANIM]
+
+    [ x,        y,        8,        33,        -3,            -16, ANIM]
+    [ x+9,      y,        26,        22,        -16,        -13, ANIM]
+    [ x+36,     y,        41,        16,        -16,        -12, ANIM]
+    [ x+78,     y,        26,        22,        -4,            -11, ANIM]
+}
+
+const Heavy_Metro_LoadingSpeed = 45;
+
+const Liv0_ID = 0;
+const Liv1_ID = 1;
+const Liv2_ID = 2;
+const Liv3_ID = 3;
+const Liv4_ID = 4;
+const Liv5_ID = 5;
+const Liv6_ID = 6;
+const Liv7_ID = 7;
+const Liv8_ID = 8;
+const Liv9_ID = 9;
+const Liv10_ID = 10;
+const Liv11_ID = 11;
+const Liv12_ID = 12;
+const Liv13_ID = 13;
+const Liv14_ID = 14;
+const Liv15_ID = 15;
+const Liv16_ID = 16;
+const Liv17_ID = 17;
+const Liv18_ID = 18;
+const Liv19_ID = 19;
+const Liv20_ID = 20;
+const Liv21_ID = 21;
+const Liv22_ID = 22;
+const Liv23_ID = 23;
+const Liv24_ID = 24;
+const Liv25_ID = 25;
+const Liv26_ID = 26;
+const Liv27_ID = 27;
+const Liv28_ID = 28;
+const Liv29_ID = 29;
+const Liv30_ID = 30;
+const Liv31_ID = 31;
+const Liv32_ID = 32;
+const Liv33_ID = 33;
+const Liv34_ID = 34;
+const Liv35_ID = 35;
+const Liv36_ID = 36;
+const Liv37_ID = 37;
+const Liv38_ID = 38;
+const Liv39_ID = 39;
+const Liv40_ID = 40;
+const Liv41_ID = 41;
+const Liv42_ID = 42;
+const Liv43_ID = 43;
+const Liv44_ID = 44;
+const Liv45_ID = 45;
+const Liv46_ID = 46;
+const Liv47_ID = 47;
+const Liv48_ID = 48;
+const Liv49_ID = 49;
+
+spriteset(spriteset_MU_Purchase,   "gfx/MU_Carriage.png") {template_Purchase_8(7, 21)}
+spriteset(spriteset_MU_trailer,   "gfx/MU_Carriage.png") {template_8_repeat(7, 39)}
+
+//Vehicle
+item (FEAT_TRAINS, Item_MU_Trailer, 0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        refit_cost:                     0;
+        climates_available:             ALL_CLIMATES;
+        bitmask_vehicle_info:          	0;
+        misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+
+        track_type:                     [OHLE_AC, OHLE_DC, SAA3, RAIL];
+		running_cost_base: 				RUNNING_COST_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+
+        name:                           string(STR_MU_TRAILER);
+        introduction_date:              date(1890,1,1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        length:                         8;
+
+        weight:                         0 ton;
+        speed:                          0 mph;
+		power:                          0 hp;
+        cost_factor:                    100;
+        running_cost_factor:            10;
+
+        refittable_cargo_classes:       bitmask();
+        default_cargo_type:             PASS;
+        cargo_capacity:                 100;
+        loading_speed: 					30;
+
+    }
+    graphics {
+        default:                        spriteset_MU_trailer;
+        purchase:                       spriteset_MU_Purchase;
+        additional_text: 				string(STR_MU_TRAILER_INFO);
+
+}
+}
+
+//ID
+const SingaporeMetro_1980_ID = 3700;
+//introduction_date
+const SingaporeMetro_1980_IntroDate = date(1987, 1, 1);
+//speed
+const SingaporeMetro_1980_Speed = 90;
+//cost_factor
+const SingaporeMetro_1980_CostFactor = 22;
+//running_cost_factor
+const SingaporeMetro_1980_RunningCostFactor = 56;
+//Cargo Capacity
+const SingaporeMetro_1980_CargoCapacity = 191;
+//power
+const SingaporeMetro_1980_Power = 1000; //MU power is for 2 individual vehicles
+//weight
+const SingaporeMetro_1980_Weight = 35;
+
+//SingaporeMetro_1980_Liv0
+spriteset(spriteset_SingaporeMetro_1980_Liv0_Purchase,   "gfx/SingaporeMetro_1980_Liv0.png") {template_Purchase_88mu(7, 21)}
+spriteset(spriteset_SingaporeMetro_1980_Liv0_Lead,   "gfx/SingaporeMetro_1980_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_SingaporeMetro_1980_Liv0_Trailer,   "gfx/SingaporeMetro_1980_Liv0.png") {template_8_repeat(7, 69)}
+
+const SingaporeMetro_1980_ID_Liv0 = (SingaporeMetro_1980_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_SingaporeMetro_1980_Liv0, SingaporeMetro_1980_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_SingaporeDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_SINGAPOREMETRO_1980);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              SingaporeMetro_1980_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							SingaporeMetro_1980_Speed km/h;
+		cost_factor:					(SingaporeMetro_1980_CostFactor * 2);
+		running_cost_factor:			(SingaporeMetro_1980_RunningCostFactor * 2);
+//		cargo_capacity: 				(SingaporeMetro_1980_CargoCapacity / param_capacity_mod);
+		power:							SingaporeMetro_1980_Power;
+		weight:							SingaporeMetro_1980_Weight;
+
+//        variant_group: 					Item_SingaporeMetro_1980_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_SingaporeMetro_1980_Liv0_Lead;
+        purchase: 						spriteset_SingaporeMetro_1980_Liv0_Purchase;
+        additional_text: 				string(STR_INFO_SINGAPOREMETRO_1980);
+		cargo_capacity: 				(SingaporeMetro_1980_CargoCapacity / param_capacity_mod);
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_SingaporeMetro_1980_Liv0_Trailer;
+        length:                         8;
+        cargo_capacity:                 (SingaporeMetro_1980_CargoCapacity / param_capacity_mod);
+        power:                          (SingaporeMetro_1980_Power /2);
+		weight:                        	SingaporeMetro_1980_Weight;
+		running_cost_factor:            SingaporeMetro_1980_RunningCostFactor;
+    }
+}
