@@ -44,10 +44,13 @@ STR_POWER_SOURCE_OHLE_DC: {BLUE}DC Overhead Line
 STR_POWER_SOURCE_OHLE_AC: {RED}AC Overhead Line
 STR_POWER_SOURCE_3RAIL:{GREEN}Third Rail
 
-STR_MU_TRAILER:MU Car (NARP-Rapid Transit)
+STR_MU_TRAILER:MU Car (Misc Metro Set)
 STR_MU_TRAILER_INFO:{GOLD}Attach this to a another multiple unit to make it longer
 
 
 
 STR_NAME_SINGAPOREMETRO_1980:Melodious Metro
 STR_INFO_SINGAPOREMETRO_1980:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail
+
+STR_NAME_SINGAPOREMETRO_2000:Changi Metro
+STR_INFO_SINGAPOREMETRO_2000:{BLACK}Type: {GOLD}Metro {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {GREEN}Third Rail

@@ -780,7 +780,7 @@ item (FEAT_TRAINS, Item_MU_Trailer, 0) {
 }
 
 //ID
-const SingaporeMetro_1980_ID = 3700;
+const SingaporeMetro_1980_ID = 3400;
 //introduction_date
 const SingaporeMetro_1980_IntroDate = date(1987, 1, 1);
 //speed
@@ -855,5 +855,146 @@ item(FEAT_TRAINS, Item_SingaporeMetro_1980_Liv0, SingaporeMetro_1980_ID_Liv0) {
         power:                          (SingaporeMetro_1980_Power /2);
 		weight:                        	SingaporeMetro_1980_Weight;
 		running_cost_factor:            SingaporeMetro_1980_RunningCostFactor;
+    }
+}
+
+//ID
+const SingaporeMetro_2000_ID = 3500;
+//introduction_date
+const SingaporeMetro_2000_IntroDate = date(2000, 1, 1);
+//speed
+const SingaporeMetro_2000_Speed = 90;
+//cost_factor
+const SingaporeMetro_2000_CostFactor = 23;
+//running_cost_factor
+const SingaporeMetro_2000_RunningCostFactor = 59;
+//Cargo Capacity
+const SingaporeMetro_2000_CargoCapacity = 200;
+//power
+const SingaporeMetro_2000_Power = 1000; //MU power is for 2 individual vehicles
+//weight
+const SingaporeMetro_2000_Weight = 32;
+
+//SingaporeMetro_2000_Liv0
+spriteset(spriteset_SingaporeMetro_2000_Liv0_Purchase,   "gfx/SingaporeMetro_2000_Liv0.png") {template_Purchase_88mu(7, 21)}
+spriteset(spriteset_SingaporeMetro_2000_Liv0_Lead,   "gfx/SingaporeMetro_2000_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_SingaporeMetro_2000_Liv0_Trailer,   "gfx/SingaporeMetro_2000_Liv0.png") {template_8_repeat(7, 69)}
+
+const SingaporeMetro_2000_ID_Liv0 = (SingaporeMetro_2000_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_SingaporeMetro_2000_Liv0, SingaporeMetro_2000_ID_Liv0) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_SingaporeDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_SINGAPOREMETRO_2000);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              SingaporeMetro_2000_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							SingaporeMetro_2000_Speed km/h;
+		cost_factor:					(SingaporeMetro_2000_CostFactor * 2);
+		running_cost_factor:			(SingaporeMetro_2000_RunningCostFactor * 2);
+//		cargo_capacity: 				(SingaporeMetro_2000_CargoCapacity / param_capacity_mod);
+		power:							SingaporeMetro_2000_Power;
+		weight:							SingaporeMetro_2000_Weight;
+
+//        variant_group: 					Item_SingaporeMetro_2000_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_SingaporeMetro_2000_Liv0_Lead;
+        purchase: 						spriteset_SingaporeMetro_2000_Liv0_Purchase;
+        additional_text: 				string(STR_INFO_SINGAPOREMETRO_2000);
+		cargo_capacity: 				(SingaporeMetro_2000_CargoCapacity / param_capacity_mod);
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_SingaporeMetro_2000_Liv0_Trailer;
+        length:                         8;
+        cargo_capacity:                 (SingaporeMetro_2000_CargoCapacity / param_capacity_mod);
+        power:                          (SingaporeMetro_2000_Power /2);
+		weight:                        	SingaporeMetro_2000_Weight;
+		running_cost_factor:            SingaporeMetro_2000_RunningCostFactor;
+    }
+}
+
+//SingaporeMetro_2000_Liv1
+spriteset(spriteset_SingaporeMetro_2000_Liv1_Purchase,   "gfx/SingaporeMetro_2000_Liv1.png") {template_Purchase_88mu(7, 21)}
+spriteset(spriteset_SingaporeMetro_2000_Liv1_Lead,   "gfx/SingaporeMetro_2000_Liv1.png") {template_8(7, 39)}
+spriteset(spriteset_SingaporeMetro_2000_Liv1_Trailer,   "gfx/SingaporeMetro_2000_Liv1.png") {template_8_repeat(7, 69)}
+
+const SingaporeMetro_2000_ID_Liv1 = (SingaporeMetro_2000_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_SingaporeMetro_2000_Liv1, SingaporeMetro_2000_ID_Liv1) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     SAA3;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_SingaporeDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_SINGAPOREMETRO_2000);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              SingaporeMetro_2000_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					Heavy_Metro_LoadingSpeed;
+		speed:							SingaporeMetro_2000_Speed km/h;
+		cost_factor:					(SingaporeMetro_2000_CostFactor * 2);
+		running_cost_factor:			(SingaporeMetro_2000_RunningCostFactor * 2);
+//		cargo_capacity: 				(SingaporeMetro_2000_CargoCapacity / param_capacity_mod);
+		power:							SingaporeMetro_2000_Power;
+		weight:							SingaporeMetro_2000_Weight;
+
+        variant_group: 					Item_SingaporeMetro_2000_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_SingaporeMetro_2000_Liv1_Lead;
+        purchase: 						spriteset_SingaporeMetro_2000_Liv1_Purchase;
+        additional_text: 				string(STR_INFO_SINGAPOREMETRO_2000);
+		cargo_capacity: 				(SingaporeMetro_2000_CargoCapacity / param_capacity_mod);
+}
+        livery_override (Item_MU_Trailer) {
+        default:                        spriteset_SingaporeMetro_2000_Liv1_Trailer;
+        length:                         8;
+        cargo_capacity:                 (SingaporeMetro_2000_CargoCapacity / param_capacity_mod);
+        power:                          (SingaporeMetro_2000_Power /2);
+		weight:                        	SingaporeMetro_2000_Weight;
+		running_cost_factor:            SingaporeMetro_2000_RunningCostFactor;
     }
 }
