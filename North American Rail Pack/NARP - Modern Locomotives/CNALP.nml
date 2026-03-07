@@ -11029,7 +11029,7 @@ item(FEAT_TRAINS, Item_GE_EP4_Liv0, 35400) {
 
 //GE_EP4_Liv35
 spriteset(spriteset_GE_EP4_Liv35_Purchase,   "gfx/GE_EP4_Liv35.png") {template_purchase_8(7, 21)}
-spriteset(spriteset_GE_EP4_Liv35,   "gfx/GE_EP4_Liv35.png") {template_8(7, 39)}
+spriteset(spriteset_GE_EP4_Liv35,   "gfx/GE_EP4_Liv35.png") {template_8_repeat(7, 39)}
 
 switch(FEAT_TRAINS, SELF, switch_GE_EP4_Liv35_Fw_railtype, tile_powers_railtype("OHLE_AC")) {
  0: spriteset_GE_EP4_PantoDown;
