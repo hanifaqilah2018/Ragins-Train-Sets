@@ -158,15 +158,15 @@ STR_NAME_DEBSET:DEB Set
 STR_INFO_DEBSET:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
 
 STR_NAME_SILVERFERN:Kawasaki Silver Fern
-STR_INFO_SILVERFERN:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Formation:{GOLD}Push-Pull {}{BLACK}Power:{BROWN}Diesel
+STR_INFO_SILVERFERN:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{BROWN}Diesel
 
 
 
 STR_NAME_XPTINTERURBAN:Comeng Interurban HST
 STR_INFO_XPTINTERURBAN:{BLACK}Role:{GOLD}Express Service{}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{BROWN}Diesel
 
-STR_NAME_COMENGXPT:Comeng XPT
-STR_INFO_COMENGXPT:{BLACK}Role:{GOLD}Express Service{}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{BROWN}Diesel {}{GOLD}Specification 2542 Appendix D
+STR_NAME_COMENG_XPT:Comeng XPT
+STR_INFO_COMENG_XPT:{BLACK}Role:{GOLD}Express Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation: {GOLD}Push-Pull Trainset {}{BLACK}Power: {BROWN}Diesel {}{GOLD}Specification 2542 Appendix D
 
 STR_NAME_HPTINTRASTATE:Comeng HPT Intrastate
 STR_INFO_HPTINTRASTATE:{BLACK}Role:{GOLD}Express Service{}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{BROWN}Diesel
