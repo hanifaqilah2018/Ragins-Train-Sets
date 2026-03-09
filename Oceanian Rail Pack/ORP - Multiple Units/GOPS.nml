@@ -488,15 +488,30 @@ template template_7(x, y) {
     //left_x, upper_y, width, height, offset_x, offset_y
     //                            more negative to shift left
     //                                            more negative to shift up
-    [ x,        y,        8,        29,        -3,            -18, ANIM]
-    [ x+9,      y,        22,        20,        -14,        -12, ANIM]
-    [ x+32,     y,        33,        16,        -12,        -12, ANIM]
-    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+    [ x,     y, 8,  29, -3,  -18, ANIM]
+    [ x+9,   y, 22, 20, -14, -12, ANIM]
+    [ x+32,  y, 33, 16, -12, -12, ANIM]
+    [ x+66,  y, 22, 20, -4,  -11, ANIM]
 
-    [ x+89,     y,        8,        29,        -3,            -15, ANIM]
-    [ x+98,     y,        22,        20,        -16,        -11, ANIM]
-    [ x+121,    y,        33,        16,        -16,        -12, ANIM]
-    [ x+155,    y,        22,        20,        -6,        -12, ANIM]
+    [ x+89,  y, 8,  29, -3,  -16, ANIM]
+    [ x+98,  y, 22, 20, -16, -11, ANIM]
+    [ x+121, y, 33, 16, -16, -12, ANIM]
+    [ x+155, y, 22, 20, -6,  -12, ANIM]
+}
+
+template template_7_alt(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    //                            more negative to shift left
+    //                                            more negative to shift up
+    [ x,     y, 8,  29, -3,  -16, ANIM]
+    [ x+9,   y, 22, 20, -18, -10, ANIM]
+    [ x+32,  y, 33, 16, -16, -12, ANIM]
+    [ x+66,  y, 22, 20, -6,  -12, ANIM]
+
+    [ x+89,  y, 8,  29, -3,  -18, ANIM]
+    [ x+98,  y, 22, 20, -14, -12, ANIM]
+    [ x+121, y, 33, 16, -12, -12, ANIM]
+    [ x+155, y, 22, 20, -4,  -11, ANIM]
 }
 
 //7 Template Reversed
@@ -1504,17 +1519,16 @@ const Comeng_XPT_Weight_T = 26;
 //Comeng_XPT_Liv0
 spriteset(spriteset_Comeng_XPT_Liv0_purchase,   "gfx/Comeng_XPT_Liv0.png") {template_purchase_77mu(7, 21)}
 spriteset(spriteset_Comeng_XPT_Liv0_lead,   "gfx/Comeng_XPT_Liv0.png") {template_7(7, 39)}
-spriteset(spriteset_Comeng_XPT_Liv0_rear,   "gfx/Comeng_XPT_Liv0.png") {template_7_alt_r(7, 39)}
-
+spriteset(spriteset_Comeng_XPT_Liv0_lead_alt,   "gfx/Comeng_XPT_Liv0.png") {template_7_alt(7, 39)}
 
 spriteset(spriteset_Comeng_XPT_Liv0_Trailer,   "gfx/Comeng_XPT_Liv0.png") {template_8_repeat(7, 99)}
 spriteset(spriteset_Comeng_XPT_Liv0_Trailer_lead,   "gfx/Comeng_XPT_Liv0.png") {template_8_r(7, 69)}
 spriteset(spriteset_Comeng_XPT_Liv0_Trailer_rear,   "gfx/Comeng_XPT_Liv0.png") {template_8(7, 69)}
 
 //Power Cars
-switch(FEAT_TRAINS, SELF, switch_Comeng_XPT_Liv0_PowerCar, position_in_consist_from_end){ 
-    0:    spriteset_Comeng_XPT_Liv0_rear;
-    spriteset_Comeng_XPT_Liv0_lead;
+switch(FEAT_TRAINS, SELF, switch_Comeng_XPT_Liv0_PowerCar, vehicle_is_flipped){ 
+    0:    spriteset_Comeng_XPT_Liv0_lead;
+    spriteset_Comeng_XPT_Liv0_lead_alt;
 }
 
 //Trailers
@@ -1567,7 +1581,7 @@ item(FEAT_TRAINS, Item_Comeng_XPT_Liv0, Comeng_XPT_ID_Liv0) {
 		speed:							Comeng_XPT_Speed km/h;
 		cost_factor:					(Comeng_XPT_CostFactor * 2);
 		running_cost_factor:			(Comeng_XPT_RunningCostFactor * 2);
-		cargo_capacity: 				(Comeng_XPT_CargoCapacity / param_capacity_mod);
+		cargo_capacity: 				0;
 		power:							Comeng_XPT_Power;
 		weight:							Comeng_XPT_Weight ton;
 
@@ -1593,17 +1607,16 @@ item(FEAT_TRAINS, Item_Comeng_XPT_Liv0, Comeng_XPT_ID_Liv0) {
 //Comeng_XPT_Liv1
 spriteset(spriteset_Comeng_XPT_Liv1_purchase,   "gfx/Comeng_XPT_Liv1.png") {template_purchase_77mu(7, 21)}
 spriteset(spriteset_Comeng_XPT_Liv1_lead,   "gfx/Comeng_XPT_Liv1.png") {template_7(7, 39)}
-spriteset(spriteset_Comeng_XPT_Liv1_rear,   "gfx/Comeng_XPT_Liv1.png") {template_7_alt_r(7, 39)}
-
+spriteset(spriteset_Comeng_XPT_Liv1_lead_alt,   "gfx/Comeng_XPT_Liv1.png") {template_7_alt(7, 39)}
 
 spriteset(spriteset_Comeng_XPT_Liv1_Trailer,   "gfx/Comeng_XPT_Liv1.png") {template_8_repeat(7, 99)}
 spriteset(spriteset_Comeng_XPT_Liv1_Trailer_lead,   "gfx/Comeng_XPT_Liv1.png") {template_8_r(7, 69)}
 spriteset(spriteset_Comeng_XPT_Liv1_Trailer_rear,   "gfx/Comeng_XPT_Liv1.png") {template_8(7, 69)}
 
 //Power Cars
-switch(FEAT_TRAINS, SELF, switch_Comeng_XPT_Liv1_PowerCar, position_in_consist_from_end){ 
-    0:    spriteset_Comeng_XPT_Liv1_rear;
-    spriteset_Comeng_XPT_Liv1_lead;
+switch(FEAT_TRAINS, SELF, switch_Comeng_XPT_Liv1_PowerCar, vehicle_is_flipped){ 
+    0:    spriteset_Comeng_XPT_Liv1_lead;
+    spriteset_Comeng_XPT_Liv1_lead_alt;
 }
 
 //Trailers
@@ -1656,7 +1669,7 @@ item(FEAT_TRAINS, Item_Comeng_XPT_Liv1, Comeng_XPT_ID_Liv1) {
 		speed:							Comeng_XPT_Speed km/h;
 		cost_factor:					(Comeng_XPT_CostFactor * 2);
 		running_cost_factor:			(Comeng_XPT_RunningCostFactor * 2);
-		cargo_capacity: 				(Comeng_XPT_CargoCapacity / param_capacity_mod);
+		cargo_capacity: 				0;
 		power:							Comeng_XPT_Power;
 		weight:							Comeng_XPT_Weight ton;
 
@@ -1682,17 +1695,16 @@ item(FEAT_TRAINS, Item_Comeng_XPT_Liv1, Comeng_XPT_ID_Liv1) {
 //Comeng_XPT_Liv2
 spriteset(spriteset_Comeng_XPT_Liv2_purchase,   "gfx/Comeng_XPT_Liv2.png") {template_purchase_77mu(7, 21)}
 spriteset(spriteset_Comeng_XPT_Liv2_lead,   "gfx/Comeng_XPT_Liv2.png") {template_7(7, 39)}
-spriteset(spriteset_Comeng_XPT_Liv2_rear,   "gfx/Comeng_XPT_Liv2.png") {template_7_alt_r(7, 39)}
-
+spriteset(spriteset_Comeng_XPT_Liv2_lead_alt,   "gfx/Comeng_XPT_Liv2.png") {template_7_alt(7, 39)}
 
 spriteset(spriteset_Comeng_XPT_Liv2_Trailer,   "gfx/Comeng_XPT_Liv2.png") {template_8_repeat(7, 99)}
 spriteset(spriteset_Comeng_XPT_Liv2_Trailer_lead,   "gfx/Comeng_XPT_Liv2.png") {template_8_r(7, 69)}
 spriteset(spriteset_Comeng_XPT_Liv2_Trailer_rear,   "gfx/Comeng_XPT_Liv2.png") {template_8(7, 69)}
 
 //Power Cars
-switch(FEAT_TRAINS, SELF, switch_Comeng_XPT_Liv2_PowerCar, position_in_consist_from_end){ 
-    0:    spriteset_Comeng_XPT_Liv2_rear;
-    spriteset_Comeng_XPT_Liv2_lead;
+switch(FEAT_TRAINS, SELF, switch_Comeng_XPT_Liv2_PowerCar, vehicle_is_flipped){ 
+    0:    spriteset_Comeng_XPT_Liv2_lead;
+    spriteset_Comeng_XPT_Liv2_lead_alt;
 }
 
 //Trailers
@@ -1745,7 +1757,7 @@ item(FEAT_TRAINS, Item_Comeng_XPT_Liv2, Comeng_XPT_ID_Liv2) {
 		speed:							Comeng_XPT_Speed km/h;
 		cost_factor:					(Comeng_XPT_CostFactor * 2);
 		running_cost_factor:			(Comeng_XPT_RunningCostFactor * 2);
-		cargo_capacity: 				(Comeng_XPT_CargoCapacity / param_capacity_mod);
+		cargo_capacity: 				0;
 		power:							Comeng_XPT_Power;
 		weight:							Comeng_XPT_Weight ton;
 
@@ -1771,17 +1783,16 @@ item(FEAT_TRAINS, Item_Comeng_XPT_Liv2, Comeng_XPT_ID_Liv2) {
 //Comeng_XPT_Liv3
 spriteset(spriteset_Comeng_XPT_Liv3_purchase,   "gfx/Comeng_XPT_Liv3.png") {template_purchase_77mu(7, 21)}
 spriteset(spriteset_Comeng_XPT_Liv3_lead,   "gfx/Comeng_XPT_Liv3.png") {template_7(7, 39)}
-spriteset(spriteset_Comeng_XPT_Liv3_rear,   "gfx/Comeng_XPT_Liv3.png") {template_7_alt_r(7, 39)}
-
+spriteset(spriteset_Comeng_XPT_Liv3_lead_alt,   "gfx/Comeng_XPT_Liv3.png") {template_7_alt(7, 39)}
 
 spriteset(spriteset_Comeng_XPT_Liv3_Trailer,   "gfx/Comeng_XPT_Liv3.png") {template_8_repeat(7, 99)}
 spriteset(spriteset_Comeng_XPT_Liv3_Trailer_lead,   "gfx/Comeng_XPT_Liv3.png") {template_8_r(7, 69)}
 spriteset(spriteset_Comeng_XPT_Liv3_Trailer_rear,   "gfx/Comeng_XPT_Liv3.png") {template_8(7, 69)}
 
 //Power Cars
-switch(FEAT_TRAINS, SELF, switch_Comeng_XPT_Liv3_PowerCar, position_in_consist_from_end){ 
-    0:    spriteset_Comeng_XPT_Liv3_rear;
-    spriteset_Comeng_XPT_Liv3_lead;
+switch(FEAT_TRAINS, SELF, switch_Comeng_XPT_Liv3_PowerCar, vehicle_is_flipped){ 
+    0:    spriteset_Comeng_XPT_Liv3_lead;
+    spriteset_Comeng_XPT_Liv3_lead_alt;
 }
 
 //Trailers
@@ -1834,7 +1845,7 @@ item(FEAT_TRAINS, Item_Comeng_XPT_Liv3, Comeng_XPT_ID_Liv3) {
 		speed:							Comeng_XPT_Speed km/h;
 		cost_factor:					(Comeng_XPT_CostFactor * 2);
 		running_cost_factor:			(Comeng_XPT_RunningCostFactor * 2);
-		cargo_capacity: 				(Comeng_XPT_CargoCapacity / param_capacity_mod);
+		cargo_capacity: 				0;
 		power:							Comeng_XPT_Power;
 		weight:							Comeng_XPT_Weight ton;
 
@@ -1860,17 +1871,16 @@ item(FEAT_TRAINS, Item_Comeng_XPT_Liv3, Comeng_XPT_ID_Liv3) {
 //Comeng_XPT_Liv4
 spriteset(spriteset_Comeng_XPT_Liv4_purchase,   "gfx/Comeng_XPT_Liv4.png") {template_purchase_77mu(7, 21)}
 spriteset(spriteset_Comeng_XPT_Liv4_lead,   "gfx/Comeng_XPT_Liv4.png") {template_7(7, 39)}
-spriteset(spriteset_Comeng_XPT_Liv4_rear,   "gfx/Comeng_XPT_Liv4.png") {template_7_alt_r(7, 39)}
-
+spriteset(spriteset_Comeng_XPT_Liv4_lead_alt,   "gfx/Comeng_XPT_Liv4.png") {template_7_alt(7, 39)}
 
 spriteset(spriteset_Comeng_XPT_Liv4_Trailer,   "gfx/Comeng_XPT_Liv4.png") {template_8_repeat(7, 99)}
 spriteset(spriteset_Comeng_XPT_Liv4_Trailer_lead,   "gfx/Comeng_XPT_Liv4.png") {template_8_r(7, 69)}
 spriteset(spriteset_Comeng_XPT_Liv4_Trailer_rear,   "gfx/Comeng_XPT_Liv4.png") {template_8(7, 69)}
 
 //Power Cars
-switch(FEAT_TRAINS, SELF, switch_Comeng_XPT_Liv4_PowerCar, position_in_consist_from_end){ 
-    0:    spriteset_Comeng_XPT_Liv4_rear;
-    spriteset_Comeng_XPT_Liv4_lead;
+switch(FEAT_TRAINS, SELF, switch_Comeng_XPT_Liv4_PowerCar, vehicle_is_flipped){ 
+    0:    spriteset_Comeng_XPT_Liv4_lead;
+    spriteset_Comeng_XPT_Liv4_lead_alt;
 }
 
 //Trailers
@@ -1923,7 +1933,7 @@ item(FEAT_TRAINS, Item_Comeng_XPT_Liv4, Comeng_XPT_ID_Liv4) {
 		speed:							Comeng_XPT_Speed km/h;
 		cost_factor:					(Comeng_XPT_CostFactor * 2);
 		running_cost_factor:			(Comeng_XPT_RunningCostFactor * 2);
-		cargo_capacity: 				(Comeng_XPT_CargoCapacity / param_capacity_mod);
+		cargo_capacity: 				0;
 		power:							Comeng_XPT_Power;
 		weight:							Comeng_XPT_Weight ton;
 
@@ -1949,17 +1959,16 @@ item(FEAT_TRAINS, Item_Comeng_XPT_Liv4, Comeng_XPT_ID_Liv4) {
 //Comeng_XPT_Liv5
 spriteset(spriteset_Comeng_XPT_Liv5_purchase,   "gfx/Comeng_XPT_Liv5.png") {template_purchase_77mu(7, 21)}
 spriteset(spriteset_Comeng_XPT_Liv5_lead,   "gfx/Comeng_XPT_Liv5.png") {template_7(7, 39)}
-spriteset(spriteset_Comeng_XPT_Liv5_rear,   "gfx/Comeng_XPT_Liv5.png") {template_7_alt_r(7, 39)}
-
+spriteset(spriteset_Comeng_XPT_Liv5_lead_alt,   "gfx/Comeng_XPT_Liv5.png") {template_7_alt(7, 39)}
 
 spriteset(spriteset_Comeng_XPT_Liv5_Trailer,   "gfx/Comeng_XPT_Liv5.png") {template_8_repeat(7, 99)}
 spriteset(spriteset_Comeng_XPT_Liv5_Trailer_lead,   "gfx/Comeng_XPT_Liv5.png") {template_8_r(7, 69)}
 spriteset(spriteset_Comeng_XPT_Liv5_Trailer_rear,   "gfx/Comeng_XPT_Liv5.png") {template_8(7, 69)}
 
 //Power Cars
-switch(FEAT_TRAINS, SELF, switch_Comeng_XPT_Liv5_PowerCar, position_in_consist_from_end){ 
-    0:    spriteset_Comeng_XPT_Liv5_rear;
-    spriteset_Comeng_XPT_Liv5_lead;
+switch(FEAT_TRAINS, SELF, switch_Comeng_XPT_Liv5_PowerCar, vehicle_is_flipped){ 
+    0:    spriteset_Comeng_XPT_Liv5_lead;
+    spriteset_Comeng_XPT_Liv5_lead_alt;
 }
 
 //Trailers
@@ -2012,7 +2021,7 @@ item(FEAT_TRAINS, Item_Comeng_XPT_Liv5, Comeng_XPT_ID_Liv5) {
 		speed:							Comeng_XPT_Speed km/h;
 		cost_factor:					(Comeng_XPT_CostFactor * 2);
 		running_cost_factor:			(Comeng_XPT_RunningCostFactor * 2);
-		cargo_capacity: 				(Comeng_XPT_CargoCapacity / param_capacity_mod);
+		cargo_capacity: 				0;
 		power:							Comeng_XPT_Power;
 		weight:							Comeng_XPT_Weight ton;
 
