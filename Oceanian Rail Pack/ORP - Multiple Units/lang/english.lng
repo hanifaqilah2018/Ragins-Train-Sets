@@ -155,7 +155,10 @@ STR_INFO_SSD_DMU_NRFSI:{BLACK}Role:{GOLD}Suburban & Country Service{}{BLACK}Form
 
 
 STR_NAME_DEBSET:DEB Set
-STR_INFO_DEBSET:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
+STR_INFO_DEBSET:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
+
+STR_NAME_COMENG_1100CLASS:Budd-Comeng 1100 Class
+STR_INFO_COMENG_1100CLASS:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power:{BROWN}Diesel
 
 STR_NAME_SILVERFERN:Kawasaki Silver Fern
 STR_INFO_SILVERFERN:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{BROWN}Diesel

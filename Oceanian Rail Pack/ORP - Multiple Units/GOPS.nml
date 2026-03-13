@@ -1091,6 +1091,76 @@ item(FEAT_TRAINS, Item_DEBSet_Liv3, DEBSet_ID_Liv3) {
 }
 
 //ID
+const Comeng_1100Class_ID = 8180;
+//introduction_date
+const Comeng_1100Class_IntroDate = date(1961, 1, 1);
+//speed
+const Comeng_1100Class_Speed = 130;
+//cost_factor
+const Comeng_1100Class_CostFactor = 23;
+//running_cost_factor
+const Comeng_1100Class_RunningCostFactor = 73;
+//Cargo Capacity
+const Comeng_1100Class_CargoCapacity = 84;
+//power
+const Comeng_1100Class_Power = 600;
+//weight
+const Comeng_1100Class_Weight = 52;
+
+//Comeng_1100Class_Liv0
+spriteset(spriteset_Comeng_1100Class_Liv0_purchase,   "gfx/Comeng_1100Class_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Comeng_1100Class_Liv0,   "gfx/Comeng_1100Class_Liv0.png") {template_8_repeat(7, 39)}
+
+const Comeng_1100Class_ID_Liv0 = (Comeng_1100Class_ID + Liv0_ID );
+
+item(FEAT_TRAINS, Item_Comeng_1100Class_Liv0, Comeng_1100Class_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_DIESEL;
+
+        name:                           string(STR_NAME_COMENG_1100CLASS);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Comeng_1100Class_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Comeng_1100Class_Speed km/h;
+		cost_factor:					Comeng_1100Class_CostFactor;
+		running_cost_factor:			Comeng_1100Class_RunningCostFactor;
+		cargo_capacity: 				(Comeng_1100Class_CargoCapacity / param_capacity_mod);
+		power:							Comeng_1100Class_Power;
+		weight:							Comeng_1100Class_Weight ton;
+
+//        variant_group: 					Item_Comeng_1100Class_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_Comeng_1100Class_Liv0;
+        purchase: 						spriteset_Comeng_1100Class_Liv0_purchase;
+        additional_text: 				string(STR_INFO_COMENG_1100CLASS);
+		reverse_build_probability: 		return 50;
+    }
+    }
+
+//ID
 const SilverFern_ID = 8240;
 //introduction_date
 const SilverFern_IntroDate = date(1972, 1, 1);
