@@ -155,13 +155,13 @@ STR_INFO_SSD_DMU_NRFSI:{BLACK}Role:{GOLD}Suburban & Country Service{}{BLACK}Form
 
 
 STR_NAME_DEBSET:DEB Set
-STR_INFO_DEBSET:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel
+STR_INFO_DEBSET:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW DEB Sets
 
 STR_NAME_COMENG_1100CLASS:Budd-Comeng 1100 Class
-STR_INFO_COMENG_1100CLASS:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power:{BROWN}Diesel
+STR_INFO_COMENG_1100CLASS:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Based on: {GOLD} NSW 1100 Class Railcars
 
 STR_NAME_SILVERFERN:Kawasaki Silver Fern
-STR_INFO_SILVERFERN:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{BROWN}Diesel
+STR_INFO_SILVERFERN:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{BROWN}Diesel {}{BLACK}Based on: {GOLD}NZR Silver Fern Railcars
 
 
 
@@ -182,28 +182,27 @@ STR_INFO_EXP_DMU_DTT:{BLACK}Role:{GOLD}Express Service{}{BLACK}Formation:{GOLD}P
 
 
 STR_NAME_TAIT:Tait Set (Single)
-STR_INFO_TAIT:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
+STR_INFO_TAIT:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Single Car {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}VR Tait-Set EMUs {}{GOLD}Subscribe to Taitset on Youtube!
 STR_NAME_TAIT_MU:Tait Set
-STR_INFO_TAIT_MU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple-Unit {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{GOLD}Subscribe to Taitset on Youtube!
+STR_INFO_TAIT_MU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple-Unit {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}VR Tait-Set EMUs {}{GOLD}Subscribe to Taitset on Youtube!
 
 STR_NAME_SSD_EMU_BRADFIELD:Bradfield Set
 STR_INFO_SSD_EMU_BRADFIELD:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
 
-STR_NAME_SSD_EMU_STANDARD:Standard Set
-STR_INFO_SSD_EMU_STANDARD:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_NAME_SYDNEYSTANDARDEMU:Standard EMU
+STR_INFO_SYDNEYSTANDARDEMU:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Sydney Standard EMUs
 
 STR_NAME_SSD_EMU_DMD:English Electric DM/D Class
 STR_INFO_SSD_EMU_DMD:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}Good ol' Cyclops
 
-STR_NAME_SSD_EMU_TULLOCH:Tulloch Set
-STR_INFO_SSD_EMU_TULLOCH:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_NAME_TULLOCHSUBURBANEMU:Tulloch Suburban EMU
+STR_INFO_TULLOCHSUBURBANEMU:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Tulloch Single-Deck EMUs
 
-STR_NAME_HARRIS_2DOOR:M&K Harris Set (2 Doors)
-STR_NAME_HARRIS_3DOOR:M&K Harris Set (3 Doors)
-STR_INFO_HARRIS:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Melbourne Harris Trains
+STR_NAME_HARRIS:M&K Harris Set
+STR_INFO_HARRIS:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on:{GOLD}Melbourne Harris Trains
 
-STR_NAME_SSD_EMU_SPUTNIK:Comeng Sputnik Set
-STR_INFO_SSD_EMU_SPUTNIK:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line
+STR_NAME_SPUTNIKSUBURBANEMU:Comeng Sputnik EMU
+STR_INFO_SPUTNIKSUBURBANEMU:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}NSW Sputnik EMUs
 
 STR_NAME_SXEMU:Comeng SX EMU
 STR_INFO_SXEMU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}If only the Banana Benders put up the wires...

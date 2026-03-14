@@ -2230,7 +2230,7 @@ switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Single, current_year) {
   return switch_Tait_Roof_Transition_Single_Random;
 }
 
-//Tait_Liv0 Single
+//Tait_Liv0
 spriteset(spriteset_Tait_Liv0_purchase,   "gfx/Tait_Liv0.png") {template_purchase_88mu(7, 21)}
 spriteset(spriteset_Tait_Liv0_lead,   "gfx/Tait_Liv0.png") {template_8(7, 39)}
 spriteset(spriteset_Tait_Liv0_lead_r,   "gfx/Tait_Liv0.png") {template_8_r(7, 39)}
@@ -2566,6 +2566,1149 @@ item(FEAT_TRAINS, Item_Tait_Liv0, Tait_ID_Liv0) {
         power:                          Tait_Power;
 		weight:                        	Tait_Weight;
 		running_cost_factor:            Tait_RunningCostFactor;
+
+    }
+}
+
+//ID
+const SydneyStandardEMU_ID = 11140;
+//introduction_date
+const SydneyStandardEMU_IntroDate = date(1926, 1, 1);
+//speed
+const SydneyStandardEMU_Speed = 115;
+//cost_factor
+const SydneyStandardEMU_CostFactor = 19;
+//running_cost_factor
+const SydneyStandardEMU_RunningCostFactor = 49;
+//Cargo Capacity
+const SydneyStandardEMU_CargoCapacity = 90;
+//power
+const SydneyStandardEMU_Power = 720; //MU power is for 2 individual vehicles
+//weight
+const SydneyStandardEMU_Weight = 43;
+
+//Pantographs
+spriteset(spriteset_SydneyStandardEMU_Panto_Purchase,   "gfx/SydneyStandardEMU_Pantographs.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_SydneyStandardEMU_PantoDown,   "gfx/SydneyStandardEMU_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_SydneyStandardEMU_PantoDown_r,   "gfx/SydneyStandardEMU_Pantographs.png") {template_8_r(7, 39)}
+spriteset(spriteset_SydneyStandardEMU_PantoUp,   "gfx/SydneyStandardEMU_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_SydneyStandardEMU_PantoUp_r,   "gfx/SydneyStandardEMU_Pantographs.png") {template_8_r(7, 69)}
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_SydneyStandardEMU_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_SydneyStandardEMU_PantoDown;
+ 1: spriteset_SydneyStandardEMU_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SydneyStandardEMU_Rw_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_SydneyStandardEMU_PantoDown_r; //might need switching back to just panto down
+ 1: spriteset_SydneyStandardEMU_PantoUp_r;
+}
+
+//SydneyStandardEMU_Liv0
+spriteset(spriteset_SydneyStandardEMU_Liv0_purchase,   "gfx/SydneyStandardEMU_Liv0.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_SydneyStandardEMU_Liv0_lead,   "gfx/SydneyStandardEMU_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_SydneyStandardEMU_Liv0_lead_r,   "gfx/SydneyStandardEMU_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_SydneyStandardEMU_Liv0_DT_lead,   "gfx/SydneyStandardEMU_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_SydneyStandardEMU_Liv0_Trailer,   "gfx/SydneyStandardEMU_Liv0.png") {template_8(7, 99)}
+spriteset(spriteset_SydneyStandardEMU_Liv0_Trailer_r,   "gfx/SydneyStandardEMU_Liv0.png") {template_8_r(7, 99)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_SydneyStandardEMU_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SydneyStandardEMU_Liv0_purchase;
+	1: spriteset_SydneyStandardEMU_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_SydneyStandardEMU_Liv0_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SydneyStandardEMU_Liv0_lead;
+	1: switch_SydneyStandardEMU_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_SydneyStandardEMU_Liv0_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SydneyStandardEMU_Liv0_lead;
+	1: switch_SydneyStandardEMU_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_SydneyStandardEMU_Liv0_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SydneyStandardEMU_Liv0_lead;
+	1: switch_SydneyStandardEMU_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_SydneyStandardEMU_Liv0_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SydneyStandardEMU_Liv0_lead_r;
+	1: switch_SydneyStandardEMU_Rw_railtype;
+}
+
+//T
+ random_switch(FEAT_TRAINS, SELF, switch_SydneyStandard_EMU_Liv0_Trailer_Random){
+    1 : spriteset_SydneyStandardEMU_Liv0_Trailer;
+    1 : spriteset_SydneyStandardEMU_Liv0_Trailer_r;
+}
+
+//Backward
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
+    2 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack_r;
+    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+}
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
+    2 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack;
+    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
+    1 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack_r;
+    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
+    1 : switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+    return switch_SydneyStandardEMU_Liv0_NonControlMotorStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
+    1 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack;
+    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_SydneyStandardEMU_Liv0_pantocheck_at_1_r;
+    return sw_SydneyStandardEMU_Liv0_pantocheck_at_1r_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+    return sw_SydneyStandardEMU_Liv0_pantocheck_at_0_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_SydneyStandardEMU_Liv0_pantocheck_at_2_r;
+    return sw_SydneyStandardEMU_Liv0_pantocheck_at_2r_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
+    0 .. 2 : switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+    3 : sw_SydneyStandardEMU_Liv0_pantocheck_at_1_r;
+    4 : sw_SydneyStandardEMU_Liv0_sidecheck_4_r;
+    5 : sw_SydneyStandardEMU_Liv0_pantocheck_at_2_r;
+    6 .. 7 : sw_SydneyStandardEMU_Liv0_sidecheck_6_r;
+    return sw_SydneyStandardEMU_Liv0_sidecheck_other_r;
+}
+
+//Forward
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack_r;
+    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+}
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack;
+    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack_r;
+    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+}
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack;
+    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_SydneyStandardEMU_Liv0_pantocheck_at_1;
+    return sw_SydneyStandardEMU_Liv0_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_SydneyStandardEMU_Liv0_pantocheck_at_1;
+    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_SydneyStandardEMU_Liv0_pantocheck_at_2;
+    return sw_SydneyStandardEMU_Liv0_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : switch_SydneyStandard_EMU_Liv0_Trailer_Random;
+    3 : sw_SydneyStandardEMU_Liv0_pantocheck_at_1;
+    4 : sw_SydneyStandardEMU_Liv0_sidecheck_4;
+    5 : sw_SydneyStandardEMU_Liv0_pantocheck_at_2;
+    6 .. 7 : sw_SydneyStandardEMU_Liv0_sidecheck_6;
+    return sw_SydneyStandardEMU_Liv0_sidecheck_other;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
+    0: switch_SydneyStandardEMU_Liv0_MotorStack; //Panto
+    return spriteset_SydneyStandardEMU_Liv0_DT_lead; //No Panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_panto_direction_r, vehicle_is_flipped){
+    0 : sw_SydneyStandardEMU_Liv0_panto_direction_r_pos;        //Front panto
+    return switch_SydneyStandardEMU_Liv0_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_panto_flipcheck_r, vehicle_is_flipped){
+    0 : sw_SydneyStandardEMU_Liv0_panto_direction_r;        //Not flipped, give Panto
+    return switch_SydneyStandardEMU_Liv0_MotorStack_r;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_frontcheck_r, position_in_vehid_chain){
+    0: sw_SydneyStandardEMU_Liv0_panto_direction_r; //We need a pantograph, guaranteed
+    return sw_SydneyStandardEMU_Liv0_panto_flipcheck_r; //More Checks
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_panto_direction, vehicle_is_flipped){
+    0 : switch_SydneyStandardEMU_Liv0_MotorStack;        //Front panto
+    return switch_SydneyStandardEMU_Liv0_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_SydneyStandardEMU_Liv0_panto_direction;        //Not flipped, give Panto
+    return spriteset_SydneyStandardEMU_Liv0_DT_lead;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_frontcheck, position_in_vehid_chain){
+    0: sw_SydneyStandardEMU_Liv0_panto_direction; //We need a pantograph, guaranteed
+    return sw_SydneyStandardEMU_Liv0_panto_flipcheck; //More Checks
+}
+
+switch(FEAT_TRAINS, PARENT, sw_SydneyStandardEMU_Liv0_directioncheck, vehicle_is_reversed){
+    0: sw_SydneyStandardEMU_Liv0_frontcheck; //We are going forwards
+    return sw_SydneyStandardEMU_Liv0_frontcheck_r; //We are going backwards
+}
+
+switch(FEAT_TRAINS, PARENT, sw_SydneyStandardEMU_Liv0_revcheck, vehicle_is_reversed){
+    0 : sw_SydneyStandardEMU_Liv0_lencheck;
+    return sw_SydneyStandardEMU_Liv0_lencheck_r;
+}
+
+const SydneyStandardEMU_ID_Liv0 = (SydneyStandardEMU_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_SydneyStandardEMU_Liv0, SydneyStandardEMU_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_SYDNEYSTANDARDEMU);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              SydneyStandardEMU_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							SydneyStandardEMU_Speed km/h;
+		cost_factor:					(SydneyStandardEMU_CostFactor * 2);
+		running_cost_factor:			(SydneyStandardEMU_RunningCostFactor * 2);
+		cargo_capacity: 				(SydneyStandardEMU_CargoCapacity / param_capacity_mod);
+		power:							(SydneyStandardEMU_Power * 2);
+		weight:							SydneyStandardEMU_Weight ton;
+
+//        variant_group: 					Item_SydneyStandardEMU_MU_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_SydneyStandardEMU_Liv0_directioncheck;
+        purchase: 						switch_SydneyStandardEMU_Liv0_PurchaseStack;
+        additional_text: 				string(STR_INFO_SYDNEYSTANDARDEMU);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_SydneyStandardEMU_Liv0_revcheck ;
+        length:							8;
+        cargo_capacity:                 [SydneyStandardEMU_CargoCapacity / param_capacity_mod];
+        power:                          SydneyStandardEMU_Power;
+		weight:                        	SydneyStandardEMU_Weight;
+		running_cost_factor:            SydneyStandardEMU_RunningCostFactor;
+
+    }
+}
+
+//ID
+const TullochSuburbanEMU_ID = 11180;
+//introduction_date
+const TullochSuburbanEMU_IntroDate = date(1940, 1, 1);
+//speed
+const TullochSuburbanEMU_Speed = 115;
+//cost_factor
+const TullochSuburbanEMU_CostFactor = 19;
+//running_cost_factor
+const TullochSuburbanEMU_RunningCostFactor = 49;
+//Cargo Capacity
+const TullochSuburbanEMU_CargoCapacity = 90;
+//power
+const TullochSuburbanEMU_Power = 720; //MU power is for 2 individual vehicles
+//weight
+const TullochSuburbanEMU_Weight = 43;
+
+//Pantographs
+spriteset(spriteset_TullochSuburbanEMU_Panto_Purchase,   "gfx/TullochSuburbanEMU_Pantographs.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TullochSuburbanEMU_PantoDown,   "gfx/TullochSuburbanEMU_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_TullochSuburbanEMU_PantoDown_r,   "gfx/TullochSuburbanEMU_Pantographs.png") {template_8_r(7, 39)}
+spriteset(spriteset_TullochSuburbanEMU_PantoUp,   "gfx/TullochSuburbanEMU_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_TullochSuburbanEMU_PantoUp_r,   "gfx/TullochSuburbanEMU_Pantographs.png") {template_8_r(7, 69)}
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_TullochSuburbanEMU_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_TullochSuburbanEMU_PantoDown;
+ 1: spriteset_TullochSuburbanEMU_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_TullochSuburbanEMU_Rw_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_TullochSuburbanEMU_PantoDown_r; //might need switching back to just panto down
+ 1: spriteset_TullochSuburbanEMU_PantoUp_r;
+}
+
+//TullochSuburbanEMU_Liv0
+spriteset(spriteset_TullochSuburbanEMU_Liv0_purchase,   "gfx/TullochSuburbanEMU_Liv0.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TullochSuburbanEMU_Liv0_lead,   "gfx/TullochSuburbanEMU_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_TullochSuburbanEMU_Liv0_lead_r,   "gfx/TullochSuburbanEMU_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_TullochSuburbanEMU_Liv0_Trailer,   "gfx/TullochSuburbanEMU_Liv0.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_TullochSuburbanEMU_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochSuburbanEMU_Liv0_purchase;
+	1: spriteset_TullochSuburbanEMU_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_TullochSuburbanEMU_Liv0_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochSuburbanEMU_Liv0_lead;
+	1: switch_TullochSuburbanEMU_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_TullochSuburbanEMU_Liv0_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochSuburbanEMU_Liv0_lead;
+	1: switch_TullochSuburbanEMU_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_TullochSuburbanEMU_Liv0_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochSuburbanEMU_Liv0_lead;
+	1: switch_TullochSuburbanEMU_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_TullochSuburbanEMU_Liv0_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochSuburbanEMU_Liv0_lead_r;
+	1: switch_TullochSuburbanEMU_Rw_railtype;
+}
+
+//Backward
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
+    2 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack_r;
+    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
+    2 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack;
+    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
+    1 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack_r;
+    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
+    1 : spriteset_TullochSuburbanEMU_Liv0_Trailer;
+    return switch_TullochSuburbanEMU_Liv0_NonControlMotorStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
+    1 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack;
+    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_1_r;
+    return sw_TullochSuburbanEMU_Liv0_pantocheck_at_1r_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : spriteset_TullochSuburbanEMU_Liv0_Trailer;
+    return sw_TullochSuburbanEMU_Liv0_pantocheck_at_0_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_2_r;
+    return sw_TullochSuburbanEMU_Liv0_pantocheck_at_2r_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_TullochSuburbanEMU_Liv0_Trailer;
+    3 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_1_r;
+    4 : sw_TullochSuburbanEMU_Liv0_sidecheck_4_r;
+    5 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_2_r;
+    6 .. 7 : sw_TullochSuburbanEMU_Liv0_sidecheck_6_r;
+    return sw_TullochSuburbanEMU_Liv0_sidecheck_other_r;
+}
+
+//Forward
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack_r;
+    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack;
+    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack_r;
+    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack;
+    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_1;
+    return sw_TullochSuburbanEMU_Liv0_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_1;
+    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_2;
+    return sw_TullochSuburbanEMU_Liv0_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_TullochSuburbanEMU_Liv0_Trailer;
+    3 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_1;
+    4 : sw_TullochSuburbanEMU_Liv0_sidecheck_4;
+    5 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_2;
+    6 .. 7 : sw_TullochSuburbanEMU_Liv0_sidecheck_6;
+    return sw_TullochSuburbanEMU_Liv0_sidecheck_other;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
+    0: switch_TullochSuburbanEMU_Liv0_MotorStack; //Panto
+    return spriteset_TullochSuburbanEMU_Liv0_lead; //No Panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_panto_direction_r, vehicle_is_flipped){
+    0 : sw_TullochSuburbanEMU_Liv0_panto_direction_r_pos;        //Front panto
+    return switch_TullochSuburbanEMU_Liv0_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_panto_flipcheck_r, vehicle_is_flipped){
+    0 : sw_TullochSuburbanEMU_Liv0_panto_direction_r;        //Not flipped, give Panto
+    return switch_TullochSuburbanEMU_Liv0_MotorStack_r;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_frontcheck_r, position_in_vehid_chain){
+    0: sw_TullochSuburbanEMU_Liv0_panto_direction_r; //We need a pantograph, guaranteed
+    return sw_TullochSuburbanEMU_Liv0_panto_flipcheck_r; //More Checks
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_panto_direction, vehicle_is_flipped){
+    0 : switch_TullochSuburbanEMU_Liv0_MotorStack;        //Front panto
+    return switch_TullochSuburbanEMU_Liv0_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_TullochSuburbanEMU_Liv0_panto_direction;        //Not flipped, give Panto
+    return spriteset_TullochSuburbanEMU_Liv0_lead;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_frontcheck, position_in_vehid_chain){
+    0: sw_TullochSuburbanEMU_Liv0_panto_direction; //We need a pantograph, guaranteed
+    return sw_TullochSuburbanEMU_Liv0_panto_flipcheck; //More Checks
+}
+
+switch(FEAT_TRAINS, PARENT, sw_TullochSuburbanEMU_Liv0_directioncheck, vehicle_is_reversed){
+    0: sw_TullochSuburbanEMU_Liv0_frontcheck; //We are going forwards
+    return sw_TullochSuburbanEMU_Liv0_frontcheck_r; //We are going backwards
+}
+
+switch(FEAT_TRAINS, PARENT, sw_TullochSuburbanEMU_Liv0_revcheck, vehicle_is_reversed){
+    0 : sw_TullochSuburbanEMU_Liv0_lencheck;
+    return sw_TullochSuburbanEMU_Liv0_lencheck_r;
+}
+
+const TullochSuburbanEMU_ID_Liv0 = (TullochSuburbanEMU_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_TullochSuburbanEMU_Liv0, TullochSuburbanEMU_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_TULLOCHSUBURBANEMU);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              TullochSuburbanEMU_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							TullochSuburbanEMU_Speed km/h;
+		cost_factor:					(TullochSuburbanEMU_CostFactor * 2);
+		running_cost_factor:			(TullochSuburbanEMU_RunningCostFactor * 2);
+		cargo_capacity: 				(TullochSuburbanEMU_CargoCapacity / param_capacity_mod);
+		power:							(TullochSuburbanEMU_Power * 2);
+		weight:							TullochSuburbanEMU_Weight ton;
+
+//        variant_group: 					Item_TullochSuburbanEMU_MU_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_TullochSuburbanEMU_Liv0_directioncheck;
+        purchase: 						switch_TullochSuburbanEMU_Liv0_PurchaseStack;
+        additional_text: 				string(STR_INFO_TULLOCHSUBURBANEMU);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_TullochSuburbanEMU_Liv0_revcheck ;
+        length:							8;
+        cargo_capacity:                 [TullochSuburbanEMU_CargoCapacity / param_capacity_mod];
+        power:                          TullochSuburbanEMU_Power;
+		weight:                        	TullochSuburbanEMU_Weight;
+		running_cost_factor:            TullochSuburbanEMU_RunningCostFactor;
+
+    }
+}
+
+//ID
+const Harris_ID = 11200;
+//introduction_date
+const Harris_IntroDate = date(1956, 1, 1);
+//speed
+const Harris_Speed = 115;
+//cost_factor
+const Harris_CostFactor = 25;
+//running_cost_factor
+const Harris_RunningCostFactor = 52;
+//Cargo Capacity
+const Harris_CargoCapacity = 102;
+//power
+const Harris_Power = 400; //MU power is for 2 individual vehicles
+//weight
+const Harris_Weight = 39;
+
+//Pantographs
+spriteset(spriteset_Harris_Panto_Purchase,   "gfx/Harris_Pantographs.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_Harris_PantoDown,   "gfx/Harris_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_Harris_PantoDown_r,   "gfx/Harris_Pantographs.png") {template_8_r(7, 39)}
+spriteset(spriteset_Harris_PantoUp,   "gfx/Harris_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_Harris_PantoUp_r,   "gfx/Harris_Pantographs.png") {template_8_r(7, 69)}
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_Harris_Fw_railtype, tile_powers_railtype("BG_RAIL_OHLE_DC")) {
+ 0: spriteset_Harris_PantoDown;
+ 1: spriteset_Harris_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Harris_Rw_railtype, tile_powers_railtype("BG_RAIL_OHLE_DC")) {
+ 0: spriteset_Harris_PantoDown_r; //might need switching back to just panto down
+ 1: spriteset_Harris_PantoUp_r;
+}
+
+//Harris_Liv0
+spriteset(spriteset_Harris_Liv0_purchase,   "gfx/Harris_Liv0.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_Harris_Liv0_lead,   "gfx/Harris_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_Harris_Liv0_lead_r,   "gfx/Harris_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_Harris_Liv0_3door_lead,   "gfx/Harris_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_Harris_Liv0_3door_lead_r,   "gfx/Harris_Liv0.png") {template_8_r(7, 69)}
+spriteset(spriteset_Harris_Liv0_Trailer,   "gfx/Harris_Liv0.png") {template_8_repeat(7, 99)}
+spriteset(spriteset_Harris_Liv0_3door_Trailer,   "gfx/Harris_Liv0.png") {template_8_repeat(7, 129)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_Harris_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Harris_Liv0_purchase;
+	1: spriteset_Harris_Panto_Purchase;
+}
+
+//Randomisers
+random_switch(FEAT_TRAINS, SELF, switch_Harris_Liv0_lead_Random){
+    1 : spriteset_Harris_Liv0_lead;
+	1 : spriteset_Harris_Liv0_3door_lead;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Harris_Liv0_lead_r_Random){
+    1 : spriteset_Harris_Liv0_lead_r;
+	1 : spriteset_Harris_Liv0_3door_lead_r;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Harris_Liv0_Trailer_Random){
+    1 : spriteset_Harris_Liv0_Trailer;
+	1 : spriteset_Harris_Liv0_3door_Trailer;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_Harris_Liv0_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_Harris_Liv0_lead_Random;
+	1: switch_Harris_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_Harris_Liv0_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_Harris_Liv0_lead_Random;
+	1: switch_Harris_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_Harris_Liv0_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_Harris_Liv0_lead_Random;
+	1: switch_Harris_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_Harris_Liv0_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: switch_Harris_Liv0_lead_r_Random;
+	1: switch_Harris_Rw_railtype;
+}
+
+//Backward
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
+    2 : switch_Harris_Liv0_NonControlMotorStack_r;
+    return switch_Harris_Liv0_Trailer_Random;
+}
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
+    2 : switch_Harris_Liv0_NonControlMotorStack;
+    return switch_Harris_Liv0_Trailer_Random;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
+    1 : switch_Harris_Liv0_NonControlMotorStack_r;
+    return switch_Harris_Liv0_Trailer_Random;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
+    1 : switch_Harris_Liv0_Trailer_Random;
+    return switch_Harris_Liv0_NonControlMotorStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
+    1 : switch_Harris_Liv0_NonControlMotorStack;
+    return switch_Harris_Liv0_Trailer_Random;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_Harris_Liv0_pantocheck_at_1_r;
+    return sw_Harris_Liv0_pantocheck_at_1r_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : switch_Harris_Liv0_Trailer_Random;
+    return sw_Harris_Liv0_pantocheck_at_0_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_Harris_Liv0_pantocheck_at_2_r;
+    return sw_Harris_Liv0_pantocheck_at_2r_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
+    0 .. 2 : switch_Harris_Liv0_Trailer_Random;
+    3 : sw_Harris_Liv0_pantocheck_at_1_r;
+    4 : sw_Harris_Liv0_sidecheck_4_r;
+    5 : sw_Harris_Liv0_pantocheck_at_2_r;
+    6 .. 7 : sw_Harris_Liv0_sidecheck_6_r;
+    return sw_Harris_Liv0_sidecheck_other_r;
+}
+
+//Forward
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_Harris_Liv0_NonControlMotorStack_r;
+    return switch_Harris_Liv0_Trailer_Random;
+}
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_Harris_Liv0_NonControlMotorStack;
+    return switch_Harris_Liv0_Trailer_Random;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_Harris_Liv0_NonControlMotorStack_r;
+    return switch_Harris_Liv0_Trailer_Random;
+}
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_Harris_Liv0_NonControlMotorStack;
+    return switch_Harris_Liv0_Trailer_Random;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_Harris_Liv0_pantocheck_at_1;
+    return sw_Harris_Liv0_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_Harris_Liv0_pantocheck_at_1;
+    return switch_Harris_Liv0_Trailer_Random;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_Harris_Liv0_pantocheck_at_2;
+    return sw_Harris_Liv0_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : switch_Harris_Liv0_Trailer_Random;
+    3 : sw_Harris_Liv0_pantocheck_at_1;
+    4 : sw_Harris_Liv0_sidecheck_4;
+    5 : sw_Harris_Liv0_pantocheck_at_2;
+    6 .. 7 : sw_Harris_Liv0_sidecheck_6;
+    return sw_Harris_Liv0_sidecheck_other;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
+    0: switch_Harris_Liv0_MotorStack; //Panto
+    return switch_Harris_Liv0_lead_Random; //No Panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_panto_direction_r, vehicle_is_flipped){
+    0 : sw_Harris_Liv0_panto_direction_r_pos;        //Front panto
+    return switch_Harris_Liv0_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_panto_flipcheck_r, vehicle_is_flipped){
+    0 : sw_Harris_Liv0_panto_direction_r;        //Not flipped, give Panto
+    return switch_Harris_Liv0_MotorStack_r;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_frontcheck_r, position_in_vehid_chain){
+    0: sw_Harris_Liv0_panto_direction_r; //We need a pantograph, guaranteed
+    return sw_Harris_Liv0_panto_flipcheck_r; //More Checks
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_panto_direction, vehicle_is_flipped){
+    0 : switch_Harris_Liv0_MotorStack;        //Front panto
+    return switch_Harris_Liv0_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_Harris_Liv0_panto_direction;        //Not flipped, give Panto
+    return switch_Harris_Liv0_lead_Random;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_frontcheck, position_in_vehid_chain){
+    0: sw_Harris_Liv0_panto_direction; //We need a pantograph, guaranteed
+    return sw_Harris_Liv0_panto_flipcheck; //More Checks
+}
+
+switch(FEAT_TRAINS, PARENT, sw_Harris_Liv0_directioncheck, vehicle_is_reversed){
+    0: sw_Harris_Liv0_frontcheck; //We are going forwards
+    return sw_Harris_Liv0_frontcheck_r; //We are going backwards
+}
+
+switch(FEAT_TRAINS, PARENT, sw_Harris_Liv0_revcheck, vehicle_is_reversed){
+    0 : sw_Harris_Liv0_lencheck;
+    return sw_Harris_Liv0_lencheck_r;
+}
+
+const Harris_ID_Liv0 = (Harris_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_Harris_Liv0, Harris_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_HARRIS);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Harris_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Harris_Speed km/h;
+		cost_factor:					(Harris_CostFactor * 2);
+		running_cost_factor:			(Harris_RunningCostFactor * 2);
+		cargo_capacity: 				(Harris_CargoCapacity / param_capacity_mod);
+		power:							(Harris_Power * 2);
+		weight:							Harris_Weight ton;
+
+//        variant_group: 					Item_Harris_MU_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_Harris_Liv0_directioncheck;
+        purchase: 						switch_Harris_Liv0_PurchaseStack;
+        additional_text: 				string(STR_INFO_HARRIS);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_Harris_Liv0_revcheck ;
+        length:							8;
+        cargo_capacity:                 [Harris_CargoCapacity / param_capacity_mod];
+        power:                          Harris_Power;
+		weight:                        	Harris_Weight;
+		running_cost_factor:            Harris_RunningCostFactor;
+
+    }
+}
+
+//ID
+const SputnikSuburbanEMU_ID = 11240;
+//introduction_date
+const SputnikSuburbanEMU_IntroDate = date(1957, 1, 1);
+//speed
+const SputnikSuburbanEMU_Speed = 115;
+//cost_factor
+const SputnikSuburbanEMU_CostFactor = 22;
+//running_cost_factor
+const SputnikSuburbanEMU_RunningCostFactor = 56;
+//Cargo Capacity
+const SputnikSuburbanEMU_CargoCapacity = 104;
+//power
+const SputnikSuburbanEMU_Power = 720; //MU power is for 2 individual vehicles
+//weight
+const SputnikSuburbanEMU_Weight = 48;
+
+//Pantographs
+spriteset(spriteset_SputnikSuburbanEMU_Panto_Purchase,   "gfx/SputnikSuburbanEMU_Pantographs.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_SputnikSuburbanEMU_PantoDown,   "gfx/SputnikSuburbanEMU_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_SputnikSuburbanEMU_PantoDown_r,   "gfx/SputnikSuburbanEMU_Pantographs.png") {template_8_r(7, 39)}
+spriteset(spriteset_SputnikSuburbanEMU_PantoUp,   "gfx/SputnikSuburbanEMU_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_SputnikSuburbanEMU_PantoUp_r,   "gfx/SputnikSuburbanEMU_Pantographs.png") {template_8_r(7, 69)}
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_SputnikSuburbanEMU_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_SputnikSuburbanEMU_PantoDown;
+ 1: spriteset_SputnikSuburbanEMU_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SputnikSuburbanEMU_Rw_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_SputnikSuburbanEMU_PantoDown_r; //might need switching back to just panto down
+ 1: spriteset_SputnikSuburbanEMU_PantoUp_r;
+}
+
+//SputnikSuburbanEMU_Liv0
+spriteset(spriteset_SputnikSuburbanEMU_Liv0_purchase,   "gfx/SputnikSuburbanEMU_Liv0.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_SputnikSuburbanEMU_Liv0_lead,   "gfx/SputnikSuburbanEMU_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_SputnikSuburbanEMU_Liv0_lead_r,   "gfx/SputnikSuburbanEMU_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_SputnikSuburbanEMU_Liv0_Trailer,   "gfx/SputnikSuburbanEMU_Liv0.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_SputnikSuburbanEMU_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SputnikSuburbanEMU_Liv0_purchase;
+	1: spriteset_SputnikSuburbanEMU_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_SputnikSuburbanEMU_Liv0_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SputnikSuburbanEMU_Liv0_lead;
+	1: switch_SputnikSuburbanEMU_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_SputnikSuburbanEMU_Liv0_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SputnikSuburbanEMU_Liv0_lead;
+	1: switch_SputnikSuburbanEMU_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SputnikSuburbanEMU_Liv0_lead;
+	1: switch_SputnikSuburbanEMU_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SputnikSuburbanEMU_Liv0_lead_r;
+	1: switch_SputnikSuburbanEMU_Rw_railtype;
+}
+
+//Backward
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
+    2 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack_r;
+    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
+    2 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack;
+    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
+    1 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack_r;
+    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
+    1 : spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+    return switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
+    1 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack;
+    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1_r;
+    return sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1r_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+    return sw_SputnikSuburbanEMU_Liv0_pantocheck_at_0_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2_r;
+    return sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2r_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+    3 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1_r;
+    4 : sw_SputnikSuburbanEMU_Liv0_sidecheck_4_r;
+    5 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2_r;
+    6 .. 7 : sw_SputnikSuburbanEMU_Liv0_sidecheck_6_r;
+    return sw_SputnikSuburbanEMU_Liv0_sidecheck_other_r;
+}
+
+//Forward
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack_r;
+    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack;
+    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack_r;
+    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack;
+    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1;
+    return sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1;
+    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2;
+    return sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_SputnikSuburbanEMU_Liv0_Trailer;
+    3 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1;
+    4 : sw_SputnikSuburbanEMU_Liv0_sidecheck_4;
+    5 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2;
+    6 .. 7 : sw_SputnikSuburbanEMU_Liv0_sidecheck_6;
+    return sw_SputnikSuburbanEMU_Liv0_sidecheck_other;
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
+    0: switch_SputnikSuburbanEMU_Liv0_MotorStack; //Panto
+    return spriteset_SputnikSuburbanEMU_Liv0_lead; //No Panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_panto_direction_r, vehicle_is_flipped){
+    0 : sw_SputnikSuburbanEMU_Liv0_panto_direction_r_pos;        //Front panto
+    return switch_SputnikSuburbanEMU_Liv0_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_panto_flipcheck_r, vehicle_is_flipped){
+    0 : sw_SputnikSuburbanEMU_Liv0_panto_direction_r;        //Not flipped, give Panto
+    return switch_SputnikSuburbanEMU_Liv0_MotorStack_r;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_frontcheck_r, position_in_vehid_chain){
+    0: sw_SputnikSuburbanEMU_Liv0_panto_direction_r; //We need a pantograph, guaranteed
+    return sw_SputnikSuburbanEMU_Liv0_panto_flipcheck_r; //More Checks
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_panto_direction, vehicle_is_flipped){
+    0 : switch_SputnikSuburbanEMU_Liv0_MotorStack;        //Front panto
+    return switch_SputnikSuburbanEMU_Liv0_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_SputnikSuburbanEMU_Liv0_panto_direction;        //Not flipped, give Panto
+    return spriteset_SputnikSuburbanEMU_Liv0_lead;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_frontcheck, position_in_vehid_chain){
+    0: sw_SputnikSuburbanEMU_Liv0_panto_direction; //We need a pantograph, guaranteed
+    return sw_SputnikSuburbanEMU_Liv0_panto_flipcheck; //More Checks
+}
+
+switch(FEAT_TRAINS, PARENT, sw_SputnikSuburbanEMU_Liv0_directioncheck, vehicle_is_reversed){
+    0: sw_SputnikSuburbanEMU_Liv0_frontcheck; //We are going forwards
+    return sw_SputnikSuburbanEMU_Liv0_frontcheck_r; //We are going backwards
+}
+
+switch(FEAT_TRAINS, PARENT, sw_SputnikSuburbanEMU_Liv0_revcheck, vehicle_is_reversed){
+    0 : sw_SputnikSuburbanEMU_Liv0_lencheck;
+    return sw_SputnikSuburbanEMU_Liv0_lencheck_r;
+}
+
+const SputnikSuburbanEMU_ID_Liv0 = (SputnikSuburbanEMU_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_SputnikSuburbanEMU_Liv0, SputnikSuburbanEMU_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_SPUTNIKSUBURBANEMU);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              SputnikSuburbanEMU_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							SputnikSuburbanEMU_Speed km/h;
+		cost_factor:					(SputnikSuburbanEMU_CostFactor * 2);
+		running_cost_factor:			(SputnikSuburbanEMU_RunningCostFactor * 2);
+		cargo_capacity: 				(SputnikSuburbanEMU_CargoCapacity / param_capacity_mod);
+		power:							(SputnikSuburbanEMU_Power * 2);
+		weight:							SputnikSuburbanEMU_Weight ton;
+
+//        variant_group: 					Item_SputnikSuburbanEMU_MU_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_SputnikSuburbanEMU_Liv0_directioncheck;
+        purchase: 						switch_SputnikSuburbanEMU_Liv0_PurchaseStack;
+        additional_text: 				string(STR_INFO_SPUTNIKSUBURBANEMU);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_SputnikSuburbanEMU_Liv0_revcheck ;
+        length:							8;
+        cargo_capacity:                 [SputnikSuburbanEMU_CargoCapacity / param_capacity_mod];
+        power:                          SputnikSuburbanEMU_Power;
+		weight:                        	SputnikSuburbanEMU_Weight;
+		running_cost_factor:            SputnikSuburbanEMU_RunningCostFactor;
 
     }
 }
