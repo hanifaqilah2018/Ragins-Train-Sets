@@ -3806,9 +3806,10 @@ switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_PantoCarStack, [
                 0:  switch_AucklandART_Liv0_PantoCarStack;
                 spriteset_AucklandART_Liv0_Trailer;		 		
             }
-	switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_backwards_length, num_vehs_in_consist < 5 ) {//change this number to control when it switches to two pantos		
-			0:  switch_AucklandART_Liv0_backwards_length_large;
-			switch_AucklandART_Liv0_backwards_length_small; //less than	
+	switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_backwards_length, num_vehs_in_vehid_chain) {//change this number to control when it switches to two pantos		
+			0..1: switch_AucklandART_Liv0_PantoCarStack;
+			2: switch_AucklandART_Liv0_backwards_length_small;
+			switch_AucklandART_Liv0_backwards_length_large;
 		}
 	// Forwards
         // Penultipantos
@@ -3825,9 +3826,10 @@ switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_PantoCarStack, [
                 0:  spriteset_AucklandART_Liv0_Trailer;
                 switch_AucklandART_Liv0_PantoCarStack_r;				
             }
-	switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_forwards_length, num_vehs_in_consist < 5 ) {//change this number to control when it switches to two pantos		
-			0:  switch_AucklandART_Liv0_forwards_length_large;
-			switch_AucklandART_Liv0_forwards_length_small; //less than
+	switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_forwards_length, num_vehs_in_vehid_chain) {//change this number to control when it switches to two pantos		
+			0..1: switch_AucklandART_Liv0_PantoCarStack_r;
+			2:  switch_AucklandART_Liv0_forwards_length_small;
+			switch_AucklandART_Liv0_forwards_length_large; //less than 
 		}
 
 	switch (FEAT_TRAINS, PARENT, switch_AucklandART_Liv0_midcars, vehicle_is_reversed) {				
