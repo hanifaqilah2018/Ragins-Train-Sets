@@ -1,0 +1,155 @@
+/* Purchase Menu */
+spriteset (ss_e8_series_purchase, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "src/trains/e8_series/gfx/e8_series.png") {template_purchase(233, 1)}
+
+/* cab01 */
+spriteset(ss_mid_e8_series_cab01f_irl, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "src/trains/e8_series/gfx/e8_series.png") {tmpl_mid_std(1,1)} //front cab IRL
+spriteset(ss_mid_e8_series_cab01b_irl, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "src/trains/e8_series/gfx/e8_series.png") {tmpl_mid_rev(1,51)} //rear cab IRL
+
+/* cab02 */
+spriteset(ss_mid_e8_series_cab02f_irl, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "src/trains/e8_series/gfx/e8_series.png") {tmpl_cab_mid_std(1,51)}
+spriteset(ss_mid_e8_series_cab02b_irl, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "src/trains/e8_series/gfx/e8_series.png") {tmpl_cab_mid_rev(1,1)}
+
+/* coach */
+spriteset(Trailer, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "src/trains/e8_series/gfx/e8_series.png") {tmpl_mid_std(1,151)}
+spriteset(Trailer, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "src/trains/e8_series/gfx/e8_series.png") {tmpl_mid_rev(1,151)}
+
+/* pant1 */
+spriteset(Pantoforward, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "src/trains/e8_series/gfx/e8_series.png") {tmpl_mid_std(1,101)}
+spriteset(Pantobackward, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "src/trains/e8_series/gfx/e8_series.png") {tmpl_mid_rev(1,101)}
+
+/* pant2 */
+spriteset(Pantoforward, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "src/trains/e8_series/gfx/e8_series.png") {tmpl_cab_mid_std(1,101)}
+spriteset(Pantobackward, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "src/trains/e8_series/gfx/e8_series.png") {tmpl_cab_mid_rev(1,101)}
+
+/* Midcars */
+    // Backwards
+        // Penultipantos
+        switch (FEAT_TRAINS, SELF, sw_e8_series_pantos_large_backwards, position_in_consist_from_end ) {
+                1:  Pantobackward;
+                Pantobackward;				
+            }
+        switch (FEAT_TRAINS, SELF, sw_e8_series_backwards_length_large, (position_in_consist == 1) || (position_in_consist_from_end == 1 )) {				
+                1:  sw_e8_series_pantos_large_backwards;
+                Trailer;			
+            }
+        // Panto in Middle
+        switch (FEAT_TRAINS, SELF, sw_e8_series_backwards_length_small, (position_in_consist == position_in_consist_from_end ) || (position_in_consist - 1 == position_in_consist_from_end) ) {				
+                0:  Trailer;
+                Pantobackward;				
+            }
+	switch (FEAT_TRAINS, SELF, sw_e8_series_backwards_length, num_vehs_in_consist < 7 ) {				
+			0:  sw_e8_series_backwards_length_large;
+			sw_e8_series_backwards_length_small;				
+		}
+	// Forwards
+        // Penultipantos
+        switch (FEAT_TRAINS, SELF, sw_e8_series_pantos_large_forwards, position_in_consist ) {				
+                1:  Pantoforward;
+                Pantoforward;				
+            }
+
+        switch (FEAT_TRAINS, SELF, sw_e8_series_forwards_length_large, (position_in_consist == 1) || (position_in_consist_from_end == 1 )) {				
+                1:  sw_e8_series_pantos_large_forwards;
+                Trailer;		
+            }
+        // Panto in Middle
+        switch (FEAT_TRAINS, SELF, sw_e8_series_forwards_length_small, (position_in_consist == position_in_consist_from_end ) || (position_in_consist - 1 == position_in_consist_from_end) ) {				
+                0:  Trailer;
+                Pantoforward;				
+            }
+	switch (FEAT_TRAINS, SELF, sw_e8_series_forwards_length, num_vehs_in_consist < 7 ) {				
+			0:  sw_e8_series_forwards_length_large;
+			sw_e8_series_forwards_length_small;				
+		}
+
+	switch (FEAT_TRAINS, PARENT, sw_e8_series_midcars, vehicle_is_reversed) {				
+			0:  sw_e8_series_forwards_length;
+			sw_e8_series_backwards_length;				
+		}
+
+/* Cab selection */
+    // Rear cab
+    switch (FEAT_TRAINS, PARENT, sw_e8_series_rear, vehicle_is_reversed) {				
+            1:  ss_mid_e8_series_cab01b_irl;                   // cab01	
+            ss_mid_e8_series_cab02f_irl;                       // cab02
+        }
+
+    // Lead cab
+    switch (FEAT_TRAINS, PARENT, sw_e8_series_lead, vehicle_is_reversed) {				
+            1:  ss_mid_e8_series_cab02b_irl;                   // cab02
+            ss_mid_e8_series_cab01f_irl;                       // cab01	
+        }
+
+/* Find the cabs */
+    switch (FEAT_TRAINS, SELF, sw_e8_series_lead_or_rear, position_in_consist) {				
+            0:  sw_e8_series_lead;
+            sw_e8_series_rear;				
+        }
+    
+    switch (FEAT_TRAINS, SELF, sw_e8_series_graphics, position_in_consist == 0 || position_in_consist_from_end == 0 ) { //output
+            1:  sw_e8_series_lead_or_rear;
+            sw_e8_series_midcars;				
+        }
+
+item(FEAT_TRAINS, series_e8) {
+    property {
+        name:                           string(STR_NAME_E8_SERIES);
+        introduction_date:              date(2024,01,01);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   38;
+        reliability_decay:              21;
+        cargo_capacity:                 50;
+        loading_speed:                  20;
+        cost_factor:                    175;
+        running_cost_factor:            120;
+        speed:                          300 km/h;
+        track_type:                     MINI_SHINKANSEN;
+        power:                          400 * 4 hp;
+        weight:                         42 ton;
+        climates_available:             ALL_CLIMATES;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+        misc_flags:                     bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_TILT, TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:   bitmask();
+        refit_cost:                     0;
+        //dual_headed:                    1;
+        ai_engine_rank:                 0;
+        running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        visual_effect_and_powered:      visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 4, ENABLE_WAGON_POWER);
+        tractive_effort_coefficient:    0.3;
+        air_drag_coefficient:           0;
+        bitmask_vehicle_info:           0;
+        length:                         8;
+    }
+    /*Graphics and Callbacks*/
+      graphics {
+        default:                        sw_e8_series_graphics;
+	      purchase:                       ss_e8_series_purchase;
+		    additional_text:	              return string(STR_DESC_E8_SERIES);
+        cargo_age_period:				        param_decay_express;
+        can_attach_wagon:			          sw_e8_series_attach_vehid;
+        //start_stop:                   ;
+        purchase_weight:                42 / 2;
+        purchase_power:                 400 * 4;
+        /* Stats */
+        power:                          max (num_vehs_in_consist - 2 , 0 ) * 400 * 4;
+        weight:                         42 * num_vehs_in_consist;
+        cargo_capacity:                 48 * CapacityFactor();										        // 338 capacity / 7 cars  is approx 48						
+		    loading_speed:					        48 * CapacityFactor() / param_loading_1D;					// Capacity divided by door loading factor
+        running_cost_factor:            (445 + 130 * num_vehs_in_consist ) * RunningCostFactor();
+        purchase_running_cost_factor:   (445 + 130) / 2; 	
+    }
+    /*Multiple Unit Car*/
+      livery_override(mu_car_ms){
+        default:                        sw_e8_series_graphics;
+        cargo_capacity:                 48 * CapacityFactor();
+        cargo_age_period:				param_decay_express;
+        loading_speed:                  48 * CapacityFactor() / param_loading_1D;
+        //cargo_subtype_text:             sw_e8_series_subtypetext_mucar;
+        //power:                        // Apply power in graphics block to calculate power based on number of motorised cars correctly
+        //weight:                         42;
+        //running_cost_factor:            120;
+      }
+}

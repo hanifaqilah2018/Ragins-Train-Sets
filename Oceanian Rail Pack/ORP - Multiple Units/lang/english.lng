@@ -210,6 +210,9 @@ STR_INFO_SXEMU:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit 
 STR_NAME_HITACHI:Comeng-M&K Hitachi EMU
 STR_INFO_HITACHI:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{BLACK}Based on:{GOLD}Melbourne Hitachi Trains {}{GOLD}Surprisingly, not built by Hitachi
 
+STR_NAME_AUCKLANDART:Auckland ART EMU
+STR_INFO_AUCKLANDART:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Power: {RED}AC Overhead Line {}{BLACK}Based on: {GOLD}Proposed EMUs for Auckland ART Service
+
 STR_NAME_SSD_EMU_AUPTMKI:Comeng AUPT Mk I
 STR_INFO_SSD_EMU_AUPTMKI:{BLACK}Role:{GOLD}Suburban{}{BLACK}Formation:{GOLD}Multiple Unit {}{BLACK}Power:{LTBLUE}Overhead Line {}{GOLD}The guy that designed these was a former spy!
 
