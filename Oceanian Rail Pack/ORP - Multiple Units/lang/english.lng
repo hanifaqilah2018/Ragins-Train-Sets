@@ -337,6 +337,9 @@ STR_INFO_EXP_EMU_XPTE:{BLACK}Role:{GOLD}Express Service{}{BLACK}Formation:{GOLD}
 STR_NAME_X2000:Adtranz X2000
 STR_INFO_X2000:{BLACK}Role:{GOLD}Express Service{}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{LTBLUE}Overhead Line{}{BLACK}Special:{GOLD}Tilt train (20% faster through curves)
 
+STR_NAME_ELECTRICTILTTRAIN:Walkers Electric Tilt Train
+STR_INFO_ELECTRICTILTTRAIN:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Power: {RED}AC Overhead Line {}{BLACK}Special:{GOLD} Tilt train (20% faster through curves) {}{BLACK}Based on: {GOLD}QR Electric Tilt Trains
+
 STR_NAME_VFT:Alstom-Comeng VFT
 STR_INFO_VFT:{BLACK}Role:{GOLD}High Speed Services{}{BLACK}Formation:{GOLD}Push-Pull Trainset {}{BLACK}Power:{LTBLUE}Overhead Line{}{BLACK}
 
