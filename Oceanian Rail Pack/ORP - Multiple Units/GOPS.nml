@@ -3754,20 +3754,20 @@ spriteset(spriteset_Hitachi_DiamondPantoUp_r,   "gfx/Hitachi_DiamondPantographs.
 
 //Purchase Panto Control
 switch(FEAT_TRAINS, PARENT, switch_Hitachi_Panto_Purchase, current_year) {
-    0..1974: spriteset_Hitachi_SinglePanto_Purchase;
+    0..1973: spriteset_Hitachi_SinglePanto_Purchase;
 	1974..2100: spriteset_Hitachi_DiamondPanto_Purchase;
   return spriteset_Hitachi_DiamondPanto_Purchase;
 }
 
 //Pantograph Randomisers
 //Forward Up 1974-1981
-random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoUp_Mid_Fw_Random, TRIGGER_VEHICLE_SERVICE){
+random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoUp_Mid_Fw_Random){
     1 : spriteset_Hitachi_SinglePantoUp;
 	3 : spriteset_Hitachi_DiamondPantoUp;
 }
 
 //Forward Up 1981-2014
-random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoUp_Late_Fw_Random, TRIGGER_VEHICLE_SERVICE){
+random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoUp_Late_Fw_Random){
     4 : spriteset_Hitachi_SinglePantoUp;
 	4 : spriteset_Hitachi_DiamondPantoUp;
 	1 : spriteset_Hitachi_SinglePantoUpAlt;
@@ -3775,21 +3775,21 @@ random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoUp_Late_Fw_Random, TRIGGER_
 }
 
 //Forward Up Timeline
-switch(FEAT_TRAINS, PARENT, switch_Hitachi_PantoUp_Timeline_Fw, current_year) {
-    0..1974: spriteset_Hitachi_SinglePantoUp;
-	1974..1980: switch_Hitachi_PantoUp_Mid_Fw_Random;
-	1981..1981: switch_Hitachi_PantoUp_Late_Fw_Random;
+switch(FEAT_TRAINS, PARENT, switch_Hitachi_PantoUp_Timeline_Fw, date_of_last_service) {
+    0..date(1973, 12, 31): spriteset_Hitachi_SinglePantoUp;
+	date(1974, 1, 1)..date(1980, 12, 31): switch_Hitachi_PantoUp_Mid_Fw_Random;
+	date(1981, 1, 1)..date(9999, 12, 31): switch_Hitachi_PantoUp_Late_Fw_Random;
   return switch_Hitachi_PantoUp_Late_Fw_Random;
 }
 
 //Forward Down 1974-1981
-random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoDown_Mid_Fw_Random, TRIGGER_VEHICLE_SERVICE){
+random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoDown_Mid_Fw_Random){
     1 : spriteset_Hitachi_SinglePantoDown;
 	3 : spriteset_Hitachi_DiamondPantoDown;
 }
 
 //Forward Down 1981-2014
-random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoDown_Late_Fw_Random, TRIGGER_VEHICLE_SERVICE){
+random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoDown_Late_Fw_Random){
     4 : spriteset_Hitachi_SinglePantoDown;
 	4 : spriteset_Hitachi_DiamondPantoDown;
 	1 : spriteset_Hitachi_SinglePantoDownAlt;
@@ -3797,22 +3797,22 @@ random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoDown_Late_Fw_Random, TRIGGE
 }
 
 //Forward Down Timeline
-switch(FEAT_TRAINS, PARENT, switch_Hitachi_PantoDown_Timeline_Fw, current_year) {
-    0..1974: spriteset_Hitachi_SinglePantoDown;
-	1974..1980: switch_Hitachi_PantoDown_Mid_Fw_Random;
-	1981..1981: switch_Hitachi_PantoDown_Late_Fw_Random;
+switch(FEAT_TRAINS, PARENT, switch_Hitachi_PantoDown_Timeline_Fw, date_of_last_service) {
+    0..date(1973, 12, 31): spriteset_Hitachi_SinglePantoDown;
+	date(1974, 1, 1)..date(1980, 12, 31): switch_Hitachi_PantoDown_Mid_Fw_Random;
+	date(1981, 1, 1)..date(9999, 12, 31): switch_Hitachi_PantoDown_Late_Fw_Random;
   return switch_Hitachi_PantoDown_Late_Fw_Random;
 }
 
 //Backwards
 //Backwards Up 1974-1981
-random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoUp_Mid_Rw_Random, TRIGGER_VEHICLE_SERVICE){
+random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoUp_Mid_Rw_Random){
     1 : spriteset_Hitachi_SinglePantoUp_r;
 	3 : spriteset_Hitachi_DiamondPantoUp_r;
 }
 
 //Backwards Up 1981-2014
-random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoUp_Late_Rw_Random, TRIGGER_VEHICLE_SERVICE){
+random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoUp_Late_Rw_Random){
     4 : spriteset_Hitachi_SinglePantoUp_r;
 	4 : spriteset_Hitachi_DiamondPantoUp_r;
 	1 : spriteset_Hitachi_SinglePantoUpAlt_r;
@@ -3820,21 +3820,21 @@ random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoUp_Late_Rw_Random, TRIGGER_
 }
 
 //Backwards Up Timeline
-switch(FEAT_TRAINS, PARENT, switch_Hitachi_PantoUp_Timeline_Rw, current_year) {
-    0..1974: spriteset_Hitachi_SinglePantoDown_r;
-	1974..1980: switch_Hitachi_PantoUp_Mid_Rw_Random;
-	1981..1981: switch_Hitachi_PantoUp_Late_Rw_Random;
+switch(FEAT_TRAINS, PARENT, switch_Hitachi_PantoUp_Timeline_Rw, date_of_last_service) {
+    0..date(1973, 12, 31): spriteset_Hitachi_SinglePantoDown_r;
+	date(1974, 1, 1)..date(1980, 12, 31): switch_Hitachi_PantoUp_Mid_Rw_Random;
+	date(1981, 1, 1)..date(9999, 12, 31): switch_Hitachi_PantoUp_Late_Rw_Random;
   return switch_Hitachi_PantoUp_Late_Rw_Random;
 }
 
 //Backwards Down 1974-1981
-random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoDown_Mid_Rw_Random, TRIGGER_VEHICLE_SERVICE){
+random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoDown_Mid_Rw_Random){
     1 : spriteset_Hitachi_SinglePantoDown_r;
 	3 : spriteset_Hitachi_DiamondPantoDown_r;
 }
 
 //Backwards Down 1981-2014
-random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoDown_Late_Rw_Random, TRIGGER_VEHICLE_SERVICE){
+random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoDown_Late_Rw_Random){
     4 : spriteset_Hitachi_SinglePantoDown_r;
 	4 : spriteset_Hitachi_DiamondPantoDown_r;
 	1 : spriteset_Hitachi_SinglePantoDownAlt_r;
@@ -3843,9 +3843,9 @@ random_switch(FEAT_TRAINS, SELF, switch_Hitachi_PantoDown_Late_Rw_Random, TRIGGE
 
 //Backwards Down Timeline
 switch(FEAT_TRAINS, PARENT, switch_Hitachi_PantoDown_Timeline_Rw, current_year) {
-    0..1974: spriteset_Hitachi_SinglePantoDown_r;
-	1974..1980: switch_Hitachi_PantoDown_Mid_Rw_Random;
-	1981..1981: switch_Hitachi_PantoDown_Late_Rw_Random;
+    0..date(1973, 12, 31): spriteset_Hitachi_SinglePantoDown_r;
+	date(1974, 1, 1)..date(1980, 12, 31): switch_Hitachi_PantoDown_Mid_Rw_Random;
+	date(1981, 1, 1)..date(9999, 12, 31): switch_Hitachi_PantoDown_Late_Rw_Random;
   return switch_Hitachi_PantoDown_Late_Rw_Random;
 }
 
