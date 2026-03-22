@@ -6039,7 +6039,7 @@ item(FEAT_TRAINS, Item_Goninan_4D_Liv0, Goninan_4D_ID_Liv0) {
         ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_PrototypeDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       CC_PASSENGERS;
 		default_cargo_type:				PASS;
 		cargo_allow_refit:              [PASS, TOUR];
