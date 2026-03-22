@@ -252,11 +252,14 @@ STR_INFO_SDD_EMU_COMENGKSET:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD
 STR_NAME_SDD_EMU_GONINANCHOPPER:Goninan Chopper Set
 STR_INFO_SDD_EMU_GONINANCHOPPER:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line {}{GOLD}Chopper Chopper Chopper
 
-STR_NAME_SDD_EMU_GONINANTANGARA:Goninan Tangara
-STR_INFO_SDD_EMU_GONINANTANGARA:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_NAME_GONINAN_TANGARA:Goninan Tangara
+STR_INFO_GONINAN_TANGARA:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Sydney Tangara Tains
 
 STR_NAME_SDD_EMU_COMENGTANGARA:Comeng Tangara
 STR_INFO_SDD_EMU_COMENGTANGARA:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line {}{GOLD}The worst part about this train is deciding who's Tangara you like the most
+
+STR_NAME_GONINAN_4D:Goninan 4D
+STR_INFO_GONINAN_4D:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Melbourne 4 D, Double-Deck Demonstrator & Development Train
 
 STR_NAME_SDD_EMU_COMENGABBVRDD:ABB-Comeng VR Double-Decker
 STR_INFO_SDD_EMU_COMENGABBVRDD:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line
