@@ -2,27 +2,15 @@
 
 lang: 7F
 
-STR_GRF_NAME :LGBTQ+ Pride Flag Objects 0.2
-STR_GRF_DESCRIPTION :An object set by Emperor Jake. Other credits: Ground tile from flogeza's City Objects, GPLv2+.
+STR_GRF_NAME:Fictional Flags Set
+STR_GRF_DESCRIPTION:Temp
 
 
-STR_FLAGS				:LGBTQ+ Flags
+STR_FLAGS				:Fictional Flags
 
-STR_RAINBOW				:Rainbow Flag
-STR_GAY					:Gay Men Flag
-STR_LESBIAN				:Lesbian Flag
-STR_BI					:Bisexual Flag
-STR_TRANS				:Transgender Flag
-STR_INTERSEX			:Intersex Flag
-STR_GENDERQUEER			:Genderqueer Flag
-STR_PAN					:Pansexual Flag
-STR_POLY				:Polysexual Flag
-STR_ACE					:Asexual Flag
-STR_AGENDER				:Agender Flag
-STR_ARO					:Aromantic Flag
-STR_ENBY				:Non-Binary Flag	
-STR_GENDERFLUID			:Genderfluid Flag
-STR_STRAIGHT			:Straight Flag
-STR_ALLY				:Straight Ally Flag
+STR_Flag_Osea				:Osean Flag
+STR_Flag_Erusea				:Erusean Flag
+STR_Flag_Belka				:Belkan Flag
+STR_Flag_SansSalvacion		:Sans Salvacion Flag
 
 

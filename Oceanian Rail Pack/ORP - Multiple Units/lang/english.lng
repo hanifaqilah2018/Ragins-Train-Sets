@@ -109,8 +109,8 @@ STR_INFO_STANDARDDMU:{BLACK}Role: {GOLD}Country Service{}{BLACK}Formation: {GOLD
 STR_NAME_SSD_DMU_VULCAN:Vulcan Railmotor
 STR_INFO_SSD_DMU_VULCAN:{BLACK}Role: {GOLD}Country Service{}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {BROWN}Diesel {}{GOLD}One of these may or may not be at the bottom of the ocean
 
-STR_NAME_SSD_DMU_610CLASS:610/710 Class Railmotor
-STR_INFO_SSD_DMU_610CLASS:{BLACK}Role: {GOLD}Suburban & Country Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {BROWN}Diesel {}{GOLD}Ol' mate at Toronto tried fighting one of these... He lost.
+STR_NAME_NSW600700RAILMOTOR:600/700 Railmotor
+STR_INFO_NSW600700RAILMOTOR:{BLACK}Role: {GOLD}Suburban/Country Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 600/700 class railmotors
 
 STR_NAME_SSD_DMU_ADA:Cravens Railmotor (1 Door)
 STR_NAME_SSD_DMU_ADG:Cravens Railmotor (2 Doors)

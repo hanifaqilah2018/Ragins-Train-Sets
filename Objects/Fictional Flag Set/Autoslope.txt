@@ -1,0 +1,84 @@
+//Templates
+template template_standard(x, y) {
+	[x, y, 64, 256,  -31, -224, NOCROP]
+}
+
+//Bases
+spriteset(spriteset_Flagbase_Plinth, "gfx/Flagbase_Plinth.png") { template_standard(7,7) }
+
+//Flag_OSEA
+spriteset(spriteset_Flag_Osea, "gfx/Flag_Osea.png") { template_standard(7,7) }
+spriteset(spriteset_Flag_Osea_Alt, "gfx/Flag_Osea.png") { template_standard(74,7) }
+
+//Sprite Layouts
+spritelayout layout_Flag_Osea_0 {
+ 	ground { sprite: LOAD_TEMP(0) + LOAD_TEMP(1); }
+	building { sprite: spriteset_Flag_Osea; }
+}
+
+spritelayout layout_Flag_Osea_1 {
+ 	ground { sprite: GROUNDSPRITE_CONCRETE; }
+	building { sprite: spriteset_Flag_Osea; }
+}
+
+spritelayout layout_Flag_Osea_2 {
+ 	ground { sprite: GROUNDSPRITE_NORMAL; }
+	building { sprite: spriteset_Flag_Osea_Alt; }
+}
+
+spritelayout layout_Flag_Osea_3 {
+ 	ground { sprite: spriteset_Flagbase_Plinth; }
+	building { sprite: spriteset_Flag_Osea; }
+}
+
+switch (FEAT_OBJECTS, SELF, switch_Flag_Osea_variant, view) {
+    0:  layout_Flag_Osea_0;
+    1:  layout_Flag_Osea_1;
+    2:  layout_Flag_Osea_2;
+    3:  layout_Flag_Osea_3;
+}
+
+switch (FEAT_OBJECTS, SELF, switch_Flag_Osea_text, view) {
+    0:  string(STR_FLAG_OSEA);
+	1:  string(STR_FLAG_OSEA);
+	2:  string(STR_FLAG_OSEA);
+	3:  string(STR_FLAG_OSEA);
+}
+
+switch (FEAT_OBJECTS, SELF, switch_Flag_Osea_object, [
+    STORE_TEMP(slope_to_sprite_offset(tile_slope), 0),
+    STORE_TEMP(GROUNDSPRITE_NORMAL, 1),
+
+    STORE_TEMP(terrain_type == TILETYPE_DESERT ? GROUNDSPRITE_DESERT : LOAD_TEMP(1), 1),
+    STORE_TEMP(terrain_type == TILETYPE_SNOW   ? GROUNDSPRITE_SNOW   : LOAD_TEMP(1), 1),
+
+    STORE_TEMP(snowline_height == 0xFF ? 0xFF : nearby_tile_height(0,0) - snowline_height, 2),
+
+    STORE_TEMP((LOAD_TEMP(2) == -1) ? GROUNDSPRITE_SNOW_1_4 : LOAD_TEMP(1), 1),
+    STORE_TEMP((LOAD_TEMP(2) ==  0) ? GROUNDSPRITE_SNOW_2_4 : LOAD_TEMP(1), 1),
+    STORE_TEMP((LOAD_TEMP(2) ==  1) ? GROUNDSPRITE_SNOW_3_4 : LOAD_TEMP(1), 1)
+]) {
+    switch_Flag_Osea_variant;
+}
+
+item (FEAT_OBJECTS, Flag_Osea) {
+    property {
+        class:                  "SRFL";
+        classname:              string(STR_FLAGS);
+        name:                   string(STR_FLAGS);
+        climates_available:     ALL_CLIMATES;
+        size:                   [1,1];
+        build_cost_multiplier:  4;
+        remove_cost_multiplier: 2;
+        introduction_date:      0x00000000;
+        end_of_life_date:       0xFFFFFFFF;
+        object_flags:           bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_NO_FOUNDATIONS);
+        height:                 4;
+        num_views:              4;
+    }
+    graphics {
+		default: switch_Flag_Osea_object;
+        additional_text:    switch_Flag_Osea_text;
+		autoslope:          return(CB_RESULT_AUTOSLOPE);
+    }
+}
