@@ -38,4 +38,7 @@ STR_PARAM_TRANSITION:Transition
 STR_PARAM_REALISTIC:Realistic
 
 STR_NAME_NSW_C35:4-6-0 Class C35
-STR_INFO_NSW_C35:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW Class C35 (Formerly Class NN)
+STR_INFO_NSW_C35:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW Class C35 (Formerly NN Class)
+
+STR_NAME_NSW_D50:2-8-0 "Standard Goods"
+STR_INFO_NSW_D50:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW Class D50 (Formerly T Class) & Commonwealth Railways K Class
