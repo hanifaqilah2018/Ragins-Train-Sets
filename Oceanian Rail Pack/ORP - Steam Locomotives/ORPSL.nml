@@ -1,3 +1,5 @@
+disable_item(FEAT_TRAINS);
+
 grf{
     grfid: "ZM\08\06";
     name: string(STR_GRF_NAME);
@@ -2008,5 +2010,237 @@ item(FEAT_TRAINS, Item_NSW_D50_Liv0, NSW_D50_Liv0_ID) {
         additional_text: 				string(STR_INFO_NSW_D50);
 		length: 						switch_NSW_D50_Liv0_length;
 		articulated_part:				switch_NSW_D50_Liv0_articulated_part;
+}
+}
+
+//ID
+const SMR_10_ID = 6290;
+//introduction_date
+const SMR_10_IntroDate = date(1911, 1, 1);
+//speed
+const SMR_10_Speed = 80;
+//cost_factor
+const SMR_10_CostFactor = 30;
+//running_cost_factor
+const SMR_10_RunningCostFactor = 81;
+//power
+const SMR_10_Power = 875;
+//weight
+const SMR_10_Weight = 83;
+
+spriteset(spriteset_SMR_10_Jackshaft1,   "gfx/SMR_10_Jackshaft1.png") {template_7(7, 39)}
+spriteset(spriteset_SMR_10_Jackshaft2,   "gfx/SMR_10_Jackshaft2.png") {template_7(7, 39)}
+spriteset(spriteset_SMR_10_Jackshaft3,   "gfx/SMR_10_Jackshaft3.png") {template_7(7, 39)}
+spriteset(spriteset_SMR_10_Jackshaft4,   "gfx/SMR_10_Jackshaft4.png") {template_7(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_SMR_10_Animation, motion_counter % 4){
+    0: spriteset_SMR_10_Jackshaft1;
+    1: spriteset_SMR_10_Jackshaft2;
+    2: spriteset_SMR_10_Jackshaft3;
+    3: spriteset_SMR_10_Jackshaft4;
+    spriteset_SMR_10_Jackshaft1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SMR_10_Animation_r, motion_counter % 4){
+    0: spriteset_SMR_10_Jackshaft4;
+    1: spriteset_SMR_10_Jackshaft3;
+    2: spriteset_SMR_10_Jackshaft2;
+    3: spriteset_SMR_10_Jackshaft1;
+    spriteset_SMR_10_Jackshaft4;
+}
+
+switch(FEAT_TRAINS, SELF, switch_SMR_10_AnimDirection, vehicle_is_flipped) {
+ 0: switch_SMR_10_Animation;
+ 1: switch_SMR_10_Animation_r;
+}
+
+//SMR_10_Liv0
+spriteset(spriteset_SMR_10_Liv0_Purchase,   "gfx/SMR_10_Liv0.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_SMR_10_Liv0,   "gfx/SMR_10_Liv0.png") {template_7(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_SMR_10_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SMR_10_Liv0_Purchase;
+    1: switch_Couplers_6_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_SMR_10_Liv0, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_SMR_10_Liv0;
+	1: switch_Couplers_7_Repeat;
+    2: switch_SMR_10_AnimDirection;
+}
+
+const SMR_10_Liv0_ID = (SMR_10_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_SMR_10_Liv0, SMR_10_Liv0_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_STEAM, 1, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_SMR_10);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              SMR_10_IntroDate;		
+		length:                         7;
+		
+		speed:							SMR_10_Speed km/h;
+		cost_factor:					SMR_10_CostFactor;
+		running_cost_factor:			SMR_10_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							SMR_10_Power;
+		weight:							SMR_10_Weight;
+		
+//        variant_group: 					Item_SMR_10_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_SMR_10_Liv0;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_SMR_10_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_SMR_10);
+		reverse_build_probability: 		return 50;
+}
+}
+
+//ROD_280
+//ID
+const ROD_280_ID = 660;
+//introduction_date
+const ROD_280_IntroDate = date(1926, 1, 1);
+//speed
+const ROD_280_Speed = 80;
+//cost_factor
+const ROD_280_CostFactor = 35;
+//running_cost_factor
+const ROD_280_RunningCostFactor = 94;
+//power
+const ROD_280_Power = 1150;
+//weight
+const ROD_280_Weight = 74;
+
+spriteset(spriteset_ROD_280_Jackshaft1,   "gfx/ROD_280_Jackshaft1.png") {template_6(7, 39)}
+spriteset(spriteset_ROD_280_Jackshaft2,   "gfx/ROD_280_Jackshaft2.png") {template_6(7, 39)}
+spriteset(spriteset_ROD_280_Jackshaft3,   "gfx/ROD_280_Jackshaft3.png") {template_6(7, 39)}
+spriteset(spriteset_ROD_280_Jackshaft4,   "gfx/ROD_280_Jackshaft4.png") {template_6(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_ROD_280_Animation, motion_counter % 4){
+    0: spriteset_ROD_280_Jackshaft1;
+    1: spriteset_ROD_280_Jackshaft2;
+    2: spriteset_ROD_280_Jackshaft3;
+    3: spriteset_ROD_280_Jackshaft4;
+    spriteset_ROD_280_Jackshaft1;
+}
+
+//ROD_280_Liv0
+spriteset(spriteset_ROD_280_Liv0_Purchase,   "gfx/ROD_280_Liv0.png") {template_purchase_9(7, 21)}
+spriteset(spriteset_ROD_280_Liv0,   "gfx/ROD_280_Liv0.png") {template_6(7, 39)}
+spriteset(spriteset_ROD_280_Liv0_Tender,   "gfx/ROD_280_Liv0.png") {template_3(7, 69)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_ROD_280_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ROD_280_Liv0_Purchase;
+    1: switch_Couplers_9_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ROD_280_Liv0, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ROD_280_Liv0;
+	1: switch_Couplers_6;
+    2: switch_ROD_280_Animation;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ROD_280_Liv0_TenderStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ROD_280_Liv0_Tender;
+	1: switch_Couplers_3_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ROD_280_Liv0_position, position_in_articulated_veh) {
+ 0: switch_ROD_280_Liv0;
+ 1: switch_ROD_280_Liv0_TenderStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ROD_280_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 6;
+ 1: 3;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_ROD_280_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_ROD_280_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+const ROD_280_Liv0_ID = (ROD_280_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_ROD_280_Liv0, ROD_280_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_STEAM, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_ROD_280);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ROD_280_IntroDate;		
+		length:                         8;
+		
+		speed:							ROD_280_Speed km/h;
+		cost_factor:					ROD_280_CostFactor;
+		running_cost_factor:			ROD_280_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							ROD_280_Power;
+		weight:							ROD_280_Weight;
+		
+//        variant_group: 					Item_ROD_280_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_ROD_280_Liv0_position;
+//		sound_effect: 					switch_EMD_16_645;
+        purchase: 						switch_ROD_280_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_ROD_280);
+		length: 						switch_ROD_280_Liv0_length;
+		articulated_part:				switch_ROD_280_Liv0_articulated_part;
 }
 }
