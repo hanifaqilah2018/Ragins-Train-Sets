@@ -183,7 +183,7 @@ template template_purchase_6(x, y) {
     [x-2 , y,  1,  1,   0,  0, ANIM]
     [x-2 , y,  1,  1,   0,  0, ANIM]
     [x-2 , y,  1,  1,   0,  0, ANIM]
-    [x     , y, 88, 15, -35, -11, ANIM]
+    [x   , y, 88, 15, -35, -11, ANIM]
     [x-2 , y,  1,  1,   0,  0, ANIM]
 }
 
@@ -1888,6 +1888,115 @@ item(FEAT_TRAINS, Item_NSW_Z19_Liv0, NSW_Z19_Liv0_ID) {
 }
 }
 
+//ID
+const NSW_Z26_ID = 6260;
+//introduction_date
+const NSW_Z26_IntroDate = date(1892, 1, 1);
+//speed
+const NSW_Z26_Speed = 65;
+//cost_factor
+const NSW_Z26_CostFactor = 28;
+//running_cost_factor
+const NSW_Z26_RunningCostFactor = 75;
+//power
+const NSW_Z26_Power = 900;
+//weight
+const NSW_Z26_Weight = 66;
+
+spriteset(spriteset_NSW_Z26_Jackshaft1,   "gfx/NSW_Z26_Jackshaft1.png") {template_6(7, 39)}
+spriteset(spriteset_NSW_Z26_Jackshaft2,   "gfx/NSW_Z26_Jackshaft2.png") {template_6(7, 39)}
+spriteset(spriteset_NSW_Z26_Jackshaft3,   "gfx/NSW_Z26_Jackshaft3.png") {template_6(7, 39)}
+spriteset(spriteset_NSW_Z26_Jackshaft4,   "gfx/NSW_Z26_Jackshaft4.png") {template_6(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_Z26_Animation, motion_counter % 4){
+    0: spriteset_NSW_Z26_Jackshaft1;
+    1: spriteset_NSW_Z26_Jackshaft2;
+    2: spriteset_NSW_Z26_Jackshaft3;
+    3: spriteset_NSW_Z26_Jackshaft4;
+    spriteset_NSW_Z26_Jackshaft1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_Z26_Animation_r, motion_counter % 4){
+    0: spriteset_NSW_Z26_Jackshaft4;
+    1: spriteset_NSW_Z26_Jackshaft3;
+    2: spriteset_NSW_Z26_Jackshaft2;
+    3: spriteset_NSW_Z26_Jackshaft1;
+    spriteset_NSW_Z26_Jackshaft4;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_Z26_AnimDirection, vehicle_is_flipped) {
+ 0: switch_NSW_Z26_Animation;
+ 1: switch_NSW_Z26_Animation_r;
+}
+
+//NSW_Z26_Liv0
+spriteset(spriteset_NSW_Z26_Liv0_Purchase,   "gfx/NSW_Z26_Liv0.png") {template_purchase_6(7, 21)}
+spriteset(spriteset_NSW_Z26_Liv0,   "gfx/NSW_Z26_Liv0.png") {template_6(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_NSW_Z26_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_Z26_Liv0_Purchase;
+    1: switch_Couplers_6_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NSW_Z26_Liv0, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_Z26_Liv0;
+	1: switch_Couplers_6_Repeat;
+    2: switch_NSW_Z26_AnimDirection;
+}
+
+const NSW_Z26_Liv0_ID = (NSW_Z26_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_NSW_Z26_Liv0, NSW_Z26_Liv0_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_STEAM, 1, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_NSW_Z26);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              NSW_Z26_IntroDate;		
+		length:                         6;
+		
+		speed:							NSW_Z26_Speed km/h;
+		cost_factor:					NSW_Z26_CostFactor;
+		running_cost_factor:			NSW_Z26_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							NSW_Z26_Power;
+		weight:							NSW_Z26_Weight;
+		
+//        variant_group: 					Item_NSW_Z26_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_NSW_Z26_Liv0;
+//		sound_effect: 					switch_ALCO_12_244;
+        purchase: 						switch_NSW_Z26_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_NSW_Z26);
+		reverse_build_probability: 		return 50;
+}
+}
+
 //NSW_D50
 //ID
 const NSW_D50_ID = 520;
@@ -2064,7 +2173,7 @@ switch (FEAT_TRAINS, SELF, switch_SMR_10_Liv0_Purchase_Stack, [
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_SMR_10_Liv0_Purchase;
-    1: switch_Couplers_6_Repeat_Purchase;
+    1: switch_Couplers_7_Repeat_Purchase;
 }
 
 switch (FEAT_TRAINS, SELF, switch_SMR_10_Liv0, [

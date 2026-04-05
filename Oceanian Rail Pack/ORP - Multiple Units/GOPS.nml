@@ -328,7 +328,7 @@ template template_purchase_88mu(x, y) {
     [x-2 , y,  1,  1,   0,  0, ANIM]
     [x-2 , y,  1,  1,   0,  0, ANIM]
     [x-2 , y,  1,  1,   0,  0, ANIM]
-    [x     , y, 88, 15, -41, -11, ANIM]
+    [x   , y, 88, 15, -41, -11, ANIM]
     [x-2 , y,  1,  1,   0,  0, ANIM]
 }
 

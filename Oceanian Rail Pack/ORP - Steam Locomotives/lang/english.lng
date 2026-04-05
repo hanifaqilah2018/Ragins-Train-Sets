@@ -52,6 +52,9 @@ STR_INFO_NSW_C35:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gau
 STR_NAME_NSW_Z19:0-6-0 Z19 Class
 STR_INFO_NSW_Z19:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW Z19 Class (Formerly A Class)
 
+STR_NAME_NSW_Z26:2-6-2ST Z26 Class
+STR_INFO_NSW_Z26:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D50 Class (Formerly I Class) {}{GOLD}One of the longest serving locomotive classes, with the last being retired in 1983
+
 STR_NAME_NSW_D50:2-8-0 "Standard Goods"
 STR_INFO_NSW_D50:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D50 Class (Formerly T Class) & Commonwealth Railways K Class
 
