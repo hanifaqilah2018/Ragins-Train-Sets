@@ -63,3 +63,8 @@ STR_INFO_SMR_10:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge 
 
 STR_NAME_ROD_280:2-8-0 ROD
 STR_INFO_ROD_280:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}J&A Browns ROD Locomotives {}{GOLD}Originally built for transport in WW1, imported to Australia to haul coal
+
+STR_NAME_VIC_H:4-8-4 "Heavy Harry"
+STR_INFO_VIC_H:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}VR H Class
+STR_NAME_VIC_H_BG:4-8-4 "Heavy Harry"
+STR_INFO_VIC_H_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}VR H Class

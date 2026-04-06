@@ -411,7 +411,7 @@ template template_5(x, y) {
     [ x+155,    y,        22,        20,        -10,        -14, ANIM]
 }
 
-template template_5_r(x, y) {
+template template_5_r(x, y) { //fix this
     //left_x, upper_y, width, height, offset_x, offset_y
     //                            more negative to shift left
     //                                            more negative to shift up
