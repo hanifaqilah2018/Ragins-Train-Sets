@@ -286,7 +286,7 @@ STR_NAME_METROVICK_46CLASS:Metro-Vick 46 Class
 STR_INFO_METROVICK_46CLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}NSW 46 Class {}{GOLD}King of the Mountain
 
 STR_NAME_CLYDE_JE28C:Clyde JE28C
-STR_INFO_CLYDE_JE28C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}Proposed Clyde locomotive for NSW PTC
+STR_INFO_CLYDE_JE28C:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Proposed Clyde locomotive for NSW PTC
 
 STR_NAME_COMENG_CL627:Comeng CL627
 STR_INFO_COMENG_CL627:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}NSW 85 Class {}{GOLD}Not. A. Diesel.
