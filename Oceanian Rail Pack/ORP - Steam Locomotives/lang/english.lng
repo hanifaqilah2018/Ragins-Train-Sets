@@ -46,9 +46,6 @@ STR_INFO_NSW_Z12:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gau
 STR_NAME_NSW_C30:4-6-4T Suburban Tank
 STR_INFO_NSW_C30:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW S Class 
 
-STR_NAME_NSW_C35:4-6-0 C35 Class
-STR_INFO_NSW_C35:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW C35 Class(Formerly NN Class)
-
 STR_NAME_NSW_Z19:0-6-0 Z19 Class
 STR_INFO_NSW_Z19:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW Z19 Class (Formerly A Class)
 
@@ -63,6 +60,12 @@ STR_INFO_SMR_10:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge 
 
 STR_NAME_ROD_280:2-8-0 ROD
 STR_INFO_ROD_280:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}J&A Browns ROD Locomotives {}{GOLD}Originally built for transport in WW1, imported to Australia to haul coal
+
+STR_NAME_NSW_D57:4-8-2 "Lazy Lizzie"
+STR_INFO_NSW_D57:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D57 Class
+
+STR_NAME_NSW_C35:4-6-0 C35 Class
+STR_INFO_NSW_C35:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW C35 Class(Formerly NN Class)
 
 STR_NAME_VIC_H:4-8-4 "Heavy Harry"
 STR_INFO_VIC_H:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}VR H Class
