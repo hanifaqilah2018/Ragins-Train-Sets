@@ -44,7 +44,7 @@ STR_NAME_NSW_Z12:4-4-0 Z12 Class
 STR_INFO_NSW_Z12:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW Z12 Class (Formerly C Class) 
 
 STR_NAME_NSW_C30:4-6-4T Suburban Tank
-STR_INFO_NSW_C30:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW S Class 
+STR_INFO_NSW_C30:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW C30 Class (Formerly S Class) 
 
 STR_NAME_NSW_Z19:0-6-0 Z19 Class
 STR_INFO_NSW_Z19:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW Z19 Class (Formerly A Class)
@@ -69,6 +69,9 @@ STR_INFO_ROD_280:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge
 
 STR_NAME_NSW_D57:4-8-2 "Lazy Lizzie"
 STR_INFO_NSW_D57:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D57 Class
+
+STR_NAME_NSW_C32:4-6-0 C32 Class
+STR_INFO_NSW_C32:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW C32 Class(Formerly P Class)
 
 STR_NAME_NSW_C35:4-6-0 C35 Class
 STR_INFO_NSW_C35:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW C35 Class(Formerly NN Class)

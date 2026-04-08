@@ -3578,7 +3578,7 @@ item (FEAT_TRAINS, Item_SilverStar_Liv0, SilverStar_Liv0_ID) {
 		speed:							SilverStar_Speed km/h;
 		cost_factor:					SilverStar_CostFactor;
 		running_cost_factor:			SilverStar_RunningCostFactor;
-//		cargo_capacity: 				(SilverStar_CargoCapacity / param_capacity_mod);
+		cargo_capacity: 				(SilverStar_CargoCapacity / param_capacity_mod);
 		power:							0 hp;
 		weight:							SilverStar_Weight ton;
 
@@ -3658,7 +3658,7 @@ item (FEAT_TRAINS, Item_Mail_SilverStar_Liv0, Mail_SilverStar_Liv0_ID) {
 		speed:							SilverStar_Speed km/h;
 		cost_factor:					SilverStar_CostFactor;
 		running_cost_factor:			SilverStar_RunningCostFactor;
-//		cargo_capacity: 				(SilverStar_CargoCapacity / param_capacity_mod);
+		cargo_capacity: 				(SilverStar_CargoCapacity / param_capacity_mod);
 		power:							0 hp;
 		weight:							SilverStar_Weight ton;
 
