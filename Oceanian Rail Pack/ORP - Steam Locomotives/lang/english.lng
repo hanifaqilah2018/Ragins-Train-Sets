@@ -52,11 +52,17 @@ STR_INFO_NSW_Z19:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge
 STR_NAME_NSW_Z26:2-6-2ST Z26 Class
 STR_INFO_NSW_Z26:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D50 Class (Formerly I Class) {}{GOLD}One of the longest serving locomotive classes, with the last being retired in 1983
 
-STR_NAME_NSW_D50:2-8-0 "Standard Goods"
+STR_NAME_NSW_D50:2-8-0 D50 Class
 STR_INFO_NSW_D50:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D50 Class (Formerly T Class) & Commonwealth Railways K Class
 
 STR_NAME_SMR_10:2-8-2T 10 Class
 STR_INFO_SMR_10:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}South Maitland Railways 10 Class {}{GOLD}These hauled the steam hauled commercial freight service in late 1987
+
+STR_NAME_NSW_D53:2-8-0 D53 Class
+STR_INFO_NSW_D53:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D53 Class (Formerly TF Class) & Commonwealth Railways KA Class
+
+STR_NAME_NSW_D55:2-8-0 D55 Class
+STR_INFO_NSW_D55:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D55 Class (Formerly K Class)
 
 STR_NAME_ROD_280:2-8-0 ROD
 STR_INFO_ROD_280:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}J&A Browns ROD Locomotives {}{GOLD}Originally built for transport in WW1, imported to Australia to haul coal

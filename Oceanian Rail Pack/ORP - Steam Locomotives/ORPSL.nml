@@ -1820,7 +1820,7 @@ item(FEAT_TRAINS, Item_NSW_Z26_Liv0, NSW_Z26_Liv0_ID) {
 
 //NSW_D50
 //ID
-const NSW_D50_ID = 520;
+const NSW_D50_ID = 480;
 //introduction_date
 const NSW_D50_IntroDate = date(1896, 1, 1);
 //speed
@@ -1839,6 +1839,14 @@ spriteset(spriteset_NSW_D50_Jackshaft2,   "gfx/NSW_D50_Jackshaft2.png") {templat
 spriteset(spriteset_NSW_D50_Jackshaft3,   "gfx/NSW_D50_Jackshaft3.png") {template_5(7, 39)}
 spriteset(spriteset_NSW_D50_Jackshaft4,   "gfx/NSW_D50_Jackshaft4.png") {template_5(7, 39)}
 
+switch(FEAT_TRAINS, SELF, switch_NSW_D50_Animation, motion_counter % 4){
+    0: spriteset_NSW_D50_Jackshaft1;
+    1: spriteset_NSW_D50_Jackshaft2;
+    2: spriteset_NSW_D50_Jackshaft3;
+    3: spriteset_NSW_D50_Jackshaft4;
+    spriteset_NSW_D50_Jackshaft1;
+}
+
 //NSW_D50_Liv0
 spriteset(spriteset_NSW_D50_Liv0_Purchase,   "gfx/NSW_D50_Liv0.png") {template_purchase_9(7, 21)}
 spriteset(spriteset_NSW_D50_Liv0,   "gfx/NSW_D50_Liv0.png") {template_5(7, 39)}
@@ -1853,23 +1861,13 @@ switch (FEAT_TRAINS, SELF, switch_NSW_D50_Liv0_Purchase_Stack, [
     1: switch_Couplers_9_Repeat_Purchase;
 }
 
-switch(FEAT_TRAINS, SELF, switch_NSW_D50_Liv0_Animation, motion_counter % 4){
-    0: spriteset_NSW_D50_Jackshaft1;
-    1: spriteset_NSW_D50_Jackshaft2;
-    2: spriteset_NSW_D50_Jackshaft3;
-    3: spriteset_NSW_D50_Jackshaft4;
-    spriteset_NSW_D50_Jackshaft1;
-}
-
-//
-
 switch (FEAT_TRAINS, SELF, switch_NSW_D50_Liv0, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
     0: spriteset_NSW_D50_Liv0;
 	1: switch_Couplers_5;
-    2: switch_NSW_D50_Liv0_Animation;
+    2: switch_NSW_D50_Animation;
 }
 
 switch (FEAT_TRAINS, SELF, switch_NSW_D50_Liv0_TenderStack, [
@@ -1909,7 +1907,7 @@ item(FEAT_TRAINS, Item_NSW_D50_Liv0, NSW_D50_Liv0_ID) {
 		bitmask_vehicle_info:           0;
 	
 		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
-		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_STEAM, 3, DISABLE_WAGON_POWER);
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_STEAM, -3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_NSW_D50);
 		
@@ -2049,6 +2047,226 @@ item(FEAT_TRAINS, Item_SMR_10_Liv0, SMR_10_Liv0_ID) {
         purchase: 						switch_SMR_10_Liv0_Purchase_Stack;
         additional_text: 				string(STR_INFO_SMR_10);
 		reverse_build_probability: 		return 50;
+}
+}
+
+//NSW_D53
+//ID
+const NSW_D53_ID = 520;
+//introduction_date
+const NSW_D53_IntroDate = date(1912, 1, 1);
+//speed
+const NSW_D53_Speed = 70;
+//cost_factor
+const NSW_D53_CostFactor = 33;
+//running_cost_factor
+const NSW_D53_RunningCostFactor = 87;
+//power
+const NSW_D53_Power = 1100;
+//weight
+const NSW_D53_Weight = 72;
+
+//NSW_D53_Liv0
+spriteset(spriteset_NSW_D53_Liv0_Purchase,   "gfx/NSW_D50_Liv0.png") {template_purchase_9(187, 21)}
+spriteset(spriteset_NSW_D53_Liv0,   "gfx/NSW_D50_Liv0.png") {template_5(187, 39)}
+spriteset(spriteset_NSW_D53_Liv0_Tender,   "gfx/NSW_D50_Liv0.png") {template_4(187, 69)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_NSW_D53_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_D53_Liv0_Purchase;
+    1: switch_Couplers_9_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NSW_D53_Liv0, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_D53_Liv0;
+	1: switch_Couplers_5;
+    2: switch_NSW_D50_Animation;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NSW_D53_Liv0_TenderStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_D53_Liv0_Tender;
+	1: switch_Couplers_4_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_D53_Liv0_position, position_in_articulated_veh) {
+ 0: switch_NSW_D53_Liv0;
+ 1: switch_NSW_D53_Liv0_TenderStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_D53_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 4;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_NSW_D53_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_NSW_D53_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+const NSW_D53_Liv0_ID = (NSW_D53_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_NSW_D53_Liv0, NSW_D53_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_STEAM, -3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_NSW_D53);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              NSW_D53_IntroDate;		
+		length:                         8;
+		
+		speed:							NSW_D53_Speed km/h;
+		cost_factor:					NSW_D53_CostFactor;
+		running_cost_factor:			NSW_D53_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							NSW_D53_Power;
+		weight:							NSW_D53_Weight;
+		
+//        variant_group: 					Item_NSW_D53_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_NSW_D53_Liv0_position;
+//		sound_effect: 					switch_EMD_16_645;
+        purchase: 						switch_NSW_D53_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_NSW_D53);
+		length: 						switch_NSW_D53_Liv0_length;
+		articulated_part:				switch_NSW_D53_Liv0_articulated_part;
+}
+}
+
+//NSW_D55
+//ID
+const NSW_D55_ID = 550;
+//introduction_date
+const NSW_D55_IntroDate = date(1918, 1, 1);
+//speed
+const NSW_D55_Speed = 75;
+//cost_factor
+const NSW_D55_CostFactor = 33;
+//running_cost_factor
+const NSW_D55_RunningCostFactor = 90;
+//power
+const NSW_D55_Power = 1100;
+//weight
+const NSW_D55_Weight = 75;
+
+//NSW_D55_Liv0
+spriteset(spriteset_NSW_D55_Liv0_Purchase,   "gfx/NSW_D50_Liv0.png") {template_purchase_9(367, 21)}
+spriteset(spriteset_NSW_D55_Liv0,   "gfx/NSW_D50_Liv0.png") {template_5(367, 39)}
+spriteset(spriteset_NSW_D55_Liv0_Tender,   "gfx/NSW_D50_Liv0.png") {template_4(367, 69)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_NSW_D55_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_D55_Liv0_Purchase;
+    1: switch_Couplers_9_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NSW_D55_Liv0, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_D55_Liv0;
+	1: switch_Couplers_5;
+    2: switch_NSW_D50_Animation;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NSW_D55_Liv0_TenderStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_D55_Liv0_Tender;
+	1: switch_Couplers_4_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_D55_Liv0_position, position_in_articulated_veh) {
+ 0: switch_NSW_D55_Liv0;
+ 1: switch_NSW_D55_Liv0_TenderStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_D55_Liv0_length, position_in_vehid_chain % 2) {
+ 0: 5;
+ 1: 4;
+ }
+
+// Articulated part callback
+switch(FEAT_TRAINS, SELF, switch_NSW_D55_Liv0_articulated_part, extra_callback_info1) {
+    0..1: return Item_NSW_D55_Liv0;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+const NSW_D55_Liv0_ID = (NSW_D55_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_NSW_D55_Liv0, NSW_D55_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_STEAM, -3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_NSW_D55);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              NSW_D55_IntroDate;		
+		length:                         8;
+		
+		speed:							NSW_D55_Speed km/h;
+		cost_factor:					NSW_D55_CostFactor;
+		running_cost_factor:			NSW_D55_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							NSW_D55_Power;
+		weight:							NSW_D55_Weight;
+		
+//        variant_group: 					Item_NSW_D55_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_NSW_D55_Liv0_position;
+//		sound_effect: 					switch_EMD_16_645;
+        purchase: 						switch_NSW_D55_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_NSW_D55);
+		length: 						switch_NSW_D55_Liv0_length;
+		articulated_part:				switch_NSW_D55_Liv0_articulated_part;
 }
 }
 
