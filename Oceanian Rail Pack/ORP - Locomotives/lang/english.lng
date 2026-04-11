@@ -1,6 +1,6 @@
 ##grflangid 0x0
 
-STR_GRF_NAME:Oceanian Rail Pack - Modern Locomotives v3
+STR_GRF_NAME:Oceanian Rail Pack - Steam, Diesel, & Electric Locomotives v3
 STR_GRF_DESCRIPTION:Diesel and electric locomotives from Australia and New Zealand, all in 2cc. Drawn and Coded by Zachary Moore (Ragin1_)
 
 STR_PARAM_PURCHASE_COST             :Purchase cost multiplier
@@ -37,11 +37,10 @@ STR_PARAM_NAME_PILBARADISABLE:Disable Trains from the Pilbara
 STR_PARAM_DESC_PILBARADISABLE:Enable/disable trains from the Pilbara. These are the similar to those in NARP, and are often far more powerful than their equivelant counterparts, so they can be a bit overpowered.
 
 STR_PARAM_NAME_COUPLERS:What Coupers should trains use?
-STR_PARAM_DESC_COUPLERS:IRL trains in Australia/New Zealand started with Buffer and Chain Couplers, but transitioned to knuckles over time. What should this set do with them? {}{}{WHITE}Buffers:{BLACK} Buffer Couplers only (Best compatibility with Iron Horse){}{WHITE}Knuckles:{BLACK} Knuckle couplers only {}{WHITE}Transition:{BLACK} Transition from Buffers to Knuckles between 1945 & 1960 {}{WHITE}Realistic:{BLACK} Locomotive couplers change based on when its IRL operater changed couplers. {}{GOLD}Don't forget to change this setting in the wagon pack too!
+STR_PARAM_DESC_COUPLERS:In Australia/New Zealand started with Buffer and Chain Couplers, but transitioned to knuckles over time. What should this set do with them? {}{}{WHITE}Buffers:{BLACK} Buffer Couplers only (Best compatibility with Iron Horse){}{WHITE}Knuckles:{BLACK} Knuckle couplers only {}{WHITE}Transition:{BLACK} Transition from Buffers to Knuckles between 1945 & 1960 {}{GOLD}Don't forget to change this setting in the wagon pack too!
 STR_PARAM_COUPLERS_BUFFERS:Buffers Only
 STR_PARAM_COUPLERS_KNUCKLES:Knuckles Only
 STR_PARAM_TRANSITION:Transition
-STR_PARAM_REALISTIC:Realistic
 
 STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR:{STRING}{}{STRING}
 STR_POWER_BY_POWER_SOURCE_TWO_SOURCES:{BLACK}Power on {STRING}: {GOLD}{POWER} {}{BLACK}Power on {STRING}: {GOLD}{POWER}
@@ -51,6 +50,57 @@ STR_POWER_SOURCE_DIESEL: {BROWN}Diesel
 STR_POWER_SOURCE_OHLE_DC: {BLUE}DC Overhead Line
 STR_POWER_SOURCE_OHLE_AC: {RED}AC Overhead Line
 STR_POWER_SOURCE_3RAIL:{GREEN}Third Rail
+
+
+
+STR_NAME_NSW_N67:0-6-0T "Terrier"
+STR_INFO_NSW_N67:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW N Class {}{GOLD}Australian version of the LB&SCR A1 class aka the "Terrier"
+
+STR_NAME_NSW_Z12:4-4-0 Z12 Class
+STR_INFO_NSW_Z12:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW Z12 Class (Formerly C Class) 
+
+STR_NAME_NSW_C30:4-6-4T Suburban Tank
+STR_INFO_NSW_C30:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW C30 Class (Formerly S Class) 
+
+STR_NAME_NSW_Z19:0-6-0 Z19 Class
+STR_INFO_NSW_Z19:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW Z19 Class (Formerly A Class)
+
+STR_NAME_NSW_Z26:2-6-2ST Z26 Class
+STR_INFO_NSW_Z26:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D50 Class (Formerly I Class) {}{GOLD}One of the longest serving locomotive classes, with the last being retired in 1983
+
+STR_NAME_NSW_D50:2-8-0 D50 Class
+STR_INFO_NSW_D50:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D50 Class (Formerly T Class) & Commonwealth Railways K Class
+
+STR_NAME_SMR_10:2-8-2T 10 Class
+STR_INFO_SMR_10:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}South Maitland Railways 10 Class {}{GOLD}These hauled the steam hauled commercial freight service in late 1987
+
+STR_NAME_NSW_D53:2-8-0 D53 Class
+STR_INFO_NSW_D53:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D53 Class (Formerly TF Class) & Commonwealth Railways KA Class
+
+STR_NAME_NSW_D55:2-8-0 D55 Class
+STR_INFO_NSW_D55:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D55 Class (Formerly K Class)
+
+STR_NAME_ROD_280:2-8-0 ROD
+STR_INFO_ROD_280:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}J&A Browns ROD Locomotives {}{GOLD}Originally built for transport in WW1, imported to Australia to haul coal
+
+STR_NAME_NSW_D57:4-8-2 "Lazy Lizzie"
+STR_INFO_NSW_D57:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW D57 Class
+
+STR_NAME_NSW_C32:4-6-0 C32 Class
+STR_INFO_NSW_C32:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW C32 Class(Formerly P Class)
+
+STR_NAME_NSW_C35:4-6-0 C35 Class
+STR_INFO_NSW_C35:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW C35 Class(Formerly NN Class)
+
+STR_NAME_SA_600:4-6-2 "Light" Pacific
+STR_INFO_SA_600:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}SAR 600 Class {}{GOLD}South Australian variant of the USRA Light Pacific
+STR_NAME_SA_600_BG:4-6-2 "Light" Pacific
+STR_INFO_SA_600_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}SAR 600  Class {}{GOLD}South Australian variant of the USRA Light Pacific
+
+STR_NAME_VIC_H:4-8-4 "Heavy Harry"
+STR_INFO_VIC_H:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}VR H Class
+STR_NAME_VIC_H_BG:4-8-4 "Heavy Harry"
+STR_INFO_VIC_H_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}VR H Class
 
 
 
