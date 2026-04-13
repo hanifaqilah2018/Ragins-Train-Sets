@@ -36,53 +36,8 @@ STR_PARAM_DESC_PROPOSALDISABLE:Enable/disable Proposed trains (trains that were 
 STR_PARAM_NAME_FICTIONALDISABLE:Disable Fictional Trains
 STR_PARAM_DESC_FICTIONALDISABLE:Enable/disable Fictional trains (trains that are entirely fictional, and are only included for gameplay balance).
 
-STR_PARAM_NAME_SUBURBANDMUDISABLE:Disable Suburban {BROWN}Diesel Multiple Units
-STR_PARAM_DESC_SUBURBANDMUDISABLE:Enable/disable Suburban Diesel Multiple Units
-
-STR_PARAM_NAME_INTERCITYDMUDISABLE:Disable Intercity {BROWN}Diesel Multiple Units
-STR_PARAM_DESC_INTERCITYDMUDISABLE:Enable/disable Intercity Diesel Multiple Units
-
-STR_PARAM_NAME_EXPRESSDMUDISABLE:Disable Express {BROWN}Diesel Multiple Units
-STR_PARAM_DESC_EXPRESSDMUDISABLE:Enable/disable Express Diesel Multiple Units
-
-STR_PARAM_NAME_SUBURBANEMUDISABLE:Disable Suburban Single-Deck {WHITE}Electric Multiple Units
-STR_PARAM_DESC_SUBURBANEMUDISABLE:Enable/disable Suburban Single-Deck Electric Multiple Units
-
-STR_PARAM_NAME_DDSUBURBANEMUDISABLE:Disable Suburban Double-Deck {WHITE}Electric Multiple Units
-STR_PARAM_DESC_DDSUBURBANEMUDISABLE:Enable/disable Suburban Double-Deck Electric Multiple Units
-
-STR_PARAM_NAME_INTERCITYEMUDISABLE:Disable Intercity Single-Deck {WHITE}Electric Multiple Units
-STR_PARAM_DESC_INTERCITYEMUDISABLE:Enable/disable Intercity Single-Deck Electric Multiple Units
-
-STR_PARAM_NAME_DDINTERCITYEMUDISABLE:Disable Intercity Double-Deck {WHITE}Electric Multiple Units
-STR_PARAM_DESC_DDINTERCITYEMUDISABLE:Enable/disable Intercity Double-Deck Electric Multiple Units
-
-STR_PARAM_NAME_EXPRESSEMUDISABLE:Disable Express {WHITE}Electric Multiple Units
-STR_PARAM_DESC_EXPRESSEMUDISABLE:Enable/disable Express Electric Multiple Units
-
-STR_PARAM_NAME_HIGHSPEEDEMUDISABLE:Disable High Speed {WHITE}Electric Multiple Units
-STR_PARAM_DESC_HIGHSPEEDEMUDISABLE:Enable/disable High Speed Double-Deck Electric Multiple Units
-
-STR_PARAM_NAME_DRIVINGTRAILERDISABLE:Disable Driving Trailers
-STR_PARAM_DESC_DRIVINGTRAILERDISABLE:Enable/disable Driving Trailers
-
-STR_PARAM_NAME_GENERICPASSDISABLE:Disable Generic Passenger Cars
-STR_PARAM_DESC_GENERICPASSDISABLE:Enable/disable Generic Passenger Cars
-
-STR_PARAM_NAME_SUBURBANPASSDISABLE:Disable Suburban Single-Deck Passenger Cars
-STR_PARAM_DESC_SUBURBANPASSDISABLE:Enable/disable Suburban Single-Deck Passenger Cars
-
-STR_PARAM_NAME_DDSUBURBANPASSDISABLE:Disable Suburban Double-Deck Passenger Cars
-STR_PARAM_DESC_DDSUBURBANPASSDISABLE:Enable/disable Suburban Double-Deck Passenger Cars
-
-STR_PARAM_NAME_INTERCITYPASSDISABLE:Disable Intercity Single-Deck Passenger Cars
-STR_PARAM_DESC_INTERCITYPASSDISABLE:Enable/disable Intercity Single-Deck Passenger Cars
-
-STR_PARAM_NAME_DDINTERCITYPASSDISABLE:Disable Intercity Double-Deck Passenger Cars
-STR_PARAM_DESC_DDINTERCITYPASSDISABLE:Enable/disable Intercity Double-Deck Passenger Cars
-
-STR_PARAM_NAME_PARCELVANDISABLE:Disable Parcel Vans
-STR_PARAM_DESC_PARCELVANDISABLE:Enable/disable Parcel Vans
+STR_PARAM_NAME_MISCDISABLE:Disable Miscellaneous Trains
+STR_PARAM_DESC_MISCDISABLE:Enable/disable trains that are included, but don't fit into any of the other categories (Mostly just proposed export stuff).
 
 
 
@@ -311,105 +266,7 @@ STR_INFO_ELECTRICTILTTRAIN:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}
 STR_NAME_VFT:Alstom-Comeng VFT
 STR_INFO_VFT:{BLACK}Role: {GOLD}High Speed Services{}{BLACK}Formation: {GOLD}Push-Pull Trainset {}{BLACK}Power: {LTBLUE}Overhead Line{}{BLACK}
 
-STR_NAME_4WHEELCOACH:4-Wheel Coach
-STR_INFO_4WHEELCOACH:{BLACK}Role: {GOLD}Passenger coach
-STR_NAME_MAIL_4WHEELCOACH:4-Wheel Mail Coach
-STR_INFO_MAIL_4WHEELCOACH:{BLACK}Role: {GOLD}Mail Van
-
-STR_NAME_6WHEELCOACH:6-Wheel Coach
-STR_INFO_6WHEELCOACH:{BLACK}Role: {GOLD}Passenger coach
-STR_NAME_MAIL_6WHEELCOACH:6-Wheel Mail Coach
-STR_INFO_MAIL_6WHEELCOACH:{BLACK}Role: {GOLD}Mail Van
-
-STR_NAME_8WHEELCOACH:8-Wheel Coach
-STR_INFO_8WHEELCOACH:{BLACK}Role: {GOLD}Passenger coach
-STR_NAME_MAIL_8WHEELCOACH:8-Wheel Mail Coach
-STR_INFO_MAIL_8WHEELCOACH:{BLACK}Role: {GOLD}Mail Van
-
-STR_NAME_AMERICANCOACH:American Coach
-STR_INFO_AMERICANCOACH:{BLACK}Role: {GOLD}Passenger coach
-STR_NAME_MAIL_AMERICANCOACH:American Mail Coach
-STR_INFO_MAIL_AMERICANCOACH:{BLACK}Role: {GOLD}Mail Van
 
 
-
-STR_NAME_AMERICANSUBURBANCOACH:American Suburban Coach
-STR_INFO_AMERICANSUBURBANCOACH:{BLACK}Role: {GOLD}Suburban
-
-STR_NAME_TAITCOACH:Tait Suburban Coach
-STR_INFO_TAITCOACH:{BLACK}Role: {GOLD}Suburban
-
-STR_NAME_SXCOACH:Comeng SX Suburban Coach
-STR_INFO_SXCOACH:{BLACK}Role: {GOLD}Suburban Coach
-STR_NAME_SXCOACH_CAB:Comeng SX Suburban Driving Trailer
-STR_INFO_SXCOACH_CAB:{BLACK}Role: {GOLD}Suburban Coach Driving Trailer
-
-STR_NAME_HTYPE:Comeng-M&K H-Type Suburban Coach
-STR_INFO_HTYPE:{BLACK}Role: {GOLD}Suburban/Country Coach {}{BLACK}Attach To: {GOLD}PERM & Tulloch DRCs {}{BLACK}Based on: {GOLD}VLine H-Type Coaches
-STR_NAME_HTYPE_CAB:Comeng-M&K H-Type Suburban Driving Trailer
-STR_INFO_HTYPE_CAB:{BLACK}Role: {GOLD}Suburban/Country Coach Driving Trailer {}{BLACK}Based on: {GOLD}VLine H-Type Coaches
-
-
-
-STR_NAME_TULLOCHDOUBLEDECKERS:Tulloch Double-Deck Coach
-STR_INFO_TULLOCHDOUBLEDECKERS:{BLACK}Role: {GOLD}Suburban {}{GOLD}You can put me in a Standard, Tulloch, Sputnik or S-Set set too!
-
-
-
-
-STR_NAME_ASHBURYCOACH:Ashbury Coach
-STR_INFO_ASHBURYCOACH:{BLACK}Role: {GOLD}Intercity Service
-STR_NAME_MAIL_ASHBURYCOACH:Ashbury Mail Coach
-STR_INFO_MAIL_ASHBURYCOACH:{BLACK}Role: {GOLD}Mail Van
-
-STR_NAME_VICTORIANINTERSTATECOACH:Victorian Interstate Coach
-STR_INFO_VICTORIANINTERSTATECOACH:{BLACK}Role: {GOLD}Intercity Service
-STR_NAME_MAIL_VICTORIANINTERSTATECOACH:Victorian Interstate Mail Coach
-STR_INFO_MAIL_VICTORIANINTERSTATECOACH:{BLACK}Role: {GOLD}Mail Van
-
-STR_NAME_NSWRTYPE:R-Type Interurban Coach
-STR_INFO_NSWRTYPE:{BLACK}Role: {GOLD}Intercity Service
-STR_NAME_MAIL_NSWRTYPE:R-Type Mail Coach
-STR_INFO_MAIL_NSWRTYPE:{BLACK}Role: {GOLD}Mail Van
-
-STR_NAME_WADDINGTONSINTERURBAN:Waddingtons Interurban Coach
-STR_INFO_WADDINGTONSINTERURBAN:{BLACK}Role: {GOLD}Intercity Service {}{GOLD}We'll see where these Waddingtons guys go.
-STR_NAME_MAIL_WADDINGTONSINTERURBAN:Waddingtons Interurban Mail Coach
-STR_INFO_MAIL_WADDINGTONSINTERURBAN:{BLACK}Role: {GOLD}Mail Van
-
-STR_NAME_TULLOCHINTERURBANCOACH:Tulloch Interurban Coach
-STR_INFO_TULLOCHINTERURBANCOACH:{BLACK}Role: {GOLD}Intercity Service
-STR_NAME_MAIL_TULLOCHINTERURBANCOACH:Tulloch Interurban Mail Coach
-STR_INFO_MAIL_TULLOCHINTERURBANCOACH:{BLACK}Role: {GOLD}Mail Van
-
-STR_NAME_VLINE_ZTYPE:Z-Type Passenger Coach
-STR_INFO_VLINE_ZTYPE:{BLACK}Role: {GOLD}Intercity Service
-STR_NAME_MAIL_VLINE_ZTYPE:Z-Type Mail Van
-STR_INFO_MAIL_VLINE_ZTYPE:{BLACK}Role: {GOLD}Mail Van
-
-STR_NAME_COMENGAURORACOACH:Comeng Aurora Coach
-STR_INFO_COMENGAURORACOACH:{BLACK}Role: {GOLD}Intercity Service
-STR_NAME_MAIL_COMENGAURORACOACH:Comeng Aurora Mail Van
-STR_INFO_MAIL_COMENGAURORACOACH:{BLACK}Role: {GOLD}Mail Van
-
-STR_NAME_COMENG_INTERSTATECOACH:Comeng Interstate Coach
-STR_INFO_COMENG_INTERSTATECOACH:{BLACK}Role: {GOLD}Intercity Service
-STR_NAME_MAIL_COMENG_INTERSTATECOACH:Comeng Interstate Mail Van
-STR_INFO_MAIL_COMENG_INTERSTATECOACH:{BLACK}Role: {GOLD}Mail Van
-
-STR_NAME_COMENG_HIGHSPEEDCOACH:Comeng High-Speed Coach
-STR_INFO_COMENG_HIGHSPEEDCOACH:{BLACK}Role: {GOLD}Intercity Service
-STR_NAME_MAIL_COMENG_HIGHSPEEDCOACH:Comeng High-Speed Mail Van
-STR_INFO_MAIL_COMENG_HIGHSPEEDCOACH:{BLACK}Role: {GOLD}Mail Van
-
-
-
-STR_NAME_DDINTERURBANCOACH:Comeng Double-Deck Interurban Coach
-STR_INFO_DDINTERURBANCOACH:{BLACK}Role: {GOLD}Interurban Coach
-STR_NAME_DDINTERURBANCOACH_CAB:Comeng Double-Deck Interurban Coach Driving Trailer
-STR_INFO_DDINTERURBANCOACH_CAB:{BLACK}Role: {GOLD}Interurban Coach Driving Trailer
-
-
-
-STR_NAME_VICTORIANINTERSTATEPARCELVAN:Victorian Interstate Parcel Van
-STR_INFO_VICTORIANINTERSTATEPARCELVAN:{BLACK}Role: {GOLD}Parcel Van
+STR_NAME_COMENG_THAIXPT:Comeng Thai XPT
+STR_INFO_COMENG_THAIXPT:{BLACK}Role: {GOLD}Express Service {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Formation: {GOLD}Push-Pull Trainset {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Proposed XPT derivative for Thailand
