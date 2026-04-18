@@ -57,7 +57,7 @@ STR_NAME_NSW_N67:0-6-0T "Terrier"
 STR_INFO_NSW_N67:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW N Class {}{GOLD}Australian version of the LB&SCR A1 class aka the "Terrier"
 
 STR_NAME_NSW_Z12:4-4-0 Z12 Class
-STR_INFO_NSW_Z12:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW Z12 Class (Formerly C Class) 
+STR_INFO_NSW_Z12:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW Z12 Class (Formerly C Class) {}{GOLD}Essentially a tender version of the Metropolitan Railway's A Class tank engine
 
 STR_NAME_NSW_C30:4-6-4T Suburban Tank
 STR_INFO_NSW_C30:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW C30 Class (Formerly S Class) 
