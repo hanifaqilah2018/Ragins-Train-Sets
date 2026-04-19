@@ -2662,6 +2662,19 @@ switch(FEAT_TRAINS, SELF, switch_NSW_AD60_Animation, motion_counter % 4){
     spriteset_NSW_AD60_Anim1;
 }
 
+switch(FEAT_TRAINS, SELF, switch_NSW_AD60_Animation_Inverted, motion_counter % 4){
+    0: spriteset_NSW_AD60_Anim4;
+    1: spriteset_NSW_AD60_Anim3;
+    2: spriteset_NSW_AD60_Anim2;
+    3: spriteset_NSW_AD60_Anim1;
+    spriteset_NSW_AD60_Anim4;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_NSW_AD60_Travel_Direction, train_is_driving_backwards){
+    0: switch_NSW_AD60_Animation;
+    1: switch_NSW_AD60_Animation_Inverted;
+}
+
 //rear part animation
 spriteset(spriteset_NSW_AD60_Rear_Anim1,   "gfx/NSW_AD60_Anim1.png") {template_7_GR(7, 99)}
 spriteset(spriteset_NSW_AD60_Rear_Anim2,   "gfx/NSW_AD60_Anim2.png") {template_7_GR(7, 99)}
@@ -2672,8 +2685,21 @@ switch(FEAT_TRAINS, SELF, switch_NSW_AD60_Rear_Animation, motion_counter % 4){
     0: spriteset_NSW_AD60_Rear_Anim3;
     1: spriteset_NSW_AD60_Rear_Anim2;
     2: spriteset_NSW_AD60_Rear_Anim1;
-    3: spriteset_NSW_AD60_Rear_Anim3;
+    3: spriteset_NSW_AD60_Rear_Anim4;
     spriteset_NSW_AD60_Rear_Anim3;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_AD60_Rear_Animation_Inverted, motion_counter % 4){
+    0: spriteset_NSW_AD60_Rear_Anim1;
+    1: spriteset_NSW_AD60_Rear_Anim2;
+    2: spriteset_NSW_AD60_Rear_Anim3;
+    3: spriteset_NSW_AD60_Rear_Anim4;
+    spriteset_NSW_AD60_Rear_Anim1;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_NSW_AD60_Rear_Travel_Direction, train_is_driving_backwards){
+    0: switch_NSW_AD60_Rear_Animation;
+    1: switch_NSW_AD60_Rear_Animation_Inverted;
 }
 
 //NSW_AD60_Liv0
@@ -2697,7 +2723,7 @@ switch (FEAT_TRAINS, SELF, switch_NSW_AD60_Liv0_Leadstack, [
     ]) {
     0: spriteset_NSW_AD60_Liv0_Lead;
 	1: switch_Couplers_5;
-    2: switch_NSW_AD60_Animation;
+    2: switch_NSW_AD60_Travel_Direction;
 }
 
 switch (FEAT_TRAINS, SELF, switch_NSW_AD60_Liv0_Rearstack, [
@@ -2706,7 +2732,7 @@ switch (FEAT_TRAINS, SELF, switch_NSW_AD60_Liv0_Rearstack, [
     ]) {
     0: spriteset_NSW_AD60_Liv0_Rear;
 	1: switch_Couplers_6_r;
-    2: switch_NSW_AD60_Rear_Animation;
+    2: switch_NSW_AD60_Rear_Travel_Direction;
 }
 
 switch(FEAT_TRAINS, SELF, switch_NSW_AD60_Liv0_position, position_in_articulated_veh) {
@@ -2732,7 +2758,7 @@ const NSW_AD60_Liv0_ID = (NSW_AD60_ID + Liv0_ID);
 item(FEAT_TRAINS, Item_NSW_AD60_Liv0, NSW_AD60_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
-		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, ); // <- Train Flag MU needed here
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_DIESEL;
         engine_class:                   ENGINE_CLASS_STEAM;

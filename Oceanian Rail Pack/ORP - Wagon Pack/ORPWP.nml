@@ -1908,86 +1908,86 @@ const DD_Intercity_LoadingSpeed = 3;
 
 //Trains Below!
 //ID
-const Coach_4Wheel_ID = 5000;
+const Early_4Wheel_ID = 5000;
 //introduction_date
-const Coach_4Wheel_IntroDate = date(1855, 1, 1);
+const Early_4Wheel_IntroDate = date(1855, 1, 1);
 //speed
-const Coach_4Wheel_Speed = 60;
+const Early_4Wheel_Speed = 60;
 //cost_factor
-const Coach_4Wheel_CostFactor = 16;
+const Early_4Wheel_CostFactor = 16;
 //running_cost_factor
-const Coach_4Wheel_RunningCostFactor = 6;
+const Early_4Wheel_RunningCostFactor = 6;
 //Cargo Capacity
-const Coach_4Wheel_CargoCapacity = 31;
+const Early_4Wheel_CargoCapacity = 31;
 //weight
-const Coach_4Wheel_Weight = 10;
+const Early_4Wheel_Weight = 10;
 //length
-const Coach_4Wheel_Length = 4;
+const Early_4Wheel_Length = 4;
 
-//Coach_4Wheel
-spriteset(spriteset_Coach_4Wheel_EOTD,   "gfx/Coach_4Wheel_EOTD.png") {template_4(7, 39)}
-spriteset(spriteset_Coach_4Wheel_EOTD_r,   "gfx/Coach_4Wheel_EOTD.png") {template_4_r(7, 39)}
+//Early_4Wheel
+spriteset(spriteset_Early_4Wheel_EOTD,   "gfx/Early_4Wheel_EOTD.png") {template_4(7, 39)}
+spriteset(spriteset_Early_4Wheel_EOTD_r,   "gfx/Early_4Wheel_EOTD.png") {template_4_r(7, 39)}
 
-//Coach_4Wheel_Liv0
-spriteset(spriteset_Coach_4Wheel_Liv0_Purchase,   "gfx/Coach_4Wheel_Liv0.png") {template_purchase_4(7, 21)}
+//Early_4Wheel_Liv0
+spriteset(spriteset_Early_4Wheel_Liv0_Purchase,   "gfx/Early_4Wheel_Liv0.png") {template_purchase_4(7, 21)}
 
-spriteset(spriteset_Coach_4Wheel_Liv0,   "gfx/Coach_4Wheel_Liv0.png") {template_4_repeat(7, 39)}
+spriteset(spriteset_Early_4Wheel_Liv0,   "gfx/Early_4Wheel_Liv0.png") {template_4_repeat(7, 39)}
 
 //Purchase Sprite
-switch (FEAT_TRAINS, SELF, switch_Coach_4Wheel_Liv0_PurchaseStack, [
+switch (FEAT_TRAINS, SELF, switch_Early_4Wheel_Liv0_PurchaseStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Coach_4Wheel_Liv0_Purchase;
+    0: spriteset_Early_4Wheel_Liv0_Purchase;
 	1: switch_Couplers_4_Repeat_Purchase;
 }
 
 //Normal Trailer
-switch (FEAT_TRAINS, SELF, switch_Coach_4Wheel_Liv0_NormalStack, [
+switch (FEAT_TRAINS, SELF, switch_Early_4Wheel_Liv0_NormalStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Coach_4Wheel_Liv0;
+    0: spriteset_Early_4Wheel_Liv0;
 	1: switch_Couplers_4_Repeat;
 }
 
 //Terminal stacks
-switch (FEAT_TRAINS, SELF, switch_Coach_4Wheel_Liv0_SpriteStack1, [
+switch (FEAT_TRAINS, SELF, switch_Early_4Wheel_Liv0_SpriteStack1, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Coach_4Wheel_Liv0;
+    0: spriteset_Early_4Wheel_Liv0;
 	1: switch_Couplers_4_Repeat;
-    2: spriteset_Coach_4Wheel_EOTD;
+    2: spriteset_Early_4Wheel_EOTD;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Coach_4Wheel_Liv0_rearcheck1, position_in_consist_from_end){
-    0 : switch_Coach_4Wheel_Liv0_SpriteStack1;
-    return switch_Coach_4Wheel_Liv0_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Early_4Wheel_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Early_4Wheel_Liv0_SpriteStack1;
+    return switch_Early_4Wheel_Liv0_NormalStack;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Coach_4Wheel_Liv0_SpriteStack2, [
+switch (FEAT_TRAINS, SELF, switch_Early_4Wheel_Liv0_SpriteStack2, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Coach_4Wheel_Liv0;
+    0: spriteset_Early_4Wheel_Liv0;
 	1: switch_Couplers_4_Repeat;
-    2: spriteset_Coach_4Wheel_EOTD_r;
+    2: spriteset_Early_4Wheel_EOTD_r;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Coach_4Wheel_Liv0_rearcheck2, position_in_consist_from_end){
-    0 : switch_Coach_4Wheel_Liv0_SpriteStack2;
-    return switch_Coach_4Wheel_Liv0_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Early_4Wheel_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Early_4Wheel_Liv0_SpriteStack2;
+    return switch_Early_4Wheel_Liv0_NormalStack;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Coach_4Wheel_Liv0_position, vehicle_is_flipped) {
- 0: switch_Coach_4Wheel_Liv0_rearcheck1;
- 1: switch_Coach_4Wheel_Liv0_rearcheck2;
+switch(FEAT_TRAINS, SELF, switch_Early_4Wheel_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Early_4Wheel_Liv0_rearcheck1;
+ 1: switch_Early_4Wheel_Liv0_rearcheck2;
 }
 
-const Coach_4Wheel_Liv0_ID_NG = (Coach_4Wheel_ID + Liv0_ID);
+const Early_4Wheel_Liv0_ID_NG = (Early_4Wheel_ID + Liv0_ID);
 
-item (FEAT_TRAINS, Item_Coach_4Wheel_NG_Liv0, Coach_4Wheel_Liv0_ID_NG) {
+item (FEAT_TRAINS, Item_Early_4Wheel_NG_Liv0, Early_4Wheel_Liv0_ID_NG) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
@@ -2001,38 +2001,38 @@ item (FEAT_TRAINS, Item_Coach_4Wheel_NG_Liv0, Coach_4Wheel_Liv0_ID_NG) {
 		default_cargo_type:				PASS;
 		cargo_allow_refit:              [PASS, TOUR];    
 
-        name:                           string(STR_NAME_COACH_4WHEEL_NG);
+        name:                           string(STR_NAME_EARLY_4WHEEL_NG);
 		
 		refit_cost:                     0;
         dual_headed:                    0;
         air_drag_coefficient:           0.08;
         model_life:                     30;
 		
-        introduction_date:              Coach_4Wheel_IntroDate;		
-		length:                         Coach_4Wheel_Length;
+        introduction_date:              Early_4Wheel_IntroDate;		
+		length:                         Early_4Wheel_Length;
 		
 		loading_speed:					SD_Suburban_LoadingSpeed;
-		speed:							Coach_4Wheel_Speed km/h;
-		cost_factor:					Coach_4Wheel_CostFactor;
-		running_cost_factor:			Coach_4Wheel_RunningCostFactor;
-		cargo_capacity: 				(Coach_4Wheel_CargoCapacity / param_capacity_mod);
+		speed:							Early_4Wheel_Speed km/h;
+		cost_factor:					Early_4Wheel_CostFactor;
+		running_cost_factor:			Early_4Wheel_RunningCostFactor;
+		cargo_capacity: 				(Early_4Wheel_CargoCapacity / param_capacity_mod);
 		power:							0 hp;
-		weight:							Coach_4Wheel_Weight ton;
+		weight:							Early_4Wheel_Weight ton;
 
-//        variant_group: 					Item_Coach_4Wheel_NG_Liv0;
+//        variant_group: 					Item_Early_4Wheel_NG_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Coach_4Wheel_Liv0_position;
-    purchase:                           switch_Coach_4Wheel_Liv0_PurchaseStack;
-    additional_text: 					string(STR_INFO_COACH_4WHEEL_NG);
-	cargo_capacity: 					(Coach_4Wheel_CargoCapacity / param_capacity_mod);
+    default:                            switch_Early_4Wheel_Liv0_position;
+    purchase:                           switch_Early_4Wheel_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_EARLY_4WHEEL_NG);
+	cargo_capacity: 					(Early_4Wheel_CargoCapacity / param_capacity_mod);
 }
 }
 
-const Coach_4Wheel_Liv0_ID = (Coach_4Wheel_Liv0_ID_NG + 10);
+const Early_4Wheel_Liv0_ID = (Early_4Wheel_Liv0_ID_NG + 10);
 
-item (FEAT_TRAINS, Item_Coach_4Wheel_Liv0, Coach_4Wheel_Liv0_ID) {
+item (FEAT_TRAINS, Item_Early_4Wheel_Liv0, Early_4Wheel_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
@@ -2046,38 +2046,38 @@ item (FEAT_TRAINS, Item_Coach_4Wheel_Liv0, Coach_4Wheel_Liv0_ID) {
 		default_cargo_type:				PASS;
 		cargo_allow_refit:              [PASS, TOUR];    
 
-        name:                           string(STR_NAME_COACH_4WHEEL);
+        name:                           string(STR_NAME_EARLY_4WHEEL);
 		
 		refit_cost:                     0;
         dual_headed:                    0;
         air_drag_coefficient:           0.08;
         model_life:                     30;
 		
-        introduction_date:              Coach_4Wheel_IntroDate;		
-		length:                         Coach_4Wheel_Length;
+        introduction_date:              Early_4Wheel_IntroDate;		
+		length:                         Early_4Wheel_Length;
 		
 		loading_speed:					SD_Suburban_LoadingSpeed;
-		speed:							Coach_4Wheel_Speed km/h;
-		cost_factor:					Coach_4Wheel_CostFactor;
-		running_cost_factor:			Coach_4Wheel_RunningCostFactor;
-		cargo_capacity: 				(Coach_4Wheel_CargoCapacity / param_capacity_mod);
+		speed:							Early_4Wheel_Speed km/h;
+		cost_factor:					Early_4Wheel_CostFactor;
+		running_cost_factor:			Early_4Wheel_RunningCostFactor;
+		cargo_capacity: 				(Early_4Wheel_CargoCapacity / param_capacity_mod);
 		power:							0 hp;
-		weight:							Coach_4Wheel_Weight ton;
+		weight:							Early_4Wheel_Weight ton;
 
-//        variant_group: 					Item_Coach_4Wheel_Liv0;
+//        variant_group: 					Item_Early_4Wheel_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Coach_4Wheel_Liv0_position;
-    purchase:                           switch_Coach_4Wheel_Liv0_PurchaseStack;
-    additional_text: 					string(STR_INFO_COACH_4WHEEL);
-	cargo_capacity: 					(Coach_4Wheel_CargoCapacity / param_capacity_mod);
+    default:                            switch_Early_4Wheel_Liv0_position;
+    purchase:                           switch_Early_4Wheel_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_EARLY_4WHEEL);
+	cargo_capacity: 					(Early_4Wheel_CargoCapacity / param_capacity_mod);
 }
 }
 
-const Coach_4Wheel_Liv0_ID_BG = (Coach_4Wheel_Liv0_ID + 10);
+const Early_4Wheel_Liv0_ID_BG = (Early_4Wheel_Liv0_ID + 10);
 
-item (FEAT_TRAINS, Item_Coach_4Wheel_BG_Liv0, Coach_4Wheel_Liv0_ID_BG) {
+item (FEAT_TRAINS, Item_Early_4Wheel_BG_Liv0, Early_4Wheel_Liv0_ID_BG) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
@@ -2091,94 +2091,94 @@ item (FEAT_TRAINS, Item_Coach_4Wheel_BG_Liv0, Coach_4Wheel_Liv0_ID_BG) {
 		default_cargo_type:				PASS;
 		cargo_allow_refit:              [PASS, TOUR];    
 
-        name:                           string(STR_NAME_COACH_4WHEEL_BG);
+        name:                           string(STR_NAME_EARLY_4WHEEL_BG);
 		
 		refit_cost:                     0;
         dual_headed:                    0;
         air_drag_coefficient:           0.08;
         model_life:                     30;
 		
-        introduction_date:              Coach_4Wheel_IntroDate;		
-		length:                         Coach_4Wheel_Length;
+        introduction_date:              Early_4Wheel_IntroDate;		
+		length:                         Early_4Wheel_Length;
 		
 		loading_speed:					SD_Suburban_LoadingSpeed;
-		speed:							Coach_4Wheel_Speed km/h;
-		cost_factor:					Coach_4Wheel_CostFactor;
-		running_cost_factor:			Coach_4Wheel_RunningCostFactor;
-		cargo_capacity: 				(Coach_4Wheel_CargoCapacity / param_capacity_mod);
+		speed:							Early_4Wheel_Speed km/h;
+		cost_factor:					Early_4Wheel_CostFactor;
+		running_cost_factor:			Early_4Wheel_RunningCostFactor;
+		cargo_capacity: 				(Early_4Wheel_CargoCapacity / param_capacity_mod);
 		power:							0 hp;
-		weight:							Coach_4Wheel_Weight ton;
+		weight:							Early_4Wheel_Weight ton;
 
-//        variant_group: 					Item_Coach_4Wheel_BG_Liv0;
+//        variant_group: 					Item_Early_4Wheel_BG_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Coach_4Wheel_Liv0_position;
-    purchase:                           switch_Coach_4Wheel_Liv0_PurchaseStack;
-    additional_text: 					string(STR_INFO_COACH_4WHEEL_BG);
-	cargo_capacity: 					(Coach_4Wheel_CargoCapacity / param_capacity_mod);
+    default:                            switch_Early_4Wheel_Liv0_position;
+    purchase:                           switch_Early_4Wheel_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_EARLY_4WHEEL_BG);
+	cargo_capacity: 					(Early_4Wheel_CargoCapacity / param_capacity_mod);
 }
 }
 
-//Mail_Coach_4Wheel_Liv0
-spriteset(spriteset_Mail_Coach_4Wheel_Liv0_Purchase,   "gfx/Coach_4Wheel_Liv0.png") {template_purchase_4(187, 21)}
-spriteset(spriteset_Mail_Coach_4Wheel_Liv0,   "gfx/Coach_4Wheel_Liv0.png") {template_4_repeat(187, 39)}
+//Mail_Early_4Wheel_Liv0
+spriteset(spriteset_Mail_Early_4Wheel_Liv0_Purchase,   "gfx/Early_4Wheel_Liv0.png") {template_purchase_4(187, 21)}
+spriteset(spriteset_Mail_Early_4Wheel_Liv0,   "gfx/Early_4Wheel_Liv0.png") {template_4_repeat(187, 39)}
 
 //Purchase Stack
-switch (FEAT_TRAINS, SELF, switch_Mail_Coach_4Wheel_Liv0_PurchaseStack, [
+switch (FEAT_TRAINS, SELF, switch_Mail_Early_4Wheel_Liv0_PurchaseStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Mail_Coach_4Wheel_Liv0_Purchase;
+    0: spriteset_Mail_Early_4Wheel_Liv0_Purchase;
 	1: switch_Couplers_4_Repeat_Purchase;
 }
 
 //Normal stack
-switch (FEAT_TRAINS, SELF, switch_Mail_Coach_4Wheel_Liv0_NormalStack, [
+switch (FEAT_TRAINS, SELF, switch_Mail_Early_4Wheel_Liv0_NormalStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Mail_Coach_4Wheel_Liv0;
+    0: spriteset_Mail_Early_4Wheel_Liv0;
 	1: switch_Couplers_4_Repeat;
 }
 
 //Terminal Stacks
-switch (FEAT_TRAINS, SELF, switch_Mail_Coach_4Wheel_Liv0_SpriteStack1, [
+switch (FEAT_TRAINS, SELF, switch_Mail_Early_4Wheel_Liv0_SpriteStack1, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Mail_Coach_4Wheel_Liv0;
+    0: spriteset_Mail_Early_4Wheel_Liv0;
 	1: switch_Couplers_4_Repeat;
-    2: spriteset_Coach_4Wheel_EOTD;
+    2: spriteset_Early_4Wheel_EOTD;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Mail_Coach_4Wheel_Liv0_rearcheck1, position_in_consist_from_end){
-    0 : switch_Mail_Coach_4Wheel_Liv0_SpriteStack1;
-    return switch_Mail_Coach_4Wheel_Liv0_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Mail_Early_4Wheel_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_Early_4Wheel_Liv0_SpriteStack1;
+    return switch_Mail_Early_4Wheel_Liv0_NormalStack;
 }
 
-switch (FEAT_TRAINS, SELF, switch_Mail_Coach_4Wheel_Liv0_SpriteStack2, [
+switch (FEAT_TRAINS, SELF, switch_Mail_Early_4Wheel_Liv0_SpriteStack2, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Mail_Coach_4Wheel_Liv0;
+    0: spriteset_Mail_Early_4Wheel_Liv0;
 	1: switch_Couplers_4_Repeat;
-    2: spriteset_Coach_4Wheel_EOTD_r;
+    2: spriteset_Early_4Wheel_EOTD_r;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Mail_Coach_4Wheel_Liv0_rearcheck2, position_in_consist_from_end){
-    0 : switch_Mail_Coach_4Wheel_Liv0_SpriteStack2;
-    return switch_Mail_Coach_4Wheel_Liv0_NormalStack;
+switch(FEAT_TRAINS, SELF, switch_Mail_Early_4Wheel_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_Early_4Wheel_Liv0_SpriteStack2;
+    return switch_Mail_Early_4Wheel_Liv0_NormalStack;
 }
 
-switch(FEAT_TRAINS, SELF, switch_Mail_Coach_4Wheel_Liv0_position, vehicle_is_flipped) {
- 0: switch_Mail_Coach_4Wheel_Liv0_rearcheck1;
- 1: switch_Mail_Coach_4Wheel_Liv0_rearcheck2;
+switch(FEAT_TRAINS, SELF, switch_Mail_Early_4Wheel_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_Early_4Wheel_Liv0_rearcheck1;
+ 1: switch_Mail_Early_4Wheel_Liv0_rearcheck2;
 }
 
-const Mail_Coach_4Wheel_NG_Liv0_ID = (Coach_4Wheel_Liv0_ID_NG + 30);
+const Mail_Early_4Wheel_NG_Liv0_ID = (Early_4Wheel_Liv0_ID_NG + 30);
 
-item (FEAT_TRAINS, Item_Mail_Coach_4Wheel_NG_Liv0, Mail_Coach_4Wheel_NG_Liv0_ID) {
+item (FEAT_TRAINS, Item_Mail_Early_4Wheel_NG_Liv0, Mail_Early_4Wheel_NG_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
@@ -2192,38 +2192,38 @@ item (FEAT_TRAINS, Item_Mail_Coach_4Wheel_NG_Liv0, Mail_Coach_4Wheel_NG_Liv0_ID)
 		default_cargo_type:				MAIL;
 //		cargo_allow_refit:              [];    
 
-        name:                           string(STR_NAME_MAIL_COACH_4WHEEL_NG);
+        name:                           string(STR_NAME_MAIL_EARLY_4WHEEL_NG);
 		
 		refit_cost:                     0;
         dual_headed:                    0;
         air_drag_coefficient:           0.08;
         model_life:                     30;
 		
-        introduction_date:              Coach_4Wheel_IntroDate;		
-		length:                         Coach_4Wheel_Length;
+        introduction_date:              Early_4Wheel_IntroDate;		
+		length:                         Early_4Wheel_Length;
 		
 		loading_speed:					SD_Suburban_LoadingSpeed;
-		speed:							Coach_4Wheel_Speed km/h;
-		cost_factor:					Coach_4Wheel_CostFactor;
-		running_cost_factor:			Coach_4Wheel_RunningCostFactor;
-		cargo_capacity: 				(Coach_4Wheel_CargoCapacity / param_capacity_mod);
+		speed:							Early_4Wheel_Speed km/h;
+		cost_factor:					Early_4Wheel_CostFactor;
+		running_cost_factor:			Early_4Wheel_RunningCostFactor;
+		cargo_capacity: 				(Early_4Wheel_CargoCapacity / param_capacity_mod);
 		power:							0 hp;
-		weight:							Coach_4Wheel_Weight ton;
+		weight:							Early_4Wheel_Weight ton;
 
-//        variant_group: 					Item_Mail_Coach_4Wheel_NG_Liv0;
+//        variant_group: 					Item_Mail_Early_4Wheel_NG_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Mail_Coach_4Wheel_Liv0_NormalStack;
-    purchase:                           switch_Mail_Coach_4Wheel_Liv0_PurchaseStack;
-    additional_text: 					string(STR_INFO_MAIL_COACH_4WHEEL_NG);
-	cargo_capacity: 					(Coach_4Wheel_CargoCapacity / param_capacity_mod);
+    default:                            switch_Mail_Early_4Wheel_Liv0_NormalStack;
+    purchase:                           switch_Mail_Early_4Wheel_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_EARLY_4WHEEL_NG);
+	cargo_capacity: 					(Early_4Wheel_CargoCapacity / param_capacity_mod);
 }
 }
 
-const Mail_Coach_4Wheel_Liv0_ID = (Coach_4Wheel_Liv0_ID + 30);
+const Mail_Early_4Wheel_Liv0_ID = (Early_4Wheel_Liv0_ID + 30);
 
-item (FEAT_TRAINS, Item_Mail_Coach_4Wheel_Liv0, Mail_Coach_4Wheel_Liv0_ID) {
+item (FEAT_TRAINS, Item_Mail_Early_4Wheel_Liv0, Mail_Early_4Wheel_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
@@ -2237,38 +2237,38 @@ item (FEAT_TRAINS, Item_Mail_Coach_4Wheel_Liv0, Mail_Coach_4Wheel_Liv0_ID) {
 		default_cargo_type:				MAIL;
 //		cargo_allow_refit:              [];    
 
-        name:                           string(STR_NAME_MAIL_COACH_4WHEEL);
+        name:                           string(STR_NAME_MAIL_EARLY_4WHEEL);
 		
 		refit_cost:                     0;
         dual_headed:                    0;
         air_drag_coefficient:           0.08;
         model_life:                     30;
 		
-        introduction_date:              Coach_4Wheel_IntroDate;		
-		length:                         Coach_4Wheel_Length;
+        introduction_date:              Early_4Wheel_IntroDate;		
+		length:                         Early_4Wheel_Length;
 		
 		loading_speed:					SD_Suburban_LoadingSpeed;
-		speed:							Coach_4Wheel_Speed km/h;
-		cost_factor:					Coach_4Wheel_CostFactor;
-		running_cost_factor:			Coach_4Wheel_RunningCostFactor;
-		cargo_capacity: 				(Coach_4Wheel_CargoCapacity / param_capacity_mod);
+		speed:							Early_4Wheel_Speed km/h;
+		cost_factor:					Early_4Wheel_CostFactor;
+		running_cost_factor:			Early_4Wheel_RunningCostFactor;
+		cargo_capacity: 				(Early_4Wheel_CargoCapacity / param_capacity_mod);
 		power:							0 hp;
-		weight:							Coach_4Wheel_Weight ton;
+		weight:							Early_4Wheel_Weight ton;
 
-//        variant_group: 					Item_Mail_Coach_4Wheel_Liv0;
+//        variant_group: 					Item_Mail_Early_4Wheel_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Mail_Coach_4Wheel_Liv0_NormalStack;
-    purchase:                           switch_Mail_Coach_4Wheel_Liv0_PurchaseStack;
-    additional_text: 					string(STR_INFO_MAIL_COACH_4WHEEL);
-	cargo_capacity: 					(Coach_4Wheel_CargoCapacity / param_capacity_mod);
+    default:                            switch_Mail_Early_4Wheel_Liv0_NormalStack;
+    purchase:                           switch_Mail_Early_4Wheel_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_EARLY_4WHEEL);
+	cargo_capacity: 					(Early_4Wheel_CargoCapacity / param_capacity_mod);
 }
 }
 
-const Mail_Coach_4Wheel_BG_Liv0_ID = (Coach_4Wheel_Liv0_ID_BG + 30);
+const Mail_Early_4Wheel_BG_Liv0_ID = (Early_4Wheel_Liv0_ID_BG + 30);
 
-item (FEAT_TRAINS, Item_Mail_Coach_4Wheel_BG_Liv0, Mail_Coach_4Wheel_BG_Liv0_ID) {
+item (FEAT_TRAINS, Item_Mail_Early_4Wheel_BG_Liv0, Mail_Early_4Wheel_BG_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
@@ -2282,42 +2282,166 @@ item (FEAT_TRAINS, Item_Mail_Coach_4Wheel_BG_Liv0, Mail_Coach_4Wheel_BG_Liv0_ID)
 		default_cargo_type:				MAIL;
 //		cargo_allow_refit:              [];    
 
-        name:                           string(STR_NAME_MAIL_COACH_4WHEEL_BG);
+        name:                           string(STR_NAME_MAIL_EARLY_4WHEEL_BG);
 		
 		refit_cost:                     0;
         dual_headed:                    0;
         air_drag_coefficient:           0.08;
         model_life:                     30;
 		
-        introduction_date:              Coach_4Wheel_IntroDate;		
-		length:                         Coach_4Wheel_Length;
+        introduction_date:              Early_4Wheel_IntroDate;		
+		length:                         Early_4Wheel_Length;
 		
 		loading_speed:					SD_Suburban_LoadingSpeed;
-		speed:							Coach_4Wheel_Speed km/h;
-		cost_factor:					Coach_4Wheel_CostFactor;
-		running_cost_factor:			Coach_4Wheel_RunningCostFactor;
-		cargo_capacity: 				(Coach_4Wheel_CargoCapacity / param_capacity_mod);
+		speed:							Early_4Wheel_Speed km/h;
+		cost_factor:					Early_4Wheel_CostFactor;
+		running_cost_factor:			Early_4Wheel_RunningCostFactor;
+		cargo_capacity: 				(Early_4Wheel_CargoCapacity / param_capacity_mod);
 		power:							0 hp;
-		weight:							Coach_4Wheel_Weight ton;
+		weight:							Early_4Wheel_Weight ton;
 
-//        variant_group: 					Item_Mail_Coach_4Wheel_BG_Liv0;
+//        variant_group: 					Item_Mail_Early_4Wheel_BG_Liv0;
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Mail_Coach_4Wheel_Liv0_NormalStack;
-    purchase:                           switch_Mail_Coach_4Wheel_Liv0_PurchaseStack;
-    additional_text: 					string(STR_INFO_MAIL_COACH_4WHEEL_BG);
-	cargo_capacity: 					(Coach_4Wheel_CargoCapacity / param_capacity_mod);
+    default:                            switch_Mail_Early_4Wheel_Liv0_NormalStack;
+    purchase:                           switch_Mail_Early_4Wheel_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_EARLY_4WHEEL_BG);
+	cargo_capacity: 					(Early_4Wheel_CargoCapacity / param_capacity_mod);
 }
 }
 
+//ID
+const AY_SuburbanCoach_ID = 5700;
+//introduction_date
+const AY_SuburbanCoach_IntroDate = date(1924, 1, 1);
+//speed
+const AY_SuburbanCoach_Speed = 80;
+//cost_factor
+const AY_SuburbanCoach_CostFactor = 39;
+//running_cost_factor
+const AY_SuburbanCoach_RunningCostFactor = 16;
+//Cargo Capacity
+const AY_SuburbanCoach_CargoCapacity = 78;
+//weight
+const AY_SuburbanCoach_Weight = 26;
+//length
+const AY_SuburbanCoach_Length = 7;
+
+//AY_SuburbanCoach
+spriteset(spriteset_AY_SuburbanCoach_EOTD,   "gfx/AY_SuburbanCoach_EOTD.png") {template_7(7, 39)}
+spriteset(spriteset_AY_SuburbanCoach_EOTD_r,   "gfx/AY_SuburbanCoach_EOTD.png") {template_7_r(7, 39)}
+
+//AY_SuburbanCoach_Liv0
+spriteset(spriteset_AY_SuburbanCoach_Liv0_Purchase,   "gfx/AY_SuburbanCoach_Liv0.png") {template_purchase_7(7, 21)}
+
+spriteset(spriteset_AY_SuburbanCoach_Liv0,   "gfx/AY_SuburbanCoach_Liv0.png") {template_7_repeat(7, 39)}
+spriteset(spriteset_AY_SuburbanCoach_Liv0_Terminal,   "gfx/AY_SuburbanCoach_Liv0.png") {template_7(7, 69)}
+spriteset(spriteset_AY_SuburbanCoach_Liv0_Terminal_r,   "gfx/AY_SuburbanCoach_Liv0.png") {template_7_r(7, 69)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_AY_SuburbanCoach_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_AY_SuburbanCoach_Liv0_Purchase;
+	1: switch_Couplers_7_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_AY_SuburbanCoach_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_AY_SuburbanCoach_Liv0;
+	1: switch_Couplers_7_Repeat;
+}
+
+//Terminal stacks
+switch (FEAT_TRAINS, SELF, switch_AY_SuburbanCoach_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_AY_SuburbanCoach_Liv0_Terminal;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_AY_SuburbanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_AY_SuburbanCoach_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_AY_SuburbanCoach_Liv0_SpriteStack1;
+    return switch_AY_SuburbanCoach_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_AY_SuburbanCoach_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_AY_SuburbanCoach_Liv0_Terminal_r;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_AY_SuburbanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_AY_SuburbanCoach_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_AY_SuburbanCoach_Liv0_SpriteStack2;
+    return switch_AY_SuburbanCoach_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_AY_SuburbanCoach_Liv0_position, vehicle_is_flipped) {
+ 0: switch_AY_SuburbanCoach_Liv0_rearcheck1;
+ 1: switch_AY_SuburbanCoach_Liv0_rearcheck2;
+}
+
+const AY_SuburbanCoach_Liv0_ID_NG = (AY_SuburbanCoach_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_AY_SuburbanCoach_NG_Liv0, AY_SuburbanCoach_Liv0_ID_NG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_AY_SUBURBANCOACH_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              AY_SuburbanCoach_IntroDate;		
+		length:                         AY_SuburbanCoach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							AY_SuburbanCoach_Speed km/h;
+		cost_factor:					AY_SuburbanCoach_CostFactor;
+		running_cost_factor:			AY_SuburbanCoach_RunningCostFactor;
+		cargo_capacity: 				(AY_SuburbanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							AY_SuburbanCoach_Weight ton;
+
+//        variant_group: 					Item_AY_SuburbanCoach_NG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_AY_SuburbanCoach_Liv0_position;
+    purchase:                           switch_AY_SuburbanCoach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_AY_SUBURBANCOACH_NG);
+	cargo_capacity: 					(AY_SuburbanCoach_CargoCapacity / param_capacity_mod);
+}
+}
 
 //VLine_HType
 spriteset(spriteset_VLine_HType_EOTD,   "gfx/VLine_HType_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_VLine_HType_EOTD_r,   "gfx/VLine_HType_EOTD.png") {template_8_r(7, 39)}
 
 //ID
-const VLine_HType_ID = 6950;
+const VLine_HType_ID = 5950;
 //introduction_date
 const VLine_HType_IntroDate = date(1984, 1, 1);
 //speed
@@ -2984,6 +3108,410 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv1, VLine_HType_DT_BG_Liv1_ID) {
     default:                            switch_VLine_HType_DT_Liv1_rearcheck;
     purchase:                           switch_VLine_HType_DT_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_DT_BG);
+}
+}
+
+//ID
+const AmericanCoach_ID = 7150;
+//introduction_date
+const AmericanCoach_IntroDate = date(1877, 1, 1);
+//speed
+const AmericanCoach_Speed = 80;
+//cost_factor
+const AmericanCoach_CostFactor = 27;
+//running_cost_factor
+const AmericanCoach_RunningCostFactor = 11;
+//Cargo Capacity
+const AmericanCoach_CargoCapacity = 53;
+//weight
+const AmericanCoach_Weight = 26;
+//length
+const AmericanCoach_Length = 6;
+
+//AmericanCoach
+spriteset(spriteset_AmericanCoach_EOTD,   "gfx/AmericanCoach_EOTD.png") {template_6(7, 39)}
+spriteset(spriteset_AmericanCoach_EOTD_r,   "gfx/AmericanCoach_EOTD.png") {template_6_r(7, 39)}
+
+//AmericanCoach_Liv0
+spriteset(spriteset_AmericanCoach_Liv0_Purchase,   "gfx/AmericanCoach_Liv0.png") {template_purchase_6(7, 21)}
+
+spriteset(spriteset_AmericanCoach_Liv0,   "gfx/AmericanCoach_Liv0.png") {template_6_repeat(7, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_AmericanCoach_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_AmericanCoach_Liv0_Purchase;
+	1: switch_Couplers_6_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_AmericanCoach_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_AmericanCoach_Liv0;
+	1: switch_Couplers_6_Repeat;
+}
+
+//Terminal stacks
+switch (FEAT_TRAINS, SELF, switch_AmericanCoach_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_AmericanCoach_Liv0;
+	1: switch_Couplers_6_Repeat;
+    2: spriteset_AmericanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_AmericanCoach_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_AmericanCoach_Liv0_SpriteStack1;
+    return switch_AmericanCoach_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_AmericanCoach_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_AmericanCoach_Liv0;
+	1: switch_Couplers_6_Repeat;
+    2: spriteset_AmericanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_AmericanCoach_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_AmericanCoach_Liv0_SpriteStack2;
+    return switch_AmericanCoach_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_AmericanCoach_Liv0_position, vehicle_is_flipped) {
+ 0: switch_AmericanCoach_Liv0_rearcheck1;
+ 1: switch_AmericanCoach_Liv0_rearcheck2;
+}
+
+const AmericanCoach_Liv0_ID_NG = (AmericanCoach_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_AmericanCoach_NG_Liv0, AmericanCoach_Liv0_ID_NG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_AMERICANCOACH_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              AmericanCoach_IntroDate;		
+		length:                         AmericanCoach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							AmericanCoach_Speed km/h;
+		cost_factor:					AmericanCoach_CostFactor;
+		running_cost_factor:			AmericanCoach_RunningCostFactor;
+		cargo_capacity: 				(AmericanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							AmericanCoach_Weight ton;
+
+//        variant_group: 					Item_AmericanCoach_NG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_AmericanCoach_Liv0_position;
+    purchase:                           switch_AmericanCoach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_AMERICANCOACH_NG);
+	cargo_capacity: 					(AmericanCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+const AmericanCoach_Liv0_ID = (AmericanCoach_Liv0_ID_NG + 10);
+
+item (FEAT_TRAINS, Item_AmericanCoach_Liv0, AmericanCoach_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_AMERICANCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              AmericanCoach_IntroDate;		
+		length:                         AmericanCoach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							AmericanCoach_Speed km/h;
+		cost_factor:					AmericanCoach_CostFactor;
+		running_cost_factor:			AmericanCoach_RunningCostFactor;
+		cargo_capacity: 				(AmericanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							AmericanCoach_Weight ton;
+
+//        variant_group: 					Item_AmericanCoach_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_AmericanCoach_Liv0_position;
+    purchase:                           switch_AmericanCoach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_AMERICANCOACH);
+	cargo_capacity: 					(AmericanCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+const AmericanCoach_Liv0_ID_BG = (AmericanCoach_Liv0_ID + 10);
+
+item (FEAT_TRAINS, Item_AmericanCoach_BG_Liv0, AmericanCoach_Liv0_ID_BG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_AMERICANCOACH_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              AmericanCoach_IntroDate;		
+		length:                         AmericanCoach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							AmericanCoach_Speed km/h;
+		cost_factor:					AmericanCoach_CostFactor;
+		running_cost_factor:			AmericanCoach_RunningCostFactor;
+		cargo_capacity: 				(AmericanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							AmericanCoach_Weight ton;
+
+//        variant_group: 					Item_AmericanCoach_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_AmericanCoach_Liv0_position;
+    purchase:                           switch_AmericanCoach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_AMERICANCOACH_BG);
+	cargo_capacity: 					(AmericanCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Mail_AmericanCoach_Liv0
+spriteset(spriteset_Mail_AmericanCoach_Liv0_Purchase,   "gfx/AmericanCoach_Liv0.png") {template_purchase_6(187, 21)}
+spriteset(spriteset_Mail_AmericanCoach_Liv0,   "gfx/AmericanCoach_Liv0.png") {template_6_repeat(187, 39)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_Mail_AmericanCoach_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_AmericanCoach_Liv0_Purchase;
+	1: switch_Couplers_6_Repeat_Purchase;
+}
+
+//Normal stack
+switch (FEAT_TRAINS, SELF, switch_Mail_AmericanCoach_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_AmericanCoach_Liv0;
+	1: switch_Couplers_6_Repeat;
+}
+
+//Terminal Stacks
+switch (FEAT_TRAINS, SELF, switch_Mail_AmericanCoach_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_AmericanCoach_Liv0;
+	1: switch_Couplers_6_Repeat;
+    2: spriteset_AmericanCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_AmericanCoach_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_AmericanCoach_Liv0_SpriteStack1;
+    return switch_Mail_AmericanCoach_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_AmericanCoach_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_AmericanCoach_Liv0;
+	1: switch_Couplers_6_Repeat;
+    2: spriteset_AmericanCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_AmericanCoach_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_AmericanCoach_Liv0_SpriteStack2;
+    return switch_Mail_AmericanCoach_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_AmericanCoach_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_AmericanCoach_Liv0_rearcheck1;
+ 1: switch_Mail_AmericanCoach_Liv0_rearcheck2;
+}
+
+const Mail_AmericanCoach_NG_Liv0_ID = (AmericanCoach_Liv0_ID_NG + 30);
+
+item (FEAT_TRAINS, Item_Mail_AmericanCoach_NG_Liv0, Mail_AmericanCoach_NG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_AMERICANCOACH_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              AmericanCoach_IntroDate;		
+		length:                         AmericanCoach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							AmericanCoach_Speed km/h;
+		cost_factor:					AmericanCoach_CostFactor;
+		running_cost_factor:			AmericanCoach_RunningCostFactor;
+		cargo_capacity: 				(AmericanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							AmericanCoach_Weight ton;
+
+//        variant_group: 					Item_Mail_AmericanCoach_NG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_AmericanCoach_Liv0_NormalStack;
+    purchase:                           switch_Mail_AmericanCoach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_AMERICANCOACH_NG);
+	cargo_capacity: 					(AmericanCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+const Mail_AmericanCoach_Liv0_ID = (AmericanCoach_Liv0_ID + 30);
+
+item (FEAT_TRAINS, Item_Mail_AmericanCoach_Liv0, Mail_AmericanCoach_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_AMERICANCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              AmericanCoach_IntroDate;		
+		length:                         AmericanCoach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							AmericanCoach_Speed km/h;
+		cost_factor:					AmericanCoach_CostFactor;
+		running_cost_factor:			AmericanCoach_RunningCostFactor;
+		cargo_capacity: 				(AmericanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							AmericanCoach_Weight ton;
+
+//        variant_group: 					Item_Mail_AmericanCoach_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_AmericanCoach_Liv0_NormalStack;
+    purchase:                           switch_Mail_AmericanCoach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_AMERICANCOACH);
+	cargo_capacity: 					(AmericanCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+const Mail_AmericanCoach_BG_Liv0_ID = (AmericanCoach_Liv0_ID_BG + 30);
+
+item (FEAT_TRAINS, Item_Mail_AmericanCoach_BG_Liv0, Mail_AmericanCoach_BG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_AMERICANCOACH_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              AmericanCoach_IntroDate;		
+		length:                         AmericanCoach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							AmericanCoach_Speed km/h;
+		cost_factor:					AmericanCoach_CostFactor;
+		running_cost_factor:			AmericanCoach_RunningCostFactor;
+		cargo_capacity: 				(AmericanCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							AmericanCoach_Weight ton;
+
+//        variant_group: 					Item_Mail_AmericanCoach_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_AmericanCoach_Liv0_NormalStack;
+    purchase:                           switch_Mail_AmericanCoach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_AMERICANCOACH_BG);
+	cargo_capacity: 					(AmericanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 

@@ -44,19 +44,41 @@ STR_PARAM_TRANSITION:Transition
 
 
 
-STR_NAME_COACH_4WHEEL_NG:4-Wheel Coach
-STR_INFO_COACH_4WHEEL_NG:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
-STR_NAME_COACH_4WHEEL:4-Wheel Coach
-STR_INFO_COACH_4WHEEL:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
-STR_NAME_COACH_4WHEEL_BG:4-Wheel Coach
-STR_INFO_COACH_4WHEEL_BG:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_EARLY_4WHEEL_NG:Early 4-Wheel Coach
+STR_INFO_EARLY_4WHEEL_NG:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_EARLY_4WHEEL:Early 4-Wheel Coach
+STR_INFO_EARLY_4WHEEL:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_EARLY_4WHEEL_BG:Early 4-Wheel Coach
+STR_INFO_EARLY_4WHEEL_BG:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
 
-STR_NAME_MAIL_COACH_4WHEEL_NG:4-Wheel Mail Coach
-STR_INFO_MAIL_COACH_4WHEEL_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
-STR_NAME_MAIL_COACH_4WHEEL:4-Wheel Mail Coach
-STR_INFO_MAIL_COACH_4WHEEL:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
-STR_NAME_MAIL_COACH_4WHEEL_BG:4-Wheel Mail Coach
-STR_INFO_MAIL_COACH_4WHEEL_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_MAIL_EARLY_4WHEEL_NG:Early 4-Wheel Mail Coach
+STR_INFO_MAIL_EARLY_4WHEEL_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_MAIL_EARLY_4WHEEL:Early 4-Wheel Mail Coach
+STR_INFO_MAIL_EARLY_4WHEEL:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_MAIL_EARLY_4WHEEL_BG:Early 4-Wheel Mail Coach
+STR_INFO_MAIL_EARLY_4WHEEL_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+
+
+
+STR_NAME_AY_SUBURBANCOACH_NG:Westralian Suburban Coach
+STR_INFO_AY_SUBURBANCOACH_NG:{BLACK}Role:{GOLD}Suburban/Country Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}WAGR AY Suburban Coaches
+
+
+
+
+STR_NAME_AMERICANCOACH_NG:American End-Platform Coach
+STR_INFO_AMERICANCOACH_NG:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_AMERICANCOACH:American End-Platform Coach
+STR_INFO_AMERICANCOACH:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_AMERICANCOACH_BG:American End-Platform Coach
+STR_INFO_AMERICANCOACH_BG:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+
+STR_NAME_MAIL_AMERICANCOACH_NG:American Mail Coach
+STR_INFO_MAIL_AMERICANCOACH_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_MAIL_AMERICANCOACH:American Mail Coach
+STR_INFO_MAIL_AMERICANCOACH:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_MAIL_AMERICANCOACH_BG:American Mail Coach
+STR_INFO_MAIL_AMERICANCOACH_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
 
 
 STR_NAME_VLINE_HTYPE:Comeng-M&K H-Type Suburban Coach
