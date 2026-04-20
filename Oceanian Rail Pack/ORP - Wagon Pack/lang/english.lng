@@ -60,6 +60,20 @@ STR_INFO_MAIL_EARLY_4WHEEL_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} B
 
 
 
+STR_NAME_ENDPLATFORM4WHEEL_NG:End Platform 4-Wheel Suburban Coach
+STR_INFO_ENDPLATFORM4WHEEL_NG:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}SAR End Platform Suburban Coaches
+STR_NAME_ENDPLATFORM4WHEEL:End Platform 4-Wheel Suburban Coach
+STR_INFO_ENDPLATFORM4WHEEL:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}SAR End Platform Suburban Coaches
+STR_NAME_ENDPLATFORM4WHEEL_BG:End Platform 4-Wheel Suburban Coach
+STR_INFO_ENDPLATFORM4WHEEL_BG:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}SAR End Platform Suburban Coaches
+
+STR_NAME_CLERESTORYCOMPARTMENTCOACH_NG:Clerestory Compartment Coach
+STR_INFO_CLERESTORYCOMPARTMENTCOACH_NG:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Suburban version of the NSW Ashbury Coaches
+STR_NAME_CLERESTORYCOMPARTMENTCOACH:Clerestory Compartment Coach
+STR_INFO_CLERESTORYCOMPARTMENTCOACH:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Suburban version of the NSW Ashbury Coaches
+STR_NAME_CLERESTORYCOMPARTMENTCOACH_BG:Clerestory Compartment Coach
+STR_INFO_CLERESTORYCOMPARTMENTCOACH_BG:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Suburban version of the NSW Ashbury Coaches
+
 STR_NAME_AY_SUBURBANCOACH_NG:Westralian Suburban Coach
 STR_INFO_AY_SUBURBANCOACH_NG:{BLACK}Role:{GOLD}Suburban/Country Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}WAGR AY Suburban Coaches
 

@@ -2312,6 +2312,434 @@ item (FEAT_TRAINS, Item_Mail_Early_4Wheel_BG_Liv0, Mail_Early_4Wheel_BG_Liv0_ID)
 }
 
 //ID
+const EndPlatform4Wheel_ID = 5150;
+//introduction_date
+const EndPlatform4Wheel_IntroDate = date(1877, 1, 1);
+//speed
+const EndPlatform4Wheel_Speed = 60;
+//cost_factor
+const EndPlatform4Wheel_CostFactor = 18;
+//running_cost_factor
+const EndPlatform4Wheel_RunningCostFactor = 7;
+//Cargo Capacity
+const EndPlatform4Wheel_CargoCapacity = 35;
+//weight
+const EndPlatform4Wheel_Weight = 15;
+//length
+const EndPlatform4Wheel_Length = 4;
+
+//EndPlatform4Wheel
+spriteset(spriteset_EndPlatform4Wheel_EOTD,   "gfx/EndPlatform4Wheel_EOTD.png") {template_4(7, 39)}
+spriteset(spriteset_EndPlatform4Wheel_EOTD_r,   "gfx/EndPlatform4Wheel_EOTD.png") {template_4_r(7, 39)}
+
+//EndPlatform4Wheel_Liv0
+spriteset(spriteset_EndPlatform4Wheel_Liv0_Purchase,   "gfx/EndPlatform4Wheel_Liv0.png") {template_purchase_4(7, 21)}
+
+spriteset(spriteset_EndPlatform4Wheel_Liv0,   "gfx/EndPlatform4Wheel_Liv0.png") {template_4_repeat(7, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_EndPlatform4Wheel_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EndPlatform4Wheel_Liv0_Purchase;
+	1: switch_Couplers_4_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_EndPlatform4Wheel_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EndPlatform4Wheel_Liv0;
+	1: switch_Couplers_4_Repeat;
+}
+
+//Terminal stacks
+switch (FEAT_TRAINS, SELF, switch_EndPlatform4Wheel_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EndPlatform4Wheel_Liv0;
+	1: switch_Couplers_4_Repeat;
+    2: spriteset_EndPlatform4Wheel_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EndPlatform4Wheel_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_EndPlatform4Wheel_Liv0_SpriteStack1;
+    return switch_EndPlatform4Wheel_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_EndPlatform4Wheel_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EndPlatform4Wheel_Liv0;
+	1: switch_Couplers_4_Repeat;
+    2: spriteset_EndPlatform4Wheel_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EndPlatform4Wheel_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_EndPlatform4Wheel_Liv0_SpriteStack2;
+    return switch_EndPlatform4Wheel_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EndPlatform4Wheel_Liv0_position, vehicle_is_flipped) {
+ 0: switch_EndPlatform4Wheel_Liv0_rearcheck1;
+ 1: switch_EndPlatform4Wheel_Liv0_rearcheck2;
+}
+
+const EndPlatform4Wheel_Liv0_ID_NG = (EndPlatform4Wheel_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_EndPlatform4Wheel_NG_Liv0, EndPlatform4Wheel_Liv0_ID_NG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_ENDPLATFORM4WHEEL_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              EndPlatform4Wheel_IntroDate;		
+		length:                         EndPlatform4Wheel_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							EndPlatform4Wheel_Speed km/h;
+		cost_factor:					EndPlatform4Wheel_CostFactor;
+		running_cost_factor:			EndPlatform4Wheel_RunningCostFactor;
+		cargo_capacity: 				(EndPlatform4Wheel_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							EndPlatform4Wheel_Weight ton;
+
+//        variant_group: 					Item_EndPlatform4Wheel_NG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_EndPlatform4Wheel_Liv0_position;
+    purchase:                           switch_EndPlatform4Wheel_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_ENDPLATFORM4WHEEL_NG);
+	cargo_capacity: 					(EndPlatform4Wheel_CargoCapacity / param_capacity_mod);
+}
+}
+
+const EndPlatform4Wheel_Liv0_ID = (EndPlatform4Wheel_Liv0_ID_NG + 10);
+
+item (FEAT_TRAINS, Item_EndPlatform4Wheel_Liv0, EndPlatform4Wheel_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_ENDPLATFORM4WHEEL);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              EndPlatform4Wheel_IntroDate;		
+		length:                         EndPlatform4Wheel_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							EndPlatform4Wheel_Speed km/h;
+		cost_factor:					EndPlatform4Wheel_CostFactor;
+		running_cost_factor:			EndPlatform4Wheel_RunningCostFactor;
+		cargo_capacity: 				(EndPlatform4Wheel_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							EndPlatform4Wheel_Weight ton;
+
+//        variant_group: 					Item_EndPlatform4Wheel_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_EndPlatform4Wheel_Liv0_position;
+    purchase:                           switch_EndPlatform4Wheel_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_ENDPLATFORM4WHEEL);
+	cargo_capacity: 					(EndPlatform4Wheel_CargoCapacity / param_capacity_mod);
+}
+}
+
+const EndPlatform4Wheel_Liv0_ID_BG = (EndPlatform4Wheel_Liv0_ID + 10);
+
+item (FEAT_TRAINS, Item_EndPlatform4Wheel_BG_Liv0, EndPlatform4Wheel_Liv0_ID_BG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_ENDPLATFORM4WHEEL_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              EndPlatform4Wheel_IntroDate;		
+		length:                         EndPlatform4Wheel_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							EndPlatform4Wheel_Speed km/h;
+		cost_factor:					EndPlatform4Wheel_CostFactor;
+		running_cost_factor:			EndPlatform4Wheel_RunningCostFactor;
+		cargo_capacity: 				(EndPlatform4Wheel_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							EndPlatform4Wheel_Weight ton;
+
+//        variant_group: 					Item_EndPlatform4Wheel_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_EndPlatform4Wheel_Liv0_position;
+    purchase:                           switch_EndPlatform4Wheel_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_ENDPLATFORM4WHEEL_BG);
+	cargo_capacity: 					(EndPlatform4Wheel_CargoCapacity / param_capacity_mod);
+}
+}
+
+//ID
+const ClerestoryCompartmentCoach_ID = 5200;
+//introduction_date
+const ClerestoryCompartmentCoach_IntroDate = date(1879, 1, 1);
+//speed
+const ClerestoryCompartmentCoach_Speed = 80;
+//cost_factor
+const ClerestoryCompartmentCoach_CostFactor = 31;
+//running_cost_factor
+const ClerestoryCompartmentCoach_RunningCostFactor = 13;
+//Cargo Capacity
+const ClerestoryCompartmentCoach_CargoCapacity = 63;
+//weight
+const ClerestoryCompartmentCoach_Weight = 22;
+//length
+const ClerestoryCompartmentCoach_Length = 7;
+
+//ClerestoryCompartmentCoach
+spriteset(spriteset_ClerestoryCompartmentCoach_EOTD,   "gfx/ClerestoryCompartmentCoach_EOTD.png") {template_7(7, 39)}
+spriteset(spriteset_ClerestoryCompartmentCoach_EOTD_r,   "gfx/ClerestoryCompartmentCoach_EOTD.png") {template_7_r(7, 39)}
+
+//ClerestoryCompartmentCoach_Liv0
+spriteset(spriteset_ClerestoryCompartmentCoach_Liv0_Purchase,   "gfx/ClerestoryCompartmentCoach_Liv0.png") {template_purchase_7(7, 21)}
+
+spriteset(spriteset_ClerestoryCompartmentCoach_Liv0,   "gfx/ClerestoryCompartmentCoach_Liv0.png") {template_7_repeat(7, 39)}
+spriteset(spriteset_ClerestoryCompartmentCoach_Liv0_Terminal,   "gfx/ClerestoryCompartmentCoach_Liv0.png") {template_7(7, 69)}
+spriteset(spriteset_ClerestoryCompartmentCoach_Liv0_Terminal_r,   "gfx/ClerestoryCompartmentCoach_Liv0.png") {template_7_r(7, 69)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_ClerestoryCompartmentCoach_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ClerestoryCompartmentCoach_Liv0_Purchase;
+	1: switch_Couplers_7_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_ClerestoryCompartmentCoach_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ClerestoryCompartmentCoach_Liv0;
+	1: switch_Couplers_7_Repeat;
+}
+
+//Terminal stacks
+switch (FEAT_TRAINS, SELF, switch_ClerestoryCompartmentCoach_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ClerestoryCompartmentCoach_Liv0_Terminal;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_ClerestoryCompartmentCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ClerestoryCompartmentCoach_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_ClerestoryCompartmentCoach_Liv0_SpriteStack1;
+    return switch_ClerestoryCompartmentCoach_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_ClerestoryCompartmentCoach_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ClerestoryCompartmentCoach_Liv0_Terminal_r;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_ClerestoryCompartmentCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ClerestoryCompartmentCoach_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_ClerestoryCompartmentCoach_Liv0_SpriteStack2;
+    return switch_ClerestoryCompartmentCoach_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ClerestoryCompartmentCoach_Liv0_position, vehicle_is_flipped) {
+ 0: switch_ClerestoryCompartmentCoach_Liv0_rearcheck1;
+ 1: switch_ClerestoryCompartmentCoach_Liv0_rearcheck2;
+}
+
+const ClerestoryCompartmentCoach_Liv0_ID_NG = (ClerestoryCompartmentCoach_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_ClerestoryCompartmentCoach_NG_Liv0, ClerestoryCompartmentCoach_Liv0_ID_NG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_CLERESTORYCOMPARTMENTCOACH_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              ClerestoryCompartmentCoach_IntroDate;		
+		length:                         ClerestoryCompartmentCoach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							ClerestoryCompartmentCoach_Speed km/h;
+		cost_factor:					ClerestoryCompartmentCoach_CostFactor;
+		running_cost_factor:			ClerestoryCompartmentCoach_RunningCostFactor;
+		cargo_capacity: 				(ClerestoryCompartmentCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							ClerestoryCompartmentCoach_Weight ton;
+
+//        variant_group: 					Item_ClerestoryCompartmentCoach_NG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_ClerestoryCompartmentCoach_Liv0_position;
+    purchase:                           switch_ClerestoryCompartmentCoach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_CLERESTORYCOMPARTMENTCOACH_NG);
+	cargo_capacity: 					(ClerestoryCompartmentCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+const ClerestoryCompartmentCoach_Liv0_ID = (ClerestoryCompartmentCoach_Liv0_ID_NG + 10);
+
+item (FEAT_TRAINS, Item_ClerestoryCompartmentCoach_Liv0, ClerestoryCompartmentCoach_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_CLERESTORYCOMPARTMENTCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              ClerestoryCompartmentCoach_IntroDate;		
+		length:                         ClerestoryCompartmentCoach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							ClerestoryCompartmentCoach_Speed km/h;
+		cost_factor:					ClerestoryCompartmentCoach_CostFactor;
+		running_cost_factor:			ClerestoryCompartmentCoach_RunningCostFactor;
+		cargo_capacity: 				(ClerestoryCompartmentCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							ClerestoryCompartmentCoach_Weight ton;
+
+//        variant_group: 					Item_ClerestoryCompartmentCoach_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_ClerestoryCompartmentCoach_Liv0_position;
+    purchase:                           switch_ClerestoryCompartmentCoach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_CLERESTORYCOMPARTMENTCOACH);
+	cargo_capacity: 					(ClerestoryCompartmentCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+const ClerestoryCompartmentCoach_Liv0_ID_BG = (ClerestoryCompartmentCoach_Liv0_ID + 10);
+
+item (FEAT_TRAINS, Item_ClerestoryCompartmentCoach_BG_Liv0, ClerestoryCompartmentCoach_Liv0_ID_BG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_CLERESTORYCOMPARTMENTCOACH_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              ClerestoryCompartmentCoach_IntroDate;		
+		length:                         ClerestoryCompartmentCoach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							ClerestoryCompartmentCoach_Speed km/h;
+		cost_factor:					ClerestoryCompartmentCoach_CostFactor;
+		running_cost_factor:			ClerestoryCompartmentCoach_RunningCostFactor;
+		cargo_capacity: 				(ClerestoryCompartmentCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							ClerestoryCompartmentCoach_Weight ton;
+
+//        variant_group: 					Item_ClerestoryCompartmentCoach_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_ClerestoryCompartmentCoach_Liv0_position;
+    purchase:                           switch_ClerestoryCompartmentCoach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_CLERESTORYCOMPARTMENTCOACH_BG);
+	cargo_capacity: 					(ClerestoryCompartmentCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+//ID
 const AY_SuburbanCoach_ID = 5700;
 //introduction_date
 const AY_SuburbanCoach_IntroDate = date(1924, 1, 1);
