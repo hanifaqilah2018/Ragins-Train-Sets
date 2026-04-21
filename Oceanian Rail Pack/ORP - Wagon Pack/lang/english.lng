@@ -105,6 +105,16 @@ STR_INFO_VLINE_HTYPE_DT:{BLACK}Role:{GOLD}Suburban/Country Service {}{BLACK}Gaug
 STR_NAME_VLINE_HTYPE_DT_BG:Comeng-M&K H-Type Driving Trailer
 STR_INFO_VLINE_HTYPE_DT_BG:{BLACK}Role:{GOLD}Suburban/Country Service {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Based on:{GOLD}VLine H-Type Coaches
 
+STR_NAME_COMENG_SADD:Comeng Suburban Double Deck
+STR_INFO_COMENG_SADD:{BLACK}Role:{GOLD}Suburban Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Fictional, based on proposed SA 2000 Class DMU design
+STR_NAME_COMENG_SADD_BG:Comeng Suburban Double Deck
+STR_INFO_COMENG_SADD_BG:{BLACK}Role:{GOLD}Suburban Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Fictional, based on proposed SA 2000 Class DMU design
+
+STR_NAME_COMENG_SADD_DT:Comeng Suburban Double Deck Driving Trailer
+STR_INFO_COMENG_SADD_DT:{BLACK}Role:{GOLD}Suburban Service {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Based on:{GOLD}Fictional, based on proposed SA 2000 Class DMU design
+STR_NAME_COMENG_SADD_DT_BG:Comeng Suburban Double Deck Driving Trailer
+STR_INFO_COMENG_SADD_DT_BG:{BLACK}Role:{GOLD}Suburban Service {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Based on:{GOLD}Fictional, based on proposed SA 2000 Class DMU design
+
 
 
 
