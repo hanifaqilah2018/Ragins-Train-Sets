@@ -115,6 +115,18 @@ STR_INFO_COMENG_SADD_DT:{BLACK}Role:{GOLD}Suburban Service {}{BLACK}Gauge:{GOLD}
 STR_NAME_COMENG_SADD_DT_BG:Comeng Suburban Double Deck Driving Trailer
 STR_INFO_COMENG_SADD_DT_BG:{BLACK}Role:{GOLD}Suburban Service {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Based on:{GOLD}Fictional, based on proposed SA 2000 Class DMU design
 
+STR_NAME_GONINAN_TANGARA_COACH:Goninan Tangara Coach
+STR_INFO_GONINAN_TANGARA_COACH:{BLACK}Role:{GOLD}Suburban Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Fictional, locomotive hauled version of the Tangara
+
+STR_NAME_GONINAN_TANGARA_COACH_DT:Goninan Tangara Driving Trailer
+STR_INFO_GONINAN_TANGARA_COACH_DT:{BLACK}Role:{GOLD}Suburban Service {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Based on:{GOLD}Fictional, locomotive hauled version of the Tangara
+
+STR_NAME_GONINAN_4D_COACH_BG:Goninan 4D Coach
+STR_INFO_GONINAN_4D_COACH_BG:{BLACK}Role:{GOLD}Suburban Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Fictional, locomotive hauled version of the 4D
+
+STR_NAME_GONINAN_4D_COACH_DT_BG:Goninan 4D Driving Trailer
+STR_INFO_GONINAN_4D_COACH_DT_BG:{BLACK}Role:{GOLD}Suburban Service {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Based on:{GOLD}Fictional, locomotive hauled version of the 4D
+
 
 
 
@@ -125,7 +137,7 @@ STR_INFO_MAIL_TULLOCH_INTERURBANCOACH:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:
 
 STR_NAME_SILVERSTAR:Hitachi-Nippon Sharyo Silver Star Coach
 STR_INFO_SILVERSTAR:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Based on: {GOLD}NZR Silver Star Coaches
-STR_NAME_MAIL_SILVERSTAR:Tulloch Hitachi-Nippon Sharyo Silver Star Mail Coach
+STR_NAME_MAIL_SILVERSTAR:Hitachi-Nippon Sharyo Silver Star Mail Coach
 STR_INFO_MAIL_SILVERSTAR:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Based on: {GOLD}NZR Silver Star Coaches
 
 STR_NAME_VLINE_RTYPE:Comeng High Speed Coach
@@ -137,6 +149,8 @@ STR_NAME_MAIL_VLINE_RTYPE:Comeng High Speed Mail Coach
 STR_INFO_MAIL_VLINE_RTYPE:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Based on:{GOLD}Proposed V/Line R-Type Coaches
 STR_NAME_MAIL_VLINE_RTYPE_BG:Comeng High Speed Mail Coach
 STR_INFO_MAIL_VLINE_RTYPE_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Based on:{GOLD}Proposed V/Line R-Type Coaches
+
+
 
 STR_NAME_GEN2A_GOODSVAN_NG:Goods Van
 STR_INFO_GEN2A_GOODSVAN_NG:{BLACK}Gauge:{GOLD} Narrow Gauge

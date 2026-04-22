@@ -3745,6 +3745,7 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_Liv0, Comeng_SADD_DT_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -3775,7 +3776,7 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_Liv0, Comeng_SADD_DT_Liv0_ID) {
 		cost_factor:					Comeng_SADD_CostFactor;
 		running_cost_factor:			Comeng_SADD_RunningCostFactor;
 		cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
-		power:							1 hp;
+		power:							1 hp;//Remove
 		weight:							Comeng_SADD_Weight ton;
 
 //        variant_group: 					Item_Comeng_SADD_DT_Liv0;
@@ -3794,6 +3795,7 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_BG_Liv0, Comeng_SADD_DT_BG_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     BG_RAIL_ONLY;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -3824,7 +3826,7 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_BG_Liv0, Comeng_SADD_DT_BG_Liv0_ID) {
 		cost_factor:					Comeng_SADD_CostFactor;
 		running_cost_factor:			Comeng_SADD_RunningCostFactor;
 		cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
-		power:							1 hp;
+		power:							1 hp;//Remove
 		weight:							Comeng_SADD_Weight ton;
 
 //        variant_group: 					Item_Comeng_SADD_DT_BG_Liv0;
@@ -3834,6 +3836,794 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_BG_Liv0, Comeng_SADD_DT_BG_Liv0_ID) {
     default:                            switch_Comeng_SADD_DT_Liv0_rearcheck;
     purchase:                           switch_Comeng_SADD_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_COMENG_SADD_DT_BG);
+}
+}
+
+//Goninan_Tangara_Coach
+//ID
+const Goninan_Tangara_Coach_ID = 6800;
+//introduction_date
+const Goninan_Tangara_Coach_IntroDate = date(1989, 1, 1);
+//speed
+const Goninan_Tangara_Coach_Speed = 115;
+//cost_factor
+const Goninan_Tangara_Coach_CostFactor = 87;
+//running_cost_factor
+const Goninan_Tangara_Coach_RunningCostFactor = 36;
+//Cargo Capacity
+const Goninan_Tangara_Coach_CargoCapacity = 173;
+//weight
+const Goninan_Tangara_Coach_Weight = 46;
+//length
+const Goninan_Tangara_Coach_Length = 8;
+
+//Goninan_Tangara_Coach_Liv0
+spriteset(spriteset_Goninan_Tangara_Coach_Liv0_Purchase,   "gfx/Goninan_Tangara_Coach_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Goninan_Tangara_Coach_Liv0,   "gfx/Goninan_Tangara_Coach_Liv0.png") {template_8_repeat(7, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_Liv0_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_Liv0;
+	1: switch_Couplers_8_Repeat;
+}
+
+//Terminal Cars Switches
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv0_TerminalStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_Liv0;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_8_Modern_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Goninan_Tangara_Coach_Liv0_TerminalStack1;
+    return switch_Goninan_Tangara_Coach_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv0_TerminalStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_Liv0;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_8_Modern_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Goninan_Tangara_Coach_Liv0_TerminalStack2;
+    return switch_Goninan_Tangara_Coach_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Goninan_Tangara_Coach_Liv0_rearcheck1;
+ 1: switch_Goninan_Tangara_Coach_Liv0_rearcheck2;
+}
+
+const Goninan_Tangara_Coach_Liv0_ID = (Goninan_Tangara_Coach_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_Liv0, Goninan_Tangara_Coach_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_GONINAN_TANGARA_COACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Goninan_Tangara_Coach_IntroDate;		
+		length:                         Goninan_Tangara_Coach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Goninan_Tangara_Coach_Speed km/h;
+		cost_factor:					Goninan_Tangara_Coach_CostFactor;
+		running_cost_factor:			Goninan_Tangara_Coach_RunningCostFactor;
+		cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Goninan_Tangara_Coach_Weight ton;
+
+//        variant_group: 					Item_Goninan_Tangara_Coach_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Goninan_Tangara_Coach_Liv0_position;
+    purchase:                           switch_Goninan_Tangara_Coach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH);
+}
+}
+
+//Goninan_Tangara_Coach_DT_Liv0
+spriteset(spriteset_Goninan_Tangara_Coach_DT_Liv0_Purchase,   "gfx/Goninan_Tangara_Coach_Liv0.png") {template_purchase_8(187, 21)}
+
+spriteset(spriteset_Goninan_Tangara_Coach_DT_Liv0,   "gfx/Goninan_Tangara_Coach_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_Goninan_Tangara_Coach_DT_Liv0_r,   "gfx/Goninan_Tangara_Coach_Liv0.png") {template_8_r(187, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_DT_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_DT_Liv0_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Forwards
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_DT_Liv0_ForwardStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_DT_Liv0;
+	1: switch_Couplers_8_Repeat;
+}
+
+//Backwards
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_DT_Liv0_ReverseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_DT_Liv0_r;
+	1: switch_Couplers_8_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_DT_Liv0_rearcheck, position_in_consist){
+    0 : switch_Goninan_Tangara_Coach_DT_Liv0_ForwardStack;
+    return switch_Goninan_Tangara_Coach_DT_Liv0_ReverseStack;
+}
+
+const Goninan_Tangara_Coach_DT_Liv0_ID = (Goninan_Tangara_Coach_Liv0_ID + 50);
+
+item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv0, Goninan_Tangara_Coach_DT_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_GONINAN_TANGARA_COACH_DT);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              Goninan_Tangara_Coach_IntroDate;		
+		length:                         Goninan_Tangara_Coach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Goninan_Tangara_Coach_Speed km/h;
+		cost_factor:					Goninan_Tangara_Coach_CostFactor;
+		running_cost_factor:			Goninan_Tangara_Coach_RunningCostFactor;
+		cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
+		power:							1 hp;//Remove
+		weight:							Goninan_Tangara_Coach_Weight ton;
+
+//        variant_group: 					Item_Goninan_Tangara_Coach_DT_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Goninan_Tangara_Coach_DT_Liv0_rearcheck;
+    purchase:                           switch_Goninan_Tangara_Coach_DT_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH_DT);
+}
+}
+
+//Goninan_Tangara_Coach_Liv1
+spriteset(spriteset_Goninan_Tangara_Coach_Liv1_Purchase,   "gfx/Goninan_Tangara_Coach_Liv1.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Goninan_Tangara_Coach_Liv1,   "gfx/Goninan_Tangara_Coach_Liv1.png") {template_8_repeat(7, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_Liv1_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv1_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_Liv1;
+	1: switch_Couplers_8_Repeat;
+}
+
+//Terminal Cars Switches
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv1_TerminalStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_Liv1;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_8_Modern_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_Goninan_Tangara_Coach_Liv1_TerminalStack1;
+    return switch_Goninan_Tangara_Coach_Liv1_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv1_TerminalStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_Liv1;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_8_Modern_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_Goninan_Tangara_Coach_Liv1_TerminalStack2;
+    return switch_Goninan_Tangara_Coach_Liv1_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Goninan_Tangara_Coach_Liv1_rearcheck1;
+ 1: switch_Goninan_Tangara_Coach_Liv1_rearcheck2;
+}
+
+const Goninan_Tangara_Coach_Liv1_ID = (Goninan_Tangara_Coach_ID + Liv1_ID);
+
+item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_Liv1, Goninan_Tangara_Coach_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_GONINAN_TANGARA_COACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Goninan_Tangara_Coach_IntroDate;		
+		length:                         Goninan_Tangara_Coach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Goninan_Tangara_Coach_Speed km/h;
+		cost_factor:					Goninan_Tangara_Coach_CostFactor;
+		running_cost_factor:			Goninan_Tangara_Coach_RunningCostFactor;
+		cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Goninan_Tangara_Coach_Weight ton;
+
+        variant_group: 					Item_Goninan_Tangara_Coach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Goninan_Tangara_Coach_Liv1_position;
+    purchase:                           switch_Goninan_Tangara_Coach_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH);
+}
+}
+
+//Goninan_Tangara_Coach_DT_Liv1
+spriteset(spriteset_Goninan_Tangara_Coach_DT_Liv1_Purchase,   "gfx/Goninan_Tangara_Coach_Liv1.png") {template_purchase_8(187, 21)}
+
+spriteset(spriteset_Goninan_Tangara_Coach_DT_Liv1,   "gfx/Goninan_Tangara_Coach_Liv1.png") {template_8(187, 39)}
+spriteset(spriteset_Goninan_Tangara_Coach_DT_Liv1_r,   "gfx/Goninan_Tangara_Coach_Liv1.png") {template_8_r(187, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_DT_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_DT_Liv1_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Forwards
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_DT_Liv1_ForwardStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_DT_Liv1;
+	1: switch_Couplers_8_Repeat;
+}
+
+//Backwards
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_DT_Liv1_ReverseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_DT_Liv1_r;
+	1: switch_Couplers_8_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_DT_Liv1_rearcheck, position_in_consist){
+    0 : switch_Goninan_Tangara_Coach_DT_Liv1_ForwardStack;
+    return switch_Goninan_Tangara_Coach_DT_Liv1_ReverseStack;
+}
+
+const Goninan_Tangara_Coach_DT_Liv1_ID = (Goninan_Tangara_Coach_Liv1_ID + 50);
+
+item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv1, Goninan_Tangara_Coach_DT_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_GONINAN_TANGARA_COACH_DT);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              Goninan_Tangara_Coach_IntroDate;		
+		length:                         Goninan_Tangara_Coach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Goninan_Tangara_Coach_Speed km/h;
+		cost_factor:					Goninan_Tangara_Coach_CostFactor;
+		running_cost_factor:			Goninan_Tangara_Coach_RunningCostFactor;
+		cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
+		power:							1 hp;//Remove
+		weight:							Goninan_Tangara_Coach_Weight ton;
+
+        variant_group: 					Item_Goninan_Tangara_Coach_DT_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Goninan_Tangara_Coach_DT_Liv1_rearcheck;
+    purchase:                           switch_Goninan_Tangara_Coach_DT_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH_DT);
+}
+}
+
+//Goninan_Tangara_Coach_Liv2
+spriteset(spriteset_Goninan_Tangara_Coach_Liv2_Purchase,   "gfx/Goninan_Tangara_Coach_Liv2.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Goninan_Tangara_Coach_Liv2,   "gfx/Goninan_Tangara_Coach_Liv2.png") {template_8_repeat(7, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv2_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_Liv2_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv2_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_Liv2;
+	1: switch_Couplers_8_Repeat;
+}
+
+//Terminal Cars Switches
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv2_TerminalStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_Liv2;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_8_Modern_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv2_rearcheck1, position_in_consist_from_end){
+    0 : switch_Goninan_Tangara_Coach_Liv2_TerminalStack1;
+    return switch_Goninan_Tangara_Coach_Liv2_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv2_TerminalStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_Liv2;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_8_Modern_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv2_rearcheck2, position_in_consist_from_end){
+    0 : switch_Goninan_Tangara_Coach_Liv2_TerminalStack2;
+    return switch_Goninan_Tangara_Coach_Liv2_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_Liv2_position, vehicle_is_flipped) {
+ 0: switch_Goninan_Tangara_Coach_Liv2_rearcheck1;
+ 1: switch_Goninan_Tangara_Coach_Liv2_rearcheck2;
+}
+
+const Goninan_Tangara_Coach_Liv2_ID = (Goninan_Tangara_Coach_ID + Liv2_ID);
+
+item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_Liv2, Goninan_Tangara_Coach_Liv2_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_GONINAN_TANGARA_COACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Goninan_Tangara_Coach_IntroDate;		
+		length:                         Goninan_Tangara_Coach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Goninan_Tangara_Coach_Speed km/h;
+		cost_factor:					Goninan_Tangara_Coach_CostFactor;
+		running_cost_factor:			Goninan_Tangara_Coach_RunningCostFactor;
+		cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Goninan_Tangara_Coach_Weight ton;
+
+        variant_group: 					Item_Goninan_Tangara_Coach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Goninan_Tangara_Coach_Liv2_position;
+    purchase:                           switch_Goninan_Tangara_Coach_Liv2_PurchaseStack;
+    additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH);
+}
+}
+
+//Goninan_Tangara_Coach_DT_Liv2
+spriteset(spriteset_Goninan_Tangara_Coach_DT_Liv2_Purchase,   "gfx/Goninan_Tangara_Coach_Liv2.png") {template_purchase_8(187, 21)}
+
+spriteset(spriteset_Goninan_Tangara_Coach_DT_Liv2,   "gfx/Goninan_Tangara_Coach_Liv2.png") {template_8(187, 39)}
+spriteset(spriteset_Goninan_Tangara_Coach_DT_Liv2_r,   "gfx/Goninan_Tangara_Coach_Liv2.png") {template_8_r(187, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_DT_Liv2_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_DT_Liv2_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Forwards
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_DT_Liv2_ForwardStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_DT_Liv2;
+	1: switch_Couplers_8_Repeat;
+}
+
+//Backwards
+switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_DT_Liv2_ReverseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_Tangara_Coach_DT_Liv2_r;
+	1: switch_Couplers_8_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_Tangara_Coach_DT_Liv2_rearcheck, position_in_consist){
+    0 : switch_Goninan_Tangara_Coach_DT_Liv2_ForwardStack;
+    return switch_Goninan_Tangara_Coach_DT_Liv2_ReverseStack;
+}
+
+const Goninan_Tangara_Coach_DT_Liv2_ID = (Goninan_Tangara_Coach_Liv2_ID + 50);
+
+item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv2, Goninan_Tangara_Coach_DT_Liv2_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_GONINAN_TANGARA_COACH_DT);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              Goninan_Tangara_Coach_IntroDate;		
+		length:                         Goninan_Tangara_Coach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Goninan_Tangara_Coach_Speed km/h;
+		cost_factor:					Goninan_Tangara_Coach_CostFactor;
+		running_cost_factor:			Goninan_Tangara_Coach_RunningCostFactor;
+		cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
+		power:							1 hp;//Remove
+		weight:							Goninan_Tangara_Coach_Weight ton;
+
+        variant_group: 					Item_Goninan_Tangara_Coach_DT_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Goninan_Tangara_Coach_DT_Liv2_rearcheck;
+    purchase:                           switch_Goninan_Tangara_Coach_DT_Liv2_PurchaseStack;
+    additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH_DT);
+}
+}
+
+//Goninan_4D_Coach
+//ID
+const Goninan_4D_Coach_ID = 6900;
+//introduction_date
+const Goninan_4D_Coach_IntroDate = date(1992, 1, 1);
+//speed
+const Goninan_4D_Coach_Speed = 115;
+//cost_factor
+const Goninan_4D_Coach_CostFactor = 88;
+//running_cost_factor
+const Goninan_4D_Coach_RunningCostFactor = 37;
+//Cargo Capacity
+const Goninan_4D_Coach_CargoCapacity = 175;
+//weight
+const Goninan_4D_Coach_Weight = 46;
+//length
+const Goninan_4D_Coach_Length = 8;
+
+//Goninan_4D_Coach_Liv0
+spriteset(spriteset_Goninan_4D_Coach_Liv0_Purchase,   "gfx/Goninan_4D_Coach_Liv0.png") {template_purchase_8(7, 21)}
+spriteset(spriteset_Goninan_4D_Coach_Liv0,   "gfx/Goninan_4D_Coach_Liv0.png") {template_8_repeat(7, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Goninan_4D_Coach_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_4D_Coach_Liv0_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_Goninan_4D_Coach_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_4D_Coach_Liv0;
+	1: switch_Couplers_8_Repeat;
+}
+
+//Terminal Cars Switches
+switch (FEAT_TRAINS, SELF, switch_Goninan_4D_Coach_Liv0_TerminalStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_4D_Coach_Liv0;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_8_Modern_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_4D_Coach_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Goninan_4D_Coach_Liv0_TerminalStack1;
+    return switch_Goninan_4D_Coach_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Goninan_4D_Coach_Liv0_TerminalStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_4D_Coach_Liv0;
+	1: switch_Couplers_8_Repeat;
+    2: spriteset_8_Modern_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_4D_Coach_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Goninan_4D_Coach_Liv0_TerminalStack2;
+    return switch_Goninan_4D_Coach_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_4D_Coach_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Goninan_4D_Coach_Liv0_rearcheck1;
+ 1: switch_Goninan_4D_Coach_Liv0_rearcheck2;
+}
+
+const Goninan_4D_Coach_BG_Liv0_ID = (Goninan_4D_Coach_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Goninan_4D_Coach_BG_Liv0, Goninan_4D_Coach_BG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_GONINAN_4D_COACH_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Goninan_4D_Coach_IntroDate;		
+		length:                         Goninan_4D_Coach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Goninan_4D_Coach_Speed km/h;
+		cost_factor:					Goninan_4D_Coach_CostFactor;
+		running_cost_factor:			Goninan_4D_Coach_RunningCostFactor;
+		cargo_capacity: 				(Goninan_4D_Coach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Goninan_4D_Coach_Weight ton;
+
+//        variant_group: 					Item_Goninan_4D_Coach_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Goninan_4D_Coach_Liv0_position;
+    purchase:                           switch_Goninan_4D_Coach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_GONINAN_4D_COACH_BG);
+}
+}
+
+//Goninan_4D_Coach_DT_Liv0
+spriteset(spriteset_Goninan_4D_Coach_DT_Liv0_Purchase,   "gfx/Goninan_4D_Coach_Liv0.png") {template_purchase_8(187, 21)}
+
+spriteset(spriteset_Goninan_4D_Coach_DT_Liv0,   "gfx/Goninan_4D_Coach_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_Goninan_4D_Coach_DT_Liv0_r,   "gfx/Goninan_4D_Coach_Liv0.png") {template_8_r(187, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Goninan_4D_Coach_DT_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_4D_Coach_DT_Liv0_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Forwards
+switch (FEAT_TRAINS, SELF, switch_Goninan_4D_Coach_DT_Liv0_ForwardStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_4D_Coach_DT_Liv0;
+	1: switch_Couplers_8_Repeat;
+}
+
+//Backwards
+switch (FEAT_TRAINS, SELF, switch_Goninan_4D_Coach_DT_Liv0_ReverseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Goninan_4D_Coach_DT_Liv0_r;
+	1: switch_Couplers_8_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Goninan_4D_Coach_DT_Liv0_rearcheck, position_in_consist){
+    0 : switch_Goninan_4D_Coach_DT_Liv0_ForwardStack;
+    return switch_Goninan_4D_Coach_DT_Liv0_ReverseStack;
+}
+
+const Goninan_4D_Coach_DT_BG_Liv0_ID = (Goninan_4D_Coach_BG_Liv0_ID + 50);
+
+item (FEAT_TRAINS, Item_Goninan_4D_Coach_DT_BG_Liv0, Goninan_4D_Coach_DT_BG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
+		track_type:                     BG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_GONINAN_4D_COACH_DT_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              Goninan_4D_Coach_IntroDate;		
+		length:                         Goninan_4D_Coach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Goninan_4D_Coach_Speed km/h;
+		cost_factor:					Goninan_4D_Coach_CostFactor;
+		running_cost_factor:			Goninan_4D_Coach_RunningCostFactor;
+		cargo_capacity: 				(Goninan_4D_Coach_CargoCapacity / param_capacity_mod);
+		power:							1 hp;//Remove
+		weight:							Goninan_4D_Coach_Weight ton;
+
+//        variant_group: 					Item_Goninan_4D_Coach_DT_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Goninan_4D_Coach_DT_Liv0_rearcheck;
+    purchase:                           switch_Goninan_4D_Coach_DT_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_GONINAN_4D_COACH_DT_BG);
 }
 }
 
