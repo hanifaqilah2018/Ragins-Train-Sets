@@ -2214,7 +2214,7 @@ item (FEAT_TRAINS, Item_Mail_Early_4Wheel_NG_Liv0, Mail_Early_4Wheel_NG_Liv0_ID)
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Mail_Early_4Wheel_Liv0_NormalStack;
+    default:                            switch_Mail_Early_4Wheel_Liv0_position;
     purchase:                           switch_Mail_Early_4Wheel_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_MAIL_EARLY_4WHEEL_NG);
 	cargo_capacity: 					(Early_4Wheel_CargoCapacity / param_capacity_mod);
@@ -2259,7 +2259,7 @@ item (FEAT_TRAINS, Item_Mail_Early_4Wheel_Liv0, Mail_Early_4Wheel_Liv0_ID) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Mail_Early_4Wheel_Liv0_NormalStack;
+    default:                            switch_Mail_Early_4Wheel_Liv0_position;
     purchase:                           switch_Mail_Early_4Wheel_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_MAIL_EARLY_4WHEEL);
 	cargo_capacity: 					(Early_4Wheel_CargoCapacity / param_capacity_mod);
@@ -2304,7 +2304,7 @@ item (FEAT_TRAINS, Item_Mail_Early_4Wheel_BG_Liv0, Mail_Early_4Wheel_BG_Liv0_ID)
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Mail_Early_4Wheel_Liv0_NormalStack;
+    default:                            switch_Mail_Early_4Wheel_Liv0_position;
     purchase:                           switch_Mail_Early_4Wheel_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_MAIL_EARLY_4WHEEL_BG);
 	cargo_capacity: 					(Early_4Wheel_CargoCapacity / param_capacity_mod);
@@ -5317,7 +5317,7 @@ item (FEAT_TRAINS, Item_Mail_AmericanCoach_NG_Liv0, Mail_AmericanCoach_NG_Liv0_I
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Mail_AmericanCoach_Liv0_NormalStack;
+    default:                            switch_Mail_AmericanCoach_Liv0_position;
     purchase:                           switch_Mail_AmericanCoach_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_MAIL_AMERICANCOACH_NG);
 	cargo_capacity: 					(AmericanCoach_CargoCapacity / param_capacity_mod);
@@ -5362,7 +5362,7 @@ item (FEAT_TRAINS, Item_Mail_AmericanCoach_Liv0, Mail_AmericanCoach_Liv0_ID) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Mail_AmericanCoach_Liv0_NormalStack;
+    default:                            switch_Mail_AmericanCoach_Liv0_position;
     purchase:                           switch_Mail_AmericanCoach_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_MAIL_AMERICANCOACH);
 	cargo_capacity: 					(AmericanCoach_CargoCapacity / param_capacity_mod);
@@ -5407,7 +5407,7 @@ item (FEAT_TRAINS, Item_Mail_AmericanCoach_BG_Liv0, Mail_AmericanCoach_BG_Liv0_I
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Mail_AmericanCoach_Liv0_NormalStack;
+    default:                            switch_Mail_AmericanCoach_Liv0_position;
     purchase:                           switch_Mail_AmericanCoach_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_MAIL_AMERICANCOACH_BG);
 	cargo_capacity: 					(AmericanCoach_CargoCapacity / param_capacity_mod);
@@ -5631,10 +5631,190 @@ item (FEAT_TRAINS, Item_Mail_NZR_50ft_NG_Liv0, Mail_NZR_50ft_NG_Liv0_ID) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
 	}
     graphics {
-    default:                            switch_Mail_NZR_50ft_Liv0_NormalStack;
+    default:                            switch_Mail_NZR_50ft_Liv0_position;
     purchase:                           switch_Mail_NZR_50ft_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_MAIL_NZR_50FT_NG);
 	cargo_capacity: 					(NZR_50ft_CargoCapacity / param_capacity_mod);
+}
+}
+
+//ID
+const NZR_56ft_ID = 9600;
+//introduction_date
+const NZR_56ft_IntroDate = date(1937, 1, 1);
+//speed
+const NZR_56ft_Speed = 80;
+//cost_factor
+const NZR_56ft_CostFactor = 50;
+//running_cost_factor
+const NZR_56ft_RunningCostFactor = 21;
+//Cargo Capacity
+const NZR_56ft_CargoCapacity = 56;
+//weight
+const NZR_56ft_Weight = 24;
+//length
+const NZR_56ft_Length = 7;
+
+//NZR_56ft_Liv0
+spriteset(spriteset_NZR_56ft_Liv0_Purchase,   "gfx/NZR_56ft_Liv0.png") {template_purchase_7(7, 21)}
+
+spriteset(spriteset_NZR_56ft_Liv0,   "gfx/NZR_56ft_Liv0.png") {template_7_repeat(7, 39)}
+
+//Terminal stacks
+switch (FEAT_TRAINS, SELF, switch_NZR_56ft_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZR_56ft_Liv0;
+    1: spriteset_7_Old_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NZR_56ft_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_NZR_56ft_Liv0_SpriteStack1;
+    return spriteset_NZR_56ft_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NZR_56ft_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZR_56ft_Liv0;
+    1: spriteset_7_Old_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NZR_56ft_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_NZR_56ft_Liv0_SpriteStack2;
+    return spriteset_NZR_56ft_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NZR_56ft_Liv0_position, vehicle_is_flipped) {
+ 0: switch_NZR_56ft_Liv0_rearcheck1;
+ 1: switch_NZR_56ft_Liv0_rearcheck2;
+}
+
+const NZR_56ft_Liv0_ID_NG = (NZR_56ft_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_NZR_56ft_NG_Liv0, NZR_56ft_Liv0_ID_NG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_NZR_56FT_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NZR_56ft_IntroDate;		
+		length:                         NZR_56ft_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NZR_56ft_Speed km/h;
+		cost_factor:					NZR_56ft_CostFactor;
+		running_cost_factor:			NZR_56ft_RunningCostFactor;
+		cargo_capacity: 				(NZR_56ft_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NZR_56ft_Weight ton;
+
+//        variant_group: 					Item_NZR_56ft_NG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_NZR_56ft_Liv0_position;
+    purchase:                           spriteset_NZR_56ft_Liv0_Purchase;
+    additional_text: 					string(STR_INFO_NZR_56FT_NG);
+	cargo_capacity: 					(NZR_56ft_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Mail_NZR_56ft_Liv0
+spriteset(spriteset_Mail_NZR_56ft_Liv0_Purchase,   "gfx/NZR_56ft_Liv0.png") {template_purchase_7(187, 21)}
+spriteset(spriteset_Mail_NZR_56ft_Liv0,   "gfx/NZR_56ft_Liv0.png") {template_7_repeat(187, 39)}
+
+//Terminal Stacks
+switch (FEAT_TRAINS, SELF, switch_Mail_NZR_56ft_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_NZR_56ft_Liv0;
+    1: spriteset_7_Old_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_NZR_56ft_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_NZR_56ft_Liv0_SpriteStack1;
+    return spriteset_Mail_NZR_56ft_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_NZR_56ft_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_NZR_56ft_Liv0;
+    1: spriteset_7_Old_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_NZR_56ft_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_NZR_56ft_Liv0_SpriteStack2;
+    return spriteset_Mail_NZR_56ft_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_NZR_56ft_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_NZR_56ft_Liv0_rearcheck1;
+ 1: switch_Mail_NZR_56ft_Liv0_rearcheck2;
+}
+
+const Mail_NZR_56ft_NG_Liv0_ID = (NZR_56ft_Liv0_ID_NG + 50);
+
+item (FEAT_TRAINS, Item_Mail_NZR_56ft_NG_Liv0, Mail_NZR_56ft_NG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_NZR_56FT_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NZR_56ft_IntroDate;		
+		length:                         NZR_56ft_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NZR_56ft_Speed km/h;
+		cost_factor:					NZR_56ft_CostFactor;
+		running_cost_factor:			NZR_56ft_RunningCostFactor;
+		cargo_capacity: 				(NZR_56ft_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NZR_56ft_Weight ton;
+
+//        variant_group: 					Item_Mail_NZR_56ft_NG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_NZR_56ft_Liv0_position;
+    purchase:                           spriteset_Mail_NZR_56ft_Liv0_Purchase;
+    additional_text: 					string(STR_INFO_MAIL_NZR_56FT_NG);
+	cargo_capacity: 					(NZR_56ft_CargoCapacity / param_capacity_mod);
 }
 }
 

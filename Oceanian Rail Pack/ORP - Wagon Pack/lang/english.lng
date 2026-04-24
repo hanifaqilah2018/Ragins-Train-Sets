@@ -112,6 +112,12 @@ STR_INFO_NZR_50FT_NG:{BLACK}Role:{GOLD}General/Intercity Service {}{BLACK}Gauge:
 STR_NAME_MAIL_NZR_50FT_NG:50ft End Platform Mail Coach
 STR_INFO_MAIL_NZR_50FT_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 50ft Coaches
 
+STR_NAME_NZR_56FT_NG:56ft Bogie Coach
+STR_INFO_NZR_56FT_NG:{BLACK}Role:{GOLD}General/Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 56ft Coaches
+
+STR_NAME_MAIL_NZR_56FT_NG:56ft Bogie Mail Coach
+STR_INFO_MAIL_NZR_56FT_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 56ft Coaches
+
 
 STR_NAME_VLINE_HTYPE:Comeng-M&K H-Type Suburban Coach
 STR_INFO_VLINE_HTYPE:{BLACK}Role:{GOLD}Suburban/Country Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}VLine H-Type Coaches
