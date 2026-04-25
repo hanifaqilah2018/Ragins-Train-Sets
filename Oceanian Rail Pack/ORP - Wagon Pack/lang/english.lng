@@ -60,6 +60,18 @@ STR_INFO_MAIL_EARLY_4WHEEL_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} B
 
 
 
+STR_NAME_SUBURBAN_4WHEEL_NG:Suburban 4-Wheel Coach
+STR_INFO_SUBURBAN_4WHEEL_NG:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early 4-wheel suburban coaches used in Australia/New Zealand
+STR_NAME_SUBURBAN_4WHEEL:Suburban 4-Wheel Coach
+STR_INFO_SUBURBAN_4WHEEL:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early 4-wheel suburban coaches used in Australia/New Zealand
+STR_NAME_SUBURBAN_4WHEEL_BG:Suburban 4-Wheel Coach
+STR_INFO_SUBURBAN_4WHEEL_BG:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early 4-wheel suburban coaches used in Australia/New Zealand
+
+STR_NAME_NSW_KATRAMCAR:Bogie End Platform Suburban Coach
+STR_INFO_NSW_KATRAMCAR:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}NSW KA Type Tramway cars
+STR_NAME_NSW_KATRAMCAR_BG:Bogie End Platform Suburban Coach
+STR_INFO_NSW_KATRAMCAR_BG:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}NSW KA Type Tramway cars
+
 STR_NAME_ENDPLATFORM4WHEEL_NG:End Platform 4-Wheel Suburban Coach
 STR_INFO_ENDPLATFORM4WHEEL_NG:{BLACK}Role:{GOLD}General Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}SAR End Platform Suburban Coaches
 STR_NAME_ENDPLATFORM4WHEEL:End Platform 4-Wheel Suburban Coach
@@ -93,6 +105,18 @@ STR_NAME_MAIL_AMERICANCOACH:American Mail Coach
 STR_INFO_MAIL_AMERICANCOACH:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
 STR_NAME_MAIL_AMERICANCOACH_BG:American Mail Coach
 STR_INFO_MAIL_AMERICANCOACH_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+
+STR_NAME_NZR_50FT_NG:50ft End Platform Coach
+STR_INFO_NZR_50FT_NG:{BLACK}Role:{GOLD}General/Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 50ft Coaches
+
+STR_NAME_MAIL_NZR_50FT_NG:50ft End Platform Mail Coach
+STR_INFO_MAIL_NZR_50FT_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 50ft Coaches
+
+STR_NAME_NZR_56FT_NG:56ft Bogie Coach
+STR_INFO_NZR_56FT_NG:{BLACK}Role:{GOLD}General/Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 56ft Coaches
+
+STR_NAME_MAIL_NZR_56FT_NG:56ft Bogie Mail Coach
+STR_INFO_MAIL_NZR_56FT_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 56ft Coaches
 
 
 STR_NAME_VLINE_HTYPE:Comeng-M&K H-Type Suburban Coach
@@ -149,6 +173,21 @@ STR_NAME_MAIL_VLINE_RTYPE:Comeng High Speed Mail Coach
 STR_INFO_MAIL_VLINE_RTYPE:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Based on:{GOLD}Proposed V/Line R-Type Coaches
 STR_NAME_MAIL_VLINE_RTYPE_BG:Comeng High Speed Mail Coach
 STR_INFO_MAIL_VLINE_RTYPE_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Based on:{GOLD}Proposed V/Line R-Type Coaches
+
+STR_NAME_BREL_MK3:BREL Mk3 Coach
+STR_INFO_BREL_MK3:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}BREL Mk3 coaches proposed for use by V/Line
+STR_NAME_BREL_MK3_BG:BREL Mk3 Coach
+STR_INFO_BREL_MK3_BG:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}BREL Mk3 coaches proposed for use by V/Line
+
+STR_NAME_MAIL_BREL_MK3:BREL Mk3 Mail Van
+STR_INFO_MAIL_BREL_MK3:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Based on:{GOLD}BREL Mk3 coaches proposed for use by V/Line
+STR_NAME_MAIL_BREL_MK3_BG:BREL Mk3 Mail Van
+STR_INFO_MAIL_BREL_MK3_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Based on:{GOLD}BREL Mk3 coaches proposed for use by V/Line
+
+STR_NAME_BREL_MK3_DT:BREL Mk3 Driving Van Trailer
+STR_INFO_BREL_MK3_DT:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Based on:{GOLD}BREL Mk3 coaches proposed for use by V/Line
+STR_NAME_BREL_MK3_DT_BG:BREL Mk3 Driving Van Trailer
+STR_INFO_BREL_MK3_DT_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Based on:{GOLD}BREL Mk3 coaches proposed for use by V/Line
 
 
 
