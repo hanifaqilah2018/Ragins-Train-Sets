@@ -43570,7 +43570,7 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv1, 14200) {
         length:                            8;
 
         weight:                        40 ton;
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         power:                            282 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     9;
@@ -43774,7 +43774,7 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv2, 14201) {
         length:                            8;
 
         weight:                        40 ton;
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         power:                            282 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     9;
@@ -43978,7 +43978,7 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv3, 14202) {
         length:                            8;
 
         weight:                        40 ton;
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         power:                            282 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     9;
@@ -44182,7 +44182,7 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv4, 14203) {
         length:                            8;
 
         weight:                        40 ton;
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         power:                            282 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     9;
@@ -53038,7 +53038,7 @@ item (FEAT_TRAINS, Item_AshburyCoach, 40240) {
         name:                             string(STR_NAME_ASHBURYCOACH);
         introduction_date:                date(1879, 1, 1);
 
-        speed:                            95 km/h;
+        speed:                            96 km/h;
         weight:                            30 ton;
         cargo_capacity:                    48/param_capacity_mod;
     }
@@ -53092,7 +53092,7 @@ item (FEAT_TRAINS, Item_Mail_AshburyCoach, 40250) {
         name:                             string(STR_NAME_MAIL_ASHBURYCOACH);
         introduction_date:                date(1879, 1, 1);
 
-        speed:                            95 km/h;
+        speed:                            96 km/h;
         weight:                            30 ton;
         cargo_capacity:                    48/param_capacity_mod;
     }
@@ -53144,7 +53144,7 @@ item (FEAT_TRAINS, Item_AshburyCoach_Liv1, 40241) {
         name:                             string(STR_NAME_ASHBURYCOACH);
         introduction_date:                date(1879, 1, 1);
 
-        speed:                            95 km/h;
+        speed:                            96 km/h;
         weight:                            30 ton;
         cargo_capacity:                    48/param_capacity_mod;
     }
@@ -53198,7 +53198,7 @@ item (FEAT_TRAINS, Item_Mail_AshburyCoach_Liv1, 40251) {
         name:                             string(STR_NAME_MAIL_ASHBURYCOACH);
         introduction_date:                date(1879, 1, 1);
 
-        speed:                            95 km/h;
+        speed:                            96 km/h;
         weight:                            30 ton;
         cargo_capacity:                    48/param_capacity_mod;
     }
@@ -53250,7 +53250,7 @@ item (FEAT_TRAINS, Item_AshburyCoach_Liv2, 40242) {
         name:                             string(STR_NAME_ASHBURYCOACH);
         introduction_date:                date(1879, 1, 1);
 
-        speed:                            95 km/h;
+        speed:                            96 km/h;
         weight:                            30 ton;
         cargo_capacity:                    48/param_capacity_mod;
     }
@@ -53304,7 +53304,7 @@ item (FEAT_TRAINS, Item_Mail_AshburyCoach_Liv2, 40252) {
         name:                             string(STR_NAME_MAIL_ASHBURYCOACH);
         introduction_date:                date(1879, 1, 1);
 
-        speed:                            95 km/h;
+        speed:                            96 km/h;
         weight:                            30 ton;
         cargo_capacity:                    48/param_capacity_mod;
     }
@@ -53356,7 +53356,7 @@ item (FEAT_TRAINS, Item_AshburyCoach_Liv3, 40243) {
         name:                             string(STR_NAME_ASHBURYCOACH);
         introduction_date:                date(1879, 1, 1);
 
-        speed:                            95 km/h;
+        speed:                            96 km/h;
         weight:                            30 ton;
         cargo_capacity:                    48/param_capacity_mod;
     }
@@ -53410,7 +53410,7 @@ item (FEAT_TRAINS, Item_Mail_AshburyCoach_Liv3, 40253) {
         name:                             string(STR_NAME_MAIL_ASHBURYCOACH);
         introduction_date:                date(1879, 1, 1);
 
-        speed:                            95 km/h;
+        speed:                            96 km/h;
         weight:                            30 ton;
         cargo_capacity:                    48/param_capacity_mod;
     }
@@ -53468,7 +53468,7 @@ item (FEAT_TRAINS, Item_VictorianInterstateCoach_Liv1, 40500) {
         name:                             string(STR_NAME_VICTORIANINTERSTATECOACH);
         introduction_date:                date(1906, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            45 ton;
         cargo_capacity:                    65/param_capacity_mod;
     }
@@ -53522,7 +53522,7 @@ item (FEAT_TRAINS, Item_Mail_VictorianInterstateCoach_Liv1, 40510) {
         name:                             string(STR_NAME_MAIL_VICTORIANINTERSTATECOACH);
         introduction_date:                date(1906, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            40 ton;
         cargo_capacity:                    65/param_capacity_mod;
     }
@@ -53580,7 +53580,7 @@ item (FEAT_TRAINS, Item_VictorianInterstateCoach_Liv2, 40501) {
         name:                             string(STR_NAME_VICTORIANINTERSTATECOACH);
         introduction_date:                date(1906, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            45 ton;
         cargo_capacity:                    65/param_capacity_mod;
     }
@@ -53634,7 +53634,7 @@ item (FEAT_TRAINS, Item_Mail_VictorianInterstateCoach_Liv2, 40511) {
         name:                             string(STR_NAME_MAIL_VICTORIANINTERSTATECOACH);
         introduction_date:                date(1906, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            40 ton;
         cargo_capacity:                    65/param_capacity_mod;
     }
@@ -53692,7 +53692,7 @@ item (FEAT_TRAINS, Item_VictorianInterstateCoach_Liv3, 40502) {
         name:                             string(STR_NAME_VICTORIANINTERSTATECOACH);
         introduction_date:                date(1906, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            45 ton;
         cargo_capacity:                    65/param_capacity_mod;
     }
@@ -53746,7 +53746,7 @@ item (FEAT_TRAINS, Item_Mail_VictorianInterstateCoach_Liv3, 40512) {
         name:                             string(STR_NAME_MAIL_VICTORIANINTERSTATECOACH);
         introduction_date:                date(1906, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            40 ton;
         cargo_capacity:                    65/param_capacity_mod;
     }
@@ -53804,7 +53804,7 @@ item (FEAT_TRAINS, Item_VictorianInterstateCoach_Liv4, 40503) {
         name:                             string(STR_NAME_VICTORIANINTERSTATECOACH);
         introduction_date:                date(1906, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            45 ton;
         cargo_capacity:                    65/param_capacity_mod;
     }
@@ -53858,7 +53858,7 @@ item (FEAT_TRAINS, Item_Mail_VictorianInterstateCoach_Liv4, 40513) {
         name:                             string(STR_NAME_MAIL_VICTORIANINTERSTATECOACH);
         introduction_date:                date(1906, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            40 ton;
         cargo_capacity:                    65/param_capacity_mod;
     }
@@ -53922,7 +53922,7 @@ item (FEAT_TRAINS, Item_NSWRType_Liv1, 40800) {
         name:                             string(STR_NAME_NSWRTYPE);
         introduction_date:                date(1931, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            24 ton;
         cargo_capacity:                    44/param_capacity_mod;
     }
@@ -58445,7 +58445,7 @@ item (FEAT_TRAINS, Item_VictorianInterstateParcelVan_Liv1, 47500) {
         name:                             string(STR_NAME_VICTORIANINTERSTATEPARCELVAN);
         introduction_date:                date(1906, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            35 ton;
         cargo_capacity:                    60/param_capacity_mod;
     }
@@ -58499,7 +58499,7 @@ item (FEAT_TRAINS, Item_VictorianInterstateParcelVan_Liv2, 47501) {
         name:                             string(STR_NAME_VICTORIANINTERSTATEPARCELVAN);
         introduction_date:                date(1906, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            35 ton;
         cargo_capacity:                    60/param_capacity_mod;
     }
@@ -58553,7 +58553,7 @@ item (FEAT_TRAINS, Item_VictorianInterstateParcelVan_Liv3, 47502) {
         name:                             string(STR_NAME_VICTORIANINTERSTATEPARCELVAN);
         introduction_date:                date(1906, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            35 ton;
         cargo_capacity:                    60/param_capacity_mod;
     }
@@ -58607,7 +58607,7 @@ item (FEAT_TRAINS, Item_VictorianInterstateParcelVan_Liv4, 47503) {
         name:                             string(STR_NAME_VICTORIANINTERSTATEPARCELVAN);
         introduction_date:                date(1906, 1, 1);
 
-        speed:                            115 km/h;
+        speed:                            120 km/h;
         weight:                            35 ton;
         cargo_capacity:                    60/param_capacity_mod;
     }
