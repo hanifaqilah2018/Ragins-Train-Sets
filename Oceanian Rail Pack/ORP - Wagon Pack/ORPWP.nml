@@ -90,6 +90,29 @@ grf{
      def_value: 0;
     }
   }
+ 
+//PrototypeDisable
+	param {
+    param_PrototypeDisable {
+     name: string(STR_PARAM_NAME_PROTOTYPEDISABLE);
+     desc: string(STR_PARAM_DESC_PROTOTYPEDISABLE);
+     type: bool;
+     bit: 0;
+     def_value: 0;
+    }
+  }
+  
+//ProposalDisable
+	param {
+    param_ProposalDisable {
+     name: string(STR_PARAM_NAME_PROPOSALDISABLE);
+     desc: string(STR_PARAM_DESC_PROPOSALDISABLE);
+     type: bool;
+     bit: 0;
+     def_value: 0;
+    }
+  }
+  
 //FictionalDisable
 	param {
     param_FictionalDisable {
@@ -99,7 +122,7 @@ grf{
      bit: 0;
      def_value: 0;
     }
-    }
+  }
 //Couplers Control
 	param {
     param_Couplers {
@@ -6976,7 +6999,7 @@ item (FEAT_TRAINS, Item_VLine_RType_Liv0, VLine_RType_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             ALL_CLIMATES;
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       CC_PASSENGERS;
 		default_cargo_type:				PASS;
 		cargo_allow_refit:              [PASS, TOUR];    
@@ -7004,7 +7027,7 @@ item (FEAT_TRAINS, Item_VLine_RType_Liv0, VLine_RType_Liv0_ID) {
 	}
     graphics {
     default:                            switch_VLine_RType_Liv0_position;
-    purchase:                           spriteset_VLine_RType_Liv0;
+    purchase:                           spriteset_VLine_RType_Liv0_Purchase;
     additional_text: 					string(STR_INFO_VLINE_RTYPE);
 }
 }
@@ -7020,7 +7043,7 @@ item (FEAT_TRAINS, Item_VLine_RType_BG_Liv0, VLine_RType_Liv0_BG_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             ALL_CLIMATES;
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       CC_PASSENGERS;
 		default_cargo_type:				PASS;
 		cargo_allow_refit:              [PASS, TOUR];    
@@ -7048,7 +7071,7 @@ item (FEAT_TRAINS, Item_VLine_RType_BG_Liv0, VLine_RType_Liv0_BG_ID) {
 	}
     graphics {
     default:                            switch_VLine_RType_Liv0_position;
-    purchase:                           spriteset_VLine_RType_Liv0;
+    purchase:                           spriteset_VLine_RType_Liv0_Purchase;
     additional_text: 					string(STR_INFO_VLINE_RTYPE_BG);
 }
 }
@@ -7099,7 +7122,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_Liv0, Mail_VLine_RType_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             ALL_CLIMATES;
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
 		default_cargo_type:				MAIL;
 //		cargo_allow_refit:              [];    
@@ -7127,7 +7150,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_Liv0, Mail_VLine_RType_Liv0_ID) {
 	}
     graphics {
     default:                            switch_Mail_VLine_RType_Liv0_position;
-    purchase:                           spriteset_Mail_VLine_RType_Liv0;
+    purchase:                           spriteset_Mail_VLine_RType_Liv0_Purchase;
     additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE);
 }
 }
@@ -7143,7 +7166,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_BG_Liv0, Mail_VLine_RType_Liv0_BG_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             ALL_CLIMATES;
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
 		default_cargo_type:				MAIL;
 //		cargo_allow_refit:              [];    
@@ -7171,7 +7194,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_BG_Liv0, Mail_VLine_RType_Liv0_BG_ID) {
 	}
     graphics {
     default:                            switch_Mail_VLine_RType_Liv0_position;
-    purchase:                           spriteset_Mail_VLine_RType_Liv0;
+    purchase:                           spriteset_Mail_VLine_RType_Liv0_Purchase;
     additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE_BG);
 }
 }
@@ -7223,7 +7246,7 @@ item (FEAT_TRAINS, Item_VLine_RType_Liv1, VLine_RType_Liv1_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             ALL_CLIMATES;
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       CC_PASSENGERS;
 		default_cargo_type:				PASS;
 		cargo_allow_refit:              [PASS, TOUR];    
@@ -7251,7 +7274,7 @@ item (FEAT_TRAINS, Item_VLine_RType_Liv1, VLine_RType_Liv1_ID) {
 	}
     graphics {
     default:                            switch_VLine_RType_Liv1_position;
-    purchase:                           spriteset_VLine_RType_Liv1;
+    purchase:                           spriteset_VLine_RType_Liv1_Purchase;
     additional_text: 					string(STR_INFO_VLINE_RTYPE);
 }
 }
@@ -7267,7 +7290,7 @@ item (FEAT_TRAINS, Item_VLine_RType_BG_Liv1, VLine_RType_Liv1_BG_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             ALL_CLIMATES;
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       CC_PASSENGERS;
 		default_cargo_type:				PASS;
 		cargo_allow_refit:              [PASS, TOUR];    
@@ -7295,7 +7318,7 @@ item (FEAT_TRAINS, Item_VLine_RType_BG_Liv1, VLine_RType_Liv1_BG_ID) {
 	}
     graphics {
     default:                            switch_VLine_RType_Liv1_position;
-    purchase:                           spriteset_VLine_RType_Liv1;
+    purchase:                           spriteset_VLine_RType_Liv1_Purchase;
     additional_text: 					string(STR_INFO_VLINE_RTYPE_BG);
 }
 }
@@ -7346,7 +7369,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_Liv1, Mail_VLine_RType_Liv1_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             ALL_CLIMATES;
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
 		default_cargo_type:				MAIL;
 //		cargo_allow_refit:              [];    
@@ -7374,7 +7397,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_Liv1, Mail_VLine_RType_Liv1_ID) {
 	}
     graphics {
     default:                            switch_Mail_VLine_RType_Liv1_position;
-    purchase:                           spriteset_Mail_VLine_RType_Liv1;
+    purchase:                           spriteset_Mail_VLine_RType_Liv1_Purchase;
     additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE);
 }
 }
@@ -7390,7 +7413,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_BG_Liv1, Mail_VLine_RType_Liv1_BG_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             ALL_CLIMATES;
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
 		default_cargo_type:				MAIL;
 //		cargo_allow_refit:              [];    
@@ -7418,8 +7441,812 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_BG_Liv1, Mail_VLine_RType_Liv1_BG_ID) {
 	}
     graphics {
     default:                            switch_Mail_VLine_RType_Liv1_position;
-    purchase:                           spriteset_Mail_VLine_RType_Liv1;
+    purchase:                           spriteset_Mail_VLine_RType_Liv1_Purchase;
     additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE_BG);
+}
+}
+
+//BREL_Mk3_Coach
+//ID
+const BREL_Mk3_ID = 11350;
+//introduction_date
+const BREL_Mk3_IntroDate = date(1984, 1, 1);
+//speed
+const BREL_Mk3_Speed = 160;
+//cost_factor
+const BREL_Mk3_CostFactor = 68;
+//running_cost_factor
+const BREL_Mk3_RunningCostFactor = 28;
+//Cargo Capacity
+const BREL_Mk3_CargoCapacity = 91;
+//weight
+const BREL_Mk3_Weight = 35;
+//length
+const BREL_Mk3_Length = 8;
+
+//BREL_Mk3_Liv0
+spriteset(spriteset_BREL_Mk3_Liv0_Purchase,   "gfx/BREL_Mk3_Liv0.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_BREL_Mk3_Liv0,   "gfx/BREL_Mk3_Liv0.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_BREL_Mk3_Liv0_Diner,   "gfx/BREL_Mk3_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_BREL_Mk3_Liv0_Terminal,   "gfx/BREL_Mk3_Liv0.png") {template_8(7, 99)}
+spriteset(spriteset_BREL_Mk3_Liv0_Terminal_r,   "gfx/BREL_Mk3_Liv0.png") {template_8_r(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_BREL_Mk3_Liv0_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_BREL_Mk3_Liv0_Diner;
+  spriteset_BREL_Mk3_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_BREL_Mk3_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_BREL_Mk3_Liv0_Terminal;
+    1: spriteset_8_Modern_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_BREL_Mk3_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_BREL_Mk3_Liv0_SpriteStack1;
+    return switch_BREL_Mk3_Liv0_dinerposition;
+}
+
+switch (FEAT_TRAINS, SELF, switch_BREL_Mk3_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_BREL_Mk3_Liv0_Terminal_r;
+    1: spriteset_8_Modern_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_BREL_Mk3_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_BREL_Mk3_Liv0_SpriteStack2;
+    return switch_BREL_Mk3_Liv0_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_BREL_Mk3_Liv0_position, vehicle_is_flipped) {
+ 0: switch_BREL_Mk3_Liv0_rearcheck1;
+ 1: switch_BREL_Mk3_Liv0_rearcheck2;
+}
+
+const BREL_Mk3_Liv0_ID = (BREL_Mk3_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_BREL_Mk3_Liv0, BREL_Mk3_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_BREL_MK3);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              BREL_Mk3_IntroDate;		
+		length:                         BREL_Mk3_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							BREL_Mk3_Speed km/h;
+		cost_factor:					BREL_Mk3_CostFactor;
+		running_cost_factor:			BREL_Mk3_RunningCostFactor;
+		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							BREL_Mk3_Weight ton;
+
+//        variant_group: 					Item_BREL_Mk3_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_BREL_Mk3_Liv0_position;
+    purchase:                           spriteset_BREL_Mk3_Liv0_Purchase;
+    additional_text: 					string(STR_INFO_BREL_MK3);
+}
+}
+
+const BREL_Mk3_BG_Liv0_ID = (BREL_Mk3_ID + 10);
+
+item (FEAT_TRAINS, Item_BREL_Mk3_BG_Liv0, BREL_Mk3_BG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_BREL_MK3_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              BREL_Mk3_IntroDate;		
+		length:                         BREL_Mk3_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							BREL_Mk3_Speed km/h;
+		cost_factor:					BREL_Mk3_CostFactor;
+		running_cost_factor:			BREL_Mk3_RunningCostFactor;
+		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							BREL_Mk3_Weight ton;
+
+//        variant_group: 					Item_BREL_Mk3_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_BREL_Mk3_Liv0_position;
+    purchase:                           spriteset_BREL_Mk3_Liv0_Purchase;
+    additional_text: 					string(STR_INFO_BREL_MK3_BG);
+}
+}
+
+//Mail_BREL_Mk3_Liv0
+spriteset(spriteset_Mail_BREL_Mk3_Liv0_Purchase,   "gfx/BREL_Mk3_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_BREL_Mk3_Liv0,   "gfx/BREL_Mk3_Liv0.png") {template_8_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_BREL_Mk3_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_BREL_Mk3_Liv0;
+    1: spriteset_8_Modern_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_BREL_Mk3_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_BREL_Mk3_Liv0_SpriteStack1;
+    return spriteset_Mail_BREL_Mk3_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_BREL_Mk3_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_BREL_Mk3_Liv0;
+    1: spriteset_8_Modern_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_BREL_Mk3_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_BREL_Mk3_Liv0_SpriteStack2;
+    return spriteset_Mail_BREL_Mk3_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_BREL_Mk3_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_BREL_Mk3_Liv0_rearcheck1;
+ 1: switch_Mail_BREL_Mk3_Liv0_rearcheck2;
+}
+
+const Mail_BREL_Mk3_Liv0_ID = (BREL_Mk3_Liv0_ID + 50);
+
+item (FEAT_TRAINS, Item_Mail_BREL_Mk3_Liv0, Mail_BREL_Mk3_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_BREL_MK3);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              BREL_Mk3_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							BREL_Mk3_Speed km/h;
+		cost_factor:					BREL_Mk3_CostFactor;
+		running_cost_factor:			BREL_Mk3_RunningCostFactor;
+		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							BREL_Mk3_Weight ton;
+
+//        variant_group: 					Item_Mail_BREL_Mk3_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_BREL_Mk3_Liv0_position;
+    purchase:                           spriteset_Mail_BREL_Mk3_Liv0_Purchase;
+    additional_text: 					string(STR_INFO_MAIL_BREL_MK3);
+}
+}
+
+const Mail_BREL_Mk3_Liv0_BG_ID = (BREL_Mk3_BG_Liv0_ID + 50);
+
+item (FEAT_TRAINS, Item_Mail_BREL_Mk3_BG_Liv0, Mail_BREL_Mk3_Liv0_BG_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_BREL_MK3_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              BREL_Mk3_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							BREL_Mk3_Speed km/h;
+		cost_factor:					BREL_Mk3_CostFactor;
+		running_cost_factor:			BREL_Mk3_RunningCostFactor;
+		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							BREL_Mk3_Weight ton;
+
+//        variant_group: 					Item_Mail_BREL_Mk3_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_BREL_Mk3_Liv0_position;
+    purchase:                           spriteset_Mail_BREL_Mk3_Liv0_Purchase;
+    additional_text: 					string(STR_INFO_MAIL_BREL_MK3_BG);
+}
+}
+
+//BREL_Mk3_DT_Liv0
+spriteset(spriteset_BREL_Mk3_DT_Liv0_Purchase,   "gfx/BREL_Mk3_Liv0.png") {template_purchase_8(367, 21)}
+
+spriteset(spriteset_BREL_Mk3_DT_Liv0,   "gfx/BREL_Mk3_Liv0.png") {template_8(367, 39)}
+spriteset(spriteset_BREL_Mk3_DT_Liv0_r,   "gfx/BREL_Mk3_Liv0.png") {template_8_r(367, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_BREL_Mk3_DT_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_BREL_Mk3_DT_Liv0_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Forwards
+switch (FEAT_TRAINS, SELF, switch_BREL_Mk3_DT_Liv0_ForwardStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_BREL_Mk3_DT_Liv0;
+	1: switch_Couplers_8;
+}
+
+//Backwards
+switch (FEAT_TRAINS, SELF, switch_BREL_Mk3_DT_Liv0_ReverseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_BREL_Mk3_DT_Liv0_r;
+	1: switch_Couplers_8_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_BREL_Mk3_DT_Liv0_rearcheck, position_in_consist){
+    0 : switch_BREL_Mk3_DT_Liv0_ForwardStack;
+    return switch_BREL_Mk3_DT_Liv0_ReverseStack;
+}
+
+const BREL_Mk3_DT_Liv0_ID = (BREL_Mk3_Liv0_ID + 100);
+
+item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv0, BREL_Mk3_DT_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_BREL_MK3_DT);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              BREL_Mk3_IntroDate;		
+		length:                         BREL_Mk3_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							BREL_Mk3_Speed km/h;
+		cost_factor:					BREL_Mk3_CostFactor;
+		running_cost_factor:			BREL_Mk3_RunningCostFactor;
+		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
+		power:							1 hp;//Remove
+		weight:							BREL_Mk3_Weight ton;
+
+//        variant_group: 					Item_BREL_Mk3_DT_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_BREL_Mk3_DT_Liv0_rearcheck;
+    purchase:                           switch_BREL_Mk3_DT_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_BREL_MK3_DT);
+}
+}
+
+const BREL_Mk3_DT_BG_Liv0_ID = (BREL_Mk3_BG_Liv0_ID + 100);
+
+item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv0, BREL_Mk3_DT_BG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_BREL_MK3_DT_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              BREL_Mk3_IntroDate;		
+		length:                         BREL_Mk3_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							BREL_Mk3_Speed km/h;
+		cost_factor:					BREL_Mk3_CostFactor;
+		running_cost_factor:			BREL_Mk3_RunningCostFactor;
+		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
+		power:							1 hp;//Remove
+		weight:							BREL_Mk3_Weight ton;
+
+//        variant_group: 					Item_BREL_Mk3_DT_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_BREL_Mk3_DT_Liv0_rearcheck;
+    purchase:                           switch_BREL_Mk3_DT_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_BREL_MK3_DT_BG);
+}
+}
+
+//BREL_Mk3_Liv1
+spriteset(spriteset_BREL_Mk3_Liv1_Purchase,   "gfx/BREL_Mk3_Liv1.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_BREL_Mk3_Liv1,   "gfx/BREL_Mk3_Liv1.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_BREL_Mk3_Liv1_Diner,   "gfx/BREL_Mk3_Liv1.png") {template_8(7, 69)}
+spriteset(spriteset_BREL_Mk3_Liv1_Terminal,   "gfx/BREL_Mk3_Liv1.png") {template_8(7, 99)}
+spriteset(spriteset_BREL_Mk3_Liv1_Terminal_r,   "gfx/BREL_Mk3_Liv1.png") {template_8_r(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_BREL_Mk3_Liv1_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_BREL_Mk3_Liv1_Diner;
+  spriteset_BREL_Mk3_Liv1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_BREL_Mk3_Liv1_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_BREL_Mk3_Liv1_Terminal;
+    1: spriteset_8_Modern_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_BREL_Mk3_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_BREL_Mk3_Liv1_SpriteStack1;
+    return switch_BREL_Mk3_Liv1_dinerposition;
+}
+
+switch (FEAT_TRAINS, SELF, switch_BREL_Mk3_Liv1_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_BREL_Mk3_Liv1_Terminal_r;
+    1: spriteset_8_Modern_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_BREL_Mk3_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_BREL_Mk3_Liv1_SpriteStack2;
+    return switch_BREL_Mk3_Liv1_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_BREL_Mk3_Liv1_position, vehicle_is_flipped) {
+ 0: switch_BREL_Mk3_Liv1_rearcheck1;
+ 1: switch_BREL_Mk3_Liv1_rearcheck2;
+}
+
+const BREL_Mk3_Liv1_ID = (BREL_Mk3_ID + Liv1_ID);
+
+item (FEAT_TRAINS, Item_BREL_Mk3_Liv1, BREL_Mk3_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_BREL_MK3);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              BREL_Mk3_IntroDate;		
+		length:                         BREL_Mk3_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							BREL_Mk3_Speed km/h;
+		cost_factor:					BREL_Mk3_CostFactor;
+		running_cost_factor:			BREL_Mk3_RunningCostFactor;
+		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							BREL_Mk3_Weight ton;
+
+        variant_group: 					Item_BREL_Mk3_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_BREL_Mk3_Liv1_position;
+    purchase:                           spriteset_BREL_Mk3_Liv1_Purchase;
+    additional_text: 					string(STR_INFO_BREL_MK3);
+}
+}
+
+const BREL_Mk3_BG_Liv1_ID = (BREL_Mk3_ID + 10);
+
+item (FEAT_TRAINS, Item_BREL_Mk3_BG_Liv1, BREL_Mk3_BG_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_BREL_MK3_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              BREL_Mk3_IntroDate;		
+		length:                         BREL_Mk3_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							BREL_Mk3_Speed km/h;
+		cost_factor:					BREL_Mk3_CostFactor;
+		running_cost_factor:			BREL_Mk3_RunningCostFactor;
+		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							BREL_Mk3_Weight ton;
+
+        variant_group: 					Item_BREL_Mk3_BG_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_BREL_Mk3_Liv1_position;
+    purchase:                           spriteset_BREL_Mk3_Liv1_Purchase;
+    additional_text: 					string(STR_INFO_BREL_MK3_BG);
+}
+}
+
+//Mail_BREL_Mk3_Liv1
+spriteset(spriteset_Mail_BREL_Mk3_Liv1_Purchase,   "gfx/BREL_Mk3_Liv1.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_BREL_Mk3_Liv1,   "gfx/BREL_Mk3_Liv1.png") {template_8_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_BREL_Mk3_Liv1_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_BREL_Mk3_Liv1;
+    1: spriteset_8_Modern_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_BREL_Mk3_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_BREL_Mk3_Liv1_SpriteStack1;
+    return spriteset_Mail_BREL_Mk3_Liv1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_BREL_Mk3_Liv1_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_BREL_Mk3_Liv1;
+    1: spriteset_8_Modern_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_BREL_Mk3_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_BREL_Mk3_Liv1_SpriteStack2;
+    return spriteset_Mail_BREL_Mk3_Liv1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_BREL_Mk3_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Mail_BREL_Mk3_Liv1_rearcheck1;
+ 1: switch_Mail_BREL_Mk3_Liv1_rearcheck2;
+}
+
+const Mail_BREL_Mk3_Liv1_ID = (BREL_Mk3_Liv1_ID + 50);
+
+item (FEAT_TRAINS, Item_Mail_BREL_Mk3_Liv1, Mail_BREL_Mk3_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_BREL_MK3);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              BREL_Mk3_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							BREL_Mk3_Speed km/h;
+		cost_factor:					BREL_Mk3_CostFactor;
+		running_cost_factor:			BREL_Mk3_RunningCostFactor;
+		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							BREL_Mk3_Weight ton;
+
+        variant_group: 					Item_Mail_BREL_Mk3_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_BREL_Mk3_Liv1_position;
+    purchase:                           spriteset_Mail_BREL_Mk3_Liv1_Purchase;
+    additional_text: 					string(STR_INFO_MAIL_BREL_MK3);
+}
+}
+
+const Mail_BREL_Mk3_Liv1_BG_ID = (BREL_Mk3_BG_Liv1_ID + 50);
+
+item (FEAT_TRAINS, Item_Mail_BREL_Mk3_BG_Liv1, Mail_BREL_Mk3_Liv1_BG_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_BREL_MK3_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              BREL_Mk3_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							BREL_Mk3_Speed km/h;
+		cost_factor:					BREL_Mk3_CostFactor;
+		running_cost_factor:			BREL_Mk3_RunningCostFactor;
+		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							BREL_Mk3_Weight ton;
+
+        variant_group: 					Item_Mail_BREL_Mk3_BG_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_BREL_Mk3_Liv1_position;
+    purchase:                           spriteset_Mail_BREL_Mk3_Liv1_Purchase;
+    additional_text: 					string(STR_INFO_MAIL_BREL_MK3_BG);
+}
+}
+
+//BREL_Mk3_DT_Liv1
+spriteset(spriteset_BREL_Mk3_DT_Liv1_Purchase,   "gfx/BREL_Mk3_Liv1.png") {template_purchase_8(367, 21)}
+
+spriteset(spriteset_BREL_Mk3_DT_Liv1,   "gfx/BREL_Mk3_Liv1.png") {template_8(367, 39)}
+spriteset(spriteset_BREL_Mk3_DT_Liv1_r,   "gfx/BREL_Mk3_Liv1.png") {template_8_r(367, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_BREL_Mk3_DT_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_BREL_Mk3_DT_Liv1_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+//Forwards
+switch (FEAT_TRAINS, SELF, switch_BREL_Mk3_DT_Liv1_ForwardStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_BREL_Mk3_DT_Liv1;
+	1: switch_Couplers_8;
+}
+
+//Backwards
+switch (FEAT_TRAINS, SELF, switch_BREL_Mk3_DT_Liv1_ReverseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_BREL_Mk3_DT_Liv1_r;
+	1: switch_Couplers_8_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_BREL_Mk3_DT_Liv1_rearcheck, position_in_consist){
+    0 : switch_BREL_Mk3_DT_Liv1_ForwardStack;
+    return switch_BREL_Mk3_DT_Liv1_ReverseStack;
+}
+
+const BREL_Mk3_DT_Liv1_ID = (BREL_Mk3_Liv1_ID + 100);
+
+item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv1, BREL_Mk3_DT_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_BREL_MK3_DT);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              BREL_Mk3_IntroDate;		
+		length:                         BREL_Mk3_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							BREL_Mk3_Speed km/h;
+		cost_factor:					BREL_Mk3_CostFactor;
+		running_cost_factor:			BREL_Mk3_RunningCostFactor;
+		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
+		power:							1 hp;//Remove
+		weight:							BREL_Mk3_Weight ton;
+
+        variant_group: 					Item_BREL_Mk3_DT_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_BREL_Mk3_DT_Liv1_rearcheck;
+    purchase:                           switch_BREL_Mk3_DT_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_BREL_MK3_DT);
+}
+}
+
+const BREL_Mk3_DT_BG_Liv1_ID = (BREL_Mk3_BG_Liv1_ID + 100);
+
+item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv1, BREL_Mk3_DT_BG_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_BREL_MK3_DT_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              BREL_Mk3_IntroDate;		
+		length:                         BREL_Mk3_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							BREL_Mk3_Speed km/h;
+		cost_factor:					BREL_Mk3_CostFactor;
+		running_cost_factor:			BREL_Mk3_RunningCostFactor;
+		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
+		power:							1 hp;//Remove
+		weight:							BREL_Mk3_Weight ton;
+
+        variant_group: 					Item_BREL_Mk3_DT_BG_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_BREL_Mk3_DT_Liv1_rearcheck;
+    purchase:                           switch_BREL_Mk3_DT_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_BREL_MK3_DT_BG);
 }
 }
 
