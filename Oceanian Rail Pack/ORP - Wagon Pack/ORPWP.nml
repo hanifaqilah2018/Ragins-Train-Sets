@@ -4161,7 +4161,6 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_Liv0, Comeng_SADD_DT_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -4192,11 +4191,12 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_Liv0, Comeng_SADD_DT_Liv0_ID) {
 		cost_factor:					Comeng_SADD_CostFactor;
 		running_cost_factor:			Comeng_SADD_RunningCostFactor;
 		cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							Comeng_SADD_Weight ton;
 
 //        variant_group: 					Item_Comeng_SADD_DT_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_Comeng_SADD_DT_Liv0_rearcheck;
@@ -4212,7 +4212,6 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_BG_Liv0, Comeng_SADD_DT_BG_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     BG_RAIL_ONLY;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -4243,11 +4242,12 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_BG_Liv0, Comeng_SADD_DT_BG_Liv0_ID) {
 		cost_factor:					Comeng_SADD_CostFactor;
 		running_cost_factor:			Comeng_SADD_RunningCostFactor;
 		cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							Comeng_SADD_Weight ton;
 
 //        variant_group: 					Item_Comeng_SADD_DT_BG_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_Comeng_SADD_DT_Liv0_rearcheck;
@@ -4420,7 +4420,6 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv0, Goninan_Tangara_Coach_DT_
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -4451,11 +4450,12 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv0, Goninan_Tangara_Coach_DT_
 		cost_factor:					Goninan_Tangara_Coach_CostFactor;
 		running_cost_factor:			Goninan_Tangara_Coach_RunningCostFactor;
 		cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							Goninan_Tangara_Coach_Weight ton;
 
 //        variant_group: 					Item_Goninan_Tangara_Coach_DT_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_Goninan_Tangara_Coach_DT_Liv0_rearcheck;
@@ -4610,7 +4610,6 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv1, Goninan_Tangara_Coach_DT_
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -4641,11 +4640,12 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv1, Goninan_Tangara_Coach_DT_
 		cost_factor:					Goninan_Tangara_Coach_CostFactor;
 		running_cost_factor:			Goninan_Tangara_Coach_RunningCostFactor;
 		cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							Goninan_Tangara_Coach_Weight ton;
 
         variant_group: 					Item_Goninan_Tangara_Coach_DT_Liv0;
-        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_Goninan_Tangara_Coach_DT_Liv1_rearcheck;
@@ -4800,7 +4800,6 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv2, Goninan_Tangara_Coach_DT_
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -4831,11 +4830,12 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv2, Goninan_Tangara_Coach_DT_
 		cost_factor:					Goninan_Tangara_Coach_CostFactor;
 		running_cost_factor:			Goninan_Tangara_Coach_RunningCostFactor;
 		cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							Goninan_Tangara_Coach_Weight ton;
 
         variant_group: 					Item_Goninan_Tangara_Coach_DT_Liv0;
-        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_Goninan_Tangara_Coach_DT_Liv2_rearcheck;
@@ -5008,7 +5008,6 @@ item (FEAT_TRAINS, Item_Goninan_4D_Coach_DT_BG_Liv0, Goninan_4D_Coach_DT_BG_Liv0
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     BG_RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -5039,11 +5038,12 @@ item (FEAT_TRAINS, Item_Goninan_4D_Coach_DT_BG_Liv0, Goninan_4D_Coach_DT_BG_Liv0
 		cost_factor:					Goninan_4D_Coach_CostFactor;
 		running_cost_factor:			Goninan_4D_Coach_RunningCostFactor;
 		cargo_capacity: 				(Goninan_4D_Coach_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							Goninan_4D_Coach_Weight ton;
 
 //        variant_group: 					Item_Goninan_4D_Coach_DT_BG_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_Goninan_4D_Coach_DT_Liv0_rearcheck;
@@ -7805,7 +7805,6 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv0, BREL_Mk3_DT_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -7836,11 +7835,12 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv0, BREL_Mk3_DT_Liv0_ID) {
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
 		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							BREL_Mk3_Weight ton;
 
 //        variant_group: 					Item_BREL_Mk3_DT_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_BREL_Mk3_DT_Liv0_rearcheck;
@@ -7856,7 +7856,6 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv0, BREL_Mk3_DT_BG_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     BG_RAIL_ONLY;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -7887,11 +7886,12 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv0, BREL_Mk3_DT_BG_Liv0_ID) {
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
 		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							BREL_Mk3_Weight ton;
 
 //        variant_group: 					Item_BREL_Mk3_DT_BG_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_BREL_Mk3_DT_Liv0_rearcheck;
@@ -8204,7 +8204,6 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv1, BREL_Mk3_DT_Liv1_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -8235,11 +8234,12 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv1, BREL_Mk3_DT_Liv1_ID) {
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
 		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							BREL_Mk3_Weight ton;
 
         variant_group: 					Item_BREL_Mk3_DT_Liv0;
-        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_BREL_Mk3_DT_Liv1_rearcheck;
@@ -8255,7 +8255,6 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv1, BREL_Mk3_DT_BG_Liv1_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     BG_RAIL_ONLY;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -8286,11 +8285,12 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv1, BREL_Mk3_DT_BG_Liv1_ID) {
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
 		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							BREL_Mk3_Weight ton;
 
         variant_group: 					Item_BREL_Mk3_DT_BG_Liv0;
-        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_BREL_Mk3_DT_Liv1_rearcheck;
