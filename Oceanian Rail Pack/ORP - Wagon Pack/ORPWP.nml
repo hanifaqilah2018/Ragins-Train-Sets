@@ -3434,10 +3434,11 @@ item (FEAT_TRAINS, Item_VLine_HType_Liv0, VLine_HType_Liv0_ID) {
     default:                            switch_HType_Liv0_MTHCheck;
     purchase:                           switch_VLine_HType_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
-const VLine_HType_BG_Liv0_ID = (VLine_HType_Liv0_ID + 25);
+const VLine_HType_BG_Liv0_ID = (VLine_HType_Liv0_ID + 10);
 
 item (FEAT_TRAINS, Item_VLine_HType_BG_Liv0, VLine_HType_BG_Liv0_ID) {
     property {
@@ -3478,6 +3479,7 @@ item (FEAT_TRAINS, Item_VLine_HType_BG_Liv0, VLine_HType_BG_Liv0_ID) {
     default:                            switch_HType_Liv0_MTHCheck;
     purchase:                           switch_VLine_HType_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_BG);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -3519,7 +3521,7 @@ switch(FEAT_TRAINS, SELF, switch_VLine_HType_DT_Liv0_rearcheck, position_in_cons
     return switch_VLine_HType_DT_Liv0_ReverseStack;
 }
 
-const VLine_HType_DT_Liv0_ID = (VLine_HType_BG_Liv0_ID + 25);
+const VLine_HType_DT_Liv0_ID = (VLine_HType_BG_Liv0_ID + 50);
 
 item (FEAT_TRAINS, Item_VLine_HType_DT_Liv0, VLine_HType_DT_Liv0_ID) {
     property {
@@ -3565,10 +3567,11 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_Liv0, VLine_HType_DT_Liv0_ID) {
     default:                            switch_VLine_HType_DT_Liv0_rearcheck;
     purchase:                           switch_VLine_HType_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_DT);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
-const VLine_HType_DT_BG_Liv0_ID = (VLine_HType_DT_Liv0_ID + 25);
+const VLine_HType_DT_BG_Liv0_ID = (VLine_HType_DT_Liv0_ID + 50);
 
 item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv0, VLine_HType_DT_BG_Liv0_ID) {
     property {
@@ -3614,6 +3617,7 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv0, VLine_HType_DT_BG_Liv0_ID) {
     default:                            switch_VLine_HType_DT_Liv0_rearcheck;
     purchase:                           switch_VLine_HType_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_DT_BG);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -3762,10 +3766,11 @@ item (FEAT_TRAINS, Item_VLine_HType_Liv1, VLine_HType_Liv1_ID) {
     default:                            switch_HType_Liv1_MTHCheck;
     purchase:                           switch_VLine_HType_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
-const VLine_HType_BG_Liv1_ID = (VLine_HType_Liv1_ID + 25);
+const VLine_HType_BG_Liv1_ID = (VLine_HType_Liv1_ID + 50);
 
 item (FEAT_TRAINS, Item_VLine_HType_BG_Liv1, VLine_HType_BG_Liv1_ID) {
     property {
@@ -3806,6 +3811,7 @@ item (FEAT_TRAINS, Item_VLine_HType_BG_Liv1, VLine_HType_BG_Liv1_ID) {
     default:                            switch_HType_Liv1_MTHCheck;
     purchase:                           switch_VLine_HType_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_BG);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -3847,7 +3853,7 @@ switch(FEAT_TRAINS, SELF, switch_VLine_HType_DT_Liv1_rearcheck, position_in_cons
     return switch_VLine_HType_DT_Liv1_ReverseStack;
 }
 
-const VLine_HType_DT_Liv1_ID = (VLine_HType_BG_Liv1_ID + 25);
+const VLine_HType_DT_Liv1_ID = (VLine_HType_BG_Liv1_ID + 50);
 
 item (FEAT_TRAINS, Item_VLine_HType_DT_Liv1, VLine_HType_DT_Liv1_ID) {
     property {
@@ -3893,10 +3899,11 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_Liv1, VLine_HType_DT_Liv1_ID) {
     default:                            switch_VLine_HType_DT_Liv1_rearcheck;
     purchase:                           switch_VLine_HType_DT_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_DT);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
-const VLine_HType_DT_BG_Liv1_ID = (VLine_HType_DT_Liv1_ID + 25);
+const VLine_HType_DT_BG_Liv1_ID = (VLine_HType_DT_Liv1_ID + 50);
 
 item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv1, VLine_HType_DT_BG_Liv1_ID) {
     property {
@@ -3942,6 +3949,7 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv1, VLine_HType_DT_BG_Liv1_ID) {
     default:                            switch_VLine_HType_DT_Liv1_rearcheck;
     purchase:                           switch_VLine_HType_DT_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_DT_BG);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4060,6 +4068,7 @@ item (FEAT_TRAINS, Item_Comeng_SADD_Liv0, Comeng_SADD_Liv0_ID) {
     default:                            switch_Comeng_SADD_Liv0_position;
     purchase:                           switch_Comeng_SADD_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_COMENG_SADD);
+	cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4104,6 +4113,7 @@ item (FEAT_TRAINS, Item_Comeng_SADD_BG_Liv0, Comeng_SADD_BG_Liv0_ID) {
     default:                            switch_Comeng_SADD_Liv0_position;
     purchase:                           switch_Comeng_SADD_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_COMENG_SADD_BG);
+	cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4192,6 +4202,7 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_Liv0, Comeng_SADD_DT_Liv0_ID) {
     default:                            switch_Comeng_SADD_DT_Liv0_rearcheck;
     purchase:                           switch_Comeng_SADD_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_COMENG_SADD_DT);
+	cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4242,6 +4253,7 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_BG_Liv0, Comeng_SADD_DT_BG_Liv0_ID) {
     default:                            switch_Comeng_SADD_DT_Liv0_rearcheck;
     purchase:                           switch_Comeng_SADD_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_COMENG_SADD_DT_BG);
+	cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4360,6 +4372,7 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_Liv0, Goninan_Tangara_Coach_Liv0_I
     default:                            switch_Goninan_Tangara_Coach_Liv0_position;
     purchase:                           switch_Goninan_Tangara_Coach_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH);
+	cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4448,6 +4461,7 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv0, Goninan_Tangara_Coach_DT_
     default:                            switch_Goninan_Tangara_Coach_DT_Liv0_rearcheck;
     purchase:                           switch_Goninan_Tangara_Coach_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH_DT);
+	cargo_capacity: 					(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4548,6 +4562,7 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_Liv1, Goninan_Tangara_Coach_Liv1_I
     default:                            switch_Goninan_Tangara_Coach_Liv1_position;
     purchase:                           switch_Goninan_Tangara_Coach_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH);
+	cargo_capacity: 					(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4636,6 +4651,7 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv1, Goninan_Tangara_Coach_DT_
     default:                            switch_Goninan_Tangara_Coach_DT_Liv1_rearcheck;
     purchase:                           switch_Goninan_Tangara_Coach_DT_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH_DT);
+	cargo_capacity: 					(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4736,6 +4752,7 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_Liv2, Goninan_Tangara_Coach_Liv2_I
     default:                            switch_Goninan_Tangara_Coach_Liv2_position;
     purchase:                           switch_Goninan_Tangara_Coach_Liv2_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH);
+	cargo_capacity: 					(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4824,6 +4841,7 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv2, Goninan_Tangara_Coach_DT_
     default:                            switch_Goninan_Tangara_Coach_DT_Liv2_rearcheck;
     purchase:                           switch_Goninan_Tangara_Coach_DT_Liv2_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH_DT);
+	cargo_capacity: 					(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4942,6 +4960,7 @@ item (FEAT_TRAINS, Item_Goninan_4D_Coach_BG_Liv0, Goninan_4D_Coach_BG_Liv0_ID) {
     default:                            switch_Goninan_4D_Coach_Liv0_position;
     purchase:                           switch_Goninan_4D_Coach_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_4D_COACH_BG);
+	cargo_capacity: 					(Goninan_4D_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -5030,6 +5049,7 @@ item (FEAT_TRAINS, Item_Goninan_4D_Coach_DT_BG_Liv0, Goninan_4D_Coach_DT_BG_Liv0
     default:                            switch_Goninan_4D_Coach_DT_Liv0_rearcheck;
     purchase:                           switch_Goninan_4D_Coach_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_4D_COACH_DT_BG);
+	cargo_capacity: 					(Goninan_4D_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -5945,6 +5965,7 @@ item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv0, Tulloch_InterurbanCoach_Li
     default:                            switch_Tulloch_InterurbanCoach_Liv0_position;
     purchase:                           spriteset_Tulloch_InterurbanCoach_Liv0;
     additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6024,6 +6045,7 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv0, Mail_Tulloch_Interurb
     default:                            switch_Mail_Tulloch_InterurbanCoach_Liv0_position;
     purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv0;
     additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6112,6 +6134,7 @@ item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv1, Tulloch_InterurbanCoach_Li
     default:                            switch_Tulloch_InterurbanCoach_Liv1_position;
     purchase:                           spriteset_Tulloch_InterurbanCoach_Liv1;
     additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6191,6 +6214,7 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv1, Mail_Tulloch_Interurb
     default:                            switch_Mail_Tulloch_InterurbanCoach_Liv1_position;
     purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv1;
     additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6279,6 +6303,7 @@ item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv2, Tulloch_InterurbanCoach_Li
     default:                            switch_Tulloch_InterurbanCoach_Liv2_position;
     purchase:                           spriteset_Tulloch_InterurbanCoach_Liv2;
     additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6358,6 +6383,7 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv2, Mail_Tulloch_Interurb
     default:                            switch_Mail_Tulloch_InterurbanCoach_Liv2_position;
     purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv2;
     additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6446,6 +6472,7 @@ item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv3, Tulloch_InterurbanCoach_Li
     default:                            switch_Tulloch_InterurbanCoach_Liv3_position;
     purchase:                           spriteset_Tulloch_InterurbanCoach_Liv3;
     additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6525,6 +6552,7 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv3, Mail_Tulloch_Interurb
     default:                            switch_Mail_Tulloch_InterurbanCoach_Liv3_position;
     purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv3;
     additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6613,6 +6641,7 @@ item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv4, Tulloch_InterurbanCoach_Li
     default:                            switch_Tulloch_InterurbanCoach_Liv4_position;
     purchase:                           spriteset_Tulloch_InterurbanCoach_Liv4;
     additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6692,6 +6721,7 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv4, Mail_Tulloch_Interurb
     default:                            switch_Mail_Tulloch_InterurbanCoach_Liv4_position;
     purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv4;
     additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7029,6 +7059,7 @@ item (FEAT_TRAINS, Item_VLine_RType_Liv0, VLine_RType_Liv0_ID) {
     default:                            switch_VLine_RType_Liv0_position;
     purchase:                           spriteset_VLine_RType_Liv0_Purchase;
     additional_text: 					string(STR_INFO_VLINE_RTYPE);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7073,6 +7104,7 @@ item (FEAT_TRAINS, Item_VLine_RType_BG_Liv0, VLine_RType_Liv0_BG_ID) {
     default:                            switch_VLine_RType_Liv0_position;
     purchase:                           spriteset_VLine_RType_Liv0_Purchase;
     additional_text: 					string(STR_INFO_VLINE_RTYPE_BG);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7152,6 +7184,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_Liv0, Mail_VLine_RType_Liv0_ID) {
     default:                            switch_Mail_VLine_RType_Liv0_position;
     purchase:                           spriteset_Mail_VLine_RType_Liv0_Purchase;
     additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7196,6 +7229,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_BG_Liv0, Mail_VLine_RType_Liv0_BG_ID) {
     default:                            switch_Mail_VLine_RType_Liv0_position;
     purchase:                           spriteset_Mail_VLine_RType_Liv0_Purchase;
     additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE_BG);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7276,6 +7310,7 @@ item (FEAT_TRAINS, Item_VLine_RType_Liv1, VLine_RType_Liv1_ID) {
     default:                            switch_VLine_RType_Liv1_position;
     purchase:                           spriteset_VLine_RType_Liv1_Purchase;
     additional_text: 					string(STR_INFO_VLINE_RTYPE);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7320,6 +7355,7 @@ item (FEAT_TRAINS, Item_VLine_RType_BG_Liv1, VLine_RType_Liv1_BG_ID) {
     default:                            switch_VLine_RType_Liv1_position;
     purchase:                           spriteset_VLine_RType_Liv1_Purchase;
     additional_text: 					string(STR_INFO_VLINE_RTYPE_BG);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7399,6 +7435,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_Liv1, Mail_VLine_RType_Liv1_ID) {
     default:                            switch_Mail_VLine_RType_Liv1_position;
     purchase:                           spriteset_Mail_VLine_RType_Liv1_Purchase;
     additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7443,6 +7480,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_BG_Liv1, Mail_VLine_RType_Liv1_BG_ID) {
     default:                            switch_Mail_VLine_RType_Liv1_position;
     purchase:                           spriteset_Mail_VLine_RType_Liv1_Purchase;
     additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE_BG);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7549,6 +7587,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_Liv0, BREL_Mk3_Liv0_ID) {
     default:                            switch_BREL_Mk3_Liv0_position;
     purchase:                           spriteset_BREL_Mk3_Liv0_Purchase;
     additional_text: 					string(STR_INFO_BREL_MK3);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7593,6 +7632,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_BG_Liv0, BREL_Mk3_BG_Liv0_ID) {
     default:                            switch_BREL_Mk3_Liv0_position;
     purchase:                           spriteset_BREL_Mk3_Liv0_Purchase;
     additional_text: 					string(STR_INFO_BREL_MK3_BG);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7672,6 +7712,7 @@ item (FEAT_TRAINS, Item_Mail_BREL_Mk3_Liv0, Mail_BREL_Mk3_Liv0_ID) {
     default:                            switch_Mail_BREL_Mk3_Liv0_position;
     purchase:                           spriteset_Mail_BREL_Mk3_Liv0_Purchase;
     additional_text: 					string(STR_INFO_MAIL_BREL_MK3);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7716,6 +7757,7 @@ item (FEAT_TRAINS, Item_Mail_BREL_Mk3_BG_Liv0, Mail_BREL_Mk3_Liv0_BG_ID) {
     default:                            switch_Mail_BREL_Mk3_Liv0_position;
     purchase:                           spriteset_Mail_BREL_Mk3_Liv0_Purchase;
     additional_text: 					string(STR_INFO_MAIL_BREL_MK3_BG);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7804,6 +7846,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv0, BREL_Mk3_DT_Liv0_ID) {
     default:                            switch_BREL_Mk3_DT_Liv0_rearcheck;
     purchase:                           switch_BREL_Mk3_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_BREL_MK3_DT);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7854,6 +7897,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv0, BREL_Mk3_DT_BG_Liv0_ID) {
     default:                            switch_BREL_Mk3_DT_Liv0_rearcheck;
     purchase:                           switch_BREL_Mk3_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_BREL_MK3_DT_BG);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7942,6 +7986,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_Liv1, BREL_Mk3_Liv1_ID) {
     default:                            switch_BREL_Mk3_Liv1_position;
     purchase:                           spriteset_BREL_Mk3_Liv1_Purchase;
     additional_text: 					string(STR_INFO_BREL_MK3);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7986,6 +8031,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_BG_Liv1, BREL_Mk3_BG_Liv1_ID) {
     default:                            switch_BREL_Mk3_Liv1_position;
     purchase:                           spriteset_BREL_Mk3_Liv1_Purchase;
     additional_text: 					string(STR_INFO_BREL_MK3_BG);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -8065,6 +8111,7 @@ item (FEAT_TRAINS, Item_Mail_BREL_Mk3_Liv1, Mail_BREL_Mk3_Liv1_ID) {
     default:                            switch_Mail_BREL_Mk3_Liv1_position;
     purchase:                           spriteset_Mail_BREL_Mk3_Liv1_Purchase;
     additional_text: 					string(STR_INFO_MAIL_BREL_MK3);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -8109,6 +8156,7 @@ item (FEAT_TRAINS, Item_Mail_BREL_Mk3_BG_Liv1, Mail_BREL_Mk3_Liv1_BG_ID) {
     default:                            switch_Mail_BREL_Mk3_Liv1_position;
     purchase:                           spriteset_Mail_BREL_Mk3_Liv1_Purchase;
     additional_text: 					string(STR_INFO_MAIL_BREL_MK3_BG);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -8197,6 +8245,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv1, BREL_Mk3_DT_Liv1_ID) {
     default:                            switch_BREL_Mk3_DT_Liv1_rearcheck;
     purchase:                           switch_BREL_Mk3_DT_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_BREL_MK3_DT);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -8247,6 +8296,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv1, BREL_Mk3_DT_BG_Liv1_ID) {
     default:                            switch_BREL_Mk3_DT_Liv1_rearcheck;
     purchase:                           switch_BREL_Mk3_DT_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_BREL_MK3_DT_BG);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
