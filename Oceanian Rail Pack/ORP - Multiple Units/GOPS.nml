@@ -1289,19 +1289,9 @@ spriteset(spriteset_SilverFern_Liv0_lead,   "gfx/SilverFern_Liv0.png") {template
 spriteset(spriteset_SilverFern_Liv0_DT_lead,   "gfx/SilverFern_Liv0.png") {template_8(7, 69)}
 spriteset(spriteset_SilverFern_Liv0_Trailer,   "gfx/SilverFern_Liv0.png") {template_8_repeat(7, 99)}
 
-switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv0_forward, vehicle_is_flipped){
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv0_position, vehicle_is_flipped){
     0:	spriteset_SilverFern_Liv0_lead;
     1: 	spriteset_SilverFern_Liv0_DT_lead;
-}
-
-switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv0_rev, vehicle_is_flipped){
-    0:  spriteset_SilverFern_Liv0_DT_lead;
-    1: 	spriteset_SilverFern_Liv0_lead;
-}
-
-switch(FEAT_TRAINS, PARENT, switch_SilverFern_Liv0_directioncheck, vehicle_is_reversed){ 
-    0:    switch_SilverFern_Liv0_forward;
-    1:    switch_SilverFern_Liv0_rev;
 }
 
 const SilverFern_ID_Liv0 = (SilverFern_ID + Liv0_ID );
@@ -1346,7 +1336,7 @@ item(FEAT_TRAINS, Item_SilverFern_Liv0, SilverFern_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						switch_SilverFern_Liv0_directioncheck;
+        default: 						switch_SilverFern_Liv0_position;
         purchase: 						spriteset_SilverFern_Liv0_purchase;
         additional_text: 				string(STR_INFO_SILVERFERN);
     }
@@ -1367,19 +1357,9 @@ spriteset(spriteset_SilverFern_Liv1_lead,   "gfx/SilverFern_Liv1.png") {template
 spriteset(spriteset_SilverFern_Liv1_DT_lead,   "gfx/SilverFern_Liv1.png") {template_8(7, 69)}
 spriteset(spriteset_SilverFern_Liv1_Trailer,   "gfx/SilverFern_Liv1.png") {template_8_repeat(7, 99)}
 
-switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv1_forward, vehicle_is_flipped){
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv1_position, vehicle_is_flipped){
     0:	spriteset_SilverFern_Liv1_lead;
     1: 	spriteset_SilverFern_Liv1_DT_lead;
-}
-
-switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv1_rev, vehicle_is_flipped){
-    0:  spriteset_SilverFern_Liv1_DT_lead;
-    1: 	spriteset_SilverFern_Liv1_lead;
-}
-
-switch(FEAT_TRAINS, PARENT, switch_SilverFern_Liv1_directioncheck, vehicle_is_reversed){ 
-    0:    switch_SilverFern_Liv1_forward;
-    1:    switch_SilverFern_Liv1_rev;
 }
 
 const SilverFern_ID_Liv1 = (SilverFern_ID + Liv1_ID );
@@ -1424,7 +1404,7 @@ item(FEAT_TRAINS, Item_SilverFern_Liv1, SilverFern_ID_Liv1) {
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						switch_SilverFern_Liv1_directioncheck;
+        default: 						switch_SilverFern_Liv1_position;
         purchase: 						spriteset_SilverFern_Liv1_purchase;
         additional_text: 				string(STR_INFO_SILVERFERN);
     }
@@ -1445,19 +1425,9 @@ spriteset(spriteset_SilverFern_Liv2_lead,   "gfx/SilverFern_Liv2.png") {template
 spriteset(spriteset_SilverFern_Liv2_DT_lead,   "gfx/SilverFern_Liv2.png") {template_8(7, 69)}
 spriteset(spriteset_SilverFern_Liv2_Trailer,   "gfx/SilverFern_Liv2.png") {template_8_repeat(7, 99)}
 
-switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv2_forward, vehicle_is_flipped){
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv2_position, vehicle_is_flipped){
     0:	spriteset_SilverFern_Liv2_lead;
     1: 	spriteset_SilverFern_Liv2_DT_lead;
-}
-
-switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv2_rev, vehicle_is_flipped){
-    0:  spriteset_SilverFern_Liv2_DT_lead;
-    1: 	spriteset_SilverFern_Liv2_lead;
-}
-
-switch(FEAT_TRAINS, PARENT, switch_SilverFern_Liv2_directioncheck, vehicle_is_reversed){ 
-    0:    switch_SilverFern_Liv2_forward;
-    1:    switch_SilverFern_Liv2_rev;
 }
 
 const SilverFern_ID_Liv2 = (SilverFern_ID + Liv2_ID );
@@ -1502,7 +1472,7 @@ item(FEAT_TRAINS, Item_SilverFern_Liv2, SilverFern_ID_Liv2) {
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						switch_SilverFern_Liv2_directioncheck;
+        default: 						switch_SilverFern_Liv2_position;
         purchase: 						spriteset_SilverFern_Liv2_purchase;
         additional_text: 				string(STR_INFO_SILVERFERN);
     }
@@ -1523,19 +1493,9 @@ spriteset(spriteset_SilverFern_Liv3_lead,   "gfx/SilverFern_Liv3.png") {template
 spriteset(spriteset_SilverFern_Liv3_DT_lead,   "gfx/SilverFern_Liv3.png") {template_8(7, 69)}
 spriteset(spriteset_SilverFern_Liv3_Trailer,   "gfx/SilverFern_Liv3.png") {template_8_repeat(7, 99)}
 
-switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv3_forward, vehicle_is_flipped){
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv3_position, vehicle_is_flipped){
     0:	spriteset_SilverFern_Liv3_lead;
     1: 	spriteset_SilverFern_Liv3_DT_lead;
-}
-
-switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv3_rev, vehicle_is_flipped){
-    0:  spriteset_SilverFern_Liv3_DT_lead;
-    1: 	spriteset_SilverFern_Liv3_lead;
-}
-
-switch(FEAT_TRAINS, PARENT, switch_SilverFern_Liv3_directioncheck, vehicle_is_reversed){ 
-    0:    switch_SilverFern_Liv3_forward;
-    1:    switch_SilverFern_Liv3_rev;
 }
 
 const SilverFern_ID_Liv3 = (SilverFern_ID + Liv3_ID );
@@ -1580,7 +1540,7 @@ item(FEAT_TRAINS, Item_SilverFern_Liv3, SilverFern_ID_Liv3) {
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						switch_SilverFern_Liv3_directioncheck;
+        default: 						switch_SilverFern_Liv3_position;
         purchase: 						spriteset_SilverFern_Liv3_purchase;
         additional_text: 				string(STR_INFO_SILVERFERN);
     }
@@ -1601,19 +1561,9 @@ spriteset(spriteset_SilverFern_Liv4_lead,   "gfx/SilverFern_Liv4.png") {template
 spriteset(spriteset_SilverFern_Liv4_DT_lead,   "gfx/SilverFern_Liv4.png") {template_8(7, 69)}
 spriteset(spriteset_SilverFern_Liv4_Trailer,   "gfx/SilverFern_Liv4.png") {template_8_repeat(7, 99)}
 
-switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv4_forward, vehicle_is_flipped){
+switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv4_position, vehicle_is_flipped){
     0:	spriteset_SilverFern_Liv4_lead;
     1: 	spriteset_SilverFern_Liv4_DT_lead;
-}
-
-switch(FEAT_TRAINS, SELF, switch_SilverFern_Liv4_rev, vehicle_is_flipped){
-    0:  spriteset_SilverFern_Liv4_DT_lead;
-    1: 	spriteset_SilverFern_Liv4_lead;
-}
-
-switch(FEAT_TRAINS, PARENT, switch_SilverFern_Liv4_directioncheck, vehicle_is_reversed){ 
-    0:    switch_SilverFern_Liv4_forward;
-    1:    switch_SilverFern_Liv4_rev;
 }
 
 const SilverFern_ID_Liv4 = (SilverFern_ID + Liv4_ID );
@@ -1658,7 +1608,7 @@ item(FEAT_TRAINS, Item_SilverFern_Liv4, SilverFern_ID_Liv4) {
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						switch_SilverFern_Liv4_directioncheck;
+        default: 						switch_SilverFern_Liv4_position;
         purchase: 						spriteset_SilverFern_Liv4_purchase;
         additional_text: 				string(STR_INFO_SILVERFERN);
     }
@@ -2274,9 +2224,9 @@ switch(FEAT_TRAINS, SELF, switch_Tait_Rw_railtype, tile_powers_railtype("BG_RAIL
 }
 //Roof Controls
 //Purchase
-switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Purchase, current_year) {
-    0..1929: spriteset_Tait_Roof1_Purchase;
-	1929..2100: spriteset_Tait_Roof2_Purchase;
+switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Purchase, date_of_last_service) {
+    0..date(1928, 12, 31): spriteset_Tait_Roof1_Purchase;
+	date(1929, 1, 1)..date(2100, 1, 1): spriteset_Tait_Roof2_Purchase;
   return spriteset_Tait_Roof2_Purchase;
 }
 
@@ -2286,9 +2236,9 @@ random_switch(FEAT_TRAINS, SELF, switch_Tait_Roof_Transition_Motor_Random){
 	1 : spriteset_Tait_Roof2_Motor;
 }
 
-switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Motor, current_year) {
-    0..1929: spriteset_Tait_Roof1_Motor;
-	1929..2100: switch_Tait_Roof_Transition_Motor_Random;
+switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Motor, date_of_last_service) {
+    0..date(1928, 12, 31): spriteset_Tait_Roof1_Motor;
+	date(1929, 1, 1)..date(2100, 1, 1): switch_Tait_Roof_Transition_Motor_Random;
   return switch_Tait_Roof_Transition_Motor_Random;
 }
 
@@ -2298,9 +2248,9 @@ random_switch(FEAT_TRAINS, SELF, switch_Tait_Roof_Transition_Motor_r_Random){
 	1 : spriteset_Tait_Roof2_Motor_r;
 }
 
-switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Motor_r, current_year) {
-    0..1929: spriteset_Tait_Roof1_Motor_r;
-	1929..2100: switch_Tait_Roof_Transition_Motor_r_Random;
+switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Motor_r, date_of_last_service) {
+    0..date(1928, 12, 31): spriteset_Tait_Roof1_Motor_r;
+	date(1929, 1, 1)..date(2100, 1, 1): switch_Tait_Roof_Transition_Motor_r_Random;
   return switch_Tait_Roof_Transition_Motor_r_Random;
 }
 
@@ -2310,16 +2260,16 @@ random_switch(FEAT_TRAINS, SELF, switch_Tait_Roof_Transition_Trailer_Random){
 	1 : spriteset_Tait_Roof2_Trailer;
 }
 
-switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Trailer, current_year) {
-    0..1929: spriteset_Tait_Roof1_Trailer;
-	1929..2100: switch_Tait_Roof_Transition_Trailer_Random;
+switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Trailer, date_of_last_service) {
+    0..date(1928, 12, 31): spriteset_Tait_Roof1_Trailer;
+	date(1929, 1, 1)..date(2100, 1, 1): switch_Tait_Roof_Transition_Trailer_Random;
   return switch_Tait_Roof_Transition_Trailer_Random;
 }
 
 //Single Unit Purchase
-switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Single_Purchase, current_year) {
-    0..1929: spriteset_Tait_Roof1_Single_Purchase;
-	1929..2100: spriteset_Tait_Roof2_Single_Purchase;
+switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Single_Purchase, date_of_last_service) {
+    0..date(1928, 12, 31): spriteset_Tait_Roof1_Single_Purchase;
+	date(1929, 1, 1)..date(2100, 1, 1): spriteset_Tait_Roof2_Single_Purchase;
   return spriteset_Tait_Roof2_Single_Purchase;
 }
 
@@ -2329,9 +2279,9 @@ random_switch(FEAT_TRAINS, SELF, switch_Tait_Roof_Transition_Single_Random){
 	1 : spriteset_Tait_Roof2_Motor;
 }
 
-switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Single, current_year) {
-    0..1929: spriteset_Tait_Roof1_Motor;
-	1929..2100: switch_Tait_Roof_Transition_Single_Random;
+switch(FEAT_TRAINS, PARENT, switch_Tait_Roof_Transition_Single, date_of_last_service) {
+    0..date(1928, 12, 31): spriteset_Tait_Roof1_Motor;
+	date(1929, 1, 1)..date(2100, 1, 1): switch_Tait_Roof_Transition_Single_Random;
   return switch_Tait_Roof_Transition_Single_Random;
 }
 
@@ -2403,7 +2353,8 @@ item(FEAT_TRAINS, Item_Tait_Single_Liv0, Tait_ID_Single_Liv0) {
 		weight:							Tait_Weight ton;
 
 //        variant_group: 					Item_Tait_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
     }
     graphics {
         default: 						switch_Tait_Single_Liv0_stack;
@@ -2480,57 +2431,7 @@ switch (FEAT_TRAINS, SELF, switch_Tait_Liv0_TrailerStack, [
 	1: switch_Tait_Roof_Transition_Trailer;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_Tait_Liv0_NonControlMotorStack_r;
-    return switch_Tait_Liv0_TrailerStack;
-}
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_Tait_Liv0_NonControlMotorStack;
-    return switch_Tait_Liv0_TrailerStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_Tait_Liv0_NonControlMotorStack_r;
-    return switch_Tait_Liv0_TrailerStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : switch_Tait_Liv0_TrailerStack;
-    return switch_Tait_Liv0_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_Tait_Liv0_NonControlMotorStack;
-    return switch_Tait_Liv0_TrailerStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Tait_Liv0_pantocheck_at_1_r;
-    return sw_Tait_Liv0_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : switch_Tait_Liv0_TrailerStack;
-    return sw_Tait_Liv0_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Tait_Liv0_pantocheck_at_2_r;
-    return sw_Tait_Liv0_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : switch_Tait_Liv0_TrailerStack;
-    3 : sw_Tait_Liv0_pantocheck_at_1_r;
-    4 : sw_Tait_Liv0_sidecheck_4_r;
-    5 : sw_Tait_Liv0_pantocheck_at_2_r;
-    6 .. 7 : sw_Tait_Liv0_sidecheck_6_r;
-    return sw_Tait_Liv0_sidecheck_other_r;
-}
-
-//Forward
-
+//Midcars
 switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_Tait_Liv0_NonControlMotorStack_r;
     return switch_Tait_Liv0_TrailerStack;
@@ -2573,49 +2474,20 @@ switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_lencheck, num_vehs_in_vehid_chain ) {
     return sw_Tait_Liv0_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_Tait_Liv0_MotorStack; //Panto
-    return switch_Tait_Liv0_DrivingTrailerStack; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : sw_Tait_Liv0_panto_direction_r_pos;        //Front panto
-    return switch_Tait_Liv0_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_Tait_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return switch_Tait_Liv0_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: sw_Tait_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_Tait_Liv0_panto_flipcheck_r; //More Checks
-}
-
+//End Cars
 switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_panto_direction, vehicle_is_flipped){
-    0 : switch_Tait_Liv0_MotorStack;        //Front panto
-    return switch_Tait_Liv0_MotorStack_r;    //Rear panto
+    0 : switch_Tait_Liv0_MotorStack;
+    return switch_Tait_Liv0_MotorStack_r;
 }
 
 switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_panto_flipcheck, vehicle_is_flipped){
-    0 : sw_Tait_Liv0_panto_direction;        //Not flipped, give Panto
-    return switch_Tait_Liv0_DrivingTrailerStack;    //Flipped, no panto
+    0 : sw_Tait_Liv0_panto_direction;
+    return switch_Tait_Liv0_DrivingTrailerStack;
 }
 
 switch(FEAT_TRAINS, SELF, sw_Tait_Liv0_frontcheck, position_in_vehid_chain){
-    0: sw_Tait_Liv0_panto_direction; //We need a pantograph, guaranteed
-    return sw_Tait_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Tait_Liv0_directioncheck, vehicle_is_reversed){
-    0: sw_Tait_Liv0_frontcheck; //We are going forwards
-    return sw_Tait_Liv0_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Tait_Liv0_revcheck, vehicle_is_reversed){
-    0 : sw_Tait_Liv0_lencheck;
-    return sw_Tait_Liv0_lencheck_r;
+    0: sw_Tait_Liv0_panto_direction;
+    return sw_Tait_Liv0_panto_flipcheck;
 }
 
 const Tait_ID_Liv0 = (Tait_ID_Single_Liv0 + 10);
@@ -2660,12 +2532,12 @@ item(FEAT_TRAINS, Item_Tait_Liv0, Tait_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_Tait_Liv0_directioncheck;
+        default: 						sw_Tait_Liv0_frontcheck;
         purchase: 						switch_Tait_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_TAIT_MU);
     }
     livery_override (Item_MU_Trailer){
-        default:						sw_Tait_Liv0_revcheck ;
+        default:						sw_Tait_Liv0_lencheck ;
         length:							8;
         cargo_capacity:                 [Tait_CargoCapacity / param_capacity_mod];
         power:                          Tait_Power;
@@ -2767,57 +2639,7 @@ switch (FEAT_TRAINS, SELF, switch_SydneyStandardEMU_Liv0_NonControlMotorStack_r,
     1 : spriteset_SydneyStandardEMU_Liv0_Trailer_r;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack_r;
-    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
-}
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack;
-    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack_r;
-    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : switch_SydneyStandard_EMU_Liv0_Trailer_Random;
-    return switch_SydneyStandardEMU_Liv0_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack;
-    return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_SydneyStandardEMU_Liv0_pantocheck_at_1_r;
-    return sw_SydneyStandardEMU_Liv0_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : switch_SydneyStandard_EMU_Liv0_Trailer_Random;
-    return sw_SydneyStandardEMU_Liv0_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_SydneyStandardEMU_Liv0_pantocheck_at_2_r;
-    return sw_SydneyStandardEMU_Liv0_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : switch_SydneyStandard_EMU_Liv0_Trailer_Random;
-    3 : sw_SydneyStandardEMU_Liv0_pantocheck_at_1_r;
-    4 : sw_SydneyStandardEMU_Liv0_sidecheck_4_r;
-    5 : sw_SydneyStandardEMU_Liv0_pantocheck_at_2_r;
-    6 .. 7 : sw_SydneyStandardEMU_Liv0_sidecheck_6_r;
-    return sw_SydneyStandardEMU_Liv0_sidecheck_other_r;
-}
-
-//Forward
-
+//Midcars
 switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_SydneyStandardEMU_Liv0_NonControlMotorStack_r;
     return switch_SydneyStandard_EMU_Liv0_Trailer_Random;
@@ -2860,26 +2682,6 @@ switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_lencheck, num_vehs_in_vehid_
     return sw_SydneyStandardEMU_Liv0_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_SydneyStandardEMU_Liv0_MotorStack; //Panto
-    return spriteset_SydneyStandardEMU_Liv0_DT_lead; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : sw_SydneyStandardEMU_Liv0_panto_direction_r_pos;        //Front panto
-    return switch_SydneyStandardEMU_Liv0_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_SydneyStandardEMU_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return switch_SydneyStandardEMU_Liv0_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: sw_SydneyStandardEMU_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_SydneyStandardEMU_Liv0_panto_flipcheck_r; //More Checks
-}
-
 switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_panto_direction, vehicle_is_flipped){
     0 : switch_SydneyStandardEMU_Liv0_MotorStack;        //Front panto
     return switch_SydneyStandardEMU_Liv0_MotorStack_r;    //Rear panto
@@ -2893,16 +2695,6 @@ switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_panto_flipcheck, vehicle_is_
 switch(FEAT_TRAINS, SELF, sw_SydneyStandardEMU_Liv0_frontcheck, position_in_vehid_chain){
     0: sw_SydneyStandardEMU_Liv0_panto_direction; //We need a pantograph, guaranteed
     return sw_SydneyStandardEMU_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_SydneyStandardEMU_Liv0_directioncheck, vehicle_is_reversed){
-    0: sw_SydneyStandardEMU_Liv0_frontcheck; //We are going forwards
-    return sw_SydneyStandardEMU_Liv0_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_SydneyStandardEMU_Liv0_revcheck, vehicle_is_reversed){
-    0 : sw_SydneyStandardEMU_Liv0_lencheck;
-    return sw_SydneyStandardEMU_Liv0_lencheck_r;
 }
 
 const SydneyStandardEMU_ID_Liv0 = (SydneyStandardEMU_ID + Liv0_ID);
@@ -2947,12 +2739,12 @@ item(FEAT_TRAINS, Item_SydneyStandardEMU_Liv0, SydneyStandardEMU_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_SydneyStandardEMU_Liv0_directioncheck;
+        default: 						sw_SydneyStandardEMU_Liv0_frontcheck;
         purchase: 						switch_SydneyStandardEMU_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_SYDNEYSTANDARDEMU);
     }
     livery_override (Item_MU_Trailer){
-        default:						sw_SydneyStandardEMU_Liv0_revcheck ;
+        default:						sw_SydneyStandardEMU_Liv0_lencheck ;
         length:							8;
         cargo_capacity:                 [SydneyStandardEMU_CargoCapacity / param_capacity_mod];
         power:                          SydneyStandardEMU_Power;
@@ -3046,57 +2838,7 @@ switch (FEAT_TRAINS, SELF, switch_TullochSuburbanEMU_Liv0_NonControlMotorStack_r
 	1: switch_TullochSuburbanEMU_Rw_railtype;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack_r;
-    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
-}
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack;
-    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack_r;
-    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : spriteset_TullochSuburbanEMU_Liv0_Trailer;
-    return switch_TullochSuburbanEMU_Liv0_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack;
-    return spriteset_TullochSuburbanEMU_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_1_r;
-    return sw_TullochSuburbanEMU_Liv0_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : spriteset_TullochSuburbanEMU_Liv0_Trailer;
-    return sw_TullochSuburbanEMU_Liv0_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_2_r;
-    return sw_TullochSuburbanEMU_Liv0_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : spriteset_TullochSuburbanEMU_Liv0_Trailer;
-    3 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_1_r;
-    4 : sw_TullochSuburbanEMU_Liv0_sidecheck_4_r;
-    5 : sw_TullochSuburbanEMU_Liv0_pantocheck_at_2_r;
-    6 .. 7 : sw_TullochSuburbanEMU_Liv0_sidecheck_6_r;
-    return sw_TullochSuburbanEMU_Liv0_sidecheck_other_r;
-}
-
-//Forward
-
+//Midcars
 switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_TullochSuburbanEMU_Liv0_NonControlMotorStack_r;
     return spriteset_TullochSuburbanEMU_Liv0_Trailer;
@@ -3139,26 +2881,7 @@ switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_lencheck, num_vehs_in_vehid
     return sw_TullochSuburbanEMU_Liv0_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_TullochSuburbanEMU_Liv0_MotorStack; //Panto
-    return spriteset_TullochSuburbanEMU_Liv0_lead; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : sw_TullochSuburbanEMU_Liv0_panto_direction_r_pos;        //Front panto
-    return switch_TullochSuburbanEMU_Liv0_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_TullochSuburbanEMU_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return switch_TullochSuburbanEMU_Liv0_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: sw_TullochSuburbanEMU_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_TullochSuburbanEMU_Liv0_panto_flipcheck_r; //More Checks
-}
-
+//Endcars
 switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_panto_direction, vehicle_is_flipped){
     0 : switch_TullochSuburbanEMU_Liv0_MotorStack;        //Front panto
     return switch_TullochSuburbanEMU_Liv0_MotorStack_r;    //Rear panto
@@ -3172,16 +2895,6 @@ switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_panto_flipcheck, vehicle_is
 switch(FEAT_TRAINS, SELF, sw_TullochSuburbanEMU_Liv0_frontcheck, position_in_vehid_chain){
     0: sw_TullochSuburbanEMU_Liv0_panto_direction; //We need a pantograph, guaranteed
     return sw_TullochSuburbanEMU_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_TullochSuburbanEMU_Liv0_directioncheck, vehicle_is_reversed){
-    0: sw_TullochSuburbanEMU_Liv0_frontcheck; //We are going forwards
-    return sw_TullochSuburbanEMU_Liv0_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_TullochSuburbanEMU_Liv0_revcheck, vehicle_is_reversed){
-    0 : sw_TullochSuburbanEMU_Liv0_lencheck;
-    return sw_TullochSuburbanEMU_Liv0_lencheck_r;
 }
 
 const TullochSuburbanEMU_ID_Liv0 = (TullochSuburbanEMU_ID + Liv0_ID);
@@ -3226,12 +2939,12 @@ item(FEAT_TRAINS, Item_TullochSuburbanEMU_Liv0, TullochSuburbanEMU_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_TullochSuburbanEMU_Liv0_directioncheck;
+        default: 						sw_TullochSuburbanEMU_Liv0_frontcheck;
         purchase: 						switch_TullochSuburbanEMU_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_TULLOCHSUBURBANEMU);
     }
     livery_override (Item_MU_Trailer){
-        default:						sw_TullochSuburbanEMU_Liv0_revcheck ;
+        default:						sw_TullochSuburbanEMU_Liv0_lencheck ;
         length:							8;
         cargo_capacity:                 [TullochSuburbanEMU_CargoCapacity / param_capacity_mod];
         power:                          TullochSuburbanEMU_Power;
@@ -3344,57 +3057,7 @@ switch (FEAT_TRAINS, SELF, switch_Harris_Liv0_NonControlMotorStack_r, [
 	1: switch_Harris_Rw_railtype;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_Harris_Liv0_NonControlMotorStack_r;
-    return switch_Harris_Liv0_Trailer_Random;
-}
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_Harris_Liv0_NonControlMotorStack;
-    return switch_Harris_Liv0_Trailer_Random;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_Harris_Liv0_NonControlMotorStack_r;
-    return switch_Harris_Liv0_Trailer_Random;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : switch_Harris_Liv0_Trailer_Random;
-    return switch_Harris_Liv0_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_Harris_Liv0_NonControlMotorStack;
-    return switch_Harris_Liv0_Trailer_Random;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Harris_Liv0_pantocheck_at_1_r;
-    return sw_Harris_Liv0_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : switch_Harris_Liv0_Trailer_Random;
-    return sw_Harris_Liv0_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Harris_Liv0_pantocheck_at_2_r;
-    return sw_Harris_Liv0_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : switch_Harris_Liv0_Trailer_Random;
-    3 : sw_Harris_Liv0_pantocheck_at_1_r;
-    4 : sw_Harris_Liv0_sidecheck_4_r;
-    5 : sw_Harris_Liv0_pantocheck_at_2_r;
-    6 .. 7 : sw_Harris_Liv0_sidecheck_6_r;
-    return sw_Harris_Liv0_sidecheck_other_r;
-}
-
 //Forward
-
 switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_Harris_Liv0_NonControlMotorStack_r;
     return switch_Harris_Liv0_Trailer_Random;
@@ -3437,26 +3100,7 @@ switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_lencheck, num_vehs_in_vehid_chain ) {
     return sw_Harris_Liv0_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_Harris_Liv0_MotorStack; //Panto
-    return switch_Harris_Liv0_lead_Random; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : sw_Harris_Liv0_panto_direction_r_pos;        //Front panto
-    return switch_Harris_Liv0_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_Harris_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return switch_Harris_Liv0_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: sw_Harris_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_Harris_Liv0_panto_flipcheck_r; //More Checks
-}
-
+//end cars
 switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_panto_direction, vehicle_is_flipped){
     0 : switch_Harris_Liv0_MotorStack;        //Front panto
     return switch_Harris_Liv0_MotorStack_r;    //Rear panto
@@ -3470,16 +3114,6 @@ switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_panto_flipcheck, vehicle_is_flipped){
 switch(FEAT_TRAINS, SELF, sw_Harris_Liv0_frontcheck, position_in_vehid_chain){
     0: sw_Harris_Liv0_panto_direction; //We need a pantograph, guaranteed
     return sw_Harris_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Harris_Liv0_directioncheck, vehicle_is_reversed){
-    0: sw_Harris_Liv0_frontcheck; //We are going forwards
-    return sw_Harris_Liv0_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Harris_Liv0_revcheck, vehicle_is_reversed){
-    0 : sw_Harris_Liv0_lencheck;
-    return sw_Harris_Liv0_lencheck_r;
 }
 
 const Harris_ID_Liv0 = (Harris_ID + Liv0_ID);
@@ -3524,12 +3158,12 @@ item(FEAT_TRAINS, Item_Harris_Liv0, Harris_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_Harris_Liv0_directioncheck;
+        default: 						sw_Harris_Liv0_frontcheck;
         purchase: 						switch_Harris_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_HARRIS);
     }
     livery_override (Item_MU_Trailer){
-        default:						sw_Harris_Liv0_revcheck ;
+        default:						sw_Harris_Liv0_lencheck ;
         length:							8;
         cargo_capacity:                 [Harris_CargoCapacity / param_capacity_mod];
         power:                          Harris_Power;
@@ -3623,57 +3257,7 @@ switch (FEAT_TRAINS, SELF, switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack_r
 	1: switch_SputnikSuburbanEMU_Rw_railtype;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack_r;
-    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
-}
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack;
-    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack_r;
-    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : spriteset_SputnikSuburbanEMU_Liv0_Trailer;
-    return switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack;
-    return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1_r;
-    return sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : spriteset_SputnikSuburbanEMU_Liv0_Trailer;
-    return sw_SputnikSuburbanEMU_Liv0_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2_r;
-    return sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : spriteset_SputnikSuburbanEMU_Liv0_Trailer;
-    3 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_1_r;
-    4 : sw_SputnikSuburbanEMU_Liv0_sidecheck_4_r;
-    5 : sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2_r;
-    6 .. 7 : sw_SputnikSuburbanEMU_Liv0_sidecheck_6_r;
-    return sw_SputnikSuburbanEMU_Liv0_sidecheck_other_r;
-}
-
 //Forward
-
 switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_SputnikSuburbanEMU_Liv0_NonControlMotorStack_r;
     return spriteset_SputnikSuburbanEMU_Liv0_Trailer;
@@ -3716,26 +3300,7 @@ switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_lencheck, num_vehs_in_vehid
     return sw_SputnikSuburbanEMU_Liv0_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_SputnikSuburbanEMU_Liv0_MotorStack; //Panto
-    return spriteset_SputnikSuburbanEMU_Liv0_lead; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : sw_SputnikSuburbanEMU_Liv0_panto_direction_r_pos;        //Front panto
-    return switch_SputnikSuburbanEMU_Liv0_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_SputnikSuburbanEMU_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return switch_SputnikSuburbanEMU_Liv0_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: sw_SputnikSuburbanEMU_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_SputnikSuburbanEMU_Liv0_panto_flipcheck_r; //More Checks
-}
-
+//endcars
 switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_panto_direction, vehicle_is_flipped){
     0 : switch_SputnikSuburbanEMU_Liv0_MotorStack;        //Front panto
     return switch_SputnikSuburbanEMU_Liv0_MotorStack_r;    //Rear panto
@@ -3749,16 +3314,6 @@ switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_panto_flipcheck, vehicle_is
 switch(FEAT_TRAINS, SELF, sw_SputnikSuburbanEMU_Liv0_frontcheck, position_in_vehid_chain){
     0: sw_SputnikSuburbanEMU_Liv0_panto_direction; //We need a pantograph, guaranteed
     return sw_SputnikSuburbanEMU_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_SputnikSuburbanEMU_Liv0_directioncheck, vehicle_is_reversed){
-    0: sw_SputnikSuburbanEMU_Liv0_frontcheck; //We are going forwards
-    return sw_SputnikSuburbanEMU_Liv0_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_SputnikSuburbanEMU_Liv0_revcheck, vehicle_is_reversed){
-    0 : sw_SputnikSuburbanEMU_Liv0_lencheck;
-    return sw_SputnikSuburbanEMU_Liv0_lencheck_r;
 }
 
 const SputnikSuburbanEMU_ID_Liv0 = (SputnikSuburbanEMU_ID + Liv0_ID);
@@ -3803,12 +3358,12 @@ item(FEAT_TRAINS, Item_SputnikSuburbanEMU_Liv0, SputnikSuburbanEMU_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_SputnikSuburbanEMU_Liv0_directioncheck;
+        default: 						sw_SputnikSuburbanEMU_Liv0_frontcheck;
         purchase: 						switch_SputnikSuburbanEMU_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_SPUTNIKSUBURBANEMU);
     }
     livery_override (Item_MU_Trailer){
-        default:						sw_SputnikSuburbanEMU_Liv0_revcheck ;
+        default:						sw_SputnikSuburbanEMU_Liv0_lencheck ;
         length:							8;
         cargo_capacity:                 [SputnikSuburbanEMU_CargoCapacity / param_capacity_mod];
         power:                          SputnikSuburbanEMU_Power;
@@ -4042,57 +3597,7 @@ switch (FEAT_TRAINS, SELF, switch_Hitachi_Liv0_NonControlMotorStack_r, [
 	1: switch_Hitachi_Rw_railtype;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_Hitachi_Liv0_NonControlMotorStack_r;
-    return spriteset_Hitachi_Liv0_Trailer;
-}
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_Hitachi_Liv0_NonControlMotorStack;
-    return spriteset_Hitachi_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_Hitachi_Liv0_NonControlMotorStack_r;
-    return spriteset_Hitachi_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : spriteset_Hitachi_Liv0_Trailer;
-    return switch_Hitachi_Liv0_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_Hitachi_Liv0_NonControlMotorStack;
-    return spriteset_Hitachi_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Hitachi_Liv0_pantocheck_at_1_r;
-    return sw_Hitachi_Liv0_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : spriteset_Hitachi_Liv0_Trailer;
-    return sw_Hitachi_Liv0_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Hitachi_Liv0_pantocheck_at_2_r;
-    return sw_Hitachi_Liv0_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : spriteset_Hitachi_Liv0_Trailer;
-    3 : sw_Hitachi_Liv0_pantocheck_at_1_r;
-    4 : sw_Hitachi_Liv0_sidecheck_4_r;
-    5 : sw_Hitachi_Liv0_pantocheck_at_2_r;
-    6 .. 7 : sw_Hitachi_Liv0_sidecheck_6_r;
-    return sw_Hitachi_Liv0_sidecheck_other_r;
-}
-
-//Forward
-
+//Midcars
 switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_Hitachi_Liv0_NonControlMotorStack_r;
     return spriteset_Hitachi_Liv0_Trailer;
@@ -4135,26 +3640,7 @@ switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_lencheck, num_vehs_in_vehid_chain ) {
     return sw_Hitachi_Liv0_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_Hitachi_Liv0_MotorStack; //Panto
-    return switch_Hitachi_Liv0_Lead_Timeline; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : sw_Hitachi_Liv0_panto_direction_r_pos;        //Front panto
-    return switch_Hitachi_Liv0_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_Hitachi_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return switch_Hitachi_Liv0_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: sw_Hitachi_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_Hitachi_Liv0_panto_flipcheck_r; //More Checks
-}
-
+//Endcars
 switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_panto_direction, vehicle_is_flipped){
     0 : switch_Hitachi_Liv0_MotorStack;        //Front panto
     return switch_Hitachi_Liv0_MotorStack_r;    //Rear panto
@@ -4168,16 +3654,6 @@ switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_panto_flipcheck, vehicle_is_flipped){
 switch(FEAT_TRAINS, SELF, sw_Hitachi_Liv0_frontcheck, position_in_vehid_chain){
     0: sw_Hitachi_Liv0_panto_direction; //We need a pantograph, guaranteed
     return sw_Hitachi_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Hitachi_Liv0_directioncheck, vehicle_is_reversed){
-    0: sw_Hitachi_Liv0_frontcheck; //We are going forwards
-    return sw_Hitachi_Liv0_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Hitachi_Liv0_revcheck, vehicle_is_reversed){
-    0 : sw_Hitachi_Liv0_lencheck;
-    return sw_Hitachi_Liv0_lencheck_r;
 }
 
 const Hitachi_ID_Liv0 = (Hitachi_ID + Liv0_ID);
@@ -4222,12 +3698,12 @@ item(FEAT_TRAINS, Item_Hitachi_Liv0, Hitachi_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_Hitachi_Liv0_directioncheck;
+        default: 						sw_Hitachi_Liv0_frontcheck;
         purchase: 						switch_Hitachi_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_HITACHI);
     }
     livery_override (Item_MU_Trailer){
-        default:						sw_Hitachi_Liv0_revcheck ;
+        default:						sw_Hitachi_Liv0_lencheck ;
         length:							8;
         cargo_capacity:                 [Hitachi_CargoCapacity / param_capacity_mod];
         power:                          Hitachi_Power;
@@ -4315,28 +3791,6 @@ switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_PantoCarStack, [
 }
 
 /* Midcars */
-    // Backwards
-        // Penultipantos
-        switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_pantos_large_backwards, position_in_vehid_chain_from_end ) {
-                0:  switch_AucklandART_Liv0_PantoCarStack_r;
-                switch_AucklandART_Liv0_PantoCarStack;
-            }
-        switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_backwards_length_large, (position_in_vehid_chain == 0) || (position_in_vehid_chain_from_end == 0 )) {                
-                1:  switch_AucklandART_Liv0_pantos_large_backwards;
-                spriteset_AucklandART_Liv0_Trailer;            
-            }
-        //Panto in Middle
-        switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_backwards_length_small, (position_in_vehid_chain == position_in_vehid_chain_from_end ) || (position_in_vehid_chain - 1 == position_in_vehid_chain_from_end) ) {                
-                0:  switch_AucklandART_Liv0_PantoCarStack_r;
-                spriteset_AucklandART_Liv0_Trailer;                    
-            }
-    switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_backwards_length, num_vehs_in_vehid_chain) {
-            0..1: switch_AucklandART_Liv0_backwards_length_large;
-            2: switch_AucklandART_Liv0_backwards_length_small;
-            switch_AucklandART_Liv0_backwards_length_large;
-        }
-
-    // Forwards
         // Penultipantos
         switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_pantos_large_forwards, position_in_vehid_chain ) {                
                 0:  switch_AucklandART_Liv0_PantoCarStack;
@@ -4357,36 +3811,7 @@ switch (FEAT_TRAINS, SELF, switch_AucklandART_Liv0_PantoCarStack, [
             switch_AucklandART_Liv0_forwards_length_large;
         }
 
-    switch (FEAT_TRAINS, PARENT, switch_AucklandART_Liv0_midcars, vehicle_is_reversed) {                
-            0:  switch_AucklandART_Liv0_forwards_length;
-            switch_AucklandART_Liv0_backwards_length;                
-        }
-	
-
-
 //End Car Controls
-//Forwards
-switch(FEAT_TRAINS, SELF, switch_AucklandART_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: spriteset_AucklandART_Liv0_lead; //Panto
-    return switch_AucklandART_Liv0_LeadStack; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, switch_AucklandART_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : switch_AucklandART_Liv0_panto_direction_r_pos;        //Front panto
-    return spriteset_AucklandART_Liv0_lead;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, switch_AucklandART_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : switch_AucklandART_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return spriteset_AucklandART_Liv0_lead;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, switch_AucklandART_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: switch_AucklandART_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return switch_AucklandART_Liv0_panto_flipcheck_r; //More Checks
-}
-
-//Backwardss
 switch(FEAT_TRAINS, SELF, switch_AucklandART_Liv0_panto_flipcheck, vehicle_is_flipped){
     0 : spriteset_AucklandART_Liv0_lead;        //Not flipped, give Panto
     return switch_AucklandART_Liv0_LeadStack;    //Flipped, no panto
@@ -4395,11 +3820,6 @@ switch(FEAT_TRAINS, SELF, switch_AucklandART_Liv0_panto_flipcheck, vehicle_is_fl
 switch(FEAT_TRAINS, SELF, switch_AucklandART_Liv0_frontcheck, position_in_vehid_chain){
     0: spriteset_AucklandART_Liv0_lead; //We need a pantograph, guaranteed
     return switch_AucklandART_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, switch_AucklandART_Liv0_directioncheck, vehicle_is_reversed){
-    0: switch_AucklandART_Liv0_frontcheck; //We are going forwards
-    return switch_AucklandART_Liv0_frontcheck_r; //We are going backwards
 }
 
 const AucklandART_ID_Liv0 = (AucklandART_ID + Liv0_ID);
@@ -4444,12 +3864,12 @@ item(FEAT_TRAINS, Item_AucklandART_Liv0, AucklandART_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						switch_AucklandART_Liv0_directioncheck;
+        default: 						switch_AucklandART_Liv0_frontcheck;
         purchase: 						switch_AucklandART_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_AUCKLANDART);
     }
     livery_override (Item_MU_Trailer){
-        default:						switch_AucklandART_Liv0_midcars;
+        default:						switch_AucklandART_Liv0_forwards_length;
         length:							8;
         cargo_capacity:                 [AucklandART_CargoCapacity / param_capacity_mod];
         power:                          AucklandART_Power;
@@ -4508,7 +3928,6 @@ switch (FEAT_TRAINS, SELF, switch_Comeng_SMU_Liv0_PurchaseStack, [
     0: spriteset_Comeng_SMU_Liv0_purchase;
 	1: spriteset_Comeng_SMU_Panto_Purchase;
 }
-
 //C Lead
 switch (FEAT_TRAINS, SELF, switch_Comeng_SMU_Liv0_MotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
@@ -4525,7 +3944,6 @@ switch (FEAT_TRAINS, SELF, switch_Comeng_SMU_Liv0_MotorStack_r, [
     0: spriteset_Comeng_SMU_Liv0_lead;
 	1: switch_Comeng_SMU_Fw_railtype;
 }
-
 //N Lead
 switch (FEAT_TRAINS, SELF, switch_Comeng_SMU_Liv0_NonControlMotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
@@ -4543,57 +3961,7 @@ switch (FEAT_TRAINS, SELF, switch_Comeng_SMU_Liv0_NonControlMotorStack_r, [
 	1: switch_Comeng_SMU_Rw_railtype;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_Comeng_SMU_Liv0_NonControlMotorStack_r;
-    return spriteset_Comeng_SMU_Liv0_Trailer;
-}
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_Comeng_SMU_Liv0_NonControlMotorStack;
-    return spriteset_Comeng_SMU_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_Comeng_SMU_Liv0_NonControlMotorStack_r;
-    return spriteset_Comeng_SMU_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : spriteset_Comeng_SMU_Liv0_Trailer;
-    return switch_Comeng_SMU_Liv0_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_Comeng_SMU_Liv0_NonControlMotorStack;
-    return spriteset_Comeng_SMU_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Comeng_SMU_Liv0_pantocheck_at_1_r;
-    return sw_Comeng_SMU_Liv0_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : spriteset_Comeng_SMU_Liv0_Trailer;
-    return sw_Comeng_SMU_Liv0_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Comeng_SMU_Liv0_pantocheck_at_2_r;
-    return sw_Comeng_SMU_Liv0_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : spriteset_Comeng_SMU_Liv0_Trailer;
-    3 : sw_Comeng_SMU_Liv0_pantocheck_at_1_r;
-    4 : sw_Comeng_SMU_Liv0_sidecheck_4_r;
-    5 : sw_Comeng_SMU_Liv0_pantocheck_at_2_r;
-    6 .. 7 : sw_Comeng_SMU_Liv0_sidecheck_6_r;
-    return sw_Comeng_SMU_Liv0_sidecheck_other_r;
-}
-
-//Forward
-
+//Midcars
 switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_Comeng_SMU_Liv0_NonControlMotorStack_r;
     return spriteset_Comeng_SMU_Liv0_Trailer;
@@ -4636,49 +4004,20 @@ switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_lencheck, num_vehs_in_vehid_chain )
     return sw_Comeng_SMU_Liv0_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_Comeng_SMU_Liv0_MotorStack; //Panto
-    return spriteset_Comeng_SMU_Liv0_lead; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : sw_Comeng_SMU_Liv0_panto_direction_r_pos;        //Front panto
-    return switch_Comeng_SMU_Liv0_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_Comeng_SMU_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return switch_Comeng_SMU_Liv0_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: sw_Comeng_SMU_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_Comeng_SMU_Liv0_panto_flipcheck_r; //More Checks
-}
-
+//End Cars
 switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_panto_direction, vehicle_is_flipped){
-    0 : switch_Comeng_SMU_Liv0_MotorStack;        //Front panto
-    return switch_Comeng_SMU_Liv0_MotorStack_r;    //Rear panto
+    0 : switch_Comeng_SMU_Liv0_MotorStack;
+    return switch_Comeng_SMU_Liv0_MotorStack_r;
 }
 
 switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_panto_flipcheck, vehicle_is_flipped){
-    0 : sw_Comeng_SMU_Liv0_panto_direction;        //Not flipped, give Panto
-    return spriteset_Comeng_SMU_Liv0_lead;    //Flipped, no panto
+    0 : sw_Comeng_SMU_Liv0_panto_direction;
+    return spriteset_Comeng_SMU_Liv0_lead;
 }
 
 switch(FEAT_TRAINS, SELF, sw_Comeng_SMU_Liv0_frontcheck, position_in_vehid_chain){
-    0: sw_Comeng_SMU_Liv0_panto_direction; //We need a pantograph, guaranteed
-    return sw_Comeng_SMU_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Comeng_SMU_Liv0_directioncheck, vehicle_is_reversed){
-    0: sw_Comeng_SMU_Liv0_frontcheck; //We are going forwards
-    return sw_Comeng_SMU_Liv0_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Comeng_SMU_Liv0_revcheck, vehicle_is_reversed){
-    0 : sw_Comeng_SMU_Liv0_lencheck;
-    return sw_Comeng_SMU_Liv0_lencheck_r;
+    0: sw_Comeng_SMU_Liv0_panto_direction;
+    return sw_Comeng_SMU_Liv0_panto_flipcheck;
 }
 
 const Comeng_SMU_ID_Liv0 = (Comeng_SMU_ID + Liv0_ID);
@@ -4723,12 +4062,12 @@ item(FEAT_TRAINS, Item_Comeng_SMU_Liv0, Comeng_SMU_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_Comeng_SMU_Liv0_directioncheck;
+        default: 						sw_Comeng_SMU_Liv0_frontcheck;
         purchase: 						switch_Comeng_SMU_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_COMENG_SMU);
     }
     livery_override (Item_MU_Trailer){
-        default:						sw_Comeng_SMU_Liv0_revcheck ;
+        default:						sw_Comeng_SMU_Liv0_lencheck ;
         length:							8;
         cargo_capacity:                 [Comeng_SMU_CargoCapacity / param_capacity_mod];
         power:                          Comeng_SMU_Power;
@@ -4816,28 +4155,6 @@ switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_PantoCarStack, [
 }
 
 /* Midcars */
-    // Backwards
-        // Penultipantos
-        switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_pantos_large_backwards, position_in_vehid_chain_from_end ) {
-                0:  switch_XTrapolis100_Liv0_PantoCarStack_r;
-                switch_XTrapolis100_Liv0_PantoCarStack;
-            }
-        switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_backwards_length_large, (position_in_vehid_chain == 0) || (position_in_vehid_chain_from_end == 0 )) {                
-                1:  switch_XTrapolis100_Liv0_pantos_large_backwards;
-                spriteset_XTrapolis100_Liv0_Trailer;            
-            }
-        //Panto in Middle
-        switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_backwards_length_small, (position_in_vehid_chain == position_in_vehid_chain_from_end ) || (position_in_vehid_chain - 1 == position_in_vehid_chain_from_end) ) {                
-                0:  switch_XTrapolis100_Liv0_PantoCarStack_r;
-                spriteset_XTrapolis100_Liv0_Trailer;                    
-            }
-    switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_backwards_length, num_vehs_in_vehid_chain) {
-            0..1: switch_XTrapolis100_Liv0_backwards_length_large;
-            2: switch_XTrapolis100_Liv0_backwards_length_small;
-            switch_XTrapolis100_Liv0_backwards_length_large;
-        }
-
-    // Forwards
         // Penultipantos
         switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_pantos_large_forwards, position_in_vehid_chain ) {                
                 0:  switch_XTrapolis100_Liv0_PantoCarStack;
@@ -4852,53 +4169,21 @@ switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_PantoCarStack, [
                 0:  spriteset_XTrapolis100_Liv0_Trailer;
                 switch_XTrapolis100_Liv0_PantoCarStack;                
             }
-    switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_forwards_length, num_vehs_in_vehid_chain) {
+    switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_midcars, num_vehs_in_vehid_chain) {
             0..1: switch_XTrapolis100_Liv0_forwards_length_large;
             2:  switch_XTrapolis100_Liv0_forwards_length_small;
             switch_XTrapolis100_Liv0_forwards_length_large;
         }
 
-    switch (FEAT_TRAINS, PARENT, switch_XTrapolis100_Liv0_midcars, vehicle_is_reversed) {                
-            0:  switch_XTrapolis100_Liv0_forwards_length;
-            switch_XTrapolis100_Liv0_backwards_length;                
-        }
-
 //End Car Controls
-//Forwards
-switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: spriteset_XTrapolis100_Liv0_lead; //Panto
-    return switch_XTrapolis100_Liv0_LeadStack; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : switch_XTrapolis100_Liv0_panto_direction_r_pos;        //Front panto
-    return spriteset_XTrapolis100_Liv0_lead;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : switch_XTrapolis100_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return spriteset_XTrapolis100_Liv0_lead;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: switch_XTrapolis100_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return switch_XTrapolis100_Liv0_panto_flipcheck_r; //More Checks
-}
-
-//Backwardss
 switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_panto_flipcheck, vehicle_is_flipped){
     0 : spriteset_XTrapolis100_Liv0_lead;        //Not flipped, give Panto
     return switch_XTrapolis100_Liv0_LeadStack;    //Flipped, no panto
 }
 
-switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_frontcheck, position_in_vehid_chain){
+switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv0_endcars, position_in_vehid_chain){
     0: spriteset_XTrapolis100_Liv0_lead; //We need a pantograph, guaranteed
     return switch_XTrapolis100_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, switch_XTrapolis100_Liv0_directioncheck, vehicle_is_reversed){
-    0: switch_XTrapolis100_Liv0_frontcheck; //We are going forwards
-    return switch_XTrapolis100_Liv0_frontcheck_r; //We are going backwards
 }
 
 const XTrapolis100_ID_Liv0 = (XTrapolis100_ID + Liv0_ID);
@@ -4943,7 +4228,7 @@ item(FEAT_TRAINS, Item_XTrapolis100_Liv0, XTrapolis100_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						switch_XTrapolis100_Liv0_directioncheck;
+        default: 						switch_XTrapolis100_Liv0_endcars;
         purchase: 						switch_XTrapolis100_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_XTRAPOLIS100);
     }
@@ -5001,28 +4286,6 @@ switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_PantoCarStack, [
 }
 
 /* Midcars */
-    // Backwards
-        // Penultipantos
-        switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_pantos_large_backwards, position_in_vehid_chain_from_end ) {
-                0:  switch_XTrapolis100_Liv1_PantoCarStack_r;
-                switch_XTrapolis100_Liv1_PantoCarStack;
-            }
-        switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_backwards_length_large, (position_in_vehid_chain == 0) || (position_in_vehid_chain_from_end == 0 )) {                
-                1:  switch_XTrapolis100_Liv1_pantos_large_backwards;
-                spriteset_XTrapolis100_Liv1_Trailer;            
-            }
-        //Panto in Middle
-        switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_backwards_length_small, (position_in_vehid_chain == position_in_vehid_chain_from_end ) || (position_in_vehid_chain - 1 == position_in_vehid_chain_from_end) ) {                
-                0:  switch_XTrapolis100_Liv1_PantoCarStack_r;
-                spriteset_XTrapolis100_Liv1_Trailer;                    
-            }
-    switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_backwards_length, num_vehs_in_vehid_chain) {
-            0..1: switch_XTrapolis100_Liv1_backwards_length_large;
-            2: switch_XTrapolis100_Liv1_backwards_length_small;
-            switch_XTrapolis100_Liv1_backwards_length_large;
-        }
-
-    // Forwards
         // Penultipantos
         switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_pantos_large_forwards, position_in_vehid_chain ) {                
                 0:  switch_XTrapolis100_Liv1_PantoCarStack;
@@ -5037,53 +4300,21 @@ switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_PantoCarStack, [
                 0:  spriteset_XTrapolis100_Liv1_Trailer;
                 switch_XTrapolis100_Liv1_PantoCarStack;                
             }
-    switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_forwards_length, num_vehs_in_vehid_chain) {
+    switch (FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_midcars, num_vehs_in_vehid_chain) {
             0..1: switch_XTrapolis100_Liv1_forwards_length_large;
             2:  switch_XTrapolis100_Liv1_forwards_length_small;
             switch_XTrapolis100_Liv1_forwards_length_large;
         }
 
-    switch (FEAT_TRAINS, PARENT, switch_XTrapolis100_Liv1_midcars, vehicle_is_reversed) {                
-            0:  switch_XTrapolis100_Liv1_forwards_length;
-            switch_XTrapolis100_Liv1_backwards_length;                
-        }
-
 //End Car Controls
-//Forwards
-switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: spriteset_XTrapolis100_Liv1_lead; //Panto
-    return switch_XTrapolis100_Liv1_LeadStack; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_panto_direction_r, vehicle_is_flipped){
-    0 : switch_XTrapolis100_Liv1_panto_direction_r_pos;        //Front panto
-    return spriteset_XTrapolis100_Liv1_lead;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_panto_flipcheck_r, vehicle_is_flipped){
-    0 : switch_XTrapolis100_Liv1_panto_direction_r;        //Not flipped, give Panto
-    return spriteset_XTrapolis100_Liv1_lead;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_frontcheck_r, position_in_vehid_chain){
-    0: switch_XTrapolis100_Liv1_panto_direction_r; //We need a pantograph, guaranteed
-    return switch_XTrapolis100_Liv1_panto_flipcheck_r; //More Checks
-}
-
-//Backwardss
 switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_panto_flipcheck, vehicle_is_flipped){
     0 : spriteset_XTrapolis100_Liv1_lead;        //Not flipped, give Panto
     return switch_XTrapolis100_Liv1_LeadStack;    //Flipped, no panto
 }
 
-switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_frontcheck, position_in_vehid_chain){
+switch(FEAT_TRAINS, SELF, switch_XTrapolis100_Liv1_endcars, position_in_vehid_chain){
     0: spriteset_XTrapolis100_Liv1_lead; //We need a pantograph, guaranteed
     return switch_XTrapolis100_Liv1_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, switch_XTrapolis100_Liv1_directioncheck, vehicle_is_reversed){
-    0: switch_XTrapolis100_Liv1_frontcheck; //We are going forwards
-    return switch_XTrapolis100_Liv1_frontcheck_r; //We are going backwards
 }
 
 const XTrapolis100_ID_Liv1 = (XTrapolis100_ID + Liv1_ID);
@@ -5128,7 +4359,7 @@ item(FEAT_TRAINS, Item_XTrapolis100_Liv1, XTrapolis100_ID_Liv1) {
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						switch_XTrapolis100_Liv1_directioncheck;
+        default: 						switch_XTrapolis100_Liv1_endcars;
         purchase: 						switch_XTrapolis100_Liv1_PurchaseStack;
         additional_text: 				string(STR_INFO_XTRAPOLIS100);
     }
@@ -5215,7 +4446,7 @@ switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Liv0_NonControlMotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Goninan_Tangara_Liv0_lead;
+    0: spriteset_Goninan_Tangara_Liv0_Trailer;
 	1: switch_Goninan_Tangara_Fw_railtype;
 }
 //N Rear
@@ -5223,61 +4454,11 @@ switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Liv0_NonControlMotorStack_r, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Goninan_Tangara_Liv0_lead_r;
+    0: spriteset_Goninan_Tangara_Liv0_Trailer;
 	1: switch_Goninan_Tangara_Rw_railtype;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_Goninan_Tangara_Liv0_NonControlMotorStack_r;
-    return spriteset_Goninan_Tangara_Liv0_Trailer;
-}
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_Goninan_Tangara_Liv0_NonControlMotorStack;
-    return spriteset_Goninan_Tangara_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_Goninan_Tangara_Liv0_NonControlMotorStack_r;
-    return spriteset_Goninan_Tangara_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : spriteset_Goninan_Tangara_Liv0_Trailer;
-    return switch_Goninan_Tangara_Liv0_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_Goninan_Tangara_Liv0_NonControlMotorStack;
-    return spriteset_Goninan_Tangara_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Goninan_Tangara_Liv0_pantocheck_at_1_r;
-    return sw_Goninan_Tangara_Liv0_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : spriteset_Goninan_Tangara_Liv0_Trailer;
-    return sw_Goninan_Tangara_Liv0_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Goninan_Tangara_Liv0_pantocheck_at_2_r;
-    return sw_Goninan_Tangara_Liv0_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : spriteset_Goninan_Tangara_Liv0_Trailer;
-    3 : sw_Goninan_Tangara_Liv0_pantocheck_at_1_r;
-    4 : sw_Goninan_Tangara_Liv0_sidecheck_4_r;
-    5 : sw_Goninan_Tangara_Liv0_pantocheck_at_2_r;
-    6 .. 7 : sw_Goninan_Tangara_Liv0_sidecheck_6_r;
-    return sw_Goninan_Tangara_Liv0_sidecheck_other_r;
-}
-
-//Forward
-
+//Midcars
 switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_Goninan_Tangara_Liv0_NonControlMotorStack_r;
     return spriteset_Goninan_Tangara_Liv0_Trailer;
@@ -5320,26 +4501,7 @@ switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_lencheck, num_vehs_in_vehid_ch
     return sw_Goninan_Tangara_Liv0_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_Goninan_Tangara_Liv0_MotorStack; //Panto
-    return spriteset_Goninan_Tangara_Liv0_lead; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : sw_Goninan_Tangara_Liv0_panto_direction_r_pos;        //Front panto
-    return switch_Goninan_Tangara_Liv0_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_Goninan_Tangara_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return switch_Goninan_Tangara_Liv0_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: sw_Goninan_Tangara_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_Goninan_Tangara_Liv0_panto_flipcheck_r; //More Checks
-}
-
+//Endcars
 switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_panto_direction, vehicle_is_flipped){
     0 : switch_Goninan_Tangara_Liv0_MotorStack;        //Front panto
     return switch_Goninan_Tangara_Liv0_MotorStack_r;    //Rear panto
@@ -5353,16 +4515,6 @@ switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_panto_flipcheck, vehicle_is_fl
 switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv0_frontcheck, position_in_vehid_chain){
     0: sw_Goninan_Tangara_Liv0_panto_direction; //We need a pantograph, guaranteed
     return sw_Goninan_Tangara_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Goninan_Tangara_Liv0_directioncheck, vehicle_is_reversed){
-    0: sw_Goninan_Tangara_Liv0_frontcheck; //We are going forwards
-    return sw_Goninan_Tangara_Liv0_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Goninan_Tangara_Liv0_revcheck, vehicle_is_reversed){
-    0 : sw_Goninan_Tangara_Liv0_lencheck;
-    return sw_Goninan_Tangara_Liv0_lencheck_r;
 }
 
 const Goninan_Tangara_ID_Liv0 = (Goninan_Tangara_ID + Liv0_ID);
@@ -5407,18 +4559,17 @@ item(FEAT_TRAINS, Item_Goninan_Tangara_Liv0, Goninan_Tangara_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_Goninan_Tangara_Liv0_directioncheck;
+        default: 						sw_Goninan_Tangara_Liv0_frontcheck;
         purchase: 						switch_Goninan_Tangara_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_GONINAN_TANGARA);
     }
     livery_override (Item_MU_Trailer){
-        default:						sw_Goninan_Tangara_Liv0_revcheck ;
+        default:						sw_Goninan_Tangara_Liv0_lencheck ;
         length:							8;
         cargo_capacity:                 [Goninan_Tangara_CargoCapacity / param_capacity_mod];
         power:                          Goninan_Tangara_Power;
 		weight:                        	Goninan_Tangara_Weight;
 		running_cost_factor:            Goninan_Tangara_RunningCostFactor;
-
     }
 }
 
@@ -5459,7 +4610,7 @@ switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Liv1_NonControlMotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Goninan_Tangara_Liv1_lead;
+    0: spriteset_Goninan_Tangara_Liv1_Trailer;
 	1: switch_Goninan_Tangara_Fw_railtype;
 }
 //N Rear
@@ -5467,61 +4618,11 @@ switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Liv1_NonControlMotorStack_r, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Goninan_Tangara_Liv1_lead_r;
+    0: spriteset_Goninan_Tangara_Liv1_Trailer;
 	1: switch_Goninan_Tangara_Rw_railtype;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_Goninan_Tangara_Liv1_NonControlMotorStack_r;
-    return spriteset_Goninan_Tangara_Liv1_Trailer;
-}
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_Goninan_Tangara_Liv1_NonControlMotorStack;
-    return spriteset_Goninan_Tangara_Liv1_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_Goninan_Tangara_Liv1_NonControlMotorStack_r;
-    return spriteset_Goninan_Tangara_Liv1_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : spriteset_Goninan_Tangara_Liv1_Trailer;
-    return switch_Goninan_Tangara_Liv1_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_Goninan_Tangara_Liv1_NonControlMotorStack;
-    return spriteset_Goninan_Tangara_Liv1_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Goninan_Tangara_Liv1_pantocheck_at_1_r;
-    return sw_Goninan_Tangara_Liv1_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : spriteset_Goninan_Tangara_Liv1_Trailer;
-    return sw_Goninan_Tangara_Liv1_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Goninan_Tangara_Liv1_pantocheck_at_2_r;
-    return sw_Goninan_Tangara_Liv1_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : spriteset_Goninan_Tangara_Liv1_Trailer;
-    3 : sw_Goninan_Tangara_Liv1_pantocheck_at_1_r;
-    4 : sw_Goninan_Tangara_Liv1_sidecheck_4_r;
-    5 : sw_Goninan_Tangara_Liv1_pantocheck_at_2_r;
-    6 .. 7 : sw_Goninan_Tangara_Liv1_sidecheck_6_r;
-    return sw_Goninan_Tangara_Liv1_sidecheck_other_r;
-}
-
-//Forward
-
+//Midcars
 switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_Goninan_Tangara_Liv1_NonControlMotorStack_r;
     return spriteset_Goninan_Tangara_Liv1_Trailer;
@@ -5564,26 +4665,7 @@ switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_lencheck, num_vehs_in_vehid_ch
     return sw_Goninan_Tangara_Liv1_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_Goninan_Tangara_Liv1_MotorStack; //Panto
-    return spriteset_Goninan_Tangara_Liv1_lead; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_panto_direction_r, vehicle_is_flipped){
-    0 : sw_Goninan_Tangara_Liv1_panto_direction_r_pos;        //Front panto
-    return switch_Goninan_Tangara_Liv1_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_Goninan_Tangara_Liv1_panto_direction_r;        //Not flipped, give Panto
-    return switch_Goninan_Tangara_Liv1_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_frontcheck_r, position_in_vehid_chain){
-    0: sw_Goninan_Tangara_Liv1_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_Goninan_Tangara_Liv1_panto_flipcheck_r; //More Checks
-}
-
+//Endcars
 switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_panto_direction, vehicle_is_flipped){
     0 : switch_Goninan_Tangara_Liv1_MotorStack;        //Front panto
     return switch_Goninan_Tangara_Liv1_MotorStack_r;    //Rear panto
@@ -5597,16 +4679,6 @@ switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_panto_flipcheck, vehicle_is_fl
 switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv1_frontcheck, position_in_vehid_chain){
     0: sw_Goninan_Tangara_Liv1_panto_direction; //We need a pantograph, guaranteed
     return sw_Goninan_Tangara_Liv1_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Goninan_Tangara_Liv1_directioncheck, vehicle_is_reversed){
-    0: sw_Goninan_Tangara_Liv1_frontcheck; //We are going forwards
-    return sw_Goninan_Tangara_Liv1_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Goninan_Tangara_Liv1_revcheck, vehicle_is_reversed){
-    0 : sw_Goninan_Tangara_Liv1_lencheck;
-    return sw_Goninan_Tangara_Liv1_lencheck_r;
 }
 
 const Goninan_Tangara_ID_Liv1 = (Goninan_Tangara_ID + Liv1_ID);
@@ -5651,18 +4723,17 @@ item(FEAT_TRAINS, Item_Goninan_Tangara_Liv1, Goninan_Tangara_ID_Liv1) {
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_Goninan_Tangara_Liv1_directioncheck;
+        default: 						sw_Goninan_Tangara_Liv1_frontcheck;
         purchase: 						switch_Goninan_Tangara_Liv1_PurchaseStack;
         additional_text: 				string(STR_INFO_GONINAN_TANGARA);
     }
     livery_override (Item_MU_Trailer){
-        default:						sw_Goninan_Tangara_Liv1_revcheck ;
+        default:						sw_Goninan_Tangara_Liv1_lencheck ;
         length:							8;
         cargo_capacity:                 [Goninan_Tangara_CargoCapacity / param_capacity_mod];
         power:                          Goninan_Tangara_Power;
 		weight:                        	Goninan_Tangara_Weight;
 		running_cost_factor:            Goninan_Tangara_RunningCostFactor;
-
     }
 }
 
@@ -5703,7 +4774,7 @@ switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Liv2_NonControlMotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Goninan_Tangara_Liv2_lead;
+    0: spriteset_Goninan_Tangara_Liv2_Trailer;
 	1: switch_Goninan_Tangara_Fw_railtype;
 }
 //N Rear
@@ -5711,61 +4782,11 @@ switch (FEAT_TRAINS, SELF, switch_Goninan_Tangara_Liv2_NonControlMotorStack_r, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Goninan_Tangara_Liv2_lead_r;
+    0: spriteset_Goninan_Tangara_Liv2_Trailer;
 	1: switch_Goninan_Tangara_Rw_railtype;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_Goninan_Tangara_Liv2_NonControlMotorStack_r;
-    return spriteset_Goninan_Tangara_Liv2_Trailer;
-}
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_Goninan_Tangara_Liv2_NonControlMotorStack;
-    return spriteset_Goninan_Tangara_Liv2_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_Goninan_Tangara_Liv2_NonControlMotorStack_r;
-    return spriteset_Goninan_Tangara_Liv2_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : spriteset_Goninan_Tangara_Liv2_Trailer;
-    return switch_Goninan_Tangara_Liv2_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_Goninan_Tangara_Liv2_NonControlMotorStack;
-    return spriteset_Goninan_Tangara_Liv2_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Goninan_Tangara_Liv2_pantocheck_at_1_r;
-    return sw_Goninan_Tangara_Liv2_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : spriteset_Goninan_Tangara_Liv2_Trailer;
-    return sw_Goninan_Tangara_Liv2_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Goninan_Tangara_Liv2_pantocheck_at_2_r;
-    return sw_Goninan_Tangara_Liv2_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : spriteset_Goninan_Tangara_Liv2_Trailer;
-    3 : sw_Goninan_Tangara_Liv2_pantocheck_at_1_r;
-    4 : sw_Goninan_Tangara_Liv2_sidecheck_4_r;
-    5 : sw_Goninan_Tangara_Liv2_pantocheck_at_2_r;
-    6 .. 7 : sw_Goninan_Tangara_Liv2_sidecheck_6_r;
-    return sw_Goninan_Tangara_Liv2_sidecheck_other_r;
-}
-
-//Forward
-
+//Midcars
 switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_Goninan_Tangara_Liv2_NonControlMotorStack_r;
     return spriteset_Goninan_Tangara_Liv2_Trailer;
@@ -5808,26 +4829,7 @@ switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_lencheck, num_vehs_in_vehid_ch
     return sw_Goninan_Tangara_Liv2_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_Goninan_Tangara_Liv2_MotorStack; //Panto
-    return spriteset_Goninan_Tangara_Liv2_lead; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_panto_direction_r, vehicle_is_flipped){
-    0 : sw_Goninan_Tangara_Liv2_panto_direction_r_pos;        //Front panto
-    return switch_Goninan_Tangara_Liv2_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_Goninan_Tangara_Liv2_panto_direction_r;        //Not flipped, give Panto
-    return switch_Goninan_Tangara_Liv2_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_frontcheck_r, position_in_vehid_chain){
-    0: sw_Goninan_Tangara_Liv2_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_Goninan_Tangara_Liv2_panto_flipcheck_r; //More Checks
-}
-
+//Endcars
 switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_panto_direction, vehicle_is_flipped){
     0 : switch_Goninan_Tangara_Liv2_MotorStack;        //Front panto
     return switch_Goninan_Tangara_Liv2_MotorStack_r;    //Rear panto
@@ -5841,16 +4843,6 @@ switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_panto_flipcheck, vehicle_is_fl
 switch(FEAT_TRAINS, SELF, sw_Goninan_Tangara_Liv2_frontcheck, position_in_vehid_chain){
     0: sw_Goninan_Tangara_Liv2_panto_direction; //We need a pantograph, guaranteed
     return sw_Goninan_Tangara_Liv2_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Goninan_Tangara_Liv2_directioncheck, vehicle_is_reversed){
-    0: sw_Goninan_Tangara_Liv2_frontcheck; //We are going forwards
-    return sw_Goninan_Tangara_Liv2_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Goninan_Tangara_Liv2_revcheck, vehicle_is_reversed){
-    0 : sw_Goninan_Tangara_Liv2_lencheck;
-    return sw_Goninan_Tangara_Liv2_lencheck_r;
 }
 
 const Goninan_Tangara_ID_Liv2 = (Goninan_Tangara_ID + Liv2_ID);
@@ -5895,20 +4887,20 @@ item(FEAT_TRAINS, Item_Goninan_Tangara_Liv2, Goninan_Tangara_ID_Liv2) {
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_Goninan_Tangara_Liv2_directioncheck;
+        default: 						sw_Goninan_Tangara_Liv2_frontcheck;
         purchase: 						switch_Goninan_Tangara_Liv2_PurchaseStack;
         additional_text: 				string(STR_INFO_GONINAN_TANGARA);
     }
     livery_override (Item_MU_Trailer){
-        default:						sw_Goninan_Tangara_Liv2_revcheck ;
+        default:						sw_Goninan_Tangara_Liv2_lencheck ;
         length:							8;
         cargo_capacity:                 [Goninan_Tangara_CargoCapacity / param_capacity_mod];
         power:                          Goninan_Tangara_Power;
 		weight:                        	Goninan_Tangara_Weight;
 		running_cost_factor:            Goninan_Tangara_RunningCostFactor;
-
     }
 }
+
 
 //ID
 const Goninan_4D_ID = 12240;
@@ -5982,7 +4974,7 @@ switch (FEAT_TRAINS, SELF, switch_Goninan_4D_Liv0_NonControlMotorStack, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Goninan_4D_Liv0_lead;
+    0: spriteset_Goninan_4D_Liv0_Trailer;
 	1: switch_Goninan_4D_Fw_railtype;
 }
 //N Rear
@@ -5990,61 +4982,11 @@ switch (FEAT_TRAINS, SELF, switch_Goninan_4D_Liv0_NonControlMotorStack_r, [
     STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
     getbits(extra_callback_info1, 8, 8)
     ]) {
-    0: spriteset_Goninan_4D_Liv0_lead_r;
+    0: spriteset_Goninan_4D_Liv0_Trailer;
 	1: switch_Goninan_4D_Rw_railtype;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_Goninan_4D_Liv0_NonControlMotorStack_r;
-    return spriteset_Goninan_4D_Liv0_Trailer;
-}
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_Goninan_4D_Liv0_NonControlMotorStack;
-    return spriteset_Goninan_4D_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_Goninan_4D_Liv0_NonControlMotorStack_r;
-    return spriteset_Goninan_4D_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : spriteset_Goninan_4D_Liv0_Trailer;
-    return switch_Goninan_4D_Liv0_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_Goninan_4D_Liv0_NonControlMotorStack;
-    return spriteset_Goninan_4D_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Goninan_4D_Liv0_pantocheck_at_1_r;
-    return sw_Goninan_4D_Liv0_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : spriteset_Goninan_4D_Liv0_Trailer;
-    return sw_Goninan_4D_Liv0_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Goninan_4D_Liv0_pantocheck_at_2_r;
-    return sw_Goninan_4D_Liv0_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : spriteset_Goninan_4D_Liv0_Trailer;
-    3 : sw_Goninan_4D_Liv0_pantocheck_at_1_r;
-    4 : sw_Goninan_4D_Liv0_sidecheck_4_r;
-    5 : sw_Goninan_4D_Liv0_pantocheck_at_2_r;
-    6 .. 7 : sw_Goninan_4D_Liv0_sidecheck_6_r;
-    return sw_Goninan_4D_Liv0_sidecheck_other_r;
-}
-
-//Forward
-
+//Midcars
 switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_Goninan_4D_Liv0_NonControlMotorStack_r;
     return spriteset_Goninan_4D_Liv0_Trailer;
@@ -6087,26 +5029,7 @@ switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_lencheck, num_vehs_in_vehid_chain )
     return sw_Goninan_4D_Liv0_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_Goninan_4D_Liv0_MotorStack; //Panto
-    return spriteset_Goninan_4D_Liv0_lead; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : sw_Goninan_4D_Liv0_panto_direction_r_pos;        //Front panto
-    return switch_Goninan_4D_Liv0_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_Goninan_4D_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return switch_Goninan_4D_Liv0_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: sw_Goninan_4D_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_Goninan_4D_Liv0_panto_flipcheck_r; //More Checks
-}
-
+//Endcars
 switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_panto_direction, vehicle_is_flipped){
     0 : switch_Goninan_4D_Liv0_MotorStack;        //Front panto
     return switch_Goninan_4D_Liv0_MotorStack_r;    //Rear panto
@@ -6120,16 +5043,6 @@ switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_panto_flipcheck, vehicle_is_flipped
 switch(FEAT_TRAINS, SELF, sw_Goninan_4D_Liv0_frontcheck, position_in_vehid_chain){
     0: sw_Goninan_4D_Liv0_panto_direction; //We need a pantograph, guaranteed
     return sw_Goninan_4D_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Goninan_4D_Liv0_directioncheck, vehicle_is_reversed){
-    0: sw_Goninan_4D_Liv0_frontcheck; //We are going forwards
-    return sw_Goninan_4D_Liv0_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Goninan_4D_Liv0_revcheck, vehicle_is_reversed){
-    0 : sw_Goninan_4D_Liv0_lencheck;
-    return sw_Goninan_4D_Liv0_lencheck_r;
 }
 
 const Goninan_4D_ID_Liv0 = (Goninan_4D_ID + Liv0_ID);
@@ -6174,12 +5087,12 @@ item(FEAT_TRAINS, Item_Goninan_4D_Liv0, Goninan_4D_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_Goninan_4D_Liv0_directioncheck;
+        default: 						sw_Goninan_4D_Liv0_frontcheck;
         purchase: 						switch_Goninan_4D_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_GONINAN_4D);
     }
     livery_override (Item_MU_Trailer){
-        default:						sw_Goninan_4D_Liv0_revcheck ;
+        default:						sw_Goninan_4D_Liv0_lencheck ;
         length:							8;
         cargo_capacity:                 [Goninan_4D_CargoCapacity / param_capacity_mod];
         power:                          Goninan_4D_Power;
@@ -6272,57 +5185,7 @@ switch (FEAT_TRAINS, SELF, switch_Comeng_VSet_Liv0_NonControlMotorStack_r, [
 	1: switch_Comeng_VSet_Rw_railtype;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_Comeng_VSet_Liv0_NonControlMotorStack_r;
-    return spriteset_Comeng_VSet_Liv0_Trailer;
-}
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_Comeng_VSet_Liv0_NonControlMotorStack;
-    return spriteset_Comeng_VSet_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_Comeng_VSet_Liv0_NonControlMotorStack_r;
-    return spriteset_Comeng_VSet_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : spriteset_Comeng_VSet_Liv0_Trailer;
-    return switch_Comeng_VSet_Liv0_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_Comeng_VSet_Liv0_NonControlMotorStack;
-    return spriteset_Comeng_VSet_Liv0_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Comeng_VSet_Liv0_pantocheck_at_1_r;
-    return sw_Comeng_VSet_Liv0_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : spriteset_Comeng_VSet_Liv0_Trailer;
-    return sw_Comeng_VSet_Liv0_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Comeng_VSet_Liv0_pantocheck_at_2_r;
-    return sw_Comeng_VSet_Liv0_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : spriteset_Comeng_VSet_Liv0_Trailer;
-    3 : sw_Comeng_VSet_Liv0_pantocheck_at_1_r;
-    4 : sw_Comeng_VSet_Liv0_sidecheck_4_r;
-    5 : sw_Comeng_VSet_Liv0_pantocheck_at_2_r;
-    6 .. 7 : sw_Comeng_VSet_Liv0_sidecheck_6_r;
-    return sw_Comeng_VSet_Liv0_sidecheck_other_r;
-}
-
-//Forward
-
+//Midcars
 switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_Comeng_VSet_Liv0_NonControlMotorStack_r;
     return spriteset_Comeng_VSet_Liv0_Trailer;
@@ -6365,26 +5228,7 @@ switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_lencheck, num_vehs_in_vehid_chain 
     return sw_Comeng_VSet_Liv0_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_Comeng_VSet_Liv0_MotorStack; //Panto
-    return spriteset_Comeng_VSet_Liv0_lead; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : sw_Comeng_VSet_Liv0_panto_direction_r_pos;        //Front panto
-    return switch_Comeng_VSet_Liv0_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_Comeng_VSet_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return switch_Comeng_VSet_Liv0_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: sw_Comeng_VSet_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_Comeng_VSet_Liv0_panto_flipcheck_r; //More Checks
-}
-
+//Endcars
 switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_panto_direction, vehicle_is_flipped){
     0 : switch_Comeng_VSet_Liv0_MotorStack;        //Front panto
     return switch_Comeng_VSet_Liv0_MotorStack_r;    //Rear panto
@@ -6398,16 +5242,6 @@ switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_panto_flipcheck, vehicle_is_flippe
 switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv0_frontcheck, position_in_vehid_chain){
     0: sw_Comeng_VSet_Liv0_panto_direction; //We need a pantograph, guaranteed
     return sw_Comeng_VSet_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Comeng_VSet_Liv0_directioncheck, vehicle_is_reversed){
-    0: sw_Comeng_VSet_Liv0_frontcheck; //We are going forwards
-    return sw_Comeng_VSet_Liv0_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Comeng_VSet_Liv0_revcheck, vehicle_is_reversed){
-    0 : sw_Comeng_VSet_Liv0_lencheck;
-    return sw_Comeng_VSet_Liv0_lencheck_r;
 }
 
 const Comeng_VSet_ID_Liv0 = (Comeng_VSet_ID + Liv0_ID );
@@ -6452,12 +5286,12 @@ item(FEAT_TRAINS, Item_Comeng_VSet_Liv0, Comeng_VSet_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_Comeng_VSet_Liv0_directioncheck;
+        default: 						sw_Comeng_VSet_Liv0_frontcheck;
         purchase: 						switch_Comeng_VSet_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_COMENG_VSET);
     }
     livery_override (Item_MU_Trailer){
-        default: 						sw_Comeng_VSet_Liv0_revcheck ;
+        default: 						sw_Comeng_VSet_Liv0_lencheck ;
         length: 						8;
         cargo_capacity:                 (Comeng_VSet_CargoCapacity / param_capacity_mod);
         power:                          Comeng_VSet_Power;
@@ -6515,57 +5349,7 @@ switch (FEAT_TRAINS, SELF, switch_Comeng_VSet_Liv1_NonControlMotorStack_r, [
 	1: switch_Comeng_VSet_Rw_railtype;
 }
 
-//Backward
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_pantocheck_at_2_r, position_in_vehid_chain % 3){
-    2 : switch_Comeng_VSet_Liv1_NonControlMotorStack_r;
-    return spriteset_Comeng_VSet_Liv1_Trailer;
-}
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_pantocheck_at_2r_r, position_in_vehid_chain_from_end % 3){
-    2 : switch_Comeng_VSet_Liv1_NonControlMotorStack;
-    return spriteset_Comeng_VSet_Liv1_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_pantocheck_at_1_r, position_in_vehid_chain % 2){
-    1 : switch_Comeng_VSet_Liv1_NonControlMotorStack_r;
-    return spriteset_Comeng_VSet_Liv1_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_pantocheck_at_0_r, position_in_vehid_chain % 2){
-    1 : spriteset_Comeng_VSet_Liv1_Trailer;
-    return switch_Comeng_VSet_Liv1_NonControlMotorStack;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_pantocheck_at_1r_r, position_in_vehid_chain_from_end % 2){
-    1 : switch_Comeng_VSet_Liv1_NonControlMotorStack;
-    return spriteset_Comeng_VSet_Liv1_Trailer;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_sidecheck_other_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Comeng_VSet_Liv1_pantocheck_at_1_r;
-    return sw_Comeng_VSet_Liv1_pantocheck_at_1r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_sidecheck_4_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : spriteset_Comeng_VSet_Liv1_Trailer;
-    return sw_Comeng_VSet_Liv1_pantocheck_at_0_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_sidecheck_6_r, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
-    1 : sw_Comeng_VSet_Liv1_pantocheck_at_2_r;
-    return sw_Comeng_VSet_Liv1_pantocheck_at_2r_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_lencheck_r, num_vehs_in_vehid_chain ) {
-    0 .. 2 : spriteset_Comeng_VSet_Liv1_Trailer;
-    3 : sw_Comeng_VSet_Liv1_pantocheck_at_1_r;
-    4 : sw_Comeng_VSet_Liv1_sidecheck_4_r;
-    5 : sw_Comeng_VSet_Liv1_pantocheck_at_2_r;
-    6 .. 7 : sw_Comeng_VSet_Liv1_sidecheck_6_r;
-    return sw_Comeng_VSet_Liv1_sidecheck_other_r;
-}
-
-//Forward
-
+//Midcars
 switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_pantocheck_at_2, position_in_vehid_chain % 3){
     2 : switch_Comeng_VSet_Liv1_NonControlMotorStack_r;
     return spriteset_Comeng_VSet_Liv1_Trailer;
@@ -6608,26 +5392,7 @@ switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_lencheck, num_vehs_in_vehid_chain 
     return sw_Comeng_VSet_Liv1_sidecheck_other;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: switch_Comeng_VSet_Liv1_MotorStack; //Panto
-    return spriteset_Comeng_VSet_Liv1_lead; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_panto_direction_r, vehicle_is_flipped){
-    0 : sw_Comeng_VSet_Liv1_panto_direction_r_pos;        //Front panto
-    return switch_Comeng_VSet_Liv1_MotorStack_r;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_panto_flipcheck_r, vehicle_is_flipped){
-    0 : sw_Comeng_VSet_Liv1_panto_direction_r;        //Not flipped, give Panto
-    return switch_Comeng_VSet_Liv1_MotorStack_r;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_frontcheck_r, position_in_vehid_chain){
-    0: sw_Comeng_VSet_Liv1_panto_direction_r; //We need a pantograph, guaranteed
-    return sw_Comeng_VSet_Liv1_panto_flipcheck_r; //More Checks
-}
-
+//Endcars
 switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_panto_direction, vehicle_is_flipped){
     0 : switch_Comeng_VSet_Liv1_MotorStack;        //Front panto
     return switch_Comeng_VSet_Liv1_MotorStack_r;    //Rear panto
@@ -6641,16 +5406,6 @@ switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_panto_flipcheck, vehicle_is_flippe
 switch(FEAT_TRAINS, SELF, sw_Comeng_VSet_Liv1_frontcheck, position_in_vehid_chain){
     0: sw_Comeng_VSet_Liv1_panto_direction; //We need a pantograph, guaranteed
     return sw_Comeng_VSet_Liv1_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Comeng_VSet_Liv1_directioncheck, vehicle_is_reversed){
-    0: sw_Comeng_VSet_Liv1_frontcheck; //We are going forwards
-    return sw_Comeng_VSet_Liv1_frontcheck_r; //We are going backwards
-}
-
-switch(FEAT_TRAINS, PARENT, sw_Comeng_VSet_Liv1_revcheck, vehicle_is_reversed){
-    0 : sw_Comeng_VSet_Liv1_lencheck;
-    return sw_Comeng_VSet_Liv1_lencheck_r;
 }
 
 const Comeng_VSet_ID_Liv1 = (Comeng_VSet_ID + Liv1_ID );
@@ -6695,12 +5450,12 @@ item(FEAT_TRAINS, Item_Comeng_VSet_Liv1, Comeng_VSet_ID_Liv1) {
         extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						sw_Comeng_VSet_Liv1_directioncheck;
+        default: 						sw_Comeng_VSet_Liv1_frontcheck;
         purchase: 						switch_Comeng_VSet_Liv1_PurchaseStack;
         additional_text: 				string(STR_INFO_COMENG_VSET);
     }
     livery_override (Item_MU_Trailer){
-        default: 						sw_Comeng_VSet_Liv1_revcheck ;
+        default: 						sw_Comeng_VSet_Liv1_lencheck ;
         length: 						8;
         cargo_capacity:                 (Comeng_VSet_CargoCapacity / param_capacity_mod);
         power:                          Comeng_VSet_Power;
@@ -6788,28 +5543,6 @@ switch (FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_PantoCarStack, [
 }
 
 /* Midcars */
-    // Backwards
-        // Penultipantos
-        switch (FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_pantos_large_backwards, position_in_vehid_chain_from_end ) {
-                0:  switch_ElectricTiltTrain_Liv0_PantoCarStack_r;
-                switch_ElectricTiltTrain_Liv0_PantoCarStack;
-            }
-        switch (FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_backwards_length_large, (position_in_vehid_chain == 0) || (position_in_vehid_chain_from_end == 0 )) {                
-                1:  switch_ElectricTiltTrain_Liv0_pantos_large_backwards;
-                spriteset_ElectricTiltTrain_Liv0_Trailer;            
-            }
-        //Panto in Middle
-        switch (FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_backwards_length_small, (position_in_vehid_chain == position_in_vehid_chain_from_end ) || (position_in_vehid_chain - 1 == position_in_vehid_chain_from_end) ) {                
-                0:  switch_ElectricTiltTrain_Liv0_PantoCarStack_r;
-                spriteset_ElectricTiltTrain_Liv0_Trailer;                    
-            }
-    switch (FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_backwards_length, num_vehs_in_vehid_chain) {
-            0..1: switch_ElectricTiltTrain_Liv0_backwards_length_large;
-            2: switch_ElectricTiltTrain_Liv0_backwards_length_small;
-            switch_ElectricTiltTrain_Liv0_backwards_length_large;
-        }
-
-    // Forwards
         // Penultipantos
         switch (FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_pantos_large_forwards, position_in_vehid_chain ) {                
                 0:  switch_ElectricTiltTrain_Liv0_PantoCarStack;
@@ -6824,55 +5557,21 @@ switch (FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_PantoCarStack, [
                 0:  spriteset_ElectricTiltTrain_Liv0_Trailer;
                 switch_ElectricTiltTrain_Liv0_PantoCarStack;                
             }
-    switch (FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_forwards_length, num_vehs_in_vehid_chain) {
+    switch (FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_midcars, num_vehs_in_vehid_chain) {
             0..1: switch_ElectricTiltTrain_Liv0_forwards_length_large;
             2:  switch_ElectricTiltTrain_Liv0_forwards_length_small;
             switch_ElectricTiltTrain_Liv0_forwards_length_large;
         }
 
-    switch (FEAT_TRAINS, PARENT, switch_ElectricTiltTrain_Liv0_midcars, vehicle_is_reversed) {                
-            0:  switch_ElectricTiltTrain_Liv0_forwards_length;
-            switch_ElectricTiltTrain_Liv0_backwards_length;                
-        }
-	
-
-
 //End Car Controls
-//Forwards
-switch(FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_panto_direction_r_pos, position_in_vehid_chain_from_end){
-    0: spriteset_ElectricTiltTrain_Liv0_lead; //Panto
-    return switch_ElectricTiltTrain_Liv0_LeadStack; //No Panto
-}
-
-switch(FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_panto_direction_r, vehicle_is_flipped){
-    0 : switch_ElectricTiltTrain_Liv0_panto_direction_r_pos;        //Front panto
-    return spriteset_ElectricTiltTrain_Liv0_lead;    //Rear panto
-}
-
-switch(FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_panto_flipcheck_r, vehicle_is_flipped){
-    0 : switch_ElectricTiltTrain_Liv0_panto_direction_r;        //Not flipped, give Panto
-    return spriteset_ElectricTiltTrain_Liv0_lead;    //Flipped, no panto
-}
-
-switch(FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_frontcheck_r, position_in_vehid_chain){
-    0: switch_ElectricTiltTrain_Liv0_panto_direction_r; //We need a pantograph, guaranteed
-    return switch_ElectricTiltTrain_Liv0_panto_flipcheck_r; //More Checks
-}
-
-//Backwardss
 switch(FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_panto_flipcheck, vehicle_is_flipped){
     0 : spriteset_ElectricTiltTrain_Liv0_lead;        //Not flipped, give Panto
     return switch_ElectricTiltTrain_Liv0_LeadStack;    //Flipped, no panto
 }
 
-switch(FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_frontcheck, position_in_vehid_chain){
+switch(FEAT_TRAINS, SELF, switch_ElectricTiltTrain_Liv0_endcars, position_in_vehid_chain){
     0: spriteset_ElectricTiltTrain_Liv0_lead; //We need a pantograph, guaranteed
     return switch_ElectricTiltTrain_Liv0_panto_flipcheck; //More Checks
-}
-
-switch(FEAT_TRAINS, PARENT, switch_ElectricTiltTrain_Liv0_directioncheck, vehicle_is_reversed){
-    0: switch_ElectricTiltTrain_Liv0_frontcheck; //We are going forwards
-    return switch_ElectricTiltTrain_Liv0_frontcheck_r; //We are going backwards
 }
 
 const ElectricTiltTrain_ID_Liv0 = (ElectricTiltTrain_ID + Liv0_ID);
@@ -6917,7 +5616,7 @@ item(FEAT_TRAINS, Item_ElectricTiltTrain_Liv0, ElectricTiltTrain_ID_Liv0) {
 //        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
     }
     graphics {
-        default: 						switch_ElectricTiltTrain_Liv0_directioncheck;
+        default: 						switch_ElectricTiltTrain_Liv0_endcars;
         purchase: 						switch_ElectricTiltTrain_Liv0_PurchaseStack;
         additional_text: 				string(STR_INFO_ELECTRICTILTTRAIN);
     }
