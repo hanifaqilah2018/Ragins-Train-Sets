@@ -5458,6 +5458,412 @@ item (FEAT_TRAINS, Item_Mail_AmericanCoach_BG_Liv0, Mail_AmericanCoach_BG_Liv0_I
 }
 
 //ID
+const NSW_Ashbury_ID = 8500;
+//introduction_date
+const NSW_Ashbury_IntroDate = date(1879, 1, 1);
+//speed
+const NSW_Ashbury_Speed = 80;
+//cost_factor
+const NSW_Ashbury_CostFactor = 38;
+//running_cost_factor
+const NSW_Ashbury_RunningCostFactor = 16;
+//Cargo Capacity
+const NSW_Ashbury_CargoCapacity = 50;
+//weight
+const NSW_Ashbury_Weight = 34;
+//length
+const NSW_Ashbury_Length = 7;
+
+//NSW_Ashbury
+spriteset(spriteset_NSW_Ashbury_EOTD,   "gfx/NSW_Ashbury_EOTD.png") {template_7(7, 39)}
+spriteset(spriteset_NSW_Ashbury_EOTD_r,   "gfx/NSW_Ashbury_EOTD.png") {template_7_r(7, 39)}
+
+//NSW_Ashbury_Liv0
+spriteset(spriteset_NSW_Ashbury_Liv0_Purchase,   "gfx/NSW_Ashbury_Liv0.png") {template_purchase_7(7, 21)}
+
+spriteset(spriteset_NSW_Ashbury_Liv0,   "gfx/NSW_Ashbury_Liv0.png") {template_7_repeat(7, 39)}
+spriteset(spriteset_NSW_Ashbury_Liv0_Terminal,   "gfx/NSW_Ashbury_Liv0.png") {template_7(7, 69)}
+spriteset(spriteset_NSW_Ashbury_Liv0_Terminal_r,   "gfx/NSW_Ashbury_Liv0.png") {template_7_r(7, 69)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_Ashbury_Liv0_Purchase;
+	1: switch_Couplers_7_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_Ashbury_Liv0;
+	1: switch_Couplers_7_Repeat;
+}
+
+//Terminal stacks
+switch (FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_Ashbury_Liv0_Terminal;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_NSW_Ashbury_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_NSW_Ashbury_Liv0_SpriteStack1;
+    return switch_NSW_Ashbury_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_Ashbury_Liv0_Terminal_r;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_NSW_Ashbury_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_NSW_Ashbury_Liv0_SpriteStack2;
+    return switch_NSW_Ashbury_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_position, vehicle_is_flipped) {
+ 0: switch_NSW_Ashbury_Liv0_rearcheck1;
+ 1: switch_NSW_Ashbury_Liv0_rearcheck2;
+}
+
+const NSW_Ashbury_Liv0_ID_NG = (NSW_Ashbury_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_NSW_Ashbury_NG_Liv0, NSW_Ashbury_Liv0_ID_NG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_NSW_ASHBURY_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NSW_Ashbury_IntroDate;		
+		length:                         NSW_Ashbury_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NSW_Ashbury_Speed km/h;
+		cost_factor:					NSW_Ashbury_CostFactor;
+		running_cost_factor:			NSW_Ashbury_RunningCostFactor;
+		cargo_capacity: 				(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NSW_Ashbury_Weight ton;
+
+//        variant_group: 					Item_NSW_Ashbury_NG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_NSW_Ashbury_Liv0_position;
+    purchase:                           switch_NSW_Ashbury_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_NSW_ASHBURY_NG);
+	cargo_capacity: 					(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+}
+}
+
+const NSW_Ashbury_Liv0_ID = (NSW_Ashbury_Liv0_ID_NG + 10);
+
+item (FEAT_TRAINS, Item_NSW_Ashbury_Liv0, NSW_Ashbury_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_NSW_ASHBURY);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NSW_Ashbury_IntroDate;		
+		length:                         NSW_Ashbury_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NSW_Ashbury_Speed km/h;
+		cost_factor:					NSW_Ashbury_CostFactor;
+		running_cost_factor:			NSW_Ashbury_RunningCostFactor;
+		cargo_capacity: 				(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NSW_Ashbury_Weight ton;
+
+//        variant_group: 					Item_NSW_Ashbury_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_NSW_Ashbury_Liv0_position;
+    purchase:                           switch_NSW_Ashbury_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_NSW_ASHBURY);
+	cargo_capacity: 					(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+}
+}
+
+const NSW_Ashbury_Liv0_ID_BG = (NSW_Ashbury_Liv0_ID + 10);
+
+item (FEAT_TRAINS, Item_NSW_Ashbury_BG_Liv0, NSW_Ashbury_Liv0_ID_BG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_NSW_ASHBURY_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NSW_Ashbury_IntroDate;		
+		length:                         NSW_Ashbury_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NSW_Ashbury_Speed km/h;
+		cost_factor:					NSW_Ashbury_CostFactor;
+		running_cost_factor:			NSW_Ashbury_RunningCostFactor;
+		cargo_capacity: 				(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NSW_Ashbury_Weight ton;
+
+//        variant_group: 					Item_NSW_Ashbury_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_NSW_Ashbury_Liv0_position;
+    purchase:                           switch_NSW_Ashbury_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_NSW_ASHBURY_BG);
+	cargo_capacity: 					(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Mail_NSW_Ashbury_Liv0
+spriteset(spriteset_Mail_NSW_Ashbury_Liv0_Purchase,   "gfx/NSW_Ashbury_Liv0.png") {template_purchase_7(187, 21)}
+spriteset(spriteset_Mail_NSW_Ashbury_Liv0,   "gfx/NSW_Ashbury_Liv0.png") {template_7_repeat(187, 39)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_NSW_Ashbury_Liv0_Purchase;
+	1: switch_Couplers_7_Repeat_Purchase;
+}
+
+//Normal stack
+switch (FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_NSW_Ashbury_Liv0;
+	1: switch_Couplers_7_Repeat;
+}
+
+//Terminal Stacks
+switch (FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_NSW_Ashbury_Liv0;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_NSW_Ashbury_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_NSW_Ashbury_Liv0_SpriteStack1;
+    return switch_Mail_NSW_Ashbury_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_NSW_Ashbury_Liv0;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_NSW_Ashbury_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_NSW_Ashbury_Liv0_SpriteStack2;
+    return switch_Mail_NSW_Ashbury_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_NSW_Ashbury_Liv0_rearcheck1;
+ 1: switch_Mail_NSW_Ashbury_Liv0_rearcheck2;
+}
+
+const Mail_NSW_Ashbury_NG_Liv0_ID = (NSW_Ashbury_Liv0_ID_NG + 50);
+
+item (FEAT_TRAINS, Item_Mail_NSW_Ashbury_NG_Liv0, Mail_NSW_Ashbury_NG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_NSW_ASHBURY_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NSW_Ashbury_IntroDate;		
+		length:                         NSW_Ashbury_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NSW_Ashbury_Speed km/h;
+		cost_factor:					NSW_Ashbury_CostFactor;
+		running_cost_factor:			NSW_Ashbury_RunningCostFactor;
+		cargo_capacity: 				(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NSW_Ashbury_Weight ton;
+
+//        variant_group: 					Item_Mail_NSW_Ashbury_NG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_NSW_Ashbury_Liv0_position;
+    purchase:                           switch_Mail_NSW_Ashbury_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_NSW_ASHBURY_NG);
+	cargo_capacity: 					(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+}
+}
+
+const Mail_NSW_Ashbury_Liv0_ID = (NSW_Ashbury_Liv0_ID + 50);
+
+item (FEAT_TRAINS, Item_Mail_NSW_Ashbury_Liv0, Mail_NSW_Ashbury_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_NSW_ASHBURY);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NSW_Ashbury_IntroDate;		
+		length:                         NSW_Ashbury_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NSW_Ashbury_Speed km/h;
+		cost_factor:					NSW_Ashbury_CostFactor;
+		running_cost_factor:			NSW_Ashbury_RunningCostFactor;
+		cargo_capacity: 				(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NSW_Ashbury_Weight ton;
+
+//        variant_group: 					Item_Mail_NSW_Ashbury_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_NSW_Ashbury_Liv0_position;
+    purchase:                           switch_Mail_NSW_Ashbury_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_NSW_ASHBURY);
+	cargo_capacity: 					(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+}
+}
+
+const Mail_NSW_Ashbury_BG_Liv0_ID = (NSW_Ashbury_Liv0_ID_BG + 50);
+
+item (FEAT_TRAINS, Item_Mail_NSW_Ashbury_BG_Liv0, Mail_NSW_Ashbury_BG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_NSW_ASHBURY_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NSW_Ashbury_IntroDate;		
+		length:                         NSW_Ashbury_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NSW_Ashbury_Speed km/h;
+		cost_factor:					NSW_Ashbury_CostFactor;
+		running_cost_factor:			NSW_Ashbury_RunningCostFactor;
+		cargo_capacity: 				(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NSW_Ashbury_Weight ton;
+
+//        variant_group: 					Item_Mail_NSW_Ashbury_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_NSW_Ashbury_Liv0_position;
+    purchase:                           switch_Mail_NSW_Ashbury_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_NSW_ASHBURY_BG);
+	cargo_capacity: 					(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+}
+}
+
+//ID
 const NZR_50ft_ID = 9000;
 //introduction_date
 const NZR_50ft_IntroDate = date(1908, 1, 1);
