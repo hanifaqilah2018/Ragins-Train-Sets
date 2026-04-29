@@ -142,27 +142,20 @@ STR_INFO_AGE_41CLASS:{BLACK}Role: {GOLD}Shunter {}{BLACK}Gauge:{GOLD} Standard G
 
 
 
-STR_NAME_ALCO_DL531_NG:Goodwin-ALCO DL531
-STR_INFO_ALCO_DL531_NG:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
-STR_NAME_ALCO_DL531:Goodwin-ALCO DL531
-STR_INFO_ALCO_DL531:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
-STR_NAME_ALCO_DL531_BG:Goodwin-ALCO DL531
-STR_INFO_ALCO_DL531_BG:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
-
 STR_NAME_CLYDE_G8C:Clyde-EMD G8C
-STR_INFO_CLYDE_G8C:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 49 Class {}{GOLD}Pride of the West
+STR_INFO_CLYDE_G8C:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 49 Class {}{GOLD}Pride of the West
 
 STR_NAME_GMD_G8A:GMD G8A
-STR_INFO_GMD_G8A:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZ DB Class
+STR_INFO_GMD_G8A:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZ DB Class
 
 STR_NAME_GONINAN_47CLASS:Goninan 47 Class
-STR_INFO_GONINAN_47CLASS:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 47 Class {}{GOLD}Born to haul coal trains, forced to go to Bathurst
+STR_INFO_GONINAN_47CLASS:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 47 Class {}{GOLD}Born to haul coal trains, forced to go to Bathurst
 
 STR_NAME_EE_ML202C:English Electric ML202C
-STR_INFO_EE_ML202C:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}TGR Z Class
+STR_INFO_EE_ML202C:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}TGR Z Class
 
 STR_NAME_EE_ML255C:English Electric ML255C
-STR_INFO_EE_ML255C:{BLACK}Role: {GOLD}Branch-Line Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}QR 2350 Class,TGR Za/Zb Class
+STR_INFO_EE_ML255C:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}QR 2350 Class,TGR Za/Zb Class
 
 
 
@@ -256,11 +249,23 @@ STR_INFO_GONINAN_C44ACHI:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Power: {BROWN
 
 
 
+STR_NAME_EE_RSE45B:English Electric RSE45B
+STR_INFO_EE_RSE45B:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}TGR X Class
+
+STR_NAME_ALCO_DL531_NG:Goodwin-ALCO DL531
+STR_INFO_ALCO_DL531_NG:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
+STR_NAME_ALCO_DL531:Goodwin-ALCO DL531
+STR_INFO_ALCO_DL531:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
+STR_NAME_ALCO_DL531_BG:Goodwin-ALCO DL531
+STR_INFO_ALCO_DL531_BG:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
+
+
+
 STR_NAME_EE_DGCLASS:English-Electric DG Class
-STR_INFO_EE_DGCLASS:{BLACK}Role: {GOLD}Branch Line Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZR DG Class
+STR_INFO_EE_DGCLASS:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZR DG Class
 
 STR_NAME_CLYDE_JL22C:Clyde-EMD JL22C
-STR_INFO_CLYDE_JL22C:{BLACK}Role: {GOLD}Branch Line Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}CR NJ Class
+STR_INFO_CLYDE_JL22C:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}CR NJ Class
 
 
 
