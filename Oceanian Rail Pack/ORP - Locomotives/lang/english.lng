@@ -259,13 +259,11 @@ STR_INFO_ALCO_DL531:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Stand
 STR_NAME_ALCO_DL531_BG:Goodwin-ALCO DL531
 STR_INFO_ALCO_DL531_BG:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
 
-
-
 STR_NAME_EE_DGCLASS:English-Electric DG Class
-STR_INFO_EE_DGCLASS:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZR DG Class
+STR_INFO_EE_DGCLASS:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZR DG Class
 
 STR_NAME_CLYDE_JL22C:Clyde-EMD JL22C
-STR_INFO_CLYDE_JL22C:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}CR NJ Class
+STR_INFO_CLYDE_JL22C:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}CR NJ Class
 
 
 
