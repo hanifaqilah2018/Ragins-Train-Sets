@@ -1250,7 +1250,7 @@ const NSW_N67_ID = 6010;
 //introduction_date
 const NSW_N67_IntroDate = date(1875, 1, 1);
 //speed
-const NSW_N67_Speed = 	70;
+const NSW_N67_Speed = 	72;
 //cost_factor
 const NSW_N67_CostFactor = 20;
 //running_cost_factor
@@ -1360,7 +1360,7 @@ const NSW_Z12_ID = 10;
 //introduction_date
 const NSW_Z12_IntroDate = date(1877, 1, 1);
 //speed
-const NSW_Z12_Speed = 100;
+const NSW_Z12_Speed = 96;
 //cost_factor
 const NSW_Z12_CostFactor = 22;
 //running_cost_factor
@@ -1482,7 +1482,7 @@ const NSW_C30_ID = 6080;
 //introduction_date
 const NSW_C30_IntroDate = date(1903, 1, 1);
 //speed
-const NSW_C30_Speed = 	80;
+const NSW_C30_Speed = 	72;
 //cost_factor
 const NSW_C30_CostFactor = 28;
 //running_cost_factor
@@ -1592,7 +1592,7 @@ const NSW_Z19_ID = 380;
 //introduction_date
 const NSW_Z19_IntroDate = date(1877, 1, 1);
 //speed
-const NSW_Z19_Speed = 40;
+const NSW_Z19_Speed = 72;
 //cost_factor
 const NSW_Z19_CostFactor = 22;
 //running_cost_factor
@@ -1714,7 +1714,7 @@ const NSW_Z26_ID = 6260;
 //introduction_date
 const NSW_Z26_IntroDate = date(1892, 1, 1);
 //speed
-const NSW_Z26_Speed = 65;
+const NSW_Z26_Speed = 96;
 //cost_factor
 const NSW_Z26_CostFactor = 28;
 //running_cost_factor
@@ -1824,7 +1824,7 @@ const NSW_D50_ID = 480;
 //introduction_date
 const NSW_D50_IntroDate = date(1896, 1, 1);
 //speed
-const NSW_D50_Speed = 65;
+const NSW_D50_Speed = 72;
 //cost_factor
 const NSW_D50_CostFactor = 30;
 //running_cost_factor
@@ -1946,7 +1946,7 @@ const SMR_10_ID = 6290;
 //introduction_date
 const SMR_10_IntroDate = date(1911, 1, 1);
 //speed
-const SMR_10_Speed = 80;
+const SMR_10_Speed = 96;
 //cost_factor
 const SMR_10_CostFactor = 30;
 //running_cost_factor
@@ -2056,7 +2056,7 @@ const NSW_D53_ID = 520;
 //introduction_date
 const NSW_D53_IntroDate = date(1912, 1, 1);
 //speed
-const NSW_D53_Speed = 70;
+const NSW_D53_Speed = 72;
 //cost_factor
 const NSW_D53_CostFactor = 33;
 //running_cost_factor
@@ -2166,7 +2166,7 @@ const NSW_D55_ID = 550;
 //introduction_date
 const NSW_D55_IntroDate = date(1918, 1, 1);
 //speed
-const NSW_D55_Speed = 75;
+const NSW_D55_Speed = 72;
 //cost_factor
 const NSW_D55_CostFactor = 33;
 //running_cost_factor
@@ -2276,7 +2276,7 @@ const ROD_280_ID = 540;
 //introduction_date
 const ROD_280_IntroDate = date(1926, 1, 1);
 //speed
-const ROD_280_Speed = 80;
+const ROD_280_Speed = 96;
 //cost_factor
 const ROD_280_CostFactor = 35;
 //running_cost_factor
@@ -2399,7 +2399,7 @@ const NSW_D57_ID = 620;
 //introduction_date
 const NSW_D57_IntroDate = date(1929, 1, 1);
 //speed
-const NSW_D57_Speed = 80;
+const NSW_D57_Speed = 96;
 //cost_factor
 const NSW_D57_CostFactor = 50;
 //running_cost_factor
@@ -2522,7 +2522,7 @@ const NSW_C32_ID = 850;
 //introduction_date
 const NSW_C32_IntroDate = date(1892, 1, 1);
 //speed
-const NSW_C32_Speed = 100;
+const NSW_C32_Speed = 120;
 //cost_factor
 const NSW_C32_CostFactor = 26;
 //running_cost_factor
@@ -2645,7 +2645,7 @@ const NSW_C35_ID = 890;
 //introduction_date
 const NSW_C35_IntroDate = date(1914, 1, 1);
 //speed
-const NSW_C35_Speed = 115;
+const NSW_C35_Speed = 120;
 //cost_factor
 const NSW_C35_CostFactor = 41;
 //running_cost_factor
@@ -2874,7 +2874,7 @@ const VIC_H_ID = 990;
 //introduction_date
 const VIC_H_IntroDate = date(1941, 1, 1);
 //speed
-const VIC_H_Speed = 80;
+const VIC_H_Speed = 144;
 //cost_factor
 const VIC_H_CostFactor = 56;
 //running_cost_factor
