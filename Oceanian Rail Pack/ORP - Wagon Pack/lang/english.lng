@@ -89,36 +89,6 @@ STR_INFO_CLERESTORYCOMPARTMENTCOACH_BG:{BLACK}Role:{GOLD}General Service {}{BLAC
 STR_NAME_AY_SUBURBANCOACH_NG:Westralian Suburban Coach
 STR_INFO_AY_SUBURBANCOACH_NG:{BLACK}Role:{GOLD}Suburban/Country Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}WAGR AY Suburban Coaches
 
-
-
-
-STR_NAME_AMERICANCOACH_NG:American End-Platform Coach
-STR_INFO_AMERICANCOACH_NG:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
-STR_NAME_AMERICANCOACH:American End-Platform Coach
-STR_INFO_AMERICANCOACH:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
-STR_NAME_AMERICANCOACH_BG:American End-Platform Coach
-STR_INFO_AMERICANCOACH_BG:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
-
-STR_NAME_MAIL_AMERICANCOACH_NG:American Mail Coach
-STR_INFO_MAIL_AMERICANCOACH_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
-STR_NAME_MAIL_AMERICANCOACH:American Mail Coach
-STR_INFO_MAIL_AMERICANCOACH:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
-STR_NAME_MAIL_AMERICANCOACH_BG:American Mail Coach
-STR_INFO_MAIL_AMERICANCOACH_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
-
-STR_NAME_NZR_50FT_NG:50ft End Platform Coach
-STR_INFO_NZR_50FT_NG:{BLACK}Role:{GOLD}General/Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 50ft Coaches
-
-STR_NAME_MAIL_NZR_50FT_NG:50ft End Platform Mail Coach
-STR_INFO_MAIL_NZR_50FT_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 50ft Coaches
-
-STR_NAME_NZR_56FT_NG:56ft Bogie Coach
-STR_INFO_NZR_56FT_NG:{BLACK}Role:{GOLD}General/Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 56ft Coaches
-
-STR_NAME_MAIL_NZR_56FT_NG:56ft Bogie Mail Coach
-STR_INFO_MAIL_NZR_56FT_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 56ft Coaches
-
-
 STR_NAME_VLINE_HTYPE:Comeng-M&K H-Type Suburban Coach
 STR_INFO_VLINE_HTYPE:{BLACK}Role:{GOLD}Suburban/Country Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}VLine H-Type Coaches
 STR_NAME_VLINE_HTYPE_BG:Comeng-M&K H-Type Suburban Coach
@@ -152,7 +122,45 @@ STR_NAME_GONINAN_4D_COACH_DT_BG:Goninan 4D Driving Trailer
 STR_INFO_GONINAN_4D_COACH_DT_BG:{BLACK}Role:{GOLD}Suburban Service {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Based on:{GOLD}Fictional, locomotive hauled version of the 4D
 
 
+STR_NAME_AMERICANCOACH_NG:American End-Platform Coach
+STR_INFO_AMERICANCOACH_NG:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_AMERICANCOACH:American End-Platform Coach
+STR_INFO_AMERICANCOACH:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_AMERICANCOACH_BG:American End-Platform Coach
+STR_INFO_AMERICANCOACH_BG:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
 
+STR_NAME_MAIL_AMERICANCOACH_NG:American Mail Coach
+STR_INFO_MAIL_AMERICANCOACH_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_MAIL_AMERICANCOACH:American Mail Coach
+STR_INFO_MAIL_AMERICANCOACH:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+STR_NAME_MAIL_AMERICANCOACH_BG:American Mail Coach
+STR_INFO_MAIL_AMERICANCOACH_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early coaches used in the Australian/New Zealand Colonies
+
+STR_NAME_NZR_50FT_NG:50ft End Platform Coach
+STR_INFO_NZR_50FT_NG:{BLACK}Role:{GOLD}General/Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 50ft Coaches
+
+STR_NAME_MAIL_NZR_50FT_NG:50ft End Platform Mail Coach
+STR_INFO_MAIL_NZR_50FT_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 50ft Coaches
+
+STR_NAME_NZR_56FT_NG:56ft Bogie Coach
+STR_INFO_NZR_56FT_NG:{BLACK}Role:{GOLD}General/Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 56ft Coaches
+
+STR_NAME_MAIL_NZR_56FT_NG:56ft Bogie Mail Coach
+STR_INFO_MAIL_NZR_56FT_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}NZR 56ft Coaches
+
+STR_NAME_NSW_ASHBURY_NG:Clerestory Interurban Coach
+STR_INFO_NSW_ASHBURY_NG:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early six-axle long distance coaches used in Victoria and NSW
+STR_NAME_NSW_ASHBURY:Clerestory Interurban Coach
+STR_INFO_NSW_ASHBURY:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early six-axle long distance coaches used in Victoria and NSW
+STR_NAME_NSW_ASHBURY_BG:Clerestory Interurban Coach
+STR_INFO_NSW_ASHBURY_BG:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early six-axle long distance coaches used in Victoria and NSW
+
+STR_NAME_MAIL_NSW_ASHBURY_NG:Clerestory Interurban Mail Coach
+STR_INFO_MAIL_NSW_ASHBURY_NG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Based on:{GOLD}Early six-axle long distance coaches used in Victoria and NSW
+STR_NAME_MAIL_NSW_ASHBURY:Clerestory Interurban Mail Coach
+STR_INFO_MAIL_NSW_ASHBURY:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Standard Gauge  {}{BLACK}Based on:{GOLD}Early six-axle long distance coaches used in Victoria and NSW
+STR_NAME_MAIL_NSW_ASHBURY_BG:Clerestory Interurban Mail Coach
+STR_INFO_MAIL_NSW_ASHBURY_BG:{BLACK}Role:{GOLD}Mail Van {}{BLACK}Gauge:{GOLD} Broad Gauge  {}{BLACK}Based on:{GOLD}Early six-axle long distance coaches used in Victoria and NSW
 
 STR_NAME_TULLOCH_INTERURBANCOACH:Tulloch Interurban Coach
 STR_INFO_TULLOCH_INTERURBANCOACH:{BLACK}Role:{GOLD}Intercity Service {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Based on: {GOLD}NSW RUB Stock

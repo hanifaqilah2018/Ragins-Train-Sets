@@ -9567,11 +9567,20 @@ spriteset(spriteset_Comeng_CL632_PantoBothUp,   "gfx/Comeng_CL632_Pantographs.pn
 spriteset(spriteset_Comeng_CL632_PantoUp,   "gfx/Comeng_CL632_Pantographs.png") {template_8(187, 69)}
 spriteset(spriteset_Comeng_CL632_PantoUp_r,   "gfx/Comeng_CL632_Pantographs.png") {template_8(187, 99)}
 
+switch(FEAT_TRAINS, SELF, switch_Comeng_CL632_Pantograph_PantoUp, train_is_driving_backwards) {
+ 0: spriteset_Comeng_CL632_PantoUp;
+ 1: spriteset_Comeng_CL632_PantoUp_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_CL632_Pantograph_PantoUp_r, train_is_driving_backwards) {
+ 0: spriteset_Comeng_CL632_PantoUp_r;
+ 1: spriteset_Comeng_CL632_PantoUp;
+}
 
 random_switch(FEAT_TRAINS, SELF, switch_Comeng_CL632_Pantograph_Random, bitmask(TRIGGER_VEHICLE_SERVICE)){
     1 : spriteset_Comeng_CL632_PantoBothUp;
-    1 : spriteset_Comeng_CL632_PantoUp;
-	1 : spriteset_Comeng_CL632_PantoUp_r;
+    1 : switch_Comeng_CL632_Pantograph_PantoUp;
+	1 : switch_Comeng_CL632_Pantograph_PantoUp_r;
 }
 
 //Railtype checks
@@ -9705,10 +9714,20 @@ spriteset(spriteset_MetroVick_46Class_PantoBothUp,   "gfx/MetroVick_46Class_Pant
 spriteset(spriteset_MetroVick_46Class_PantoUp,   "gfx/MetroVick_46Class_Pantographs.png") {template_7(7, 99)}
 spriteset(spriteset_MetroVick_46Class_PantoUp_r,   "gfx/MetroVick_46Class_Pantographs.png") {template_7_r(7, 99)}
 
+switch(FEAT_TRAINS, SELF, switch_MetroVick_46Class_Pantograph_PantoUp, train_is_driving_backwards) {
+ 0: spriteset_MetroVick_46Class_PantoUp;
+ 1: spriteset_MetroVick_46Class_PantoUp_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_MetroVick_46Class_Pantograph_PantoUp_r, train_is_driving_backwards) {
+ 0: spriteset_MetroVick_46Class_PantoUp_r;
+ 1: spriteset_MetroVick_46Class_PantoUp;
+}
+
  random_switch(FEAT_TRAINS, SELF, switch_MetroVick_46Class_Pantograph_Random, bitmask(TRIGGER_VEHICLE_SERVICE)){ //verify this works before using it in more stuff
     1 : spriteset_MetroVick_46Class_PantoBothUp;
-    1 : spriteset_MetroVick_46Class_PantoUp;
-	1 : spriteset_MetroVick_46Class_PantoUp_r;
+    1 : switch_MetroVick_46Class_Pantograph_PantoUp;
+	1 : switch_MetroVick_46Class_Pantograph_PantoUp_r;
 }
 
 //MetroVick_46Class_Liv0
@@ -9821,10 +9840,20 @@ spriteset(spriteset_Clyde_JE28C_PantoBothUp,   "gfx/Clyde_JE28C_Pantographs.png"
 spriteset(spriteset_Clyde_JE28C_PantoUp,   "gfx/Clyde_JE28C_Pantographs.png") {template_8(7, 99)}
 spriteset(spriteset_Clyde_JE28C_PantoUp_r,   "gfx/Clyde_JE28C_Pantographs.png") {template_8_r(7, 99)}
 
+switch(FEAT_TRAINS, SELF, switch_Clyde_JE28C_Pantograph_PantoUp, train_is_driving_backwards) {
+ 0: spriteset_Clyde_JE28C_PantoUp;
+ 1: spriteset_Clyde_JE28C_PantoUp_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Clyde_JE28C_Pantograph_PantoUp_r, train_is_driving_backwards) {
+ 0: spriteset_Clyde_JE28C_PantoUp_r;
+ 1: spriteset_Clyde_JE28C_PantoUp;
+}
+
 random_switch(FEAT_TRAINS, SELF, switch_Clyde_JE28C_Pantograph_Random, bitmask(TRIGGER_VEHICLE_SERVICE)){ //verify this works before using it in more stuff
     1 : spriteset_Clyde_JE28C_PantoBothUp;
-    1 : spriteset_Clyde_JE28C_PantoUp;
-	1 : spriteset_Clyde_JE28C_PantoUp_r;
+    1 : switch_Clyde_JE28C_Pantograph_PantoUp;
+	1 : switch_Clyde_JE28C_Pantograph_PantoUp_r;
 }
 
 switch(FEAT_TRAINS, SELF, switch_Clyde_JE28C_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
@@ -9942,10 +9971,20 @@ spriteset(spriteset_Comeng_CL627_PantoBothUp,   "gfx/Comeng_CL627_Pantographs.pn
 spriteset(spriteset_Comeng_CL627_PantoUp,   "gfx/Comeng_CL627_Pantographs.png") {template_8(7, 99)}
 spriteset(spriteset_Comeng_CL627_PantoUp_r,   "gfx/Comeng_CL627_Pantographs.png") {template_8_r(7, 99)}
 
+switch(FEAT_TRAINS, SELF, switch_Comeng_CL627_Pantograph_PantoUp, train_is_driving_backwards) {
+ 0: spriteset_Comeng_CL627_PantoUp;
+ 1: spriteset_Comeng_CL627_PantoUp_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_CL627_Pantograph_PantoUp_r, train_is_driving_backwards) {
+ 0: spriteset_Comeng_CL627_PantoUp_r;
+ 1: spriteset_Comeng_CL627_PantoUp;
+}
+
 random_switch(FEAT_TRAINS, SELF, switch_Comeng_CL627_Pantograph_Random, bitmask(TRIGGER_VEHICLE_SERVICE)){ //verify this works before using it in more stuff
     1 : spriteset_Comeng_CL627_PantoBothUp;
-    1 : spriteset_Comeng_CL627_PantoUp;
-	1 : spriteset_Comeng_CL627_PantoUp_r;
+    1 : switch_Comeng_CL627_Pantograph_PantoUp;
+	1 : switch_Comeng_CL627_Pantograph_PantoUp_r;
 }
 
 switch(FEAT_TRAINS, SELF, switch_Comeng_CL627_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
@@ -10053,10 +10092,20 @@ spriteset(spriteset_Comeng_CL627A_PantoBothUp_Single,   "gfx/Comeng_CL627A_Panto
 spriteset(spriteset_Comeng_CL627A_PantoUp_Single,   "gfx/Comeng_CL627A_Pantographs.png") {template_8(187, 99)}
 spriteset(spriteset_Comeng_CL627A_PantoUp_Single_r,   "gfx/Comeng_CL627A_Pantographs.png") {template_8_r(187, 99)}
 
+switch(FEAT_TRAINS, SELF, switch_Comeng_CL627A_Pantograph_PantoUp, train_is_driving_backwards) {
+ 0: spriteset_Comeng_CL627A_PantoUp;
+ 1: spriteset_Comeng_CL627A_PantoUp_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_CL627A_Pantograph_PantoUp_r, train_is_driving_backwards) {
+ 0: spriteset_Comeng_CL627A_PantoUp_r;
+ 1: spriteset_Comeng_CL627A_PantoUp;
+}
+
 random_switch(FEAT_TRAINS, SELF, switch_Comeng_CL627A_Pantograph_Random, bitmask(TRIGGER_VEHICLE_SERVICE)){ //verify this works before using it in more stuff
     1 : spriteset_Comeng_CL627A_PantoBothUp;
-    1 : spriteset_Comeng_CL627A_PantoUp;
-	1 : spriteset_Comeng_CL627A_PantoUp_r;
+    1 : switch_Comeng_CL627A_Pantograph_PantoUp;
+	1 : switch_Comeng_CL627A_Pantograph_PantoUp_r;
 }
 
 random_switch(FEAT_TRAINS, SELF, switch_Comeng_CL627A_Pantograph_Single_Random, bitmask(TRIGGER_VEHICLE_SERVICE)){ //verify this works before using it in more stuff

@@ -3434,10 +3434,11 @@ item (FEAT_TRAINS, Item_VLine_HType_Liv0, VLine_HType_Liv0_ID) {
     default:                            switch_HType_Liv0_MTHCheck;
     purchase:                           switch_VLine_HType_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
-const VLine_HType_BG_Liv0_ID = (VLine_HType_Liv0_ID + 25);
+const VLine_HType_BG_Liv0_ID = (VLine_HType_Liv0_ID + 10);
 
 item (FEAT_TRAINS, Item_VLine_HType_BG_Liv0, VLine_HType_BG_Liv0_ID) {
     property {
@@ -3478,6 +3479,7 @@ item (FEAT_TRAINS, Item_VLine_HType_BG_Liv0, VLine_HType_BG_Liv0_ID) {
     default:                            switch_HType_Liv0_MTHCheck;
     purchase:                           switch_VLine_HType_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_BG);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -3519,7 +3521,7 @@ switch(FEAT_TRAINS, SELF, switch_VLine_HType_DT_Liv0_rearcheck, position_in_cons
     return switch_VLine_HType_DT_Liv0_ReverseStack;
 }
 
-const VLine_HType_DT_Liv0_ID = (VLine_HType_BG_Liv0_ID + 25);
+const VLine_HType_DT_Liv0_ID = (VLine_HType_BG_Liv0_ID + 50);
 
 item (FEAT_TRAINS, Item_VLine_HType_DT_Liv0, VLine_HType_DT_Liv0_ID) {
     property {
@@ -3565,10 +3567,11 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_Liv0, VLine_HType_DT_Liv0_ID) {
     default:                            switch_VLine_HType_DT_Liv0_rearcheck;
     purchase:                           switch_VLine_HType_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_DT);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
-const VLine_HType_DT_BG_Liv0_ID = (VLine_HType_DT_Liv0_ID + 25);
+const VLine_HType_DT_BG_Liv0_ID = (VLine_HType_DT_Liv0_ID + 50);
 
 item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv0, VLine_HType_DT_BG_Liv0_ID) {
     property {
@@ -3614,6 +3617,7 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv0, VLine_HType_DT_BG_Liv0_ID) {
     default:                            switch_VLine_HType_DT_Liv0_rearcheck;
     purchase:                           switch_VLine_HType_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_DT_BG);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -3762,10 +3766,11 @@ item (FEAT_TRAINS, Item_VLine_HType_Liv1, VLine_HType_Liv1_ID) {
     default:                            switch_HType_Liv1_MTHCheck;
     purchase:                           switch_VLine_HType_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
-const VLine_HType_BG_Liv1_ID = (VLine_HType_Liv1_ID + 25);
+const VLine_HType_BG_Liv1_ID = (VLine_HType_Liv1_ID + 50);
 
 item (FEAT_TRAINS, Item_VLine_HType_BG_Liv1, VLine_HType_BG_Liv1_ID) {
     property {
@@ -3806,6 +3811,7 @@ item (FEAT_TRAINS, Item_VLine_HType_BG_Liv1, VLine_HType_BG_Liv1_ID) {
     default:                            switch_HType_Liv1_MTHCheck;
     purchase:                           switch_VLine_HType_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_BG);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -3847,7 +3853,7 @@ switch(FEAT_TRAINS, SELF, switch_VLine_HType_DT_Liv1_rearcheck, position_in_cons
     return switch_VLine_HType_DT_Liv1_ReverseStack;
 }
 
-const VLine_HType_DT_Liv1_ID = (VLine_HType_BG_Liv1_ID + 25);
+const VLine_HType_DT_Liv1_ID = (VLine_HType_BG_Liv1_ID + 50);
 
 item (FEAT_TRAINS, Item_VLine_HType_DT_Liv1, VLine_HType_DT_Liv1_ID) {
     property {
@@ -3893,10 +3899,11 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_Liv1, VLine_HType_DT_Liv1_ID) {
     default:                            switch_VLine_HType_DT_Liv1_rearcheck;
     purchase:                           switch_VLine_HType_DT_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_DT);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
-const VLine_HType_DT_BG_Liv1_ID = (VLine_HType_DT_Liv1_ID + 25);
+const VLine_HType_DT_BG_Liv1_ID = (VLine_HType_DT_Liv1_ID + 50);
 
 item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv1, VLine_HType_DT_BG_Liv1_ID) {
     property {
@@ -3942,6 +3949,7 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv1, VLine_HType_DT_BG_Liv1_ID) {
     default:                            switch_VLine_HType_DT_Liv1_rearcheck;
     purchase:                           switch_VLine_HType_DT_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_VLINE_HTYPE_DT_BG);
+	cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4060,6 +4068,7 @@ item (FEAT_TRAINS, Item_Comeng_SADD_Liv0, Comeng_SADD_Liv0_ID) {
     default:                            switch_Comeng_SADD_Liv0_position;
     purchase:                           switch_Comeng_SADD_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_COMENG_SADD);
+	cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4104,6 +4113,7 @@ item (FEAT_TRAINS, Item_Comeng_SADD_BG_Liv0, Comeng_SADD_BG_Liv0_ID) {
     default:                            switch_Comeng_SADD_Liv0_position;
     purchase:                           switch_Comeng_SADD_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_COMENG_SADD_BG);
+	cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4151,7 +4161,6 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_Liv0, Comeng_SADD_DT_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -4182,16 +4191,18 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_Liv0, Comeng_SADD_DT_Liv0_ID) {
 		cost_factor:					Comeng_SADD_CostFactor;
 		running_cost_factor:			Comeng_SADD_RunningCostFactor;
 		cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							Comeng_SADD_Weight ton;
 
 //        variant_group: 					Item_Comeng_SADD_DT_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_Comeng_SADD_DT_Liv0_rearcheck;
     purchase:                           switch_Comeng_SADD_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_COMENG_SADD_DT);
+	cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4201,7 +4212,6 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_BG_Liv0, Comeng_SADD_DT_BG_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     BG_RAIL_ONLY;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -4232,16 +4242,18 @@ item (FEAT_TRAINS, Item_Comeng_SADD_DT_BG_Liv0, Comeng_SADD_DT_BG_Liv0_ID) {
 		cost_factor:					Comeng_SADD_CostFactor;
 		running_cost_factor:			Comeng_SADD_RunningCostFactor;
 		cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							Comeng_SADD_Weight ton;
 
 //        variant_group: 					Item_Comeng_SADD_DT_BG_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_Comeng_SADD_DT_Liv0_rearcheck;
     purchase:                           switch_Comeng_SADD_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_COMENG_SADD_DT_BG);
+	cargo_capacity: 				(Comeng_SADD_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4360,6 +4372,7 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_Liv0, Goninan_Tangara_Coach_Liv0_I
     default:                            switch_Goninan_Tangara_Coach_Liv0_position;
     purchase:                           switch_Goninan_Tangara_Coach_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH);
+	cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4407,7 +4420,6 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv0, Goninan_Tangara_Coach_DT_
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -4438,16 +4450,18 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv0, Goninan_Tangara_Coach_DT_
 		cost_factor:					Goninan_Tangara_Coach_CostFactor;
 		running_cost_factor:			Goninan_Tangara_Coach_RunningCostFactor;
 		cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							Goninan_Tangara_Coach_Weight ton;
 
 //        variant_group: 					Item_Goninan_Tangara_Coach_DT_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_Goninan_Tangara_Coach_DT_Liv0_rearcheck;
     purchase:                           switch_Goninan_Tangara_Coach_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH_DT);
+	cargo_capacity: 					(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4548,6 +4562,7 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_Liv1, Goninan_Tangara_Coach_Liv1_I
     default:                            switch_Goninan_Tangara_Coach_Liv1_position;
     purchase:                           switch_Goninan_Tangara_Coach_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH);
+	cargo_capacity: 					(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4595,7 +4610,6 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv1, Goninan_Tangara_Coach_DT_
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -4626,16 +4640,18 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv1, Goninan_Tangara_Coach_DT_
 		cost_factor:					Goninan_Tangara_Coach_CostFactor;
 		running_cost_factor:			Goninan_Tangara_Coach_RunningCostFactor;
 		cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							Goninan_Tangara_Coach_Weight ton;
 
         variant_group: 					Item_Goninan_Tangara_Coach_DT_Liv0;
-        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_Goninan_Tangara_Coach_DT_Liv1_rearcheck;
     purchase:                           switch_Goninan_Tangara_Coach_DT_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH_DT);
+	cargo_capacity: 					(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4736,6 +4752,7 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_Liv2, Goninan_Tangara_Coach_Liv2_I
     default:                            switch_Goninan_Tangara_Coach_Liv2_position;
     purchase:                           switch_Goninan_Tangara_Coach_Liv2_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH);
+	cargo_capacity: 					(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4783,7 +4800,6 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv2, Goninan_Tangara_Coach_DT_
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -4814,16 +4830,18 @@ item (FEAT_TRAINS, Item_Goninan_Tangara_Coach_DT_Liv2, Goninan_Tangara_Coach_DT_
 		cost_factor:					Goninan_Tangara_Coach_CostFactor;
 		running_cost_factor:			Goninan_Tangara_Coach_RunningCostFactor;
 		cargo_capacity: 				(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							Goninan_Tangara_Coach_Weight ton;
 
         variant_group: 					Item_Goninan_Tangara_Coach_DT_Liv0;
-        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_Goninan_Tangara_Coach_DT_Liv2_rearcheck;
     purchase:                           switch_Goninan_Tangara_Coach_DT_Liv2_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_TANGARA_COACH_DT);
+	cargo_capacity: 					(Goninan_Tangara_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4942,6 +4960,7 @@ item (FEAT_TRAINS, Item_Goninan_4D_Coach_BG_Liv0, Goninan_4D_Coach_BG_Liv0_ID) {
     default:                            switch_Goninan_4D_Coach_Liv0_position;
     purchase:                           switch_Goninan_4D_Coach_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_4D_COACH_BG);
+	cargo_capacity: 					(Goninan_4D_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -4989,7 +5008,6 @@ item (FEAT_TRAINS, Item_Goninan_4D_Coach_DT_BG_Liv0, Goninan_4D_Coach_DT_BG_Liv0
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     BG_RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -5020,16 +5038,18 @@ item (FEAT_TRAINS, Item_Goninan_4D_Coach_DT_BG_Liv0, Goninan_4D_Coach_DT_BG_Liv0
 		cost_factor:					Goninan_4D_Coach_CostFactor;
 		running_cost_factor:			Goninan_4D_Coach_RunningCostFactor;
 		cargo_capacity: 				(Goninan_4D_Coach_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							Goninan_4D_Coach_Weight ton;
 
 //        variant_group: 					Item_Goninan_4D_Coach_DT_BG_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_Goninan_4D_Coach_DT_Liv0_rearcheck;
     purchase:                           switch_Goninan_4D_Coach_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_GONINAN_4D_COACH_DT_BG);
+	cargo_capacity: 					(Goninan_4D_Coach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -5434,6 +5454,412 @@ item (FEAT_TRAINS, Item_Mail_AmericanCoach_BG_Liv0, Mail_AmericanCoach_BG_Liv0_I
     purchase:                           switch_Mail_AmericanCoach_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_MAIL_AMERICANCOACH_BG);
 	cargo_capacity: 					(AmericanCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+//ID
+const NSW_Ashbury_ID = 8500;
+//introduction_date
+const NSW_Ashbury_IntroDate = date(1879, 1, 1);
+//speed
+const NSW_Ashbury_Speed = 80;
+//cost_factor
+const NSW_Ashbury_CostFactor = 38;
+//running_cost_factor
+const NSW_Ashbury_RunningCostFactor = 16;
+//Cargo Capacity
+const NSW_Ashbury_CargoCapacity = 50;
+//weight
+const NSW_Ashbury_Weight = 34;
+//length
+const NSW_Ashbury_Length = 7;
+
+//NSW_Ashbury
+spriteset(spriteset_NSW_Ashbury_EOTD,   "gfx/NSW_Ashbury_EOTD.png") {template_7(7, 39)}
+spriteset(spriteset_NSW_Ashbury_EOTD_r,   "gfx/NSW_Ashbury_EOTD.png") {template_7_r(7, 39)}
+
+//NSW_Ashbury_Liv0
+spriteset(spriteset_NSW_Ashbury_Liv0_Purchase,   "gfx/NSW_Ashbury_Liv0.png") {template_purchase_7(7, 21)}
+
+spriteset(spriteset_NSW_Ashbury_Liv0,   "gfx/NSW_Ashbury_Liv0.png") {template_7_repeat(7, 39)}
+spriteset(spriteset_NSW_Ashbury_Liv0_Terminal,   "gfx/NSW_Ashbury_Liv0.png") {template_7(7, 69)}
+spriteset(spriteset_NSW_Ashbury_Liv0_Terminal_r,   "gfx/NSW_Ashbury_Liv0.png") {template_7_r(7, 69)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_Ashbury_Liv0_Purchase;
+	1: switch_Couplers_7_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_Ashbury_Liv0;
+	1: switch_Couplers_7_Repeat;
+}
+
+//Terminal stacks
+switch (FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_Ashbury_Liv0_Terminal;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_NSW_Ashbury_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_NSW_Ashbury_Liv0_SpriteStack1;
+    return switch_NSW_Ashbury_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NSW_Ashbury_Liv0_Terminal_r;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_NSW_Ashbury_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_NSW_Ashbury_Liv0_SpriteStack2;
+    return switch_NSW_Ashbury_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NSW_Ashbury_Liv0_position, vehicle_is_flipped) {
+ 0: switch_NSW_Ashbury_Liv0_rearcheck1;
+ 1: switch_NSW_Ashbury_Liv0_rearcheck2;
+}
+
+const NSW_Ashbury_Liv0_ID_NG = (NSW_Ashbury_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_NSW_Ashbury_NG_Liv0, NSW_Ashbury_Liv0_ID_NG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_NSW_ASHBURY_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NSW_Ashbury_IntroDate;		
+		length:                         NSW_Ashbury_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NSW_Ashbury_Speed km/h;
+		cost_factor:					NSW_Ashbury_CostFactor;
+		running_cost_factor:			NSW_Ashbury_RunningCostFactor;
+		cargo_capacity: 				(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NSW_Ashbury_Weight ton;
+
+//        variant_group: 					Item_NSW_Ashbury_NG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_NSW_Ashbury_Liv0_position;
+    purchase:                           switch_NSW_Ashbury_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_NSW_ASHBURY_NG);
+	cargo_capacity: 					(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+}
+}
+
+const NSW_Ashbury_Liv0_ID = (NSW_Ashbury_Liv0_ID_NG + 10);
+
+item (FEAT_TRAINS, Item_NSW_Ashbury_Liv0, NSW_Ashbury_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_NSW_ASHBURY);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NSW_Ashbury_IntroDate;		
+		length:                         NSW_Ashbury_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NSW_Ashbury_Speed km/h;
+		cost_factor:					NSW_Ashbury_CostFactor;
+		running_cost_factor:			NSW_Ashbury_RunningCostFactor;
+		cargo_capacity: 				(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NSW_Ashbury_Weight ton;
+
+//        variant_group: 					Item_NSW_Ashbury_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_NSW_Ashbury_Liv0_position;
+    purchase:                           switch_NSW_Ashbury_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_NSW_ASHBURY);
+	cargo_capacity: 					(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+}
+}
+
+const NSW_Ashbury_Liv0_ID_BG = (NSW_Ashbury_Liv0_ID + 10);
+
+item (FEAT_TRAINS, Item_NSW_Ashbury_BG_Liv0, NSW_Ashbury_Liv0_ID_BG) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_NSW_ASHBURY_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NSW_Ashbury_IntroDate;		
+		length:                         NSW_Ashbury_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NSW_Ashbury_Speed km/h;
+		cost_factor:					NSW_Ashbury_CostFactor;
+		running_cost_factor:			NSW_Ashbury_RunningCostFactor;
+		cargo_capacity: 				(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NSW_Ashbury_Weight ton;
+
+//        variant_group: 					Item_NSW_Ashbury_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_NSW_Ashbury_Liv0_position;
+    purchase:                           switch_NSW_Ashbury_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_NSW_ASHBURY_BG);
+	cargo_capacity: 					(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Mail_NSW_Ashbury_Liv0
+spriteset(spriteset_Mail_NSW_Ashbury_Liv0_Purchase,   "gfx/NSW_Ashbury_Liv0.png") {template_purchase_7(187, 21)}
+spriteset(spriteset_Mail_NSW_Ashbury_Liv0,   "gfx/NSW_Ashbury_Liv0.png") {template_7_repeat(187, 39)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_NSW_Ashbury_Liv0_Purchase;
+	1: switch_Couplers_7_Repeat_Purchase;
+}
+
+//Normal stack
+switch (FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_NSW_Ashbury_Liv0;
+	1: switch_Couplers_7_Repeat;
+}
+
+//Terminal Stacks
+switch (FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_NSW_Ashbury_Liv0;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_NSW_Ashbury_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_NSW_Ashbury_Liv0_SpriteStack1;
+    return switch_Mail_NSW_Ashbury_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_NSW_Ashbury_Liv0;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_NSW_Ashbury_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_NSW_Ashbury_Liv0_SpriteStack2;
+    return switch_Mail_NSW_Ashbury_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_NSW_Ashbury_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_NSW_Ashbury_Liv0_rearcheck1;
+ 1: switch_Mail_NSW_Ashbury_Liv0_rearcheck2;
+}
+
+const Mail_NSW_Ashbury_NG_Liv0_ID = (NSW_Ashbury_Liv0_ID_NG + 50);
+
+item (FEAT_TRAINS, Item_Mail_NSW_Ashbury_NG_Liv0, Mail_NSW_Ashbury_NG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_NSW_ASHBURY_NG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NSW_Ashbury_IntroDate;		
+		length:                         NSW_Ashbury_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NSW_Ashbury_Speed km/h;
+		cost_factor:					NSW_Ashbury_CostFactor;
+		running_cost_factor:			NSW_Ashbury_RunningCostFactor;
+		cargo_capacity: 				(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NSW_Ashbury_Weight ton;
+
+//        variant_group: 					Item_Mail_NSW_Ashbury_NG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_NSW_Ashbury_Liv0_position;
+    purchase:                           switch_Mail_NSW_Ashbury_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_NSW_ASHBURY_NG);
+	cargo_capacity: 					(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+}
+}
+
+const Mail_NSW_Ashbury_Liv0_ID = (NSW_Ashbury_Liv0_ID + 50);
+
+item (FEAT_TRAINS, Item_Mail_NSW_Ashbury_Liv0, Mail_NSW_Ashbury_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_NSW_ASHBURY);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NSW_Ashbury_IntroDate;		
+		length:                         NSW_Ashbury_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NSW_Ashbury_Speed km/h;
+		cost_factor:					NSW_Ashbury_CostFactor;
+		running_cost_factor:			NSW_Ashbury_RunningCostFactor;
+		cargo_capacity: 				(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NSW_Ashbury_Weight ton;
+
+//        variant_group: 					Item_Mail_NSW_Ashbury_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_NSW_Ashbury_Liv0_position;
+    purchase:                           switch_Mail_NSW_Ashbury_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_NSW_ASHBURY);
+	cargo_capacity: 					(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+}
+}
+
+const Mail_NSW_Ashbury_BG_Liv0_ID = (NSW_Ashbury_Liv0_ID_BG + 50);
+
+item (FEAT_TRAINS, Item_Mail_NSW_Ashbury_BG_Liv0, Mail_NSW_Ashbury_BG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             ALL_CLIMATES;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_NSW_ASHBURY_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              NSW_Ashbury_IntroDate;		
+		length:                         NSW_Ashbury_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NSW_Ashbury_Speed km/h;
+		cost_factor:					NSW_Ashbury_CostFactor;
+		running_cost_factor:			NSW_Ashbury_RunningCostFactor;
+		cargo_capacity: 				(NSW_Ashbury_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							NSW_Ashbury_Weight ton;
+
+//        variant_group: 					Item_Mail_NSW_Ashbury_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_NSW_Ashbury_Liv0_position;
+    purchase:                           switch_Mail_NSW_Ashbury_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_NSW_ASHBURY_BG);
+	cargo_capacity: 					(NSW_Ashbury_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -5945,6 +6371,7 @@ item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv0, Tulloch_InterurbanCoach_Li
     default:                            switch_Tulloch_InterurbanCoach_Liv0_position;
     purchase:                           spriteset_Tulloch_InterurbanCoach_Liv0;
     additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6024,6 +6451,7 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv0, Mail_Tulloch_Interurb
     default:                            switch_Mail_Tulloch_InterurbanCoach_Liv0_position;
     purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv0;
     additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6112,6 +6540,7 @@ item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv1, Tulloch_InterurbanCoach_Li
     default:                            switch_Tulloch_InterurbanCoach_Liv1_position;
     purchase:                           spriteset_Tulloch_InterurbanCoach_Liv1;
     additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6191,6 +6620,7 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv1, Mail_Tulloch_Interurb
     default:                            switch_Mail_Tulloch_InterurbanCoach_Liv1_position;
     purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv1;
     additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6279,6 +6709,7 @@ item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv2, Tulloch_InterurbanCoach_Li
     default:                            switch_Tulloch_InterurbanCoach_Liv2_position;
     purchase:                           spriteset_Tulloch_InterurbanCoach_Liv2;
     additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6358,6 +6789,7 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv2, Mail_Tulloch_Interurb
     default:                            switch_Mail_Tulloch_InterurbanCoach_Liv2_position;
     purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv2;
     additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6446,6 +6878,7 @@ item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv3, Tulloch_InterurbanCoach_Li
     default:                            switch_Tulloch_InterurbanCoach_Liv3_position;
     purchase:                           spriteset_Tulloch_InterurbanCoach_Liv3;
     additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6525,6 +6958,7 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv3, Mail_Tulloch_Interurb
     default:                            switch_Mail_Tulloch_InterurbanCoach_Liv3_position;
     purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv3;
     additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6613,6 +7047,7 @@ item (FEAT_TRAINS, Item_Tulloch_InterurbanCoach_Liv4, Tulloch_InterurbanCoach_Li
     default:                            switch_Tulloch_InterurbanCoach_Liv4_position;
     purchase:                           spriteset_Tulloch_InterurbanCoach_Liv4;
     additional_text: 					string(STR_INFO_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -6692,6 +7127,7 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv4, Mail_Tulloch_Interurb
     default:                            switch_Mail_Tulloch_InterurbanCoach_Liv4_position;
     purchase:                           spriteset_Mail_Tulloch_InterurbanCoach_Liv4;
     additional_text: 					string(STR_INFO_MAIL_TULLOCH_INTERURBANCOACH);
+	cargo_capacity: 					(Tulloch_InterurbanCoach_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7029,6 +7465,7 @@ item (FEAT_TRAINS, Item_VLine_RType_Liv0, VLine_RType_Liv0_ID) {
     default:                            switch_VLine_RType_Liv0_position;
     purchase:                           spriteset_VLine_RType_Liv0_Purchase;
     additional_text: 					string(STR_INFO_VLINE_RTYPE);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7073,6 +7510,7 @@ item (FEAT_TRAINS, Item_VLine_RType_BG_Liv0, VLine_RType_Liv0_BG_ID) {
     default:                            switch_VLine_RType_Liv0_position;
     purchase:                           spriteset_VLine_RType_Liv0_Purchase;
     additional_text: 					string(STR_INFO_VLINE_RTYPE_BG);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7152,6 +7590,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_Liv0, Mail_VLine_RType_Liv0_ID) {
     default:                            switch_Mail_VLine_RType_Liv0_position;
     purchase:                           spriteset_Mail_VLine_RType_Liv0_Purchase;
     additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7196,6 +7635,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_BG_Liv0, Mail_VLine_RType_Liv0_BG_ID) {
     default:                            switch_Mail_VLine_RType_Liv0_position;
     purchase:                           spriteset_Mail_VLine_RType_Liv0_Purchase;
     additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE_BG);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7276,6 +7716,7 @@ item (FEAT_TRAINS, Item_VLine_RType_Liv1, VLine_RType_Liv1_ID) {
     default:                            switch_VLine_RType_Liv1_position;
     purchase:                           spriteset_VLine_RType_Liv1_Purchase;
     additional_text: 					string(STR_INFO_VLINE_RTYPE);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7320,6 +7761,7 @@ item (FEAT_TRAINS, Item_VLine_RType_BG_Liv1, VLine_RType_Liv1_BG_ID) {
     default:                            switch_VLine_RType_Liv1_position;
     purchase:                           spriteset_VLine_RType_Liv1_Purchase;
     additional_text: 					string(STR_INFO_VLINE_RTYPE_BG);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7399,6 +7841,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_Liv1, Mail_VLine_RType_Liv1_ID) {
     default:                            switch_Mail_VLine_RType_Liv1_position;
     purchase:                           spriteset_Mail_VLine_RType_Liv1_Purchase;
     additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7443,6 +7886,7 @@ item (FEAT_TRAINS, Item_Mail_VLine_RType_BG_Liv1, Mail_VLine_RType_Liv1_BG_ID) {
     default:                            switch_Mail_VLine_RType_Liv1_position;
     purchase:                           spriteset_Mail_VLine_RType_Liv1_Purchase;
     additional_text: 					string(STR_INFO_MAIL_VLINE_RTYPE_BG);
+	cargo_capacity: 					(VLine_RType_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7549,6 +7993,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_Liv0, BREL_Mk3_Liv0_ID) {
     default:                            switch_BREL_Mk3_Liv0_position;
     purchase:                           spriteset_BREL_Mk3_Liv0_Purchase;
     additional_text: 					string(STR_INFO_BREL_MK3);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7593,6 +8038,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_BG_Liv0, BREL_Mk3_BG_Liv0_ID) {
     default:                            switch_BREL_Mk3_Liv0_position;
     purchase:                           spriteset_BREL_Mk3_Liv0_Purchase;
     additional_text: 					string(STR_INFO_BREL_MK3_BG);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7672,6 +8118,7 @@ item (FEAT_TRAINS, Item_Mail_BREL_Mk3_Liv0, Mail_BREL_Mk3_Liv0_ID) {
     default:                            switch_Mail_BREL_Mk3_Liv0_position;
     purchase:                           spriteset_Mail_BREL_Mk3_Liv0_Purchase;
     additional_text: 					string(STR_INFO_MAIL_BREL_MK3);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7716,6 +8163,7 @@ item (FEAT_TRAINS, Item_Mail_BREL_Mk3_BG_Liv0, Mail_BREL_Mk3_Liv0_BG_ID) {
     default:                            switch_Mail_BREL_Mk3_Liv0_position;
     purchase:                           spriteset_Mail_BREL_Mk3_Liv0_Purchase;
     additional_text: 					string(STR_INFO_MAIL_BREL_MK3_BG);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7763,7 +8211,6 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv0, BREL_Mk3_DT_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -7794,16 +8241,18 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv0, BREL_Mk3_DT_Liv0_ID) {
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
 		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							BREL_Mk3_Weight ton;
 
 //        variant_group: 					Item_BREL_Mk3_DT_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_BREL_Mk3_DT_Liv0_rearcheck;
     purchase:                           switch_BREL_Mk3_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_BREL_MK3_DT);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7813,7 +8262,6 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv0, BREL_Mk3_DT_BG_Liv0_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     BG_RAIL_ONLY;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -7844,16 +8292,18 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv0, BREL_Mk3_DT_BG_Liv0_ID) {
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
 		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							BREL_Mk3_Weight ton;
 
 //        variant_group: 					Item_BREL_Mk3_DT_BG_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_BREL_Mk3_DT_Liv0_rearcheck;
     purchase:                           switch_BREL_Mk3_DT_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_BREL_MK3_DT_BG);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7942,6 +8392,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_Liv1, BREL_Mk3_Liv1_ID) {
     default:                            switch_BREL_Mk3_Liv1_position;
     purchase:                           spriteset_BREL_Mk3_Liv1_Purchase;
     additional_text: 					string(STR_INFO_BREL_MK3);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -7986,6 +8437,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_BG_Liv1, BREL_Mk3_BG_Liv1_ID) {
     default:                            switch_BREL_Mk3_Liv1_position;
     purchase:                           spriteset_BREL_Mk3_Liv1_Purchase;
     additional_text: 					string(STR_INFO_BREL_MK3_BG);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -8065,6 +8517,7 @@ item (FEAT_TRAINS, Item_Mail_BREL_Mk3_Liv1, Mail_BREL_Mk3_Liv1_ID) {
     default:                            switch_Mail_BREL_Mk3_Liv1_position;
     purchase:                           spriteset_Mail_BREL_Mk3_Liv1_Purchase;
     additional_text: 					string(STR_INFO_MAIL_BREL_MK3);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -8109,6 +8562,7 @@ item (FEAT_TRAINS, Item_Mail_BREL_Mk3_BG_Liv1, Mail_BREL_Mk3_Liv1_BG_ID) {
     default:                            switch_Mail_BREL_Mk3_Liv1_position;
     purchase:                           spriteset_Mail_BREL_Mk3_Liv1_Purchase;
     additional_text: 					string(STR_INFO_MAIL_BREL_MK3_BG);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -8156,7 +8610,6 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv1, BREL_Mk3_DT_Liv1_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     RAIL;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -8187,16 +8640,18 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv1, BREL_Mk3_DT_Liv1_ID) {
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
 		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							BREL_Mk3_Weight ton;
 
         variant_group: 					Item_BREL_Mk3_DT_Liv0;
-        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_BREL_Mk3_DT_Liv1_rearcheck;
     purchase:                           switch_BREL_Mk3_DT_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_BREL_MK3_DT);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -8206,7 +8661,6 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv1, BREL_Mk3_DT_BG_Liv1_ID) {
     property {
 		sprite_id:                      SPRITE_ID_NEW_TRAIN;
 		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
-		extra_flags:					VEHICLE_FLAG_TRAIN_HAS_CAB;
 		track_type:                     BG_RAIL_ONLY;
 		running_cost_base:              RUNNING_COST_STEAM;
 		engine_class:                   ENGINE_CLASS_DIESEL;
@@ -8237,16 +8691,18 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv1, BREL_Mk3_DT_BG_Liv1_ID) {
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
 		cargo_capacity: 				(BREL_Mk3_CargoCapacity / param_capacity_mod);
-		power:							1 hp;//Remove
+		power:							0 hp;
 		weight:							BREL_Mk3_Weight ton;
 
         variant_group: 					Item_BREL_Mk3_DT_BG_Liv0;
-        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_BREL_Mk3_DT_Liv1_rearcheck;
     purchase:                           switch_BREL_Mk3_DT_Liv1_PurchaseStack;
     additional_text: 					string(STR_INFO_BREL_MK3_DT_BG);
+	cargo_capacity: 					(BREL_Mk3_CargoCapacity / param_capacity_mod);
 }
 }
 
