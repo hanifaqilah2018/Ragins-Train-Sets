@@ -4973,7 +4973,7 @@ item (FEAT_TRAINS, Item_HeavyweightCar_Liv0, 10920) {
         introduction_date:                date(1893, 1, 1);
 
         speed:                            100 mph;
-        weight:                            50 ton;
+        weight:                            45 ton;
         cargo_capacity:                    90/param_capacity_mod;
     }
     graphics {
@@ -5050,7 +5050,7 @@ item (FEAT_TRAINS, Item_Observation_HeavyweightCar_Liv0, 10930) {
         introduction_date:                date(1893, 1, 1);
 
         speed:                            100 mph;
-        weight:                            50 ton;
+        weight:                            45 ton;
         cargo_capacity:                    90/param_capacity_mod;
     }
     graphics {
