@@ -6163,7 +6163,7 @@ item(FEAT_TRAINS, Item_SSD_DMU_NRFSI_Trainlink, 2101) {
         length:                            8;
 
         weight:                        55 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            800 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     14;
@@ -8091,7 +8091,7 @@ item(FEAT_TRAINS, Item_ICSD_DMU_Prospector_Silver, 3401) {
         length:                            8;
 
         weight:                        62 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            720 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     6;
@@ -8200,7 +8200,7 @@ item(FEAT_TRAINS, Item_ICSD_DMU_Prospector_Early, 3402) {
         length:                            8;
 
         weight:                        62 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            720 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     6;
@@ -8309,7 +8309,7 @@ item(FEAT_TRAINS, Item_ICSD_DMU_Prospector_WAGR, 3403) {
         length:                            8;
 
         weight:                        62 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            720 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     6;
@@ -8574,7 +8574,7 @@ item(FEAT_TRAINS, Item_ComengKoru_NZR, 3501) {
         length:                            8;
 
         weight:                        43 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            920 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     12;
@@ -8638,7 +8638,7 @@ item(FEAT_TRAINS, Item_ComengKoru_Liv1, 3502) {
         length:                            8;
 
         weight:                        43 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            920 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     12;
@@ -8702,7 +8702,7 @@ item(FEAT_TRAINS, Item_ComengKoru_Liv2, 3503) {
         length:                            8;
 
         weight:                        43 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            920 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     12;
@@ -8776,7 +8776,7 @@ item(FEAT_TRAINS, Item_ICSD_DMU_ADPADQ_Early, 3551) {
         length:                            8;
 
         weight:                        48 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            1000 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     12;
@@ -8842,7 +8842,7 @@ item(FEAT_TRAINS, Item_ICSD_DMU_ADPADQ_Mid, 3552) {
         length:                            8;
 
         weight:                        48 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            1000 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     12;
@@ -8908,7 +8908,7 @@ item(FEAT_TRAINS, Item_ICSD_DMU_ADPADQ_Late, 3553) {
         length:                            8;
 
         weight:                        48 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            1000 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     12;
@@ -8984,7 +8984,7 @@ item(FEAT_TRAINS, Item_ICSD_DMU_Xplorer_Countrylink, 3601) {
         length:                            8;
 
         weight:                        56 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            1028 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     11;
@@ -9050,7 +9050,7 @@ item(FEAT_TRAINS, Item_ICSD_DMU_Xplorer_CityRailEarly, 3602) {
         length:                            8;
 
         weight:                        56 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            1028 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     11;
@@ -9116,7 +9116,7 @@ item(FEAT_TRAINS, Item_ICSD_DMU_Xplorer_CityRail, 3603) {
         length:                            8;
 
         weight:                        56 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            1028 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     11;
@@ -9182,7 +9182,7 @@ item(FEAT_TRAINS, Item_ICSD_DMU_Xplorer_Trainlink1, 3604) {
         length:                            8;
 
         weight:                        56 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            1028 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     11;
@@ -9248,7 +9248,7 @@ item(FEAT_TRAINS, Item_ICSD_DMU_Xplorer_Trainlink2, 3605) {
         length:                            8;
 
         weight:                        56 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            1028 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     11;
@@ -9960,7 +9960,7 @@ item(FEAT_TRAINS, Item_XPTInterurban_PTC1, 4901) {
         length:                            8;
 
         weight:                        76 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            2000 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     25;
@@ -10038,7 +10038,7 @@ item(FEAT_TRAINS, Item_XPTInterurban_PTC2, 4902) {
         length:                            8;
 
         weight:                        76 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            2000 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     25;
@@ -10116,7 +10116,7 @@ item(FEAT_TRAINS, Item_XPTInterurban_SRA, 4903) {
         length:                            8;
 
         weight:                        76 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            2000 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     25;
@@ -10194,7 +10194,7 @@ item(FEAT_TRAINS, Item_XPTInterurban_Countrylink1, 4904) {
         length:                            8;
 
         weight:                        76 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            2000 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     25;
@@ -10272,7 +10272,7 @@ item(FEAT_TRAINS, Item_XPTInterurban_Countrylink2, 4905) {
         length:                            8;
 
         weight:                        76 ton;
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         power:                            2000 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     25;
@@ -57321,7 +57321,7 @@ item (FEAT_TRAINS, Item_Comeng_HighSpeedCoach_Silver, 41321) {
         name:                             string(STR_NAME_COMENG_HIGHSPEEDCOACH);
         introduction_date:                date(1983, 1, 1);
 
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         weight:                            35 ton;
         cargo_capacity:                    72/param_capacity_mod;
     }
@@ -57375,7 +57375,7 @@ item (FEAT_TRAINS, Item_Mail_Comeng_HighSpeedCoach_Silver, 41331) {
         name:                             string(STR_NAME_MAIL_COMENG_HIGHSPEEDCOACH);
         introduction_date:                date(1983, 1, 1);
 
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         weight:                            32 ton;
         cargo_capacity:                    72/param_capacity_mod;
     }
@@ -57427,7 +57427,7 @@ item (FEAT_TRAINS, Item_Comeng_HighSpeedCoach_VLine1, 41322) {
         name:                             string(STR_NAME_COMENG_HIGHSPEEDCOACH);
         introduction_date:                date(1983, 1, 1);
 
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         weight:                            35 ton;
         cargo_capacity:                    72/param_capacity_mod;
     }
@@ -57481,7 +57481,7 @@ item (FEAT_TRAINS, Item_Mail_Comeng_HighSpeedCoach_VLine1, 41332) {
         name:                             string(STR_NAME_MAIL_COMENG_HIGHSPEEDCOACH);
         introduction_date:                date(1983, 1, 1);
 
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         weight:                            32 ton;
         cargo_capacity:                    72/param_capacity_mod;
     }
@@ -57533,7 +57533,7 @@ item (FEAT_TRAINS, Item_Comeng_HighSpeedCoach_VLine2, 41323) {
         name:                             string(STR_NAME_COMENG_HIGHSPEEDCOACH);
         introduction_date:                date(1983, 1, 1);
 
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         weight:                            35 ton;
         cargo_capacity:                    72/param_capacity_mod;
     }
@@ -57587,7 +57587,7 @@ item (FEAT_TRAINS, Item_Mail_Comeng_HighSpeedCoach_VLine2, 41333) {
         name:                             string(STR_NAME_MAIL_COMENG_HIGHSPEEDCOACH);
         introduction_date:                date(1983, 1, 1);
 
-        speed:                            160 km/h;
+        speed:                            168 km/h;
         weight:                            32 ton;
         cargo_capacity:                    72/param_capacity_mod;
     }
