@@ -5430,7 +5430,7 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv0, TaitInterurban_ID_Liv0) {
         introduction_date:              TaitInterurban_IntroDate;		
 		length:                         TaitInterurban_Length;
 		
-		loading_speed:					SD_Suburban_LoadingSpeed;
+		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							TaitInterurban_Speed km/h;
 		cost_factor:					(TaitInterurban_CostFactor * 2);
 		running_cost_factor:			(TaitInterurban_RunningCostFactor * 2);
@@ -5448,7 +5448,7 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv0, TaitInterurban_ID_Liv0) {
     }
     livery_override (Item_MU_Trailer){
         default:						sw_TaitInterurban_Liv0_lencheck ;
-        length:							8;
+        length:							TaitInterurban_Length;
         cargo_capacity:                 [TaitInterurban_CargoCapacity / param_capacity_mod];
         power:                          TaitInterurban_Power;
 		weight:                        	TaitInterurban_Weight;
@@ -5620,7 +5620,7 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv1, TaitInterurban_ID_Liv1) {
         introduction_date:              TaitInterurban_IntroDate;		
 		length:                         TaitInterurban_Length;
 		
-		loading_speed:					SD_Suburban_LoadingSpeed;
+		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							TaitInterurban_Speed km/h;
 		cost_factor:					(TaitInterurban_CostFactor * 2);
 		running_cost_factor:			(TaitInterurban_RunningCostFactor * 2);
@@ -5638,7 +5638,7 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv1, TaitInterurban_ID_Liv1) {
     }
     livery_override (Item_MU_Trailer){
         default:						sw_TaitInterurban_Liv1_lencheck ;
-        length:							8;
+        length:							TaitInterurban_Length;
         cargo_capacity:                 [TaitInterurban_CargoCapacity / param_capacity_mod];
         power:                          TaitInterurban_Power;
 		weight:                        	TaitInterurban_Weight;
@@ -5810,7 +5810,7 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv2, TaitInterurban_ID_Liv2) {
         introduction_date:              TaitInterurban_IntroDate;		
 		length:                         TaitInterurban_Length;
 		
-		loading_speed:					SD_Suburban_LoadingSpeed;
+		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							TaitInterurban_Speed km/h;
 		cost_factor:					(TaitInterurban_CostFactor * 2);
 		running_cost_factor:			(TaitInterurban_RunningCostFactor * 2);
@@ -5828,7 +5828,7 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv2, TaitInterurban_ID_Liv2) {
     }
     livery_override (Item_MU_Trailer){
         default:						sw_TaitInterurban_Liv2_lencheck ;
-        length:							8;
+        length:							TaitInterurban_Length;
         cargo_capacity:                 [TaitInterurban_CargoCapacity / param_capacity_mod];
         power:                          TaitInterurban_Power;
 		weight:                        	TaitInterurban_Weight;
@@ -6000,7 +6000,7 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv3, TaitInterurban_ID_Liv3) {
         introduction_date:              TaitInterurban_IntroDate;		
 		length:                         TaitInterurban_Length;
 		
-		loading_speed:					SD_Suburban_LoadingSpeed;
+		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							TaitInterurban_Speed km/h;
 		cost_factor:					(TaitInterurban_CostFactor * 2);
 		running_cost_factor:			(TaitInterurban_RunningCostFactor * 2);
@@ -6018,11 +6018,1389 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv3, TaitInterurban_ID_Liv3) {
     }
     livery_override (Item_MU_Trailer){
         default:						sw_TaitInterurban_Liv3_lencheck ;
-        length:							8;
+        length:							TaitInterurban_Length;
         cargo_capacity:                 [TaitInterurban_CargoCapacity / param_capacity_mod];
         power:                          TaitInterurban_Power;
 		weight:                        	TaitInterurban_Weight;
 		running_cost_factor:            TaitInterurban_RunningCostFactor;
+    }
+}
+
+//ID
+const TullochInterurban_ID = 13040;
+//introduction_date
+const TullochInterurban_IntroDate = date(1937, 1, 1);
+//speed
+const TullochInterurban_Speed = 115;
+//cost_factor
+const TullochInterurban_CostFactor = 24;
+//running_cost_factor
+const TullochInterurban_RunningCostFactor = 62;
+//Cargo Capacity
+const TullochInterurban_CargoCapacity = 76;
+//power
+const TullochInterurban_Power = 360;
+//weight
+const TullochInterurban_Weight = 50;
+//Length
+const TullochInterurban_Length = 8;
+
+//Pantographs
+spriteset(spriteset_TullochInterurban_Panto_Purchase,   "gfx/TullochInterurban_Pantographs.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TullochInterurban_PantoDown,   "gfx/TullochInterurban_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_TullochInterurban_PantoDown_r,   "gfx/TullochInterurban_Pantographs.png") {template_8_r(7, 39)}
+spriteset(spriteset_TullochInterurban_PantoUp,   "gfx/TullochInterurban_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_TullochInterurban_PantoUp_r,   "gfx/TullochInterurban_Pantographs.png") {template_8_r(7, 69)}
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_TullochInterurban_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_TullochInterurban_PantoDown;
+ 1: spriteset_TullochInterurban_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_TullochInterurban_Rw_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_TullochInterurban_PantoDown_r; //might need switching back to just panto down
+ 1: spriteset_TullochInterurban_PantoUp_r;
+}
+
+//TullochInterurban_Liv0
+spriteset(spriteset_TullochInterurban_Liv0_purchase,   "gfx/TullochInterurban_Liv0.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TullochInterurban_Liv0_lead,   "gfx/TullochInterurban_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_TullochInterurban_Liv0_lead_r,   "gfx/TullochInterurban_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_TullochInterurban_Liv0_Trailer,   "gfx/TullochInterurban_Liv0.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv0_purchase;
+	1: spriteset_TullochInterurban_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv0_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv0_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv0_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv0_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv0_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv0_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv0_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv0_lead_r;
+	1: switch_TullochInterurban_Rw_railtype;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_TullochInterurban_Liv0_NonControlMotorStack_r;
+    return spriteset_TullochInterurban_Liv0_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv0_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_TullochInterurban_Liv0_NonControlMotorStack;
+    return spriteset_TullochInterurban_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv0_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_TullochInterurban_Liv0_NonControlMotorStack_r;
+    return spriteset_TullochInterurban_Liv0_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv0_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_TullochInterurban_Liv0_NonControlMotorStack;
+    return spriteset_TullochInterurban_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv0_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv0_pantocheck_at_1;
+    return sw_TullochInterurban_Liv0_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv0_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv0_pantocheck_at_1;
+    return spriteset_TullochInterurban_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv0_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv0_pantocheck_at_2;
+    return sw_TullochInterurban_Liv0_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv0_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_TullochInterurban_Liv0_Trailer;
+    3 : sw_TullochInterurban_Liv0_pantocheck_at_1;
+    4 : sw_TullochInterurban_Liv0_sidecheck_4;
+    5 : sw_TullochInterurban_Liv0_pantocheck_at_2;
+    6 .. 7 : sw_TullochInterurban_Liv0_sidecheck_6;
+    return sw_TullochInterurban_Liv0_sidecheck_other;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv0_panto_direction, vehicle_is_flipped){
+    0 : switch_TullochInterurban_Liv0_MotorStack;        //Front panto
+    return switch_TullochInterurban_Liv0_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv0_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_TullochInterurban_Liv0_panto_direction;        //Not flipped, give Panto
+    return spriteset_TullochInterurban_Liv0_lead;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv0_frontcheck, position_in_vehid_chain){
+    0: sw_TullochInterurban_Liv0_panto_direction; //We need a pantograph, guaranteed
+    return sw_TullochInterurban_Liv0_panto_flipcheck; //More Checks
+}
+
+const TullochInterurban_ID_Liv0 = (TullochInterurban_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_TullochInterurban_Liv0, TullochInterurban_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_TULLOCHINTERURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              TullochInterurban_IntroDate;		
+		length:                         TullochInterurban_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							TullochInterurban_Speed km/h;
+		cost_factor:					(TullochInterurban_CostFactor * 2);
+		running_cost_factor:			(TullochInterurban_RunningCostFactor * 2);
+		cargo_capacity: 				(TullochInterurban_CargoCapacity / param_capacity_mod);
+		power:							(TullochInterurban_Power * 2);
+		weight:							TullochInterurban_Weight ton;
+
+//        variant_group: 					Item_TullochInterurban_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_TullochInterurban_Liv0_frontcheck;
+        purchase: 						switch_TullochInterurban_Liv0_PurchaseStack;
+        additional_text: 				string(STR_INFO_TULLOCHINTERURBAN);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_TullochInterurban_Liv0_lencheck ;
+        length:							TullochInterurban_Length;
+        cargo_capacity:                 [TullochInterurban_CargoCapacity / param_capacity_mod];
+        power:                          TullochInterurban_Power;
+		weight:                        	TullochInterurban_Weight;
+		running_cost_factor:            TullochInterurban_RunningCostFactor;
+    }
+}
+
+//TullochInterurban_Liv1
+spriteset(spriteset_TullochInterurban_Liv1_purchase,   "gfx/TullochInterurban_Liv1.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TullochInterurban_Liv1_lead,   "gfx/TullochInterurban_Liv1.png") {template_8(7, 39)}
+spriteset(spriteset_TullochInterurban_Liv1_lead_r,   "gfx/TullochInterurban_Liv1.png") {template_8_r(7, 39)}
+spriteset(spriteset_TullochInterurban_Liv1_Trailer,   "gfx/TullochInterurban_Liv1.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv1_purchase;
+	1: spriteset_TullochInterurban_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv1_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv1_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv1_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv1_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv1_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv1_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv1_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv1_lead_r;
+	1: switch_TullochInterurban_Rw_railtype;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv1_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_TullochInterurban_Liv1_NonControlMotorStack_r;
+    return spriteset_TullochInterurban_Liv1_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv1_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_TullochInterurban_Liv1_NonControlMotorStack;
+    return spriteset_TullochInterurban_Liv1_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv1_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_TullochInterurban_Liv1_NonControlMotorStack_r;
+    return spriteset_TullochInterurban_Liv1_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv1_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_TullochInterurban_Liv1_NonControlMotorStack;
+    return spriteset_TullochInterurban_Liv1_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv1_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv1_pantocheck_at_1;
+    return sw_TullochInterurban_Liv1_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv1_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv1_pantocheck_at_1;
+    return spriteset_TullochInterurban_Liv1_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv1_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv1_pantocheck_at_2;
+    return sw_TullochInterurban_Liv1_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv1_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_TullochInterurban_Liv1_Trailer;
+    3 : sw_TullochInterurban_Liv1_pantocheck_at_1;
+    4 : sw_TullochInterurban_Liv1_sidecheck_4;
+    5 : sw_TullochInterurban_Liv1_pantocheck_at_2;
+    6 .. 7 : sw_TullochInterurban_Liv1_sidecheck_6;
+    return sw_TullochInterurban_Liv1_sidecheck_other;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv1_panto_direction, vehicle_is_flipped){
+    0 : switch_TullochInterurban_Liv1_MotorStack;        //Front panto
+    return switch_TullochInterurban_Liv1_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv1_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_TullochInterurban_Liv1_panto_direction;        //Not flipped, give Panto
+    return spriteset_TullochInterurban_Liv1_lead;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv1_frontcheck, position_in_vehid_chain){
+    0: sw_TullochInterurban_Liv1_panto_direction; //We need a pantograph, guaranteed
+    return sw_TullochInterurban_Liv1_panto_flipcheck; //More Checks
+}
+
+const TullochInterurban_ID_Liv1 = (TullochInterurban_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_TullochInterurban_Liv1, TullochInterurban_ID_Liv1) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_TULLOCHINTERURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              TullochInterurban_IntroDate;		
+		length:                         TullochInterurban_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							TullochInterurban_Speed km/h;
+		cost_factor:					(TullochInterurban_CostFactor * 2);
+		running_cost_factor:			(TullochInterurban_RunningCostFactor * 2);
+		cargo_capacity: 				(TullochInterurban_CargoCapacity / param_capacity_mod);
+		power:							(TullochInterurban_Power * 2);
+		weight:							TullochInterurban_Weight ton;
+
+        variant_group: 					Item_TullochInterurban_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_TullochInterurban_Liv1_frontcheck;
+        purchase: 						switch_TullochInterurban_Liv1_PurchaseStack;
+        additional_text: 				string(STR_INFO_TULLOCHINTERURBAN);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_TullochInterurban_Liv1_lencheck ;
+        length:							TullochInterurban_Length;
+        cargo_capacity:                 [TullochInterurban_CargoCapacity / param_capacity_mod];
+        power:                          TullochInterurban_Power;
+		weight:                        	TullochInterurban_Weight;
+		running_cost_factor:            TullochInterurban_RunningCostFactor;
+    }
+}
+
+//TullochInterurban_Liv2
+spriteset(spriteset_TullochInterurban_Liv2_purchase,   "gfx/TullochInterurban_Liv2.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TullochInterurban_Liv2_lead,   "gfx/TullochInterurban_Liv2.png") {template_8(7, 39)}
+spriteset(spriteset_TullochInterurban_Liv2_lead_r,   "gfx/TullochInterurban_Liv2.png") {template_8_r(7, 39)}
+spriteset(spriteset_TullochInterurban_Liv2_Trailer,   "gfx/TullochInterurban_Liv2.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv2_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv2_purchase;
+	1: spriteset_TullochInterurban_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv2_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv2_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv2_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv2_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv2_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv2_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv2_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv2_lead_r;
+	1: switch_TullochInterurban_Rw_railtype;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv2_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_TullochInterurban_Liv2_NonControlMotorStack_r;
+    return spriteset_TullochInterurban_Liv2_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv2_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_TullochInterurban_Liv2_NonControlMotorStack;
+    return spriteset_TullochInterurban_Liv2_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv2_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_TullochInterurban_Liv2_NonControlMotorStack_r;
+    return spriteset_TullochInterurban_Liv2_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv2_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_TullochInterurban_Liv2_NonControlMotorStack;
+    return spriteset_TullochInterurban_Liv2_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv2_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv2_pantocheck_at_1;
+    return sw_TullochInterurban_Liv2_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv2_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv2_pantocheck_at_1;
+    return spriteset_TullochInterurban_Liv2_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv2_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv2_pantocheck_at_2;
+    return sw_TullochInterurban_Liv2_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv2_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_TullochInterurban_Liv2_Trailer;
+    3 : sw_TullochInterurban_Liv2_pantocheck_at_1;
+    4 : sw_TullochInterurban_Liv2_sidecheck_4;
+    5 : sw_TullochInterurban_Liv2_pantocheck_at_2;
+    6 .. 7 : sw_TullochInterurban_Liv2_sidecheck_6;
+    return sw_TullochInterurban_Liv2_sidecheck_other;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv2_panto_direction, vehicle_is_flipped){
+    0 : switch_TullochInterurban_Liv2_MotorStack;        //Front panto
+    return switch_TullochInterurban_Liv2_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv2_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_TullochInterurban_Liv2_panto_direction;        //Not flipped, give Panto
+    return spriteset_TullochInterurban_Liv2_lead;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv2_frontcheck, position_in_vehid_chain){
+    0: sw_TullochInterurban_Liv2_panto_direction; //We need a pantograph, guaranteed
+    return sw_TullochInterurban_Liv2_panto_flipcheck; //More Checks
+}
+
+const TullochInterurban_ID_Liv2 = (TullochInterurban_ID + Liv2_ID);
+
+item(FEAT_TRAINS, Item_TullochInterurban_Liv2, TullochInterurban_ID_Liv2) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_TULLOCHINTERURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              TullochInterurban_IntroDate;		
+		length:                         TullochInterurban_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							TullochInterurban_Speed km/h;
+		cost_factor:					(TullochInterurban_CostFactor * 2);
+		running_cost_factor:			(TullochInterurban_RunningCostFactor * 2);
+		cargo_capacity: 				(TullochInterurban_CargoCapacity / param_capacity_mod);
+		power:							(TullochInterurban_Power * 2);
+		weight:							TullochInterurban_Weight ton;
+
+        variant_group: 					Item_TullochInterurban_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_TullochInterurban_Liv2_frontcheck;
+        purchase: 						switch_TullochInterurban_Liv2_PurchaseStack;
+        additional_text: 				string(STR_INFO_TULLOCHINTERURBAN);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_TullochInterurban_Liv2_lencheck ;
+        length:							TullochInterurban_Length;
+        cargo_capacity:                 [TullochInterurban_CargoCapacity / param_capacity_mod];
+        power:                          TullochInterurban_Power;
+		weight:                        	TullochInterurban_Weight;
+		running_cost_factor:            TullochInterurban_RunningCostFactor;
+    }
+}
+
+//TullochInterurban_Liv3
+spriteset(spriteset_TullochInterurban_Liv3_purchase,   "gfx/TullochInterurban_Liv3.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TullochInterurban_Liv3_lead,   "gfx/TullochInterurban_Liv3.png") {template_8(7, 39)}
+spriteset(spriteset_TullochInterurban_Liv3_lead_r,   "gfx/TullochInterurban_Liv3.png") {template_8_r(7, 39)}
+spriteset(spriteset_TullochInterurban_Liv3_Trailer,   "gfx/TullochInterurban_Liv3.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv3_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv3_purchase;
+	1: spriteset_TullochInterurban_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv3_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv3_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv3_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv3_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv3_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv3_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv3_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv3_lead_r;
+	1: switch_TullochInterurban_Rw_railtype;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv3_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_TullochInterurban_Liv3_NonControlMotorStack_r;
+    return spriteset_TullochInterurban_Liv3_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv3_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_TullochInterurban_Liv3_NonControlMotorStack;
+    return spriteset_TullochInterurban_Liv3_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv3_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_TullochInterurban_Liv3_NonControlMotorStack_r;
+    return spriteset_TullochInterurban_Liv3_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv3_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_TullochInterurban_Liv3_NonControlMotorStack;
+    return spriteset_TullochInterurban_Liv3_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv3_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv3_pantocheck_at_1;
+    return sw_TullochInterurban_Liv3_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv3_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv3_pantocheck_at_1;
+    return spriteset_TullochInterurban_Liv3_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv3_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv3_pantocheck_at_2;
+    return sw_TullochInterurban_Liv3_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv3_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_TullochInterurban_Liv3_Trailer;
+    3 : sw_TullochInterurban_Liv3_pantocheck_at_1;
+    4 : sw_TullochInterurban_Liv3_sidecheck_4;
+    5 : sw_TullochInterurban_Liv3_pantocheck_at_2;
+    6 .. 7 : sw_TullochInterurban_Liv3_sidecheck_6;
+    return sw_TullochInterurban_Liv3_sidecheck_other;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv3_panto_direction, vehicle_is_flipped){
+    0 : switch_TullochInterurban_Liv3_MotorStack;        //Front panto
+    return switch_TullochInterurban_Liv3_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv3_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_TullochInterurban_Liv3_panto_direction;        //Not flipped, give Panto
+    return spriteset_TullochInterurban_Liv3_lead;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv3_frontcheck, position_in_vehid_chain){
+    0: sw_TullochInterurban_Liv3_panto_direction; //We need a pantograph, guaranteed
+    return sw_TullochInterurban_Liv3_panto_flipcheck; //More Checks
+}
+
+const TullochInterurban_ID_Liv3 = (TullochInterurban_ID + Liv3_ID);
+
+item(FEAT_TRAINS, Item_TullochInterurban_Liv3, TullochInterurban_ID_Liv3) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_TULLOCHINTERURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              TullochInterurban_IntroDate;		
+		length:                         TullochInterurban_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							TullochInterurban_Speed km/h;
+		cost_factor:					(TullochInterurban_CostFactor * 2);
+		running_cost_factor:			(TullochInterurban_RunningCostFactor * 2);
+		cargo_capacity: 				(TullochInterurban_CargoCapacity / param_capacity_mod);
+		power:							(TullochInterurban_Power * 2);
+		weight:							TullochInterurban_Weight ton;
+
+        variant_group: 					Item_TullochInterurban_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_TullochInterurban_Liv3_frontcheck;
+        purchase: 						switch_TullochInterurban_Liv3_PurchaseStack;
+        additional_text: 				string(STR_INFO_TULLOCHINTERURBAN);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_TullochInterurban_Liv3_lencheck ;
+        length:							TullochInterurban_Length;
+        cargo_capacity:                 [TullochInterurban_CargoCapacity / param_capacity_mod];
+        power:                          TullochInterurban_Power;
+		weight:                        	TullochInterurban_Weight;
+		running_cost_factor:            TullochInterurban_RunningCostFactor;
+    }
+}
+
+//TullochInterurban_Liv4
+spriteset(spriteset_TullochInterurban_Liv4_purchase,   "gfx/TullochInterurban_Liv4.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TullochInterurban_Liv4_lead,   "gfx/TullochInterurban_Liv4.png") {template_8(7, 39)}
+spriteset(spriteset_TullochInterurban_Liv4_lead_r,   "gfx/TullochInterurban_Liv4.png") {template_8_r(7, 39)}
+spriteset(spriteset_TullochInterurban_Liv4_Trailer,   "gfx/TullochInterurban_Liv4.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv4_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv4_purchase;
+	1: spriteset_TullochInterurban_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv4_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv4_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv4_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv4_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv4_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv4_lead;
+	1: switch_TullochInterurban_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_TullochInterurban_Liv4_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TullochInterurban_Liv4_lead_r;
+	1: switch_TullochInterurban_Rw_railtype;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv4_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_TullochInterurban_Liv4_NonControlMotorStack_r;
+    return spriteset_TullochInterurban_Liv4_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv4_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_TullochInterurban_Liv4_NonControlMotorStack;
+    return spriteset_TullochInterurban_Liv4_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv4_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_TullochInterurban_Liv4_NonControlMotorStack_r;
+    return spriteset_TullochInterurban_Liv4_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv4_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_TullochInterurban_Liv4_NonControlMotorStack;
+    return spriteset_TullochInterurban_Liv4_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv4_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv4_pantocheck_at_1;
+    return sw_TullochInterurban_Liv4_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv4_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv4_pantocheck_at_1;
+    return spriteset_TullochInterurban_Liv4_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv4_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TullochInterurban_Liv4_pantocheck_at_2;
+    return sw_TullochInterurban_Liv4_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv4_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_TullochInterurban_Liv4_Trailer;
+    3 : sw_TullochInterurban_Liv4_pantocheck_at_1;
+    4 : sw_TullochInterurban_Liv4_sidecheck_4;
+    5 : sw_TullochInterurban_Liv4_pantocheck_at_2;
+    6 .. 7 : sw_TullochInterurban_Liv4_sidecheck_6;
+    return sw_TullochInterurban_Liv4_sidecheck_other;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv4_panto_direction, vehicle_is_flipped){
+    0 : switch_TullochInterurban_Liv4_MotorStack;        //Front panto
+    return switch_TullochInterurban_Liv4_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv4_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_TullochInterurban_Liv4_panto_direction;        //Not flipped, give Panto
+    return spriteset_TullochInterurban_Liv4_lead;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_TullochInterurban_Liv4_frontcheck, position_in_vehid_chain){
+    0: sw_TullochInterurban_Liv4_panto_direction; //We need a pantograph, guaranteed
+    return sw_TullochInterurban_Liv4_panto_flipcheck; //More Checks
+}
+
+const TullochInterurban_ID_Liv4 = (TullochInterurban_ID + Liv4_ID);
+
+item(FEAT_TRAINS, Item_TullochInterurban_Liv4, TullochInterurban_ID_Liv4) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_TULLOCHINTERURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              TullochInterurban_IntroDate;		
+		length:                         TullochInterurban_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							TullochInterurban_Speed km/h;
+		cost_factor:					(TullochInterurban_CostFactor * 2);
+		running_cost_factor:			(TullochInterurban_RunningCostFactor * 2);
+		cargo_capacity: 				(TullochInterurban_CargoCapacity / param_capacity_mod);
+		power:							(TullochInterurban_Power * 2);
+		weight:							TullochInterurban_Weight ton;
+
+        variant_group: 					Item_TullochInterurban_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_TullochInterurban_Liv4_frontcheck;
+        purchase: 						switch_TullochInterurban_Liv4_PurchaseStack;
+        additional_text: 				string(STR_INFO_TULLOCHINTERURBAN);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_TullochInterurban_Liv4_lencheck ;
+        length:							TullochInterurban_Length;
+        cargo_capacity:                 [TullochInterurban_CargoCapacity / param_capacity_mod];
+        power:                          TullochInterurban_Power;
+		weight:                        	TullochInterurban_Weight;
+		running_cost_factor:            TullochInterurban_RunningCostFactor;
+    }
+}
+
+//ID
+const ComengInterurban_ID = 13080;
+//introduction_date
+const ComengInterurban_IntroDate = date(1958, 1, 1);
+//speed
+const ComengInterurban_Speed = 130;
+//cost_factor
+const ComengInterurban_CostFactor = 26;
+//running_cost_factor
+const ComengInterurban_RunningCostFactor = 67;
+//Cargo Capacity
+const ComengInterurban_CargoCapacity = 83;
+//power
+const ComengInterurban_Power = 360;
+//weight
+const ComengInterurban_Weight = 48;
+//Length
+const ComengInterurban_Length = 8;
+
+//Pantographs
+spriteset(spriteset_ComengInterurban_Panto_Purchase,   "gfx/ComengInterurban_Pantographs.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_ComengInterurban_PantoDown,   "gfx/ComengInterurban_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_ComengInterurban_PantoDown_r,   "gfx/ComengInterurban_Pantographs.png") {template_8_r(7, 39)}
+spriteset(spriteset_ComengInterurban_PantoUp,   "gfx/ComengInterurban_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_ComengInterurban_PantoUp_r,   "gfx/ComengInterurban_Pantographs.png") {template_8_r(7, 69)}
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_ComengInterurban_Fw_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_ComengInterurban_PantoDown;
+ 1: spriteset_ComengInterurban_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_ComengInterurban_Rw_railtype, tile_powers_railtype("OHLE_DC")) {
+ 0: spriteset_ComengInterurban_PantoDown_r; //might need switching back to just panto down
+ 1: spriteset_ComengInterurban_PantoUp_r;
+}
+
+//ComengInterurban_Liv0
+spriteset(spriteset_ComengInterurban_Liv0_purchase,   "gfx/ComengInterurban_Liv0.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_ComengInterurban_Liv0_lead,   "gfx/ComengInterurban_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_ComengInterurban_Liv0_lead_r,   "gfx/ComengInterurban_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_ComengInterurban_Liv0_Trailer,   "gfx/ComengInterurban_Liv0.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv0_purchase;
+	1: spriteset_ComengInterurban_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv0_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv0_lead;
+	1: switch_ComengInterurban_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv0_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv0_lead;
+	1: switch_ComengInterurban_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv0_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv0_lead;
+	1: switch_ComengInterurban_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv0_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv0_lead_r;
+	1: switch_ComengInterurban_Rw_railtype;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_ComengInterurban_Liv0_NonControlMotorStack_r;
+    return spriteset_ComengInterurban_Liv0_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv0_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_ComengInterurban_Liv0_NonControlMotorStack;
+    return spriteset_ComengInterurban_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv0_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_ComengInterurban_Liv0_NonControlMotorStack_r;
+    return spriteset_ComengInterurban_Liv0_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv0_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_ComengInterurban_Liv0_NonControlMotorStack;
+    return spriteset_ComengInterurban_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv0_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_ComengInterurban_Liv0_pantocheck_at_1;
+    return sw_ComengInterurban_Liv0_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv0_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_ComengInterurban_Liv0_pantocheck_at_1;
+    return spriteset_ComengInterurban_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv0_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_ComengInterurban_Liv0_pantocheck_at_2;
+    return sw_ComengInterurban_Liv0_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv0_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_ComengInterurban_Liv0_Trailer;
+    3 : sw_ComengInterurban_Liv0_pantocheck_at_1;
+    4 : sw_ComengInterurban_Liv0_sidecheck_4;
+    5 : sw_ComengInterurban_Liv0_pantocheck_at_2;
+    6 .. 7 : sw_ComengInterurban_Liv0_sidecheck_6;
+    return sw_ComengInterurban_Liv0_sidecheck_other;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv0_panto_direction, vehicle_is_flipped){
+    0 : switch_ComengInterurban_Liv0_MotorStack;        //Front panto
+    return switch_ComengInterurban_Liv0_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv0_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_ComengInterurban_Liv0_panto_direction;        //Not flipped, give Panto
+    return spriteset_ComengInterurban_Liv0_lead;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv0_frontcheck, position_in_vehid_chain){
+    0: sw_ComengInterurban_Liv0_panto_direction; //We need a pantograph, guaranteed
+    return sw_ComengInterurban_Liv0_panto_flipcheck; //More Checks
+}
+
+const ComengInterurban_ID_Liv0 = (ComengInterurban_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_ComengInterurban_Liv0, ComengInterurban_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_COMENGINTERURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ComengInterurban_IntroDate;		
+		length:                         ComengInterurban_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							ComengInterurban_Speed km/h;
+		cost_factor:					(ComengInterurban_CostFactor * 2);
+		running_cost_factor:			(ComengInterurban_RunningCostFactor * 2);
+		cargo_capacity: 				(ComengInterurban_CargoCapacity / param_capacity_mod);
+		power:							(ComengInterurban_Power * 2);
+		weight:							ComengInterurban_Weight ton;
+
+//        variant_group: 					Item_ComengInterurban_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_ComengInterurban_Liv0_frontcheck;
+        purchase: 						switch_ComengInterurban_Liv0_PurchaseStack;
+        additional_text: 				string(STR_INFO_COMENGINTERURBAN);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_ComengInterurban_Liv0_lencheck ;
+        length:							ComengInterurban_Length;
+        cargo_capacity:                 [ComengInterurban_CargoCapacity / param_capacity_mod];
+        power:                          ComengInterurban_Power;
+		weight:                        	ComengInterurban_Weight;
+		running_cost_factor:            ComengInterurban_RunningCostFactor;
+    }
+}
+
+//ComengInterurban_Liv1
+spriteset(spriteset_ComengInterurban_Liv1_purchase,   "gfx/ComengInterurban_Liv1.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_ComengInterurban_Liv1_lead,   "gfx/ComengInterurban_Liv1.png") {template_8(7, 39)}
+spriteset(spriteset_ComengInterurban_Liv1_lead_r,   "gfx/ComengInterurban_Liv1.png") {template_8_r(7, 39)}
+spriteset(spriteset_ComengInterurban_Liv1_Trailer,   "gfx/ComengInterurban_Liv1.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv1_purchase;
+	1: spriteset_ComengInterurban_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv1_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv1_lead;
+	1: switch_ComengInterurban_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv1_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv1_lead;
+	1: switch_ComengInterurban_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv1_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv1_lead;
+	1: switch_ComengInterurban_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv1_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv1_lead_r;
+	1: switch_ComengInterurban_Rw_railtype;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv1_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_ComengInterurban_Liv1_NonControlMotorStack_r;
+    return spriteset_ComengInterurban_Liv1_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv1_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_ComengInterurban_Liv1_NonControlMotorStack;
+    return spriteset_ComengInterurban_Liv1_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv1_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_ComengInterurban_Liv1_NonControlMotorStack_r;
+    return spriteset_ComengInterurban_Liv1_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv1_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_ComengInterurban_Liv1_NonControlMotorStack;
+    return spriteset_ComengInterurban_Liv1_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv1_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_ComengInterurban_Liv1_pantocheck_at_1;
+    return sw_ComengInterurban_Liv1_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv1_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_ComengInterurban_Liv1_pantocheck_at_1;
+    return spriteset_ComengInterurban_Liv1_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv1_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_ComengInterurban_Liv1_pantocheck_at_2;
+    return sw_ComengInterurban_Liv1_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv1_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_ComengInterurban_Liv1_Trailer;
+    3 : sw_ComengInterurban_Liv1_pantocheck_at_1;
+    4 : sw_ComengInterurban_Liv1_sidecheck_4;
+    5 : sw_ComengInterurban_Liv1_pantocheck_at_2;
+    6 .. 7 : sw_ComengInterurban_Liv1_sidecheck_6;
+    return sw_ComengInterurban_Liv1_sidecheck_other;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv1_panto_direction, vehicle_is_flipped){
+    0 : switch_ComengInterurban_Liv1_MotorStack;        //Front panto
+    return switch_ComengInterurban_Liv1_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv1_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_ComengInterurban_Liv1_panto_direction;        //Not flipped, give Panto
+    return spriteset_ComengInterurban_Liv1_lead;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv1_frontcheck, position_in_vehid_chain){
+    0: sw_ComengInterurban_Liv1_panto_direction; //We need a pantograph, guaranteed
+    return sw_ComengInterurban_Liv1_panto_flipcheck; //More Checks
+}
+
+const ComengInterurban_ID_Liv1 = (ComengInterurban_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_ComengInterurban_Liv1, ComengInterurban_ID_Liv1) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_COMENGINTERURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ComengInterurban_IntroDate;		
+		length:                         ComengInterurban_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							ComengInterurban_Speed km/h;
+		cost_factor:					(ComengInterurban_CostFactor * 2);
+		running_cost_factor:			(ComengInterurban_RunningCostFactor * 2);
+		cargo_capacity: 				(ComengInterurban_CargoCapacity / param_capacity_mod);
+		power:							(ComengInterurban_Power * 2);
+		weight:							ComengInterurban_Weight ton;
+
+        variant_group: 					Item_ComengInterurban_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_ComengInterurban_Liv1_frontcheck;
+        purchase: 						switch_ComengInterurban_Liv1_PurchaseStack;
+        additional_text: 				string(STR_INFO_COMENGINTERURBAN);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_ComengInterurban_Liv1_lencheck ;
+        length:							ComengInterurban_Length;
+        cargo_capacity:                 [ComengInterurban_CargoCapacity / param_capacity_mod];
+        power:                          ComengInterurban_Power;
+		weight:                        	ComengInterurban_Weight;
+		running_cost_factor:            ComengInterurban_RunningCostFactor;
+    }
+}
+
+//ComengInterurban_Liv2
+spriteset(spriteset_ComengInterurban_Liv2_purchase,   "gfx/ComengInterurban_Liv2.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_ComengInterurban_Liv2_lead,   "gfx/ComengInterurban_Liv2.png") {template_8(7, 39)}
+spriteset(spriteset_ComengInterurban_Liv2_lead_r,   "gfx/ComengInterurban_Liv2.png") {template_8_r(7, 39)}
+spriteset(spriteset_ComengInterurban_Liv2_Trailer,   "gfx/ComengInterurban_Liv2.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv2_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv2_purchase;
+	1: spriteset_ComengInterurban_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv2_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv2_lead;
+	1: switch_ComengInterurban_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv2_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv2_lead;
+	1: switch_ComengInterurban_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv2_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv2_lead;
+	1: switch_ComengInterurban_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_ComengInterurban_Liv2_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_ComengInterurban_Liv2_lead_r;
+	1: switch_ComengInterurban_Rw_railtype;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv2_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_ComengInterurban_Liv2_NonControlMotorStack_r;
+    return spriteset_ComengInterurban_Liv2_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv2_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_ComengInterurban_Liv2_NonControlMotorStack;
+    return spriteset_ComengInterurban_Liv2_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv2_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_ComengInterurban_Liv2_NonControlMotorStack_r;
+    return spriteset_ComengInterurban_Liv2_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv2_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_ComengInterurban_Liv2_NonControlMotorStack;
+    return spriteset_ComengInterurban_Liv2_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv2_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_ComengInterurban_Liv2_pantocheck_at_1;
+    return sw_ComengInterurban_Liv2_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv2_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_ComengInterurban_Liv2_pantocheck_at_1;
+    return spriteset_ComengInterurban_Liv2_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv2_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_ComengInterurban_Liv2_pantocheck_at_2;
+    return sw_ComengInterurban_Liv2_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv2_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_ComengInterurban_Liv2_Trailer;
+    3 : sw_ComengInterurban_Liv2_pantocheck_at_1;
+    4 : sw_ComengInterurban_Liv2_sidecheck_4;
+    5 : sw_ComengInterurban_Liv2_pantocheck_at_2;
+    6 .. 7 : sw_ComengInterurban_Liv2_sidecheck_6;
+    return sw_ComengInterurban_Liv2_sidecheck_other;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv2_panto_direction, vehicle_is_flipped){
+    0 : switch_ComengInterurban_Liv2_MotorStack;        //Front panto
+    return switch_ComengInterurban_Liv2_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv2_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_ComengInterurban_Liv2_panto_direction;        //Not flipped, give Panto
+    return spriteset_ComengInterurban_Liv2_lead;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_ComengInterurban_Liv2_frontcheck, position_in_vehid_chain){
+    0: sw_ComengInterurban_Liv2_panto_direction; //We need a pantograph, guaranteed
+    return sw_ComengInterurban_Liv2_panto_flipcheck; //More Checks
+}
+
+const ComengInterurban_ID_Liv2 = (ComengInterurban_ID + Liv2_ID);
+
+item(FEAT_TRAINS, Item_ComengInterurban_Liv2, ComengInterurban_ID_Liv2) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_COMENGINTERURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              ComengInterurban_IntroDate;		
+		length:                         ComengInterurban_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							ComengInterurban_Speed km/h;
+		cost_factor:					(ComengInterurban_CostFactor * 2);
+		running_cost_factor:			(ComengInterurban_RunningCostFactor * 2);
+		cargo_capacity: 				(ComengInterurban_CargoCapacity / param_capacity_mod);
+		power:							(ComengInterurban_Power * 2);
+		weight:							ComengInterurban_Weight ton;
+
+        variant_group: 					Item_ComengInterurban_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_ComengInterurban_Liv2_frontcheck;
+        purchase: 						switch_ComengInterurban_Liv2_PurchaseStack;
+        additional_text: 				string(STR_INFO_COMENGINTERURBAN);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_ComengInterurban_Liv2_lencheck ;
+        length:							ComengInterurban_Length;
+        cargo_capacity:                 [ComengInterurban_CargoCapacity / param_capacity_mod];
+        power:                          ComengInterurban_Power;
+		weight:                        	ComengInterurban_Weight;
+		running_cost_factor:            ComengInterurban_RunningCostFactor;
     }
 }
 

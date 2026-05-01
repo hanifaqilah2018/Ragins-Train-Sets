@@ -196,10 +196,10 @@ STR_NAME_TAITINTERURBAN:Tait Interurban
 STR_INFO_TAITINTERURBAN:{BLACK}Role: {GOLD}Intercity Service {}{BLACK}Formation: {GOLD}Multiple-Unit {}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Fictional long distance version of the Tait Suburban EMU
 
 STR_NAME_TULLOCHINTERURBAN:Tulloch Interurban
-STR_INFO_TULLOCHINTERURBAN:{BLACK}Role: {GOLD}Intercity Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}Early Carbon Steel U-Set design mixed with a Tulloch Suburban EMU
+STR_INFO_TULLOCHINTERURBAN:{BLACK}Role: {GOLD}Intercity Service {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Fictional, based on early Carbon Steel U-Set design mixed with a Tulloch Suburban EMU
 
-STR_NAME_COMENGINTERURBANMK1:Comeng Interurban Mk1
-STR_INFO_COMENGINTERURBANMK1:{BLACK}Role: {GOLD}Intercity Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}NSW U-Set EMUs {}{GOLD}The Fish & the Chips
+STR_NAME_COMENGINTERURBAN:Comeng Interurban
+STR_INFO_COMENGINTERURBAN:{BLACK}Role: {GOLD}Intercity Service {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}NSW U-Set EMUs {}{GOLD}The Fish & the Chips
 
 STR_NAME_COMENGINTERURBANMK2:Comeng Interurban Mk2
 STR_INFO_COMENGINTERURBANMK2:{BLACK}Role: {GOLD}Intercity Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}Proposed Gippsland line EMU
