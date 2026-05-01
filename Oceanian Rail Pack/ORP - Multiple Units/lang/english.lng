@@ -67,46 +67,8 @@ STR_INFO_SSD_DMU_VULCAN:{BLACK}Role: {GOLD}Country Service{}{BLACK}Formation: {G
 STR_NAME_NSW600700RAILMOTOR:600/700 Railmotor
 STR_INFO_NSW600700RAILMOTOR:{BLACK}Role: {GOLD}Suburban/Country Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 600/700 class railmotors
 
-STR_NAME_SSD_DMU_ADA:Cravens Railmotor (1 Door)
-STR_NAME_SSD_DMU_ADG:Cravens Railmotor (2 Doors)
-STR_INFO_SSD_DMU_ADAX:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {BROWN}Diesel
-
-STR_NAME_TULLOCHRAILMOTOR:Tulloch Railmotor
-STR_INFO_TULLOCHRAILMOTOR:{BLACK}Role: {GOLD}Suburban & Country Service{}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {BROWN}Diesel {}{GOLD}A better life, underground!
-
-STR_NAME_SSD_DMU_ADK:Comeng ADK Class
-STR_INFO_SSD_DMU_ADK:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {BROWN}Diesel {}{GOLD}These guys somehow ended up in Mozambique!
-
-STR_NAME_SSD_DMU_1300CLASS:Comeng Suburban Railcar
-STR_INFO_SSD_DMU_1300CLASS:{BLACK}Role: {GOLD}Suburban & Country Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {BROWN}Diesel
-
-STR_NAME_SSD_DMU_2000CLASS:Comeng 2000 Class
-STR_INFO_SSD_DMU_2000CLASS:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {BROWN}Diesel {}{GOLD}Those guys at Boeing stole our cab design!
-
-STR_NAME_EVELEIGH_NWCRAILMOTOR:Eveleigh NWC Railmotor
-STR_INFO_EVELEIGH_NWCRAILMOTOR:{BLACK}Role: {GOLD}Country Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {BROWN}Diesel
-
-STR_NAME_COMENGRAILCAR:Comeng Country Railcar (Single Unit)
-STR_NAME_COMENGRAILCAR_MU:Comeng Country Railcar (Multiple Unit)
-STR_INFO_COMENGRAILCAR:{BLACK}Role: {GOLD}Country Service{}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {BROWN}Diesel {}{GOLD}I got punched for trying to import a Pacer, so we're building these instead
-STR_INFO_COMENGRAILCAR_MU:{BLACK}Role: {GOLD}Country Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {BROWN}Diesel {}{GOLD}I got punched for trying to import a Pacer, so we're building these instead
-
-STR_NAME_SSD_DMU_3000CLASS:Comeng 3000 Class (Railcar)
-STR_NAME_SSD_DMU_3000CLASS_MU:Comeng 3000 Class (Multiple Unit)
-STR_INFO_SSD_DMU_3000CLASS:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {BROWN}Diesel
-STR_INFO_SSD_DMU_3000CLASS_MU:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {BROWN}Diesel
-
-STR_NAME_SSD_DMU_SPRINTER:Goninan Sprinter Railcar
-STR_INFO_SSD_DMU_SPRINTER:{BLACK}Role: {GOLD}Suburban & Country Service{}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {BROWN}Diesel
-
-STR_NAME_SSD_DMU_HUNTER:UGL Hunter Railcar
-STR_INFO_SSD_DMU_HUNTER:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {BROWN}Diesel {}{GOLD}Fine trains these are
-
-STR_NAME_SSD_DMU_HUNTERMK2:UGL Mk2 Hunter Railcar
-STR_INFO_SSD_DMU_HUNTERMK2:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {BROWN}Diesel
-
-STR_NAME_SSD_DMU_NRFSI:CAF Suburban R Set
-STR_INFO_SSD_DMU_NRFSI:{BLACK}Role: {GOLD}Suburban & Country Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {BROWN}Diesel
+STR_NAME_QR_1900:Comeng 1900 Class
+STR_INFO_QR_1900:{BLACK}Role: {GOLD}Suburban/Country Service {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}QR 1900 Class
 
 
 STR_NAME_DEBSET:DEB Set
@@ -231,7 +193,7 @@ STR_INFO_SDD_EMU_WARATAH:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Mu
 
 
 STR_NAME_TAITINTERURBAN:Tait Interurban
-STR_INFO_TAITINTERURBAN:{BLACK}Role: {GOLD}Intercity Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}Fictional long distance version of the Tait Suburban EMU
+STR_INFO_TAITINTERURBAN:{BLACK}Role: {GOLD}Intercity Service {}{BLACK}Formation: {GOLD}Multiple-Unit {}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Fictional long distance version of the Tait Suburban EMU
 
 STR_NAME_TULLOCHINTERURBAN:Tulloch Interurban
 STR_INFO_TULLOCHINTERURBAN:{BLACK}Role: {GOLD}Intercity Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}Early Carbon Steel U-Set design mixed with a Tulloch Suburban EMU

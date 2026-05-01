@@ -907,6 +907,78 @@ item(FEAT_TRAINS, Item_NSW600700Railmotor_Liv0, NSW600700Railmotor_ID_Liv0) {
 }
 
 //ID
+const QR_1900_ID = 5420;
+//introduction_date
+const QR_1900_IntroDate = date(1957, 1, 1);
+//speed
+const QR_1900_Speed = 80;
+//cost_factor
+const QR_1900_CostFactor = 21;
+//running_cost_factor
+const QR_1900_RunningCostFactor = 52;
+//Cargo Capacity
+const QR_1900_CargoCapacity = 90;
+//power
+const QR_1900_Power = 250;
+//weight
+const QR_1900_Weight = 21;
+//Length
+const QR_1900_Length = 7;
+
+//QR_1900_Liv0
+spriteset(spriteset_QR_1900_Liv0_purchase,   "gfx/QR_1900_Liv0.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_QR_1900_Liv0,   "gfx/QR_1900_Liv0.png") {template_7_repeat(7, 39)}
+
+const QR_1900_ID_Liv0 = (QR_1900_ID + Liv0_ID );
+
+item(FEAT_TRAINS, Item_QR_1900_Liv0, QR_1900_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_DIESEL;
+
+        name:                           string(STR_NAME_QR_1900);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              QR_1900_IntroDate;		
+		length:                         QR_1900_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							QR_1900_Speed km/h;
+		cost_factor:					QR_1900_CostFactor;
+		running_cost_factor:			QR_1900_RunningCostFactor;
+		cargo_capacity: 				(QR_1900_CargoCapacity / param_capacity_mod);
+		power:							QR_1900_Power;
+		weight:							QR_1900_Weight ton;
+
+//        variant_group: 					Item_QR_1900_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						spriteset_QR_1900_Liv0;
+        purchase: 						spriteset_QR_1900_Liv0_purchase;
+        additional_text: 				string(STR_INFO_QR_1900);
+		reverse_build_probability: 		return 50;
+    }
+    }
+
+//ID
 const DEBSet_ID = 8120;
 //introduction_date
 const DEBSet_IntroDate = date(1951, 1, 1);
@@ -5099,6 +5171,858 @@ item(FEAT_TRAINS, Item_Goninan_4D_Liv0, Goninan_4D_ID_Liv0) {
 		weight:                        	Goninan_4D_Weight;
 		running_cost_factor:            Goninan_4D_RunningCostFactor;
 
+    }
+}
+
+//ID
+const TaitInterurban_ID = 13020;
+//introduction_date
+const TaitInterurban_IntroDate = date(1922, 1, 1);
+//speed
+const TaitInterurban_Speed = 115;
+//cost_factor
+const TaitInterurban_CostFactor = 22;
+//running_cost_factor
+const TaitInterurban_RunningCostFactor = 58;
+//Cargo Capacity
+const TaitInterurban_CargoCapacity = 71;
+//power
+const TaitInterurban_Power = 282;
+//weight
+const TaitInterurban_Weight = 35;
+//Length
+const TaitInterurban_Length = 8;
+
+//Pantographs
+spriteset(spriteset_TaitInterurban_Panto_Purchase,   "gfx/TaitInterurban_Pantographs.png") {template_purchase_88mu(7, 21)}
+
+spriteset(spriteset_TaitInterurban_PantoDown,   "gfx/TaitInterurban_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_TaitInterurban_PantoDown_r,   "gfx/TaitInterurban_Pantographs.png") {template_8_r(7, 39)}
+spriteset(spriteset_TaitInterurban_PantoUp,   "gfx/TaitInterurban_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_TaitInterurban_PantoUp_r,   "gfx/TaitInterurban_Pantographs.png") {template_8_r(7, 69)}
+
+spriteset(spriteset_TaitInterurban_Roof1_Purchase,   "gfx/TaitInterurban_Roof1.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TaitInterurban_Roof1_Motor,   "gfx/TaitInterurban_Roof1.png") {template_8(7, 39)}
+spriteset(spriteset_TaitInterurban_Roof1_Motor_r,   "gfx/TaitInterurban_Roof1.png") {template_8_r(7, 39)}
+spriteset(spriteset_TaitInterurban_Roof1_Trailer,   "gfx/TaitInterurban_Roof1.png") {template_8_repeat(7, 69)}
+
+
+spriteset(spriteset_TaitInterurban_Roof2_Purchase,   "gfx/TaitInterurban_Roof2.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TaitInterurban_Roof2_Motor,   "gfx/TaitInterurban_Roof2.png") {template_8(7, 39)}
+spriteset(spriteset_TaitInterurban_Roof2_Motor_r,   "gfx/TaitInterurban_Roof2.png") {template_8_r(7, 39)}
+spriteset(spriteset_TaitInterurban_Roof2_Trailer,   "gfx/TaitInterurban_Roof2.png") {template_8_repeat(7, 69)}
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_TaitInterurban_Fw_railtype, tile_powers_railtype("BG_RAIL_OHLE_DC")) {
+ 0: spriteset_TaitInterurban_PantoDown;
+ 1: spriteset_TaitInterurban_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_TaitInterurban_Rw_railtype, tile_powers_railtype("BG_RAIL_OHLE_DC")) {
+ 0: spriteset_TaitInterurban_PantoDown_r; //might need switching back to just panto down
+ 1: spriteset_TaitInterurban_PantoUp_r;
+}
+//Roof Controls
+//Purchase
+switch(FEAT_TRAINS, PARENT, switch_TaitInterurban_Roof_Transition_Purchase, date_of_last_service) {
+    0..date(1928, 12, 31): spriteset_TaitInterurban_Roof1_Purchase;
+	date(1929, 1, 1)..date(2100, 1, 1): spriteset_TaitInterurban_Roof2_Purchase;
+  return spriteset_TaitInterurban_Roof2_Purchase;
+}
+
+//Motor Forward
+random_switch(FEAT_TRAINS, SELF, switch_TaitInterurban_Roof_Transition_Motor_Random){
+    3 : spriteset_TaitInterurban_Roof1_Motor;
+	1 : spriteset_TaitInterurban_Roof2_Motor;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_TaitInterurban_Roof_Transition_Motor, date_of_last_service) {
+    0..date(1928, 12, 31): spriteset_TaitInterurban_Roof1_Motor;
+	date(1929, 1, 1)..date(2100, 1, 1): switch_TaitInterurban_Roof_Transition_Motor_Random;
+  return switch_TaitInterurban_Roof_Transition_Motor_Random;
+}
+
+//Motor Reversed
+random_switch(FEAT_TRAINS, SELF, switch_TaitInterurban_Roof_Transition_Motor_r_Random){
+    3 : spriteset_TaitInterurban_Roof1_Motor_r;
+	1 : spriteset_TaitInterurban_Roof2_Motor_r;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_TaitInterurban_Roof_Transition_Motor_r, date_of_last_service) {
+    0..date(1928, 12, 31): spriteset_TaitInterurban_Roof1_Motor_r;
+	date(1929, 1, 1)..date(2100, 1, 1): switch_TaitInterurban_Roof_Transition_Motor_r_Random;
+  return switch_TaitInterurban_Roof_Transition_Motor_r_Random;
+}
+
+//Trailer
+random_switch(FEAT_TRAINS, SELF, switch_TaitInterurban_Roof_Transition_Trailer_Random){
+    3 : spriteset_TaitInterurban_Roof1_Trailer;
+	1 : spriteset_TaitInterurban_Roof2_Trailer;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_TaitInterurban_Roof_Transition_Trailer, date_of_last_service) {
+    0..date(1928, 12, 31): spriteset_TaitInterurban_Roof1_Trailer;
+	date(1929, 1, 1)..date(2100, 1, 1): switch_TaitInterurban_Roof_Transition_Trailer_Random;
+  return switch_TaitInterurban_Roof_Transition_Trailer_Random;
+}
+
+//TaitInterurban_Liv0
+spriteset(spriteset_TaitInterurban_Liv0_purchase,   "gfx/TaitInterurban_Liv0.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TaitInterurban_Liv0_lead,   "gfx/TaitInterurban_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_TaitInterurban_Liv0_lead_r,   "gfx/TaitInterurban_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_TaitInterurban_Liv0_Trailer,   "gfx/TaitInterurban_Liv0.png") {template_8_repeat(7, 69)}
+
+spriteset(spriteset_TaitInterurban_Liv0_single_purchase,   "gfx/TaitInterurban_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_TaitInterurban_Liv0_single,   "gfx/TaitInterurban_Liv0.png") {template_8(187, 39)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv0_purchase;
+	1: switch_TaitInterurban_Roof_Transition_Purchase;
+	2: spriteset_TaitInterurban_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv0_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv0_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+	2: switch_TaitInterurban_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv0_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv0_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+	2: switch_TaitInterurban_Fw_railtype;
+}
+
+//D Lead
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv0_DrivingTrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv0_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv0_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv0_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+	2: switch_TaitInterurban_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv0_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv0_lead_r;
+	1: switch_TaitInterurban_Roof_Transition_Motor_r;
+	2: switch_TaitInterurban_Rw_railtype;
+}
+
+//T
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv0_TrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv0_Trailer;
+	1: switch_TaitInterurban_Roof_Transition_Trailer;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_TaitInterurban_Liv0_NonControlMotorStack_r;
+    return switch_TaitInterurban_Liv0_TrailerStack;
+}
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv0_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_TaitInterurban_Liv0_NonControlMotorStack;
+    return switch_TaitInterurban_Liv0_TrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv0_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_TaitInterurban_Liv0_NonControlMotorStack_r;
+    return switch_TaitInterurban_Liv0_TrailerStack;
+}
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv0_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_TaitInterurban_Liv0_NonControlMotorStack;
+    return switch_TaitInterurban_Liv0_TrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv0_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TaitInterurban_Liv0_pantocheck_at_1;
+    return sw_TaitInterurban_Liv0_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv0_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TaitInterurban_Liv0_pantocheck_at_1;
+    return switch_TaitInterurban_Liv0_TrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv0_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TaitInterurban_Liv0_pantocheck_at_2;
+    return sw_TaitInterurban_Liv0_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv0_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : switch_TaitInterurban_Liv0_TrailerStack;
+    3 : sw_TaitInterurban_Liv0_pantocheck_at_1;
+    4 : sw_TaitInterurban_Liv0_sidecheck_4;
+    5 : sw_TaitInterurban_Liv0_pantocheck_at_2;
+    6 .. 7 : sw_TaitInterurban_Liv0_sidecheck_6;
+    return sw_TaitInterurban_Liv0_sidecheck_other;
+}
+
+//End Cars
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv0_panto_direction, vehicle_is_flipped){
+    0 : switch_TaitInterurban_Liv0_MotorStack;
+    return switch_TaitInterurban_Liv0_MotorStack_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv0_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_TaitInterurban_Liv0_panto_direction;
+    return switch_TaitInterurban_Liv0_DrivingTrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv0_frontcheck, position_in_vehid_chain){
+    0: sw_TaitInterurban_Liv0_panto_direction;
+    return sw_TaitInterurban_Liv0_panto_flipcheck;
+}
+
+const TaitInterurban_ID_Liv0 = (TaitInterurban_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_TaitInterurban_Liv0, TaitInterurban_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_TAITINTERURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              TaitInterurban_IntroDate;		
+		length:                         TaitInterurban_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							TaitInterurban_Speed km/h;
+		cost_factor:					(TaitInterurban_CostFactor * 2);
+		running_cost_factor:			(TaitInterurban_RunningCostFactor * 2);
+		cargo_capacity: 				(TaitInterurban_CargoCapacity / param_capacity_mod);
+		power:							(TaitInterurban_Power * 2);
+		weight:							TaitInterurban_Weight ton;
+
+//        variant_group: 					Item_TaitInterurban_MU_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_TaitInterurban_Liv0_frontcheck;
+        purchase: 						switch_TaitInterurban_Liv0_PurchaseStack;
+        additional_text: 				string(STR_INFO_TAITINTERURBAN);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_TaitInterurban_Liv0_lencheck ;
+        length:							8;
+        cargo_capacity:                 [TaitInterurban_CargoCapacity / param_capacity_mod];
+        power:                          TaitInterurban_Power;
+		weight:                        	TaitInterurban_Weight;
+		running_cost_factor:            TaitInterurban_RunningCostFactor;
+    }
+}
+
+//TaitInterurban_Liv1
+spriteset(spriteset_TaitInterurban_Liv1_purchase,   "gfx/TaitInterurban_Liv1.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TaitInterurban_Liv1_lead,   "gfx/TaitInterurban_Liv1.png") {template_8(7, 39)}
+spriteset(spriteset_TaitInterurban_Liv1_lead_r,   "gfx/TaitInterurban_Liv1.png") {template_8_r(7, 39)}
+spriteset(spriteset_TaitInterurban_Liv1_Trailer,   "gfx/TaitInterurban_Liv1.png") {template_8_repeat(7, 69)}
+
+spriteset(spriteset_TaitInterurban_Liv1_single_purchase,   "gfx/TaitInterurban_Liv1.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_TaitInterurban_Liv1_single,   "gfx/TaitInterurban_Liv1.png") {template_8(187, 39)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv1_purchase;
+	1: switch_TaitInterurban_Roof_Transition_Purchase;
+	2: spriteset_TaitInterurban_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv1_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv1_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+	2: switch_TaitInterurban_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv1_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv1_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+	2: switch_TaitInterurban_Fw_railtype;
+}
+
+//D Lead
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv1_DrivingTrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv1_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv1_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv1_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+	2: switch_TaitInterurban_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv1_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv1_lead_r;
+	1: switch_TaitInterurban_Roof_Transition_Motor_r;
+	2: switch_TaitInterurban_Rw_railtype;
+}
+
+//T
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv1_TrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv1_Trailer;
+	1: switch_TaitInterurban_Roof_Transition_Trailer;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv1_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_TaitInterurban_Liv1_NonControlMotorStack_r;
+    return switch_TaitInterurban_Liv1_TrailerStack;
+}
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv1_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_TaitInterurban_Liv1_NonControlMotorStack;
+    return switch_TaitInterurban_Liv1_TrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv1_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_TaitInterurban_Liv1_NonControlMotorStack_r;
+    return switch_TaitInterurban_Liv1_TrailerStack;
+}
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv1_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_TaitInterurban_Liv1_NonControlMotorStack;
+    return switch_TaitInterurban_Liv1_TrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv1_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TaitInterurban_Liv1_pantocheck_at_1;
+    return sw_TaitInterurban_Liv1_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv1_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TaitInterurban_Liv1_pantocheck_at_1;
+    return switch_TaitInterurban_Liv1_TrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv1_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TaitInterurban_Liv1_pantocheck_at_2;
+    return sw_TaitInterurban_Liv1_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv1_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : switch_TaitInterurban_Liv1_TrailerStack;
+    3 : sw_TaitInterurban_Liv1_pantocheck_at_1;
+    4 : sw_TaitInterurban_Liv1_sidecheck_4;
+    5 : sw_TaitInterurban_Liv1_pantocheck_at_2;
+    6 .. 7 : sw_TaitInterurban_Liv1_sidecheck_6;
+    return sw_TaitInterurban_Liv1_sidecheck_other;
+}
+
+//End Cars
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv1_panto_direction, vehicle_is_flipped){
+    0 : switch_TaitInterurban_Liv1_MotorStack;
+    return switch_TaitInterurban_Liv1_MotorStack_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv1_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_TaitInterurban_Liv1_panto_direction;
+    return switch_TaitInterurban_Liv1_DrivingTrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv1_frontcheck, position_in_vehid_chain){
+    0: sw_TaitInterurban_Liv1_panto_direction;
+    return sw_TaitInterurban_Liv1_panto_flipcheck;
+}
+
+const TaitInterurban_ID_Liv1 = (TaitInterurban_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_TaitInterurban_Liv1, TaitInterurban_ID_Liv1) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_TAITINTERURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              TaitInterurban_IntroDate;		
+		length:                         TaitInterurban_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							TaitInterurban_Speed km/h;
+		cost_factor:					(TaitInterurban_CostFactor * 2);
+		running_cost_factor:			(TaitInterurban_RunningCostFactor * 2);
+		cargo_capacity: 				(TaitInterurban_CargoCapacity / param_capacity_mod);
+		power:							(TaitInterurban_Power * 2);
+		weight:							TaitInterurban_Weight ton;
+
+        variant_group: 					Item_TaitInterurban_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_TaitInterurban_Liv1_frontcheck;
+        purchase: 						switch_TaitInterurban_Liv1_PurchaseStack;
+        additional_text: 				string(STR_INFO_TAITINTERURBAN);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_TaitInterurban_Liv1_lencheck ;
+        length:							8;
+        cargo_capacity:                 [TaitInterurban_CargoCapacity / param_capacity_mod];
+        power:                          TaitInterurban_Power;
+		weight:                        	TaitInterurban_Weight;
+		running_cost_factor:            TaitInterurban_RunningCostFactor;
+    }
+}
+
+//TaitInterurban_Liv2
+spriteset(spriteset_TaitInterurban_Liv2_purchase,   "gfx/TaitInterurban_Liv2.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TaitInterurban_Liv2_lead,   "gfx/TaitInterurban_Liv2.png") {template_8(7, 39)}
+spriteset(spriteset_TaitInterurban_Liv2_lead_r,   "gfx/TaitInterurban_Liv2.png") {template_8_r(7, 39)}
+spriteset(spriteset_TaitInterurban_Liv2_Trailer,   "gfx/TaitInterurban_Liv2.png") {template_8_repeat(7, 69)}
+
+spriteset(spriteset_TaitInterurban_Liv2_single_purchase,   "gfx/TaitInterurban_Liv2.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_TaitInterurban_Liv2_single,   "gfx/TaitInterurban_Liv2.png") {template_8(187, 39)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv2_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv2_purchase;
+	1: switch_TaitInterurban_Roof_Transition_Purchase;
+	2: spriteset_TaitInterurban_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv2_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv2_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+	2: switch_TaitInterurban_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv2_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv2_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+	2: switch_TaitInterurban_Fw_railtype;
+}
+
+//D Lead
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv2_DrivingTrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv2_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv2_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv2_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+	2: switch_TaitInterurban_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv2_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv2_lead_r;
+	1: switch_TaitInterurban_Roof_Transition_Motor_r;
+	2: switch_TaitInterurban_Rw_railtype;
+}
+
+//T
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv2_TrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv2_Trailer;
+	1: switch_TaitInterurban_Roof_Transition_Trailer;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv2_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_TaitInterurban_Liv2_NonControlMotorStack_r;
+    return switch_TaitInterurban_Liv2_TrailerStack;
+}
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv2_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_TaitInterurban_Liv2_NonControlMotorStack;
+    return switch_TaitInterurban_Liv2_TrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv2_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_TaitInterurban_Liv2_NonControlMotorStack_r;
+    return switch_TaitInterurban_Liv2_TrailerStack;
+}
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv2_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_TaitInterurban_Liv2_NonControlMotorStack;
+    return switch_TaitInterurban_Liv2_TrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv2_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TaitInterurban_Liv2_pantocheck_at_1;
+    return sw_TaitInterurban_Liv2_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv2_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TaitInterurban_Liv2_pantocheck_at_1;
+    return switch_TaitInterurban_Liv2_TrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv2_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TaitInterurban_Liv2_pantocheck_at_2;
+    return sw_TaitInterurban_Liv2_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv2_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : switch_TaitInterurban_Liv2_TrailerStack;
+    3 : sw_TaitInterurban_Liv2_pantocheck_at_1;
+    4 : sw_TaitInterurban_Liv2_sidecheck_4;
+    5 : sw_TaitInterurban_Liv2_pantocheck_at_2;
+    6 .. 7 : sw_TaitInterurban_Liv2_sidecheck_6;
+    return sw_TaitInterurban_Liv2_sidecheck_other;
+}
+
+//End Cars
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv2_panto_direction, vehicle_is_flipped){
+    0 : switch_TaitInterurban_Liv2_MotorStack;
+    return switch_TaitInterurban_Liv2_MotorStack_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv2_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_TaitInterurban_Liv2_panto_direction;
+    return switch_TaitInterurban_Liv2_DrivingTrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv2_frontcheck, position_in_vehid_chain){
+    0: sw_TaitInterurban_Liv2_panto_direction;
+    return sw_TaitInterurban_Liv2_panto_flipcheck;
+}
+
+const TaitInterurban_ID_Liv2 = (TaitInterurban_ID + Liv2_ID);
+
+item(FEAT_TRAINS, Item_TaitInterurban_Liv2, TaitInterurban_ID_Liv2) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_TAITINTERURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              TaitInterurban_IntroDate;		
+		length:                         TaitInterurban_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							TaitInterurban_Speed km/h;
+		cost_factor:					(TaitInterurban_CostFactor * 2);
+		running_cost_factor:			(TaitInterurban_RunningCostFactor * 2);
+		cargo_capacity: 				(TaitInterurban_CargoCapacity / param_capacity_mod);
+		power:							(TaitInterurban_Power * 2);
+		weight:							TaitInterurban_Weight ton;
+
+        variant_group: 					Item_TaitInterurban_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_TaitInterurban_Liv2_frontcheck;
+        purchase: 						switch_TaitInterurban_Liv2_PurchaseStack;
+        additional_text: 				string(STR_INFO_TAITINTERURBAN);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_TaitInterurban_Liv2_lencheck ;
+        length:							8;
+        cargo_capacity:                 [TaitInterurban_CargoCapacity / param_capacity_mod];
+        power:                          TaitInterurban_Power;
+		weight:                        	TaitInterurban_Weight;
+		running_cost_factor:            TaitInterurban_RunningCostFactor;
+    }
+}
+
+//TaitInterurban_Liv3
+spriteset(spriteset_TaitInterurban_Liv3_purchase,   "gfx/TaitInterurban_Liv3.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_TaitInterurban_Liv3_lead,   "gfx/TaitInterurban_Liv3.png") {template_8(7, 39)}
+spriteset(spriteset_TaitInterurban_Liv3_lead_r,   "gfx/TaitInterurban_Liv3.png") {template_8_r(7, 39)}
+spriteset(spriteset_TaitInterurban_Liv3_Trailer,   "gfx/TaitInterurban_Liv3.png") {template_8_repeat(7, 69)}
+
+spriteset(spriteset_TaitInterurban_Liv3_single_purchase,   "gfx/TaitInterurban_Liv3.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_TaitInterurban_Liv3_single,   "gfx/TaitInterurban_Liv3.png") {template_8(187, 39)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv3_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv3_purchase;
+	1: switch_TaitInterurban_Roof_Transition_Purchase;
+	2: spriteset_TaitInterurban_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv3_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv3_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+	2: switch_TaitInterurban_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv3_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv3_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+	2: switch_TaitInterurban_Fw_railtype;
+}
+
+//D Lead
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv3_DrivingTrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv3_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv3_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv3_lead;
+	1: switch_TaitInterurban_Roof_Transition_Motor;
+	2: switch_TaitInterurban_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv3_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv3_lead_r;
+	1: switch_TaitInterurban_Roof_Transition_Motor_r;
+	2: switch_TaitInterurban_Rw_railtype;
+}
+
+//T
+switch (FEAT_TRAINS, SELF, switch_TaitInterurban_Liv3_TrailerStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_TaitInterurban_Liv3_Trailer;
+	1: switch_TaitInterurban_Roof_Transition_Trailer;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv3_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_TaitInterurban_Liv3_NonControlMotorStack_r;
+    return switch_TaitInterurban_Liv3_TrailerStack;
+}
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv3_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_TaitInterurban_Liv3_NonControlMotorStack;
+    return switch_TaitInterurban_Liv3_TrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv3_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_TaitInterurban_Liv3_NonControlMotorStack_r;
+    return switch_TaitInterurban_Liv3_TrailerStack;
+}
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv3_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_TaitInterurban_Liv3_NonControlMotorStack;
+    return switch_TaitInterurban_Liv3_TrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv3_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TaitInterurban_Liv3_pantocheck_at_1;
+    return sw_TaitInterurban_Liv3_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv3_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TaitInterurban_Liv3_pantocheck_at_1;
+    return switch_TaitInterurban_Liv3_TrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv3_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_TaitInterurban_Liv3_pantocheck_at_2;
+    return sw_TaitInterurban_Liv3_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv3_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : switch_TaitInterurban_Liv3_TrailerStack;
+    3 : sw_TaitInterurban_Liv3_pantocheck_at_1;
+    4 : sw_TaitInterurban_Liv3_sidecheck_4;
+    5 : sw_TaitInterurban_Liv3_pantocheck_at_2;
+    6 .. 7 : sw_TaitInterurban_Liv3_sidecheck_6;
+    return sw_TaitInterurban_Liv3_sidecheck_other;
+}
+
+//End Cars
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv3_panto_direction, vehicle_is_flipped){
+    0 : switch_TaitInterurban_Liv3_MotorStack;
+    return switch_TaitInterurban_Liv3_MotorStack_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv3_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_TaitInterurban_Liv3_panto_direction;
+    return switch_TaitInterurban_Liv3_DrivingTrailerStack;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitInterurban_Liv3_frontcheck, position_in_vehid_chain){
+    0: sw_TaitInterurban_Liv3_panto_direction;
+    return sw_TaitInterurban_Liv3_panto_flipcheck;
+}
+
+const TaitInterurban_ID_Liv3 = (TaitInterurban_ID + Liv3_ID);
+
+item(FEAT_TRAINS, Item_TaitInterurban_Liv3, TaitInterurban_ID_Liv3) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_TAITINTERURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              TaitInterurban_IntroDate;		
+		length:                         TaitInterurban_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							TaitInterurban_Speed km/h;
+		cost_factor:					(TaitInterurban_CostFactor * 2);
+		running_cost_factor:			(TaitInterurban_RunningCostFactor * 2);
+		cargo_capacity: 				(TaitInterurban_CargoCapacity / param_capacity_mod);
+		power:							(TaitInterurban_Power * 2);
+		weight:							TaitInterurban_Weight ton;
+
+        variant_group: 					Item_TaitInterurban_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_TaitInterurban_Liv3_frontcheck;
+        purchase: 						switch_TaitInterurban_Liv3_PurchaseStack;
+        additional_text: 				string(STR_INFO_TAITINTERURBAN);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_TaitInterurban_Liv3_lencheck ;
+        length:							8;
+        cargo_capacity:                 [TaitInterurban_CargoCapacity / param_capacity_mod];
+        power:                          TaitInterurban_Power;
+		weight:                        	TaitInterurban_Weight;
+		running_cost_factor:            TaitInterurban_RunningCostFactor;
     }
 }
 
