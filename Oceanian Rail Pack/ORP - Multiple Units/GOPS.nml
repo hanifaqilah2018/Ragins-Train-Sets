@@ -2827,6 +2827,733 @@ item(FEAT_TRAINS, Item_SydneyStandardEMU_Liv0, SydneyStandardEMU_ID_Liv0) {
 }
 
 //ID
+const NZ_DMD_ID = 11160;
+//introduction_date
+const NZ_DMD_IntroDate = date(1938, 1, 1);
+//speed
+const NZ_DMD_Speed = 100;
+//cost_factor
+const NZ_DMD_CostFactor = 20;
+//running_cost_factor
+const NZ_DMD_RunningCostFactor = 52;
+//Cargo Capacity
+const NZ_DMD_CargoCapacity = 95;
+//power
+const NZ_DMD_Power = 300; //MU power is for 2 individual vehicles
+//weight
+const NZ_DMD_Weight = 43;
+//length
+const NZ_DMD_Length = 8;
+
+//Pantographs
+spriteset(spriteset_NZ_DMD_Panto_Purchase,   "gfx/NZ_DMD_Pantographs.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_NZ_DMD_PantoDown,   "gfx/NZ_DMD_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_NZ_DMD_PantoDown_r,   "gfx/NZ_DMD_Pantographs.png") {template_8_r(7, 39)}
+spriteset(spriteset_NZ_DMD_PantoUp,   "gfx/NZ_DMD_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_NZ_DMD_PantoUp_r,   "gfx/NZ_DMD_Pantographs.png") {template_8_r(7, 69)}
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_NZ_DMD_Fw_railtype, tile_powers_railtype("NG_RAIL_OHLE_AC")) {
+ 0: spriteset_NZ_DMD_PantoDown;
+ 1: spriteset_NZ_DMD_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_NZ_DMD_Rw_railtype, tile_powers_railtype("NG_RAIL_OHLE_AC")) {
+ 0: spriteset_NZ_DMD_PantoDown_r; //might need switching back to just panto down
+ 1: spriteset_NZ_DMD_PantoUp_r;
+}
+
+//NZ_DMD_Liv0
+spriteset(spriteset_NZ_DMD_Liv0_purchase,   "gfx/NZ_DMD_Liv0.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_NZ_DMD_Liv0_lead,   "gfx/NZ_DMD_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_NZ_DMD_Liv0_lead_r,   "gfx/NZ_DMD_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_NZ_DMD_Liv0_Trailer,   "gfx/NZ_DMD_Liv0.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv0_purchase;
+	1: spriteset_NZ_DMD_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv0_LeadStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv0_lead;
+	1: switch_NZ_DMD_Fw_railtype;
+}
+
+//Pantograph cars
+//Swap normal & _r cars to swap pantograph arrangements
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv0_PantoCarStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv0_lead_r;
+	1: switch_NZ_DMD_Fw_railtype;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv0_PantoCarStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv0_lead;
+	1: switch_NZ_DMD_Rw_railtype;
+}
+
+/* Midcars */
+        // Penultipantos
+		switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv0_pantos_MiddlePantos, position_in_vehid_chain % 4 ) {                
+                0: switch_NZ_DMD_Liv0_PantoCarStack;
+				1: spriteset_NZ_DMD_Liv0_Trailer;
+				2: switch_NZ_DMD_Liv0_PantoCarStack_r;
+				3: spriteset_NZ_DMD_Liv0_Trailer;
+				spriteset_NZ_DMD_Liv0_Trailer;
+            }
+		
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv0_pantos_large_forwards, position_in_vehid_chain ) {                
+                0:  switch_NZ_DMD_Liv0_PantoCarStack;
+                switch_NZ_DMD_Liv0_PantoCarStack_r;          
+            }
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv0_forwards_length_large, (position_in_vehid_chain == 0) || (position_in_vehid_chain_from_end == 0 )) {                
+                1:  switch_NZ_DMD_Liv0_pantos_large_forwards;
+                switch_NZ_DMD_Liv0_pantos_MiddlePantos;        
+            }
+        // Panto in Middle
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv0_forwards_length_small, (position_in_vehid_chain == position_in_vehid_chain_from_end ) || (position_in_vehid_chain - 1 == position_in_vehid_chain_from_end) ) {                
+                0:  switch_NZ_DMD_Liv0_PantoCarStack;
+                switch_NZ_DMD_Liv0_PantoCarStack_r;                
+            }
+    switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv0_forwards_length, num_vehs_in_vehid_chain) {
+            0..1: switch_NZ_DMD_Liv0_forwards_length_large;
+            2:  switch_NZ_DMD_Liv0_forwards_length_small;
+            switch_NZ_DMD_Liv0_forwards_length_large;
+        }
+
+//End Car Controls
+switch(FEAT_TRAINS, SELF, switch_NZ_DMD_Liv0_panto_flipcheck, vehicle_is_flipped){
+    0 : spriteset_NZ_DMD_Liv0_lead;        //Not flipped, give Panto
+    return switch_NZ_DMD_Liv0_LeadStack;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, switch_NZ_DMD_Liv0_frontcheck, position_in_vehid_chain){
+    0: spriteset_NZ_DMD_Liv0_lead; //We need a pantograph, guaranteed
+    return switch_NZ_DMD_Liv0_panto_flipcheck; //More Checks
+}
+
+const NZ_DMD_ID_Liv0 = (NZ_DMD_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_NZ_DMD_Liv0, NZ_DMD_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL_OHLE_AC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_NZ_DMD);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              NZ_DMD_IntroDate;		
+		length:                         NZ_DMD_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NZ_DMD_Speed km/h;
+		cost_factor:					(NZ_DMD_CostFactor * 2);
+		running_cost_factor:			(NZ_DMD_RunningCostFactor * 2);
+		cargo_capacity: 				(NZ_DMD_CargoCapacity / param_capacity_mod);
+		power:							(NZ_DMD_Power * 2);
+		weight:							NZ_DMD_Weight ton;
+
+//        variant_group: 					Item_NZ_DMD_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_NZ_DMD_Liv0_frontcheck;
+        purchase: 						switch_NZ_DMD_Liv0_PurchaseStack;
+        additional_text: 				string(STR_INFO_NZ_DMD);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						switch_NZ_DMD_Liv0_forwards_length;
+        length:							NZ_DMD_Length;
+        cargo_capacity:                 [NZ_DMD_CargoCapacity / param_capacity_mod];
+        power:                          NZ_DMD_Power;
+		weight:                        	NZ_DMD_Weight;
+		running_cost_factor:            NZ_DMD_RunningCostFactor;
+    }
+}
+
+//NZ_DMD_Liv1
+spriteset(spriteset_NZ_DMD_Liv1_purchase,   "gfx/NZ_DMD_Liv1.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_NZ_DMD_Liv1_lead,   "gfx/NZ_DMD_Liv1.png") {template_8(7, 39)}
+spriteset(spriteset_NZ_DMD_Liv1_lead_r,   "gfx/NZ_DMD_Liv1.png") {template_8_r(7, 39)}
+spriteset(spriteset_NZ_DMD_Liv1_Trailer,   "gfx/NZ_DMD_Liv1.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv1_purchase;
+	1: spriteset_NZ_DMD_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv1_LeadStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv1_lead;
+	1: switch_NZ_DMD_Fw_railtype;
+}
+
+//Pantograph cars
+//Swap normal & _r cars to swap pantograph arrangements
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv1_PantoCarStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv1_lead_r;
+	1: switch_NZ_DMD_Fw_railtype;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv1_PantoCarStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv1_lead;
+	1: switch_NZ_DMD_Rw_railtype;
+}
+
+/* Midcars */
+        // Penultipantos
+		switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv1_pantos_MiddlePantos, position_in_vehid_chain % 4 ) {                
+                0: switch_NZ_DMD_Liv1_PantoCarStack;
+				1: spriteset_NZ_DMD_Liv1_Trailer;
+				2: switch_NZ_DMD_Liv1_PantoCarStack_r;
+				3: spriteset_NZ_DMD_Liv1_Trailer;
+				spriteset_NZ_DMD_Liv1_Trailer;
+            }
+		
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv1_pantos_large_forwards, position_in_vehid_chain ) {                
+                0:  switch_NZ_DMD_Liv1_PantoCarStack;
+                switch_NZ_DMD_Liv1_PantoCarStack_r;          
+            }
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv1_forwards_length_large, (position_in_vehid_chain == 0) || (position_in_vehid_chain_from_end == 0 )) {                
+                1:  switch_NZ_DMD_Liv1_pantos_large_forwards;
+                switch_NZ_DMD_Liv1_pantos_MiddlePantos;        
+            }
+        // Panto in Middle
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv1_forwards_length_small, (position_in_vehid_chain == position_in_vehid_chain_from_end ) || (position_in_vehid_chain - 1 == position_in_vehid_chain_from_end) ) {                
+                0:  switch_NZ_DMD_Liv1_PantoCarStack;
+                switch_NZ_DMD_Liv1_PantoCarStack_r;                
+            }
+    switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv1_forwards_length, num_vehs_in_vehid_chain) {
+            0..1: switch_NZ_DMD_Liv1_forwards_length_large;
+            2:  switch_NZ_DMD_Liv1_forwards_length_small;
+            switch_NZ_DMD_Liv1_forwards_length_large;
+        }
+
+//End Car Controls
+switch(FEAT_TRAINS, SELF, switch_NZ_DMD_Liv1_panto_flipcheck, vehicle_is_flipped){
+    0 : spriteset_NZ_DMD_Liv1_lead;        //Not flipped, give Panto
+    return switch_NZ_DMD_Liv1_LeadStack;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, switch_NZ_DMD_Liv1_frontcheck, position_in_vehid_chain){
+    0: spriteset_NZ_DMD_Liv1_lead; //We need a pantograph, guaranteed
+    return switch_NZ_DMD_Liv1_panto_flipcheck; //More Checks
+}
+
+const NZ_DMD_ID_Liv1 = (NZ_DMD_ID + Liv1_ID);
+
+item(FEAT_TRAINS, Item_NZ_DMD_Liv1, NZ_DMD_ID_Liv1) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL_OHLE_AC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_NZ_DMD);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              NZ_DMD_IntroDate;		
+		length:                         NZ_DMD_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NZ_DMD_Speed km/h;
+		cost_factor:					(NZ_DMD_CostFactor * 2);
+		running_cost_factor:			(NZ_DMD_RunningCostFactor * 2);
+		cargo_capacity: 				(NZ_DMD_CargoCapacity / param_capacity_mod);
+		power:							(NZ_DMD_Power * 2);
+		weight:							NZ_DMD_Weight ton;
+
+        variant_group: 					Item_NZ_DMD_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_NZ_DMD_Liv1_frontcheck;
+        purchase: 						switch_NZ_DMD_Liv1_PurchaseStack;
+        additional_text: 				string(STR_INFO_NZ_DMD);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						switch_NZ_DMD_Liv1_forwards_length;
+        length:							NZ_DMD_Length;
+        cargo_capacity:                 [NZ_DMD_CargoCapacity / param_capacity_mod];
+        power:                          NZ_DMD_Power;
+		weight:                        	NZ_DMD_Weight;
+		running_cost_factor:            NZ_DMD_RunningCostFactor;
+    }
+}
+
+//NZ_DMD_Liv2
+spriteset(spriteset_NZ_DMD_Liv2_purchase,   "gfx/NZ_DMD_Liv2.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_NZ_DMD_Liv2_lead,   "gfx/NZ_DMD_Liv2.png") {template_8(7, 39)}
+spriteset(spriteset_NZ_DMD_Liv2_lead_r,   "gfx/NZ_DMD_Liv2.png") {template_8_r(7, 39)}
+spriteset(spriteset_NZ_DMD_Liv2_Trailer,   "gfx/NZ_DMD_Liv2.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv2_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv2_purchase;
+	1: spriteset_NZ_DMD_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv2_LeadStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv2_lead;
+	1: switch_NZ_DMD_Fw_railtype;
+}
+
+//Pantograph cars
+//Swap normal & _r cars to swap pantograph arrangements
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv2_PantoCarStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv2_lead_r;
+	1: switch_NZ_DMD_Fw_railtype;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv2_PantoCarStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv2_lead;
+	1: switch_NZ_DMD_Rw_railtype;
+}
+
+/* Midcars */
+        // Penultipantos
+		switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv2_pantos_MiddlePantos, position_in_vehid_chain % 4 ) {                
+                0: switch_NZ_DMD_Liv2_PantoCarStack;
+				1: spriteset_NZ_DMD_Liv2_Trailer;
+				2: switch_NZ_DMD_Liv2_PantoCarStack_r;
+				3: spriteset_NZ_DMD_Liv2_Trailer;
+				spriteset_NZ_DMD_Liv2_Trailer;
+            }
+		
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv2_pantos_large_forwards, position_in_vehid_chain ) {                
+                0:  switch_NZ_DMD_Liv2_PantoCarStack;
+                switch_NZ_DMD_Liv2_PantoCarStack_r;          
+            }
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv2_forwards_length_large, (position_in_vehid_chain == 0) || (position_in_vehid_chain_from_end == 0 )) {                
+                1:  switch_NZ_DMD_Liv2_pantos_large_forwards;
+                switch_NZ_DMD_Liv2_pantos_MiddlePantos;        
+            }
+        // Panto in Middle
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv2_forwards_length_small, (position_in_vehid_chain == position_in_vehid_chain_from_end ) || (position_in_vehid_chain - 1 == position_in_vehid_chain_from_end) ) {                
+                0:  switch_NZ_DMD_Liv2_PantoCarStack;
+                switch_NZ_DMD_Liv2_PantoCarStack_r;                
+            }
+    switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv2_forwards_length, num_vehs_in_vehid_chain) {
+            0..1: switch_NZ_DMD_Liv2_forwards_length_large;
+            2:  switch_NZ_DMD_Liv2_forwards_length_small;
+            switch_NZ_DMD_Liv2_forwards_length_large;
+        }
+
+//End Car Controls
+switch(FEAT_TRAINS, SELF, switch_NZ_DMD_Liv2_panto_flipcheck, vehicle_is_flipped){
+    0 : spriteset_NZ_DMD_Liv2_lead;        //Not flipped, give Panto
+    return switch_NZ_DMD_Liv2_LeadStack;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, switch_NZ_DMD_Liv2_frontcheck, position_in_vehid_chain){
+    0: spriteset_NZ_DMD_Liv2_lead; //We need a pantograph, guaranteed
+    return switch_NZ_DMD_Liv2_panto_flipcheck; //More Checks
+}
+
+const NZ_DMD_ID_Liv2 = (NZ_DMD_ID + Liv2_ID);
+
+item(FEAT_TRAINS, Item_NZ_DMD_Liv2, NZ_DMD_ID_Liv2) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL_OHLE_AC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_NZ_DMD);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              NZ_DMD_IntroDate;		
+		length:                         NZ_DMD_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NZ_DMD_Speed km/h;
+		cost_factor:					(NZ_DMD_CostFactor * 2);
+		running_cost_factor:			(NZ_DMD_RunningCostFactor * 2);
+		cargo_capacity: 				(NZ_DMD_CargoCapacity / param_capacity_mod);
+		power:							(NZ_DMD_Power * 2);
+		weight:							NZ_DMD_Weight ton;
+
+        variant_group: 					Item_NZ_DMD_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_NZ_DMD_Liv2_frontcheck;
+        purchase: 						switch_NZ_DMD_Liv2_PurchaseStack;
+        additional_text: 				string(STR_INFO_NZ_DMD);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						switch_NZ_DMD_Liv2_forwards_length;
+        length:							NZ_DMD_Length;
+        cargo_capacity:                 [NZ_DMD_CargoCapacity / param_capacity_mod];
+        power:                          NZ_DMD_Power;
+		weight:                        	NZ_DMD_Weight;
+		running_cost_factor:            NZ_DMD_RunningCostFactor;
+    }
+}
+
+//NZ_DMD_Liv3
+spriteset(spriteset_NZ_DMD_Liv3_purchase,   "gfx/NZ_DMD_Liv3.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_NZ_DMD_Liv3_lead,   "gfx/NZ_DMD_Liv3.png") {template_8(7, 39)}
+spriteset(spriteset_NZ_DMD_Liv3_lead_r,   "gfx/NZ_DMD_Liv3.png") {template_8_r(7, 39)}
+spriteset(spriteset_NZ_DMD_Liv3_Trailer,   "gfx/NZ_DMD_Liv3.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv3_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv3_purchase;
+	1: spriteset_NZ_DMD_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv3_LeadStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv3_lead;
+	1: switch_NZ_DMD_Fw_railtype;
+}
+
+//Pantograph cars
+//Swap normal & _r cars to swap pantograph arrangements
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv3_PantoCarStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv3_lead_r;
+	1: switch_NZ_DMD_Fw_railtype;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv3_PantoCarStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv3_lead;
+	1: switch_NZ_DMD_Rw_railtype;
+}
+
+/* Midcars */
+        // Penultipantos
+		switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv3_pantos_MiddlePantos, position_in_vehid_chain % 4 ) {                
+                0: switch_NZ_DMD_Liv3_PantoCarStack;
+				1: spriteset_NZ_DMD_Liv3_Trailer;
+				2: switch_NZ_DMD_Liv3_PantoCarStack_r;
+				3: spriteset_NZ_DMD_Liv3_Trailer;
+				spriteset_NZ_DMD_Liv3_Trailer;
+            }
+		
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv3_pantos_large_forwards, position_in_vehid_chain ) {                
+                0:  switch_NZ_DMD_Liv3_PantoCarStack;
+                switch_NZ_DMD_Liv3_PantoCarStack_r;          
+            }
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv3_forwards_length_large, (position_in_vehid_chain == 0) || (position_in_vehid_chain_from_end == 0 )) {                
+                1:  switch_NZ_DMD_Liv3_pantos_large_forwards;
+                switch_NZ_DMD_Liv3_pantos_MiddlePantos;        
+            }
+        // Panto in Middle
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv3_forwards_length_small, (position_in_vehid_chain == position_in_vehid_chain_from_end ) || (position_in_vehid_chain - 1 == position_in_vehid_chain_from_end) ) {                
+                0:  switch_NZ_DMD_Liv3_PantoCarStack;
+                switch_NZ_DMD_Liv3_PantoCarStack_r;                
+            }
+    switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv3_forwards_length, num_vehs_in_vehid_chain) {
+            0..1: switch_NZ_DMD_Liv3_forwards_length_large;
+            2:  switch_NZ_DMD_Liv3_forwards_length_small;
+            switch_NZ_DMD_Liv3_forwards_length_large;
+        }
+
+//End Car Controls
+switch(FEAT_TRAINS, SELF, switch_NZ_DMD_Liv3_panto_flipcheck, vehicle_is_flipped){
+    0 : spriteset_NZ_DMD_Liv3_lead;        //Not flipped, give Panto
+    return switch_NZ_DMD_Liv3_LeadStack;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, switch_NZ_DMD_Liv3_frontcheck, position_in_vehid_chain){
+    0: spriteset_NZ_DMD_Liv3_lead; //We need a pantograph, guaranteed
+    return switch_NZ_DMD_Liv3_panto_flipcheck; //More Checks
+}
+
+const NZ_DMD_ID_Liv3 = (NZ_DMD_ID + Liv3_ID);
+
+item(FEAT_TRAINS, Item_NZ_DMD_Liv3, NZ_DMD_ID_Liv3) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL_OHLE_AC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_NZ_DMD);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              NZ_DMD_IntroDate;		
+		length:                         NZ_DMD_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NZ_DMD_Speed km/h;
+		cost_factor:					(NZ_DMD_CostFactor * 2);
+		running_cost_factor:			(NZ_DMD_RunningCostFactor * 2);
+		cargo_capacity: 				(NZ_DMD_CargoCapacity / param_capacity_mod);
+		power:							(NZ_DMD_Power * 2);
+		weight:							NZ_DMD_Weight ton;
+
+        variant_group: 					Item_NZ_DMD_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_NZ_DMD_Liv3_frontcheck;
+        purchase: 						switch_NZ_DMD_Liv3_PurchaseStack;
+        additional_text: 				string(STR_INFO_NZ_DMD);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						switch_NZ_DMD_Liv3_forwards_length;
+        length:							NZ_DMD_Length;
+        cargo_capacity:                 [NZ_DMD_CargoCapacity / param_capacity_mod];
+        power:                          NZ_DMD_Power;
+		weight:                        	NZ_DMD_Weight;
+		running_cost_factor:            NZ_DMD_RunningCostFactor;
+    }
+}
+
+//NZ_DMD_Liv4
+spriteset(spriteset_NZ_DMD_Liv4_purchase,   "gfx/NZ_DMD_Liv4.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_NZ_DMD_Liv4_lead,   "gfx/NZ_DMD_Liv4.png") {template_8(7, 39)}
+spriteset(spriteset_NZ_DMD_Liv4_lead_r,   "gfx/NZ_DMD_Liv4.png") {template_8_r(7, 39)}
+spriteset(spriteset_NZ_DMD_Liv4_Trailer,   "gfx/NZ_DMD_Liv4.png") {template_8_repeat(7, 69)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv4_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv4_purchase;
+	1: spriteset_NZ_DMD_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv4_LeadStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv4_lead;
+	1: switch_NZ_DMD_Fw_railtype;
+}
+
+//Pantograph cars
+//Swap normal & _r cars to swap pantograph arrangements
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv4_PantoCarStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv4_lead_r;
+	1: switch_NZ_DMD_Fw_railtype;
+}
+
+switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv4_PantoCarStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_NZ_DMD_Liv4_lead;
+	1: switch_NZ_DMD_Rw_railtype;
+}
+
+/* Midcars */
+        // Penultipantos
+		switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv4_pantos_MiddlePantos, position_in_vehid_chain % 4 ) {                
+                0: switch_NZ_DMD_Liv4_PantoCarStack;
+				1: spriteset_NZ_DMD_Liv4_Trailer;
+				2: switch_NZ_DMD_Liv4_PantoCarStack_r;
+				3: spriteset_NZ_DMD_Liv4_Trailer;
+				spriteset_NZ_DMD_Liv4_Trailer;
+            }
+		
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv4_pantos_large_forwards, position_in_vehid_chain ) {                
+                0:  switch_NZ_DMD_Liv4_PantoCarStack;
+                switch_NZ_DMD_Liv4_PantoCarStack_r;          
+            }
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv4_forwards_length_large, (position_in_vehid_chain == 0) || (position_in_vehid_chain_from_end == 0 )) {                
+                1:  switch_NZ_DMD_Liv4_pantos_large_forwards;
+                switch_NZ_DMD_Liv4_pantos_MiddlePantos;        
+            }
+        // Panto in Middle
+        switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv4_forwards_length_small, (position_in_vehid_chain == position_in_vehid_chain_from_end ) || (position_in_vehid_chain - 1 == position_in_vehid_chain_from_end) ) {                
+                0:  switch_NZ_DMD_Liv4_PantoCarStack;
+                switch_NZ_DMD_Liv4_PantoCarStack_r;                
+            }
+    switch (FEAT_TRAINS, SELF, switch_NZ_DMD_Liv4_forwards_length, num_vehs_in_vehid_chain) {
+            0..1: switch_NZ_DMD_Liv4_forwards_length_large;
+            2:  switch_NZ_DMD_Liv4_forwards_length_small;
+            switch_NZ_DMD_Liv4_forwards_length_large;
+        }
+
+//End Car Controls
+switch(FEAT_TRAINS, SELF, switch_NZ_DMD_Liv4_panto_flipcheck, vehicle_is_flipped){
+    0 : spriteset_NZ_DMD_Liv4_lead;        //Not flipped, give Panto
+    return switch_NZ_DMD_Liv4_LeadStack;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, switch_NZ_DMD_Liv4_frontcheck, position_in_vehid_chain){
+    0: spriteset_NZ_DMD_Liv4_lead; //We need a pantograph, guaranteed
+    return switch_NZ_DMD_Liv4_panto_flipcheck; //More Checks
+}
+
+const NZ_DMD_ID_Liv4 = (NZ_DMD_ID + Liv4_ID);
+
+item(FEAT_TRAINS, Item_NZ_DMD_Liv4, NZ_DMD_ID_Liv4) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL_OHLE_AC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_NZ_DMD);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              NZ_DMD_IntroDate;		
+		length:                         NZ_DMD_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							NZ_DMD_Speed km/h;
+		cost_factor:					(NZ_DMD_CostFactor * 2);
+		running_cost_factor:			(NZ_DMD_RunningCostFactor * 2);
+		cargo_capacity: 				(NZ_DMD_CargoCapacity / param_capacity_mod);
+		power:							(NZ_DMD_Power * 2);
+		weight:							NZ_DMD_Weight ton;
+
+        variant_group: 					Item_NZ_DMD_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_NZ_DMD_Liv4_frontcheck;
+        purchase: 						switch_NZ_DMD_Liv4_PurchaseStack;
+        additional_text: 				string(STR_INFO_NZ_DMD);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						switch_NZ_DMD_Liv4_forwards_length;
+        length:							NZ_DMD_Length;
+        cargo_capacity:                 [NZ_DMD_CargoCapacity / param_capacity_mod];
+        power:                          NZ_DMD_Power;
+		weight:                        	NZ_DMD_Weight;
+		running_cost_factor:            NZ_DMD_RunningCostFactor;
+    }
+}
+
+//ID
 const TullochSuburbanEMU_ID = 11180;
 //introduction_date
 const TullochSuburbanEMU_IntroDate = date(1940, 1, 1);

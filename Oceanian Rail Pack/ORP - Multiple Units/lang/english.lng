@@ -104,13 +104,13 @@ STR_NAME_TAIT_MU:Tait Set
 STR_INFO_TAIT_MU:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple-Unit {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}VR Tait-Set EMUs {}{GOLD}Subscribe to Taitset on Youtube!
 
 STR_NAME_SSD_EMU_BRADFIELD:Bradfield Set
-STR_INFO_SSD_EMU_BRADFIELD:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_INFO_SSD_EMU_BRADFIELD:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {LTBLUE}Overhead Line
 
 STR_NAME_SYDNEYSTANDARDEMU:Standard EMU
 STR_INFO_SYDNEYSTANDARDEMU:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Sydney Standard EMUs
 
-STR_NAME_SSD_EMU_DMD:English Electric DM/D Class
-STR_INFO_SSD_EMU_DMD:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line {}{GOLD}Good ol' Cyclops
+STR_NAME_NZ_DMD:English Electric DM/D Class
+STR_INFO_NZ_DMD:{BLACK}Role: {GOLD}Suburba n{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}nARROW Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Wellington DM/D Class EMUs {}{GOLD}Good ol' Cyclops
 
 STR_NAME_TULLOCHSUBURBANEMU:Tulloch Suburban EMU
 STR_INFO_TULLOCHSUBURBANEMU:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Tulloch Single-Deck EMUs
