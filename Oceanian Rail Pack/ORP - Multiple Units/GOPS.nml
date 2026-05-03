@@ -5706,6 +5706,208 @@ item(FEAT_TRAINS, Item_XTrapolis100_Liv1, XTrapolis100_ID_Liv1) {
 }
 
 //ID
+const Matangi_ID = 11560;
+//introduction_date
+const Matangi_IntroDate = date(2010, 1, 1);
+//speed
+const Matangi_Speed = 120;
+//cost_factor
+const Matangi_CostFactor = 26;
+//running_cost_factor
+const Matangi_RunningCostFactor = 67;
+//Cargo Capacity
+const Matangi_CargoCapacity = 124;
+//power
+const Matangi_Power = 920;
+//weight
+const Matangi_Weight = 38;
+//length
+const Matangi_Length = 8;
+
+//Pantographs
+spriteset(spriteset_Matangi_Panto_Purchase,   "gfx/Matangi_Pantographs.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_Matangi_PantoDown,   "gfx/Matangi_Pantographs.png") {template_8(7, 39)}
+spriteset(spriteset_Matangi_PantoDown_r,   "gfx/Matangi_Pantographs.png") {template_8_r(7, 39)}
+spriteset(spriteset_Matangi_PantoUp,   "gfx/Matangi_Pantographs.png") {template_8(7, 69)}
+spriteset(spriteset_Matangi_PantoUp_r,   "gfx/Matangi_Pantographs.png") {template_8_r(7, 69)}
+
+//Pantograph Controls
+switch(FEAT_TRAINS, SELF, switch_Matangi_Fw_railtype, tile_powers_railtype("NG_RAIL_OHLE_DC")) {
+ 0: spriteset_Matangi_PantoDown;
+ 1: spriteset_Matangi_PantoUp;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Matangi_Rw_railtype, tile_powers_railtype("NG_RAIL_OHLE_DC")) {
+ 0: spriteset_Matangi_PantoDown_r; //might need switching back to just panto down
+ 1: spriteset_Matangi_PantoUp_r;
+}
+
+//Matangi_Liv0
+spriteset(spriteset_Matangi_Liv0_purchase,   "gfx/Matangi_Liv0.png") {template_purchase_88mu(7, 21)}
+spriteset(spriteset_Matangi_Liv0_lead,   "gfx/Matangi_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_Matangi_Liv0_lead_r,   "gfx/Matangi_Liv0.png") {template_8_r(7, 39)}
+spriteset(spriteset_Matangi_Liv0_DT,   "gfx/Matangi_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_Matangi_Liv0_Trailer,   "gfx/Matangi_Liv0.png") {template_8_repeat(7, 99)}
+
+//Purchase Stack
+switch (FEAT_TRAINS, SELF, switch_Matangi_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Matangi_Liv0_purchase;
+	1: spriteset_Matangi_Panto_Purchase;
+}
+
+//C Lead
+switch (FEAT_TRAINS, SELF, switch_Matangi_Liv0_MotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Matangi_Liv0_lead;
+	1: switch_Matangi_Fw_railtype;
+}
+//C Rear
+switch (FEAT_TRAINS, SELF, switch_Matangi_Liv0_MotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Matangi_Liv0_lead;
+	1: switch_Matangi_Fw_railtype;
+}
+
+//N Lead
+switch (FEAT_TRAINS, SELF, switch_Matangi_Liv0_NonControlMotorStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Matangi_Liv0_lead;
+	1: switch_Matangi_Fw_railtype;
+}
+//N Rear
+switch (FEAT_TRAINS, SELF, switch_Matangi_Liv0_NonControlMotorStack_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Matangi_Liv0_lead_r;
+	1: switch_Matangi_Rw_railtype;
+}
+
+//Midcars
+switch(FEAT_TRAINS, SELF, sw_Matangi_Liv0_pantocheck_at_2, position_in_vehid_chain % 3){
+    2 : switch_Matangi_Liv0_NonControlMotorStack_r;
+    return spriteset_Matangi_Liv0_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_Matangi_Liv0_pantocheck_at_2r, position_in_vehid_chain_from_end % 3){
+    2 : switch_Matangi_Liv0_NonControlMotorStack;
+    return spriteset_Matangi_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Matangi_Liv0_pantocheck_at_1, position_in_vehid_chain % 2){
+    1 : switch_Matangi_Liv0_NonControlMotorStack_r;
+    return spriteset_Matangi_Liv0_Trailer;
+}
+switch(FEAT_TRAINS, SELF, sw_Matangi_Liv0_pantocheck_at_1r, position_in_vehid_chain_from_end % 2){
+    1 : switch_Matangi_Liv0_NonControlMotorStack;
+    return spriteset_Matangi_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Matangi_Liv0_sidecheck_other, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_Matangi_Liv0_pantocheck_at_1;
+    return sw_Matangi_Liv0_pantocheck_at_1r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Matangi_Liv0_sidecheck_4, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_Matangi_Liv0_pantocheck_at_1;
+    return spriteset_Matangi_Liv0_Trailer;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Matangi_Liv0_sidecheck_6, num_vehs_in_vehid_chain/2 > position_in_vehid_chain ) {
+    1 : sw_Matangi_Liv0_pantocheck_at_2;
+    return sw_Matangi_Liv0_pantocheck_at_2r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Matangi_Liv0_lencheck, num_vehs_in_vehid_chain ) {
+    0 .. 2 : spriteset_Matangi_Liv0_Trailer;
+    3 : sw_Matangi_Liv0_pantocheck_at_1;
+    4 : sw_Matangi_Liv0_sidecheck_4;
+    5 : sw_Matangi_Liv0_pantocheck_at_2;
+    6 .. 7 : sw_Matangi_Liv0_sidecheck_6;
+    return sw_Matangi_Liv0_sidecheck_other;
+}
+
+//Endcars
+switch(FEAT_TRAINS, SELF, sw_Matangi_Liv0_panto_direction, vehicle_is_flipped){
+    0 : switch_Matangi_Liv0_MotorStack;        //Front panto
+    return switch_Matangi_Liv0_MotorStack_r;    //Rear panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_Matangi_Liv0_panto_flipcheck, vehicle_is_flipped){
+    0 : sw_Matangi_Liv0_panto_direction;        //Not flipped, give Panto
+    return spriteset_Matangi_Liv0_DT;    //Flipped, no panto
+}
+
+switch(FEAT_TRAINS, SELF, sw_Matangi_Liv0_frontcheck, position_in_vehid_chain){
+    0: sw_Matangi_Liv0_panto_direction; //We need a pantograph, guaranteed
+    return sw_Matangi_Liv0_panto_flipcheck; //More Checks
+}
+
+const Matangi_ID_Liv0 = (Matangi_ID + Liv0_ID);
+
+item(FEAT_TRAINS, Item_Matangi_Liv0, Matangi_ID_Liv0) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_MU,TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     NG_RAIL_OHLE_DC;
+		running_cost_base:              RUNNING_COST_ELECTRIC;
+        engine_class:                   ENGINE_CLASS_ELECTRIC;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];
+		visual_effect_and_powered: 		VISUAL_EFFECT_ELECTRIC;
+
+        name:                           string(STR_NAME_MATANGI);
+		
+		refit_cost:                     0;
+        dual_headed:                    1;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Matangi_IntroDate;		
+		length:                         Matangi_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Matangi_Speed km/h;
+		cost_factor:					(Matangi_CostFactor * 2);
+		running_cost_factor:			(Matangi_RunningCostFactor * 2);
+		cargo_capacity: 				(Matangi_CargoCapacity / param_capacity_mod);
+		power:							(Matangi_Power * 2);
+		weight:							Matangi_Weight ton;
+
+//        variant_group: 					Item_Matangi_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						sw_Matangi_Liv0_frontcheck;
+        purchase: 						switch_Matangi_Liv0_PurchaseStack;
+        additional_text: 				string(STR_INFO_MATANGI);
+    }
+    livery_override (Item_MU_Trailer){
+        default:						sw_Matangi_Liv0_lencheck ;
+        length:							Matangi_Length;
+        cargo_capacity:                 [Matangi_CargoCapacity / param_capacity_mod];
+        power:                          Matangi_Power;
+		weight:                        	Matangi_Weight;
+		running_cost_factor:            Matangi_RunningCostFactor;
+    }
+}
+
+//ID
 const Goninan_Tangara_ID = 12220;
 //introduction_date
 const Goninan_Tangara_IntroDate = date(1988, 1, 1);

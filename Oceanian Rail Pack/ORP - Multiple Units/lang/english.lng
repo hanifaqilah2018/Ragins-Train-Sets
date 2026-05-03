@@ -148,6 +148,9 @@ STR_INFO_NZ_GANZMAVAG:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multi
 STR_NAME_XTRAPOLIS100:Alstom X-Trapolis 100
 STR_INFO_XTRAPOLIS100:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Melbourne X'trapolis Trains {}{GOLD}Who needs suspension?
 
+STR_NAME_MATANGI:Hyundai Rotem Matangi EMU
+STR_INFO_MATANGI:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Wellington FP/FT Class EMUs
+
 
 
 
