@@ -1286,7 +1286,7 @@ switch(FEAT_TRAINS, PARENT, switch_Couplers_16_Repeat_Purchase_Transition, curre
 
 switch(FEAT_TRAINS, SELF, switch_Couplers_16_Repeat_Purchase, param_Couplers) {0:spriteset_Buffers_16_Repeat_Purchase; 1:spriteset_Knuckles_16_Repeat_Purchase; 2:switch_Couplers_16_Repeat_Purchase_Transition;}
 
-spriteset(spriteset_8_Blank, "gfx/blank.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_8_Blank, "gfx/Blank.png") {template_8_repeat(7, 39)}
 
 const Liv0_ID = 0;
 const Liv1_ID = 1;

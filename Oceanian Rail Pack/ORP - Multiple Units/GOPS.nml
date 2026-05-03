@@ -5938,11 +5938,6 @@ switch(FEAT_TRAINS, SELF, switch_CAF_CxK_Fw_railtype, tile_powers_railtype("NG_R
  1: spriteset_CAF_CxK_PantoUp;
 }
 
-switch(FEAT_TRAINS, SELF, switch_CAF_CxK_Rw_railtype, tile_powers_railtype("NG_RAIL_OHLE_AC")) {
- 0: spriteset_CAF_CxK_PantoDown_r; //might need switching back to just panto down
- 1: spriteset_CAF_CxK_PantoUp_r;
-}
-
 //CAF_CxK_Liv0
 spriteset(spriteset_CAF_CxK_Liv0_purchase,   "gfx/CAF_CxK_Liv0.png") {template_purchase_88mu(7, 21)}
 spriteset(spriteset_CAF_CxK_Liv0_lead,   "gfx/CAF_CxK_Liv0.png") {template_8(7, 39)}
@@ -5965,24 +5960,6 @@ switch (FEAT_TRAINS, SELF, switch_CAF_CxK_Liv0_LeadStack, [
     ]) {
     0: spriteset_CAF_CxK_Liv0_lead;
 	1: switch_CAF_CxK_Fw_railtype;
-}
-
-//Pantograph cars
-//Swap normal & _r cars to swap pantograph arrangements
-switch (FEAT_TRAINS, SELF, switch_CAF_CxK_Liv0_PantoCarStack_r, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0: spriteset_CAF_CxK_Liv0_Trailer;
-	1: switch_CAF_CxK_Fw_railtype;
-}
-
-switch (FEAT_TRAINS, SELF, switch_CAF_CxK_Liv0_PantoCarStack, [
-    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
-    getbits(extra_callback_info1, 8, 8)
-    ]) {
-    0: spriteset_CAF_CxK_Liv0_Trailer;
-	1: switch_CAF_CxK_Rw_railtype;
 }
 
 //End Car Controls
