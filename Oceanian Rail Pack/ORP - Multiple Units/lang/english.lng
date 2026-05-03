@@ -151,6 +151,9 @@ STR_INFO_XTRAPOLIS100:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multi
 STR_NAME_MATANGI:Hyundai Rotem Matangi EMU
 STR_INFO_MATANGI:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Wellington FP/FT Class EMUs
 
+STR_NAME_CAF_CXK:CAF CxK Suburban EMU
+STR_INFO_CAF_CXK:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Power: {RED}AC Overhead Line  {}{BLACK}Based on: {GOLD}Auckland AM Class EMUs
+
 
 
 
