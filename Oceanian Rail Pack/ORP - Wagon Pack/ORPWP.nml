@@ -1582,7 +1582,7 @@ switch(FEAT_TRAINS, SELF, switch_generic_recolour, hasbit(cargo_classes, CC_BULK
 }
 
 
-spriteset(spriteset_8_Blank, "gfx/blank.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_8_Blank, "gfx/Blank.png") {template_8_repeat(7, 39)}
 
 //8 Long Flatcar loads
 spriteset(spriteset_Flatbed_8_tarp_a, "gfx/Flatbed_8A.png") {template_8_repeat(7, 39)}
@@ -1606,12 +1606,12 @@ spriteset(spriteset_Flatbed_8_cars_a, "gfx/Flatbed_8A.png") {template_8(547, 39)
 spriteset(spriteset_Flatbed_8_cars_b, "gfx/Flatbed_8A.png") {template_8(547, 69)}
 spriteset(spriteset_Flatbed_8_cars_c, "gfx/Flatbed_8A.png") {template_8(547, 99)}
 spriteset(spriteset_Flatbed_8_cars_d, "gfx/Flatbed_8A.png") {template_8(547, 129)}
-spriteset(spriteset_Flatbed_8_logs_half, "gfx/Flatbed_8b.png") {template_8_repeat(7, 39)}
-spriteset(spriteset_Flatbed_8_logs_full, "gfx/Flatbed_8b.png") {template_8_repeat(96, 39)}
-spriteset(spriteset_Flatbed_8_wires_half, "gfx/Flatbed_8b.png") {template_8_repeat(7, 69)}
-spriteset(spriteset_Flatbed_8_wires_full, "gfx/Flatbed_8b.png") {template_8_repeat(96, 69)}
-spriteset(spriteset_Flatbed_8_pipes_alt_half, "gfx/Flatbed_8b.png") {template_8_repeat(7, 99)}
-spriteset(spriteset_Flatbed_8_pipes_alt_full, "gfx/Flatbed_8b.png") {template_8_repeat(96, 99)}
+spriteset(spriteset_Flatbed_8_logs_half, "gfx/Flatbed_8B.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Flatbed_8_logs_full, "gfx/Flatbed_8B.png") {template_8_repeat(96, 39)}
+spriteset(spriteset_Flatbed_8_wires_half, "gfx/Flatbed_8B.png") {template_8_repeat(7, 69)}
+spriteset(spriteset_Flatbed_8_wires_full, "gfx/Flatbed_8B.png") {template_8_repeat(96, 69)}
+spriteset(spriteset_Flatbed_8_pipes_alt_half, "gfx/Flatbed_8B.png") {template_8_repeat(7, 99)}
+spriteset(spriteset_Flatbed_8_pipes_alt_full, "gfx/Flatbed_8B.png") {template_8_repeat(96, 99)}
 
 
 //loads spritegroups
@@ -3557,11 +3557,12 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_Liv0, VLine_HType_DT_Liv0_ID) {
 		cost_factor:					VLine_HType_CostFactor;
 		running_cost_factor:			VLine_HType_RunningCostFactor;
 		cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
-		power:							1 hp;
+		power:							0 hp;
 		weight:							VLine_HType_Weight ton;
 
 //        variant_group: 					Item_VLine_HType_DT_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_VLine_HType_DT_Liv0_rearcheck;
@@ -3607,11 +3608,12 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv0, VLine_HType_DT_BG_Liv0_ID) {
 		cost_factor:					VLine_HType_CostFactor;
 		running_cost_factor:			VLine_HType_RunningCostFactor;
 		cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
-		power:							1 hp;
+		power:							0 hp;
 		weight:							VLine_HType_Weight ton;
 
 //        variant_group: 					Item_VLine_HType_DT_BG_Liv0;
-//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_VLine_HType_DT_Liv0_rearcheck;
@@ -3889,11 +3891,12 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_Liv1, VLine_HType_DT_Liv1_ID) {
 		cost_factor:					VLine_HType_CostFactor;
 		running_cost_factor:			VLine_HType_RunningCostFactor;
 		cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
-		power:							1 hp;
+		power:							0 hp;
 		weight:							VLine_HType_Weight ton;
 
         variant_group: 					Item_VLine_HType_DT_Liv0;
-        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_VLine_HType_DT_Liv1_rearcheck;
@@ -3939,11 +3942,12 @@ item (FEAT_TRAINS, Item_VLine_HType_DT_BG_Liv1, VLine_HType_DT_BG_Liv1_ID) {
 		cost_factor:					VLine_HType_CostFactor;
 		running_cost_factor:			VLine_HType_RunningCostFactor;
 		cargo_capacity: 				(VLine_HType_CargoCapacity / param_capacity_mod);
-		power:							1 hp;
+		power:							0 hp;
 		weight:							VLine_HType_Weight ton;
 
         variant_group: 					Item_VLine_HType_DT_BG_Liv0;
-        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 	}
     graphics {
     default:                            switch_VLine_HType_DT_Liv1_rearcheck;

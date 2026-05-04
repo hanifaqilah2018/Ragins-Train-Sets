@@ -2365,7 +2365,7 @@ item (FEAT_TRAINS, Item_LightweightCommuterCar_Liv2, 6242) {
 spriteset(spriteset_Pullman_Comet_EOTD,   "gfx/Pullman_Comet_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_Pullman_Comet_EOTD_r,   "gfx/Pullman_Comet_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_Pullman_Comet_EOTD_CabFw,   "gfx/Pullman_Comet_EOTD.png") {template_8(187, 39)}
-spriteset(spriteset_Pullman_Comet_EOTD_CabR,   "gfx/Pullman_Comet_EOTD.png") {template_8_r(187, 69)}
+spriteset(spriteset_Pullman_Comet_EOTD_CabR,   "gfx/Pullman_Comet_EOTD.png") {template_8_r(187, 39)}
 
 //Pullman_Comet_Liv0
 spriteset(spriteset_Pullman_Comet_Liv0_Purchase,   "gfx/Pullman_Comet_Liv0.png") {template_purchase_8(7, 21)}
@@ -2499,14 +2499,15 @@ item (FEAT_TRAINS, Item_Cab_Pullman_Comet_Liv0, 6710) {
         loading_speed:                    20;
 
 //        variant_group: Item_Cab_Pullman_Comet_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_PULLMAN_COMET);
         introduction_date:                date(1970, 1, 1);
         vehicle_life:                     50;
 
         speed:                            120 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            29 ton;
         cargo_capacity:                    112/param_capacity_mod;
     }
@@ -2520,7 +2521,7 @@ item (FEAT_TRAINS, Item_Cab_Pullman_Comet_Liv0, 6710) {
 spriteset(spriteset_Bombardier_CometIII_EOTD,   "gfx/Bombardier_CometIII_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_Bombardier_CometIII_EOTD_r,   "gfx/Bombardier_CometIII_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_Bombardier_CometIII_EOTD_CabFw,   "gfx/Bombardier_CometIII_EOTD.png") {template_8(187, 39)}
-spriteset(spriteset_Bombardier_CometIII_EOTD_CabR,   "gfx/Bombardier_CometIII_EOTD.png") {template_8_r(187, 69)}
+spriteset(spriteset_Bombardier_CometIII_EOTD_CabR,   "gfx/Bombardier_CometIII_EOTD.png") {template_8_r(187, 39)}
 
 //Bombardier_CometIII_Liv0
 spriteset(spriteset_Bombardier_CometIII_Liv0_Purchase,   "gfx/Bombardier_CometIII_Liv0.png") {template_purchase_8(7, 21)}
@@ -2654,14 +2655,15 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_CometIII_Liv0, 6910) {
         loading_speed:                    20;
 
 //        variant_group: Item_Cab_Bombardier_CometIII_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_BOMBARDIER_COMETIII);
         introduction_date:                date(1990, 1, 1);
         vehicle_life:                     50;
 
         speed:                            120 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            28 ton;
         cargo_capacity:                    120/param_capacity_mod;
     }
@@ -2675,7 +2677,7 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_CometIII_Liv0, 6910) {
 spriteset(spriteset_Bombardier_CometIV_EOTD,   "gfx/Bombardier_CometIV_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_Bombardier_CometIV_EOTD_r,   "gfx/Bombardier_CometIV_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_Bombardier_CometIV_EOTD_CabFw,   "gfx/Bombardier_CometIV_EOTD.png") {template_8(187, 39)}
-spriteset(spriteset_Bombardier_CometIV_EOTD_CabR,   "gfx/Bombardier_CometIV_EOTD.png") {template_8_r(187, 69)}
+spriteset(spriteset_Bombardier_CometIV_EOTD_CabR,   "gfx/Bombardier_CometIV_EOTD.png") {template_8_r(187, 39)}
 
 //Bombardier_CometIV_Liv0
 spriteset(spriteset_Bombardier_CometIV_Liv0_Purchase,   "gfx/Bombardier_CometIV_Liv0.png") {template_purchase_8(7, 21)}
@@ -2809,14 +2811,15 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_CometIV_Liv0, 6950) {
         loading_speed:                    20;
 
 //        variant_group: Item_Cab_Bombardier_CometIV_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_BOMBARDIER_COMETIV);
         introduction_date:                date(1996, 1, 1);
         vehicle_life:                     50;
 
         speed:                            120 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            35 ton;
         cargo_capacity:                    120/param_capacity_mod;
     }
@@ -2830,7 +2833,7 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_CometIV_Liv0, 6950) {
 spriteset(spriteset_Alstom_CometV_EOTD,   "gfx/Alstom_CometV_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_Alstom_CometV_EOTD_r,   "gfx/Alstom_CometV_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_Alstom_CometV_EOTD_CabFw,   "gfx/Alstom_CometV_EOTD.png") {template_8(187, 39)}
-spriteset(spriteset_Alstom_CometV_EOTD_CabR,   "gfx/Alstom_CometV_EOTD.png") {template_8_r(187, 69)}
+spriteset(spriteset_Alstom_CometV_EOTD_CabR,   "gfx/Alstom_CometV_EOTD.png") {template_8_r(187, 39)}
 
 //Alstom_CometV_Liv0
 spriteset(spriteset_Alstom_CometV_Liv0_Purchase,   "gfx/Alstom_CometV_Liv0.png") {template_purchase_8(7, 21)}
@@ -2964,14 +2967,15 @@ item (FEAT_TRAINS, Item_Cab_Alstom_CometV_Liv0, 6970) {
         loading_speed:                    20;
 
 //        variant_group: Item_Cab_Alstom_CometV_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_ALSTOM_COMETV);
         introduction_date:                date(1999, 1, 1);
         vehicle_life:                     50;
 
         speed:                            120 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            45 ton;
         cargo_capacity:                    130/param_capacity_mod;
     }
@@ -2987,7 +2991,7 @@ item (FEAT_TRAINS, Item_Cab_Alstom_CometV_Liv0, 6970) {
 spriteset(spriteset_Budd_GalleryCar_EOTD,   "gfx/Budd_GalleryCar_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_Budd_GalleryCar_EOTD_r,   "gfx/Budd_GalleryCar_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_Budd_GalleryCar_EOTD_CabFw,   "gfx/Budd_GalleryCar_EOTD.png") {template_8(187, 39)}
-spriteset(spriteset_Budd_GalleryCar_EOTD_CabR,   "gfx/Budd_GalleryCar_EOTD.png") {template_8_r(187, 69)}
+spriteset(spriteset_Budd_GalleryCar_EOTD_CabR,   "gfx/Budd_GalleryCar_EOTD.png") {template_8_r(187, 39)}
 
 //Budd_GalleryCar_Liv0
 spriteset(spriteset_Budd_GalleryCar_Liv0_Purchase,   "gfx/Budd_GalleryCar_Liv0.png") {template_purchase_8(7, 21)}
@@ -3121,14 +3125,15 @@ item (FEAT_TRAINS, Item_Cab_Budd_GalleryCar_Liv0, 8510) {
         loading_speed:                    15;
 
 //        variant_group: Item_Cab_Budd_GalleryCar_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_BUDD_GALLERYCAR);
         introduction_date:                date(1950, 1, 1);
         vehicle_life:                     50;
 
         speed:                            100 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            48 ton;
         cargo_capacity:                    160/param_capacity_mod;
     }
@@ -3142,7 +3147,7 @@ item (FEAT_TRAINS, Item_Cab_Budd_GalleryCar_Liv0, 8510) {
 spriteset(spriteset_Pullman_GalleryCar_EOTD,   "gfx/Pullman_GalleryCar_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_Pullman_GalleryCar_EOTD_r,   "gfx/Pullman_GalleryCar_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_Pullman_GalleryCar_EOTD_CabFw,   "gfx/Pullman_GalleryCar_EOTD.png") {template_8(187, 39)}
-spriteset(spriteset_Pullman_GalleryCar_EOTD_CabR,   "gfx/Pullman_GalleryCar_EOTD.png") {template_8_r(187, 69)}
+spriteset(spriteset_Pullman_GalleryCar_EOTD_CabR,   "gfx/Pullman_GalleryCar_EOTD.png") {template_8_r(187, 39)}
 
 //Pullman_GalleryCar_Liv0
 spriteset(spriteset_Pullman_GalleryCar_Liv0_Purchase,   "gfx/Pullman_GalleryCar_Liv0.png") {template_purchase_8(7, 21)}
@@ -3276,14 +3281,15 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv0, 8550) {
         loading_speed:                    15;
 
 //        variant_group: Item_Cab_Pullman_GalleryCar_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_PULLMAN_GALLERYCAR);
         introduction_date:                date(1956, 1, 1);
         vehicle_life:                     50;
 
         speed:                            100 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            50 ton;
         cargo_capacity:                    160/param_capacity_mod;
     }
@@ -3426,14 +3432,15 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv1, 8551) {
         loading_speed:                    15;
 
         variant_group: Item_Cab_Pullman_GalleryCar_Liv0;
-        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_PULLMAN_GALLERYCAR);
         introduction_date:                date(1956, 1, 1);
         vehicle_life:                     50;
 
         speed:                            100 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            50 ton;
         cargo_capacity:                    160/param_capacity_mod;
     }
@@ -3576,14 +3583,15 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv2, 8552) {
         loading_speed:                    15;
 
         variant_group: Item_Cab_Pullman_GalleryCar_Liv0;
-        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_PULLMAN_GALLERYCAR);
         introduction_date:                date(1956, 1, 1);
         vehicle_life:                     50;
 
         speed:                            100 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            50 ton;
         cargo_capacity:                    160/param_capacity_mod;
     }
@@ -3726,14 +3734,15 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv3, 8553) {
         loading_speed:                    15;
 
         variant_group: Item_Cab_Pullman_GalleryCar_Liv0;
-        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_PULLMAN_GALLERYCAR);
         introduction_date:                date(1956, 1, 1);
         vehicle_life:                     50;
 
         speed:                            100 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            50 ton;
         cargo_capacity:                    160/param_capacity_mod;
     }
@@ -3747,7 +3756,7 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv3, 8553) {
 spriteset(spriteset_HSC_BiLevel_EOTD,   "gfx/HSC_BiLevel_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_HSC_BiLevel_EOTD_r,   "gfx/HSC_BiLevel_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_HSC_BiLevel_EOTD_CabFw,   "gfx/HSC_BiLevel_EOTD.png") {template_8(187, 39)}
-spriteset(spriteset_HSC_BiLevel_EOTD_CabR,   "gfx/HSC_BiLevel_EOTD.png") {template_8_r(187, 69)}
+spriteset(spriteset_HSC_BiLevel_EOTD_CabR,   "gfx/HSC_BiLevel_EOTD.png") {template_8_r(187, 39)}
 
 //HSC_BiLevel_Liv0
 spriteset(spriteset_HSC_BiLevel_Liv0_Purchase,   "gfx/HSC_BiLevel_Liv0.png") {template_purchase_8(7, 21)}
@@ -3881,14 +3890,15 @@ item (FEAT_TRAINS, Item_Cab_HSC_BiLevel_Liv0, 8710) {
         loading_speed:                    15;
 
 //        variant_group: Item_Cab_HSC_BiLevel_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_HSC_BILEVEL);
         introduction_date:                date(1976, 1, 1);
         vehicle_life:                     50;
 
         speed:                            100 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            61 ton;
         cargo_capacity:                    166/param_capacity_mod;
     }
@@ -3902,7 +3912,7 @@ item (FEAT_TRAINS, Item_Cab_HSC_BiLevel_Liv0, 8710) {
 spriteset(spriteset_BuddComeng_DoubleDecker_EOTD,   "gfx/BuddComeng_DoubleDecker_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_BuddComeng_DoubleDecker_EOTD_r,   "gfx/BuddComeng_DoubleDecker_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_BuddComeng_DoubleDecker_EOTD_CabFw,   "gfx/BuddComeng_DoubleDecker_EOTD.png") {template_8(187, 39)}
-spriteset(spriteset_BuddComeng_DoubleDecker_EOTD_CabR,   "gfx/BuddComeng_DoubleDecker_EOTD.png") {template_8_r(187, 69)}
+spriteset(spriteset_BuddComeng_DoubleDecker_EOTD_CabR,   "gfx/BuddComeng_DoubleDecker_EOTD.png") {template_8_r(187, 39)}
 
 //BuddComeng_DoubleDecker_Liv0
 spriteset(spriteset_BuddComeng_DoubleDecker_Liv0_Purchase,   "gfx/BuddComeng_DoubleDecker_Liv0.png") {template_purchase_8(7, 21)}
@@ -4036,14 +4046,15 @@ item (FEAT_TRAINS, Item_Cab_BuddComeng_DoubleDecker_Liv0, 8750) {
         loading_speed:                    30;
 
 //        variant_group: Item_Cab_BuddComeng_DoubleDecker_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_BUDDCOMENG_DOUBLEDECKER);
         introduction_date:                date(1978, 1, 1);
         vehicle_life:                     50;
 
         speed:                            100 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            50 ton;
         cargo_capacity:                    230/param_capacity_mod;
     }
@@ -4137,7 +4148,7 @@ item (FEAT_TRAINS, Item_Comeng_C1_Liv0, 8920) {
 spriteset(spriteset_Kawasaki_C3_EOTD,   "gfx/Kawasaki_C3_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_Kawasaki_C3_EOTD_r,   "gfx/Kawasaki_C3_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_Kawasaki_C3_EOTD_CabFw,   "gfx/Kawasaki_C3_EOTD.png") {template_8(187, 39)}
-spriteset(spriteset_Kawasaki_C3_EOTD_CabR,   "gfx/Kawasaki_C3_EOTD.png") {template_8_r(187, 69)}
+spriteset(spriteset_Kawasaki_C3_EOTD_CabR,   "gfx/Kawasaki_C3_EOTD.png") {template_8_r(187, 39)}
 
 //Kawasaki_C3_Liv0
 spriteset(spriteset_Kawasaki_C3_Liv0_Purchase,   "gfx/Kawasaki_C3_Liv0.png") {template_purchase_8(7, 21)}
@@ -4271,14 +4282,15 @@ item (FEAT_TRAINS, Item_Cab_Kawasaki_C3_Liv0, 8950) {
         loading_speed:                    20;
 
 //        variant_group: Item_Cab_Kawasaki_C3_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_KAWASAKI_C3);
         introduction_date:                date(1998, 1, 1);
         vehicle_life:                     50;
 
         speed:                            110 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            65 ton;
         cargo_capacity:                    150/param_capacity_mod;
     }
@@ -4292,7 +4304,7 @@ item (FEAT_TRAINS, Item_Cab_Kawasaki_C3_Liv0, 8950) {
 spriteset(spriteset_Bombardier_Multilevel_EOTD,   "gfx/Bombardier_Multilevel_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_Bombardier_Multilevel_EOTD_r,   "gfx/Bombardier_Multilevel_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_Bombardier_Multilevel_EOTD_CabFw,   "gfx/Bombardier_Multilevel_EOTD.png") {template_8(187, 39)}
-spriteset(spriteset_Bombardier_Multilevel_EOTD_CabR,   "gfx/Bombardier_Multilevel_EOTD.png") {template_8_r(187, 69)}
+spriteset(spriteset_Bombardier_Multilevel_EOTD_CabR,   "gfx/Bombardier_Multilevel_EOTD.png") {template_8_r(187, 39)}
 
 //Bombardier_Multilevel_Liv0
 spriteset(spriteset_Bombardier_Multilevel_Liv0_Purchase,   "gfx/Bombardier_Multilevel_Liv0.png") {template_purchase_8(7, 21)}
@@ -4426,14 +4438,15 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv0, 9010) {
         loading_speed:                    20;
 
 //        variant_group: Item_Cab_Bombardier_Multilevel_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_BOMBARDIER_MULTILEVEL);
         introduction_date:                date(2006, 1, 1);
         vehicle_life:                     50;
 
         speed:                            110 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            63 ton;
         cargo_capacity:                    155/param_capacity_mod;
     }
@@ -4576,14 +4589,15 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv1, 9011) {
         loading_speed:                    20;
 
         variant_group: Item_Cab_Bombardier_Multilevel_Liv0;
-        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_BOMBARDIER_MULTILEVEL);
         introduction_date:                date(2006, 1, 1);
         vehicle_life:                     50;
 
         speed:                            110 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            63 ton;
         cargo_capacity:                    155/param_capacity_mod;
     }
@@ -4726,14 +4740,15 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv2, 9012) {
         loading_speed:                    20;
 
         variant_group: Item_Cab_Bombardier_Multilevel_Liv0;
-        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_BOMBARDIER_MULTILEVEL);
         introduction_date:                date(2006, 1, 1);
         vehicle_life:                     50;
 
         speed:                            110 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            63 ton;
         cargo_capacity:                    155/param_capacity_mod;
     }
@@ -4876,14 +4891,15 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv3, 9013) {
         loading_speed:                    20;
 
         variant_group: Item_Cab_Bombardier_Multilevel_Liv0;
-        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_BOMBARDIER_MULTILEVEL);
         introduction_date:                date(2006, 1, 1);
         vehicle_life:                     50;
 
         speed:                            110 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            63 ton;
         cargo_capacity:                    155/param_capacity_mod;
     }
@@ -6362,7 +6378,7 @@ item (FEAT_TRAINS, Item_Mail_RapidoCar_Liv0, 11610) {
 spriteset(spriteset_Budd_Amfleet_EOTD,   "gfx/Budd_Amfleet_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_Budd_Amfleet_EOTD_r,   "gfx/Budd_Amfleet_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_Budd_Amfleet_EOTD_CabFw,   "gfx/Budd_Amfleet_EOTD.png") {template_8(367, 39)}
-spriteset(spriteset_Budd_Amfleet_EOTD_CabR,   "gfx/Budd_Amfleet_EOTD.png") {template_8_r(367, 69)}
+spriteset(spriteset_Budd_Amfleet_EOTD_CabR,   "gfx/Budd_Amfleet_EOTD.png") {template_8_r(367, 39)}
 
 //Budd_Amfleet_Liv0
 spriteset(spriteset_Budd_Amfleet_Liv0_Purchase,   "gfx/Budd_Amfleet_Liv0.png") {template_purchase_8(7, 21)}
@@ -6581,14 +6597,15 @@ item (FEAT_TRAINS, Item_Cab_Budd_Amfleet_Liv0, 11720) {
         loading_speed:                    20;
 
 //        variant_group: Item_Cab_Budd_Amfleet_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_BUDD_AMFLEET);
         introduction_date:                date(1975, 1, 1);
         vehicle_life:                     50;
 
         speed:                            125 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            51 ton;
         cargo_capacity:                    84/param_capacity_mod;
     }
@@ -6602,7 +6619,7 @@ item (FEAT_TRAINS, Item_Cab_Budd_Amfleet_Liv0, 11720) {
 spriteset(spriteset_Bombardier_Horizon_EOTD,   "gfx/Bombardier_Horizon_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_Bombardier_Horizon_EOTD_r,   "gfx/Bombardier_Horizon_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_Bombardier_Horizon_EOTD_CabFw,   "gfx/Bombardier_Horizon_EOTD.png") {template_8(367, 39)}
-spriteset(spriteset_Bombardier_Horizon_EOTD_CabR,   "gfx/Bombardier_Horizon_EOTD.png") {template_8_r(367, 69)}
+spriteset(spriteset_Bombardier_Horizon_EOTD_CabR,   "gfx/Bombardier_Horizon_EOTD.png") {template_8_r(367, 39)}
 
 //Bombardier_Horizon_Liv0
 spriteset(spriteset_Bombardier_Horizon_Liv0_Purchase,   "gfx/Bombardier_Horizon_Liv0.png") {template_purchase_8(7, 21)}
@@ -6821,14 +6838,15 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Horizon_Liv0, 11840) {
         loading_speed:                    20;
 
 //        variant_group: Item_Cab_Bombardier_Horizon_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_BOMBARDIER_HORIZON);
         introduction_date:                date(1988, 1, 1);
         vehicle_life:                     50;
 
         speed:                            125 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            51 ton;
         cargo_capacity:                    80/param_capacity_mod;
     }
@@ -7269,7 +7287,7 @@ item (FEAT_TRAINS, Item_Pullman_SuperLiner_Liv0, 13700) {
 spriteset(spriteset_MK_CaliforniaCar_EOTD,   "gfx/MK_CaliforniaCar_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_MK_CaliforniaCar_EOTD_r,   "gfx/MK_CaliforniaCar_EOTD.png") {template_8_r(7, 39)}
 spriteset(spriteset_MK_CaliforniaCar_EOTD_CabFw,   "gfx/MK_CaliforniaCar_EOTD.png") {template_8(187, 39)}
-spriteset(spriteset_MK_CaliforniaCar_EOTD_CabR,   "gfx/MK_CaliforniaCar_EOTD.png") {template_8_r(187, 69)}
+spriteset(spriteset_MK_CaliforniaCar_EOTD_CabR,   "gfx/MK_CaliforniaCar_EOTD.png") {template_8_r(187, 39)}
 
 //MK_CaliforniaCar_Liv0
 spriteset(spriteset_MK_CaliforniaCar_Liv0_Purchase,   "gfx/MK_CaliforniaCar_Liv0.png") {template_purchase_8(7, 21)}
@@ -7403,14 +7421,15 @@ item (FEAT_TRAINS, Item_Cab_MK_CaliforniaCar_Liv0, 13910) {
         loading_speed:                    30;
 
 //        variant_group: Item_Cab_MK_CaliforniaCar_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
 
         name:                             string(STR_NAME_CAB_MK_CALIFORNIACAR);
         introduction_date:                date(1994, 1, 1);
         vehicle_life:                     50;
 
         speed:                            125 mph;
-        power:                            1 hp;
+        power:                            0 hp;
         weight:                            70 ton;
         cargo_capacity:                    120/param_capacity_mod;
     }
