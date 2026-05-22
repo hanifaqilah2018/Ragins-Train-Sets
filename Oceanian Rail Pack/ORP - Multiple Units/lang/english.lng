@@ -85,6 +85,9 @@ STR_INFO_SILVERFERN:{BLACK}Role: {GOLD}Intercity Service {}{BLACK}Formation: {GO
 STR_NAME_XPTINTERURBAN:Comeng Interurban HST
 STR_INFO_XPTINTERURBAN:{BLACK}Role: {GOLD}Express Service{}{BLACK}Formation: {GOLD}Push-Pull Trainset {}{BLACK}Power: {BROWN}Diesel
 
+STR_NAME_COMENG_PROSPECTOR:Comeng Prospector Railcar
+STR_INFO_COMENG_PROSPECTOR:{BLACK}Role: {GOLD}Express Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation: {GOLD}Single Car {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}WAGR WCA/WCE Class Railcars {}{GOLD}Surprisingly, these are still underscaled
+
 STR_NAME_COMENG_XPT:Comeng XPT
 STR_INFO_COMENG_XPT:{BLACK}Role: {GOLD}Express Service {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Formation: {GOLD}Push-Pull Trainset {}{BLACK}Power: {BROWN}Diesel {}{GOLD}Specification 2542 Appendix D
 
@@ -160,8 +163,8 @@ STR_INFO_CAF_CXK:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple U
 STR_NAME_SDD_EMU_TULLOCHDD:Tulloch Double-Decker
 STR_INFO_SDD_EMU_TULLOCHDD:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line {}{GOLD}First Double-Deck EMUs in the world
 
-STR_NAME_SDD_EMU_COMENGSSET:Comeng S-Set
-STR_INFO_SDD_EMU_COMENGSSET:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_NAME_COMENG_SSET:Comeng S-Set
+STR_INFO_COMENG_SSET:{BLACK}Role: {GOLD}Suburban {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Sydney S-Set EMUs
 
 STR_NAME_SDD_EMU_AUPTDD:Comeng AUPT Double-Decker
 STR_INFO_SDD_EMU_AUPTDD:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line
@@ -193,8 +196,8 @@ STR_INFO_SDD_EMU_COMENGABBVRDD:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {G
 STR_NAME_SDD_EMU_ABBVRDD:ABB VR Double-Decker
 STR_INFO_SDD_EMU_ABBVRDD:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line{}{GOLD}More Doors, More Better
 
-STR_NAME_SDD_EMU_MILLENIUM:Downer EDi Millenium
-STR_INFO_SDD_EMU_MILLENIUM:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line{}{GOLD}Crew *hate* these
+STR_NAME_EDI_MILLENIUM:Downer EDi Millenium
+STR_INFO_EDI_MILLENIUM:{BLACK}Role: {GOLD}Suburban {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Sydney Millenium Trains {}{GOLD}Crew *hate* these
 
 STR_NAME_SDD_EMU_WARATAH:Downer EDi Waratah
 STR_INFO_SDD_EMU_WARATAH:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line
@@ -229,7 +232,7 @@ STR_NAME_EXP_EMU_XPTE:Comeng XPT-E
 STR_INFO_EXP_EMU_XPTE:{BLACK}Role: {GOLD}Express Service{}{BLACK}Formation: {GOLD}Push-Pull Trainset {}{BLACK}Power: {LTBLUE}Overhead Line
 
 STR_NAME_X2000:Adtranz X2000
-STR_INFO_X2000:{BLACK}Role: {GOLD}Express Service{}{BLACK}Formation: {GOLD}Push-Pull Trainset {}{BLACK}Power: {LTBLUE}Overhead Line{}{BLACK}Special: {GOLD}Tilt train (20% faster through curves)
+STR_INFO_X2000:{BLACK}Role: {GOLD}Express Service {}{BLACK}Formation: {GOLD}Push-Pull Trainset {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {RED}AC Overhead Line {}{BLACK}Special: {GOLD}Tilt train (20% faster through curves)
 
 STR_NAME_ELECTRICTILTTRAIN:Walkers Electric Tilt Train
 STR_INFO_ELECTRICTILTTRAIN:{BLACK}Role: {GOLD}Express Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Power: {RED}AC Overhead Line {}{BLACK}Special: {GOLD}Tilt train (20% faster through curves) {}{BLACK}Based on: {GOLD}QR Electric Tilt Trains

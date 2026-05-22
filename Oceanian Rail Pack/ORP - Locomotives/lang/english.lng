@@ -140,6 +140,13 @@ STR_INFO_CLYDE_AJT32HB2:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {BROWN}Dies
 STR_NAME_AGE_41CLASS:AGE 41 Class
 STR_INFO_AGE_41CLASS:{BLACK}Role: {GOLD}Shunter {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 41 Class {}{GOLD}I hope you like engine fires!
 
+STR_NAME_CLYDE_G18BM_NG:Clyde-EMD G18BM
+STR_INFO_CLYDE_G18BM_NG:{BLACK}Role: {GOLD}Shunter {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR H Class
+STR_NAME_CLYDE_G18BM:Clyde-EMD G18BM
+STR_INFO_CLYDE_G18BM:{BLACK}Role: {GOLD}Shunter {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR H Class
+STR_NAME_CLYDE_G18BM_BG:Clyde-EMD G18BM
+STR_INFO_CLYDE_G18BM_BG:{BLACK}Role: {GOLD}Shunter {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR H Class
+
 
 
 STR_NAME_CLYDE_G8C:Clyde-EMD G8C
@@ -192,6 +199,9 @@ STR_INFO_ALCODL541_CROCODILE:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}D
 STR_NAME_ALCODL541_PILBARA:Goodwin-ALCO DL541 (Pilbara Cab)
 STR_INFO_ALCODL541_PILBARA:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Junee Workshops attempted rebuild of NSW 3505 (formerly 4505)
 
+STR_NAME_GMD_GL22MC:GMD GL22MC
+STR_INFO_GMD_GL22MC:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZ DF Class
+
 STR_NAME_CLYDE_GL26C2:Clyde-EMD GL26C-2
 STR_INFO_CLYDE_GL26C2:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}QR 2170 Class
 
@@ -223,23 +233,25 @@ STR_INFO_STADLERSALI:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {BROWN}Diesel {}
 
 
 
+STR_NAME_CLYDE_GT26C:Clyde-EMD GT26C
+STR_INFO_CLYDE_GT26C:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}WAGR L Class
+
 STR_NAME_CLYDE_A32D:Clyde-EMD A32D
 STR_INFO_CLYDE_A32D:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Proposed twin 16-645 locomotive for Commonwealth Railways
 
 STR_NAME_EMD_JT30C2:EMD-Nohab JT30C-2
 STR_INFO_EMD_JT30C2:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Imported DSB Class MZ III locomotives
 
-STR_NAME_CLYDE_GT26C:Clyde-EMD GT26C
-STR_INFO_CLYDE_GT26C:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}WAGR L Class
-
 STR_NAME_NOHAB_JT30C2:EMD-Nohab JT30C-2
 STR_INFO_NOHAB_JT30C2:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}DSB Class MZIII imported by Independant Rail Australia in 2006
 
 STR_NAME_CLYDE_GT26CW:Clyde-EMD GT26CW
-STR_INFO_CLYDE_GT26CW:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR C Class
+STR_INFO_CLYDE_GT26CW:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR C Class
+STR_NAME_CLYDE_GT26CW_BG:Clyde-EMD GT26CW
+STR_INFO_CLYDE_GT26CW_BG:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR C Class
 
 STR_NAME_CLYDE_GT46CWM:Clyde-EMD GT46CWM
-STR_INFO_CLYDE_GT46CWM:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 90 Class
+STR_INFO_CLYDE_GT46CWM:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 90 Class
 
 STR_NAME_GONINAN_C40ACI:GE-UGL C40aci
 STR_INFO_GONINAN_C40ACI:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}QR National 5000 Class {}{}{GOLD}Basically an NR Class with AC motors, after it ate too many kebabs.
@@ -252,12 +264,43 @@ STR_INFO_GONINAN_C44ACHI:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Power: {BROWN
 STR_NAME_EE_RSE45B:English Electric RSE45B
 STR_INFO_EE_RSE45B:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}TGR X Class
 
+STR_NAME_BCW_NSU:BCW NSU Class
+STR_INFO_BCW_NSU:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Commonwealth Railways NSU Class
+
+STR_NAME_CLYDE_G8B_FLATTOP_NG:Clyde-EMD G8B (Flat Top)
+STR_INFO_CLYDE_G8B_FLATTOP_NG:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Early VR T Classes, BHP Whyala DE Class & Fyansford Cement Railway Locomotive
+STR_NAME_CLYDE_G8B_FLATTOP:Clyde-EMD G8B (Flat Top)
+STR_INFO_CLYDE_G8B_FLATTOP:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Early VR T Classes, BHP Whyala DE Class & Fyansford Cement Railway Locomotive
+STR_NAME_CLYDE_G8B_FLATTOP_BG:Clyde-EMD G8B (Flat Top)
+STR_INFO_CLYDE_G8B_FLATTOP_BG:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Early VR T Classes, BHP Whyala DE Class & Fyansford Cement Railway Locomotive
+
 STR_NAME_ALCO_DL531_NG:Goodwin-ALCO DL531
-STR_INFO_ALCO_DL531_NG:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
+STR_INFO_ALCO_DL531_NG:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
 STR_NAME_ALCO_DL531:Goodwin-ALCO DL531
-STR_INFO_ALCO_DL531:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
+STR_INFO_ALCO_DL531:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
 STR_NAME_ALCO_DL531_BG:Goodwin-ALCO DL531
-STR_INFO_ALCO_DL531_BG:{BLACK}Role: {GOLD}Light Freight {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
+STR_INFO_ALCO_DL531_BG:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 48 Class, SAR 830 Class, Silverton 48s Class {}{GOLD}Also known as the ALCO RSD-8
+
+STR_NAME_CLYDE_G8B_RAISEDCAB_NG:Clyde-EMD G8B (Raised Cab)
+STR_INFO_CLYDE_G8B_RAISEDCAB_NG:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Mid production VR T Classes
+STR_NAME_CLYDE_G8B_RAISEDCAB:Clyde-EMD G8B (Raised Cab)
+STR_INFO_CLYDE_G8B_RAISEDCAB:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Mid production VR T Classes
+STR_NAME_CLYDE_G8B_RAISEDCAB_BG:Clyde-EMD G8B (Raised Cab)
+STR_INFO_CLYDE_G8B_RAISEDCAB_BG:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Mid production VR T Classes
+
+STR_NAME_CLYDE_G8B_LOWNOSE_NG:Clyde-EMD G8B (Low Nose)
+STR_INFO_CLYDE_G8B_LOWNOSE_NG:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Late production VR T Classes
+STR_NAME_CLYDE_G8B_LOWNOSE:Clyde-EMD G8B (Low Nose)
+STR_INFO_CLYDE_G8B_LOWNOSE:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Late production VR T Classes
+STR_NAME_CLYDE_G8B_LOWNOSE_BG:Clyde-EMD G8B (Low Nose)
+STR_INFO_CLYDE_G8B_LOWNOSE_BG:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Late production VR T Classes
+
+STR_NAME_CLYDE_G18B_NG:Clyde-EMD G18B
+STR_INFO_CLYDE_G18B_NG:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Final production VR T Classes
+STR_NAME_CLYDE_G18B:Clyde-EMD G18B
+STR_INFO_CLYDE_G18B:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Final production VR T Classes
+STR_NAME_CLYDE_G18B_BG:Clyde-EMD G18B
+STR_INFO_CLYDE_G18B_BG:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Final production VR T Classes
 
 STR_NAME_EE_DGCLASS:English-Electric DG Class
 STR_INFO_EE_DGCLASS:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge  {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZR DG Class
@@ -268,16 +311,16 @@ STR_INFO_CLYDE_JL22C:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD
 
 
 STR_NAME_CLYDE_ML2:Clyde-EMD ML2
-STR_INFO_CLYDE_ML2:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR B Class
+STR_INFO_CLYDE_ML2:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR B Class
 
 STR_NAME_CLYDE_ML2_BG:Clyde-EMD ML2
-STR_INFO_CLYDE_ML2_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Broad Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR B Class
+STR_INFO_CLYDE_ML2_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}VR B Class
+
+STR_NAME_EE_DFCLASS:English-Electric DF Class
+STR_INFO_EE_DFCLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZR DF Class
 
 STR_NAME_CLYDE_G12A:Clyde-EMD G12A
 STR_INFO_CLYDE_G12A:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZ DA Class
-
-STR_NAME_EE_DFCLASS:English-Electric DF Class
-STR_INFO_EE_DFCLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NZR DF Class
 
 STR_NAME_ALCO_DL500B:Goodwin-ALCO DL500B
 STR_INFO_ALCO_DL500B:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW 44 Class, SAR 930 Class
@@ -324,12 +367,8 @@ STR_NAME_COMENG_CL628:Comeng CL628
 STR_INFO_COMENG_CL628:{BLACK}Role: {GOLD}Passenger {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}Fictional
 
 
-
-STR_NAME_COMENG_85CLASS:Comeng CL627
-STR_INFO_COMENG_85CLASS:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}NSW 85 Class
-
 STR_NAME_CLYDE_CF48:Asea-Clyde-Walkers CF48
-STR_INFO_CLYDE_CF48:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge{}{BLACK}Power: {RED}AC Overhead Line {}{BLACK}Based on: {GOLD}QR 3500/3600 Class
+STR_INFO_CLYDE_CF48:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {RED}AC Overhead Line {}{BLACK}Based on: {GOLD}QR 3500/3600 Class
 
 STR_NAME_COMENG_CL632:Comeng CL632
 STR_INFO_COMENG_CL632:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {RED}AC Overhead Line {}{BLACK}Based on: {GOLD}Proposed Maldon-Dombarton locomotive based on 8650
@@ -338,6 +377,9 @@ STR_NAME_CLYDE_JAE_342C:Clyde JAE 34-2C
 STR_INFO_CLYDE_JAE_342C:{BLACK}Role: {GOLD}Freight {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}Fictional
 
 
+
+STR_NAME_EE_EDCLASS:English-Electric ED Class
+STR_INFO_EE_EDCLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}NZR ED Class
 
 STR_NAME_EE_LCLASS:English-Electric L Class
 STR_INFO_EE_LCLASS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}VR L Class
@@ -369,6 +411,9 @@ STR_INFO_COMENG_CL632_3R:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Standa
 
 
 
+STR_NAME_CLYDE_G22AR:Clyde-EMD G22AR
+STR_INFO_CLYDE_G22AR:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}GMD G12A {}{BLACK}Based on: {GOLD}NZ DC Class
+
 STR_NAME_CLYDE_J26C2SS:Clyde-EMD J26C-2SS
 STR_INFO_CLYDE_J26C2SS:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}Clyde-EMD J26C {}{BLACK}Based on: {GOLD}NSW 42220 Rebuild {}{GOLD}Built to demonstrate the SD50 series Super-Series creep control later used in the 81 Class (JT26C-2SS)
 
@@ -376,6 +421,14 @@ STR_NAME_CLYDE_AAT22C2R:Clyde-EMD AAT22C-2R
 STR_INFO_CLYDE_AAT22C2R:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}Clyde-EMD ML2 {}{BLACK}Based on: {GOLD}V/Line A Class
 STR_NAME_CLYDE_AAT22C2R_BG:Clyde-EMD AAT22C-2R
 STR_INFO_CLYDE_AAT22C2R_BG:{BLACK}Role: {GOLD}Passenger {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}Clyde-EMD ML2 {}{BLACK}Based on: {GOLD}V/Line A Class
+
+STR_NAME_CLYDE_G18HBR:Clyde-EMD G18HBR
+STR_INFO_CLYDE_G18HBR:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}Clyde-EMD G8B (Flat Top) {}{BLACK}Based on: {GOLD}VR P Class
+STR_NAME_CLYDE_G18HBR_BG:Clyde-EMD G18HBR
+STR_INFO_CLYDE_G18HBR_BG:{BLACK}Role: {GOLD}Light Mixed Traffic {}{BLACK}Gauge:{GOLD} Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}Clyde-EMD G8B (Flat Top) {}{BLACK}Based on: {GOLD}VR P Class
+
+STR_NAME_GMD_GT22MC:GMD GT22MC
+STR_INFO_GMD_GT22MC:{BLACK}Role: {GOLD}Freight {}{BLACK}Gauge:{GOLD} Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Rebuild of: {GOLD}GMD GL22MC {}{BLACK}Based on: {GOLD}NZ DFT Class
 
 
 
