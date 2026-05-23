@@ -1,7 +1,7 @@
 disable_item(FEAT_TRAINS);
 
 grf{
-    grfid: "ZM\08\06";
+    grfid: "ZM\08\09";
     name: string(STR_GRF_NAME);
     desc: string(STR_GRF_DESCRIPTION);
     version: 3;
