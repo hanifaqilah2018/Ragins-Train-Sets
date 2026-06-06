@@ -672,7 +672,7 @@ item(FEAT_TRAINS, Item_Tait_Liv1, 5100) {
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
 
         name:                            string(STR_NAME_TAIT);
-        introduction_date:                date(1919,1,1);
+        introduction_date:                date(1915,1,1);
         vehicle_life:                     50;
         model_life:                        30;
         length:                            8;
@@ -876,7 +876,7 @@ item(FEAT_TRAINS, Item_Tait_Liv2, 5101) {
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
 
         name:                            string(STR_NAME_TAIT);
-        introduction_date:                date(1919,1,1);
+        introduction_date:                date(1915,1,1);
         vehicle_life:                     50;
         model_life:                        30;
         length:                            8;
@@ -1080,7 +1080,7 @@ item(FEAT_TRAINS, Item_Tait_Liv3, 5102) {
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
 
         name:                            string(STR_NAME_TAIT);
-        introduction_date:                date(1919,1,1);
+        introduction_date:                date(1915,1,1);
         vehicle_life:                     50;
         model_life:                        30;
         length:                            8;
