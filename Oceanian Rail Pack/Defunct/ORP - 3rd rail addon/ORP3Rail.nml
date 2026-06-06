@@ -683,7 +683,7 @@ item(FEAT_TRAINS, Item_Tait_Liv1, 5100) {
         tractive_effort_coefficient:     0.7;
         cost_factor:                     9;
         running_cost_factor:             180;
-        cargo_capacity:                  72/param_capacity_mod;
+        cargo_capacity:                  87/param_capacity_mod;
         loading_speed: 5;
 
         variant_group: Item_Tait_Liv1;
@@ -698,7 +698,7 @@ item(FEAT_TRAINS, Item_Tait_Liv1, 5100) {
     livery_override (Item_MU_Trailer){
         default                     : sw_Tait_Liv1_revcheck ;
         length                      : 8;
-        cargo_capacity              : (72/param_capacity_mod) ;
+        cargo_capacity              : (87/param_capacity_mod) ;
         power                       : 141 ;
 		weight:                        35;
 		running_cost_factor:             45;
@@ -887,7 +887,7 @@ item(FEAT_TRAINS, Item_Tait_Liv2, 5101) {
         tractive_effort_coefficient:     0.7;
         cost_factor:                     9;
         running_cost_factor:             180;
-        cargo_capacity:                  72/param_capacity_mod;
+        cargo_capacity:                  87/param_capacity_mod;
         loading_speed: 5;
 
         variant_group: Item_Tait_Liv1;
@@ -902,7 +902,7 @@ item(FEAT_TRAINS, Item_Tait_Liv2, 5101) {
     livery_override (Item_MU_Trailer){
         default                     : sw_Tait_Liv2_revcheck ;
         length                      : 8;
-        cargo_capacity              : (72/param_capacity_mod) ;
+        cargo_capacity              : (87/param_capacity_mod) ;
         power                       : 141 ;
 		weight:                        35;
 		running_cost_factor:             45;
@@ -1091,7 +1091,7 @@ item(FEAT_TRAINS, Item_Tait_Liv3, 5102) {
         tractive_effort_coefficient:     0.7;
         cost_factor:                     9;
         running_cost_factor:             180;
-        cargo_capacity:                  72/param_capacity_mod;
+        cargo_capacity:                  87/param_capacity_mod;
         loading_speed: 5;
 
         variant_group: Item_Tait_Liv1;
@@ -1106,7 +1106,7 @@ item(FEAT_TRAINS, Item_Tait_Liv3, 5102) {
     livery_override (Item_MU_Trailer){
         default                     : sw_Tait_Liv3_revcheck ;
         length                      : 8;
-        cargo_capacity              : (72/param_capacity_mod) ;
+        cargo_capacity              : (87/param_capacity_mod) ;
         power                       : 141 ;
 		weight:                        35;
 		running_cost_factor:             45;

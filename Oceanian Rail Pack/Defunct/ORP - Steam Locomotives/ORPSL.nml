@@ -1256,7 +1256,7 @@ const NSW_N67_CostFactor = 20;
 //running_cost_factor
 const NSW_N67_RunningCostFactor = 54;
 //power
-const NSW_N67_Power = 250;
+const NSW_N67_Power = 350;
 //weight
 const NSW_N67_Weight = 28;
 
@@ -1482,7 +1482,7 @@ const NSW_C30_ID = 6080;
 //introduction_date
 const NSW_C30_IntroDate = date(1903, 1, 1);
 //speed
-const NSW_C30_Speed = 	72;
+const NSW_C30_Speed = 	96;
 //cost_factor
 const NSW_C30_CostFactor = 28;
 //running_cost_factor
@@ -1714,7 +1714,7 @@ const NSW_Z26_ID = 6260;
 //introduction_date
 const NSW_Z26_IntroDate = date(1892, 1, 1);
 //speed
-const NSW_Z26_Speed = 96;
+const NSW_Z26_Speed = 72;
 //cost_factor
 const NSW_Z26_CostFactor = 28;
 //running_cost_factor
@@ -2522,13 +2522,13 @@ const NSW_C32_ID = 850;
 //introduction_date
 const NSW_C32_IntroDate = date(1892, 1, 1);
 //speed
-const NSW_C32_Speed = 120;
+const NSW_C32_Speed = 96;
 //cost_factor
 const NSW_C32_CostFactor = 26;
 //running_cost_factor
 const NSW_C32_RunningCostFactor = 71;
 //power
-const NSW_C32_Power = 720;
+const NSW_C32_Power = 950;
 //weight
 const NSW_C32_Weight = 64;
 
@@ -2651,7 +2651,7 @@ const NSW_C35_CostFactor = 41;
 //running_cost_factor
 const NSW_C35_RunningCostFactor = 110;
 //power
-const NSW_C35_Power = 2150;
+const NSW_C35_Power = 1500;
 //weight
 const NSW_C35_Weight = 83;
 
