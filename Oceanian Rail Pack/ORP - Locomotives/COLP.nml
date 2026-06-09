@@ -456,33 +456,33 @@ template template_3_r(x, y) { //WIP
 
 // 4 Template
 template template_4(x, y) {
-    //left_x, upper_y, width, height, offset_x, offset_y
-    //                            more negative to shift left
-    //                                            more negative to shift up
-    [ x,        y,        8,        29,        -3,            -24, ANIM]
-    [ x+9,      y,        22,        20,        -8,        -15, ANIM]
-    [ x+32,     y,        33,        16,        0,        -12, ANIM]
-    [ x+66,     y,        22,        20,        -4,            -11, ANIM]
+ //left_x, upper_y, width, height, offset_x, offset_y
+ //  more negative to shift left
+ //   more negative to shift up
+ [ x,     y, 8,  29, -3,  -24, ANIM]
+ [ x+9,   y, 22, 20, -8,  -15, ANIM]
+ [ x+32,  y, 33, 16, 0,   -12, ANIM]
+ [ x+66,  y, 22, 20, -4,  -11, ANIM]
 
-    [ x+89,     y,        8,        29,        -3,            -16, ANIM]
-    [ x+98,     y,        22,        20,        -16,        -11, ANIM]
-    [ x+121,    y,        33,        16,        -16,        -12, ANIM]
-    [ x+155,    y,        22,        20,        -12,        -15, ANIM]
+ [ x+89,  y, 8,  29, -3,  -16, ANIM]
+ [ x+98,  y, 22, 20, -16, -11, ANIM]
+ [ x+121, y, 33, 16, -16, -12, ANIM]
+ [ x+155, y, 22, 20, -12, -15, ANIM]
 }
 
 template template_4_r(x, y) { //WIP
-    //left_x, upper_y, width, height, offset_x, offset_y
-    //                            more negative to shift left
-    //                                            more negative to shift up
-    [ x+89,     y,        8,        29,        -3,            -24, ANIM]
-    [ x+98,     y,        22,        20,        -8,        -15, ANIM]
-    [ x+121,    y,        33,        16,        0,        -12, ANIM]
-    [ x+155,    y,        22,        20,        -4,            -11, ANIM]
+ //left_x, upper_y, width, height, offset_x, offset_y
+ //  more negative to shift left
+ //   more negative to shift up
+ [ x+89,  y, 8,  29, -3,  -24, ANIM]
+ [ x+98,  y, 22, 20, -8,  -15, ANIM]
+ [ x+121, y, 33, 16, -24, -8,  ANIM]
+ [ x+155, y, 22, 20, -12, -15, ANIM]
 
-    [ x,        y,        8,        29,        -3,            -16, ANIM]
-    [ x+9,      y,        22,        20,        -16,        -11, ANIM]
-    [ x+32,     y,        33,        16,        -16,        -12, ANIM]
-    [ x+66,     y,        22,        20,        -12,        -15, ANIM]
+ [ x,     y, 8,  29, -3,   -16, ANIM]
+ [ x+9,   y, 22, 20, -16,  -11, ANIM]
+ [ x+32,  y, 33, 16, -16,  -12, ANIM]
+ [ x+66,  y, 22, 20, -12,  -15, ANIM]
 }
 
 template template_4_repeat(x, y) {
@@ -4373,6 +4373,179 @@ item(FEAT_TRAINS, Item_Clyde_JT22HC2_BG_Liv0, Clyde_JT22HC2_Liv0_BG_ID) {
 }
 }
 
+//ID
+const EE_SE26_ID = 8400;
+//introduction_date
+const EE_SE26_IntroDate = date(1951, 1, 1);
+//speed
+const EE_SE26_Speed = 35;
+//cost_factor
+const EE_SE26_CostFactor = 27;
+//running_cost_factor
+const EE_SE26_RunningCostFactor = 73;
+//power
+const EE_SE26_Power = 350;
+//weight
+const EE_SE26_Weight = 48;
+//length
+const EE_SE26_Length = 4;
+
+//Animated Parts
+spriteset(spriteset_EE_SE26_Anim1,   "gfx/EE_SE26_Anim1.png") {template_4(7, 39)}
+spriteset(spriteset_EE_SE26_Anim2,   "gfx/EE_SE26_Anim2.png") {template_4(7, 39)}
+spriteset(spriteset_EE_SE26_Anim3,   "gfx/EE_SE26_Anim3.png") {template_4(7, 39)}
+spriteset(spriteset_EE_SE26_Anim4,   "gfx/EE_SE26_Anim4.png") {template_4(7, 39)}
+
+spriteset(spriteset_EE_SE26_Anim1_r,   "gfx/EE_SE26_Anim1.png") {template_4_r(7, 39)}
+spriteset(spriteset_EE_SE26_Anim2_r,   "gfx/EE_SE26_Anim2.png") {template_4_r(7, 39)}
+spriteset(spriteset_EE_SE26_Anim3_r,   "gfx/EE_SE26_Anim3.png") {template_4_r(7, 39)}
+spriteset(spriteset_EE_SE26_Anim4_r,   "gfx/EE_SE26_Anim4.png") {template_4_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_EE_SE26_Animation, motion_counter % 4){
+    0: spriteset_EE_SE26_Anim1;
+    1: spriteset_EE_SE26_Anim2;
+    2: spriteset_EE_SE26_Anim3;
+    3: spriteset_EE_SE26_Anim4;
+    spriteset_EE_SE26_Anim1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_EE_SE26_Animation_Reversed, motion_counter % 4){
+    0: spriteset_EE_SE26_Anim4;
+    1: spriteset_EE_SE26_Anim3;
+    2: spriteset_EE_SE26_Anim2;
+    3: spriteset_EE_SE26_Anim1;
+    spriteset_EE_SE26_Anim4;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_EE_SE26_Animation_Direction, train_is_driving_backwards){
+    0: switch_EE_SE26_Animation;
+    1: switch_EE_SE26_Animation_Reversed;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_EE_SE26_Animation_Direction_Alt, train_is_driving_backwards){
+    0: switch_EE_SE26_Animation_Reversed;
+    1: switch_EE_SE26_Animation;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_EE_SE26_Animation_Flipcheck, vehicle_is_flipped){
+    0: switch_EE_SE26_Animation_Direction;
+    1: switch_EE_SE26_Animation_Direction_Alt;
+}
+
+//EE_SE26_Liv0
+spriteset(spriteset_EE_SE26_Liv0_Purchase,   "gfx/EE_SE26_Liv0.png") {template_purchase_4(7, 21)}
+spriteset(spriteset_EE_SE26_Liv0,   "gfx/EE_SE26_Liv0.png") {template_4(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_EE_SE26_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EE_SE26_Liv0_Purchase;
+    1: switch_Couplers_4_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_EE_SE26_Liv0_SpriteStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_EE_SE26_Liv0;
+	1: switch_EE_SE26_Animation_Flipcheck;
+	2: switch_Couplers_4_Repeat;
+}
+
+const EE_SE26_Liv0_ID = (EE_SE26_ID + Liv0_ID);
+//EE_SE26_Liv0
+item(FEAT_TRAINS, Item_EE_SE26_Liv0, EE_SE26_Liv0_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_EE_SE26);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              EE_SE26_IntroDate;		
+		length:                         EE_SE26_Length;
+		
+		speed:							EE_SE26_Speed km/h;
+		cost_factor:					EE_SE26_CostFactor;
+		running_cost_factor:			EE_SE26_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							EE_SE26_Power;
+		weight:							EE_SE26_Weight;
+		
+//        variant_group: 					Item_EE_SE26_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_EE_SE26_Liv0_SpriteStack;
+//		sound_effect: 					switch_EMD_16_567;
+        purchase: 						switch_EE_SE26_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_EE_SE26);
+		reverse_build_probability: 		return 50;
+}
+}
+
+const EE_SE26_BG_Liv0_ID = (EE_SE26_Liv0_ID + 50);
+//EE_SE26_BG_Liv0
+item(FEAT_TRAINS, Item_EE_SE26_BG_Liv0, EE_SE26_BG_Liv0_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_EE_SE26_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              EE_SE26_IntroDate;		
+		length:                         EE_SE26_Length;
+		
+		speed:							EE_SE26_Speed km/h;
+		cost_factor:					EE_SE26_CostFactor;
+		running_cost_factor:			EE_SE26_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							EE_SE26_Power;
+		weight:							EE_SE26_Weight;
+		
+//        variant_group: 					Item_EE_SE26_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_EE_SE26_Liv0_SpriteStack;
+//		sound_effect: 					switch_EMD_16_567;
+        purchase: 						switch_EE_SE26_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_EE_SE26_BG);
+		reverse_build_probability: 		return 50;
+}
+}
+
 //AGE_41Class_Liv0
 spriteset(spriteset_AGE_41Class_Liv0_Purchase,   "gfx/AGE_41Class_Liv0.png") {template_purchase_6(7, 21)}
 spriteset(spriteset_AGE_41Class_Liv0,   "gfx/AGE_41Class_Liv0.png") {template_6_repeat(7, 39)} // <- Define a wagon, in this case the cab
@@ -4394,7 +4567,7 @@ switch (FEAT_TRAINS, SELF, switch_AGE_41Class_Liv0_Normal_Stack, [
     1: switch_Couplers_6_Repeat;
 }
 
-item(FEAT_TRAINS, Item_AGE_41Class_Liv0, 5550) {
+item(FEAT_TRAINS, Item_AGE_41Class_Liv0, 8650) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
@@ -4437,7 +4610,464 @@ item(FEAT_TRAINS, Item_AGE_41Class_Liv0, 5550) {
 }
 
 //ID
-const Clyde_G18BM_ID = 10100;
+const Tulloch_1MS_ID = 9400;
+//introduction_date
+const Tulloch_1MS_IntroDate = date(1960, 1, 1);
+//speed
+const Tulloch_1MS_Speed = 35;
+//cost_factor
+const Tulloch_1MS_CostFactor = 32;
+//running_cost_factor
+const Tulloch_1MS_RunningCostFactor = 85;
+//power
+const Tulloch_1MS_Power = 650;
+//weight
+const Tulloch_1MS_Weight = 48;
+//length
+const Tulloch_1MS_Length = 4;
+
+//Animated Parts
+spriteset(spriteset_Tulloch_1MS_Anim1,   "gfx/Tulloch_1MS_Anim1.png") {template_4(7, 39)}
+spriteset(spriteset_Tulloch_1MS_Anim2,   "gfx/Tulloch_1MS_Anim2.png") {template_4(7, 39)}
+spriteset(spriteset_Tulloch_1MS_Anim3,   "gfx/Tulloch_1MS_Anim3.png") {template_4(7, 39)}
+spriteset(spriteset_Tulloch_1MS_Anim4,   "gfx/Tulloch_1MS_Anim4.png") {template_4(7, 39)}
+
+spriteset(spriteset_Tulloch_1MS_Anim1_r,   "gfx/Tulloch_1MS_Anim1.png") {template_4_r(7, 39)}
+spriteset(spriteset_Tulloch_1MS_Anim2_r,   "gfx/Tulloch_1MS_Anim2.png") {template_4_r(7, 39)}
+spriteset(spriteset_Tulloch_1MS_Anim3_r,   "gfx/Tulloch_1MS_Anim3.png") {template_4_r(7, 39)}
+spriteset(spriteset_Tulloch_1MS_Anim4_r,   "gfx/Tulloch_1MS_Anim4.png") {template_4_r(7, 39)}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_1MS_Animation, motion_counter % 4){
+    0: spriteset_Tulloch_1MS_Anim1;
+    1: spriteset_Tulloch_1MS_Anim2;
+    2: spriteset_Tulloch_1MS_Anim3;
+    3: spriteset_Tulloch_1MS_Anim4;
+    spriteset_Tulloch_1MS_Anim1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Tulloch_1MS_Animation_Reversed, motion_counter % 4){
+    0: spriteset_Tulloch_1MS_Anim4;
+    1: spriteset_Tulloch_1MS_Anim3;
+    2: spriteset_Tulloch_1MS_Anim2;
+    3: spriteset_Tulloch_1MS_Anim1;
+    spriteset_Tulloch_1MS_Anim4;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Tulloch_1MS_Animation_Direction, train_is_driving_backwards){
+    0: switch_Tulloch_1MS_Animation;
+    1: switch_Tulloch_1MS_Animation_Reversed;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Tulloch_1MS_Animation_Direction_Alt, train_is_driving_backwards){
+    0: switch_Tulloch_1MS_Animation_Reversed;
+    1: switch_Tulloch_1MS_Animation;
+}
+
+switch(FEAT_TRAINS, PARENT, switch_Tulloch_1MS_Animation_Flipcheck, vehicle_is_flipped){
+    0: switch_Tulloch_1MS_Animation_Direction;
+    1: switch_Tulloch_1MS_Animation_Direction_Alt;
+}
+
+//Tulloch_1MS_Liv0
+spriteset(spriteset_Tulloch_1MS_Liv0_Purchase,   "gfx/Tulloch_1MS_Liv0.png") {template_purchase_4(7, 21)}
+spriteset(spriteset_Tulloch_1MS_Liv0,   "gfx/Tulloch_1MS_Liv0.png") {template_4(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Tulloch_1MS_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_1MS_Liv0_Purchase;
+    1: switch_Couplers_4_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Tulloch_1MS_Liv0_SpriteStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_1MS_Liv0;
+	1: switch_Tulloch_1MS_Animation_Flipcheck;
+	2: switch_Couplers_4_Repeat;
+}
+
+const Tulloch_1MS_Liv0_ID = (Tulloch_1MS_ID + Liv0_ID);
+//Tulloch_1MS_Liv0
+item(FEAT_TRAINS, Item_Tulloch_1MS_Liv0, Tulloch_1MS_Liv0_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_TULLOCH_1MS);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Tulloch_1MS_IntroDate;		
+		length:                         Tulloch_1MS_Length;
+		
+		speed:							Tulloch_1MS_Speed km/h;
+		cost_factor:					Tulloch_1MS_CostFactor;
+		running_cost_factor:			Tulloch_1MS_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							Tulloch_1MS_Power;
+		weight:							Tulloch_1MS_Weight;
+		
+//        variant_group: 					Item_Tulloch_1MS_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_Tulloch_1MS_Liv0_SpriteStack;
+//		sound_effect: 					switch_EMD_16_567;
+        purchase: 						switch_Tulloch_1MS_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_TULLOCH_1MS);
+		reverse_build_probability: 		return 50;
+}
+}
+
+const Tulloch_1MS_BG_Liv0_ID = (Tulloch_1MS_Liv0_ID + 50);
+//Tulloch_1MS_BG_Liv0
+item(FEAT_TRAINS, Item_Tulloch_1MS_BG_Liv0, Tulloch_1MS_BG_Liv0_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_TULLOCH_1MS_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Tulloch_1MS_IntroDate;		
+		length:                         Tulloch_1MS_Length;
+		
+		speed:							Tulloch_1MS_Speed km/h;
+		cost_factor:					Tulloch_1MS_CostFactor;
+		running_cost_factor:			Tulloch_1MS_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							Tulloch_1MS_Power;
+		weight:							Tulloch_1MS_Weight;
+		
+//        variant_group: 					Item_Tulloch_1MS_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_Tulloch_1MS_Liv0_SpriteStack;
+//		sound_effect: 					switch_EMD_16_567;
+        purchase: 						switch_Tulloch_1MS_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_TULLOCH_1MS_BG);
+		reverse_build_probability: 		return 50;
+}
+}
+
+//ID
+const Clyde_G6B_ID = 9750;
+//introduction_date
+const Clyde_G6B_IntroDate = date(1963, 1, 1);
+//speed
+const Clyde_G6B_Speed = 65;
+//cost_factor
+const Clyde_G6B_CostFactor = 32;
+//running_cost_factor
+const Clyde_G6B_RunningCostFactor = 85;
+//power
+const Clyde_G6B_Power = 640;
+//weight
+const Clyde_G6B_Weight = 64;
+//length
+const Clyde_G6B_Length = 5;
+
+//Clyde_G6B_Liv0
+spriteset(spriteset_Clyde_G6B_Liv0_Purchase,   "gfx/Clyde_G6B_Liv0.png") {template_purchase_5(7, 21)}
+spriteset(spriteset_Clyde_G6B_Liv0,   "gfx/Clyde_G6B_Liv0.png") {template_5(7, 39)}
+spriteset(spriteset_Clyde_G6B_Liv0_r,   "gfx/Clyde_G6B_Liv0.png") {template_5_r(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Clyde_G6B_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_G6B_Liv0_Purchase;
+    1: switch_Couplers_5_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Clyde_G6B_Liv0_Fw, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_G6B_Liv0;
+	1: switch_Couplers_5_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Clyde_G6B_Liv0_r, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Clyde_G6B_Liv0_r;
+	1: switch_Couplers_5_Repeat;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Clyde_G6B_Liv0_pair, position_in_vehid_chain % 2) {
+ 1: switch_Clyde_G6B_Liv0_r;
+  switch_Clyde_G6B_Liv0_Fw;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Clyde_G6B_Liv0_rear, position_in_vehid_chain_from_end) {
+ 0: switch_Clyde_G6B_Liv0_r;
+  switch_Clyde_G6B_Liv0_pair;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Clyde_G6B_Liv0_position, position_in_consist) {
+ 0: switch_Clyde_G6B_Liv0_Fw;
+  switch_Clyde_G6B_Liv0_rear;
+}
+
+const Clyde_G6B_Liv0_ID = (Clyde_G6B_ID + Liv0_ID);
+//Clyde_G6B_Liv0
+item(FEAT_TRAINS, Item_Clyde_G6B_Liv0, Clyde_G6B_Liv0_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_CLYDE_G6B);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Clyde_G6B_IntroDate;		
+		length:                         Clyde_G6B_Length;
+		
+		speed:							Clyde_G6B_Speed km/h;
+		cost_factor:					Clyde_G6B_CostFactor;
+		running_cost_factor:			Clyde_G6B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							Clyde_G6B_Power;
+		weight:							Clyde_G6B_Weight;
+		
+//        variant_group: 					Item_Clyde_G6B_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_Clyde_G6B_Liv0_position;
+//		sound_effect: 					switch_EMD_16_567;
+        purchase: 						switch_Clyde_G6B_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_CLYDE_G6B);
+		reverse_build_probability: 		return 25;
+}
+}
+
+const Clyde_G6B_BG_Liv0_ID = (Clyde_G6B_Liv0_ID + 50);
+//Clyde_G6B_BG_Liv0
+item(FEAT_TRAINS, Item_Clyde_G6B_BG_Liv0, Clyde_G6B_BG_Liv0_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_CLYDE_G6B_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Clyde_G6B_IntroDate;		
+		length:                         Clyde_G6B_Length;
+		
+		speed:							Clyde_G6B_Speed km/h;
+		cost_factor:					Clyde_G6B_CostFactor;
+		running_cost_factor:			Clyde_G6B_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							Clyde_G6B_Power;
+		weight:							Clyde_G6B_Weight;
+		
+//        variant_group: 					Item_Clyde_G6B_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_Clyde_G6B_Liv0_position;
+//		sound_effect: 					switch_EMD_16_567;
+        purchase: 						switch_Clyde_G6B_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_CLYDE_G6B_BG);
+		reverse_build_probability: 		return 25;
+}
+}
+
+//ID
+const Tulloch_2MS_ID = 10350;
+//introduction_date
+const Tulloch_2MS_IntroDate = date(1964, 1, 1);
+//speed
+const Tulloch_2MS_Speed = 70;
+//cost_factor
+const Tulloch_2MS_CostFactor = 37;
+//running_cost_factor
+const Tulloch_2MS_RunningCostFactor = 99;
+//power
+const Tulloch_2MS_Power = 1100;
+//weight
+const Tulloch_2MS_Weight = 80;
+//length
+const Tulloch_2MS_Length = 5;
+
+//Tulloch_2MS_Liv0
+spriteset(spriteset_Tulloch_2MS_Liv0_Purchase,   "gfx/Tulloch_2MS_Liv0.png") {template_purchase_5(7, 21)}
+spriteset(spriteset_Tulloch_2MS_Liv0,   "gfx/Tulloch_2MS_Liv0.png") {template_5(7, 39)}
+
+//Purchase Sprite Stacker
+switch (FEAT_TRAINS, SELF, switch_Tulloch_2MS_Liv0_Purchase_Stack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 1 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_2MS_Liv0_Purchase;
+    1: switch_Couplers_5_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Tulloch_2MS_Liv0_SpriteStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Tulloch_2MS_Liv0;
+	1: switch_Couplers_5_Repeat;
+}
+
+const Tulloch_2MS_Liv0_ID = (Tulloch_2MS_ID + Liv0_ID);
+//Tulloch_2MS_Liv0
+item(FEAT_TRAINS, Item_Tulloch_2MS_Liv0, Tulloch_2MS_Liv0_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_TULLOCH_2MS);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Tulloch_2MS_IntroDate;		
+		length:                         Tulloch_2MS_Length;
+		
+		speed:							Tulloch_2MS_Speed km/h;
+		cost_factor:					Tulloch_2MS_CostFactor;
+		running_cost_factor:			Tulloch_2MS_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							Tulloch_2MS_Power;
+		weight:							Tulloch_2MS_Weight;
+		
+//        variant_group: 					Item_Tulloch_2MS_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_Tulloch_2MS_Liv0_SpriteStack;
+//		sound_effect: 					switch_EMD_16_567;
+        purchase: 						switch_Tulloch_2MS_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_TULLOCH_2MS);
+		reverse_build_probability: 		return 50;
+}
+}
+
+const Tulloch_2MS_BG_Liv0_ID = (Tulloch_2MS_Liv0_ID + 50);
+//Tulloch_2MS_BG_Liv0
+item(FEAT_TRAINS, Item_Tulloch_2MS_BG_Liv0, Tulloch_2MS_BG_Liv0_ID) {
+    property {
+        sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_DIESEL;
+        engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
+
+        name:                           string(STR_NAME_TULLOCH_2MS_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.3;
+		
+        introduction_date:              Tulloch_2MS_IntroDate;		
+		length:                         Tulloch_2MS_Length;
+		
+		speed:							Tulloch_2MS_Speed km/h;
+		cost_factor:					Tulloch_2MS_CostFactor;
+		running_cost_factor:			Tulloch_2MS_RunningCostFactor;
+		cargo_capacity: 				0;
+		power:							Tulloch_2MS_Power;
+		weight:							Tulloch_2MS_Weight;
+		
+//        variant_group: 					Item_Tulloch_2MS_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+    }
+    graphics {
+        default: 						switch_Tulloch_2MS_Liv0_SpriteStack;
+//		sound_effect: 					switch_EMD_16_567;
+        purchase: 						switch_Tulloch_2MS_Liv0_Purchase_Stack;
+        additional_text: 				string(STR_INFO_TULLOCH_2MS_BG);
+		reverse_build_probability: 		return 50;
+}
+}
+
+//ID
+const Clyde_G18BM_ID = 10250;
 //introduction_date
 const Clyde_G18BM_IntroDate = date(1968, 1, 1);
 //speed
