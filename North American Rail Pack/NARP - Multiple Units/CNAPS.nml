@@ -5692,7 +5692,7 @@ item(FEAT_TRAINS, Item_Budd_MetrolinerI_Liv0, 21140) {
         length:                            8;
 
         weight:                        63 ton;
-        speed:                            130 mph;
+        speed:                            131 mph;
         power:                            2400 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     16;
@@ -5946,7 +5946,7 @@ item(FEAT_TRAINS, Item_Budd_MetrolinerI_Liv1, 21141) {
         length:                            8;
 
         weight:                        63 ton;
-        speed:                            130 mph;
+        speed:                            131 mph;
         power:                            2400 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     16;
@@ -6226,7 +6226,7 @@ item(FEAT_TRAINS, Item_Budd_MetrolinerII_Liv0, 21180) {
         length:                            8;
 
         weight:                        63 ton;
-        speed:                            130 mph;
+        speed:                            137 mph;
         power:                            2400 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     16;
@@ -6502,7 +6502,7 @@ item(FEAT_TRAINS, Item_Budd_MetrolinerII_Liv1, 21181) {
         length:                            8;
 
         weight:                        63 ton;
-        speed:                            130 mph;
+        speed:                            137 mph;
         power:                            2400 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     16;
