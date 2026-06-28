@@ -1460,7 +1460,7 @@ const NSW600700Railmotor_ID = 5640;
 //introduction_date
 const NSW600700Railmotor_IntroDate = date(1949, 1, 1);
 //speed
-const NSW600700Railmotor_Speed = 120;
+const NSW600700Railmotor_Speed = 115;
 //cost_factor
 const NSW600700Railmotor_CostFactor = 23;
 //running_cost_factor
@@ -3579,7 +3579,7 @@ const DEBSet_ID = 8140;
 //introduction_date
 const DEBSet_IntroDate = date(1951, 1, 1);
 //speed
-const DEBSet_Speed = 120;
+const DEBSet_Speed = 115;
 //cost_factor
 const DEBSet_CostFactor = 28;
 //running_cost_factor
@@ -4472,7 +4472,7 @@ const SilverFern_ID = 8300;
 //introduction_date
 const SilverFern_IntroDate = date(1972, 1, 1);
 //speed
-const SilverFern_Speed = 120;
+const SilverFern_Speed = 115;
 //cost_factor
 const SilverFern_CostFactor = 30;
 //running_cost_factor
@@ -6386,7 +6386,7 @@ const SydneyStandardEMU_ID = 11140;
 //introduction_date
 const SydneyStandardEMU_IntroDate = date(1926, 1, 1);
 //speed
-const SydneyStandardEMU_Speed = 120;
+const SydneyStandardEMU_Speed = 115;
 //cost_factor
 const SydneyStandardEMU_CostFactor = 19;
 //running_cost_factor
@@ -7320,7 +7320,7 @@ const TullochSuburbanEMU_ID = 11180;
 //introduction_date
 const TullochSuburbanEMU_IntroDate = date(1940, 1, 1);
 //speed
-const TullochSuburbanEMU_Speed = 120;
+const TullochSuburbanEMU_Speed = 115;
 //cost_factor
 const TullochSuburbanEMU_CostFactor = 19;
 //running_cost_factor
@@ -7520,7 +7520,7 @@ const Harris_ID = 11220;
 //introduction_date
 const Harris_IntroDate = date(1956, 1, 1);
 //speed
-const Harris_Speed = 120;
+const Harris_Speed = 115;
 //cost_factor
 const Harris_CostFactor = 25;
 //running_cost_factor
@@ -7739,7 +7739,7 @@ const SputnikSuburbanEMU_ID = 11240;
 //introduction_date
 const SputnikSuburbanEMU_IntroDate = date(1957, 1, 1);
 //speed
-const SputnikSuburbanEMU_Speed = 120;
+const SputnikSuburbanEMU_Speed = 115;
 //cost_factor
 const SputnikSuburbanEMU_CostFactor = 22;
 //running_cost_factor
@@ -7939,7 +7939,7 @@ const Hitachi_ID = 11320;
 //introduction_date
 const Hitachi_IntroDate = date(1972, 1, 1);
 //speed
-const Hitachi_Speed = 120;
+const Hitachi_Speed = 115;
 //cost_factor
 const Hitachi_CostFactor = 23;
 //running_cost_factor
@@ -8279,7 +8279,7 @@ const AucklandART_ID = 11340;
 //introduction_date
 const AucklandART_IntroDate = date(1974, 1, 1);
 //speed
-const AucklandART_Speed = 120;
+const AucklandART_Speed = 115;
 //cost_factor
 const AucklandART_CostFactor = 23;
 //running_cost_factor
@@ -8873,7 +8873,7 @@ const Comeng_SMU_ID = 11440;
 //introduction_date
 const Comeng_SMU_IntroDate = date(1981, 1, 1);
 //speed
-const Comeng_SMU_Speed = 120;
+const Comeng_SMU_Speed = 115;
 //cost_factor
 const Comeng_SMU_CostFactor = 23;
 //running_cost_factor
@@ -12341,7 +12341,7 @@ const CAF_CxK_ID = 11680;
 //introduction_date
 const CAF_CxK_IntroDate = date(2014, 1, 1);
 //speed
-const CAF_CxK_Speed = 120;
+const CAF_CxK_Speed = 115;
 //cost_factor
 const CAF_CxK_CostFactor = 26;
 //running_cost_factor
@@ -15118,7 +15118,7 @@ const Goninan_Tangara_ID = 12220;
 //introduction_date
 const Goninan_Tangara_IntroDate = date(1988, 1, 1);
 //speed
-const Goninan_Tangara_Speed = 120;
+const Goninan_Tangara_Speed = 115;
 //cost_factor
 const Goninan_Tangara_CostFactor = 36;
 //running_cost_factor
@@ -15646,7 +15646,7 @@ const Goninan_4D_ID = 12240;
 //introduction_date
 const Goninan_4D_IntroDate = date(1992, 1, 1);
 //speed
-const Goninan_4D_Speed = 120;
+const Goninan_4D_Speed = 115;
 //cost_factor
 const Goninan_4D_CostFactor = 37;
 //running_cost_factor
@@ -16043,7 +16043,7 @@ item(FEAT_TRAINS, Item_EDi_Millenium_Liv0, EDi_Millenium_ID_Liv0) {
 //ID
 const TaitInterurban_ID = 13020;
 //introduction_date
-const TaitInterurban_IntroDate = date(1922, 1, 1);
+const TaitInterurban_IntroDate = date(1917, 1, 1);
 //speed
 const TaitInterurban_Speed = 120;
 //cost_factor
@@ -16897,7 +16897,7 @@ const TullochInterurban_ID = 13040;
 //introduction_date
 const TullochInterurban_IntroDate = date(1937, 1, 1);
 //speed
-const TullochInterurban_Speed = 120;
+const TullochInterurban_Speed = 115;
 //cost_factor
 const TullochInterurban_CostFactor = 24;
 //running_cost_factor
