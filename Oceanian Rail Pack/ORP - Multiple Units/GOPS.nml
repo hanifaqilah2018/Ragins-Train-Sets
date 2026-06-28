@@ -16895,9 +16895,9 @@ item(FEAT_TRAINS, Item_TaitInterurban_Liv3, TaitInterurban_ID_Liv3) {
 //ID
 const TullochInterurban_ID = 13040;
 //introduction_date
-const TullochInterurban_IntroDate = date(1937, 1, 1);
+const TullochInterurban_IntroDate = date(1932, 1, 1);
 //speed
-const TullochInterurban_Speed = 115;
+const TullochInterurban_Speed = 130;
 //cost_factor
 const TullochInterurban_CostFactor = 24;
 //running_cost_factor
