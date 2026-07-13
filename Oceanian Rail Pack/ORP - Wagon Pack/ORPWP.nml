@@ -3336,7 +3336,7 @@ const VLine_HType_ID = 6050;
 //introduction_date
 const VLine_HType_IntroDate = date(1984, 1, 1);
 //speed
-const VLine_HType_Speed = 115;
+const VLine_HType_Speed = 120;
 //cost_factor
 const VLine_HType_CostFactor = 57;
 //running_cost_factor
@@ -4324,7 +4324,7 @@ const Goninan_Tangara_Coach_ID = 6800;
 //introduction_date
 const Goninan_Tangara_Coach_IntroDate = date(1989, 1, 1);
 //speed
-const Goninan_Tangara_Coach_Speed = 115;
+const Goninan_Tangara_Coach_Speed = 120;
 //cost_factor
 const Goninan_Tangara_Coach_CostFactor = 87;
 //running_cost_factor
@@ -4912,7 +4912,7 @@ const Goninan_4D_Coach_ID = 6900;
 //introduction_date
 const Goninan_4D_Coach_IntroDate = date(1992, 1, 1);
 //speed
-const Goninan_4D_Coach_Speed = 115;
+const Goninan_4D_Coach_Speed = 120;
 //cost_factor
 const Goninan_4D_Coach_CostFactor = 88;
 //running_cost_factor
@@ -6337,7 +6337,7 @@ const Tulloch_InterurbanCoach_ID = 9900;
 //introduction_date
 const Tulloch_InterurbanCoach_IntroDate = date(1948, 1, 1);
 //speed
-const Tulloch_InterurbanCoach_Speed = 115;
+const Tulloch_InterurbanCoach_Speed = 120;
 //cost_factor
 const Tulloch_InterurbanCoach_CostFactor = 50;
 //running_cost_factor
@@ -7326,7 +7326,7 @@ item (FEAT_TRAINS, Item_SilverStar_Liv0, SilverStar_Liv0_ID) {
 		refit_cost:                     0;
         dual_headed:                    0;
         air_drag_coefficient:           0.08;
-        model_life:                     30;
+        model_life:                     40;
 		
         introduction_date:              SilverStar_IntroDate;		
 		length:                         8;
@@ -7406,7 +7406,7 @@ item (FEAT_TRAINS, Item_Mail_SilverStar_Liv0, Mail_SilverStar_Liv0_ID) {
 		refit_cost:                     0;
         dual_headed:                    0;
         air_drag_coefficient:           0.08;
-        model_life:                     30;
+        model_life:                     40;
 		
         introduction_date:              SilverStar_IntroDate;		
 		length:                         8;
@@ -7439,7 +7439,7 @@ const VLine_RType_ID = 11250;
 //introduction_date
 const VLine_RType_IntroDate = date(1983, 1, 1);
 //speed
-const VLine_RType_Speed = 160;
+const VLine_RType_Speed = 168;
 //cost_factor
 const VLine_RType_CostFactor = 68;
 //running_cost_factor
@@ -7957,7 +7957,7 @@ const BREL_Mk3_ID = 11350;
 //introduction_date
 const BREL_Mk3_IntroDate = date(1984, 1, 1);
 //speed
-const BREL_Mk3_Speed = 160;
+const BREL_Mk3_Speed = 210;
 //cost_factor
 const BREL_Mk3_CostFactor = 68;
 //running_cost_factor
@@ -8782,9 +8782,9 @@ const Gen7_LoadingSpeed = 5;
 //speed
 const Gen1_Speed = 60;
 const Gen2_Speed = 80;
-const Gen3_Speed = 80;
-const Gen4_Speed = 115;
-const Gen5_Speed = 115;
+const Gen3_Speed = 96;
+const Gen4_Speed = 120;
+const Gen5_Speed = 120;
 const Gen6_Speed = 130;
 const Gen7_Speed = 145;
 

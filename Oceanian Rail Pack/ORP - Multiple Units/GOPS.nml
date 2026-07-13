@@ -1388,7 +1388,7 @@ const NZR_Vulcan_ID = 5580;
 //introduction_date
 const NZR_Vulcan_IntroDate = date(1940, 1, 1);
 //speed
-const NZR_Vulcan_Speed = 120;
+const NZR_Vulcan_Speed = 100;
 //cost_factor
 const NZR_Vulcan_CostFactor = 22;
 //running_cost_factor
@@ -4472,7 +4472,7 @@ const SilverFern_ID = 8300;
 //introduction_date
 const SilverFern_IntroDate = date(1972, 1, 1);
 //speed
-const SilverFern_Speed = 115;
+const SilverFern_Speed = 100;
 //cost_factor
 const SilverFern_CostFactor = 30;
 //running_cost_factor
@@ -6386,7 +6386,7 @@ const SydneyStandardEMU_ID = 11140;
 //introduction_date
 const SydneyStandardEMU_IntroDate = date(1926, 1, 1);
 //speed
-const SydneyStandardEMU_Speed = 115;
+const SydneyStandardEMU_Speed = 100;
 //cost_factor
 const SydneyStandardEMU_CostFactor = 19;
 //running_cost_factor
@@ -7320,7 +7320,7 @@ const TullochSuburbanEMU_ID = 11180;
 //introduction_date
 const TullochSuburbanEMU_IntroDate = date(1940, 1, 1);
 //speed
-const TullochSuburbanEMU_Speed = 115;
+const TullochSuburbanEMU_Speed = 100;
 //cost_factor
 const TullochSuburbanEMU_CostFactor = 19;
 //running_cost_factor
@@ -7520,7 +7520,7 @@ const Harris_ID = 11220;
 //introduction_date
 const Harris_IntroDate = date(1956, 1, 1);
 //speed
-const Harris_Speed = 115;
+const Harris_Speed = 100;
 //cost_factor
 const Harris_CostFactor = 25;
 //running_cost_factor
@@ -7739,7 +7739,7 @@ const SputnikSuburbanEMU_ID = 11240;
 //introduction_date
 const SputnikSuburbanEMU_IntroDate = date(1957, 1, 1);
 //speed
-const SputnikSuburbanEMU_Speed = 115;
+const SputnikSuburbanEMU_Speed = 100;
 //cost_factor
 const SputnikSuburbanEMU_CostFactor = 22;
 //running_cost_factor
@@ -7939,7 +7939,7 @@ const Hitachi_ID = 11320;
 //introduction_date
 const Hitachi_IntroDate = date(1972, 1, 1);
 //speed
-const Hitachi_Speed = 115;
+const Hitachi_Speed = 120;
 //cost_factor
 const Hitachi_CostFactor = 23;
 //running_cost_factor
@@ -8279,7 +8279,7 @@ const AucklandART_ID = 11340;
 //introduction_date
 const AucklandART_IntroDate = date(1974, 1, 1);
 //speed
-const AucklandART_Speed = 115;
+const AucklandART_Speed = 100;
 //cost_factor
 const AucklandART_CostFactor = 23;
 //running_cost_factor
@@ -8873,7 +8873,7 @@ const Comeng_SMU_ID = 11440;
 //introduction_date
 const Comeng_SMU_IntroDate = date(1981, 1, 1);
 //speed
-const Comeng_SMU_Speed = 115;
+const Comeng_SMU_Speed = 120;
 //cost_factor
 const Comeng_SMU_CostFactor = 23;
 //running_cost_factor
@@ -9764,7 +9764,7 @@ const GreyGhost_ID = 11480;
 //introduction_date
 const GreyGhost_IntroDate = date(1982, 1, 1);
 //speed
-const GreyGhost_Speed = 115;
+const GreyGhost_Speed = 120;
 //cost_factor
 const GreyGhost_CostFactor = 24;
 //running_cost_factor
@@ -11019,7 +11019,7 @@ const Siemens_Nexas_ID = 11620;
 //introduction_date
 const Siemens_Nexas_IntroDate = date(2003, 1, 1);
 //speed
-const Siemens_Nexas_Speed = 115;
+const Siemens_Nexas_Speed = 120;
 //cost_factor
 const Siemens_Nexas_CostFactor = 25;
 //running_cost_factor
@@ -12341,7 +12341,7 @@ const CAF_CxK_ID = 11680;
 //introduction_date
 const CAF_CxK_IntroDate = date(2014, 1, 1);
 //speed
-const CAF_CxK_Speed = 115;
+const CAF_CxK_Speed = 120;
 //cost_factor
 const CAF_CxK_CostFactor = 26;
 //running_cost_factor
@@ -13430,7 +13430,7 @@ const Comeng_SSet_ID = 12040;
 //introduction_date
 const Comeng_SSet_IntroDate = date(1972, 1, 1);
 //speed
-const Comeng_SSet_Speed = 115;
+const Comeng_SSet_Speed = 120;
 //cost_factor
 const Comeng_SSet_CostFactor = 34;
 //running_cost_factor
@@ -15118,7 +15118,7 @@ const Goninan_Tangara_ID = 12220;
 //introduction_date
 const Goninan_Tangara_IntroDate = date(1988, 1, 1);
 //speed
-const Goninan_Tangara_Speed = 115;
+const Goninan_Tangara_Speed = 120;
 //cost_factor
 const Goninan_Tangara_CostFactor = 36;
 //running_cost_factor
@@ -15646,7 +15646,7 @@ const Goninan_4D_ID = 12240;
 //introduction_date
 const Goninan_4D_IntroDate = date(1992, 1, 1);
 //speed
-const Goninan_4D_Speed = 115;
+const Goninan_4D_Speed = 120;
 //cost_factor
 const Goninan_4D_CostFactor = 37;
 //running_cost_factor
