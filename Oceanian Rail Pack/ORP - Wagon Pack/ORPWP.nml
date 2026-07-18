@@ -24961,3 +24961,508 @@ item (FEAT_TRAINS, Item_Gen2B_BrakeVan_Liv0_BG, Gen2B_BrakeVan_ID_Liv0_BG) {
 		cargo_capacity: 				0;
 }
 }
+//TaitCoach_Liv1
+spriteset(spriteset_TaitCoach_Liv1_Purchase,   "gfx/TaitCoach_Liv1.png") {template_purchase(7, 21)}
+spriteset(spriteset_TaitCoach_Liv1,   "gfx/TaitCoach_Liv1.png") {template_8(7, 69)}
+spriteset(spriteset_TaitCoach_Liv1_Lead,   "gfx/TaitCoach_Liv1.png") {template_8(7, 39)}
+spriteset(spriteset_TaitCoach_Liv1_Rear,   "gfx/TaitCoach_Liv1.png") {template_8(7, 99)}
+
+switch(FEAT_TRAINS, SELF, sw_TaitCoach_Liv1_leadcheck, position_in_vehid_chain){
+    0 : spriteset_TaitCoach_Liv1_Lead;
+    return spriteset_TaitCoach_Liv1;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitCoach_Liv1_rearcheck, position_in_consist_from_end){
+    0 : spriteset_TaitCoach_Liv1_Rear;
+    return sw_TaitCoach_Liv1_leadcheck;
+}
+
+item (FEAT_TRAINS, Item_TaitCoach_Liv1, 31600) {
+    property {
+        climates_available: (param_RealDisable == 0 ) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    65;
+        running_cost_factor:            3;
+        loading_speed:                    25;
+
+        variant_group: Item_TaitCoach_Liv1;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_TAITCOACH);
+        introduction_date:                date(1910, 1, 1);
+
+        speed:                            80 km/h;
+        weight:                            32 ton;
+        cargo_capacity:                   87/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_TaitCoach_Liv1_rearcheck;
+    purchase:                            spriteset_TaitCoach_Liv1_Purchase;
+    additional_text: string(STR_INFO_TAITCOACH);
+}
+}
+
+//TaitCoach_Liv2
+spriteset(spriteset_TaitCoach_Liv2_Purchase,   "gfx/TaitCoach_Liv2.png") {template_purchase(7, 21)}
+spriteset(spriteset_TaitCoach_Liv2,   "gfx/TaitCoach_Liv2.png") {template_8(7, 69)}
+spriteset(spriteset_TaitCoach_Liv2_Lead,   "gfx/TaitCoach_Liv2.png") {template_8(7, 39)}
+spriteset(spriteset_TaitCoach_Liv2_Rear,   "gfx/TaitCoach_Liv2.png") {template_8(7, 99)}
+
+switch(FEAT_TRAINS, SELF, sw_TaitCoach_Liv2_leadcheck, position_in_vehid_chain){
+    0 : spriteset_TaitCoach_Liv2_Lead;
+    return spriteset_TaitCoach_Liv2;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitCoach_Liv2_rearcheck, position_in_consist_from_end){
+    0 : spriteset_TaitCoach_Liv2_Rear;
+    return sw_TaitCoach_Liv2_leadcheck;
+}
+
+item (FEAT_TRAINS, Item_TaitCoach_Liv2, 31601) {
+    property {
+        climates_available: (param_RealDisable == 0 ) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    65;
+        running_cost_factor:            3;
+        loading_speed:                    25;
+
+        variant_group: Item_TaitCoach_Liv1;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_TAITCOACH);
+        introduction_date:                date(1910, 1, 1);
+
+        speed:                            80 km/h;
+        weight:                            32 ton;
+        cargo_capacity:                   87/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_TaitCoach_Liv2_rearcheck;
+    purchase:                            spriteset_TaitCoach_Liv2_Purchase;
+    additional_text: string(STR_INFO_TAITCOACH);
+}
+}
+
+//TaitCoach_Liv3
+spriteset(spriteset_TaitCoach_Liv3_Purchase,   "gfx/TaitCoach_Liv3.png") {template_purchase(7, 21)}
+spriteset(spriteset_TaitCoach_Liv3,   "gfx/TaitCoach_Liv3.png") {template_8(7, 69)}
+spriteset(spriteset_TaitCoach_Liv3_Lead,   "gfx/TaitCoach_Liv3.png") {template_8(7, 39)}
+spriteset(spriteset_TaitCoach_Liv3_Rear,   "gfx/TaitCoach_Liv3.png") {template_8(7, 99)}
+
+switch(FEAT_TRAINS, SELF, sw_TaitCoach_Liv3_leadcheck, position_in_vehid_chain){
+    0 : spriteset_TaitCoach_Liv3_Lead;
+    return spriteset_TaitCoach_Liv3;
+}
+
+switch(FEAT_TRAINS, SELF, sw_TaitCoach_Liv3_rearcheck, position_in_consist_from_end){
+    0 : spriteset_TaitCoach_Liv3_Rear;
+    return sw_TaitCoach_Liv3_leadcheck;
+}
+
+item (FEAT_TRAINS, Item_TaitCoach_Liv3, 31602) {
+    property {
+        climates_available: (param_RealDisable == 0 ) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        RAIL;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            8;
+        cost_factor:                    65;
+        running_cost_factor:            3;
+        loading_speed:                    25;
+
+        variant_group: Item_TaitCoach_Liv1;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_TAITCOACH);
+        introduction_date:                date(1910, 1, 1);
+
+        speed:                            80 km/h;
+        weight:                            32 ton;
+        cargo_capacity:                   87/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_TaitCoach_Liv3_rearcheck;
+    purchase:                            spriteset_TaitCoach_Liv3_Purchase;
+    additional_text: string(STR_INFO_TAITCOACH);
+}
+}
+
+
+//SXCoach_Liv1
+spriteset(spriteset_SXCoach_Liv1_Purchase,   "gfx/SXCoach_Liv1.png") {template_purchase(7, 21)}
+spriteset(spriteset_SXCoach_Liv1,   "gfx/SXCoach_Liv1.png") {template_7(7, 69)}
+spriteset(spriteset_SXCoach_Liv1_Rear,   "gfx/SXCoach_Liv1.png") {template_7(7, 99)}
+
+switch(FEAT_TRAINS, SELF, sw_SXCoach_Liv1_rearcheck, position_in_consist_from_end){
+    0 : spriteset_SXCoach_Liv1_Rear;
+    return spriteset_SXCoach_Liv1;
+}
+
+item (FEAT_TRAINS, Item_SXCoach_Liv1, 31100) {
+    property {
+        climates_available: (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        NG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            7;
+        cost_factor:                    75;
+        running_cost_factor:            2;
+        loading_speed:                    5;
+
+        variant_group: Item_SXCoach_Liv1;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_SXCOACH);
+        introduction_date:                date(1961, 1, 1);
+
+        speed:                            100 km/h;
+        weight:                            28 ton;
+        cargo_capacity:                    82/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_SXCoach_Liv1_rearcheck;
+    purchase:                            spriteset_SXCoach_Liv1_Purchase;
+    additional_text: string(STR_INFO_SXCOACH);
+}
+}
+
+//SXCoach_Liv1_Cab
+spriteset(spriteset_SXCoach_Liv1_Cab_Purchase,   "gfx/SXCoach_Liv1.png") {template_purchase(187, 21)}
+spriteset(spriteset_SXCoach_Liv1_Cab,   "gfx/SXCoach_Liv1.png") {template_7(187, 39)}
+spriteset(spriteset_SXCoach_Liv1_Cab_Rear,   "gfx/SXCoach_Liv1.png") {template_7(187, 69)}
+
+switch(FEAT_TRAINS, SELF, sw_SXCoach_Liv1_Cab_rearcheck, position_in_consist_from_end){
+    0 : spriteset_SXCoach_Liv1_Cab_Rear;
+    return spriteset_SXCoach_Liv1_Cab;
+}
+
+item (FEAT_TRAINS, Item_SXCoach_Liv1_Cab, 31110) {
+    property {
+        climates_available: (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        NG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            7;
+        cost_factor:                    4;
+        running_cost_factor:            5;
+        loading_speed:                    30;
+
+        variant_group: Item_SXCoach_Liv1_Cab;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_SXCOACH_CAB);
+        introduction_date:                date(1961, 1, 1);
+        vehicle_life:                     50;
+        model_life:                        30;
+
+        speed:                            100 km/h;
+        power:                            0 hp;
+        weight:                            28 ton;
+        cargo_capacity:                    82/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_SXCoach_Liv1_Cab_rearcheck;
+    purchase:                            spriteset_SXCoach_Liv1_Cab_Purchase;
+    additional_text: string(STR_INFO_SXCOACH_CAB);
+}
+}
+
+//SXCoach_Liv2
+spriteset(spriteset_SXCoach_Liv2_Purchase,   "gfx/SXCoach_Liv2.png") {template_purchase(7, 21)}
+spriteset(spriteset_SXCoach_Liv2,   "gfx/SXCoach_Liv2.png") {template_7(7, 69)}
+spriteset(spriteset_SXCoach_Liv2_Rear,   "gfx/SXCoach_Liv2.png") {template_7(7, 99)}
+
+switch(FEAT_TRAINS, SELF, sw_SXCoach_Liv2_rearcheck, position_in_consist_from_end){
+    0 : spriteset_SXCoach_Liv2_Rear;
+    return spriteset_SXCoach_Liv2;
+}
+
+item (FEAT_TRAINS, Item_SXCoach_Liv2, 31101) {
+    property {
+        climates_available: (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        NG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            7;
+        cost_factor:                    75;
+        running_cost_factor:            2;
+        loading_speed:                    5;
+
+        variant_group: Item_SXCoach_Liv1;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_SXCOACH);
+        introduction_date:                date(1961, 1, 1);
+
+        speed:                            100 km/h;
+        weight:                            28 ton;
+        cargo_capacity:                    82/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_SXCoach_Liv2_rearcheck;
+    purchase:                            spriteset_SXCoach_Liv2_Purchase;
+    additional_text: string(STR_INFO_SXCOACH);
+}
+}
+
+//SXCoach_Liv2_Cab
+spriteset(spriteset_SXCoach_Liv2_Cab_Purchase,   "gfx/SXCoach_Liv2.png") {template_purchase(187, 21)}
+spriteset(spriteset_SXCoach_Liv2_Cab,   "gfx/SXCoach_Liv2.png") {template_7(187, 39)}
+spriteset(spriteset_SXCoach_Liv2_Cab_Rear,   "gfx/SXCoach_Liv2.png") {template_7(187, 69)}
+
+switch(FEAT_TRAINS, SELF, sw_SXCoach_Liv2_Cab_rearcheck, position_in_consist_from_end){
+    0 : spriteset_SXCoach_Liv2_Cab_Rear;
+    return spriteset_SXCoach_Liv2_Cab;
+}
+
+item (FEAT_TRAINS, Item_SXCoach_Liv2_Cab, 31111) {
+    property {
+        climates_available: (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        NG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            7;
+        cost_factor:                    4;
+        running_cost_factor:            5;
+        loading_speed:                    30;
+
+        variant_group: Item_SXCoach_Liv1_Cab;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_SXCOACH_CAB);
+        introduction_date:                date(1961, 1, 1);
+        vehicle_life:                     50;
+        model_life:                        30;
+
+        speed:                            100 km/h;
+        power:                            0 hp;
+        weight:                            28 ton;
+        cargo_capacity:                    82/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_SXCoach_Liv2_Cab_rearcheck;
+    purchase:                            spriteset_SXCoach_Liv2_Cab_Purchase;
+    additional_text: string(STR_INFO_SXCOACH_CAB);
+}
+}
+
+//SXCoach_Liv3
+spriteset(spriteset_SXCoach_Liv3_Purchase,   "gfx/SXCoach_Liv3.png") {template_purchase(7, 21)}
+spriteset(spriteset_SXCoach_Liv3,   "gfx/SXCoach_Liv3.png") {template_7(7, 69)}
+spriteset(spriteset_SXCoach_Liv3_Rear,   "gfx/SXCoach_Liv3.png") {template_7(7, 99)}
+
+switch(FEAT_TRAINS, SELF, sw_SXCoach_Liv3_rearcheck, position_in_consist_from_end){
+    0 : spriteset_SXCoach_Liv3_Rear;
+    return spriteset_SXCoach_Liv3;
+}
+
+item (FEAT_TRAINS, Item_SXCoach_Liv3, 31102) {
+    property {
+        climates_available: (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        NG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        model_life:                        30;
+
+        length:                            7;
+        cost_factor:                    75;
+        running_cost_factor:            2;
+        loading_speed:                    5;
+
+        variant_group: Item_SXCoach_Liv1;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_SXCOACH);
+        introduction_date:                date(1961, 1, 1);
+
+        speed:                            100 km/h;
+        weight:                            28 ton;
+        cargo_capacity:                    82/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_SXCoach_Liv3_rearcheck;
+    purchase:                            spriteset_SXCoach_Liv3_Purchase;
+    additional_text: string(STR_INFO_SXCOACH);
+}
+}
+
+//SXCoach_Liv3_Cab
+spriteset(spriteset_SXCoach_Liv3_Cab_Purchase,   "gfx/SXCoach_Liv3.png") {template_purchase(187, 21)}
+spriteset(spriteset_SXCoach_Liv3_Cab,   "gfx/SXCoach_Liv3.png") {template_7(187, 39)}
+spriteset(spriteset_SXCoach_Liv3_Cab_Rear,   "gfx/SXCoach_Liv3.png") {template_7(187, 69)}
+
+switch(FEAT_TRAINS, SELF, sw_SXCoach_Liv3_Cab_rearcheck, position_in_consist_from_end){
+    0 : spriteset_SXCoach_Liv3_Cab_Rear;
+    return spriteset_SXCoach_Liv3_Cab;
+}
+
+item (FEAT_TRAINS, Item_SXCoach_Liv3_Cab, 31112) {
+    property {
+        climates_available: (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        refittable_cargo_classes:        CC_PASSENGERS;
+        cargo_allow_refit:                [PASS, TOUR];
+        sprite_id:                        SPRITE_ID_NEW_TRAIN;
+        misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+        refit_cost:                        0;
+        track_type:                        NG_RAIL_ONLY;
+        ai_special_flag:                AI_FLAG_PASSENGER;
+        power:                            0 hp;
+        engine_class:                     ENGINE_CLASS_DIESEL;
+        dual_headed:                    0;
+        default_cargo_type:                PASS;
+        air_drag_coefficient:            0.08;
+        bitmask_vehicle_info:            0;
+
+        running_cost_base:                RUNNING_COST_DIESEL;
+
+        visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
+
+        model_life:                        30;
+
+        length:                            7;
+        cost_factor:                    4;
+        running_cost_factor:            5;
+        loading_speed:                    30;
+
+        variant_group: Item_SXCoach_Liv1_Cab;
+        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+
+        name:                             string(STR_NAME_SXCOACH_CAB);
+        introduction_date:                date(1961, 1, 1);
+        vehicle_life:                     50;
+        model_life:                        30;
+
+        speed:                            100 km/h;
+        power:                            0 hp;
+        weight:                            28 ton;
+        cargo_capacity:                    82/param_capacity_mod;
+    }
+    graphics {
+    default:                             sw_SXCoach_Liv3_Cab_rearcheck;
+    purchase:                            spriteset_SXCoach_Liv3_Cab_Purchase;
+    additional_text: string(STR_INFO_SXCOACH_CAB);
+}
+}
+
