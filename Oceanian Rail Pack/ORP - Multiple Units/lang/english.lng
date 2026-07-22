@@ -1,7 +1,7 @@
 ##grflangid 0x0
 
 STR_GRF_NAME:Oceanian Rail Pack - Multiple Units v11
-STR_GRF_DESCRIPTION:Multiple units and passenger coaches from Australia and New Zealand, all in 2cc. Drawn and Coded by Zachary Moore (Ragin1_)
+STR_GRF_DESCRIPTION:Multiple units and passenger coaches from Australia and New Zealand, all in 2cc. Drawn and Coded by Zoe Moore (Ragin1_)
 
 STR_PARAM_PURCHASE_COST      	:Purchase cost multiplier
 STR_PARAM_PURCHASE_COST_DESC   	:You can use this setting to increase or decrease the purchase costs of the vehicles in this set.
@@ -133,7 +133,12 @@ STR_NAME_COMENG_HPTREGIONAL:Comeng HPT Regional
 STR_INFO_COMENG_HPTREGIONAL:{BLACK}Role: {GOLD}Intercity Service {}{BLACK}Formation: {GOLD}Push-Pull Trainset {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Proposed centre locomotive HPT design.
 
 STR_NAME_ABB_XPLORER:ABB Xplorer/Endeavour Railcar
-STR_INFO_ABB_XPLORER:{BLACK}Role: {GOLD}Intercity Service {}{BLACK}Formation: {GOLD}Multiple-Unit {}{BLACK}Gauge: {GOLD}Narrow Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW Xplorer/Endeavour Railcars.
+STR_INFO_ABB_XPLORER:{BLACK}Role: {GOLD}Intercity Service {}{BLACK}Formation: {GOLD}Multiple-Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}NSW Xplorer/Endeavour Railcars.
+
+STR_NAME_BOMBARDIER_VLOCITY:Bombardier Vlocity
+STR_INFO_BOMBARDIER_VLOCITY:{BLACK}Role: {GOLD}Intercity Service {}{BLACK}Formation: {GOLD}Multiple-Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Victorian VLocity DMUs.
+STR_NAME_BOMBARDIER_VLOCITY_BG:Bombardier Vlocity
+STR_INFO_BOMBARDIER_VLOCITY_BG:{BLACK}Role: {GOLD}Intercity Service {}{BLACK}Formation: {GOLD}Multiple-Unit {}{BLACK}Gauge: {GOLD}Broad Gauge {}{BLACK}Power: {BROWN}Diesel {}{BLACK}Based on: {GOLD}Victorian VLocity DMUs.
 
 
 
@@ -289,8 +294,8 @@ STR_INFO_SDD_EMU_ABBVRDD:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Mu
 STR_NAME_EDI_MILLENIUM:Downer EDi Millenium
 STR_INFO_EDI_MILLENIUM:{BLACK}Role: {GOLD}Suburban {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Sydney Millenium Trains {}{GOLD}Crew *hate* these
 
-STR_NAME_SDD_EMU_WARATAH:Downer EDi Waratah
-STR_INFO_SDD_EMU_WARATAH:{BLACK}Role: {GOLD}Suburban{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line
+STR_NAME_DOWNER_WARATAH:Downer EDi Waratah
+STR_INFO_DOWNER_WARATAH:{BLACK}Role: {GOLD}Suburban {}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Sydney Waratah Trains
 
 
 
@@ -317,8 +322,11 @@ STR_INFO_TULLOCHDDINTERURBAN:{BLACK}Role: {GOLD}Intercity Service{}{BLACK}Format
 STR_NAME_COMENG_VSET:Comeng V-Set
 STR_INFO_COMENG_VSET:{BLACK}Role: {GOLD}Intercity {}{BLACK}Formation: {GOLD}Multiple-Unit{}{BLACK}Gauge: {GOLD}Standard Gauge{}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}NSW V-Sets
 
-STR_NAME_COMENGDKVSET:Comeng DK V-Set
-STR_INFO_COMENGDKVSET:{BLACK}Role: {GOLD}Intercity Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Power: {LTBLUE}Overhead Line {}{BLACK}Based on: {GOLD}Proposed Tangara V-Set Hybrid
+STR_NAME_COMENG_DKVSET:Comeng DK V-Set
+STR_INFO_COMENG_DKVSET:{BLACK}Role: {GOLD}Intercity Service{}{BLACK}Formation: {GOLD}Multiple Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}Proposed Tangara V-Set Hybrid
+
+STR_NAME_UGL_OSCAR:UGL OSCAR
+STR_INFO_UGL_OSCAR:{BLACK}Role: {GOLD}Intercity {}{BLACK}Formation: {GOLD}Multiple-Unit {}{BLACK}Gauge: {GOLD}Standard Gauge {}{BLACK}Power: {BLUE}DC Overhead Line {}{BLACK}Based on: {GOLD}NSW H-Set "OSCARs"
 
 
 STR_NAME_EXP_EMU_XPTE:Comeng XPT-E
