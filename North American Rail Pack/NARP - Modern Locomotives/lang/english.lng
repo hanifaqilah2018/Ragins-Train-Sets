@@ -30,6 +30,9 @@ STR_PARAM_DESC_PROPOSALDISABLE:Enable/disable Proposed trains (trains that were 
 STR_PARAM_NAME_FICTIONALDISABLE:Disable Fictional Trains
 STR_PARAM_DESC_FICTIONALDISABLE:Enable/disable Fictional trains (trains that are entirely fictional, and are only included for gameplay balance).
 
+STR_PARAM_NAME_DIESELDISABLE:Disable Diesel Trains
+STR_PARAM_DESC_DIESELDISABLE:Enable/disable Diesel trains.
+
 STR_BUY_MENU_ADDITIONAL_TEXT_WRAPPER_TWO_SUBSTR:{STRING}{}{STRING}
 STR_POWER_BY_POWER_SOURCE_TWO_SOURCES:{BLACK}Power on {STRING}: {GOLD}{POWER} {}{BLACK}Power on {STRING}: {GOLD}{POWER}
 STR_POWER_SOURCE_DIESEL: {BROWN}Diesel
