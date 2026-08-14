@@ -79,12 +79,4 @@ STR_INFO_NSW_C35:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard
 STR_NAME_VIC_H:4-8-4 "Heavy Harry"
 STR_INFO_VIC_H:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}VR H Class
 STR_NAME_VIC_H_BG:4-8-4 "Heavy Harry"
-STR_INFO_VIC_H_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}VR H Class 
-
-STR_NAME_NSW_AD60:4-8-4+4-8-4 AD60 Class
-STR_INFO_NSW_AD60:{BLACK}Role: {GOLD}Heavy Freight {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}NSW AD60 Class {}{GOLD}Largest Garratt locomotive ever built
-
-STR_NAME_SA_600:4-6-2 "Light" Pacific
-STR_INFO_SA_600:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}SAR 600 Class {}{GOLD}South Australian variant of the USRA Light Pacific
-STR_NAME_SA_600_BG:4-6-2 "Light" Pacific
-STR_INFO_SA_600_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}SAR 600  Class {}{GOLD}South Australian variant of the USRA Light Pacific
+STR_INFO_VIC_H_BG:{BLACK}Role: {GOLD}Mixed Traffic {}{BLACK}Gauge:{GOLD} Standard Gauge {}{BLACK}Power: {WHITE}Steam {}{BLACK}Based on: {GOLD}VR H Class

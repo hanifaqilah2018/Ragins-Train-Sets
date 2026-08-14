@@ -1373,7 +1373,7 @@ item (FEAT_TRAINS, Item_1830GenericCar_Liv0, 3300) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            6;
         cost_factor:                    75;
@@ -1451,7 +1451,7 @@ item (FEAT_TRAINS, Item_Mail_1830GenericCar_Liv0, 3310) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            6;
         cost_factor:                    75;
@@ -1531,7 +1531,7 @@ item (FEAT_TRAINS, Item_ArchRoofCar_Liv0, 3500) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            7;
         cost_factor:                    80;
@@ -1611,7 +1611,7 @@ item (FEAT_TRAINS, Item_12WheelCar_Liv0, 3600) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    118;
@@ -1688,7 +1688,7 @@ item (FEAT_TRAINS, Item_DuckbillCar_Liv0, 3640) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            7;
         cost_factor:                    83;
@@ -1768,7 +1768,7 @@ item (FEAT_TRAINS, Item_EndPlatformSuburbanCar_Liv0, 3700) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            7;
         cost_factor:                    88;
@@ -1846,7 +1846,7 @@ item (FEAT_TRAINS, Item_Mail_EndPlatformSuburbanCar_Liv0, 3710) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            7;
         cost_factor:                    75;
@@ -1926,7 +1926,7 @@ item (FEAT_TRAINS, Item_SideLoadingSuburbanCar_Liv0, 6000) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    110;
@@ -2006,7 +2006,7 @@ item (FEAT_TRAINS, Item_PRR_P54_Liv0, 6020) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    120;
@@ -2086,7 +2086,7 @@ item (FEAT_TRAINS, Item_LackawannaCommuterCar_Liv0, 6200) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    118;
@@ -2163,7 +2163,7 @@ item (FEAT_TRAINS, Item_CaponeCoach_Liv0, 6220) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    125;
@@ -2243,7 +2243,7 @@ item (FEAT_TRAINS, Item_LightweightCommuterCar_Liv0, 6240) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    118;
@@ -2320,7 +2320,7 @@ item (FEAT_TRAINS, Item_LightweightCommuterCar_Liv1, 6241) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    118;
@@ -2397,7 +2397,7 @@ item (FEAT_TRAINS, Item_LightweightCommuterCar_Liv2, 6242) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    118;
@@ -2479,7 +2479,7 @@ item (FEAT_TRAINS, Item_Pullman_Comet_Liv0, 6700) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    105;
@@ -2550,7 +2550,7 @@ item (FEAT_TRAINS, Item_Cab_Pullman_Comet_Liv0, 6710) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    3;
@@ -2635,7 +2635,7 @@ item (FEAT_TRAINS, Item_Bombardier_CometIII_Liv0, 6900) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    105;
@@ -2706,7 +2706,7 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_CometIII_Liv0, 6910) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    3;
@@ -2791,7 +2791,7 @@ item (FEAT_TRAINS, Item_Bombardier_CometIV_Liv0, 6940) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    105;
@@ -2862,7 +2862,7 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_CometIV_Liv0, 6950) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    3;
@@ -2947,7 +2947,7 @@ item (FEAT_TRAINS, Item_Alstom_CometV_Liv0, 6960) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    105;
@@ -3018,7 +3018,7 @@ item (FEAT_TRAINS, Item_Cab_Alstom_CometV_Liv0, 6970) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    3;
@@ -3105,7 +3105,7 @@ item (FEAT_TRAINS, Item_Budd_GalleryCar_Liv0, 8500) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    120;
@@ -3176,7 +3176,7 @@ item (FEAT_TRAINS, Item_Cab_Budd_GalleryCar_Liv0, 8510) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    4;
@@ -3261,7 +3261,7 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv0, 8540) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    120;
@@ -3332,7 +3332,7 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv0, 8550) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    4;
@@ -3412,7 +3412,7 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv1, 8541) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    120;
@@ -3483,7 +3483,7 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv1, 8551) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    4;
@@ -3563,7 +3563,7 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv2, 8542) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    120;
@@ -3634,7 +3634,7 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv2, 8552) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    4;
@@ -3714,7 +3714,7 @@ item (FEAT_TRAINS, Item_Pullman_GalleryCar_Liv3, 8543) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    120;
@@ -3785,7 +3785,7 @@ item (FEAT_TRAINS, Item_Cab_Pullman_GalleryCar_Liv3, 8553) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    4;
@@ -3870,7 +3870,7 @@ item (FEAT_TRAINS, Item_HSC_BiLevel_Liv0, 8700) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    120;
@@ -3941,7 +3941,7 @@ item (FEAT_TRAINS, Item_Cab_HSC_BiLevel_Liv0, 8710) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    4;
@@ -4026,7 +4026,7 @@ item (FEAT_TRAINS, Item_BuddComeng_DoubleDecker_Liv0, 8740) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    130;
@@ -4097,7 +4097,7 @@ item (FEAT_TRAINS, Item_Cab_BuddComeng_DoubleDecker_Liv0, 8750) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    5;
@@ -4180,7 +4180,7 @@ item (FEAT_TRAINS, Item_Comeng_C1_Liv0, 8920) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    110;
@@ -4262,7 +4262,7 @@ item (FEAT_TRAINS, Item_Kawasaki_C3_Liv0, 8940) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    110;
@@ -4333,7 +4333,7 @@ item (FEAT_TRAINS, Item_Cab_Kawasaki_C3_Liv0, 8950) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    4;
@@ -4418,7 +4418,7 @@ item (FEAT_TRAINS, Item_Bombardier_Multilevel_Liv0, 9000) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    110;
@@ -4489,7 +4489,7 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv0, 9010) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    4;
@@ -4569,7 +4569,7 @@ item (FEAT_TRAINS, Item_Bombardier_Multilevel_Liv1, 9001) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    110;
@@ -4640,7 +4640,7 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv1, 9011) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    4;
@@ -4720,7 +4720,7 @@ item (FEAT_TRAINS, Item_Bombardier_Multilevel_Liv2, 9002) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    110;
@@ -4791,7 +4791,7 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv2, 9012) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    4;
@@ -4871,7 +4871,7 @@ item (FEAT_TRAINS, Item_Bombardier_Multilevel_Liv3, 9003) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    110;
@@ -4942,7 +4942,7 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Multilevel_Liv3, 9013) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    4;
@@ -5034,7 +5034,7 @@ item (FEAT_TRAINS, Item_HeavyweightCar_Liv0, 10920) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    115;
@@ -5048,7 +5048,7 @@ item (FEAT_TRAINS, Item_HeavyweightCar_Liv0, 10920) {
         introduction_date:                date(1893, 1, 1);
 
         speed:                            100 mph;
-        weight:                            45 ton;
+        weight:                            65 ton;
         cargo_capacity:                    90/param_capacity_mod;
     }
     graphics {
@@ -5111,7 +5111,7 @@ item (FEAT_TRAINS, Item_Observation_HeavyweightCar_Liv0, 10930) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    115;
@@ -5125,7 +5125,7 @@ item (FEAT_TRAINS, Item_Observation_HeavyweightCar_Liv0, 10930) {
         introduction_date:                date(1893, 1, 1);
 
         speed:                            100 mph;
-        weight:                            45 ton;
+        weight:                            65 ton;
         cargo_capacity:                    90/param_capacity_mod;
     }
     graphics {
@@ -5190,7 +5190,7 @@ item (FEAT_TRAINS, Item_Mail_HeavyweightCar_Liv0, 10940) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    105;
@@ -5204,7 +5204,7 @@ item (FEAT_TRAINS, Item_Mail_HeavyweightCar_Liv0, 10940) {
         introduction_date:                date(1893, 1, 1);
 
         speed:                            100 mph;
-        weight:                            45 ton;
+        weight:                            55 ton;
         cargo_capacity:                    50/param_capacity_mod;
     }
     graphics {
@@ -5279,7 +5279,7 @@ item (FEAT_TRAINS, Item_CompositeHeavyweight_Liv0, 11000) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    115;
@@ -5356,7 +5356,7 @@ item (FEAT_TRAINS, Item_Observation_CompositeHeavyweight_Liv0, 11010) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    115;
@@ -5435,7 +5435,7 @@ item (FEAT_TRAINS, Item_Mail_CompositeHeavyweight_Liv0, 11020) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            7;
         cost_factor:                    105;
@@ -5516,7 +5516,7 @@ item (FEAT_TRAINS, Item_Budd_Lightweight_Liv0, 11320) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    115;
@@ -5595,7 +5595,7 @@ item (FEAT_TRAINS, Item_Mail_Budd_Lightweight_Liv0, 11330) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    105;
@@ -5676,7 +5676,7 @@ item (FEAT_TRAINS, Item_Budd_StreamlinerCar_Liv0, 11340) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    115;
@@ -5755,7 +5755,7 @@ item (FEAT_TRAINS, Item_Mail_Budd_StreamlinerCar_Liv0, 11350) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    105;
@@ -5836,7 +5836,7 @@ item (FEAT_TRAINS, Item_CorTen_LightweightCar_Liv0, 11440) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    115;
@@ -5915,7 +5915,7 @@ item (FEAT_TRAINS, Item_Mail_CorTen_LightweightCar_Liv0, 11450) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    105;
@@ -6021,29 +6021,6 @@ item (FEAT_TRAINS, Item_Budd_Classic_Liv0, Budd_Classic_Liv0_ID) {
 		
 		refit_cost:                     0;
         dual_headed:                    0;
-        default_cargo_type:                PASS;
-        air_drag_coefficient:            0.08;
-        bitmask_vehicle_info:            0;
-
-        running_cost_base:                RUNNING_COST_DIESEL;
-
-        model_life:                        40;
-
-        length:                            8;
-        cost_factor:                    115;
-        running_cost_factor:            2;
-        loading_speed:                    5;
-
-//        variant_group: Item_Budd_Classic_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-
-        name:                             string(STR_NAME_BUDD_CLASSIC);
-        introduction_date:                date(1948, 1, 1);
-
-        speed:                            120 mph;
-        weight:                            42 ton;
-        cargo_capacity:                    95/param_capacity_mod;
-    }
         air_drag_coefficient:           0.08;
         model_life:                     30;
 		
@@ -6124,29 +6101,6 @@ item (FEAT_TRAINS, Item_Mail_Budd_Classic_Liv0, Mail_Budd_Classic_Liv0_ID) {
 		
 		refit_cost:                     0;
         dual_headed:                    0;
-        default_cargo_type:                PASS;
-        air_drag_coefficient:            0.08;
-        bitmask_vehicle_info:            0;
-
-        running_cost_base:                RUNNING_COST_DIESEL;
-
-        model_life:                        40;
-
-        length:                            8;
-        cost_factor:                    105;
-        running_cost_factor:            1;
-        loading_speed:                    10;
-
-//        variant_group: Item_Mail_Budd_Classic_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-
-        name:                             string(STR_NAME_MAIL_BUDD_CLASSIC);
-        introduction_date:                date(1948, 1, 1);
-
-        speed:                            120 mph;
-        weight:                            42 ton;
-        cargo_capacity:                    52/param_capacity_mod;
-    }
         air_drag_coefficient:           0.08;
         model_life:                     30;
 		
@@ -6229,7 +6183,7 @@ item (FEAT_TRAINS, Item_Budd_Keystone_Liv0, 11540) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    100;
@@ -6310,7 +6264,7 @@ item (FEAT_TRAINS, Item_PioneerIII_Intercity_Liv0, 11560) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    125;
@@ -6418,29 +6372,6 @@ item (FEAT_TRAINS, Item_RapidoCar_Liv0, RapidoCar_Liv0_ID) {
 		
 		refit_cost:                     0;
         dual_headed:                    0;
-        default_cargo_type:                PASS;
-        air_drag_coefficient:            0.08;
-        bitmask_vehicle_info:            0;
-
-        running_cost_base:                RUNNING_COST_DIESEL;
-
-        model_life:                        40;
-
-        length:                            8;
-        cost_factor:                    100;
-        running_cost_factor:            3;
-        loading_speed:                    5;
-
-//        variant_group: Item_RapidoCar_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-
-        name:                             string(STR_NAME_RAPIDOCAR);
-        introduction_date:                date(1965, 1, 1);
-
-        speed:                            100 mph;
-        weight:                            50 ton;
-        cargo_capacity:                    80/param_capacity_mod;
-    }
         air_drag_coefficient:           0.08;
         model_life:                     30;
 		
@@ -6552,7 +6483,6 @@ spriteset(spriteset_RapidoCar_Liv1,   "gfx/RapidoCar_Liv1.png") {template_8(7, 3
 spriteset(spriteset_RapidoCar_Liv1_Lounge,   "gfx/RapidoCar_Liv1.png") {template_8(7, 69)}
 spriteset(spriteset_RapidoCar_Liv1_Diner,   "gfx/RapidoCar_Liv1.png") {template_8(7, 99)}
 
-        model_life:                        40;
 switch(FEAT_TRAINS, SELF, switch_RapidoCar_Liv1_dinerposition, position_in_consist - position_in_consist_from_end) {
  0..1: spriteset_RapidoCar_Liv1_Lounge;
  2..3: spriteset_RapidoCar_Liv1_Diner;
@@ -8519,7 +8449,6 @@ spriteset(spriteset_Budd_Amfleet_DT_Liv4_Purchase,   "gfx/Budd_Amfleet_Liv4.png"
 spriteset(spriteset_Budd_Amfleet_DT_Liv4_Fw,   "gfx/Budd_Amfleet_Liv4.png") {template_8(367, 39)}
 spriteset(spriteset_Budd_Amfleet_DT_Liv4_Rw,   "gfx/Budd_Amfleet_Liv4.png") {template_8_r(367, 39)}
 
-        model_life:                        40;
 random_switch(FEAT_TRAINS, SELF, switch_Budd_Amfleet_DT_Liv4_Random){
  1 : spriteset_Budd_Amfleet_DT_Liv4_Fw;
  1 : spriteset_Budd_Amfleet_DT_Liv4_Rw;
@@ -8647,29 +8576,6 @@ item (FEAT_TRAINS, Item_Budd_Amfleet_Liv5, Budd_Amfleet_Liv5_ID) {
 		
 		refit_cost:                     0;
         dual_headed:                    0;
-        default_cargo_type:                PASS;
-        air_drag_coefficient:            0.08;
-        bitmask_vehicle_info:            0;
-
-        running_cost_base:                RUNNING_COST_DIESEL;
-
-        model_life:                        40;
-
-        length:                            8;
-        cost_factor:                    105;
-        running_cost_factor:            2;
-        loading_speed:                    20;
-
-//        variant_group: Item_Mail_Budd_Amfleet_Liv0;
-//        extra_flags:  bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
-
-        name:                             string(STR_NAME_MAIL_BUDD_AMFLEET);
-        introduction_date:                date(1975, 1, 1);
-
-        speed:                            125 mph;
-        weight:                            50 ton;
-        cargo_capacity:                    50/param_capacity_mod;
-    }
         air_drag_coefficient:           0.08;
         model_life:                     30;
 		
@@ -8780,7 +8686,6 @@ spriteset(spriteset_Budd_Amfleet_DT_Liv5_Purchase,   "gfx/Budd_Amfleet_Liv5.png"
 spriteset(spriteset_Budd_Amfleet_DT_Liv5_Fw,   "gfx/Budd_Amfleet_Liv5.png") {template_8(367, 39)}
 spriteset(spriteset_Budd_Amfleet_DT_Liv5_Rw,   "gfx/Budd_Amfleet_Liv5.png") {template_8_r(367, 39)}
 
-        model_life:                        40;
 random_switch(FEAT_TRAINS, SELF, switch_Budd_Amfleet_DT_Liv5_Random){
  1 : spriteset_Budd_Amfleet_DT_Liv5_Fw;
  1 : spriteset_Budd_Amfleet_DT_Liv5_Rw;
@@ -8911,7 +8816,7 @@ item (FEAT_TRAINS, Item_Bombardier_Horizon_Liv0, 11820) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    110;
@@ -8990,7 +8895,7 @@ item (FEAT_TRAINS, Item_Mail_Bombardier_Horizon_Liv0, 11830) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    110;
@@ -9061,7 +8966,7 @@ item (FEAT_TRAINS, Item_Cab_Bombardier_Horizon_Liv0, 11840) {
 
         visual_effect_and_powered: VISUAL_EFFECT_DISABLE;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    3;
@@ -9150,7 +9055,7 @@ item (FEAT_TRAINS, Item_Budd_Viewliner_Liv0, 11860) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    110;
@@ -9229,7 +9134,7 @@ item (FEAT_TRAINS, Item_Mail_Budd_Viewliner_Liv0, 11870) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    110;
@@ -9317,7 +9222,7 @@ item (FEAT_TRAINS, Item_Budd_HiLevel_Liv0, 13500) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    115;
@@ -9403,7 +9308,7 @@ item (FEAT_TRAINS, Item_Budd_SkyView_Liv0, 13600) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    125;
@@ -9491,7 +9396,7 @@ item (FEAT_TRAINS, Item_Pullman_SuperLiner_Liv0, 13700) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    120;
@@ -9621,7 +9526,6 @@ spriteset(spriteset_MK_CaliforniaCar_DT_Liv0_Purchase,   "gfx/MK_CaliforniaCar_L
 spriteset(spriteset_MK_CaliforniaCar_DT_Liv0_Fw,   "gfx/MK_CaliforniaCar_Liv0.png") {template_8(187, 39)}
 spriteset(spriteset_MK_CaliforniaCar_DT_Liv0_Rw,   "gfx/MK_CaliforniaCar_Liv0.png") {template_8_r(187, 39)}
 
-        model_life:                        40;
 random_switch(FEAT_TRAINS, SELF, switch_MK_CaliforniaCar_DT_Liv0_Random){
  1 : spriteset_MK_CaliforniaCar_DT_Liv0_Fw;
  1 : spriteset_MK_CaliforniaCar_DT_Liv0_Rw;
@@ -9773,7 +9677,6 @@ spriteset(spriteset_MK_CaliforniaCar_DT_Liv1_Purchase,   "gfx/MK_CaliforniaCar_L
 spriteset(spriteset_MK_CaliforniaCar_DT_Liv1_Fw,   "gfx/MK_CaliforniaCar_Liv1.png") {template_8(187, 39)}
 spriteset(spriteset_MK_CaliforniaCar_DT_Liv1_Rw,   "gfx/MK_CaliforniaCar_Liv1.png") {template_8_r(187, 39)}
 
-        model_life:                        40;
 random_switch(FEAT_TRAINS, SELF, switch_MK_CaliforniaCar_DT_Liv1_Random){
  1 : spriteset_MK_CaliforniaCar_DT_Liv1_Fw;
  1 : spriteset_MK_CaliforniaCar_DT_Liv1_Rw;
@@ -9912,7 +9815,7 @@ item (FEAT_TRAINS, Item_Gen2_Boxcar_Base, 20010) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            5;
         cost_factor:                    80;
@@ -10004,7 +9907,7 @@ item (FEAT_TRAINS, Item_Gen3_Boxcar_Base, 20030) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            6;
         cost_factor:                    120;
@@ -10191,7 +10094,7 @@ item (FEAT_TRAINS, Item_Gen5_Boxcar_Base, 20040) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    160;
@@ -10555,7 +10458,7 @@ item (FEAT_TRAINS, Item_Gen5_Flatcar_Liv0, 21040) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    160;
@@ -10654,7 +10557,7 @@ item (FEAT_TRAINS, Item_Gen6_HiCube_Boxcar_Base, 20050) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            8;
         cost_factor:                    180;
@@ -10755,7 +10658,7 @@ item (FEAT_TRAINS, Item_Gen3_Reefer_Base, 20320) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            6;
         cost_factor:                    120;
@@ -10871,7 +10774,7 @@ item (FEAT_TRAINS, Item_Gen2_Hopper_Liv0, 23010) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            5;
         cost_factor:                    120;
@@ -10987,7 +10890,7 @@ item (FEAT_TRAINS, Item_Gen3_Hopper_Liv0, 23020) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            6;
         cost_factor:                    120;
@@ -11103,7 +11006,7 @@ item (FEAT_TRAINS, Item_Gen4_Hopper_Liv0, 23030) {
 
         running_cost_base:                RUNNING_COST_DIESEL;
 
-        model_life:                        40;
+        model_life:                        30;
 
         length:                            6;
         cost_factor:                    120;

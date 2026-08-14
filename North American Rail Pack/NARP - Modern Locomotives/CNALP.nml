@@ -88,17 +88,6 @@ grf{
      def_value: 0;
     }
     }
-
-//DiesellDisable
-	param {
-    param_DieselDisable {
-     name: string(STR_PARAM_NAME_DIESELDISABLE);
-     desc: string(STR_PARAM_DESC_DIESELDISABLE);
-     type: bool;
-     bit: 0;
-     def_value: 0;
-    }
-    }
 	}
 
 railtypetable {
@@ -1044,7 +1033,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv0, EMC_E1_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMC_E1);
@@ -1122,7 +1111,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv6, EMC_E1_Liv6_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMC_E1);
@@ -1198,7 +1187,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv7, EMC_E1_Liv7_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMC_E1);
@@ -1274,7 +1263,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv8, EMC_E1_Liv8_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMC_E1);
@@ -1350,7 +1339,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv9, EMC_E1_Liv9_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMC_E1);
@@ -1426,7 +1415,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv10, EMC_E1_Liv10_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMC_E1);
@@ -1502,7 +1491,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv11, EMC_E1_Liv11_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMC_E1);
@@ -1578,7 +1567,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv12, EMC_E1_Liv12_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMC_E1);
@@ -1654,7 +1643,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv13, EMC_E1_Liv13_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMC_E1);
@@ -1730,7 +1719,7 @@ item(FEAT_TRAINS, Item_EMC_E1_Liv31, EMC_E1_Liv31_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMC_E1);
@@ -1823,7 +1812,7 @@ item(FEAT_TRAINS, Item_EMC_E3_Liv0, EMC_E3_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMC_E3);
@@ -1916,7 +1905,7 @@ item(FEAT_TRAINS, Item_EMD_E7_Liv0, EMD_E7_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_E7);
@@ -2009,7 +1998,7 @@ item(FEAT_TRAINS, Item_ALCO_PA_Liv0, ALCO_PA_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_ALCO_PA);
@@ -2102,7 +2091,7 @@ item(FEAT_TRAINS, Item_EMD_E9_Liv0, EMD_E9_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_E9);
@@ -2184,7 +2173,7 @@ item(FEAT_TRAINS, Item_EMD_GP40TC_Liv0, EMD_GP40TC_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_GP40TC);
@@ -2249,7 +2238,7 @@ item(FEAT_TRAINS, Item_EMD_GP40TC_Liv43, EMD_GP40TC_Liv43_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_GP40TC);
@@ -2331,7 +2320,7 @@ item(FEAT_TRAINS, Item_EMD_FP45_Liv0, EMD_FP45_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_FP45);
@@ -2413,7 +2402,7 @@ item(FEAT_TRAINS, Item_GE_U34CH_Liv0, GE_U34CH_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_U34CH);
@@ -2495,7 +2484,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv0, EMD_SDP40F_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -2560,7 +2549,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv6, EMD_SDP40F_Liv6_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -2625,7 +2614,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv7, EMD_SDP40F_Liv7_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -2690,7 +2679,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv8, EMD_SDP40F_Liv8_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -2755,7 +2744,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv9, EMD_SDP40F_Liv9_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -2820,7 +2809,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv10, EMD_SDP40F_Liv10_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -2885,7 +2874,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv11, EMD_SDP40F_Liv11_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -2950,7 +2939,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv12, EMD_SDP40F_Liv12_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -3015,7 +3004,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv13, EMD_SDP40F_Liv13_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -3080,7 +3069,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv14, EMD_SDP40F_Liv14_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -3145,7 +3134,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv15, EMD_SDP40F_Liv15_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -3210,7 +3199,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv16, EMD_SDP40F_Liv16_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -3275,7 +3264,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv17, EMD_SDP40F_Liv17_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -3340,7 +3329,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv18, EMD_SDP40F_Liv18_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -3405,7 +3394,7 @@ item(FEAT_TRAINS, Item_EMD_SDP40F_Liv19, EMD_SDP40F_Liv19_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDP40F);
@@ -3487,7 +3476,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv0, EMD_F40C_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -3552,7 +3541,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv1, EMD_F40C_Liv1_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -3617,7 +3606,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv6, EMD_F40C_Liv6_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -3682,7 +3671,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv7, EMD_F40C_Liv7_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -3747,7 +3736,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv8, EMD_F40C_Liv8_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -3812,7 +3801,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv9, EMD_F40C_Liv9_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -3877,7 +3866,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv10, EMD_F40C_Liv10_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -3942,7 +3931,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv11, EMD_F40C_Liv11_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -4007,7 +3996,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv12, EMD_F40C_Liv12_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -4072,7 +4061,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv13, EMD_F40C_Liv13_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -4137,7 +4126,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv14, EMD_F40C_Liv14_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -4202,7 +4191,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv15, EMD_F40C_Liv15_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -4267,7 +4256,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv16, EMD_F40C_Liv16_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -4332,7 +4321,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv17, EMD_F40C_Liv17_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -4397,7 +4386,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv18, EMD_F40C_Liv18_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -4462,7 +4451,7 @@ item(FEAT_TRAINS, Item_EMD_F40C_Liv19, EMD_F40C_Liv19_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40C);
@@ -4544,7 +4533,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv0, EMD_F40PH_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -4609,7 +4598,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv6, EMD_F40PH_Liv6_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -4674,7 +4663,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv7, EMD_F40PH_Liv7_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -4739,7 +4728,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv8, EMD_F40PH_Liv8_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -4804,7 +4793,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv9, EMD_F40PH_Liv9_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -4869,7 +4858,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv10, EMD_F40PH_Liv10_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -4934,7 +4923,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv11, EMD_F40PH_Liv11_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -4999,7 +4988,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv12, EMD_F40PH_Liv12_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -5064,7 +5053,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv13, EMD_F40PH_Liv13_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -5129,7 +5118,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv14, EMD_F40PH_Liv14_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -5194,7 +5183,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv15, EMD_F40PH_Liv15_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -5259,7 +5248,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv16, EMD_F40PH_Liv16_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -5324,7 +5313,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv17, EMD_F40PH_Liv17_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -5389,7 +5378,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv18, EMD_F40PH_Liv18_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -5454,7 +5443,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv19, EMD_F40PH_Liv19_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -5519,7 +5508,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv26, EMD_F40PH_Liv26_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -5584,7 +5573,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv27, EMD_F40PH_Liv27_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -5649,7 +5638,7 @@ item(FEAT_TRAINS, Item_EMD_F40PH_Liv28, EMD_F40PH_Liv28_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F40PH);
@@ -5731,7 +5720,7 @@ item(FEAT_TRAINS, Item_EMD_F59PH_Liv0, EMD_F59PH_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_F59PH);
@@ -5813,7 +5802,7 @@ item(FEAT_TRAINS, Item_GE_Dash8_32BWH_Liv0, GE_Dash8_32BWH_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_DASH8_32BWH);
@@ -6005,7 +5994,7 @@ item(FEAT_TRAINS, Item_GE_P40DC_Liv0, GE_P40DC_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_P40DC);
@@ -6167,7 +6156,7 @@ item(FEAT_TRAINS, Item_GE_P40DC_Liv14, GE_P40DC_Liv14_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_P40DC);
@@ -6248,7 +6237,7 @@ item(FEAT_TRAINS, Item_GE_P40DC_Liv15, GE_P40DC_Liv15_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_P40DC);
@@ -6329,7 +6318,7 @@ item(FEAT_TRAINS, Item_GE_P40DC_Liv16, GE_P40DC_Liv16_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_P40DC);
@@ -6410,7 +6399,7 @@ item(FEAT_TRAINS, Item_GE_P40DC_Liv17, GE_P40DC_Liv17_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_P40DC);
@@ -6491,7 +6480,7 @@ item(FEAT_TRAINS, Item_GE_P40DC_Liv24, GE_P40DC_Liv24_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_P40DC);
@@ -7219,7 +7208,7 @@ item(FEAT_TRAINS, Item_GE_P42DC_Liv0, GE_P42DC_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_P42DC);
@@ -7341,7 +7330,7 @@ item(FEAT_TRAINS, Item_GE_P42DC_Liv14, GE_P42DC_Liv14_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_P42DC);
@@ -7402,7 +7391,7 @@ item(FEAT_TRAINS, Item_GE_P42DC_Liv15, GE_P42DC_Liv15_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_P42DC);
@@ -7463,7 +7452,7 @@ item(FEAT_TRAINS, Item_GE_P42DC_Liv16, GE_P42DC_Liv16_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_P42DC);
@@ -7524,7 +7513,7 @@ item(FEAT_TRAINS, Item_GE_P42DC_Liv17, GE_P42DC_Liv17_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_P42DC);
@@ -7585,7 +7574,7 @@ item(FEAT_TRAINS, Item_GE_P42DC_Liv24, GE_P42DC_Liv24_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_GE_P42DC);
@@ -8098,7 +8087,7 @@ item(FEAT_TRAINS, Item_EMD_DE30AC_Liv0, EMD_DE30AC_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_DE30AC);
@@ -8180,7 +8169,7 @@ item(FEAT_TRAINS, Item_Alstom_PL42AC_Liv0, Alstom_PL42AC_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_ALSTOM_PL42AC);
@@ -8246,7 +8235,7 @@ item(FEAT_TRAINS, Item_Lima_LT2500_Liv0, Lima_LT2500_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_LIMA_LT2500);
@@ -8329,7 +8318,7 @@ item(FEAT_TRAINS, Item_ALCO_RSC3_Liv0, ALCO_RSC3_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_ALCO_RSC3);
@@ -8411,7 +8400,7 @@ item(FEAT_TRAINS, Item_EMD_SDL39_Liv0, EMD_SDL39_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_SDL39);
@@ -8468,7 +8457,7 @@ item(FEAT_TRAINS, Item_ALCO_RS1_Liv0, 20200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8529,7 +8518,7 @@ item(FEAT_TRAINS, Item_ALCO_RS2_Liv0, 20300) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8590,7 +8579,7 @@ item(FEAT_TRAINS, Item_EMD_GP7_Liv0, 20650) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8651,7 +8640,7 @@ item(FEAT_TRAINS, Item_EMD_GP7_Low_Liv0, 20700) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8712,7 +8701,7 @@ item(FEAT_TRAINS, Item_ALCO_RS3_Liv0, 20800) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8773,7 +8762,7 @@ item(FEAT_TRAINS, Item_EMD_SD7_Liv0, 21100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8834,7 +8823,7 @@ item(FEAT_TRAINS, Item_EMD_SD7_Low_Liv0, 21150) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8895,7 +8884,7 @@ item(FEAT_TRAINS, Item_EMD_SD9_Liv0, 21350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -8956,7 +8945,7 @@ item(FEAT_TRAINS, Item_EMD_SD9_Low_Liv0, 21400) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9017,7 +9006,7 @@ item(FEAT_TRAINS, Item_ALCO_RSD7_Liv0, 21450) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9078,7 +9067,7 @@ item(FEAT_TRAINS, Item_ALCO_RSD7_Low_Liv0, 21500) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9139,7 +9128,7 @@ item(FEAT_TRAINS, Item_EMD_GP9_Liv0, 21650) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9200,7 +9189,7 @@ item(FEAT_TRAINS, Item_EMD_GP9_Low_Liv0, 21700) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9261,7 +9250,7 @@ item(FEAT_TRAINS, Item_ALCO_RSD15_Liv0, 22050) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9322,7 +9311,7 @@ item(FEAT_TRAINS, Item_ALCO_RSD15_Low_Liv0, 22100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9383,7 +9372,7 @@ item(FEAT_TRAINS, Item_GE_U25B_Liv0, 22550) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9444,7 +9433,7 @@ item(FEAT_TRAINS, Item_GE_U25B_Low_Liv0, 22600) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9505,7 +9494,7 @@ item(FEAT_TRAINS, Item_ALCO_C420_Liv0, 23300) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9566,7 +9555,7 @@ item(FEAT_TRAINS, Item_ALCO_C420_Low_Liv0, 23350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9627,7 +9616,7 @@ item(FEAT_TRAINS, Item_ALCO_C628_Liv0, 23800) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9688,7 +9677,7 @@ item(FEAT_TRAINS, Item_ALCO_C628_High_Liv0, 23850) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9749,7 +9738,7 @@ item(FEAT_TRAINS, Item_GE_U25C_Liv0, 23900) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9810,7 +9799,7 @@ item(FEAT_TRAINS, Item_GE_U25C_Low_Liv0, 23950) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9871,7 +9860,7 @@ item(FEAT_TRAINS, Item_EMD_GP35_Liv0, 24000) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9932,7 +9921,7 @@ item(FEAT_TRAINS, Item_EMD_GP35_Var1_Liv0, 24050) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -9993,7 +9982,7 @@ item(FEAT_TRAINS, Item_EMD_SD35_Liv0, 24200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10054,7 +10043,7 @@ item(FEAT_TRAINS, Item_EMD_SD35_Low_Liv0, 24250) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10115,7 +10104,7 @@ item(FEAT_TRAINS, Item_ALCO_C630_Liv0, 24400) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10176,7 +10165,7 @@ item(FEAT_TRAINS, Item_ALCO_C630_High_Liv0, 24450) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10237,7 +10226,7 @@ item(FEAT_TRAINS, Item_EMD_GP40_Liv0, 24600) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10298,7 +10287,7 @@ item(FEAT_TRAINS, Item_EMD_GP40_High_Liv0, 24650) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10359,7 +10348,7 @@ item(FEAT_TRAINS, Item_EMD_GP40_Wide_Liv0, 24700) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10420,7 +10409,7 @@ item(FEAT_TRAINS, Item_ALCO_C430_Liv0, 24750) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10481,7 +10470,7 @@ item(FEAT_TRAINS, Item_ALCO_C430_Low_Liv0, 24800) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10542,7 +10531,7 @@ item(FEAT_TRAINS, Item_EMD_SD40_Liv0, 25000) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10603,7 +10592,7 @@ item(FEAT_TRAINS, Item_EMD_SD40_High_Liv0, 25050) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10664,7 +10653,7 @@ item(FEAT_TRAINS, Item_EMD_SD40_Tunnel_Liv0, 25100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10725,7 +10714,7 @@ item(FEAT_TRAINS, Item_EMD_SD40_Wide_Liv0, 25150) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10786,7 +10775,7 @@ item(FEAT_TRAINS, Item_GE_U28B_Liv0, 25250) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10847,7 +10836,7 @@ item(FEAT_TRAINS, Item_GE_U28B_Low_Liv0, 25300) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10908,7 +10897,7 @@ item(FEAT_TRAINS, Item_GE_U30C_Liv0, 25650) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -10969,7 +10958,7 @@ item(FEAT_TRAINS, Item_GE_U30C_Low_Liv0, 25700) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11030,7 +11019,7 @@ item(FEAT_TRAINS, Item_ALCO_C636_Liv0, 25750) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11091,7 +11080,7 @@ item(FEAT_TRAINS, Item_ALCO_C636_High_Liv0, 25800) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11152,7 +11141,7 @@ item(FEAT_TRAINS, Item_EMD_GP39_Liv0, 26350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11213,7 +11202,7 @@ item(FEAT_TRAINS, Item_EMD_GP39_Var1_Liv0, 26400) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11274,7 +11263,7 @@ item(FEAT_TRAINS, Item_GE_U36C_Liv0, 26500) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11335,7 +11324,7 @@ item(FEAT_TRAINS, Item_GE_U36C_Low_Liv0, 26550) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11396,7 +11385,7 @@ item(FEAT_TRAINS, Item_GE_C30_7_Liv0, 26700) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11457,7 +11446,7 @@ item(FEAT_TRAINS, Item_GE_C30_7_High_Liv0, 26750) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11518,7 +11507,7 @@ item(FEAT_TRAINS, Item_EMD_SD50_Liv0, 27350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11579,7 +11568,7 @@ item(FEAT_TRAINS, Item_EMD_SD50_High_Liv0, 27400) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11640,7 +11629,7 @@ item(FEAT_TRAINS, Item_EMD_SD60_Liv0, 27800) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11701,7 +11690,7 @@ item(FEAT_TRAINS, Item_EMD_SD60_Wide_Liv0, 27850) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11762,7 +11751,7 @@ item(FEAT_TRAINS, Item_GE_Dash8_40C_Liv0, 28350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11823,7 +11812,7 @@ item(FEAT_TRAINS, Item_GE_Dash8_40C_Wide_Liv0, 28400) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -11945,7 +11934,7 @@ item(FEAT_TRAINS, Item_EMD_SD70_Liv0, 28650) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12006,7 +11995,7 @@ item(FEAT_TRAINS, Item_EMD_SD70_Wide_Liv0, 28700) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12067,7 +12056,7 @@ item(FEAT_TRAINS, Item_EMD_SD70MAC_Liv0, 28850) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12128,7 +12117,7 @@ item(FEAT_TRAINS, Item_GE_Dash9_44C_Liv0, 28950) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12189,7 +12178,7 @@ item(FEAT_TRAINS, Item_GE_Dash9_44C_Standard_Liv0, 29000) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12250,7 +12239,7 @@ item(FEAT_TRAINS, Item_EMD_SD9043MAC_Liv0, 29100) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12372,7 +12361,7 @@ item(FEAT_TRAINS, Item_EMD_SD70ACE_Liv0, 29300) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12433,7 +12422,7 @@ item(FEAT_TRAINS, Item_GE_ES44AC_Liv0, 29350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12514,7 +12503,7 @@ item(FEAT_TRAINS, Item_EMD_DD35A_Liv0, 1200) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12676,7 +12665,7 @@ item(FEAT_TRAINS, Item_EMD_DDA40X_Liv0, 1300) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12739,7 +12728,7 @@ item(FEAT_TRAINS, Item_EMD_SD90MACH_Liv0, 32300) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12800,7 +12789,7 @@ item(FEAT_TRAINS, Item_EMD_SD90MACH2_Liv0, 32350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -12899,7 +12888,7 @@ item(FEAT_TRAINS, Item_EMD_FT_Liv0, EMD_FT_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		visual_effect_and_powered: 		visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 3, DISABLE_WAGON_POWER);
 
         name:                           string(STR_NAME_EMD_FT);
@@ -12967,7 +12956,7 @@ item(FEAT_TRAINS, Item_EMD_F3_Liv0, 33250) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -13039,7 +13028,7 @@ item(FEAT_TRAINS, Item_ALCO_FA_Liv0, 33350) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -13111,7 +13100,7 @@ item(FEAT_TRAINS, Item_EMD_F7_Liv0, 33450) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -13183,7 +13172,7 @@ item(FEAT_TRAINS, Item_EMD_F9_Liv0, 33500) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 
@@ -27308,7 +27297,7 @@ item(FEAT_TRAINS, Item_EMD_DD35B_Liv0, 2650) {
     property {
         sprite_id:                        SPRITE_ID_NEW_TRAIN;
         refit_cost:                        0;
-        climates_available:                (param_DieselDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+        climates_available:                (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
         bitmask_vehicle_info:            0;
         misc_flags:                        bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK); // <- Train Flag MU needed here
 

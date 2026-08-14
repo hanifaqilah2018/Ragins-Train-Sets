@@ -672,7 +672,7 @@ item(FEAT_TRAINS, Item_Tait_Liv1, 5100) {
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
 
         name:                            string(STR_NAME_TAIT);
-        introduction_date:                date(1915,1,1);
+        introduction_date:                date(1919,1,1);
         vehicle_life:                     50;
         model_life:                        30;
         length:                            8;
@@ -683,7 +683,7 @@ item(FEAT_TRAINS, Item_Tait_Liv1, 5100) {
         tractive_effort_coefficient:     0.7;
         cost_factor:                     9;
         running_cost_factor:             180;
-        cargo_capacity:                  87/param_capacity_mod;
+        cargo_capacity:                  72/param_capacity_mod;
         loading_speed: 5;
 
         variant_group: Item_Tait_Liv1;
@@ -698,7 +698,7 @@ item(FEAT_TRAINS, Item_Tait_Liv1, 5100) {
     livery_override (Item_MU_Trailer){
         default                     : sw_Tait_Liv1_revcheck ;
         length                      : 8;
-        cargo_capacity              : (87/param_capacity_mod) ;
+        cargo_capacity              : (72/param_capacity_mod) ;
         power                       : 141 ;
 		weight:                        35;
 		running_cost_factor:             45;
@@ -876,7 +876,7 @@ item(FEAT_TRAINS, Item_Tait_Liv2, 5101) {
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
 
         name:                            string(STR_NAME_TAIT);
-        introduction_date:                date(1915,1,1);
+        introduction_date:                date(1919,1,1);
         vehicle_life:                     50;
         model_life:                        30;
         length:                            8;
@@ -887,7 +887,7 @@ item(FEAT_TRAINS, Item_Tait_Liv2, 5101) {
         tractive_effort_coefficient:     0.7;
         cost_factor:                     9;
         running_cost_factor:             180;
-        cargo_capacity:                  87/param_capacity_mod;
+        cargo_capacity:                  72/param_capacity_mod;
         loading_speed: 5;
 
         variant_group: Item_Tait_Liv1;
@@ -902,7 +902,7 @@ item(FEAT_TRAINS, Item_Tait_Liv2, 5101) {
     livery_override (Item_MU_Trailer){
         default                     : sw_Tait_Liv2_revcheck ;
         length                      : 8;
-        cargo_capacity              : (87/param_capacity_mod) ;
+        cargo_capacity              : (72/param_capacity_mod) ;
         power                       : 141 ;
 		weight:                        35;
 		running_cost_factor:             45;
@@ -1080,7 +1080,7 @@ item(FEAT_TRAINS, Item_Tait_Liv3, 5102) {
         visual_effect_and_powered: VISUAL_EFFECT_ELECTRIC;
 
         name:                            string(STR_NAME_TAIT);
-        introduction_date:                date(1915,1,1);
+        introduction_date:                date(1919,1,1);
         vehicle_life:                     50;
         model_life:                        30;
         length:                            8;
@@ -1091,7 +1091,7 @@ item(FEAT_TRAINS, Item_Tait_Liv3, 5102) {
         tractive_effort_coefficient:     0.7;
         cost_factor:                     9;
         running_cost_factor:             180;
-        cargo_capacity:                  87/param_capacity_mod;
+        cargo_capacity:                  72/param_capacity_mod;
         loading_speed: 5;
 
         variant_group: Item_Tait_Liv1;
@@ -1106,7 +1106,7 @@ item(FEAT_TRAINS, Item_Tait_Liv3, 5102) {
     livery_override (Item_MU_Trailer){
         default                     : sw_Tait_Liv3_revcheck ;
         length                      : 8;
-        cargo_capacity              : (87/param_capacity_mod) ;
+        cargo_capacity              : (72/param_capacity_mod) ;
         power                       : 141 ;
 		weight:                        35;
 		running_cost_factor:             45;
@@ -1158,7 +1158,7 @@ item(FEAT_TRAINS, Item_Harris_2Door_VR, 5501) {
         length:                            8;
 
         weight:                        46 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            808 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     13;
@@ -1222,7 +1222,7 @@ item(FEAT_TRAINS, Item_Harris_3Door_VR, 5521) {
         length:                            8;
 
         weight:                        46 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            808 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     13;
@@ -1298,7 +1298,7 @@ item(FEAT_TRAINS, Item_Hitachi_Silver, 5701) {
         length:                            8;
 
         weight:                        41 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            800 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     13;
@@ -1363,7 +1363,7 @@ item(FEAT_TRAINS, Item_Hitachi_MTA, 5702) {
         length:                            8;
 
         weight:                        41 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            800 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     13;
@@ -1428,7 +1428,7 @@ item(FEAT_TRAINS, Item_Hitachi_Connex, 5703) {
         length:                            8;
 
         weight:                        41 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            800 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     13;
@@ -1493,7 +1493,7 @@ item(FEAT_TRAINS, Item_Hitachi_MTM, 5704) {
         length:                            8;
 
         weight:                        41 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            800 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     13;
@@ -1558,7 +1558,7 @@ item(FEAT_TRAINS, Item_Hitachi_Liv1, 5705) {
         length:                            8;
 
         weight:                        41 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            800 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     13;
@@ -1623,7 +1623,7 @@ item(FEAT_TRAINS, Item_Hitachi_Liv2, 5706) {
         length:                            8;
 
         weight:                        41 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            800 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     13;
@@ -1688,7 +1688,7 @@ item(FEAT_TRAINS, Item_Hitachi_Liv3, 5707) {
         length:                            8;
 
         weight:                        41 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            800 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     13;
@@ -1763,7 +1763,7 @@ item(FEAT_TRAINS, Item_Comeng_SMU_VR, 5801) {
         length:                            8;
 
         weight:                        47 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            885 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     15;
@@ -1827,7 +1827,7 @@ item(FEAT_TRAINS, Item_Comeng_SMU_MTA, 5802) {
         length:                            8;
 
         weight:                        47 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            885 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     15;
@@ -1891,7 +1891,7 @@ item(FEAT_TRAINS, Item_Comeng_SMU_Mtrain, 5803) {
         length:                            8;
 
         weight:                        47 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            885 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     15;
@@ -1955,7 +1955,7 @@ item(FEAT_TRAINS, Item_Comeng_SMU_Connex, 5804) {
         length:                            8;
 
         weight:                        47 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            885 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     15;
@@ -2019,7 +2019,7 @@ item(FEAT_TRAINS, Item_Comeng_SMU_MTM, 5805) {
         length:                            8;
 
         weight:                        47 ton;
-        speed:                            120 km/h;
+        speed:                            115 km/h;
         power:                            885 hp;
         tractive_effort_coefficient:     0.7;
         cost_factor:                     15;

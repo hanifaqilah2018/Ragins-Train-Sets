@@ -1,3 +1,3 @@
 cd C:\Users\Zac\Desktop\Ragin's Sets\GOPS
-nmlc -c --grf ORPMU.grf GOPS.nml
+nmlc -c --grf GOPS.grf GOPS.nml
 pause
