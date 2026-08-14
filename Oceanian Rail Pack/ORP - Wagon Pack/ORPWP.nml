@@ -817,6 +817,39 @@ switch(FEAT_TRAINS, PARENT, switch_Couplers_6_Repeat_Transition, current_year) {
 
 switch(FEAT_TRAINS, SELF, switch_Couplers_6_Repeat, param_Couplers) {0:spriteset_Buffers_6_Repeat; 1:spriteset_Knuckles_6_Repeat; 2:switch_Couplers_6_Repeat_Transition;}
 
+//7 Long Couplers
+spriteset(spriteset_Knuckles_7_Purchase,   "gfx/Couplers_7.png") {template_purchase_7(7, 21)}
+spriteset(spriteset_Knuckles_7,   "gfx/Couplers_7.png") {template_7(7, 39)}
+spriteset(spriteset_Knuckles_7_r,   "gfx/Couplers_7.png") {template_7_r(7, 39)}
+
+spriteset(spriteset_Buffers_7_Purchase,   "gfx/Couplers_7.png") {template_purchase_7(187, 21)}
+spriteset(spriteset_Buffers_7,   "gfx/Couplers_7.png") {template_7(187, 39)}
+spriteset(spriteset_Buffers_7_r,   "gfx/Couplers_7.png") {template_7_r(187, 39)}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Purchase_Transition, current_year) {
+    0..1945: spriteset_Buffers_7_Purchase;
+	1945..2100: spriteset_Knuckles_7_Purchase;
+  return spriteset_Knuckles_7_Purchase;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_Purchase, param_Couplers) {0:spriteset_Buffers_7_Purchase; 1:spriteset_Knuckles_7_Purchase; 2:switch_Couplers_7_Purchase_Transition;}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_Transition, current_year) {
+    0..1945: spriteset_Buffers_7;
+	1945..2100: spriteset_Knuckles_7;
+  return spriteset_Knuckles_7;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Couplers_7, param_Couplers) {0:spriteset_Buffers_8; 1:spriteset_Knuckles_8; 2:switch_Couplers_7_Transition;}
+
+switch(FEAT_TRAINS, PARENT, switch_Couplers_7_r_Transition, current_year) {
+    0..1945: spriteset_Buffers_7_r;
+	1945..2100: spriteset_Knuckles_7_r;
+  return spriteset_Knuckles_7_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Couplers_7_r, param_Couplers) {0:spriteset_Buffers_7_r; 1:spriteset_Knuckles_7_r; 2:switch_Couplers_7_r_Transition;}
+
 //7 Long Couplers repeat
 spriteset(spriteset_Knuckles_7_Repeat_Purchase,   "gfx/Couplers_7_Repeat.png") {template_purchase_7(7, 21)}
 spriteset(spriteset_Knuckles_7_Repeat,   "gfx/Couplers_7_Repeat.png") {template_7_repeat(7, 39)}
@@ -3327,12 +3360,739 @@ item (FEAT_TRAINS, Item_AY_SuburbanCoach_NG_Liv0, AY_SuburbanCoach_Liv0_ID_NG) {
 }
 }
 
+//ID
+const Comeng_SXCoach_ID = 6000;
+//introduction_date
+const Comeng_SXCoach_IntroDate = date(1961, 1, 1);
+//speed
+const Comeng_SXCoach_Speed = 80;
+//cost_factor
+const Comeng_SXCoach_CostFactor = 46;
+//running_cost_factor
+const Comeng_SXCoach_RunningCostFactor = 19;
+//Cargo Capacity
+const Comeng_SXCoach_CargoCapacity = 91;
+//weight
+const Comeng_SXCoach_Weight = 23;
+//length
+const Comeng_SXCoach_Length = 7;
+
+//Comeng_SXCoach
+spriteset(spriteset_Comeng_SXCoach_EOTD,   "gfx/Comeng_SXCoach_EOTD.png") {template_7(7, 39)}
+spriteset(spriteset_Comeng_SXCoach_EOTD_r,   "gfx/Comeng_SXCoach_EOTD.png") {template_7_r(7, 39)}
+
+//Comeng_SXCoach_Liv0
+spriteset(spriteset_Comeng_SXCoach_Liv0_Purchase,   "gfx/Comeng_SXCoach_Liv0.png") {template_purchase_7(7, 21)}
+
+spriteset(spriteset_Comeng_SXCoach_Liv0,   "gfx/Comeng_SXCoach_Liv0.png") {template_7_repeat(7, 39)}
+spriteset(spriteset_Comeng_SXCoach_Liv0_Terminal,   "gfx/Comeng_SXCoach_Liv0.png") {template_7(7, 69)}
+spriteset(spriteset_Comeng_SXCoach_Liv0_Terminal_r,   "gfx/Comeng_SXCoach_Liv0.png") {template_7_r(7, 69)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_Liv0_Purchase;
+	1: switch_Couplers_7_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv0_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_Liv0;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_Liv0_Terminal;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_Comeng_SXCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Comeng_SXCoach_Liv0_SpriteStack1;
+    return switch_Comeng_SXCoach_Liv0_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_Liv0_Terminal_r;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_Comeng_SXCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Comeng_SXCoach_Liv0_SpriteStack2;
+    return switch_Comeng_SXCoach_Liv0_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Comeng_SXCoach_Liv0_rearcheck1;
+ 1: switch_Comeng_SXCoach_Liv0_rearcheck2;
+}
+
+const Comeng_SXCoach_Liv0_ID = (Comeng_SXCoach_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Comeng_SXCoach_Liv0, Comeng_SXCoach_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_COMENG_SXCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Comeng_SXCoach_IntroDate;		
+		length:                         Comeng_SXCoach_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Comeng_SXCoach_Speed km/h;
+		cost_factor:					Comeng_SXCoach_CostFactor;
+		running_cost_factor:			Comeng_SXCoach_RunningCostFactor;
+		cargo_capacity: 				(Comeng_SXCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_SXCoach_Weight ton;
+
+//        variant_group: 					Item_Comeng_SXCoach_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Comeng_SXCoach_Liv0_position;
+    purchase:                           switch_Comeng_SXCoach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_COMENG_SXCOACH);
+	cargo_capacity: 				(Comeng_SXCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Comeng_SXCoach_DT_Liv0
+spriteset(spriteset_Comeng_SXCoach_DT_Liv0_Purchase,   "gfx/Comeng_SXCoach_Liv0.png") {template_purchase_7(187, 21)}
+
+spriteset(spriteset_Comeng_SXCoach_DT_Liv0,   "gfx/Comeng_SXCoach_Liv0.png") {template_7(187, 39)}
+spriteset(spriteset_Comeng_SXCoach_DT_Liv0_r,   "gfx/Comeng_SXCoach_Liv0.png") {template_7_r(187, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_DT_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_DT_Liv0_Purchase;
+	1: switch_Couplers_7_Repeat_Purchase;
+}
+
+//Forwards
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_DT_Liv0_ForwardStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_DT_Liv0;
+	1: switch_Couplers_7_Repeat;
+}
+
+//Backwards
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_DT_Liv0_ReverseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_DT_Liv0_r;
+	1: switch_Couplers_7_Repeat;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Comeng_SXCoach_DT_DT_Liv0_Random){
+ 1 : switch_Comeng_SXCoach_DT_Liv0_ForwardStack;
+ 1 : switch_Comeng_SXCoach_DT_Liv0_ReverseStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SXCoach_DT_DT_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Comeng_SXCoach_DT_Liv0_ReverseStack;
+ 1: switch_Comeng_SXCoach_DT_Liv0_ForwardStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SXCoach_DT_Liv0_rearcheck, position_in_consist_from_end){
+    0 : switch_Comeng_SXCoach_DT_DT_Liv0_position;
+    return switch_Comeng_SXCoach_DT_DT_Liv0_Random;
+}
+
+const Comeng_SXCoach_DT_Liv0_ID = (Comeng_SXCoach_Liv0_ID + 50);
+
+item (FEAT_TRAINS, Item_Comeng_SXCoach_DT_Liv0, Comeng_SXCoach_DT_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_COMENG_SXCOACH_DT);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              Comeng_SXCoach_IntroDate;		
+		length:                         Comeng_SXCoach_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Comeng_SXCoach_Speed km/h;
+		cost_factor:					Comeng_SXCoach_CostFactor;
+		running_cost_factor:			Comeng_SXCoach_RunningCostFactor;
+		cargo_capacity: 				(Comeng_SXCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_SXCoach_Weight ton;
+
+//        variant_group: 					Item_Comeng_SXCoach_DT_Liv0;
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
+	}
+    graphics {
+    default:                            switch_Comeng_SXCoach_DT_Liv0_rearcheck;
+    purchase:                           switch_Comeng_SXCoach_DT_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_COMENG_SXCOACH_DT);
+	cargo_capacity: 				(Comeng_SXCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Comeng_SXCoach_Liv1
+spriteset(spriteset_Comeng_SXCoach_Liv1_Purchase,   "gfx/Comeng_SXCoach_Liv1.png") {template_purchase_7(7, 21)}
+
+spriteset(spriteset_Comeng_SXCoach_Liv1,   "gfx/Comeng_SXCoach_Liv1.png") {template_7_repeat(7, 39)}
+spriteset(spriteset_Comeng_SXCoach_Liv1_Terminal,   "gfx/Comeng_SXCoach_Liv1.png") {template_7(7, 69)}
+spriteset(spriteset_Comeng_SXCoach_Liv1_Terminal_r,   "gfx/Comeng_SXCoach_Liv1.png") {template_7_r(7, 69)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_Liv1_Purchase;
+	1: switch_Couplers_7_Repeat_Purchase;
+}
+
+//Normal Trailer
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv1_NormalStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_Liv1;
+	1: switch_Couplers_7_Repeat;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv1_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_Liv1_Terminal;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_Comeng_SXCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_Comeng_SXCoach_Liv1_SpriteStack1;
+    return switch_Comeng_SXCoach_Liv1_NormalStack;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv1_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_Liv1_Terminal_r;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_Comeng_SXCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_Comeng_SXCoach_Liv1_SpriteStack2;
+    return switch_Comeng_SXCoach_Liv1_NormalStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SXCoach_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Comeng_SXCoach_Liv1_rearcheck1;
+ 1: switch_Comeng_SXCoach_Liv1_rearcheck2;
+}
+
+const Comeng_SXCoach_Liv1_ID = (Comeng_SXCoach_ID + Liv1_ID);
+
+item (FEAT_TRAINS, Item_Comeng_SXCoach_Liv1, Comeng_SXCoach_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_COMENG_SXCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Comeng_SXCoach_IntroDate;		
+		length:                         Comeng_SXCoach_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Comeng_SXCoach_Speed km/h;
+		cost_factor:					Comeng_SXCoach_CostFactor;
+		running_cost_factor:			Comeng_SXCoach_RunningCostFactor;
+		cargo_capacity: 				(Comeng_SXCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_SXCoach_Weight ton;
+
+        variant_group: 					Item_Comeng_SXCoach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Comeng_SXCoach_Liv1_position;
+    purchase:                           switch_Comeng_SXCoach_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_COMENG_SXCOACH);
+	cargo_capacity: 				(Comeng_SXCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Comeng_SXCoach_DT_Liv1
+spriteset(spriteset_Comeng_SXCoach_DT_Liv1_Purchase,   "gfx/Comeng_SXCoach_Liv1.png") {template_purchase_7(187, 21)}
+
+spriteset(spriteset_Comeng_SXCoach_DT_Liv1,   "gfx/Comeng_SXCoach_Liv1.png") {template_7(187, 39)}
+spriteset(spriteset_Comeng_SXCoach_DT_Liv1_r,   "gfx/Comeng_SXCoach_Liv1.png") {template_7_r(187, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_DT_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_DT_Liv1_Purchase;
+	1: switch_Couplers_7_Repeat_Purchase;
+}
+
+//Forwards
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_DT_Liv1_ForwardStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_DT_Liv1;
+	1: switch_Couplers_7_Repeat;
+}
+
+//Backwards
+switch (FEAT_TRAINS, SELF, switch_Comeng_SXCoach_DT_Liv1_ReverseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SXCoach_DT_Liv1_r;
+	1: switch_Couplers_7_Repeat;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Comeng_SXCoach_DT_DT_Liv1_Random){
+ 1 : switch_Comeng_SXCoach_DT_Liv1_ForwardStack;
+ 1 : switch_Comeng_SXCoach_DT_Liv1_ReverseStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SXCoach_DT_DT_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Comeng_SXCoach_DT_Liv1_ReverseStack;
+ 1: switch_Comeng_SXCoach_DT_Liv1_ForwardStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SXCoach_DT_Liv1_rearcheck, position_in_consist_from_end){
+    0 : switch_Comeng_SXCoach_DT_DT_Liv1_position;
+    return switch_Comeng_SXCoach_DT_DT_Liv1_Random;
+}
+
+const Comeng_SXCoach_DT_Liv1_ID = (Comeng_SXCoach_Liv1_ID + 50);
+
+item (FEAT_TRAINS, Item_Comeng_SXCoach_DT_Liv1, Comeng_SXCoach_DT_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_COMENG_SXCOACH_DT);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              Comeng_SXCoach_IntroDate;		
+		length:                         Comeng_SXCoach_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Comeng_SXCoach_Speed km/h;
+		cost_factor:					Comeng_SXCoach_CostFactor;
+		running_cost_factor:			Comeng_SXCoach_RunningCostFactor;
+		cargo_capacity: 				(Comeng_SXCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_SXCoach_Weight ton;
+
+        variant_group: 					Item_Comeng_SXCoach_DT_Liv0;
+//		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
+	}
+    graphics {
+    default:                            switch_Comeng_SXCoach_DT_Liv1_rearcheck;
+    purchase:                           switch_Comeng_SXCoach_DT_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_COMENG_SXCOACH_DT);
+	cargo_capacity: 				(Comeng_SXCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Comeng_AusfleetSuburban_Coach
+//ID
+const Comeng_AusfleetSuburban_ID = 6100;
+//introduction_date
+const Comeng_AusfleetSuburban_IntroDate = date(1979, 1, 1);
+//speed
+const Comeng_AusfleetSuburban_Speed = 115;
+//cost_factor
+const Comeng_AusfleetSuburban_CostFactor = 56;
+//running_cost_factor
+const Comeng_AusfleetSuburban_RunningCostFactor = 23;
+//Cargo Capacity
+const Comeng_AusfleetSuburban_CargoCapacity = 112;
+//weight
+const Comeng_AusfleetSuburban_Weight = 35;
+//length
+const Comeng_AusfleetSuburban_Length = 8;
+
+//EOTD
+spriteset(spriteset_Comeng_AusfleetSuburban_EOTD,   "gfx/Comeng_AusfleetSuburban_EOTD.png") {template_7(7, 39)}
+spriteset(spriteset_Comeng_AusfleetSuburban_EOTD_r,   "gfx/Comeng_AusfleetSuburban_EOTD.png") {template_7_r(7, 39)}
+
+//Comeng_AusfleetSuburban_Liv0
+spriteset(spriteset_Comeng_AusfleetSuburban_Liv0_Purchase,   "gfx/Comeng_AusfleetSuburban_Liv0.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_Comeng_AusfleetSuburban_Liv0,   "gfx/Comeng_AusfleetSuburban_Liv0.png") {template_8_repeat(7, 39)}
+spriteset(spriteset_Comeng_AusfleetSuburban_Liv0_Terminal,   "gfx/Comeng_AusfleetSuburban_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_Comeng_AusfleetSuburban_Liv0_Terminal_r,   "gfx/Comeng_AusfleetSuburban_Liv0.png") {template_8_r(7, 69)}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_AusfleetSuburban_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_AusfleetSuburban_Liv0_Terminal;
+	1: switch_Couplers_8;
+    2: spriteset_Comeng_AusfleetSuburban_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_AusfleetSuburban_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Comeng_AusfleetSuburban_Liv0_SpriteStack1;
+    return spriteset_Comeng_AusfleetSuburban_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_AusfleetSuburban_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_AusfleetSuburban_Liv0_Terminal_r;
+	1: switch_Couplers_8_r;
+    2: spriteset_Comeng_AusfleetSuburban_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_AusfleetSuburban_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Comeng_AusfleetSuburban_Liv0_SpriteStack2;
+    return spriteset_Comeng_AusfleetSuburban_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_AusfleetSuburban_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Comeng_AusfleetSuburban_Liv0_rearcheck1;
+ 1: switch_Comeng_AusfleetSuburban_Liv0_rearcheck2;
+}
+
+const Comeng_AusfleetSuburban_Liv0_ID = (Comeng_AusfleetSuburban_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Comeng_AusfleetSuburban_Liv0, Comeng_AusfleetSuburban_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_COMENG_AUSFLEETSUBURBAN);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Comeng_AusfleetSuburban_IntroDate;		
+		length:                         Comeng_AusfleetSuburban_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Comeng_AusfleetSuburban_Speed km/h;
+		cost_factor:					Comeng_AusfleetSuburban_CostFactor;
+		running_cost_factor:			Comeng_AusfleetSuburban_RunningCostFactor;
+		cargo_capacity: 				(Comeng_AusfleetSuburban_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_AusfleetSuburban_Weight ton;
+
+//        variant_group: 					Item_Comeng_AusfleetSuburban_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Comeng_AusfleetSuburban_Liv0_position;
+    purchase:                           spriteset_Comeng_AusfleetSuburban_Liv0_Purchase;
+    additional_text: 					string(STR_INFO_COMENG_AUSFLEETSUBURBAN);
+	cargo_capacity: 					(Comeng_AusfleetSuburban_CargoCapacity / param_capacity_mod);
+}
+}
+
+const Comeng_AusfleetSuburban_BG_Liv0_ID = (Comeng_AusfleetSuburban_ID + 15);
+
+item (FEAT_TRAINS, Item_Comeng_AusfleetSuburban_BG_Liv0, Comeng_AusfleetSuburban_BG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_COMENG_AUSFLEETSUBURBAN_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Comeng_AusfleetSuburban_IntroDate;		
+		length:                         Comeng_AusfleetSuburban_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Comeng_AusfleetSuburban_Speed km/h;
+		cost_factor:					Comeng_AusfleetSuburban_CostFactor;
+		running_cost_factor:			Comeng_AusfleetSuburban_RunningCostFactor;
+		cargo_capacity: 				(Comeng_AusfleetSuburban_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_AusfleetSuburban_Weight ton;
+
+//        variant_group: 					Item_Comeng_AusfleetSuburban_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Comeng_AusfleetSuburban_Liv0_position;
+    purchase:                           spriteset_Comeng_AusfleetSuburban_Liv0_Purchase;
+    additional_text: 					string(STR_INFO_COMENG_AUSFLEETSUBURBAN_BG);
+	cargo_capacity: 					(Comeng_AusfleetSuburban_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Comeng_AusfleetSuburban_DT_Liv0
+spriteset(spriteset_Comeng_AusfleetSuburban_DT_Liv0_Purchase,   "gfx/Comeng_AusfleetSuburban_Liv0.png") {template_purchase_8(187, 21)}
+
+spriteset(spriteset_Comeng_AusfleetSuburban_DT_Liv0,   "gfx/Comeng_AusfleetSuburban_Liv0.png") {template_8(187, 39)}
+spriteset(spriteset_Comeng_AusfleetSuburban_DT_Liv0_r,   "gfx/Comeng_AusfleetSuburban_Liv0.png") {template_8_r(187, 39)}
+
+//Purchase Sprite
+switch (FEAT_TRAINS, SELF, switch_Comeng_AusfleetSuburban_DT_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_AusfleetSuburban_DT_Liv0_Purchase;
+	1: switch_Couplers_8_Purchase;
+}
+
+//Forwards
+switch (FEAT_TRAINS, SELF, switch_Comeng_AusfleetSuburban_DT_Liv0_ForwardStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_AusfleetSuburban_DT_Liv0;
+	1: switch_Couplers_8;
+}
+
+//Backwards
+switch (FEAT_TRAINS, SELF, switch_Comeng_AusfleetSuburban_DT_Liv0_ReverseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_AusfleetSuburban_DT_Liv0_r;
+	1: switch_Couplers_8_r;
+}
+
+random_switch(FEAT_TRAINS, SELF, switch_Comeng_AusfleetSuburban_DT_DT_Liv0_Random){
+ 1 : switch_Comeng_AusfleetSuburban_DT_Liv0_ForwardStack;
+ 1 : switch_Comeng_AusfleetSuburban_DT_Liv0_ReverseStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_AusfleetSuburban_DT_DT_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Comeng_AusfleetSuburban_DT_Liv0_ReverseStack;
+ 1: switch_Comeng_AusfleetSuburban_DT_Liv0_ForwardStack;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_AusfleetSuburban_DT_Liv0_rearcheck, position_in_consist_from_end){
+    0 : switch_Comeng_AusfleetSuburban_DT_DT_Liv0_position;
+    return switch_Comeng_AusfleetSuburban_DT_DT_Liv0_Random;
+}
+
+const Comeng_AusfleetSuburban_DT_Liv0_ID = (Comeng_AusfleetSuburban_Liv0_ID + 50);
+
+item (FEAT_TRAINS, Item_Comeng_AusfleetSuburban_DT_Liv0, Comeng_AusfleetSuburban_DT_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_COMENG_AUSFLEETSUBURBAN_DT);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              Comeng_AusfleetSuburban_IntroDate;		
+		length:                         Comeng_AusfleetSuburban_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Comeng_AusfleetSuburban_Speed km/h;
+		cost_factor:					Comeng_AusfleetSuburban_CostFactor;
+		running_cost_factor:			Comeng_AusfleetSuburban_RunningCostFactor;
+		cargo_capacity: 				(Comeng_AusfleetSuburban_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_AusfleetSuburban_Weight ton;
+
+//        variant_group: 					Item_Comeng_AusfleetSuburban_DT_Liv0;
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
+	}
+    graphics {
+    default:                            switch_Comeng_AusfleetSuburban_DT_Liv0_rearcheck;
+    purchase:                           switch_Comeng_AusfleetSuburban_DT_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_COMENG_AUSFLEETSUBURBAN_DT);
+	cargo_capacity: 					(Comeng_AusfleetSuburban_CargoCapacity / param_capacity_mod);
+}
+}
+
+const Comeng_AusfleetSuburban_DT_BG_Liv0_ID = (Comeng_AusfleetSuburban_BG_Liv0_ID + 50);
+
+item (FEAT_TRAINS, Item_Comeng_AusfleetSuburban_DT_BG_Liv0, Comeng_AusfleetSuburban_DT_BG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+		engine_class:                   ENGINE_CLASS_DIESEL;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_FictionalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		visual_effect_and_powered: 		VISUAL_EFFECT_DISABLE;
+		
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_COMENG_AUSFLEETSUBURBAN_DT_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		vehicle_life:                   50;
+		tractive_effort_coefficient:	0.1;
+		
+        introduction_date:              Comeng_AusfleetSuburban_IntroDate;		
+		length:                         Comeng_AusfleetSuburban_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Comeng_AusfleetSuburban_Speed km/h;
+		cost_factor:					Comeng_AusfleetSuburban_CostFactor;
+		running_cost_factor:			Comeng_AusfleetSuburban_RunningCostFactor;
+		cargo_capacity: 				(Comeng_AusfleetSuburban_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_AusfleetSuburban_Weight ton;
+
+//        variant_group: 					Item_Comeng_AusfleetSuburban_DT_BG_Liv0;
+		extra_flags:					bitmask(VEHICLE_FLAG_TRAIN_HAS_CAB);
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY, VEHICLE_FLAG_TRAIN_HAS_CAB);
+	}
+    graphics {
+    default:                            switch_Comeng_AusfleetSuburban_DT_Liv0_rearcheck;
+    purchase:                           switch_Comeng_AusfleetSuburban_DT_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_COMENG_AUSFLEETSUBURBAN_DT_BG);
+	cargo_capacity: 					(Comeng_AusfleetSuburban_CargoCapacity / param_capacity_mod);
+}
+}
+
 //VLine_HType
 spriteset(spriteset_VLine_HType_EOTD,   "gfx/VLine_HType_EOTD.png") {template_8(7, 39)}
 spriteset(spriteset_VLine_HType_EOTD_r,   "gfx/VLine_HType_EOTD.png") {template_8_r(7, 39)}
 
 //ID
-const VLine_HType_ID = 6150;
+const VLine_HType_ID = 6200;
 //introduction_date
 const VLine_HType_IntroDate = date(1984, 1, 1);
 //speed
@@ -8241,6 +9001,389 @@ item (FEAT_TRAINS, Item_Mail_Tulloch_InterurbanCoach_Liv4, Mail_Tulloch_Interurb
 }
 }
 
+//Comeng_SunLanderCoach_Coach
+//ID
+const Comeng_SunLanderCoach_ID = 9950;
+//introduction_date
+const Comeng_SunLanderCoach_IntroDate = date(115, 1, 1);
+//speed
+const Comeng_SunLanderCoach_Speed = 80;
+//cost_factor
+const Comeng_SunLanderCoach_CostFactor = 53;
+//running_cost_factor
+const Comeng_SunLanderCoach_RunningCostFactor = 22;
+//Cargo Capacity
+const Comeng_SunLanderCoach_CargoCapacity = 71;
+//weight
+const Comeng_SunLanderCoach_Weight = 25;
+//length
+const Comeng_SunLanderCoach_Length = 7;
+
+spriteset(spriteset_Comeng_SunLanderCoach_EOTD,   "gfx/Comeng_SunLanderCoach_EOTD.png") {template_7(7, 39)}
+spriteset(spriteset_Comeng_SunLanderCoach_EOTD_r,   "gfx/Comeng_SunLanderCoach_EOTD.png") {template_7_r(7, 39)}
+
+//Comeng_SunLanderCoach_Liv0
+spriteset(spriteset_Comeng_SunLanderCoach_Liv0_Purchase,   "gfx/Comeng_SunLanderCoach_Liv0.png") {template_purchase_7(7, 21)}
+
+spriteset(spriteset_Comeng_SunLanderCoach_Liv0,   "gfx/Comeng_SunLanderCoach_Liv0.png") {template_7(7, 39)}
+spriteset(spriteset_Comeng_SunLanderCoach_Liv0_Diner,   "gfx/Comeng_SunLanderCoach_Liv0.png") {template_7(7, 69)}
+spriteset(spriteset_Comeng_SunLanderCoach_Liv0_Terminal,   "gfx/Comeng_SunLanderCoach_Liv0.png") {template_7(7, 99)}
+spriteset(spriteset_Comeng_SunLanderCoach_Liv0_Terminal_r,   "gfx/Comeng_SunLanderCoach_Liv0.png") {template_7_r(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SunLanderCoach_Liv0_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_Comeng_SunLanderCoach_Liv0_Diner;
+  spriteset_Comeng_SunLanderCoach_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_SunLanderCoach_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SunLanderCoach_Liv0_Terminal;
+	1: switch_Couplers_7_r;
+    2: spriteset_Comeng_SunLanderCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SunLanderCoach_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Comeng_SunLanderCoach_Liv0_SpriteStack1;
+    return switch_Comeng_SunLanderCoach_Liv0_dinerposition;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_SunLanderCoach_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SunLanderCoach_Liv0_Terminal_r;
+	1: switch_Couplers_7;
+    2: spriteset_Comeng_SunLanderCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SunLanderCoach_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Comeng_SunLanderCoach_Liv0_SpriteStack2;
+    return switch_Comeng_SunLanderCoach_Liv0_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SunLanderCoach_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Comeng_SunLanderCoach_Liv0_rearcheck1;
+ 1: switch_Comeng_SunLanderCoach_Liv0_rearcheck2;
+}
+
+const Comeng_SunLanderCoach_Liv0_ID = (Comeng_SunLanderCoach_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Comeng_SunLanderCoach_Liv0, Comeng_SunLanderCoach_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_COMENG_SUNLANDERCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Comeng_SunLanderCoach_IntroDate;		
+		length:                         Comeng_SunLanderCoach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Comeng_SunLanderCoach_Speed km/h;
+		cost_factor:					Comeng_SunLanderCoach_CostFactor;
+		running_cost_factor:			Comeng_SunLanderCoach_RunningCostFactor;
+		cargo_capacity: 				(Comeng_SunLanderCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_SunLanderCoach_Weight ton;
+
+//        variant_group: 					Item_Comeng_SunLanderCoach_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Comeng_SunLanderCoach_Liv0_position;
+    purchase:                           spriteset_Comeng_SunLanderCoach_Liv0_Purchase;
+    additional_text: 					string(STR_INFO_COMENG_SUNLANDERCOACH);
+	cargo_capacity: 					(Comeng_SunLanderCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Mail_Comeng_SunLanderCoach_Liv0
+spriteset(spriteset_Mail_Comeng_SunLanderCoach_Liv0_Purchase,   "gfx/Comeng_SunLanderCoach_Liv0.png") {template_purchase_7(187, 21)}
+spriteset(spriteset_Mail_Comeng_SunLanderCoach_Liv0,   "gfx/Comeng_SunLanderCoach_Liv0.png") {template_7_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Comeng_SunLanderCoach_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Comeng_SunLanderCoach_Liv0_Purchase;
+	1: switch_Couplers_7_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Comeng_SunLanderCoach_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Comeng_SunLanderCoach_Liv0;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_Comeng_SunLanderCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Comeng_SunLanderCoach_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_Comeng_SunLanderCoach_Liv0_SpriteStack1;
+    return spriteset_Mail_Comeng_SunLanderCoach_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Comeng_SunLanderCoach_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Comeng_SunLanderCoach_Liv0;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_Comeng_SunLanderCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Comeng_SunLanderCoach_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_Comeng_SunLanderCoach_Liv0_SpriteStack2;
+    return spriteset_Mail_Comeng_SunLanderCoach_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Comeng_SunLanderCoach_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_Comeng_SunLanderCoach_Liv0_rearcheck1;
+ 1: switch_Mail_Comeng_SunLanderCoach_Liv0_rearcheck2;
+}
+
+const Mail_Comeng_SunLanderCoach_Liv0_ID = (Comeng_SunLanderCoach_Liv0_ID + 50);
+
+item (FEAT_TRAINS, Item_Mail_Comeng_SunLanderCoach_Liv0, Mail_Comeng_SunLanderCoach_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_COMENG_SUNLANDERCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Comeng_SunLanderCoach_IntroDate;		
+		length:                         Comeng_SunLanderCoach_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Comeng_SunLanderCoach_Speed km/h;
+		cost_factor:					Comeng_SunLanderCoach_CostFactor;
+		running_cost_factor:			Comeng_SunLanderCoach_RunningCostFactor;
+		cargo_capacity: 				(Comeng_SunLanderCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_SunLanderCoach_Weight ton;
+
+//        variant_group: 					Item_Mail_Comeng_SunLanderCoach_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_Comeng_SunLanderCoach_Liv0_position;
+    purchase:                           switch_Mail_Comeng_SunLanderCoach_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_COMENG_SUNLANDERCOACH);
+	cargo_capacity: 					(Comeng_SunLanderCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Comeng_SunLanderCoach_Liv1
+spriteset(spriteset_Comeng_SunLanderCoach_Liv1_Purchase,   "gfx/Comeng_SunLanderCoach_Liv1.png") {template_purchase_7(7, 21)}
+
+spriteset(spriteset_Comeng_SunLanderCoach_Liv1,   "gfx/Comeng_SunLanderCoach_Liv1.png") {template_7(7, 39)}
+spriteset(spriteset_Comeng_SunLanderCoach_Liv1_Diner,   "gfx/Comeng_SunLanderCoach_Liv1.png") {template_7(7, 69)}
+spriteset(spriteset_Comeng_SunLanderCoach_Liv1_Terminal,   "gfx/Comeng_SunLanderCoach_Liv1.png") {template_7(7, 99)}
+spriteset(spriteset_Comeng_SunLanderCoach_Liv1_Terminal_r,   "gfx/Comeng_SunLanderCoach_Liv1.png") {template_7_r(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SunLanderCoach_Liv1_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_Comeng_SunLanderCoach_Liv1_Diner;
+  spriteset_Comeng_SunLanderCoach_Liv1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_SunLanderCoach_Liv1_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SunLanderCoach_Liv1_Terminal;
+	1: switch_Couplers_7_r;
+    2: spriteset_Comeng_SunLanderCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SunLanderCoach_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_Comeng_SunLanderCoach_Liv1_SpriteStack1;
+    return switch_Comeng_SunLanderCoach_Liv1_dinerposition;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_SunLanderCoach_Liv1_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_SunLanderCoach_Liv1_Terminal_r;
+	1: switch_Couplers_7;
+    2: spriteset_Comeng_SunLanderCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SunLanderCoach_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_Comeng_SunLanderCoach_Liv1_SpriteStack2;
+    return switch_Comeng_SunLanderCoach_Liv1_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_SunLanderCoach_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Comeng_SunLanderCoach_Liv1_rearcheck1;
+ 1: switch_Comeng_SunLanderCoach_Liv1_rearcheck2;
+}
+
+const Comeng_SunLanderCoach_Liv1_ID = (Comeng_SunLanderCoach_ID + Liv1_ID);
+
+item (FEAT_TRAINS, Item_Comeng_SunLanderCoach_Liv1, Comeng_SunLanderCoach_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_COMENG_SUNLANDERCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Comeng_SunLanderCoach_IntroDate;		
+		length:                         Comeng_SunLanderCoach_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Comeng_SunLanderCoach_Speed km/h;
+		cost_factor:					Comeng_SunLanderCoach_CostFactor;
+		running_cost_factor:			Comeng_SunLanderCoach_RunningCostFactor;
+		cargo_capacity: 				(Comeng_SunLanderCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_SunLanderCoach_Weight ton;
+
+        variant_group: 					Item_Comeng_SunLanderCoach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Comeng_SunLanderCoach_Liv1_position;
+    purchase:                           spriteset_Comeng_SunLanderCoach_Liv1_Purchase;
+    additional_text: 					string(STR_INFO_COMENG_SUNLANDERCOACH);
+	cargo_capacity: 					(Comeng_SunLanderCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Mail_Comeng_SunLanderCoach_Liv1
+spriteset(spriteset_Mail_Comeng_SunLanderCoach_Liv1_Purchase,   "gfx/Comeng_SunLanderCoach_Liv1.png") {template_purchase_7(187, 21)}
+spriteset(spriteset_Mail_Comeng_SunLanderCoach_Liv1,   "gfx/Comeng_SunLanderCoach_Liv1.png") {template_7_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Comeng_SunLanderCoach_Liv1_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Comeng_SunLanderCoach_Liv1_Purchase;
+	1: switch_Couplers_7_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Comeng_SunLanderCoach_Liv1_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Comeng_SunLanderCoach_Liv1;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_Comeng_SunLanderCoach_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Comeng_SunLanderCoach_Liv1_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_Comeng_SunLanderCoach_Liv1_SpriteStack1;
+    return spriteset_Mail_Comeng_SunLanderCoach_Liv1;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Comeng_SunLanderCoach_Liv1_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Comeng_SunLanderCoach_Liv1;
+	1: switch_Couplers_7_Repeat;
+    2: spriteset_Comeng_SunLanderCoach_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Comeng_SunLanderCoach_Liv1_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_Comeng_SunLanderCoach_Liv1_SpriteStack2;
+    return spriteset_Mail_Comeng_SunLanderCoach_Liv1;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Comeng_SunLanderCoach_Liv1_position, vehicle_is_flipped) {
+ 0: switch_Mail_Comeng_SunLanderCoach_Liv1_rearcheck1;
+ 1: switch_Mail_Comeng_SunLanderCoach_Liv1_rearcheck2;
+}
+
+const Mail_Comeng_SunLanderCoach_Liv1_ID = (Comeng_SunLanderCoach_Liv1_ID + 50);
+
+item (FEAT_TRAINS, Item_Mail_Comeng_SunLanderCoach_Liv1, Mail_Comeng_SunLanderCoach_Liv1_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     NG_RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_COMENG_SUNLANDERCOACH);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Comeng_SunLanderCoach_IntroDate;		
+		length:                         Comeng_SunLanderCoach_Length;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Comeng_SunLanderCoach_Speed km/h;
+		cost_factor:					Comeng_SunLanderCoach_CostFactor;
+		running_cost_factor:			Comeng_SunLanderCoach_RunningCostFactor;
+		cargo_capacity: 				(Comeng_SunLanderCoach_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_SunLanderCoach_Weight ton;
+
+        variant_group: 					Item_Mail_Comeng_SunLanderCoach_Liv0;
+        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_Comeng_SunLanderCoach_Liv1_position;
+    purchase:                           switch_Mail_Comeng_SunLanderCoach_Liv1_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_COMENG_SUNLANDERCOACH);
+	cargo_capacity: 					(Comeng_SunLanderCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
 //Comeng_AuroraCoach_Coach
 //ID
 const Comeng_AuroraCoach_ID = 10300;
@@ -8321,7 +9464,7 @@ item (FEAT_TRAINS, Item_Comeng_AuroraCoach_Liv0, Comeng_AuroraCoach_Liv0_ID) {
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       CC_PASSENGERS;
 		default_cargo_type:				PASS;
 		cargo_allow_refit:              [PASS, TOUR];    
@@ -8366,7 +9509,7 @@ item (FEAT_TRAINS, Item_Comeng_AuroraCoach_BG_Liv0, Comeng_AuroraCoach_BG_Liv0_I
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       CC_PASSENGERS;
 		default_cargo_type:				PASS;
 		cargo_allow_refit:              [PASS, TOUR];    
@@ -8456,7 +9599,7 @@ item (FEAT_TRAINS, Item_Mail_Comeng_AuroraCoach_Liv0, Mail_Comeng_AuroraCoach_Li
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
 		default_cargo_type:				MAIL;
 //		cargo_allow_refit:              [];    
@@ -8501,7 +9644,7 @@ item (FEAT_TRAINS, Item_Mail_Comeng_AuroraCoach_BG_Liv0, Mail_Comeng_AuroraCoach
 //        ai_special_flag:                AI_FLAG_PASSENGER;
 		bitmask_vehicle_info:           0;
 	
-		climates_available:             (param_ProposalDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
 		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
 		default_cargo_type:				MAIL;
 //		cargo_allow_refit:              [];    
@@ -8532,6 +9675,291 @@ item (FEAT_TRAINS, Item_Mail_Comeng_AuroraCoach_BG_Liv0, Mail_Comeng_AuroraCoach
     purchase:                           switch_Mail_Comeng_AuroraCoach_Liv0_PurchaseStack;
     additional_text: 					string(STR_INFO_MAIL_COMENG_AURORACOACH_BG);
 	cargo_capacity: 					(Comeng_AuroraCoach_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Comeng_TranscontinentalCoachMkII_Coach
+//ID
+const Comeng_TranscontinentalCoachMkII_ID = 10600;
+//introduction_date
+const Comeng_TranscontinentalCoachMkII_IntroDate = date(1966, 1, 1);
+//speed
+const Comeng_TranscontinentalCoachMkII_Speed = 130;
+//cost_factor
+const Comeng_TranscontinentalCoachMkII_CostFactor = 64;
+//running_cost_factor
+const Comeng_TranscontinentalCoachMkII_RunningCostFactor = 27;
+//Cargo Capacity
+const Comeng_TranscontinentalCoachMkII_CargoCapacity = 85;
+//weight
+const Comeng_TranscontinentalCoachMkII_Weight = 45;
+//length
+const Comeng_TranscontinentalCoachMkII_Length = 8;
+
+//Comeng_TranscontinentalCoachMkII_Liv0
+spriteset(spriteset_Comeng_TranscontinentalCoachMkII_Liv0_Purchase,   "gfx/Comeng_TranscontinentalCoachMkII_Liv0.png") {template_purchase_8(7, 21)}
+
+spriteset(spriteset_Comeng_TranscontinentalCoachMkII_Liv0,   "gfx/Comeng_TranscontinentalCoachMkII_Liv0.png") {template_8(7, 39)}
+spriteset(spriteset_Comeng_TranscontinentalCoachMkII_Liv0_Diner,   "gfx/Comeng_TranscontinentalCoachMkII_Liv0.png") {template_8(7, 69)}
+spriteset(spriteset_Comeng_TranscontinentalCoachMkII_Liv0_Terminal,   "gfx/Comeng_TranscontinentalCoachMkII_Liv0.png") {template_8(7, 99)}
+spriteset(spriteset_Comeng_TranscontinentalCoachMkII_Liv0_Terminal_r,   "gfx/Comeng_TranscontinentalCoachMkII_Liv0.png") {template_8_r(7, 99)}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_TranscontinentalCoachMkII_Liv0_dinerposition, position_in_consist - position_in_consist_from_end) {
+ 0..1: spriteset_Comeng_TranscontinentalCoachMkII_Liv0_Diner;
+  spriteset_Comeng_TranscontinentalCoachMkII_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_TranscontinentalCoachMkII_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_TranscontinentalCoachMkII_Liv0_Terminal;
+    1: spriteset_8_Modern_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_TranscontinentalCoachMkII_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Comeng_TranscontinentalCoachMkII_Liv0_SpriteStack1;
+    return switch_Comeng_TranscontinentalCoachMkII_Liv0_dinerposition;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Comeng_TranscontinentalCoachMkII_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Comeng_TranscontinentalCoachMkII_Liv0_Terminal_r;
+    1: spriteset_8_Modern_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_TranscontinentalCoachMkII_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Comeng_TranscontinentalCoachMkII_Liv0_SpriteStack2;
+    return switch_Comeng_TranscontinentalCoachMkII_Liv0_dinerposition;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Comeng_TranscontinentalCoachMkII_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Comeng_TranscontinentalCoachMkII_Liv0_rearcheck1;
+ 1: switch_Comeng_TranscontinentalCoachMkII_Liv0_rearcheck2;
+}
+
+const Comeng_TranscontinentalCoachMkII_Liv0_ID = (Comeng_TranscontinentalCoachMkII_ID + Liv0_ID);
+
+item (FEAT_TRAINS, Item_Comeng_TranscontinentalCoachMkII_Liv0, Comeng_TranscontinentalCoachMkII_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_COMENG_TRANSCONTINENTALCOACHMKII);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Comeng_TranscontinentalCoachMkII_IntroDate;		
+		length:                         Comeng_TranscontinentalCoachMkII_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Comeng_TranscontinentalCoachMkII_Speed km/h;
+		cost_factor:					Comeng_TranscontinentalCoachMkII_CostFactor;
+		running_cost_factor:			Comeng_TranscontinentalCoachMkII_RunningCostFactor;
+		cargo_capacity: 				(Comeng_TranscontinentalCoachMkII_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_TranscontinentalCoachMkII_Weight ton;
+
+//        variant_group: 					Item_Comeng_TranscontinentalCoachMkII_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Comeng_TranscontinentalCoachMkII_Liv0_position;
+    purchase:                           spriteset_Comeng_TranscontinentalCoachMkII_Liv0_Purchase;
+    additional_text: 					string(STR_INFO_COMENG_TRANSCONTINENTALCOACHMKII);
+	cargo_capacity: 					(Comeng_TranscontinentalCoachMkII_CargoCapacity / param_capacity_mod);
+}
+}
+
+const Comeng_TranscontinentalCoachMkII_BG_Liv0_ID = (Comeng_TranscontinentalCoachMkII_ID + 15);
+
+item (FEAT_TRAINS, Item_Comeng_TranscontinentalCoachMkII_BG_Liv0, Comeng_TranscontinentalCoachMkII_BG_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       CC_PASSENGERS;
+		default_cargo_type:				PASS;
+		cargo_allow_refit:              [PASS, TOUR];    
+
+        name:                           string(STR_NAME_COMENG_TRANSCONTINENTALCOACHMKII_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Comeng_TranscontinentalCoachMkII_IntroDate;		
+		length:                         Comeng_TranscontinentalCoachMkII_Length;
+		
+		loading_speed:					SD_Suburban_LoadingSpeed;
+		speed:							Comeng_TranscontinentalCoachMkII_Speed km/h;
+		cost_factor:					Comeng_TranscontinentalCoachMkII_CostFactor;
+		running_cost_factor:			Comeng_TranscontinentalCoachMkII_RunningCostFactor;
+		cargo_capacity: 				(Comeng_TranscontinentalCoachMkII_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_TranscontinentalCoachMkII_Weight ton;
+
+//        variant_group: 					Item_Comeng_TranscontinentalCoachMkII_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Comeng_TranscontinentalCoachMkII_Liv0_position;
+    purchase:                           spriteset_Comeng_TranscontinentalCoachMkII_Liv0_Purchase;
+    additional_text: 					string(STR_INFO_COMENG_TRANSCONTINENTALCOACHMKII_BG);
+	cargo_capacity: 					(Comeng_TranscontinentalCoachMkII_CargoCapacity / param_capacity_mod);
+}
+}
+
+//Mail_Comeng_TranscontinentalCoachMkII_Liv0
+spriteset(spriteset_Mail_Comeng_TranscontinentalCoachMkII_Liv0_Purchase,   "gfx/Comeng_TranscontinentalCoachMkII_Liv0.png") {template_purchase_8(187, 21)}
+spriteset(spriteset_Mail_Comeng_TranscontinentalCoachMkII_Liv0,   "gfx/Comeng_TranscontinentalCoachMkII_Liv0.png") {template_8_repeat(187, 39)}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_PurchaseStack, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Comeng_TranscontinentalCoachMkII_Liv0_Purchase;
+	1: switch_Couplers_8_Repeat_Purchase;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_SpriteStack1, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Comeng_TranscontinentalCoachMkII_Liv0;
+    1: spriteset_8_Modern_EOTD;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_rearcheck1, position_in_consist_from_end){
+    0 : switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_SpriteStack1;
+    return spriteset_Mail_Comeng_TranscontinentalCoachMkII_Liv0;
+}
+
+switch (FEAT_TRAINS, SELF, switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_SpriteStack2, [
+    STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100),
+    getbits(extra_callback_info1, 8, 8)
+    ]) {
+    0: spriteset_Mail_Comeng_TranscontinentalCoachMkII_Liv0;
+    1: spriteset_8_Modern_EOTD_r;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_rearcheck2, position_in_consist_from_end){
+    0 : switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_SpriteStack2;
+    return spriteset_Mail_Comeng_TranscontinentalCoachMkII_Liv0;
+}
+
+switch(FEAT_TRAINS, SELF, switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_position, vehicle_is_flipped) {
+ 0: switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_rearcheck1;
+ 1: switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_rearcheck2;
+}
+
+const Mail_Comeng_TranscontinentalCoachMkII_Liv0_ID = (Comeng_TranscontinentalCoachMkII_Liv0_ID + 50);
+
+item (FEAT_TRAINS, Item_Mail_Comeng_TranscontinentalCoachMkII_Liv0, Mail_Comeng_TranscontinentalCoachMkII_Liv0_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     RAIL;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_COMENG_TRANSCONTINENTALCOACHMKII);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Comeng_TranscontinentalCoachMkII_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Comeng_TranscontinentalCoachMkII_Speed km/h;
+		cost_factor:					Comeng_TranscontinentalCoachMkII_CostFactor;
+		running_cost_factor:			Comeng_TranscontinentalCoachMkII_RunningCostFactor;
+		cargo_capacity: 				(Comeng_TranscontinentalCoachMkII_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_TranscontinentalCoachMkII_Weight ton;
+
+//        variant_group: 					Item_Mail_Comeng_TranscontinentalCoachMkII_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_position;
+    purchase:                           switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_COMENG_TRANSCONTINENTALCOACHMKII);
+	cargo_capacity: 					(Comeng_TranscontinentalCoachMkII_CargoCapacity / param_capacity_mod);
+}
+}
+
+const Mail_Comeng_TranscontinentalCoachMkII_Liv0_BG_ID = (Comeng_TranscontinentalCoachMkII_BG_Liv0_ID + 50);
+
+item (FEAT_TRAINS, Item_Mail_Comeng_TranscontinentalCoachMkII_BG_Liv0, Mail_Comeng_TranscontinentalCoachMkII_Liv0_BG_ID) {
+    property {
+		sprite_id:                      SPRITE_ID_NEW_TRAIN;
+		misc_flags:                     bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		track_type:                     BG_RAIL_ONLY;
+		running_cost_base:              RUNNING_COST_STEAM;
+//        ai_special_flag:                AI_FLAG_PASSENGER;
+		bitmask_vehicle_info:           0;
+	
+		climates_available:             (param_RealDisable == 0) ? ALL_CLIMATES : NO_CLIMATE;
+		refittable_cargo_classes:       bitmask (CC_MAIL, CC_EXPRESS);
+		default_cargo_type:				MAIL;
+//		cargo_allow_refit:              [];    
+
+        name:                           string(STR_NAME_MAIL_COMENG_TRANSCONTINENTALCOACHMKII_BG);
+		
+		refit_cost:                     0;
+        dual_headed:                    0;
+        air_drag_coefficient:           0.08;
+        model_life:                     30;
+		
+        introduction_date:              Comeng_TranscontinentalCoachMkII_IntroDate;		
+		length:                         8;
+		
+		loading_speed:					SD_Intercity_LoadingSpeed;
+		speed:							Comeng_TranscontinentalCoachMkII_Speed km/h;
+		cost_factor:					Comeng_TranscontinentalCoachMkII_CostFactor;
+		running_cost_factor:			Comeng_TranscontinentalCoachMkII_RunningCostFactor;
+		cargo_capacity: 				(Comeng_TranscontinentalCoachMkII_CargoCapacity / param_capacity_mod);
+		power:							0 hp;
+		weight:							Comeng_TranscontinentalCoachMkII_Weight ton;
+
+//        variant_group: 					Item_Mail_Comeng_TranscontinentalCoachMkII_BG_Liv0;
+//        extra_flags:  					bitmask (VEHICLE_FLAG_DISABLE_NEW_VEHICLE_MESSAGE, VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_SYNC_VARIANT_RELIABILITY);
+	}
+    graphics {
+    default:                            switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_position;
+    purchase:                           switch_Mail_Comeng_TranscontinentalCoachMkII_Liv0_PurchaseStack;
+    additional_text: 					string(STR_INFO_MAIL_COMENG_TRANSCONTINENTALCOACHMKII_BG);
+	cargo_capacity: 					(Comeng_TranscontinentalCoachMkII_CargoCapacity / param_capacity_mod);
 }
 }
 
@@ -8779,7 +10207,7 @@ const Comeng_IntrastateCoach_ID = 10800;
 //introduction_date
 const Comeng_IntrastateCoach_IntroDate = date(1979, 1, 1);
 //speed
-const Comeng_IntrastateCoach_Speed = 160;
+const Comeng_IntrastateCoach_Speed = 130;
 //cost_factor
 const Comeng_IntrastateCoach_CostFactor = 67;
 //running_cost_factor
@@ -9662,7 +11090,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_Liv0, BREL_Mk3_Liv0_ID) {
         introduction_date:              BREL_Mk3_IntroDate;		
 		length:                         BREL_Mk3_Length;
 		
-		loading_speed:					SD_Suburban_LoadingSpeed;
+		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							BREL_Mk3_Speed km/h;
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
@@ -9707,7 +11135,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_BG_Liv0, BREL_Mk3_BG_Liv0_ID) {
         introduction_date:              BREL_Mk3_IntroDate;		
 		length:                         BREL_Mk3_Length;
 		
-		loading_speed:					SD_Suburban_LoadingSpeed;
+		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							BREL_Mk3_Speed km/h;
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
@@ -9785,7 +11213,7 @@ item (FEAT_TRAINS, Item_Mail_BREL_Mk3_Liv0, Mail_BREL_Mk3_Liv0_ID) {
         model_life:                     30;
 		
         introduction_date:              BREL_Mk3_IntroDate;		
-		length:                         8;
+		length:                         BREL_Mk3_Length;
 		
 		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							BREL_Mk3_Speed km/h;
@@ -9830,7 +11258,7 @@ item (FEAT_TRAINS, Item_Mail_BREL_Mk3_BG_Liv0, Mail_BREL_Mk3_Liv0_BG_ID) {
         model_life:                     30;
 		
         introduction_date:              BREL_Mk3_IntroDate;		
-		length:                         8;
+		length:                         BREL_Mk3_Length;
 		
 		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							BREL_Mk3_Speed km/h;
@@ -9920,7 +11348,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv0, BREL_Mk3_DT_Liv0_ID) {
         introduction_date:              BREL_Mk3_IntroDate;		
 		length:                         BREL_Mk3_Length;
 		
-		loading_speed:					SD_Suburban_LoadingSpeed;
+		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							BREL_Mk3_Speed km/h;
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
@@ -9971,7 +11399,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv0, BREL_Mk3_DT_BG_Liv0_ID) {
         introduction_date:              BREL_Mk3_IntroDate;		
 		length:                         BREL_Mk3_Length;
 		
-		loading_speed:					SD_Suburban_LoadingSpeed;
+		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							BREL_Mk3_Speed km/h;
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
@@ -10061,7 +11489,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_Liv1, BREL_Mk3_Liv1_ID) {
         introduction_date:              BREL_Mk3_IntroDate;		
 		length:                         BREL_Mk3_Length;
 		
-		loading_speed:					SD_Suburban_LoadingSpeed;
+		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							BREL_Mk3_Speed km/h;
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
@@ -10106,7 +11534,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_BG_Liv1, BREL_Mk3_BG_Liv1_ID) {
         introduction_date:              BREL_Mk3_IntroDate;		
 		length:                         BREL_Mk3_Length;
 		
-		loading_speed:					SD_Suburban_LoadingSpeed;
+		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							BREL_Mk3_Speed km/h;
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
@@ -10184,7 +11612,7 @@ item (FEAT_TRAINS, Item_Mail_BREL_Mk3_Liv1, Mail_BREL_Mk3_Liv1_ID) {
         model_life:                     30;
 		
         introduction_date:              BREL_Mk3_IntroDate;		
-		length:                         8;
+		length:                         BREL_Mk3_Length;
 		
 		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							BREL_Mk3_Speed km/h;
@@ -10229,7 +11657,7 @@ item (FEAT_TRAINS, Item_Mail_BREL_Mk3_BG_Liv1, Mail_BREL_Mk3_Liv1_BG_ID) {
         model_life:                     30;
 		
         introduction_date:              BREL_Mk3_IntroDate;		
-		length:                         8;
+		length:                         BREL_Mk3_Length;
 		
 		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							BREL_Mk3_Speed km/h;
@@ -10319,7 +11747,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_Liv1, BREL_Mk3_DT_Liv1_ID) {
         introduction_date:              BREL_Mk3_IntroDate;		
 		length:                         BREL_Mk3_Length;
 		
-		loading_speed:					SD_Suburban_LoadingSpeed;
+		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							BREL_Mk3_Speed km/h;
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
@@ -10370,7 +11798,7 @@ item (FEAT_TRAINS, Item_BREL_Mk3_DT_BG_Liv1, BREL_Mk3_DT_BG_Liv1_ID) {
         introduction_date:              BREL_Mk3_IntroDate;		
 		length:                         BREL_Mk3_Length;
 		
-		loading_speed:					SD_Suburban_LoadingSpeed;
+		loading_speed:					SD_Intercity_LoadingSpeed;
 		speed:							BREL_Mk3_Speed km/h;
 		cost_factor:					BREL_Mk3_CostFactor;
 		running_cost_factor:			BREL_Mk3_RunningCostFactor;
